@@ -1,0 +1,46 @@
+{# empty Twig template #}
+
+
+<!-- BEGIN CONTENT FEATURES -->
+<section id="features" class="p-b-60 p-t-60 sm-p-b-30">
+    <div class="container ">
+        <div class="row">
+            <div class="col-sm-3 col-lg-4 text-right xs-text-left xs-m-b-30 vcenter">
+                <div class="m-b-50">
+                    <h5 class="block-title p-b-5">{% trans %}features_block_title_01{% endtrans %}</h5>
+                    <p>{% trans %}features_block_text_01{% endtrans %}</p>
+                </div>
+                <div class="m-b-50">
+                    <h5 class="block-title p-b-5">{% trans %}features_block_title_02{% endtrans %}</h5>
+                    <p>{% trans %}features_block_text_02{% endtrans %}</p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4 sm-p-t-30 text-center xs-m-b-40">
+                <!-- START DEVICE MORPH -->
+                <div class="device_morph" data-pages="auto-scroll">
+                    <!-- START DEVICE IMAGE -->
+                    <img alt="" class="xs-image-responsive-height image-responsive-width" src="{{ asset('bundles/app/assets/images/b_phone.png') }}">
+                    <!-- START DEVICE SCREEN -->
+                    <div class="screen">
+                        <!-- START SCREEN DEMO BORDER -->
+                        <div class="iphone-border">
+                            <!-- START SCREEN PREVIEW -->
+                            <img src="{{ asset('bundles/app/assets/images/screenx2.jpg') }}" class="image-responsive-height lazy" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 col-lg-4 vcenter sm-p-t-30">
+                <div class="m-b-50">
+                    <h5 class="block-title p-b-5">{% trans %}features_block_title_03{% endtrans %}</h5>
+                    <p>{% trans %}features_block_text_03{% endtrans %}</p>
+                </div>
+                <div class="m-b-50">
+                    <h5 class="block-title p-b-5">{% trans %}features_block_title_04{% endtrans %}</h5>
+                    <p>{% trans %}features_block_text_04{% endtrans %}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END CONTENT FEATURES-->
