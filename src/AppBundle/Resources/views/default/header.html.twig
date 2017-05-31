@@ -1,17 +1,13 @@
 {# empty Twig template #}
 
-
-
-
-
 <!-- BEGIN HEADER -->
 <nav  id="home"  class="header static" data-pages="header">
     <nav class="header relative">
         <div class="container relative">
             <div class="pull-left">
                 <div class="header-inner">
-                    <img src="assets/images/logo_black.png" class="logo" width="152" height="21" data-src-retina="assets/images/logo_black_2x.png" alt="">
-                    <img src="assets/images/logo_white.png" class="alt" width="152" height="21" data-src-retina="assets/images/logo_white_2x.png" alt="">
+                    <img src="{{ asset('bundles/app/assets/images/logo_black.png') }}" class="logo" width="152" height="21" data-src-retina="{{ asset('bundles/app/assets/images/logo_black_2x.png') }}" alt="">
+                    <img src="{{ asset('bundles/app/assets/images/logo_white.png') }}" class="alt" width="152" height="21" data-src-retina="{{ asset('bundles/app/assets/images/logo_white_2x.png') }}" alt="">
                 </div>
             </div>
             <div class="visible-sm-inline visible-xs-inline menu-toggler pull-right" data-pages="header-toggle" data-pages-element="#header">
@@ -21,22 +17,13 @@
             </div>
             <div class="pull-right hidden-sm hidden-xs col-sm-6">
                 <div class="header-inner text-right">
-                    
-                    
-                    
-                     {% if app.request.locale == "en" %}
 
-                   <a class="m-r-15 hint-text link text-black" href="{{ path('homepage', { '_locale': 'pt' }) }}">Português</a>
+                    {% if app.request.locale == "en" %}
+                        <a class="m-r-15 hint-text link text-black" href="{{ path('homepage', { '_locale': 'pt' }) }}">Português</a>
                     {% else %}
-                    <a class="m-r-15 hint-text link text-black" href="{{ path('homepage', { '_locale': 'en' }) }}">English</a>
+                        <a class="m-r-15 hint-text link text-black" href="{{ path('homepage', { '_locale': 'en' }) }}">English</a>
+                    {% endif %}
 
-                {% endif %}
-                    
-    
-                    
-                    
-                    
-                    
                     {#<a class="m-r-15 hint-text link text-black" href="#">Blog</a>#}
                     <a class="m-r-15 hint-text link text-black b-r b-grey p-r-20" href="#">Privacy Policy</a>
                     <p class="font-montserrat fs-13 text-master p-t-20 inline ">+65 345 345 5555 <i class="m-l-10 fa fa-phone"></i></p>
@@ -58,11 +45,7 @@
                     <div class="header-inner">
                         <ul class="menu no-padding">
                             <li>
-                                
                                 <a href="#home" class="active page-scroll">{% trans %}Home{% endtrans %}</a>
-                                
-                                
-                                
                             </li>
                             <li>
                                 <a href="#features" data-text="Features">{% trans %}Features{% endtrans %}</a>
@@ -73,9 +56,9 @@
                             <li>
                                 <a href="#costumers" data-text="Testimonials">{% trans %}Testimonials{% endtrans %}</a>
                             </li>
-                         {#   <li>
-                                <a href="#costumers" data-text="costumers">Costumers</a>
-                            </li>#}
+                            {#   <li>
+                                   <a href="#costumers" data-text="costumers">Costumers</a>
+                               </li>#}
                             <li>
                                 <a href="#portfolio" data-text="portfolio">{% trans %}Portfolio{% endtrans %}</a>
                             </li>

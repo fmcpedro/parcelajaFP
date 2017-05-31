@@ -1,49 +1,42 @@
 {# empty Twig template #}
-    
 
-
-
-
-
-      
-      
             <!-- START CONTACT SECTION -->
       <section id="contactus" class="container container-fixed-lg p-t-65 p-b-100  sm-p-b-30 sm-m-b-30">
         <div class="row">
           <div class="col-md-6">
-            <h2>How can we assist you?</h2>
+            <h2>{% trans %}contactus_question_title{% endtrans %}</h2>
             <div class="p-r-40 sm-p-r-0">
-              <p>Despite the UI, We thought of the User experience, With attached From Layouts you can simply categories Important fields and prioritize them.</p>
+              <p>{% trans %}contactus_question_text{% endtrans %}.</p>
               <br>
               <br>
               <div class="panel" id="contact-panel">
-                <p class="semi-bold no-margin">Fill up this form to contact us if you have any futher questions</p>
+                <p class="semi-bold no-margin">{% trans %}contactus_fill_form{% endtrans %}</p>
                 <form role="form" autocomplete="off" class="m-t-15" id="contact-form" action="_lib/mail.php" method="post">
                   <div class="row">
                     <div class="col-sm-6">
                       <div class="form-group form-group-default required">
-                        <label class="control-label">First name</label>
+                        <label class="control-label">{% trans %}contactus_first_name{% endtrans %}</label>
                         <input type="text" name="name" class="form-control" required>
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group form-group-default">
-                        <label class="control-label">Last name</label>
+                        <label class="control-label">{% trans %}contactus_last_name{% endtrans %}</label>
                         <input type="text" name="last-name" class="form-control" required>
                       </div>
                     </div>
                   </div>
                   <div class="form-group form-group-default">
-                    <label class="control-label">Email</label>
-                    <input type="email" name="email" placeholder="This can be changed later" class="form-control" required>
+                    <label class="control-label">{% trans %}contactus_email{% endtrans %}</label>
+                    <input type="email" name="email" placeholder="{% trans %}contactus_email_placeholder{% endtrans %}" class="form-control" required>
                   </div>
                   <div class="form-group form-group-default">
-                    <label class="control-label">Message</label>
-                    <textarea name="message" placeholder="Type the message you wish to send" style="height:100px" class="form-control" required></textarea>
+                    <label class="control-label">{% trans %}contactus_message{% endtrans %}</label>
+                    <textarea name="message" placeholder="{% trans %}contactus_message_placeholder{% endtrans %}" style="height:100px" class="form-control" required></textarea>
                   </div>
                   <div class="sm-p-t-10 clearfix">
-                    <p class="pull-left small hint-text m-t-5 font-arial">I hereby certify that the information above is true and accurate. </p>
-                    <button class="btn btn-primary font-montserrat all-caps fs-12 pull-right xs-pull-left">Submit</button>
+                    <p class="pull-left small hint-text m-t-5 font-arial">{% trans %}contactus_true_information{% endtrans %}</p>
+                    <button class="btn btn-primary font-montserrat all-caps fs-12 pull-right xs-pull-left">{% trans %}contactus_submit_button{% endtrans %}</button>
                   </div>
                   <div class="clearfix"></div>
                 </form>
@@ -53,41 +46,35 @@
           <div class="col-md-6">
             <div class="visible-xs visible-sm b-b b-grey-light m-t-35 m-b-30"></div>
             <div class="p-l-40 sm-p-l-0 sm-p-t-10">
-              <h3>Showcase and guide users with a <br>
-better User Interface &amp; Experience.</h3>
-              <p>Our motivation "Perfection simplified" helps to craft meaningful experiences for the people around us,This mission inspires us to jump out of bed each day and guides every aspect of what we do.</p>
+              <h3>{% trans %}contactus_title{% endtrans %}</h3>
+              <p>{% trans %}contactus_text{% endtrans %}</p>
               <br>
               <div class="row">
                 <div class="col-sm-6">
-                  <h5 class="block-title hint-text m-b-0">california </h5>
-                  <address class="m-t-10">Stanford co.
-                                <br> 54 E Pear St
-                                <br> Oklahoma city OK 73102</address>
+                  <h5 class="block-title hint-text m-b-0">{% trans %}contactus_location_name_01{% endtrans %} </h5>
+                  <address class="m-t-10">{% trans %}contactus_location_description_01{% endtrans %}</address>
                   <br>
                   <p class="hint-text no-margin"><span class="fs-12 font-montserrat bold all-caps p-r-10">Tel</span> <span class="fs-14">(877) 412-7766</span></p>
                   <p class="hint-text"><span class="fs-12 font-montserrat bold all-caps p-r-10">Fax</span> <span class="fs-14">(877) 412-7766</span></p>
                 </div>
                 <div class="col-sm-6">
-                  <h5 class="block-title hint-text m-b-0">canada </h5>
-                  <address class="m-t-10">Station 322
-                                <br> Ottawa Ontario K1AOB1
-                                <br> Canada.
-                            </address>
+                  <h5 class="block-title hint-text m-b-0">{% trans %}contactus_location_name_01{% endtrans %}</h5>
+                  <address class="m-t-10">{% trans %}contactus_location_description_01{% endtrans %}</address>
                   <br>
                   <p class="hint-text no-margin"><span class="fs-12 font-montserrat bold all-caps p-r-10">Tel</span> <span class="fs-14">(877) 412-7766</span></p>
                   <p class="hint-text"><span class="fs-12 font-montserrat bold all-caps p-r-10">Fax</span> <span class="fs-14">(877) 412-7766</span></p>
                 </div>
               </div>
               <br>
-              <h5 class="block-title hint-text m-b-0">pages Public Inquiries &amp; Communications </h5>
+              <h5 class="block-title hint-text m-b-0">{% trans %}contactus_enquires_comunications{% endtrans %}  </h5>
               <br>
               <div class="row">
                 <div class="col-sm-6">
-                  <p class="fs-12 font-montserrat bold all-caps no-margin hint-text">Hotline </p>
+                  <p class="fs-12 font-montserrat bold all-caps no-margin hint-text">{% trans %}contactus_hotline{% endtrans %} </p>
                   <p class="hint-text no-margin fs-14">(877) 412-7766</p>
                 </div>
                 <div class="col-sm-6">
-                  <p class="fs-12 font-montserrat bold all-caps no-margin hint-text">Email </p>
+                  <p class="fs-12 font-montserrat bold all-caps no-margin hint-text">{% trans %}contactus_email{% endtrans %} </p>
                   <p class="hint-text no-margin fs-14">support@revox.io</p>
                 </div>
               </div>
