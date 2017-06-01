@@ -1,17 +1,18 @@
+
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+  <file source-language="en" target-language="pt" datatype="plaintext" original="file.ext">
     <header>
       <tool tool-id="symfony" tool-name="Symfony"/>
     </header>
     <body>
       <trans-unit id="377ad3e3bfc553159260faa3f39aa0aa" resname="process_block_title_01">
         <source>process_block_title_01</source>
-        <target>__process_block_title_01</target>
+        <target>Escolha em quantas vezes quer pagar</target>
       </trans-unit>
       <trans-unit id="2b511073d8afc0162103289d9ab8951b" resname="process_text_01">
         <source>process_text_01</source>
-        <target>__process_text_01</target>
+        <target>De 2x a 12x sem juros!</target>
       </trans-unit>
       <trans-unit id="d71f019e59b6d0c272ed71ad9acdac24" resname="process_small_text_01">
         <source>process_small_text_01</source>
@@ -19,23 +20,23 @@
       </trans-unit>
       <trans-unit id="bdd269f8c5e73767fdca16e710a08974" resname="process_block_title_02">
         <source>process_block_title_02</source>
-        <target>__process_block_title_02</target>
+        <target>Introduza o cartão de cidadão</target>
       </trans-unit>
       <trans-unit id="e470c14e0304b336424592c23baeb08f" resname="process_text_02">
         <source>process_text_02</source>
-        <target>__process_text_02</target>
+        <target>Valide os seus dados pessoais</target>
       </trans-unit>
-      <trans-unit id="33a7783d2d74817db733426e9eb8b10e" resname="process_small_text_02">
+     <trans-unit id="33a7783d2d74817db733426e9eb8b10e" resname="process_small_text_02">
         <source>process_small_text_02</source>
-        <target>__process_small_text_02</target>
+        <target>Passe o cartão de crédito</target>
       </trans-unit>
       <trans-unit id="bab9a636b4d7c2b0e56886774bba13e7" resname="process_block_title_03">
         <source>process_block_title_03</source>
-        <target>__process_block_title_03</target>
+        <target>process_block_title_03</target>
       </trans-unit>
       <trans-unit id="3a4aaebecefa2b663ba697cfdb90282e" resname="process_text_03">
         <source>process_text_03</source>
-        <target>__process_text_03</target>
+        <target>E em questões de segundos, a sua compra é aprovada.</target>
       </trans-unit>
       <trans-unit id="543a015264b301bf189e5f4dd9166843" resname="process_small_text_03">
         <source>process_small_text_03</source>
@@ -43,43 +44,43 @@
       </trans-unit>
       <trans-unit id="bab2b501112640be757c4d47153cba4a" resname="features_block_title_01">
         <source>features_block_title_01</source>
-        <target>__features_block_title_01</target>
+        <target>Descomplicado</target>
       </trans-unit>
       <trans-unit id="c25c8dae495386cb4340d2e6c741653e" resname="features_block_text_01">
         <source>features_block_text_01</source>
-        <target>__features_block_text_01</target>
+        <target>Parcelamos as suas compras em questões de segundos e em apenas 3 passos!</target>
       </trans-unit>
       <trans-unit id="c34ccfc92afe29529675e5fc5b5642a8" resname="features_block_title_02">
         <source>features_block_title_02</source>
-        <target>__features_block_title_02</target>
+        <target>Prático</target>
       </trans-unit>
       <trans-unit id="075ffb580e34fac127a377842bf7dda6" resname="features_block_text_02">
         <source>features_block_text_02</source>
-        <target>__features_block_text_02</target>
+        <target>Apenas tem de ter consigo o cartão de cidadão e um cartão de crédito! (VISA ou Mastercad)</target>
       </trans-unit>
       <trans-unit id="b3ce0d2110927bdf50b27c62166d6a3f" resname="features_block_title_03">
         <source>features_block_title_03</source>
-        <target>__features_block_title_03</target>
+       <target>Fácil</target>
       </trans-unit>
       <trans-unit id="c64769b04fa5e8b4a3719dea329cdc44" resname="features_block_text_03">
         <source>features_block_text_03</source>
-        <target>__features_block_text_03</target>
+        <target>Compras aprovadas na hora!</target>
       </trans-unit>
       <trans-unit id="82ba20974b53bcb23b61c1ffa201faca" resname="features_block_title_04">
         <source>features_block_title_04</source>
-        <target>__features_block_title_04</target>
+        <target>Seguro</target>
       </trans-unit>
       <trans-unit id="a3aab22bcb5d7d8388fd74cd59763785" resname="features_block_text_04">
         <source>features_block_text_04</source>
-        <target>__features_block_text_04</target>
+        <target>Connosco, o seu dinheiro está em boas mãos.</target>
       </trans-unit>
       <trans-unit id="62e9e1351e99f5b5933a8b001f0cd1ac" resname="cal_for_action_text">
         <source>cal_for_action_text</source>
-        <target>__cal_for_action_text</target>
+        <target>ADIRA JÁ!</target>
       </trans-unit>
       <trans-unit id="9fd226a3e51e44ca6853808abcacdfa4" resname="cal_for_action_button">
         <source>cal_for_action_button</source>
-        <target>__cal_for_action_button</target>
+        <target>Clicando aqui</target>
       </trans-unit>
       <trans-unit id="0c8c5f440ef456507d7ccdc8434cb0c9" resname="intro_block_title">
         <source>intro_block_title</source>
@@ -99,19 +100,19 @@
       </trans-unit>
       <trans-unit id="5ad096d8eb5c540f2a2463eb58150235" resname="jumbotron_title_01">
         <source>jumbotron_title_01</source>
-        <target>__jumbotron_title_01</target>
+        <target>Agora já pode...</target>
       </trans-unit>
       <trans-unit id="b4453a5792c3bbba8880425c7f6e5ce2" resname="jumbotron_text_01">
         <source>jumbotron_text_01</source>
-        <target>__jumbotron_text_01</target>
+        <target>Facilitar a vida aos seus clientes!</target>
       </trans-unit>
       <trans-unit id="c5a1b7e21a0b6dea0d52c54d620a3b21" resname="jumbotron_title_02">
         <source>jumbotron_title_02</source>
-        <target>__jumbotron_title_02</target>
+        <target>Agora já pode…</target>
       </trans-unit>
       <trans-unit id="0f924929b4196df9a2d85a3b4a381f9a" resname="jumbotron_text_02">
         <source>jumbotron_text_02</source>
-        <target>__jumbotron_text_02</target>
+        <target>Pagar em 12x sem juros!</target>
       </trans-unit>
       <trans-unit id="7b8614d15c2ab00d7b75853b0d8889a8" resname="testimonials_name_01">
         <source>testimonials_name_01</source>
@@ -139,27 +140,27 @@
       </trans-unit>
       <trans-unit id="cbb043101dff24ea09b80b00469a4a03" resname="contactus_question_title">
         <source>contactus_question_title</source>
-        <target>__contactus_question_title</target>
+        <target>Adira já!</target>
       </trans-unit>
       <trans-unit id="8799afe725cf1843bce339fd75e5f142" resname="contactus_question_text">
         <source>contactus_question_text</source>
-        <target>__contactus_question_text</target>
+        <target> Agende já a sua reunião comercial </target>
       </trans-unit>
       <trans-unit id="0652aae7ef35a1b2a6f5378671ec07f2" resname="contactus_fill_form">
         <source>contactus_fill_form</source>
-        <target>__contactus_fill_form</target>
+        <target>Preencha o formulário</target>
       </trans-unit>
       <trans-unit id="0a7e1aaf3e3f172cc92a6c27fb74291e" resname="contactus_first_name">
         <source>contactus_first_name</source>
-        <target>__contactus_first_name</target>
+        <target>Nome</target>
       </trans-unit>
       <trans-unit id="0cd6d2bf496b069d68f27c755be48440" resname="contactus_last_name">
         <source>contactus_last_name</source>
-        <target>__contactus_last_name</target>
+        <target>Apelido</target>
       </trans-unit>
       <trans-unit id="d85c7c8d6257370a5c244c9a3463b0b2" resname="contactus_email">
         <source>contactus_email</source>
-        <target>__contactus_email</target>
+        <target>E-mail</target>
       </trans-unit>
       <trans-unit id="650c1be6ec6ffef2106e7281b62b18cb" resname="contactus_email_placeholder">
         <source>contactus_email_placeholder</source>
@@ -167,7 +168,7 @@
       </trans-unit>
       <trans-unit id="70581fd511332e892e8a172280ced247" resname="contactus_message">
         <source>contactus_message</source>
-        <target>__contactus_message</target>
+        <target>Mensagem</target>
       </trans-unit>
       <trans-unit id="fd130da5a06632008bf6b47946a2b742" resname="contactus_message_placeholder">
         <source>contactus_message_placeholder</source>
@@ -179,11 +180,11 @@
       </trans-unit>
       <trans-unit id="ab4d7c96204ac221b8199faf41a28e51" resname="contactus_submit_button">
         <source>contactus_submit_button</source>
-        <target>__contactus_submit_button</target>
+        <target>Enviar</target>
       </trans-unit>
       <trans-unit id="a4a6961f7373e351fd59e6b568109ca1" resname="contactus_title">
         <source>contactus_title</source>
-        <target>__contactus_title</target>
+        <target>Contactos</target>
       </trans-unit>
       <trans-unit id="b06919742f95b9f45a7a92fceac97a3b" resname="contactus_text">
         <source>contactus_text</source>
@@ -191,11 +192,11 @@
       </trans-unit>
       <trans-unit id="368736a2217f6e27f3118f616e9f98c0" resname="contactus_location_name_01">
         <source>contactus_location_name_01</source>
-        <target>__contactus_location_name_01</target>
+        <target>Parcela Já</target>
       </trans-unit>
       <trans-unit id="e0e789149829436a42ea8d4bac7e1e2f" resname="contactus_location_description_01">
         <source>contactus_location_description_01</source>
-        <target>__contactus_location_description_01</target>
+        <target>Av. da República, 48-B, 6º 1050-195 Lisboa</target>
       </trans-unit>
       <trans-unit id="e58734a829c24f928038f91a373a77e2" resname="contactus_enquires_comunications">
         <source>contactus_enquires_comunications</source>
@@ -207,35 +208,35 @@
       </trans-unit>
       <trans-unit id="8cf04a9734132302f96da8e113e80ce5" resname="Home">
         <source>Home</source>
-        <target>__Home</target>
+        <target>Home</target>
       </trans-unit>
       <trans-unit id="98f770b0af18ca763421bac22b4b6805" resname="Features">
         <source>Features</source>
-        <target>__Features</target>
+        <target>Características</target>
       </trans-unit>
       <trans-unit id="b6ec7abeb6ae29cc35a4b47475e12afe" resname="Process">
         <source>Process</source>
-        <target>__Process</target>
+        <target>Como funciona</target>
       </trans-unit>
       <trans-unit id="13ea583f6474cdce6c0c9b289b652ffe" resname="Testimonials">
         <source>Testimonials</source>
-        <target>__Testimonials</target>
+        <target>Testemunhos</target>
       </trans-unit>
       <trans-unit id="d4f859a96c13f551a2771b7fc3a78d38" resname="Portfolio">
         <source>Portfolio</source>
-        <target>__Portfolio</target>
+        <target>Parceiros</target>
       </trans-unit>
       <trans-unit id="02d4482d332e1aef3437cd61c9bcc624" resname="Contact us">
         <source>Contact us</source>
-        <target>__Contact us</target>
+        <target>Contactos</target>
       </trans-unit>
       <trans-unit id="d9776f0775997b2e698c6975420b5c5d" resname="Sign up">
         <source>Sign up</source>
-        <target>__Sign up</target>
+        <target>Registar</target>
       </trans-unit>
       <trans-unit id="99dea78007133396a7b8ed70578ac6ae" resname="Login">
         <source>Login</source>
-        <target>__Login</target>
+        <target>Entrar</target>
       </trans-unit>
       <trans-unit id="9e3c0c09e762263f05f1e58992384c3f" resname="costumers_block_title">
         <source>costumers_block_title</source>
@@ -255,7 +256,7 @@
       </trans-unit>
       <trans-unit id="8e8576815b91525a235c3806903e08ea" resname="portfolio_block_title_02">
         <source>portfolio_block_title_02</source>
-        <target>__portfolio_block_title_02</target>
+        <target>Os nossos parceiros</target>
       </trans-unit>
       <trans-unit id="cf0fd57948dbc2ba51da0d1bacd5237e" resname="portfolio_title_01">
         <source>portfolio_title_01</source>
