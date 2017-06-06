@@ -11,7 +11,7 @@
               <br>
               <div class="panel" id="contact-panel">
                 <p class="semi-bold no-margin">{% trans %}contactus_fill_form{% endtrans %}</p>
-                <form role="form" autocomplete="off" class="m-t-15" id="contact-form" action="_lib/mail.php" method="post">
+                <form role="form" autocomplete="off" class="m-t-15" id="contact-form" action="{{ path('email') }}" method="post">
                   <div class="row">
                     <div class="col-sm-6">
                       <div class="form-group form-group-default required">

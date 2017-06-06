@@ -8,3 +8,9 @@ homepage:
     requirements:
         _locale:  en|pt
         
+        
+email:
+    path:      /{_locale}/email
+    defaults:  { _controller: AppBundle:Default:email, _locale: en }
+    requirements:
+        _locale:  en|pt
