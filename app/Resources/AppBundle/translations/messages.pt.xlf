@@ -1,112 +1,214 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+
   <file source-language="en" target-language="pt" datatype="plaintext" original="file.ext">
+
     <header>
+
       <tool tool-id="symfony" tool-name="Symfony"/>
+
     </header>
+
     <body>
+
       <trans-unit id="377ad3e3bfc553159260faa3f39aa0aa" resname="process_block_title_01">
+
         <source>process_block_title_01</source>
-        <target>Ofereça o pagamento parcelado através do seu terminal Parcela Já</target>
+
+        <target>Peça para parcelar a sua compra sem juros</target>
+
       </trans-unit>
+
       <trans-unit id="2b511073d8afc0162103289d9ab8951b" resname="process_text_01">
+
         <source>process_text_01</source>
-        <target>Escolha o número de vezes em que o seu cliente quer pagar e introduza o valor da venda.</target>
+
+        <target>De 2 a 12 vezes no seu cartão de crédito.</target>
+
       </trans-unit>
+
       <trans-unit id="d71f019e59b6d0c272ed71ad9acdac24" resname="process_small_text_01">
+
         <source>process_small_text_01</source>
-        <target>__process_small_text_01</target>
-      </trans-unit>
-      <trans-unit id="bdd269f8c5e73767fdca16e710a08974" resname="process_block_title_02">
-        <source>process_block_title_02</source>
-        <target>Introduza os cartões</target>
-      </trans-unit>
-      <trans-unit id="e470c14e0304b336424592c23baeb08f" resname="process_text_02">
-        <source>process_text_02</source>
-        <target>Introduza o cartão de cidadão e passe o cartão de crédito do seu cliente no terminal Parcela Já.</target>
-      </trans-unit>
-     <trans-unit id="33a7783d2d74817db733426e9eb8b10e" resname="process_small_text_02">
-        <source>process_small_text_02</source>
-        <target>E receba a aprovação imediata</target>
-      </trans-unit>
-      <trans-unit id="bab9a636b4d7c2b0e56886774bba13e7" resname="process_block_title_03">
-        <source>process_block_title_03</source>
-        <target>process_block_title_03</target>
-      </trans-unit>
-      <trans-unit id="3a4aaebecefa2b663ba697cfdb90282e" resname="process_text_03">
-        <source>process_text_03</source>
-        <target>O seu cliente apenas tem que assinar o talão e a venda está concluída.</target>
-      </trans-unit>
-      <trans-unit id="543a015264b301bf189e5f4dd9166843" resname="process_small_text_03">
-        <source>process_small_text_03</source>
-        <target>__process_small_text_03</target>
-      </trans-unit>
-      <trans-unit id="bab2b501112640be757c4d47153cba4a" resname="features_block_title_01">
-        <source>features_block_title_01</source>
-        <target>Até 12x sem juros</target>
-      </trans-unit>
-      <trans-unit id="c25c8dae495386cb4340d2e6c741653e" resname="features_block_text_01">
-        <source>features_block_text_01</source>
-        <target>Os seus clientes podem escolher parcelar as suas compras de 2x a 12x sem juros utilizando o seu cartão de crédito.</target>
-      </trans-unit>
-      <trans-unit id="c34ccfc92afe29529675e5fc5b5642a8" resname="features_block_title_02">
-        <source>features_block_title_02</source>
-        <target>Zero burocracia</target>
-      </trans-unit>
-      <trans-unit id="075ffb580e34fac127a377842bf7dda6" resname="features_block_text_02">
-        <source>features_block_text_02</source>
-        <target>O seu cliente apenas tem de ter cartão de cidadão e um cartão de crédito. (VISA ou Mastercad)</target>
-      </trans-unit>
-      <trans-unit id="b3ce0d2110927bdf50b27c62166d6a3f" resname="features_block_title_03">
-        <source>features_block_title_03</source>
-       <target>Aprovação imediata</target>
-      </trans-unit>
-      <trans-unit id="c64769b04fa5e8b4a3719dea329cdc44" resname="features_block_text_03">
-        <source>features_block_text_03</source>
-        <target>A validação e a aprovação da compra é imediata.</target>
-      </trans-unit>
-      <trans-unit id="82ba20974b53bcb23b61c1ffa201faca" resname="features_block_title_04">
-        <source>features_block_title_04</source>
-        <target>Receba a totalidade da compra</target>
-      </trans-unit>
-      <trans-unit id="a3aab22bcb5d7d8388fd74cd59763785" resname="features_block_text_04">
-        <source>features_block_text_04</source>
-        <target>A sua loja receberá o valor total numa única vez.</target>
-      </trans-unit>
-      <trans-unit id="62e9e1351e99f5b5933a8b001f0cd1ac" resname="cal_for_action_text">
-        <source>cal_for_action_text</source>
+
         <target></target>
+
       </trans-unit>
+
+      <trans-unit id="bdd269f8c5e73767fdca16e710a08974" resname="process_block_title_02">
+
+        <source>process_block_title_02</source>
+
+        <target>Introduza os cartões no terminal</target>
+
+      </trans-unit>
+
+      <trans-unit id="e470c14e0304b336424592c23baeb08f" resname="process_text_02">
+
+        <source>process_text_02</source>
+
+        <target>Introduza o seu cartão de cidadão e passe o seu cartão de crédito no terminal Parcela Já.</target>
+
+      </trans-unit>
+
+     <trans-unit id="33a7783d2d74817db733426e9eb8b10e" resname="process_small_text_02">
+
+        <source>process_small_text_02</source>
+
+        <target></target>
+
+      </trans-unit>
+
+      <trans-unit id="bab9a636b4d7c2b0e56886774bba13e7" resname="process_block_title_03">
+
+        <source>process_block_title_03</source>
+
+        <target>Aprovação imediata!</target>
+
+      </trans-unit>
+
+      <trans-unit id="3a4aaebecefa2b663ba697cfdb90282e" resname="process_text_03">
+
+        <source>process_text_03</source>
+
+        <target>Assine o talão e usufrua das sua compras sem preocupações.</target>
+
+      </trans-unit>
+
+      <trans-unit id="543a015264b301bf189e5f4dd9166843" resname="process_small_text_03">
+
+        <source>process_small_text_03</source>
+
+        <target></target>
+
+      </trans-unit>
+
+      <trans-unit id="bab2b501112640be757c4d47153cba4a" resname="features_block_title_01">
+
+        <source>features_block_title_01</source>
+
+        <target>Sem custos</target>
+
+      </trans-unit>
+
+      <trans-unit id="c25c8dae495386cb4340d2e6c741653e" resname="features_block_text_01">
+
+        <source>features_block_text_01</source>
+
+        <target>Parcele as suas compras de 2 a 12 vezes completamente grátis.</target>
+
+      </trans-unit>
+
+      <trans-unit id="c34ccfc92afe29529675e5fc5b5642a8" resname="features_block_title_02">
+
+        <source>features_block_title_02</source>
+
+        <target>Zero burocracia</target>
+
+      </trans-unit>
+
+      <trans-unit id="075ffb580e34fac127a377842bf7dda6" resname="features_block_text_02">
+
+        <source>features_block_text_02</source>
+
+        <target>Apenas tem de ter cartão de cidadão e um cartão de crédito. (VISA ou Mastercad).</target>
+
+      </trans-unit>
+
+      <trans-unit id="b3ce0d2110927bdf50b27c62166d6a3f" resname="features_block_title_03">
+
+        <source>features_block_title_03</source>
+
+       <target>Ganhe tempo</target>
+
+      </trans-unit>
+
+      <trans-unit id="c64769b04fa5e8b4a3719dea329cdc44" resname="features_block_text_03">
+
+        <source>features_block_text_03</source>
+
+        <target>Com a Parcela Já, a aprovação da sua compra é imediata, o que faz poupar dinheiro e ganhar tempo.</target>
+
+      </trans-unit>
+
+      <trans-unit id="82ba20974b53bcb23b61c1ffa201faca" resname="features_block_title_04">
+
+        <source>features_block_title_04</source>
+
+        <target>Segurança máxima</target>
+
+      </trans-unit>
+
+      <trans-unit id="a3aab22bcb5d7d8388fd74cd59763785" resname="features_block_text_04">
+
+        <source>features_block_text_04</source>
+
+        <target>Com a Parcela Já, todos os seus dados estão completamente seguros através dos mais sofisticados mecanismos de privacidade e proteção de dados.</target>
+
+      </trans-unit>
+
+      <trans-unit id="62e9e1351e99f5b5933a8b001f0cd1ac" resname="cal_for_action_text">
+
+        <source>cal_for_action_text</source>
+
+        <target></target>
+
+      </trans-unit>
+
       <trans-unit id="9fd226a3e51e44ca6853808abcacdfa4" resname="cal_for_action_button">
+
         <source>cal_for_action_button</source>
+
         <target>ADIRA JÁ!</target>
+
       </trans-unit>
+
       <trans-unit id="0c8c5f440ef456507d7ccdc8434cb0c9" resname="intro_block_title">
+
         <source>intro_block_title</source>
+
         <target>__intro_block_title</target>
+
       </trans-unit>
+
       <trans-unit id="535e59548e0d11eef0ca33fe7c55d76e" resname="intro_title">
+
         <source>intro_title</source>
+
         <target>__intro_title</target>
+
       </trans-unit>
+
       <trans-unit id="c645afce4bfc2a9780b1f6534b9aa234" resname="intro_text">
+
         <source>intro_text</source>
+
         <target>__intro_text</target>
+
       </trans-unit>
+
       <trans-unit id="8935104d88648100bc3c963832ebe24f" resname="intro_small_text">
+
         <source>intro_small_text</source>
+
         <target>__intro_small_text</target>
+
       </trans-unit>
+
       <trans-unit id="5ad096d8eb5c540f2a2463eb58150235" resname="jumbotron_title_01">
+
         <source>jumbotron_title_01</source>
-        <target>O melhor parceiro para simplificar o seu negócio</target>
+
+        <target>Vi. Gostei. Comprei!</target>
+
       </trans-unit>
 
       <trans-unit id="b4453a5792c3bbba8880425c7f6e5ce2" resname="jumbotron_text_01">
 
         <source>jumbotron_text_01</source>
 
-        <target>Seja qual for o seu negócio, a Parcela Já vai ajudar a aumentar as suas vendas.</target>
+        <target>Pague as suas compras até 12 vezes sem juros.</target>
 
       </trans-unit>
 
@@ -114,7 +216,7 @@
 
         <source>jumbotron_title_02</source>
 
-        <target>Somos os mais rápidos a parcelar as suas vendas</target>
+        <target>Fazemos da sua compra parcelada algo incrível</target>
 
       </trans-unit>
 
@@ -122,7 +224,7 @@
 
         <source>jumbotron_text_02</source>
 
-        <target>Aprovação de pagamentos em segundos na sua loja e transferência imediata do valor total para a sua conta bancária.</target>
+        <target>Vai-se surpreender de tão simples que é</target>
 
       </trans-unit>
 
@@ -178,7 +280,7 @@
 
         <source>contactus_question_title</source>
 
-        <target>Adira já!</target>
+        <target>Parcele Já!</target>
 
       </trans-unit>
 
@@ -186,7 +288,7 @@
 
         <source>contactus_question_text</source>
 
-        <target> Agende já a sua reunião comercial.</target>
+        <target>Tem dúvidas? Sugestões? Entre em contacto connosco.</target>
 
       </trans-unit>
 
@@ -323,7 +425,7 @@
 
         <source>Features</source>
 
-        <target>Características</target>
+        <target>Vantagens</target>
 
       </trans-unit>
 
