@@ -5459,7 +5459,7 @@ input.error:-webkit-autofill:focus,
   top: 0;
   bottom: 0;
 }
-.iphone-border {
+/*.iphone-border {
   position: absolute;
   left: 12px;
   top: 47px;
@@ -5467,7 +5467,21 @@ input.error:-webkit-autofill:focus,
   bottom: 76px;
   height: auto;
   overflow-y: hidden;
+}*/
+
+.iphone-border {
+  position: absolute;
+  left: 52px;
+  top: 138px;
+  right: 53px;
+  bottom: 281px;
+  height: auto;
+  overflow-y: hidden;
 }
+
+
+
+
 .iphone-border > img {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
