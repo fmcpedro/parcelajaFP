@@ -8,8 +8,16 @@
       </div>
     </section>
     <!-- END CONTENT SECTION -->
-    <section class="p-b-70 p-t-70 demo-hero-5" data-pages-bg-image="{{ asset('bundles/app/assets/images/gallery_hero_2-01.png') }}">
-    </section>
+
+    
+    {% if app.request.locale == "en" %}
+    <section class="p-b-70 p-t-70 demo-hero-5" data-pages-bg-image="{{ asset('bundles/app/assets/images/gallery_hero_en.png') }}"></section>
+       {% else %}
+    <section class="p-b-70 p-t-70 demo-hero-5" data-pages-bg-image="{{ asset('bundles/app/assets/images/gallery_hero_pt.png') }}"></section>
+    {% endif %}
+    
+    
+    
     <!-- BEGIN CONTENT SECTION -->
     <section class="bg-master-lightest p-b-85 p-t-75">
       <div class="container">
