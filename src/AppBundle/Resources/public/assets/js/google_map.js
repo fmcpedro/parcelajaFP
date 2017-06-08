@@ -21,7 +21,7 @@
             zoom: zoomLevel,
             disableDefaultUI: true,
             // The latitude and longitude to center the map (always required)
-            center: new google.maps.LatLng(40.6700, -73.9400), // New York
+            center: new google.maps.LatLng(38.7403, -9.14608), // Parcela Já
             scrollwheel: false,
             // Map styling
             styles: [{
