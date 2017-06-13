@@ -1034,19 +1034,34 @@
 
  
 
-      <trans-unit id="cf0fd57948dbc2ba51da0d1bacd5237e" resname="portfolio_title_01">
-
- 
-
-        <source>portfolio_title_01</source>
-
- 
-
-        <target></target>
-
- 
-
-      </trans-unit>
+    
+      
+       <trans-unit id="cf0fd57948dbc2ba51da0d1bacd5237e" resname="portfolio_title_01">
+                <source>portfolio_title_01</source>
+                <target></target>
+            </trans-unit>
+      
+            <trans-unit id="bookmark_features" resname="bookmark_features">
+                <source>bookmark_features</source>
+                <target>features</target>
+            </trans-unit>
+      
+            <trans-unit id="bookmark_process" resname="bookmark_process">
+                <source>bookmark_process</source>
+                <target>process</target>
+            </trans-unit>
+            
+            <trans-unit id="bookmark_portfolio" resname="bookmark_portfolio">
+                <source>bookmark_portfolio</source>
+                <target>portfolio</target>
+            </trans-unit>
+            
+            <trans-unit id="bookmark_contactus" resname="bookmark_contactus">
+                <source>bookmark_contactus</source>
+                <target>contactus</target>
+            </trans-unit>
+            
+            
 
  
 

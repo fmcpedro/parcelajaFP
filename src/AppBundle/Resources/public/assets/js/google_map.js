@@ -141,6 +141,18 @@
 
         // Create the Google Map using out element and options defined above
         map = new google.maps.Map(mapElement, mapOptions);
+        
+         var myLatLng = {lat: 38.7403, lng: -9.14608};
+
+        
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map
+        });
+
+        
+        
+        
     }
 
 })(window.jQuery);

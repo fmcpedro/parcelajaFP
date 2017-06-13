@@ -12,21 +12,31 @@
                     <!-- BEGIN IMAGE PARRALAX -->
                     <div class="slider-wrapper">
                         {% if app.request.locale == "en" %}
-                            <div class="image" 
+                           {#  <div class="image image-responsive-height image-responsive-height" 
                                  data-swiper-parallax="30%" 
                                  data-pages-bg-image="{{ asset('bundles/app/assets/images/banner_01_en.png') }}" 
-                                 {#                             data-bg-overlay="#3056a3" 
-                                                              data-overlay-opacity="0.3"#}
+                                                             data-bg-overlay="#3056a3" 
+                                                              data-overlay-opacity="0.3"
                                  >
-                            </div>
+                            </div>#}
+                                 
+                                 
+                                 <img class="image"  src="{{ asset('bundles/app/assets/images/banner_01_en.png') }}"/>
+                                 
+                                 
+                                 
                         {% else %}
-                            <div class="image" 
+                           {# <div class="image image-responsive-height image-responsive-height" 
                                  data-swiper-parallax="30%" 
                                  data-pages-bg-image="{{ asset('bundles/app/assets/images/banner_01_pt.png') }}" 
-                                 {#                             data-bg-overlay="#3056a3" 
-                                                              data-overlay-opacity="0.3"#}
+                                                              data-bg-overlay="#3056a3" 
+                                                              data-overlay-opacity="0.3"
                                  >
-                            </div>
+                            </div>#}
+                           <img class="image"  src="{{ asset('bundles/app/assets/images/banner_01_en.png') }}"/>
+                           
+                           
+                           
                         {% endif %}
                     </div>
                     <!-- END IMAGE PARRALAX -->
