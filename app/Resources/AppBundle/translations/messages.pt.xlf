@@ -882,6 +882,20 @@
 
             </trans-unit>
 
+       <trans-unit id="Faqs_b6ec7abeb6ae29cc35a4b47475e12afe" resname="Faqs">
+
+ 
+
+        <source>Faqs</source>
+
+ 
+
+        <target>Faqs</target>
+
+ 
+
+      </trans-unit>
+ 
  
 
             <trans-unit id="13ea583f6474cdce6c0c9b289b652ffe" resname="Testimonials">
@@ -1068,6 +1082,16 @@
                 <source>bookmark_contactus</source>
                 <target>contacto</target>
             </trans-unit>
+      
+      
+      
+      
+                  <trans-unit id="bookmark_faqs" resname="bookmark_faqs">
+                <source>bookmark_faqs</source>
+                <target>faqs</target>
+            </trans-unit>
+            
+            
       
         </body>
 
