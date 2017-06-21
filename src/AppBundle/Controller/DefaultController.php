@@ -31,10 +31,6 @@ class DefaultController extends Controller {
         $message .= '<p>Email: ' . $emailFrom . '</p>';
         $message .= '<p>Message: ' . $formMessage . '</p>';
 
-        
-        
-        //$message = "teste";
-
 
         $email_message = \Swift_Message::newInstance()
                ->setSubject('ParcelaJá - Contacto/Sugestão/Duvida de '+ $name)
@@ -44,33 +40,28 @@ class DefaultController extends Controller {
                 ->setBody($message, 'text/html');
 
         
-        $recipients = $this->get('mailer')->send($email_message);
-
-        
-        return $this->render('AppBundle:default:email.html.twig', []);
-
-
-
+//        $recipients = $this->get('mailer')->send($email_message);
+//        return $this->render('AppBundle:default:email.html.twig', []);
 
 //        $response = array();
 //        $response["success"] = true;
 //        header('Access-Control-Allow-Origin: *');
 
 
-//        if (!$this->get('mailer')->send($email_message)) {
-//            $data['error']['title'] = 'Message could not be sent.';
-//            //$data['error']['details'] = 'Mailer Error: ' . $mail->ErrorInfo;
-//            $data['error']['details'] = 'Mailer Error: ';
-//            exit;
-//        }
-//
-//        $data['success']['title'] = $recipients;
-//
-//        
-//        return new \Symfony\Component\HttpFoundation\JsonResponse([
-//            'success' => true,
-//            'data'    => $data // Your data here
-//        ]);
+        if (!$this->get('mailer')->send($email_message)) {
+            $data['error']['title'] = 'Message could not be sent.';
+            //$data['error']['details'] = 'Mailer Error: ' . $mail->ErrorInfo;
+            $data['error']['details'] = 'Mailer Error: ';
+            exit;
+        }
+
+        $data['success']['title'] = 'Message sent.';
+
+        
+        return new \Symfony\Component\HttpFoundation\JsonResponse([
+            'success' => true,
+            'data'    => $data // Your data here
+        ]);
         
         //return json_encode($data);
     }
