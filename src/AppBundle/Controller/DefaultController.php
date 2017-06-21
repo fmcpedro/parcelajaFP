@@ -19,7 +19,8 @@ class DefaultController extends Controller {
 
         // CONFIG YOUR FIELDS
         //============================================================
-        $name = filter_var($request->request->get("name"), FILTER_SANITIZE_STRING);
+        $name = filter_var($request->request->get("name"), FILTER_SANITIZE_STRING).' '.filter_var($request->request->get("last-name"), FILTER_SANITIZE_STRING);
+        
         $emailFrom = filter_var($request->request->get("email"), FILTER_SANITIZE_EMAIL);
         $formMessage = filter_var($request->request->get("message"), FILTER_SANITIZE_STRING);
 
@@ -32,11 +33,15 @@ class DefaultController extends Controller {
         $message .= '<p>Message: ' . $formMessage . '</p>';
 
 
+        $subject = 'ParcelaJá - Contacto/Sugestão/Duvida de '. $name;
+        
+        
         $email_message = \Swift_Message::newInstance()
-               ->setSubject('ParcelaJá - Contacto/Sugestão/Duvida de '+ $name)
+               ->setSubject($subject)
                 ->setFrom('suporte@parcelaja.pt')
                 ->setTo('suporte@parcelaja.pt')
                 ->setCc('lmiguens@consolidador.com')
+                ->setReplyTo($emailFrom)
                 ->setBody($message, 'text/html');
 
         
