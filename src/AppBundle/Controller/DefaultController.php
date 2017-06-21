@@ -38,7 +38,7 @@ class DefaultController extends Controller {
 
         $email_message = \Swift_Message::newInstance()
                ->setSubject('Contact request')
-                ->setFrom('luis.t.miguens@gmail.com')
+                ->setFrom('suporte@parcelaja.pt')
                 ->setTo('luis.t.miguens@gmail.com')
                 ->setCc('luis.t.miguens@gmail.com')
                 ->setBody($message, 'text/html');
