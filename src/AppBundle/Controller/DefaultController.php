@@ -26,21 +26,21 @@ class DefaultController extends Controller {
 
         // CONFIG YOUR EMAIL MESSAGE
         //============================================================
-//        $message = '<p>The following request was sent from: </p>';
-//        $message .= '<p>Name: ' . $name . '</p>';
-//        $message .= '<p>Email: ' . $emailFrom . '</p>';
-//        $message .= '<p>Message: ' . $formMessage . '</p>';
+        $message = '<p>The following request was sent from: </p>';
+        $message .= '<p>Name: ' . $name . '</p>';
+        $message .= '<p>Email: ' . $emailFrom . '</p>';
+        $message .= '<p>Message: ' . $formMessage . '</p>';
 
         
         
-        $message = "teste";
+        //$message = "teste";
 
 
         $email_message = \Swift_Message::newInstance()
-               ->setSubject('Contact request')
+               ->setSubject('ParcelaJá - Contacto/Sugestão/Duvida de '+ $name)
                 ->setFrom('suporte@parcelaja.pt')
-                ->setTo('luis.t.miguens@gmail.com')
-                ->setCc('luis.t.miguens@gmail.com')
+                ->setTo('suporte@parcelaja.pt')
+                ->setCc('lmiguens@consolidador.com')
                 ->setBody($message, 'text/html');
 
         
