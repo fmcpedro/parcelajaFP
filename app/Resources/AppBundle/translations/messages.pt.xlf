@@ -1091,6 +1091,101 @@
                 <target>faqs</target>
             </trans-unit>
             
+              
+            
+            <trans-unit id="faqs_title" resname="faqs_title">
+                <source>faqs_title</source>
+                <target>Perguntas frequentes</target>
+            </trans-unit>
+            
+            
+            
+            
+            
+            
+            
+            <trans-unit id="faqs_question_01" resname="faqs_question_01">
+                <source>faqs_question_01</source>
+                <target>Quero parcelar as minhas compras. O que tenho que fazer?</target>
+            </trans-unit>
+            
+              <trans-unit id="faqs_answer_01" resname="faqs_answer_01">
+                <source>faqs_answer_01</source>
+                <target>Para parcelar uma compra, apenas precisa de ter consigo o seu cartão de cidadão e cartão de crédito. O pagamento é efetuado no nosso terminal e é um processo muito simples, rápido e sem qualquer burocracia.</target>
+            </trans-unit>
+            
+            
+            
+            
+                        <trans-unit id="faqs_question_02" resname="faqs_question_02">
+                <source>faqs_question_02</source>
+                <target>Tenho algum custo associado ao utilizar a Parcela Já?</target>
+            </trans-unit>
+            
+              <trans-unit id="faqs_answer_02" resname="faqs_answer_02">
+                <source>faqs_answer_02</source>
+                <target>Ao fazer os seus pagamentos com a Parcela Já, não tem quaisquer custos ou juros associados, com exceção de compras em Agências de Viagens, onde existe um custo de abertura de dossier.</target>
+            </trans-unit>
+            
+ 
+ 
+          <trans-unit id="faqs_question_03" resname="faqs_question_03">
+                <source>faqs_question_03</source>
+                <target> Preciso de ter o valor da compra disponível no meu cartão de crédito?</target>
+            </trans-unit>
+            
+              <trans-unit id="faqs_answer_03" resname="faqs_answer_03">
+                <source>faqs_answer_03</source>
+                <target>Sim. Precisa de ter o valor da compra disponível no seu cartão de crédito. Mas caso não tenha o valor total disponível, pode pagar uma parte do valor através da Parcela Já e o restante num outro modo de pagamento à sua escolha.</target>
+            </trans-unit>
+ 
+ 
+ 
+      <trans-unit id="faqs_question_04" resname="faqs_question_04">
+                <source>faqs_question_04</source>
+                <target>O valor da minha compra fica bloqueado no meu cartão de crédito?</target>
+            </trans-unit>
+            
+              <trans-unit id="faqs_answer_04" resname="faqs_answer_04">
+                <source>faqs_answer_04</source>
+                <target>Sim. O valor que pagar através da Parcela Já fica cativo no seu cartão de crédito, sendo libertado à medida que vai liquidando as respectivas parcelas.</target>
+            </trans-unit>
+ 
+ 
+      <trans-unit id="faqs_question_05" resname="faqs_question_05">
+                <source>faqs_question_05</source>
+                <target>Que tipo de cartões posso utilizar?</target>
+            </trans-unit>
+            
+              <trans-unit id="faqs_answer_05" resname="faqs_answer_05">
+                <source>faqs_answer_05</source>
+                <target>Pode utilizar qualquer cartão de crédito Visa e Martercard.</target>
+            </trans-unit>
+ 
+
+<!-- <trans-unit id="faqs_question_06" resname="faqs_question_06">
+                <source>faqs_question_06</source>
+                <target>Is my card data secure?</target>
+            </trans-unit>
+            
+              <trans-unit id="faqs_answer_06" resname="faqs_answer_06">
+                <source>faqs_answer_06</source>
+                <target>We use the most advanced data protection and security systems. We guarantee that your data is safe. No information will be used for commercial or marketing purposes either.</target>
+            </trans-unit>-->
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             
       
         </body>

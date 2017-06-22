@@ -1,862 +1,772 @@
 <?xml version="1.0" encoding="utf-8"?>
-
- 
-
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+        <header>
+            <tool tool-id="symfony" tool-name="Symfony"/>
+        </header>
+        <body>
+            <trans-unit id="377ad3e3bfc553159260faa3f39aa0aa" resname="process_block_title_01">
+                <source>process_block_title_01</source>
+                <target>NUMBER OF PARCELS</target>
+            </trans-unit>
+            <trans-unit id="2b511073d8afc0162103289d9ab8951b" resname="process_text_01">
+                <source>process_text_01</source>
+                 <target>Using Parcela Já, you can choose to pay your purchase from 2 to 12 times without taxes.</target>
+            </trans-unit>
+            <trans-unit id="d71f019e59b6d0c272ed71ad9acdac24" resname="process_small_text_01">
+                <source>process_small_text_01</source>
+                <target></target>
+            </trans-unit>
+            <trans-unit id="bdd269f8c5e73767fdca16e710a08974" resname="process_block_title_02">
+                <source>process_block_title_02</source>
+                <target>CITIZEN AND CREDIT CARD</target>
+            </trans-unit>
+            <trans-unit id="e470c14e0304b336424592c23baeb08f" resname="process_text_02">
+                <source>process_text_02</source>
+                <target>Now, you just have to introduce your citizen card and your credit card in POS Parcela Já to make your purchase.</target>
+            </trans-unit>
+            <trans-unit id="33a7783d2d74817db733426e9eb8b10e" resname="process_small_text_02">
+                <source>process_small_text_02</source>
+                <target></target>
+            </trans-unit>
 
  
 
-  <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+            <trans-unit id="bab9a636b4d7c2b0e56886774bba13e7" resname="process_block_title_03">
 
  
 
-    <header>
+                <source>process_block_title_03</source>
 
  
 
-      <tool tool-id="symfony" tool-name="Symfony"/>
+                <target>SIGN THE RECEIPT</target>
 
  
 
-    </header>
+            </trans-unit>
 
  
 
-    <body>
+            <trans-unit id="3a4aaebecefa2b663ba697cfdb90282e" resname="process_text_03">
 
  
 
-      <trans-unit id="377ad3e3bfc553159260faa3f39aa0aa" resname="process_block_title_01">
+                <source>process_text_03</source>
 
  
 
-        <source>process_block_title_01</source>
+                <target>To conclude, sign the purchase receipt and keep it with you. Now, enjoy your purchases carefree and with no surprises.</target>
 
  
 
-        <target>NUMBER OF PARCELS</target>
+            </trans-unit>
 
  
 
-      </trans-unit>
+            <trans-unit id="543a015264b301bf189e5f4dd9166843" resname="process_small_text_03">
 
  
 
-      <trans-unit id="2b511073d8afc0162103289d9ab8951b" resname="process_text_01">
+                <source>process_small_text_03</source>
 
  
 
-        <source>process_text_01</source>
+                <target></target>
 
  
 
-        <target>Using Parcela Já, you can choose to pay your purchase from 2 to 12 times without taxes.</target>
+            </trans-unit>
 
  
 
-      </trans-unit>
+            <trans-unit id="bab2b501112640be757c4d47153cba4a" resname="features_block_title_01">
 
  
 
-      <trans-unit id="d71f019e59b6d0c272ed71ad9acdac24" resname="process_small_text_01">
+                <source>features_block_title_01</source>
 
  
 
-        <source>process_small_text_01</source>
+                <target>0% taxes</target>
 
  
 
-        <target></target>
+            </trans-unit>
 
  
 
-      </trans-unit>
+            <trans-unit id="c25c8dae495386cb4340d2e6c741653e" resname="features_block_text_01">
 
  
 
-      <trans-unit id="bdd269f8c5e73767fdca16e710a08974" resname="process_block_title_02">
+                <source>features_block_text_01</source>
 
  
 
-        <source>process_block_title_02</source>
+                <target>Make your shopping in how many times you want with Parcela Já, without tax or other associated costs.</target>
 
  
 
-        <target>CITIZEN AND CREDIT CARD</target>
+            </trans-unit>
 
  
 
-      </trans-unit>
+            <trans-unit id="c34ccfc92afe29529675e5fc5b5642a8" resname="features_block_title_02">
 
  
 
-      <trans-unit id="e470c14e0304b336424592c23baeb08f" resname="process_text_02">
+                <source>features_block_title_02</source>
 
  
 
-        <source>process_text_02</source>
+                <target>ZERO BUREAUCRACY</target>
 
  
 
-        <target>Now, you just have to introduce your citizen card and your credit card in POS Parcela Já to make your purchase.</target>
+            </trans-unit>
 
  
 
-      </trans-unit>
+            <trans-unit id="075ffb580e34fac127a377842bf7dda6" resname="features_block_text_02">
 
  
 
-     <trans-unit id="33a7783d2d74817db733426e9eb8b10e" resname="process_small_text_02">
+                <source>features_block_text_02</source>
 
  
 
-        <source>process_small_text_02</source>
+                <target>To use Parcela Já, you just need your citizen card and credit card. (VISA or Mastercard).</target>
 
  
 
-        <target></target>
+            </trans-unit>
 
  
 
-      </trans-unit>
+            <trans-unit id="b3ce0d2110927bdf50b27c62166d6a3f" resname="features_block_title_03">
 
  
 
-      <trans-unit id="bab9a636b4d7c2b0e56886774bba13e7" resname="process_block_title_03">
+                <source>features_block_title_03</source>
 
  
 
-        <source>process_block_title_03</source>
+                <target>IMMEDIATE APPROVAL</target>
 
  
 
-        <target>SIGN THE RECEIPT</target>
+            </trans-unit>
 
  
 
-      </trans-unit>
+            <trans-unit id="c64769b04fa5e8b4a3719dea329cdc44" resname="features_block_text_03">
 
  
 
-      <trans-unit id="3a4aaebecefa2b663ba697cfdb90282e" resname="process_text_03">
+                <source>features_block_text_03</source>
 
  
 
-        <source>process_text_03</source>
+                <target>The POS Parcela Já approves your purchase immediately. Do not lose unnecessary time and enjoy your purchases.</target>
 
  
 
-        <target>To conclude, sign the purchase receipt and keep it with you. Now, enjoy your purchases carefree and with no surprises.</target>
+            </trans-unit>
 
  
 
-      </trans-unit>
+            <trans-unit id="82ba20974b53bcb23b61c1ffa201faca" resname="features_block_title_04">
 
  
 
-      <trans-unit id="543a015264b301bf189e5f4dd9166843" resname="process_small_text_03">
+                <source>features_block_title_04</source>
 
  
 
-        <source>process_small_text_03</source>
+                <target>MAXIMUM SECURITY</target>
 
  
 
-        <target></target>
+            </trans-unit>
 
  
 
-      </trans-unit>
+            <trans-unit id="a3aab22bcb5d7d8388fd74cd59763785" resname="features_block_text_04">
 
  
 
-      <trans-unit id="bab2b501112640be757c4d47153cba4a" resname="features_block_title_01">
+                <source>features_block_text_04</source>
 
  
 
-        <source>features_block_title_01</source>
+                <target>With Parcela Já, your personal data is safe. We use the most sophisticated mechanisms of privacy and data protection.</target>
 
  
 
-        <target>0% taxes</target>
+            </trans-unit>
 
  
 
-      </trans-unit>
+            <trans-unit id="62e9e1351e99f5b5933a8b001f0cd1ac" resname="cal_for_action_text">
 
  
 
-      <trans-unit id="c25c8dae495386cb4340d2e6c741653e" resname="features_block_text_01">
+                <source>cal_for_action_text</source>
 
  
 
-        <source>features_block_text_01</source>
+                <target>Do you want to be our partner?</target>
 
  
 
-        <target>Make your shopping in how many times you want with Parcela Já, without tax or other associated costs.</target>
+            </trans-unit>
 
  
 
-      </trans-unit>
+            <trans-unit id="9fd226a3e51e44ca6853808abcacdfa4" resname="cal_for_action_button">
 
  
 
-      <trans-unit id="c34ccfc92afe29529675e5fc5b5642a8" resname="features_block_title_02">
+                <source>cal_for_action_button</source>
 
  
 
-        <source>features_block_title_02</source>
+                <target>JOIN NOW!</target>
 
  
 
-        <target>ZERO BUREAUCRACY</target>
+            </trans-unit>
 
  
 
-      </trans-unit>
+            <trans-unit id="0c8c5f440ef456507d7ccdc8434cb0c9" resname="intro_block_title">
 
  
 
-      <trans-unit id="075ffb580e34fac127a377842bf7dda6" resname="features_block_text_02">
+                <source>intro_block_title</source>
 
  
 
-        <source>features_block_text_02</source>
+                <target>Parcela Já</target>
 
  
 
-        <target>To use Parcela Já, you just need your citizen card and credit card. (VISA or Mastercard).</target>
+            </trans-unit>
 
  
 
-      </trans-unit>
+            <trans-unit id="535e59548e0d11eef0ca33fe7c55d76e" resname="intro_title">
 
  
 
-      <trans-unit id="b3ce0d2110927bdf50b27c62166d6a3f" resname="features_block_title_03">
+                <source>intro_title</source>
 
  
 
-        <source>features_block_title_03</source>
+                <target>Buy Now.<![CDATA[<br/>]]>Pay later.</target>
 
  
 
-       <target>IMMEDIATE APPROVAL</target>
+            </trans-unit>
 
  
 
-     </trans-unit>
+            <trans-unit id="c645afce4bfc2a9780b1f6534b9aa234" resname="intro_text">
 
  
 
-      <trans-unit id="c64769b04fa5e8b4a3719dea329cdc44" resname="features_block_text_03">
+                <source>intro_text</source>
 
  
 
-        <source>features_block_text_03</source>
+                <target>The way you shop will gain a new life! With Parcela Já, you can parcel all your purchases on your credit card, from 2 to 12 times, with no taxes! Now, you have the chance of raise your purchasing power at the same time you make a good management of your personal wallet with no worries. Go to a partner shop and parcel in how many times you wish with Parcela Já. You just need to bring with you your citizen and credit card. It is immediate approval and bureaucracy free.</target>
 
  
 
-        <target>The POS Parcela Já approves your purchase immediately. Do not lose unnecessary time and enjoy your purchases.</target>
+            </trans-unit>
 
  
 
-      </trans-unit>
+            <trans-unit id="8935104d88648100bc3c963832ebe24f" resname="intro_small_text">
 
  
 
-      <trans-unit id="82ba20974b53bcb23b61c1ffa201faca" resname="features_block_title_04">
+                <source>intro_small_text</source>
 
  
 
-        <source>features_block_title_04</source>
+                <target></target>
 
  
 
-        <target>MAXIMUM SECURITY</target>
+            </trans-unit>
 
  
 
-      </trans-unit>
+            <trans-unit id="5ad096d8eb5c540f2a2463eb58150235" resname="jumbotron_title_01">
 
  
 
-      <trans-unit id="a3aab22bcb5d7d8388fd74cd59763785" resname="features_block_text_04">
+                <source>jumbotron_title_01</source>
 
  
 
-        <source>features_block_text_04</source>
+                <target>A melhor maneira de parcelar as suas compras. A melhor forma de pagar as suas compras em parcelas.</target>
 
  
 
-        <target>With Parcela Já, your personal data is safe. We use the most sophisticated mechanisms of privacy and data protection.</target>
+            </trans-unit>
 
  
 
-      </trans-unit>
+            <trans-unit id="b4453a5792c3bbba8880425c7f6e5ce2" resname="jumbotron_text_01">
 
  
 
-      <trans-unit id="62e9e1351e99f5b5933a8b001f0cd1ac" resname="cal_for_action_text">
+                <source>jumbotron_text_01</source>
 
  
 
-        <source>cal_for_action_text</source>
+                <target>Pague as suas compras até 12 vezes sem juros. Simples. Seguro. Sem burocracia.</target>
 
  
 
-        <target>Do you want to be our partner?</target>
+            </trans-unit>
 
  
 
-      </trans-unit>
+            <trans-unit id="c5a1b7e21a0b6dea0d52c54d620a3b21" resname="jumbotron_title_02">
 
  
 
-      <trans-unit id="9fd226a3e51e44ca6853808abcacdfa4" resname="cal_for_action_button">
+                <source>jumbotron_title_02</source>
 
  
 
-        <source>cal_for_action_button</source>
+                <target>Fazemos da sua compra parcelada algo incrível</target>
 
  
 
-        <target>JOIN NOW!</target>
+            </trans-unit>
 
  
 
-      </trans-unit>
+            <trans-unit id="0f924929b4196df9a2d85a3b4a381f9a" resname="jumbotron_text_02">
 
  
 
-      <trans-unit id="0c8c5f440ef456507d7ccdc8434cb0c9" resname="intro_block_title">
+                <source>jumbotron_text_02</source>
 
  
 
-        <source>intro_block_title</source>
+                <target>Vai-se surpreender de tão simples que é</target>
 
  
 
-        <target>Parcela Já</target>
+            </trans-unit>
 
  
 
-      </trans-unit>
+            <trans-unit id="7b8614d15c2ab00d7b75853b0d8889a8" resname="testimonials_name_01">
 
  
 
-      <trans-unit id="535e59548e0d11eef0ca33fe7c55d76e" resname="intro_title">
+                <source>testimonials_name_01</source>
 
  
 
-        <source>intro_title</source>
+                <target>__testimonials_name_01</target>
 
  
 
-        <target>Buy Now.<![CDATA[<br/>]]>Pay later.</target>
+            </trans-unit>
 
  
 
-      </trans-unit>
+            <trans-unit id="10ef93a0948fef5dfcd6c955b208c906" resname="testimonials_text_01">
 
  
 
-      <trans-unit id="c645afce4bfc2a9780b1f6534b9aa234" resname="intro_text">
+                <source>testimonials_text_01</source>
 
  
 
-        <source>intro_text</source>
+                <target>__testimonials_text_01</target>
 
  
 
-        <target>The way you shop will gain a new life! With Parcela Já, you can parcel all your purchases on your credit card, from 2 to 12 times, with no taxes! Now, you have the chance of raise your purchasing power at the same time you make a good management of your personal wallet with no worries. Go to a partner shop and parcel in how many times you wish with Parcela Já. You just need to bring with you your citizen and credit card. It is immediate approval and bureaucracy free.</target>
+            </trans-unit>
 
  
 
-      </trans-unit>
+            <trans-unit id="0d14936e0a77fe63b88a0510dc445770" resname="testimonials_position_01">
 
  
 
-      <trans-unit id="8935104d88648100bc3c963832ebe24f" resname="intro_small_text">
+                <source>testimonials_position_01</source>
 
  
 
-        <source>intro_small_text</source>
+                <target>__testimonials_position_01</target>
 
  
 
-        <target></target>
+            </trans-unit>
 
  
 
-      </trans-unit>
+            <trans-unit id="bed8b66ae64f2fc373718c3543c68e3d" resname="testimonials_text_03">
 
  
 
-      <trans-unit id="5ad096d8eb5c540f2a2463eb58150235" resname="jumbotron_title_01">
+                <source>testimonials_text_03</source>
 
  
 
-        <source>jumbotron_title_01</source>
+                <target>__testimonials_text_03</target>
 
  
 
-        <target>A melhor maneira de parcelar as suas compras. A melhor forma de pagar as suas compras em parcelas.</target>
+            </trans-unit>
 
  
 
-      </trans-unit>
+            <trans-unit id="4653ea6af3c83d360e5c7ac25754d1c2" resname="testimonials_position_02">
 
  
 
-      <trans-unit id="b4453a5792c3bbba8880425c7f6e5ce2" resname="jumbotron_text_01">
+                <source>testimonials_position_02</source>
 
  
 
-        <source>jumbotron_text_01</source>
+                <target>__testimonials_position_02</target>
 
  
 
-        <target>Pague as suas compras até 12 vezes sem juros. Simples. Seguro. Sem burocracia.</target>
+            </trans-unit>
 
  
 
-      </trans-unit>
+            <trans-unit id="bcb5872d2bebd2e78e77bda9e9edc23d" resname="testimonials_position_03">
 
  
 
-      <trans-unit id="c5a1b7e21a0b6dea0d52c54d620a3b21" resname="jumbotron_title_02">
+                <source>testimonials_position_03</source>
 
  
 
-        <source>jumbotron_title_02</source>
+                <target>__testimonials_position_03</target>
 
  
 
-        <target>Fazemos da sua compra parcelada algo incrível</target>
+            </trans-unit>
 
  
 
-      </trans-unit>
+            <trans-unit id="cbb043101dff24ea09b80b00469a4a03" resname="contactus_question_title">
 
  
 
-      <trans-unit id="0f924929b4196df9a2d85a3b4a381f9a" resname="jumbotron_text_02">
+                <source>contactus_question_title</source>
 
  
 
-        <source>jumbotron_text_02</source>
+                <target>Parcel Now!</target>
 
  
 
-        <target>Vai-se surpreender de tão simples que é</target>
+            </trans-unit>
 
  
 
-      </trans-unit>
+            <trans-unit id="8799afe725cf1843bce339fd75e5f142" resname="contactus_question_text">
 
  
 
-      <trans-unit id="7b8614d15c2ab00d7b75853b0d8889a8" resname="testimonials_name_01">
+                <source>contactus_question_text</source>
 
  
 
-        <source>testimonials_name_01</source>
+                <target>Do you have any doubt? Suggestions? Please contact us.</target>
 
  
 
-        <target>__testimonials_name_01</target>
+            </trans-unit>
 
  
 
-      </trans-unit>
+            <trans-unit id="0652aae7ef35a1b2a6f5378671ec07f2" resname="contactus_fill_form">
 
  
 
-      <trans-unit id="10ef93a0948fef5dfcd6c955b208c906" resname="testimonials_text_01">
+                <source>contactus_fill_form</source>
 
  
 
-        <source>testimonials_text_01</source>
+                <target>Fill the form</target>
 
  
 
-        <target>__testimonials_text_01</target>
+            </trans-unit>
 
  
 
-      </trans-unit>
+            <trans-unit id="0a7e1aaf3e3f172cc92a6c27fb74291e" resname="contactus_first_name">
 
  
 
-      <trans-unit id="0d14936e0a77fe63b88a0510dc445770" resname="testimonials_position_01">
+                <source>contactus_first_name</source>
 
  
 
-        <source>testimonials_position_01</source>
+                <target>Name</target>
 
  
 
-        <target>__testimonials_position_01</target>
+            </trans-unit>
 
  
 
-      </trans-unit>
+            <trans-unit id="0cd6d2bf496b069d68f27c755be48440" resname="contactus_last_name">
 
  
 
-      <trans-unit id="bed8b66ae64f2fc373718c3543c68e3d" resname="testimonials_text_03">
+                <source>contactus_last_name</source>
 
  
 
-        <source>testimonials_text_03</source>
+                <target>Surname</target>
 
  
 
-        <target>__testimonials_text_03</target>
+            </trans-unit>
 
  
 
-      </trans-unit>
+            <trans-unit id="d85c7c8d6257370a5c244c9a3463b0b2" resname="contactus_email">
 
  
 
-      <trans-unit id="4653ea6af3c83d360e5c7ac25754d1c2" resname="testimonials_position_02">
+                <source>contactus_email</source>
 
  
 
-        <source>testimonials_position_02</source>
+                <target>E-mail</target>
 
  
 
-        <target>__testimonials_position_02</target>
+            </trans-unit>
 
  
 
-      </trans-unit>
+            <trans-unit id="650c1be6ec6ffef2106e7281b62b18cb" resname="contactus_email_placeholder">
 
  
 
-      <trans-unit id="bcb5872d2bebd2e78e77bda9e9edc23d" resname="testimonials_position_03">
+                <source>contactus_email_placeholder</source>
 
  
 
-        <source>testimonials_position_03</source>
+                <target>Write your e-mail</target>
 
  
 
-        <target>__testimonials_position_03</target>
+            </trans-unit>
 
  
 
-      </trans-unit>
+            <trans-unit id="70581fd511332e892e8a172280ced247" resname="contactus_message">
 
  
 
-      <trans-unit id="cbb043101dff24ea09b80b00469a4a03" resname="contactus_question_title">
+                <source>contactus_message</source>
 
  
 
-        <source>contactus_question_title</source>
+                <target>Message</target>
 
  
 
-        <target>Parcel Now!</target>
+            </trans-unit>
 
  
 
-      </trans-unit>
+            <trans-unit id="fd130da5a06632008bf6b47946a2b742" resname="contactus_message_placeholder">
 
  
 
-      <trans-unit id="8799afe725cf1843bce339fd75e5f142" resname="contactus_question_text">
+                <source>contactus_message_placeholder</source>
 
  
 
-        <source>contactus_question_text</source>
+                <target>Leave us your message</target>
 
  
 
-        <target>Do you have any doubt? Suggestions? Please contact us.</target>
+            </trans-unit>
 
  
 
-      </trans-unit>
+            <trans-unit id="ac3b4ca37f8cac2f524bc1c3974fd029" resname="contactus_true_information">
 
  
 
-      <trans-unit id="0652aae7ef35a1b2a6f5378671ec07f2" resname="contactus_fill_form">
+                <source>contactus_true_information</source>
 
  
 
-        <source>contactus_fill_form</source>
+                <target></target>
 
  
 
-        <target>Fill the form</target>
+            </trans-unit>
 
  
 
-      </trans-unit>
+            <trans-unit id="ab4d7c96204ac221b8199faf41a28e51" resname="contactus_submit_button">
 
  
 
-      <trans-unit id="0a7e1aaf3e3f172cc92a6c27fb74291e" resname="contactus_first_name">
+                <source>contactus_submit_button</source>
 
  
 
-        <source>contactus_first_name</source>
+                <target>Send</target>
 
  
 
-        <target>Name</target>
+            </trans-unit>
 
  
 
-      </trans-unit>
+            <trans-unit id="a4a6961f7373e351fd59e6b568109ca1" resname="contactus_title">
 
  
 
-      <trans-unit id="0cd6d2bf496b069d68f27c755be48440" resname="contactus_last_name">
+                <source>contactus_title</source>
 
  
 
-        <source>contactus_last_name</source>
+                <target>Contacts</target>
 
  
 
-        <target>Surname</target>
+            </trans-unit>
 
  
 
-      </trans-unit>
+            <trans-unit id="b06919742f95b9f45a7a92fceac97a3b" resname="contactus_text">
 
  
 
-      <trans-unit id="d85c7c8d6257370a5c244c9a3463b0b2" resname="contactus_email">
+                <source>contactus_text</source>
 
  
 
-        <source>contactus_email</source>
+                <target>Headquarters</target>
 
  
 
-        <target>E-mail</target>
+            </trans-unit>
 
  
 
-      </trans-unit>
+            <trans-unit id="368736a2217f6e27f3118f616e9f98c0" resname="contactus_location_name_01">
 
  
 
-      <trans-unit id="650c1be6ec6ffef2106e7281b62b18cb" resname="contactus_email_placeholder">
+                <source>contactus_location_name_01</source>
 
  
 
-        <source>contactus_email_placeholder</source>
+                <target>Parcela Já</target>
 
  
 
-        <target>Write your e-mail</target>
+            </trans-unit>
 
  
 
-      </trans-unit>
+            <trans-unit id="e0e789149829436a42ea8d4bac7e1e2f" resname="contactus_location_description_01">
 
  
 
-      <trans-unit id="70581fd511332e892e8a172280ced247" resname="contactus_message">
+                <source>contactus_location_description_01</source>
 
  
 
-        <source>contactus_message</source>
+                <target>Av. da República, 48-B, 6º <![CDATA[<br/>]]>1050-195 Lisboa</target>
 
  
 
-        <target>Message</target>
+            </trans-unit>
 
  
 
-      </trans-unit>
+            <trans-unit id="e58734a829c24f928038f91a373a77e2" resname="contactus_enquires_comunications">
 
  
 
-      <trans-unit id="fd130da5a06632008bf6b47946a2b742" resname="contactus_message_placeholder">
+                <source>contactus_enquires_comunications</source>
 
  
 
-        <source>contactus_message_placeholder</source>
+                <target>Linha de apoio</target>
 
  
 
-        <target>Leave us your message</target>
+            </trans-unit>
 
  
 
-      </trans-unit>
+            <trans-unit id="8c4f38b61556af7346dbb1e74d7061ec" resname="contactus_hotline">
 
  
 
-      <trans-unit id="ac3b4ca37f8cac2f524bc1c3974fd029" resname="contactus_true_information">
+                <source>contactus_hotline</source>
 
  
 
-        <source>contactus_true_information</source>
+                <target>Telefone</target>
 
  
 
-        <target></target>
+            </trans-unit>
 
  
 
-      </trans-unit>
+            <trans-unit id="8cf04a9734132302f96da8e113e80ce5" resname="Home">
 
  
 
-      <trans-unit id="ab4d7c96204ac221b8199faf41a28e51" resname="contactus_submit_button">
+                <source>Home</source>
 
  
 
-        <source>contactus_submit_button</source>
+                <target>Home</target>
 
  
 
-        <target>Send</target>
+            </trans-unit>
 
  
 
-      </trans-unit>
+            <trans-unit id="98f770b0af18ca763421bac22b4b6805" resname="Features">
 
  
 
-      <trans-unit id="a4a6961f7373e351fd59e6b568109ca1" resname="contactus_title">
+                <source>Features</source>
 
  
 
-        <source>contactus_title</source>
+                <target>Features</target>
 
  
 
-        <target>Contacts</target>
+            </trans-unit>
 
- 
-
-      </trans-unit>
-
- 
-
-      <trans-unit id="b06919742f95b9f45a7a92fceac97a3b" resname="contactus_text">
-
- 
-
-        <source>contactus_text</source>
-
- 
-
-        <target>Headquarters</target>
-
- 
-
-      </trans-unit>
-
- 
-
-      <trans-unit id="368736a2217f6e27f3118f616e9f98c0" resname="contactus_location_name_01">
-
- 
-
-        <source>contactus_location_name_01</source>
-
- 
-
-        <target>Parcela Já</target>
-
- 
-
-      </trans-unit>
-
- 
-
-      <trans-unit id="e0e789149829436a42ea8d4bac7e1e2f" resname="contactus_location_description_01">
-
- 
-
-        <source>contactus_location_description_01</source>
-
- 
-
-        <target>Av. da República, 48-B, 6º <![CDATA[<br/>]]>1050-195 Lisboa</target>
-
- 
-
-      </trans-unit>
-
- 
-
-      <trans-unit id="e58734a829c24f928038f91a373a77e2" resname="contactus_enquires_comunications">
-
- 
-
-        <source>contactus_enquires_comunications</source>
-
- 
-
-        <target>Linha de apoio</target>
-
- 
-
-      </trans-unit>
-
- 
-
-      <trans-unit id="8c4f38b61556af7346dbb1e74d7061ec" resname="contactus_hotline">
-
- 
-
-        <source>contactus_hotline</source>
-
- 
-
-        <target>Telefone</target>
-
- 
-
-      </trans-unit>
-
- 
-
-      <trans-unit id="8cf04a9734132302f96da8e113e80ce5" resname="Home">
-
- 
-
-        <source>Home</source>
-
- 
-
-        <target>Home</target>
-
- 
-
-      </trans-unit>
-
- 
-
-      <trans-unit id="98f770b0af18ca763421bac22b4b6805" resname="Features">
-
- 
-
-        <source>Features</source>
-
- 
-
-        <target>Features</target>
-
- 
-
-      </trans-unit>
-
- <trans-unit id="b6ec7abeb6ae29cc35a4b47475e12afe" resname="Process">
+            <trans-unit id="b6ec7abeb6ae29cc35a4b47475e12afe" resname="Process">
 
  
 
@@ -870,185 +780,185 @@
 
             </trans-unit>
 
-      <trans-unit id="Faqs_b6ec7abeb6ae29cc35a4b47475e12afe" resname="Faqs">
+            <trans-unit id="Faqs_b6ec7abeb6ae29cc35a4b47475e12afe" resname="Faqs">
 
  
 
-        <source>Faqs</source>
+                <source>Faqs</source>
 
  
 
-        <target>Faqs</target>
+                <target>Faqs</target>
 
  
 
-      </trans-unit>
+            </trans-unit>
 
  
 
-      <trans-unit id="13ea583f6474cdce6c0c9b289b652ffe" resname="Testimonials">
+            <trans-unit id="13ea583f6474cdce6c0c9b289b652ffe" resname="Testimonials">
 
  
 
-        <source>Testimonials</source>
+                <source>Testimonials</source>
 
  
 
-        <target>Testemunhos</target>
+                <target>Testemunhos</target>
 
  
 
-      </trans-unit>
+            </trans-unit>
 
  
 
-      <trans-unit id="d4f859a96c13f551a2771b7fc3a78d38" resname="Portfolio">
+            <trans-unit id="d4f859a96c13f551a2771b7fc3a78d38" resname="Portfolio">
 
  
 
-        <source>Portfolio</source>
+                <source>Portfolio</source>
 
  
 
-        <target>Partners</target>
+                <target>Partners</target>
 
  
 
-      </trans-unit>
+            </trans-unit>
 
  
 
-      <trans-unit id="02d4482d332e1aef3437cd61c9bcc624" resname="Contact us">
+            <trans-unit id="02d4482d332e1aef3437cd61c9bcc624" resname="Contact us">
 
  
 
-        <source>Contact us</source>
+                <source>Contact us</source>
 
  
 
-        <target>Contacts</target>
+                <target>Contacts</target>
 
  
 
-      </trans-unit>
+            </trans-unit>
 
  
 
-      <trans-unit id="d9776f0775997b2e698c6975420b5c5d" resname="Sign up">
+            <trans-unit id="d9776f0775997b2e698c6975420b5c5d" resname="Sign up">
 
  
 
-        <source>Sign up</source>
+                <source>Sign up</source>
 
  
 
-        <target>Registar</target>
+                <target>Registar</target>
 
  
 
-      </trans-unit>
+            </trans-unit>
 
  
 
-      <trans-unit id="99dea78007133396a7b8ed70578ac6ae" resname="Login">
+            <trans-unit id="99dea78007133396a7b8ed70578ac6ae" resname="Login">
 
  
 
-        <source>Login</source>
+                <source>Login</source>
 
  
 
-        <target>Entrar</target>
+                <target>Entrar</target>
 
  
 
-      </trans-unit>
+            </trans-unit>
 
  
 
-      <trans-unit id="9e3c0c09e762263f05f1e58992384c3f" resname="costumers_block_title">
+            <trans-unit id="9e3c0c09e762263f05f1e58992384c3f" resname="costumers_block_title">
 
  
 
-        <source>costumers_block_title</source>
+                <source>costumers_block_title</source>
 
  
 
-        <target>__costumers_block_title</target>
+                <target>__costumers_block_title</target>
 
  
 
-      </trans-unit>
+            </trans-unit>
 
  
 
-      <trans-unit id="4c4dd7e952f6b5b3c9c77acecdae2818" resname="costumers_title">
+            <trans-unit id="4c4dd7e952f6b5b3c9c77acecdae2818" resname="costumers_title">
 
  
 
-        <source>costumers_title</source>
+                <source>costumers_title</source>
 
  
 
-        <target>__costumers_title</target>
+                <target>__costumers_title</target>
 
  
 
-      </trans-unit>
+            </trans-unit>
 
  
 
-      <trans-unit id="f53bc170417f89413d24adbecc7b9b7b" resname="portfolio_block_title_01">
+            <trans-unit id="f53bc170417f89413d24adbecc7b9b7b" resname="portfolio_block_title_01">
 
  
 
-        <source>portfolio_block_title_01</source>
+                <source>portfolio_block_title_01</source>
 
  
 
-        <target></target>
+                <target></target>
 
  
 
-      </trans-unit>
+            </trans-unit>
 
  
 
-      <trans-unit id="c64cd63798a5c26d5436e9ce6108f507" resname="portfolio_text_01">
+            <trans-unit id="c64cd63798a5c26d5436e9ce6108f507" resname="portfolio_text_01">
 
  
 
-        <source>portfolio_text_01</source>
+                <source>portfolio_text_01</source>
 
  
 
-        <target></target>
+                <target></target>
 
  
 
-      </trans-unit>
+            </trans-unit>
 
  
 
-      <trans-unit id="8e8576815b91525a235c3806903e08ea" resname="portfolio_block_title_02">
+            <trans-unit id="8e8576815b91525a235c3806903e08ea" resname="portfolio_block_title_02">
 
  
 
-        <source>portfolio_block_title_02</source>
+                <source>portfolio_block_title_02</source>
 
  
 
-        <target>Os nossos parceiros</target>
+                <target>Os nossos parceiros</target>
 
  
 
-      </trans-unit>
+            </trans-unit>
 
  
 
     
       
-       <trans-unit id="cf0fd57948dbc2ba51da0d1bacd5237e" resname="portfolio_title_01">
+            <trans-unit id="cf0fd57948dbc2ba51da0d1bacd5237e" resname="portfolio_title_01">
                 <source>portfolio_title_01</source>
                 <target></target>
             </trans-unit>
@@ -1080,13 +990,91 @@
             </trans-unit>
             
             
+            
+            
+            
+              <trans-unit id="faqs_title" resname="faqs_title">
+                <source>faqs_title</source>
+                <target>Frequently asked questions</target>
+            </trans-unit>
+            
+            
+            
+            <trans-unit id="faqs_question_01" resname="faqs_question_01">
+                <source>faqs_question_01</source>
+                <target>I want to parcel my purchases. What I have to do?</target>
+            </trans-unit>
+            
+              <trans-unit id="faqs_answer_01" resname="faqs_answer_01">
+                <source>faqs_answer_01</source>
+                <target>To parcel a purchase, you just need to have a citizen card and a credit card. The process is made in our POS and it's simple, fast and with no bureaucracy associated.</target>
+            </trans-unit>
+            
+            
+            
+            
+                        <trans-unit id="faqs_question_02" resname="faqs_question_02">
+                <source>faqs_question_02</source>
+                <target>Do I have any cost using Parcela Já?</target>
+            </trans-unit>
+            
+              <trans-unit id="faqs_answer_02" resname="faqs_answer_02">
+                <source>faqs_answer_02</source>
+                <target>You do not have any associated costs or interest using Parcela Já, except for purchases at Travel Agencies, where there is a cost of to open the process.</target>
+            </trans-unit>
+            
+ 
+ 
+          <trans-unit id="faqs_question_03" resname="faqs_question_03">
+                <source>faqs_question_03</source>
+                <target>Do I need to have the purchase value available on my credit card?</target>
+            </trans-unit>
+            
+              <trans-unit id="faqs_answer_03" resname="faqs_answer_03">
+                <source>faqs_answer_03</source>
+                <target>Yes. You need to have the purchase amount available on your credit card. But if you do not have the total amount, you can pay part of the amount through Parcela Já and the rest in another payment mode of your choice.</target>
+            </trans-unit>
+ 
+ 
+ 
+      <trans-unit id="faqs_question_04" resname="faqs_question_04">
+                <source>faqs_question_04</source>
+                <target>Is the amount of my purchase blocked on my credit card?</target>
+            </trans-unit>
+            
+              <trans-unit id="faqs_answer_04" resname="faqs_answer_04">
+                <source>faqs_answer_04</source>
+                <target>Yes. The amount you pay through Parcela Já is captive on your credit card, being released as you settle the respective installments.</target>
+            </trans-unit>
+ 
+ 
+      <trans-unit id="faqs_question_05" resname="faqs_question_05">
+                <source>faqs_question_05</source>
+                <target>What kind of cards can I use?</target>
+            </trans-unit>
+            
+              <trans-unit id="faqs_answer_05" resname="faqs_answer_05">
+                <source>faqs_answer_05</source>
+                <target>You can use any Visa and Mastercard credit card except for companies credit cards. </target>
+            </trans-unit>
  
 
-    </body>
+<!-- <trans-unit id="faqs_question_06" resname="faqs_question_06">
+                <source>faqs_question_06</source>
+                <target>Is my card data secure?</target>
+            </trans-unit>
+            
+              <trans-unit id="faqs_answer_06" resname="faqs_answer_06">
+                <source>faqs_answer_06</source>
+                <target>We use the most advanced data protection and security systems. We guarantee that your data is safe. No information will be used for commercial or marketing purposes either.</target>
+            </trans-unit>-->
+
+
+        </body>
 
  
 
-  </file>
+    </file>
 
  
 

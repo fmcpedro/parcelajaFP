@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-sm-8 col-sm-offset-2">
                 {#<h6 class="block-title m-b-0">FAQ's</h6>#}
-                <h2 class="m-t-5 light">Perguntas Frequentes</h2>
+                <h2 class="m-t-5 light">{% trans %}faqs_title{% endtrans %}</h2>
             </div>
         </div>
     </div>
@@ -19,15 +19,13 @@
                 <div class="panel-heading" role="tab" id="headingTwo">
                     <h4 class="panel-title">
                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Quero parcelar as minhas compras. O que tenho que fazer?
-                            
+                            {% trans %}faqs_question_01{% endtrans %}
                         </a>
                     </h4>
                 </div>
                 <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                     <div class="panel-body">
-                        
-                        Para parcelar uma compra, apenas precisa de ter consigo o seu cartão de cidadão e cartão de crédito. O pagamento é efetuado no nosso terminal e é um processo muito simples, rápido e sem qualquer burocracia.
+                            {% trans %}faqs_answer_01{% endtrans %}
                     </div>
                 </div>
             </div>
@@ -35,13 +33,13 @@
                 <div class="panel-heading" role="tab" id="headingThree">
                     <h4 class="panel-title">
                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Preciso de ter o valor da compra disponível no meu cartão de crédito?
+                            {% trans %}faqs_question_02{% endtrans %}
                         </a>
                     </h4>
                 </div>
                 <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                     <div class="panel-body">
-                        Sim. Precisa de ter o valor da compra disponível no seu cartão de crédito. Mas caso não tenha o valor total disponível, pode pagar uma parte do valor através da Parcela Já e o restante num outro modo de pagamento à sua escolha.
+                        {% trans %}faqs_answer_02{% endtrans %}
                     </div>
                 </div>
             </div>
@@ -49,13 +47,13 @@
                 <div class="panel-heading" role="tab" id="headingFour">
                     <h4 class="panel-title">
                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                            O valor da minha compra fica bloqueado no meu cartão de crédito?
+                            {% trans %}faqs_question_03{% endtrans %}
                         </a>
                     </h4>
                 </div>
                 <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
                     <div class="panel-body">
-                        Sim. O valor que pagar através da Parcela Já fica cativo no seu cartão de crédito, sendo libertado à medida que vai liquidando as respectivas parcelas.
+                        {% trans %}faqs_answer_03{% endtrans %}
                     </div>
                 </div>
             </div>
@@ -63,13 +61,13 @@
                 <div class="panel-heading" role="tab" id="headingSix">
                     <h4 class="panel-title">
                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                            Que tipo de cartões posso utilizar?
+                            {% trans %}faqs_question_04{% endtrans %}
                         </a>
                     </h4>
                 </div>
                 <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
                     <div class="panel-body">
-                        Pode utilizar qualquer cartão de crédito Visa e Martercard.
+                        {% trans %}faqs_answer_04{% endtrans %}
                     </div>
                 </div>
             </div>
@@ -77,13 +75,13 @@
                 <div class="panel-heading" role="tab" id="headingOne">
                     <h4 class="panel-title">
                         <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Tenho algum custo associado ao utilizar a Parcela Já?
+                            {% trans %}faqs_question_05{% endtrans %}
                         </a>
                     </h4>
                 </div>
                 <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                     <div class="panel-body">
-                        Ao fazer os seus pagamentos com a Parcela Já, não tem quaisquer custos ou juros associados, com exceção de compras em Agências de Viagens, onde existe um custo de abertura de dossier.
+                        {% trans %}faqs_answer_05{% endtrans %}
                     </div>
                 </div>
             </div>
