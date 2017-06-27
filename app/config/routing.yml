@@ -2,6 +2,11 @@
 #    resource: '@AppBundle/Controller/'
 #    type: annotation
 
+backend:
+    resource: "@AppBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
 homepage:
     path:      /{_locale}
     defaults:  { _controller: AppBundle:Default:index, _locale: pt }

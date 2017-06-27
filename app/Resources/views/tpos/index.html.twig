@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Tpos list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Fserial</th>
+                <th>Fstate</th>
+                <th>Fsoftversion</th>
+                <th>Fposid</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tpo in tpos %}
+            <tr>
+                <td><a href="{{ path('admin_tpos_show', { 'fposid': tpo.fposid }) }}">{{ tpo.fserial }}</a></td>
+                <td>{% if tpo.fstate %}Yes{% else %}No{% endif %}</td>
+                <td>{{ tpo.fsoftversion }}</td>
+                <td>{{ tpo.fposid }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_tpos_show', { 'fposid': tpo.fposid }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_tpos_edit', { 'fposid': tpo.fposid }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_tpos_new') }}">Create a new tpo</a>
+        </li>
+    </ul>
+{% endblock %}

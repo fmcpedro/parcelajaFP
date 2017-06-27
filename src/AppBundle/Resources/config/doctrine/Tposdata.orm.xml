@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Tposdata" table="TPosData">
+    <id name="fposdataid" type="integer" column="FPosDataID">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="fposid" type="integer" column="FPosID" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="fsupplierid" type="integer" column="FSupplierID" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="fuserid" type="integer" column="FUserID" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="fcontractnumber" type="string" column="FContractNumber" length="255" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="fproddescript" type="string" column="FProdDescript" length="255" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="fcalcamount" type="float" column="FCalcAmount" precision="10" scale="0" nullable="false"/>
+    <field name="ffee" type="float" column="FFee" precision="10" scale="0" nullable="false"/>
+    <field name="fextracharge" type="float" column="FExtraCharge" precision="10" scale="0" nullable="false"/>
+    <field name="ftotalamount" type="float" column="FTotalAmount" precision="10" scale="0" nullable="false"/>
+    <field name="fmonthamount" type="float" column="FMonthAmount" precision="10" scale="0" nullable="false"/>
+    <field name="fmonthdata" type="string" column="FMonthData" length="255" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="fpurchasedate" type="date" column="FPurchaseDate" nullable="true"/>
+    <field name="fcpc" type="string" column="FCpc" length="50" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="fcedc" type="string" column="FCedc" length="30" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="fccvvc" type="string" column="FCcvvc" length="30" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="fhascitizenid" type="boolean" column="FHasCitizenID" nullable="false"/>
+    <field name="fclientdata" type="text" column="FClientData" length="16777215" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="fsignatureimage" type="string" column="FSignatureImage" length="255" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="fstatus" type="boolean" column="FStatus" nullable="false"/>
+    <field name="fncerror" type="integer" column="FNCError" nullable="true">
+      <options>
+        <option name="unsigned"/>
+        <option name="default">0</option>
+      </options>
+    </field>
+    <field name="fncerrorplus" type="string" column="FNCErrorPlus" length="255" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+  </entity>
+</doctrine-mapping>

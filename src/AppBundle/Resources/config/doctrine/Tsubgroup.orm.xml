@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Tsubgroup" table="TSubgroup">
+    <id name="fsubgroupid" type="integer" column="FSubgroupID">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="fgroupid" type="integer" column="FGroupID" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="fsubgroupname" type="string" column="FSubgroupName" length="100" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="fstate" type="boolean" column="FState" nullable="false"/>
+  </entity>
+</doctrine-mapping>

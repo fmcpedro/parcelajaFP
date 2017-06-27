@@ -1,0 +1,4 @@
+app_admin_tpos:
+    resource: "@AppBundle/Resources/config/routing/tpos.yml"
+    prefix:   /admin_tpos
+

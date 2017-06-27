@@ -5,8 +5,21 @@
         <div class="container relative">
             <div class="pull-left">
                 <div class="header-inner">
-                    <img src="{{ asset('bundles/app/assets/images/logo_black.png') }}" class="logo" width="330" height="43" data-src-retina="{{ asset('bundles/app/assets/images/logo_black.png') }}" alt="">
-                    <img src="{{ asset('bundles/app/assets/images/logo_black.png') }}" class="alt" width="330" height="43" data-src-retina="{{ asset('bundles/app/assets/images/logo_black.png') }}" alt="">
+                    
+                    
+                    {% if app.request.locale == "en" %}
+                    <img src="{{ asset('bundles/app/assets/images/logo_black_en.png') }}" class="logo" width="330" height="43" data-src-retina="{{ asset('bundles/app/assets/images/logo_black_en.png') }}" alt="">
+                    <img src="{{ asset('bundles/app/assets/images/logo_black_en.png') }}" class="alt" width="330" height="43" data-src-retina="{{ asset('bundles/app/assets/images/logo_black_en.png') }}" alt="">
+                    
+                    {% else %}
+                        <img src="{{ asset('bundles/app/assets/images/logo_black_pt.png') }}" class="logo" width="330" height="43" data-src-retina="{{ asset('bundles/app/assets/images/logo_black_pt.png') }}" alt="">
+                    <img src="{{ asset('bundles/app/assets/images/logo_black_pt.png') }}" class="alt" width="330" height="43" data-src-retina="{{ asset('bundles/app/assets/images/logo_black_pt.png') }}" alt="">
+                    
+                    {% endif %}
+                    
+                    
+                    
+                    
                     {#<img src="{{ asset('bundles/app/assets/images/logo_white.png') }}" class="alt" width="152" height="21" data-src-retina="{{ asset('bundles/app/assets/images/logo_white_2x.png') }}" alt="">#}
                 </div>
             </div>

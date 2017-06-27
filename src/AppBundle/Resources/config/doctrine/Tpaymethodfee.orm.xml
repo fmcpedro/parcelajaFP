@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Tpaymethodfee" table="TPayMethodFee">
+    <id name="fpaymfeeid" type="integer" column="FPayMFeeID">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="fpaymethodid" type="integer" column="FPayMethodID" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="fstartvalue" type="float" column="FStartValue" precision="10" scale="0" nullable="false"/>
+    <field name="fendvalue" type="float" column="FEndValue" precision="10" scale="0" nullable="false"/>
+    <field name="ffee" type="float" column="FFee" precision="10" scale="0" nullable="false"/>
+    <field name="ffixedaddcharge" type="float" column="FFixedAddCharge" precision="10" scale="0" nullable="false"/>
+    <field name="ffee2" type="float" column="FFee2" precision="10" scale="0" nullable="true">
+      <options>
+        <option name="default">0</option>
+      </options>
+    </field>
+    <field name="ffixedaddcharge2" type="float" column="FFixedAddCharge2" precision="10" scale="0" nullable="true">
+      <options>
+        <option name="default">0</option>
+      </options>
+    </field>
+    <field name="ffee3" type="float" column="FFee3" precision="10" scale="0" nullable="true">
+      <options>
+        <option name="default">0</option>
+      </options>
+    </field>
+    <field name="ffixedaddcharge3" type="float" column="FFixedAddCharge3" precision="10" scale="0" nullable="true">
+      <options>
+        <option name="default">0</option>
+      </options>
+    </field>
+    <field name="fgroupid" type="integer" column="FGroupID" nullable="true">
+      <options>
+        <option name="unsigned"/>
+        <option name="default">0</option>
+      </options>
+    </field>
+    <field name="fagencyid" type="integer" column="FAgencyID" nullable="true">
+      <options>
+        <option name="unsigned"/>
+        <option name="default">0</option>
+      </options>
+    </field>
+  </entity>
+</doctrine-mapping>

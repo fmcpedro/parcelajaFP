@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Tsupplier" table="TSupplier">
+    <unique-constraints>
+      <unique-constraint name="FSupplierName" columns="FSupplierName"/>
+    </unique-constraints>
+    <id name="fsupplierid" type="integer" column="FSupplierID">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="fcategoryid" type="integer" column="FCategoryID" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="fsuppliername" type="string" column="FSupplierName" length="100" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="ffiscalname" type="string" column="FFiscalName" length="100" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="ftaxidnumber" type="string" column="FTaxIdNumber" length="20" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="faddress" type="string" column="FAddress" length="255" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="fpostalcode1" type="string" column="FPostalCode1" length="10" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="fpostalcode2" type="string" column="FPostalCode2" length="10" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="flocation" type="string" column="FLocation" length="100" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="femail1" type="string" column="FEmail1" length="100" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="femail2" type="string" column="FEmail2" length="100" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="fcontactperson" type="string" column="FContactPerson" length="100" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="ftelephone" type="string" column="FTelephone" length="20" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="fmobilephone" type="string" column="FMobilePhone" length="20" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="fwebsite" type="string" column="FWebSite" length="255" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="fiban" type="string" column="FIBAN" length="34" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="fbicswift" type="string" column="FBICSWIFT" length="11" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="frnavt" type="string" column="FRNAVT" length="4" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="flogo" type="string" column="FLogo" length="100" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="fclientfields" type="string" column="FClientFields" length="255" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="fclientnoidfields" type="string" column="FClientNoIdFields" length="255" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="fpaymethodid" type="string" column="FPayMethodID" length="255" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="fstate" type="boolean" column="FState" nullable="false"/>
+    <field name="fmarkup" type="boolean" column="FMarkUp" nullable="true">
+      <options>
+        <option name="default">0</option>
+      </options>
+    </field>
+    <field name="fpaymethodtype" type="boolean" column="FPayMethodType" nullable="true">
+      <options>
+        <option name="default">0</option>
+      </options>
+    </field>
+  </entity>
+</doctrine-mapping>

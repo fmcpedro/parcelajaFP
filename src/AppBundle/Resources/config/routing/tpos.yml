@@ -1,0 +1,24 @@
+admin_tpos_index:
+    path:     /
+    defaults: { _controller: "AppBundle:Tpos:index" }
+    methods:  GET
+
+admin_tpos_show:
+    path:     /{fposid}/show
+    defaults: { _controller: "AppBundle:Tpos:show" }
+    methods:  GET
+
+admin_tpos_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Tpos:new" }
+    methods:  [GET, POST]
+
+admin_tpos_edit:
+    path:     /{fposid}/edit
+    defaults: { _controller: "AppBundle:Tpos:edit" }
+    methods:  [GET, POST]
+
+admin_tpos_delete:
+    path:     /{fposid}/delete
+    defaults: { _controller: "AppBundle:Tpos:delete" }
+    methods:  DELETE

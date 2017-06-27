@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Tpo</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Fserial</th>
+                <td>{{ tpo.fserial }}</td>
+            </tr>
+            <tr>
+                <th>Fstate</th>
+                <td>{% if tpo.fstate %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Fsoftversion</th>
+                <td>{{ tpo.fsoftversion }}</td>
+            </tr>
+            <tr>
+                <th>Fposid</th>
+                <td>{{ tpo.fposid }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_tpos_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('admin_tpos_edit', { 'fposid': tpo.fposid }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

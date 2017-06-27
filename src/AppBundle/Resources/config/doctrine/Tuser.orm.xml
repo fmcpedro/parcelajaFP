@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Tuser" table="TUser">
+    <unique-constraints>
+      <unique-constraint name="FLogin" columns="FLogin"/>
+    </unique-constraints>
+    <id name="fuserid" type="integer" column="FUserID">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="fname" type="string" column="FName" length="100" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="flogin" type="string" column="FLogin" length="100" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="fpwd" type="string" column="FPwd" length="255" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="ftype" type="boolean" column="FType" nullable="false"/>
+    <field name="fagencyid" type="integer" column="FAgencyID" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="fstate" type="boolean" column="FState" nullable="false"/>
+    <field name="fsession" type="string" column="FSession" length="40" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="ftimestamp" type="float" column="FTimestamp" precision="10" scale="0" nullable="false"/>
+    <field name="ftmpdata" type="text" column="FTmpData" length="65535" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+  </entity>
+</doctrine-mapping>

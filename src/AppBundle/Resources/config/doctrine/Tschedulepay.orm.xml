@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Tschedulepay" table="TSchedulePay">
+    <id name="fpurchaseid" type="integer" column="FPurchaseID">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="frefcontractnum" type="string" column="FRefContractNum" length="255" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="flastpayid" type="string" column="FLastPayID" length="255" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="fcpc" type="string" column="FCpc" length="50" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="fcedc" type="string" column="FCedc" length="30" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="fccvvc" type="string" column="FCcvvc" length="30" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="ffase" type="boolean" column="FFase" nullable="false"/>
+    <field name="fnumpayleft" type="boolean" column="FNumPayLeft" nullable="false"/>
+    <field name="frenewdate" type="date" column="FRenewDate" nullable="false"/>
+    <field name="ftries" type="boolean" column="FTries" nullable="false"/>
+    <field name="fvalpreauth" type="float" column="FValPreAuth" precision="10" scale="0" nullable="false"/>
+    <field name="freqstatus" type="boolean" column="FReqStatus" nullable="true"/>
+    <field name="fncstatus" type="boolean" column="FNCStatus" nullable="true"/>
+    <field name="fncerror" type="integer" column="FNCError" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="fncerrorplus" type="string" column="FNCErrorPlus" length="255" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="fpayerror" type="boolean" column="FPayError" nullable="false"/>
+  </entity>
+</doctrine-mapping>
