@@ -10,20 +10,54 @@ use Symfony\Component\HttpFoundation\Request;
  * Tpo controller.
  *
  */
-class TposController extends Controller
-{
+class TposController extends Controller {
+
     /**
      * Lists all tpo entities.
      *
      */
-    public function indexAction()
-    {
+    public function indexAction(Request $request) {
         $em = $this->getDoctrine()->getManager();
 
-        $tpos = $em->getRepository('AppBundle:Tpos')->findAll();
+        $tpo = new Tpos();
+        $searchForm = $this->createForm('AppBundle\Form\TposSearchType', $tpo);
+        $searchForm->handleRequest($request);
+
+
+        if ($searchForm->isSubmitted()) {
+
+
+            $fserial = $searchForm["fserial"]->getData();
+            $fstate = $searchForm["fstate"]->getData();
+            $fsoftversion = $searchForm["fsoftversion"]->getData();
+            $fagency = $searchForm["fagency"]->getData();
+
+            $search = array();
+            if (!empty($fserial)) {
+                $search['fserial'] = $fserial;
+            }
+            //if (!empty($fstate)) {$search['fstate']=$fstate;}
+            $search['fstate'] = $fstate;
+            if (!empty($fsoftversion)) {
+                $search['fsoftversion'] = $fsoftversion;
+            }
+            if (!empty($fagency)) {
+                $search['fagency'] = $fagency;
+            }
+
+
+            $tpos_list = $em->getRepository('AppBundle:Tpos')->findBy($search);
+
+
+            //$search = array('fserial' => $fserial, 'fstate' => $fstate, 'fsoftversion' => $fsoftversion, 'fagencyid' => $fagencyid);
+        } else {
+            $tpos_list = $em->getRepository('AppBundle:Tpos')->findAll();
+        }
+
 
         return $this->render('tpos/index.html.twig', array(
-            'tpos' => $tpos,
+                    'search_form' => $searchForm->createView(),
+                    'tpos' => $tpos_list,
         ));
     }
 
@@ -31,9 +65,8 @@ class TposController extends Controller
      * Creates a new tpo entity.
      *
      */
-    public function newAction(Request $request)
-    {
-        $tpo = new Tpo();
+    public function newAction(Request $request) {
+        $tpo = new Tpos();
         $form = $this->createForm('AppBundle\Form\TposType', $tpo);
         $form->handleRequest($request);
 
@@ -42,12 +75,19 @@ class TposController extends Controller
             $em->persist($tpo);
             $em->flush();
 
-            return $this->redirectToRoute('admin_tpos_show', array('fposid' => $tpo->getFposid()));
+
+            $this->get('session')->getFlashBag()->add(
+                    'notice', 'Terminal Registado!'
+            );
+
+
+            //return $this->redirectToRoute('admin_tpos_show', array('fposid' => $tpo->getFposid()));
+            return $this->redirectToRoute('admin_tpos_edit', array('fposid' => $tpo->getFposid()));
         }
 
         return $this->render('tpos/new.html.twig', array(
-            'tpo' => $tpo,
-            'form' => $form->createView(),
+                    'tpo' => $tpo,
+                    'form' => $form->createView(),
         ));
     }
 
@@ -55,13 +95,12 @@ class TposController extends Controller
      * Finds and displays a tpo entity.
      *
      */
-    public function showAction(Tpos $tpo)
-    {
+    public function showAction(Tpos $tpo) {
         $deleteForm = $this->createDeleteForm($tpo);
 
         return $this->render('tpos/show.html.twig', array(
-            'tpo' => $tpo,
-            'delete_form' => $deleteForm->createView(),
+                    'tpo' => $tpo,
+                    'delete_form' => $deleteForm->createView(),
         ));
     }
 
@@ -69,8 +108,7 @@ class TposController extends Controller
      * Displays a form to edit an existing tpo entity.
      *
      */
-    public function editAction(Request $request, Tpos $tpo)
-    {
+    public function editAction(Request $request, Tpos $tpo) {
         $deleteForm = $this->createDeleteForm($tpo);
         $editForm = $this->createForm('AppBundle\Form\TposType', $tpo);
         $editForm->handleRequest($request);
@@ -78,13 +116,18 @@ class TposController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
+
+            $this->get('session')->getFlashBag()->add(
+                    'notice', 'Terminal Actualizado!'
+            );
+
             return $this->redirectToRoute('admin_tpos_edit', array('fposid' => $tpo->getFposid()));
         }
 
         return $this->render('tpos/edit.html.twig', array(
-            'tpo' => $tpo,
-            'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+                    'tpo' => $tpo,
+                    'edit_form' => $editForm->createView(),
+                    'delete_form' => $deleteForm->createView(),
         ));
     }
 
@@ -92,8 +135,7 @@ class TposController extends Controller
      * Deletes a tpo entity.
      *
      */
-    public function deleteAction(Request $request, Tpos $tpo)
-    {
+    public function deleteAction(Request $request, Tpos $tpo) {
         $form = $this->createDeleteForm($tpo);
         $form->handleRequest($request);
 
@@ -113,12 +155,12 @@ class TposController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(Tpos $tpo)
-    {
+    private function createDeleteForm(Tpos $tpo) {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('admin_tpos_delete', array('fposid' => $tpo->getFposid())))
-            ->setMethod('DELETE')
-            ->getForm()
+                        ->setAction($this->generateUrl('admin_tpos_delete', array('fposid' => $tpo->getFposid())))
+                        ->setMethod('DELETE')
+                        ->getForm()
         ;
     }
+
 }

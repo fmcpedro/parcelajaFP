@@ -1,0 +1,24 @@
+admin_terminal_payment_index:
+    path:     /
+    defaults: { _controller: "AppBundle:TerminalPayment:index" }
+    methods:  [GET, POST]
+
+admin_terminal_payment_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:TerminalPayment:show" }
+    methods:  GET
+
+admin_terminal_payment_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:TerminalPayment:new" }
+    methods:  [GET, POST]
+
+admin_terminal_payment_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:TerminalPayment:edit" }
+    methods:  [GET, POST]
+
+admin_terminal_payment_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:TerminalPayment:delete" }
+    methods:  DELETE

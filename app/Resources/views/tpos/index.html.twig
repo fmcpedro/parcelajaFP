@@ -1,43 +1,172 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Tpos list</h1>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Fserial</th>
-                <th>Fstate</th>
-                <th>Fsoftversion</th>
-                <th>Fposid</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for tpo in tpos %}
-            <tr>
-                <td><a href="{{ path('admin_tpos_show', { 'fposid': tpo.fposid }) }}">{{ tpo.fserial }}</a></td>
-                <td>{% if tpo.fstate %}Yes{% else %}No{% endif %}</td>
-                <td>{{ tpo.fsoftversion }}</td>
-                <td>{{ tpo.fposid }}</td>
-                <td>
-                    <ul>
+    <!-- START PAGE CONTENT -->
+    <div class="content">
+        <!-- START JUMBOTRON -->
+        <div class="jumbotron" data-pages="parallax">
+            <div class="container-fluid container-fixed-lg sm-p-l-20 sm-p-r-20">
+                <div class="inner">
+                    <!-- START BREADCRUMB -->
+                    <ul class="breadcrumb">
                         <li>
-                            <a href="{{ path('admin_tpos_show', { 'fposid': tpo.fposid }) }}">show</a>
+                            <p>Parcela Ja</p>
                         </li>
-                        <li>
-                            <a href="{{ path('admin_tpos_edit', { 'fposid': tpo.fposid }) }}">edit</a>
+                        <li><a href="#" class="active">Terminais Instalados</a>
                         </li>
                     </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+                    <!-- END BREADCRUMB -->
+                </div>
+            </div>
+        </div>
+        <!-- END JUMBOTRON -->
 
-    <ul>
-        <li>
-            <a href="{{ path('admin_tpos_new') }}">Create a new tpo</a>
-        </li>
-    </ul>
+
+
+        <!-- START CONTAINER FLUID -->
+        <div class="container-fluid container-fixed-lg">
+            <!-- START PANEL -->
+            <div class="panel panel-transparent">
+                <div class="panel-heading">
+                    <div class="panel-title">Filtro de Terminais </div>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-10">
+                            {#<h3>form_title</h3>#}
+                            <p>Preencha os campos abaixo pelos quais quer filtrar os terminais</p>
+
+                            {{ form_start(search_form, {'attr': {'class': 'form-horizontal'}}) }} 
+                            <div class="form-group">
+                                <label for="fserial" class="col-sm-3 control-label">fserial</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(search_form.fserial, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">fstate</label>
+
+                                <div class="col-sm-9">
+                                    <div class="radio radio-success">
+                                        {{ form_widget(search_form.fstate) }}
+                                    </div>                                    
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="fsoftversion" class="col-sm-3 control-label">fsoftversion</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(search_form.fsoftversion, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="fagency" class="col-sm-3 control-label">fagency</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(search_form.fagency, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div>
+
+                            <br>
+
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    {#<p>I hereby certify that the information above is true and accurate. </p>#}
+                                </div>
+                                <div class="col-sm-9">
+
+
+
+                                    <button class="btn btn-success btn-cons m-b-10" type="submit">
+                                        <i class="fa fa-filter"></i> <span class="bold">Filter</span>
+                                    </button>
+                                    <button class="btn btn-default btn-cons m-b-10" type="reset">
+                                        <i class="pg-close"></i> <span class="bold">Clear</span>
+                                    </button>
+
+
+                                </div>
+                            </div>
+                            {{ form_end(search_form) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END PANEL -->
+        </div>
+        <!-- END CONTAINER FLUID -->
+
+
+
+
+
+
+
+
+        <!-- START CONTAINER FLUID -->
+        <div class="container-fluid container-fixed-lg bg-white">
+            <!-- START PANEL -->
+            <div class="panel panel-transparent">
+                <div class="panel-heading">
+                    <div class="panel-title">Lista de Terminais 
+                    </div>
+                    <div class="export-options-container pull-right"></div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-striped table-condensed" id="tableWithExportOptions">
+                        <thead>
+                            <tr>
+                            <tr>
+                                <th>Fposid</th>
+                                <th>Fserial</th>
+                                <th>Fstate</th>
+                                <th>Fsoftversion</th>
+                                <th>Fagency</th>
+                                <th>Actions</th>
+                            </tr>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for tpo in tpos %}
+                                <tr>
+                                    <td>{{ tpo.fposid }}</td>
+                                    <td>{{ tpo.fserial }}</td>
+                                    <td>{% if tpo.fstate %}Yes{% else %}No{% endif %}</td>
+                                    <td>{{ tpo.fsoftversion }}</td>
+                                    <td>{#{% if tpo.fagency is not null %} {{tpo.fagency }} {% endif %}#} problem
+                                        
+                                       </td>
+                                    <td>
+                                        <a href="{{ path('admin_tpos_edit', { 'fposid': tpo.fposid }) }}" class="btn btn-info btn-cons m-b-10" type="button"><i class="fa fa-paste"></i> <span class="bold">Edit</span>
+                                        </a>
+
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                        
+                        
+                        
+
+                        
+                        
+
+                    <a href="{{ path('admin_tpos_new') }}" class="btn btn-success btn-cons m-b-10" type="submit">
+                        <i class="pg-plus"></i> <span class="bold">New</span>
+                    </a>
+
+                </div>
+            </div>
+            <!-- END PANEL -->
+        </div>
+        <!-- END CONTAINER FLUID -->
+
+
+    </div>
+    <!-- END PAGE CONTENT -->
+
 {% endblock %}

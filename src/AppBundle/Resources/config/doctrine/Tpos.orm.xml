@@ -11,17 +11,31 @@
       <options>
         <option name="unsigned"/>
       </options>
-    </field>
-    -->
+    </field>-->
     
-       <many-to-one
+<!--           <many-to-one
             field="fagencyid"
             target-entity="Tagency"
-            inversed-by="fpos_list"
-            join-column="fagencyid">
+            >
 
-            <join-column name="fagencyid" referenced-column-name="fagencyid" />
+            <join-column name="FAgencyID" referenced-column-name="FAgencyID" />
+        </many-to-one>-->
+    
+    
+       <many-to-one
+            field="fagency"
+            target-entity="Tagency"
+            inversed-by="fpos_list"
+            join-column="FAgencyID">
+
+            <join-column name="FAgencyID" referenced-column-name="FAgencyID" />
         </many-to-one>
+        
+        
+                <one-to-many
+            field="payments_list"
+            target-entity="TerminalPayment"
+            mapped-by="terminal" />
     
     <field name="fserial" type="string" column="FSerial" length="20" nullable="false">
       <options>

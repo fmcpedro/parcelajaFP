@@ -1,16 +1,117 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Tpo creation</h1>
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('admin_tpos_index') }}">Back to the list</a>
-        </li>
-    </ul>
+    <!-- START PAGE CONTENT -->
+    <div class="content">
+        <!-- START JUMBOTRON -->
+        <div class="jumbotron" data-pages="parallax">
+            <div class="container-fluid container-fixed-lg sm-p-l-20 sm-p-r-20">
+                <div class="inner">
+                    <!-- START BREADCRUMB -->
+                    <ul class="breadcrumb">
+                        <li>
+                            <p>Parcela Ja</p>
+                        </li>
+                        <li><a href="#" class="active">Registar Terminal</a>
+                        </li>
+                    </ul>
+                    <!-- END BREADCRUMB -->
+                </div>
+            </div>
+        </div>
+        <!-- END JUMBOTRON -->
+
+
+
+        <!-- START CONTAINER FLUID -->
+        <div class="container-fluid container-fixed-lg">
+            <!-- START PANEL -->
+            <div class="panel panel-transparent">
+                <div class="panel-heading">
+                    <div class="panel-title">Registar Terminal </div>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-10">
+                            {#<h3>form_title</h3>#}
+                            <p>Preencha os campos abaixo para registar um novo terminal</p>
+
+                            {% for flashMessage in app.session.flashbag.get('notice') %}
+                                <div class="alert alert-success">
+                                    {{ flashMessage }}
+                                </div>
+                            {% endfor %}
+
+
+                            {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }} 
+                            <div class="form-group">
+                                <label for="fserial" class="col-sm-3 control-label">fserial</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(form.fserial, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">fstate</label>
+
+                                <div class="col-sm-9">
+                                    <div class="radio radio-success">
+                                        {{ form_widget(form.fstate) }}
+                                    </div>                                   
+                                </div>
+                            </div>
+                                    
+                            <div class="form-group">
+                                <label for="fsoftversion" class="col-sm-3 control-label">fsoftversion</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(form.fsoftversion, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="fagency" class="col-sm-3 control-label">fagency</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(form.fagency, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div>
+
+                            <br>
+
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    {#<p>I hereby certify that the information above is true and accurate. </p>#}
+                                </div>
+                                <div class="col-sm-9">
+                                    <button class="btn btn-complete btn-cons m-b-10" type="submit">
+                                        <i class="pg-form"></i> <span class="bold">Create</span>
+                                    </button>
+                                    <button class="btn btn-default btn-cons m-b-10" type="reset">
+                                        <i class="pg-close"></i> <span class="bold">Clear</span>
+                                    </button>
+                                </div>
+                            </div>
+                            {{ form_end(form) }}
+
+                            <a class="btn btn-primary btn-cons m-b-10" href="{{ path('admin_tpos_index') }}">
+                                <i class="fa fa-backward"></i> <span class="bold">Back to the list</span>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END PANEL -->
+        </div>
+        <!-- END CONTAINER FLUID -->
+
+    </div>
+    <!-- END PAGE CONTENT -->
+
 {% endblock %}
+
+
+
+
+

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\TerminalPayment" table="terminal_payment">
+    <indexes>
+      <index name="fk_terminal_payment_1_idx" columns="terminal_id"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+<!--    <field name="terminalId" type="integer" column="terminal_id" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>-->
+    
+    
+         <many-to-one
+            field="terminal"
+            target-entity="Tpos"
+            inversed-by="payments_list"
+            join-column="FPosID">
+
+            <join-column name="terminal_id" referenced-column-name="FPosID" />
+        </many-to-one>
+    
+    
+    
+    <field name="month" type="integer" column="month" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="year" type="integer" column="year" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="value" type="decimal" column="value" precision="15" scale="2" nullable="true"/>
+  </entity>
+</doctrine-mapping>

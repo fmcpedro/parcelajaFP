@@ -5,12 +5,7 @@ namespace AppBundle\Entity;
 /**
  * Tpos
  */
-class Tpos
-{
-    /**
-     * @var integer
-     */
-    private $fagencyid;
+class Tpos {
 
     /**
      * @var string
@@ -23,39 +18,30 @@ class Tpos
     private $fstate;
 
     /**
+     * @var string
+     */
+    private $fsoftversion;
+
+    /**
      * @var integer
      */
     private $fposid;
 
     /**
-     * @var string
+     * @var \AppBundle\Entity\Tagency
      */
-    private $fsoftversion;
-
-    
-    
-    /**
-     * Set fagencyid
-     *
-     * @param integer $fagencyid
-     *
-     * @return Tpos
-     */
-    public function setFagencyid($fagencyid)
-    {
-        $this->fagencyid = $fagencyid;
-
-        return $this;
-    }
+    private $fagency;
 
     /**
-     * Get fagencyid
-     *
-     * @return integer
+     * @var \Doctrine\Common\Collections\Collection
      */
-    public function getFagencyid()
-    {
-        return $this->fagencyid;
+    private $payments_list;
+
+    /**
+     * Constructor
+     */
+    public function __construct() {
+        $this->payments_list = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -65,8 +51,7 @@ class Tpos
      *
      * @return Tpos
      */
-    public function setFserial($fserial)
-    {
+    public function setFserial($fserial) {
         $this->fserial = $fserial;
 
         return $this;
@@ -77,38 +62,10 @@ class Tpos
      *
      * @return string
      */
-    public function getFserial()
-    {
+    public function getFserial() {
         return $this->fserial;
     }
 
-    
-        /**
-     * Set fsoftversion
-     *
-     * @param string $fsoftversion
-     *
-     * @return Tpos
-     */
-    public function setFsoftversion($fsoftversion)
-    {
-        $this->fsoftversion = $fsoftversion;
-
-        return $this;
-    }
-
-    /**
-     * Get fserial
-     *
-     * @return string
-     */
-    public function getFsoftversion()
-    {
-        return $this->fsoftversion;
-    }
-
-    
-    
     /**
      * Set fstate
      *
@@ -116,8 +73,7 @@ class Tpos
      *
      * @return Tpos
      */
-    public function setFstate($fstate)
-    {
+    public function setFstate($fstate) {
         $this->fstate = $fstate;
 
         return $this;
@@ -128,9 +84,30 @@ class Tpos
      *
      * @return boolean
      */
-    public function getFstate()
-    {
+    public function getFstate() {
         return $this->fstate;
+    }
+
+    /**
+     * Set fsoftversion
+     *
+     * @param string $fsoftversion
+     *
+     * @return Tpos
+     */
+    public function setFsoftversion($fsoftversion) {
+        $this->fsoftversion = $fsoftversion;
+
+        return $this;
+    }
+
+    /**
+     * Get fsoftversion
+     *
+     * @return string
+     */
+    public function getFsoftversion() {
+        return $this->fsoftversion;
     }
 
     /**
@@ -138,8 +115,72 @@ class Tpos
      *
      * @return integer
      */
-    public function getFposid()
-    {
+    public function getFposid() {
         return $this->fposid;
     }
+
+    /**
+     * Set fagency
+     *
+     * @param \AppBundle\Entity\Tagency $fagency
+     *
+     * @return Tpos
+     */
+    public function setFagency(\AppBundle\Entity\Tagency $fagency = null) {
+        $this->fagency = $fagency;
+
+        return $this;
+    }
+
+    /**
+     * Get fagency
+     *
+     * @return \AppBundle\Entity\Tagency
+     */
+    public function getFagency() {
+
+        if ($this->fagency):
+            return $this->fagency;
+        else:
+            return null;
+        endif;
+    }
+
+    /**
+     * Add paymentsList
+     *
+     * @param \AppBundle\Entity\TerminalPayment $paymentsList
+     *
+     * @return Tpos
+     */
+    public function addPaymentsList(\AppBundle\Entity\TerminalPayment $paymentsList) {
+        $this->payments_list[] = $paymentsList;
+
+        return $this;
+    }
+
+    /**
+     * Remove paymentsList
+     *
+     * @param \AppBundle\Entity\TerminalPayment $paymentsList
+     */
+    public function removePaymentsList(\AppBundle\Entity\TerminalPayment $paymentsList) {
+        $this->payments_list->removeElement($paymentsList);
+    }
+
+    /**
+     * Get paymentsList
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPaymentsList() {
+        return $this->payments_list;
+    }
+
+    public function __toString() {
+
+
+        return $this->fposid . ' - ' . $this->fserial;
+    }
+
 }

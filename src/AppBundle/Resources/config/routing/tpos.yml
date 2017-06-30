@@ -1,7 +1,7 @@
 admin_tpos_index:
     path:     /
     defaults: { _controller: "AppBundle:Tpos:index" }
-    methods:  GET
+    methods:  [GET, POST]
 
 admin_tpos_show:
     path:     /{fposid}/show

@@ -8,11 +8,6 @@ namespace AppBundle\Entity;
 class Tpos
 {
     /**
-     * @var integer
-     */
-    private $fagencyid;
-
-    /**
      * @var string
      */
     private $fserial;
@@ -23,34 +18,20 @@ class Tpos
     private $fstate;
 
     /**
+     * @var string
+     */
+    private $fsoftversion;
+
+    /**
      * @var integer
      */
     private $fposid;
 
-
     /**
-     * Set fagencyid
-     *
-     * @param integer $fagencyid
-     *
-     * @return Tpos
+     * @var \AppBundle\Entity\Tagency
      */
-    public function setFagencyid($fagencyid)
-    {
-        $this->fagencyid = $fagencyid;
+    private $fagency;
 
-        return $this;
-    }
-
-    /**
-     * Get fagencyid
-     *
-     * @return integer
-     */
-    public function getFagencyid()
-    {
-        return $this->fagencyid;
-    }
 
     /**
      * Set fserial
@@ -101,6 +82,30 @@ class Tpos
     }
 
     /**
+     * Set fsoftversion
+     *
+     * @param string $fsoftversion
+     *
+     * @return Tpos
+     */
+    public function setFsoftversion($fsoftversion)
+    {
+        $this->fsoftversion = $fsoftversion;
+
+        return $this;
+    }
+
+    /**
+     * Get fsoftversion
+     *
+     * @return string
+     */
+    public function getFsoftversion()
+    {
+        return $this->fsoftversion;
+    }
+
+    /**
      * Get fposid
      *
      * @return integer
@@ -109,4 +114,46 @@ class Tpos
     {
         return $this->fposid;
     }
+
+    /**
+     * Set fagency
+     *
+     * @param \AppBundle\Entity\Tagency $fagency
+     *
+     * @return Tpos
+     */
+    public function setFagency(\AppBundle\Entity\Tagency $fagency = null)
+    {
+        $this->fagency = $fagency;
+
+        return $this;
+    }
+
+    /**
+     * Get fagency
+     *
+     * @return \AppBundle\Entity\Tagency
+     */
+    public function getFagency()
+    {
+        
+        if($this->fagency):
+            return $this->fagency;
+            else:
+             return null;
+        endif;
+       
+        
+
+        
+
+        
+        
+    }
+    
+    
+
+
+
 }
+
