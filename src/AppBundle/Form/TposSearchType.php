@@ -19,7 +19,7 @@ class TposSearchType extends AbstractType
                     ,'multiple' => false
                     ,'expanded' => true))
                 ->add('fsoftversion')
-                ->add('fagency');
+                ->add('agency');
     }
     
     

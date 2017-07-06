@@ -5,8 +5,8 @@ namespace AppBundle\Entity;
 /**
  * TerminalPayment
  */
-class TerminalPayment
-{
+class TerminalPayment {
+
     /**
      * @var integer
      */
@@ -28,10 +28,24 @@ class TerminalPayment
     private $id;
 
     /**
-     * @var \AppBundle\Entity\TPos
+     * @var \AppBundle\Entity\Tpos
      */
     private $terminal;
 
+    /**
+     * @var \AppBundle\Entity\Tagency
+     */
+    private $agency;
+
+    /**
+     * @var \AppBundle\Entity\Tsubgroup
+     */
+    private $subgroup;
+
+    /**
+     * @var \AppBundle\Entity\Tgroup
+     */
+    private $group;
 
     /**
      * Set month
@@ -40,8 +54,7 @@ class TerminalPayment
      *
      * @return TerminalPayment
      */
-    public function setMonth($month)
-    {
+    public function setMonth($month) {
         $this->month = $month;
 
         return $this;
@@ -52,8 +65,7 @@ class TerminalPayment
      *
      * @return integer
      */
-    public function getMonth()
-    {
+    public function getMonth() {
         return $this->month;
     }
 
@@ -64,8 +76,7 @@ class TerminalPayment
      *
      * @return TerminalPayment
      */
-    public function setYear($year)
-    {
+    public function setYear($year) {
         $this->year = $year;
 
         return $this;
@@ -76,8 +87,7 @@ class TerminalPayment
      *
      * @return integer
      */
-    public function getYear()
-    {
+    public function getYear() {
         return $this->year;
     }
 
@@ -88,8 +98,7 @@ class TerminalPayment
      *
      * @return TerminalPayment
      */
-    public function setValue($value)
-    {
+    public function setValue($value) {
         $this->value = $value;
 
         return $this;
@@ -100,8 +109,7 @@ class TerminalPayment
      *
      * @return string
      */
-    public function getValue()
-    {
+    public function getValue() {
         return $this->value;
     }
 
@@ -110,20 +118,18 @@ class TerminalPayment
      *
      * @return integer
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
     /**
      * Set terminal
      *
-     * @param \AppBundle\Entity\TPos $terminal
+     * @param \AppBundle\Entity\Tpos $terminal
      *
      * @return TerminalPayment
      */
-    public function setTerminal(\AppBundle\Entity\TPos $terminal = null)
-    {
+    public function setTerminal(\AppBundle\Entity\Tpos $terminal = null) {
         $this->terminal = $terminal;
 
         return $this;
@@ -132,11 +138,76 @@ class TerminalPayment
     /**
      * Get terminal
      *
-     * @return \AppBundle\Entity\TPos
+     * @return \AppBundle\Entity\Tpos
      */
-    public function getTerminal()
-    {
+    public function getTerminal() {
         return $this->terminal;
     }
-}
 
+    /**
+     * Set agency
+     *
+     * @param \AppBundle\Entity\Tagency $agency
+     *
+     * @return Tpos
+     */
+    public function setAgency(\AppBundle\Entity\Tagency $agency = null) {
+        $this->agency = $agency;
+
+        return $this;
+    }
+
+    /**
+     * Get agency
+     *
+     * @return \AppBundle\Entity\Tagency
+     */
+    public function getAgency() {
+        return $this->agency;
+    }
+
+    /**
+     * Set subgroup
+     *
+     * @param \AppBundle\Entity\Tsubgroup $subgroup
+     *
+     * @return Tagency
+     */
+    public function setSubgroup(\AppBundle\Entity\Tsubgroup $subgroup = null) {
+        $this->subgroup = $subgroup;
+
+        return $this;
+    }
+
+    /**
+     * Get subgroup
+     *
+     * @return \AppBundle\Entity\Tsubgroup
+     */
+    public function getSubgroup() {
+        return $this->subgroup;
+    }
+
+    /**
+     * Set group
+     *
+     * @param \AppBundle\Entity\Tgroup $group
+     *
+     * @return Tsubgroup
+     */
+    public function setGroup(\AppBundle\Entity\Tgroup $group = null) {
+        $this->group = $group;
+
+        return $this;
+    }
+
+    /**
+     * Get group
+     *
+     * @return \AppBundle\Entity\Tgroup
+     */
+    public function getGroup() {
+        return $this->group;
+    }
+
+}

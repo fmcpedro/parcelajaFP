@@ -1,5 +1,12 @@
 {% extends 'base.html.twig' %}
 
+
+{#
+SELECT * FROM parcelaja_payments.TPos where FAgencyID not in (select FAgencyID from TAgency);
+update TPos set FAgencyID = 6 where FAgencyID not in (select FAgencyID from TAgency);
+#}
+
+
 {% block body %}
 
     <!-- START PAGE CONTENT -->
@@ -10,11 +17,8 @@
                 <div class="inner">
                     <!-- START BREADCRUMB -->
                     <ul class="breadcrumb">
-                        <li>
-                            <p>Parcela Ja</p>
-                        </li>
-                        <li><a href="#" class="active">Terminais Instalados</a>
-                        </li>
+                        <li><a href="#" class="">Parcela Ja</a></li>
+                        <li><a href="#" class="active">Mapa de Terminais Instalados</a></li>
                     </ul>
                     <!-- END BREADCRUMB -->
                 </div>
@@ -65,7 +69,7 @@
                             <div class="form-group">
                                 <label for="fagency" class="col-sm-3 control-label">fagency</label>
                                 <div class="col-sm-9">
-                                    {{ form_widget(search_form.fagency, {'attr': {'class': 'form-control'}}) }}
+                                    {{ form_widget(search_form.agency, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div>
 
@@ -136,9 +140,7 @@
                                     <td>{{ tpo.fserial }}</td>
                                     <td>{% if tpo.fstate %}Yes{% else %}No{% endif %}</td>
                                     <td>{{ tpo.fsoftversion }}</td>
-                                    <td>{#{% if tpo.fagency is not null %} {{tpo.fagency }} {% endif %}#} problem
-                                        
-                                       </td>
+                                    <td>{{tpo.agency }} </td>
                                     <td>
                                         <a href="{{ path('admin_tpos_edit', { 'fposid': tpo.fposid }) }}" class="btn btn-info btn-cons m-b-10" type="button"><i class="fa fa-paste"></i> <span class="bold">Edit</span>
                                         </a>

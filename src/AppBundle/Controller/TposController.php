@@ -30,7 +30,7 @@ class TposController extends Controller {
             $fserial = $searchForm["fserial"]->getData();
             $fstate = $searchForm["fstate"]->getData();
             $fsoftversion = $searchForm["fsoftversion"]->getData();
-            $fagency = $searchForm["fagency"]->getData();
+            $agency = $searchForm["agency"]->getData();
 
             $search = array();
             if (!empty($fserial)) {
@@ -41,8 +41,8 @@ class TposController extends Controller {
             if (!empty($fsoftversion)) {
                 $search['fsoftversion'] = $fsoftversion;
             }
-            if (!empty($fagency)) {
-                $search['fagency'] = $fagency;
+            if (!empty($agency)) {
+                $search['agency'] = $agency;
             }
 
 

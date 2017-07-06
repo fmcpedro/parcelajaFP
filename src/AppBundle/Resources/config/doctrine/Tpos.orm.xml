@@ -1,57 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
-  <entity name="AppBundle\Entity\Tpos" table="TPos">
-    <unique-constraints>
-      <unique-constraint name="FSerial" columns="FSerial"/>
-    </unique-constraints>
-    <id name="fposid" type="integer" column="FPosID">
-      <generator strategy="IDENTITY"/>
-    </id>
-<!--    <field name="fagencyid" type="integer" column="FAgencyID" nullable="false">
-      <options>
-        <option name="unsigned"/>
-      </options>
-    </field>-->
+    <entity name="AppBundle\Entity\Tpos" table="TPos">
+        <unique-constraints>
+            <unique-constraint name="FSerial" columns="FSerial"/>
+        </unique-constraints>
+        <id name="fposid" type="integer" column="FPosID">
+            <generator strategy="IDENTITY"/>
+        </id>
+            
+        <!--        <field name="fagencyid" type="integer" column="FAgencyID" nullable="false">
+          <options>
+            <option name="unsigned"/>
+          </options>
+        </field>-->
     
-<!--           <many-to-one
-            field="fagencyid"
-            target-entity="Tagency"
-            >
 
-            <join-column name="FAgencyID" referenced-column-name="FAgencyID" />
-        </many-to-one>-->
-    
-    
-       <many-to-one
-            field="fagency"
-            target-entity="Tagency"
-            inversed-by="fpos_list"
-            join-column="FAgencyID">
+       
+        
+        
+        
+        
 
+        <one-to-many field="paymentList" target-entity="TerminalPayment" mapped-by="terminal" />
+
+    
+        <many-to-one field="agency" target-entity="Tagency" inversed-by="terminalList">
             <join-column name="FAgencyID" referenced-column-name="FAgencyID" />
         </many-to-one>
+
         
         
-                <one-to-many
-            field="payments_list"
-            target-entity="TerminalPayment"
-            mapped-by="terminal" />
+  
     
-    <field name="fserial" type="string" column="FSerial" length="20" nullable="false">
-      <options>
-        <option name="fixed"/>
-      </options>
-    </field>
-    <field name="fstate" type="boolean" column="FState" nullable="false"/>
+        <field name="fserial" type="string" column="FSerial" length="20" nullable="false">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="fstate" type="boolean" column="FState" nullable="false"/>
     
         <field name="fsoftversion" type="string" column="FSoftVersion" length="20" nullable="true">
-      <options>
-        <option name="fixed"/>
-      </options>
-    </field>
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
     
  
     
     
-  </entity>
+    </entity>
 </doctrine-mapping>

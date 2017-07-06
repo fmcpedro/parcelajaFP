@@ -5,8 +5,8 @@ namespace AppBundle\Entity;
 /**
  * Tpos
  */
-class Tpos {
-
+class Tpos
+{
     /**
      * @var string
      */
@@ -28,20 +28,21 @@ class Tpos {
     private $fposid;
 
     /**
-     * @var \AppBundle\Entity\Tagency
-     */
-    private $fagency;
-
-    /**
      * @var \Doctrine\Common\Collections\Collection
      */
-    private $payments_list;
+    private $paymentList;
+
+    /**
+     * @var \AppBundle\Entity\Tagency
+     */
+    private $agency;
 
     /**
      * Constructor
      */
-    public function __construct() {
-        $this->payments_list = new \Doctrine\Common\Collections\ArrayCollection();
+    public function __construct()
+    {
+        $this->paymentList = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -51,7 +52,8 @@ class Tpos {
      *
      * @return Tpos
      */
-    public function setFserial($fserial) {
+    public function setFserial($fserial)
+    {
         $this->fserial = $fserial;
 
         return $this;
@@ -62,7 +64,8 @@ class Tpos {
      *
      * @return string
      */
-    public function getFserial() {
+    public function getFserial()
+    {
         return $this->fserial;
     }
 
@@ -73,7 +76,8 @@ class Tpos {
      *
      * @return Tpos
      */
-    public function setFstate($fstate) {
+    public function setFstate($fstate)
+    {
         $this->fstate = $fstate;
 
         return $this;
@@ -84,7 +88,8 @@ class Tpos {
      *
      * @return boolean
      */
-    public function getFstate() {
+    public function getFstate()
+    {
         return $this->fstate;
     }
 
@@ -95,7 +100,8 @@ class Tpos {
      *
      * @return Tpos
      */
-    public function setFsoftversion($fsoftversion) {
+    public function setFsoftversion($fsoftversion)
+    {
         $this->fsoftversion = $fsoftversion;
 
         return $this;
@@ -106,7 +112,8 @@ class Tpos {
      *
      * @return string
      */
-    public function getFsoftversion() {
+    public function getFsoftversion()
+    {
         return $this->fsoftversion;
     }
 
@@ -115,72 +122,75 @@ class Tpos {
      *
      * @return integer
      */
-    public function getFposid() {
+    public function getFposid()
+    {
         return $this->fposid;
     }
 
     /**
-     * Set fagency
+     * Add paymentList
      *
-     * @param \AppBundle\Entity\Tagency $fagency
+     * @param \AppBundle\Entity\TerminalPayment $paymentList
      *
      * @return Tpos
      */
-    public function setFagency(\AppBundle\Entity\Tagency $fagency = null) {
-        $this->fagency = $fagency;
+    public function addPaymentList(\AppBundle\Entity\TerminalPayment $paymentList)
+    {
+        $this->paymentList[] = $paymentList;
 
         return $this;
     }
 
     /**
-     * Get fagency
+     * Remove paymentList
      *
-     * @return \AppBundle\Entity\Tagency
+     * @param \AppBundle\Entity\TerminalPayment $paymentList
      */
-    public function getFagency() {
-
-        if ($this->fagency):
-            return $this->fagency;
-        else:
-            return null;
-        endif;
+    public function removePaymentList(\AppBundle\Entity\TerminalPayment $paymentList)
+    {
+        $this->paymentList->removeElement($paymentList);
     }
 
     /**
-     * Add paymentsList
-     *
-     * @param \AppBundle\Entity\TerminalPayment $paymentsList
-     *
-     * @return Tpos
-     */
-    public function addPaymentsList(\AppBundle\Entity\TerminalPayment $paymentsList) {
-        $this->payments_list[] = $paymentsList;
-
-        return $this;
-    }
-
-    /**
-     * Remove paymentsList
-     *
-     * @param \AppBundle\Entity\TerminalPayment $paymentsList
-     */
-    public function removePaymentsList(\AppBundle\Entity\TerminalPayment $paymentsList) {
-        $this->payments_list->removeElement($paymentsList);
-    }
-
-    /**
-     * Get paymentsList
+     * Get paymentList
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getPaymentsList() {
-        return $this->payments_list;
+    public function getPaymentList()
+    {
+        return $this->paymentList;
     }
 
+    /**
+     * Set agency
+     *
+     * @param \AppBundle\Entity\Tagency $agency
+     *
+     * @return Tpos
+     */
+    public function setAgency(\AppBundle\Entity\Tagency $agency = null)
+    {
+        $this->agency = $agency;
+
+        return $this;
+    }
+
+    /**
+     * Get agency
+     *
+     * @return \AppBundle\Entity\Tagency
+     */
+    public function getAgency()
+    {
+        return $this->agency;
+    }
+    
+    
+     
     public function __toString() {
 
 
         return $this->fposid . ' - ' . $this->fserial;
     }
-
 }
+

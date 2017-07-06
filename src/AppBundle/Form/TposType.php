@@ -13,7 +13,7 @@ class TposType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('fserial')->add('fstate')->add('fsoftversion')->add('fagency');
+        $builder->add('fserial')->add('fstate')->add('fsoftversion')->add('agency');
         
                 $builder->add('fserial', \Symfony\Component\Form\Extension\Core\Type\TextType::class)
                 ->add('fstate', \Symfony\Component\Form\Extension\Core\Type\ChoiceType::class
@@ -21,7 +21,7 @@ class TposType extends AbstractType
                     ,'multiple' => false
                     ,'expanded' => true))
                 ->add('fsoftversion')
-                ->add('fagency');
+                ->add('agency');
     }
     
     /**

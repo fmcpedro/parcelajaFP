@@ -22,6 +22,18 @@ class Tgroup
      */
     private $fgroupid;
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $subgroupList;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->subgroupList = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Set fgroupname
@@ -80,4 +92,39 @@ class Tgroup
     {
         return $this->fgroupid;
     }
+
+    /**
+     * Add subgroupList
+     *
+     * @param \AppBundle\Entity\Tsubgroup $subgroupList
+     *
+     * @return Tgroup
+     */
+    public function addSubgroupList(\AppBundle\Entity\Tsubgroup $subgroupList)
+    {
+        $this->subgroupList[] = $subgroupList;
+
+        return $this;
+    }
+
+    /**
+     * Remove subgroupList
+     *
+     * @param \AppBundle\Entity\Tsubgroup $subgroupList
+     */
+    public function removeSubgroupList(\AppBundle\Entity\Tsubgroup $subgroupList)
+    {
+        $this->subgroupList->removeElement($subgroupList);
+    }
+
+    /**
+     * Get subgroupList
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getSubgroupList()
+    {
+        return $this->subgroupList;
+    }
 }
+

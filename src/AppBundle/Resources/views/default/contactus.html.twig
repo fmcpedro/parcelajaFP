@@ -34,6 +34,18 @@
                     <label class="control-label">{% trans %}contactus_message{% endtrans %}</label>
                     <textarea name="message" placeholder="{% trans %}contactus_message_placeholder{% endtrans %}" style="height:100px" class="form-control" required></textarea>
                   </div>
+                  
+                  
+                  <div class="form-group form-group-default">
+                    <label class="control-label">{{first_value}} + {{second_value}} = ? </label>
+                    <input type="hidden" name="first_value" value="{{first_value}}" class="form-control" required>
+                    <input type="hidden" name="second_value" value="{{second_value}}" class="form-control" required>
+                    <input type="text" name="validation" placeholder="{% trans %}Enter the sum of these two numbers{% endtrans %}" class="form-control" required>
+                  </div>
+                  
+              
+    
+                  
                   <div class="sm-p-t-10 clearfix">
                     <p class="pull-left small hint-text m-t-5 font-arial">{% trans %}contactus_true_information{% endtrans %}</p>
                     <button class="btn btn-primary font-montserrat all-caps fs-12 pull-right xs-pull-left">{% trans %}contactus_submit_button{% endtrans %}</button>

@@ -23,6 +23,56 @@ class Tgroup
     private $fgroupid;
 
 
+        /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $subGroupList;
+
+    /**
+     * Constructor
+     */
+    public function __construct() {
+        $this->subGroupList = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    function getSubGroupList() {
+        return $this->subGroupList;
+    }
+
+    function setSubGroupList(\Doctrine\Common\Collections\Collection $subGroupList) {
+        $this->subGroupList = $subGroupList;
+    }
+
+    /**
+     * Add subGroup
+     *
+     * @param \AppBundle\Entity\Tsubgroup $subGroup
+     *
+     * @return TsubGroup
+     */
+    public function addSubGroupList(\AppBundle\Entity\Tsubgroup $subGroup) {
+        $this->subGroupList[] = $subGroup;
+
+        return $this;
+    }
+
+    /**
+     * Remove subGroup
+     *
+     * @param \AppBundle\Entity\TsubGroup $subGroup
+     */
+    public function removeSubGroupList(\AppBundle\Entity\Tsubgroup $subGroup) {
+        $this->subGroupList->removeElement($subGroup);
+    }
+
+ 
+    
+    
+    
+    
+    
+    
+    
     /**
      * Set fgroupname
      *

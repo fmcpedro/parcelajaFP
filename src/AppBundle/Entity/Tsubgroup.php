@@ -8,11 +8,6 @@ namespace AppBundle\Entity;
 class Tsubgroup
 {
     /**
-     * @var integer
-     */
-    private $fgroupid;
-
-    /**
      * @var string
      */
     private $fsubgroupname;
@@ -27,29 +22,22 @@ class Tsubgroup
      */
     private $fsubgroupid;
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $agencyList;
 
     /**
-     * Set fgroupid
-     *
-     * @param integer $fgroupid
-     *
-     * @return Tsubgroup
+     * @var \AppBundle\Entity\Tgroup
      */
-    public function setFgroupid($fgroupid)
-    {
-        $this->fgroupid = $fgroupid;
-
-        return $this;
-    }
+    private $group;
 
     /**
-     * Get fgroupid
-     *
-     * @return integer
+     * Constructor
      */
-    public function getFgroupid()
+    public function __construct()
     {
-        return $this->fgroupid;
+        $this->agencyList = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -109,4 +97,63 @@ class Tsubgroup
     {
         return $this->fsubgroupid;
     }
+
+    /**
+     * Add agencyList
+     *
+     * @param \AppBundle\Entity\Tagency $agencyList
+     *
+     * @return Tsubgroup
+     */
+    public function addAgencyList(\AppBundle\Entity\Tagency $agencyList)
+    {
+        $this->agencyList[] = $agencyList;
+
+        return $this;
+    }
+
+    /**
+     * Remove agencyList
+     *
+     * @param \AppBundle\Entity\Tagency $agencyList
+     */
+    public function removeAgencyList(\AppBundle\Entity\Tagency $agencyList)
+    {
+        $this->agencyList->removeElement($agencyList);
+    }
+
+    /**
+     * Get agencyList
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAgencyList()
+    {
+        return $this->agencyList;
+    }
+
+    /**
+     * Set group
+     *
+     * @param \AppBundle\Entity\Tgroup $group
+     *
+     * @return Tsubgroup
+     */
+    public function setGroup(\AppBundle\Entity\Tgroup $group = null)
+    {
+        $this->group = $group;
+
+        return $this;
+    }
+
+    /**
+     * Get group
+     *
+     * @return \AppBundle\Entity\Tgroup
+     */
+    public function getGroup()
+    {
+        return $this->group;
+    }
 }
+

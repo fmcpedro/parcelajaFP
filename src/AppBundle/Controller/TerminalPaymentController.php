@@ -31,11 +31,13 @@ class TerminalPaymentController extends Controller {
             $terminal = $searchForm["terminal"]->getData();
             $year = $searchForm["year"]->getData();
             $month = $searchForm["month"]->getData();
+            
+            $group = $searchForm["group"]->getData();
+            $subGroup = $searchForm["subGroup"]->getData();
+            $agency = $searchForm["agency"]->getData();
             $value = $searchForm["value"]->getData();
-//            $group = $searchForm["group"]->getData();
-//            $sub_group = $searchForm["sub_group"]->getData();
-//            $agency = $searchForm["agency"]->getData();
-
+            
+            
             $search = array();
             if (!empty($terminal)) {
                 $search['terminal'] = $terminal;
@@ -49,25 +51,27 @@ class TerminalPaymentController extends Controller {
                 $search['month'] = $month;
             }
 
+
+
+
+            if (!empty($group)) {
+                $search['group'] = $group;
+            }
+
+            if (!empty($subGroup)) {
+                $search['subGroup'] = $subGroup;
+            }
+
+            if (!empty($agency)) {
+                $search['agency'] = $agency;
+            }
+
             if (!empty($value)) {
                 $search['value'] = $value;
             }
-
-//
-//            if (!empty($group)) {
-//                $search['group'] = $group;
-//            }
-//
-//            if (!empty($sub_group)) {
-//                $search['sub_group'] = $sub_group;
-//            }
-//
-//            if (!empty($agency)) {
-//                $search['agency'] = $agency;
-//            }
-
-
-            $terminalPayments = $em->getRepository('AppBundle:TerminalPayment')->findBy($search);
+            
+            
+            $terminalPayments = $em->getRepository('AppBundle:TerminalPayment')->findByJoinTerminalAndAgency($search);
 
 
             //$search = array('fserial' => $fserial, 'fstate' => $fstate, 'fsoftversion' => $fsoftversion, 'fagencyid' => $fagencyid);

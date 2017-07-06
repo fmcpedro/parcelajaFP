@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
-  <entity name="AppBundle\Entity\Tagency" table="TAgency">
+  <entity name="AppBundle\Entity\Tagency" repository-class="AppBundle\Repository\TagencyRepository" table="TAgency">
     <unique-constraints>
       <unique-constraint name="FAgencyName" columns="FAgencyName"/>
     </unique-constraints>
@@ -8,20 +8,32 @@
       <generator strategy="IDENTITY"/>
     </id>
     
-    
-        <one-to-many
-            field="fpos_list"
-            target-entity="Tpos"
-            mapped-by="fagencyid" />
+
     
     
     
     
-    <field name="fsubgroupid" type="integer" column="FSubgroupID" nullable="false">
+    
+ 
+        <one-to-many field="terminalList" target-entity="Tpos" mapped-by="agency" />
+
+    
+
+      <many-to-one field="subgroup" target-entity="Tsubgroup" inversed-by="agencyList">
+            <join-column name="FsubgroupID" referenced-column-name="FSubgroupID" />
+        </many-to-one>
+    
+    
+
+        
+        
+        
+    
+<!--    <field name="fsubgroupid" type="integer" column="FSubgroupID" nullable="false">
       <options>
         <option name="unsigned"/>
       </options>
-    </field>
+    </field>-->
     <field name="fagencyname" type="string" column="FAgencyName" length="100" nullable="false">
       <options>
         <option name="fixed"/>
