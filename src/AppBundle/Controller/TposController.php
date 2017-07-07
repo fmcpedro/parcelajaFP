@@ -36,8 +36,10 @@ class TposController extends Controller {
             if (!empty($fserial)) {
                 $search['fserial'] = $fserial;
             }
-            //if (!empty($fstate)) {$search['fstate']=$fstate;}
-            $search['fstate'] = $fstate;
+            if (!is_null($fstate)) {$search['fstate']=$fstate;}
+            
+            //echo $fstate;
+            //$search['fstate'] = $fstate;
             if (!empty($fsoftversion)) {
                 $search['fsoftversion'] = $fsoftversion;
             }

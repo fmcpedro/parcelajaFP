@@ -13,13 +13,25 @@ class TposSearchType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('fserial', \Symfony\Component\Form\Extension\Core\Type\TextType::class, array('required' => false))
+//        $builder->add('fserial', \Symfony\Component\Form\Extension\Core\Type\TextType::class, array('required' => false))
+//                ->add('fstate', \Symfony\Component\Form\Extension\Core\Type\ChoiceType::class
+//                        , array('choices'  => array('Yes' => true,'No' => false), 
+//                            'data' => true
+//                    ,'multiple' => false
+//                    ,'expanded' => true))
+//                ->add('fsoftversion')
+//                ->add('agency');
+        
+        
+        
+                $builder->add('fserial', \Symfony\Component\Form\Extension\Core\Type\TextType::class, array('required' => false))
                 ->add('fstate', \Symfony\Component\Form\Extension\Core\Type\ChoiceType::class
-                        , array('choices'  => array('Yes' => true,'No' => false), 'data' => true
+                        , array('choices'  => array('Yes' => true,'No' => false, 'All'=> null)
                     ,'multiple' => false
                     ,'expanded' => true))
                 ->add('fsoftversion')
                 ->add('agency');
+        
     }
     
     
