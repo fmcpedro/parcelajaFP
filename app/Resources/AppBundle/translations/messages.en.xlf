@@ -605,6 +605,13 @@
  
 
             </trans-unit>
+            
+            
+            
+                        <trans-unit id="fd130da5a06632008bf6b47946a2b333" resname="contactus_validation_placeholder">
+                <source>contactus_validation_placeholder</source>
+                <target>Enter the sum of these two numbers</target>
+            </trans-unit>
 
  
 
