@@ -12,31 +12,14 @@
                     <!-- BEGIN IMAGE PARRALAX -->
                     <div class="slider-wrapper">
                         {% if app.request.locale == "en" %}
-                           {#  <div class="image image-responsive-height image-responsive-height" 
-                                 data-swiper-parallax="30%" 
-                                 data-pages-bg-image="{{ asset('bundles/app/frontend/assets/images/banner_01_en.png') }}" 
-                                                             data-bg-overlay="#3056a3" 
-                                                              data-overlay-opacity="0.3"
-                                 >
-                            </div>#}
-                                 
-                                 
-                                 <img class="image"  src="{{ asset('bundles/app/frontend/assets/images/banner_01_en.jpg') }}"/>
-                                 
-                                 
-                                 
+                                 {#<img class="image"  src="{{ asset('bundles/app/frontend/assets/images/banner_01_en.jpg') }}"/>#}
                         {% else %}
-                           {# <div class="image image-responsive-height image-responsive-height" 
-                                 data-swiper-parallax="30%" 
-                                 data-pages-bg-image="{{ asset('bundles/app/frontend/assets/images/banner_01_pt.png') }}" 
-                                                              data-bg-overlay="#3056a3" 
-                                                              data-overlay-opacity="0.3"
-                                 >
-                            </div>#}
-                           <img class="image"  src="{{ asset('bundles/app/frontend/assets/images/banner_01_pt.jpg') }}"/>
-                           
-                           
-                           
+                            {#<img class="image"  src="{{ asset('bundles/app/frontend/assets/images/banner_01_pt.jpg') }}"/>#}
+                            
+                            <img class="image"  src="{{ asset('bundles/app/frontend/assets/images/index.jpeg') }}"/>
+                            
+                            
+                            
                         {% endif %}
                     </div>
                     <!-- END IMAGE PARRALAX -->

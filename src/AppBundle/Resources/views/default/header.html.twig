@@ -1,24 +1,36 @@
 {# empty Twig template #}
 <!-- BEGIN HEADER -->
-<nav  id="home"  class="header static" data-pages="header">
+
+
+<style>
+    
+    
+    .dark{
+        background-color: #074067!important;
+
+        
+    }
+
+    
+</style>
+
+
+
+
+
+
+<nav id="home" class="header static" data-pages="header">
     <nav class="header relative">
         <div class="container relative">
             <div class="pull-left">
                 <div class="header-inner">
-                    
-                    
                     {% if app.request.locale == "en" %}
                     <img src="{{ asset('bundles/app/frontend/assets/images/logo_black_en.png') }}" class="logo" width="330" height="43" data-src-retina="{{ asset('bundles/app/frontend/assets/images/logo_black_en.png') }}" alt="">
-                    <img src="{{ asset('bundles/app/frontend/assets/images/logo_black_en.png') }}" class="alt" width="330" height="43" data-src-retina="{{ asset('bundles/app/frontend/assets/images/logo_black_en.png') }}" alt="">
-                    
+                    <img src="{{ asset('bundles/app/frontend/assets/images/logo_black.png') }}" class="alt" width="330" height="43" data-src-retina="{{ asset('bundles/app/frontend/assets/images/logo_black.png') }}" alt="">
                     {% else %}
-                        <img src="{{ asset('bundles/app/frontend/assets/images/logo_black_pt.png') }}" class="logo" width="330" height="43" data-src-retina="{{ asset('bundles/app/frontend/assets/images/logo_black_pt.png') }}" alt="">
-                    <img src="{{ asset('bundles/app/frontend/assets/images/logo_black_pt.png') }}" class="alt" width="330" height="43" data-src-retina="{{ asset('bundles/app/frontend/assets/images/logo_black_pt.png') }}" alt="">
-                    
+                    <img src="{{ asset('bundles/app/frontend/assets/images/logo_black_pt.png') }}" class="logo" width="330" height="43" data-src-retina="{{ asset('bundles/app/frontend/assets/images/logo_black_pt.png') }}" alt="">
+                    <img src="{{ asset('bundles/app/frontend/assets/images/logo_black.png') }}" class="alt" width="330" height="43" data-src-retina="{{ asset('bundles/app/frontend/assets/images/logo_black.png') }}" alt="">
                     {% endif %}
-                    
-                    
-                    
                     
                     {#<img src="{{ asset('bundles/app/frontend/assets/images/logo_white.png') }}" class="alt" width="152" height="21" data-src-retina="{{ asset('bundles/app/frontend/assets/images/logo_white_2x.png') }}" alt="">#}
                 </div>
@@ -58,17 +70,17 @@
                     <div class="header-inner">
                         <ul class="menu no-padding">
                             <li>
-                                <a href="#home" class="active page-scroll">{% trans %}Home{% endtrans %}</a>
+                                <a href="#home"><b>{% trans %}Home{% endtrans %}</b></a>
                             </li>
                             <li>
-                                <a href="#{% trans %}bookmark_features{% endtrans %}" data-text="{% trans %}Features{% endtrans %}<">{% trans %}Features{% endtrans %}</a>
+                                <a href="#{% trans %}bookmark_features{% endtrans %}" data-text="{% trans %}Features{% endtrans %}"><b>{% trans %}Features{% endtrans %}</b></a>
                             </li>
                             <li>
-                                <a href="#{% trans %}bookmark_process{% endtrans %}" data-text="{% trans %}Process{% endtrans %}">{% trans %}Process{% endtrans %}</a>
+                                <a href="#{% trans %}bookmark_process{% endtrans %}" data-text="{% trans %}Process{% endtrans %}"><b>{% trans %}Process{% endtrans %}</b></a>
                             </li>
                             
                                   <li>
-                                <a href="#{% trans %}bookmark_faqs{% endtrans %}" data-text="{% trans %}Faqs{% endtrans %}">{% trans %}Faqs{% endtrans %}</a>
+                                      <a href="#{% trans %}bookmark_faqs{% endtrans %}" data-text="{% trans %}Faqs{% endtrans %}"><b>{% trans %}Faqs{% endtrans %}</b></a>
                             </li>
                             {#<li>
                                 <a href="#costumers" data-text="Testimonials">{% trans %}Testimonials{% endtrans %}</a>
@@ -77,10 +89,10 @@
                                    <a href="#costumers" data-text="costumers">Costumers</a>
                                </li>#}
                             <li>
-                                <a href="#{% trans %}bookmark_portfolio{% endtrans %}" data-text="{% trans %}Portfolio{% endtrans %}">{% trans %}Portfolio{% endtrans %}</a>
+                                <a href="#{% trans %}bookmark_portfolio{% endtrans %}" data-text="{% trans %}Portfolio{% endtrans %}"><b>{% trans %}Portfolio{% endtrans %}</b></a>
                             </li>
                             <li>
-                                <a href="#{% trans %}bookmark_contactus{% endtrans %}" data-text="{% trans %}Contact us{% endtrans %}">{% trans %}Contact us{% endtrans %}</a>
+                                <a href="#{% trans %}bookmark_contactus{% endtrans %}" data-text="{% trans %}Contact us{% endtrans %}"><b>{% trans %}Contact us{% endtrans %}</b></a>
                             </li>
                         </ul>
                     </div>

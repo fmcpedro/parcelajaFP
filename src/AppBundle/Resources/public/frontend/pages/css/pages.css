@@ -6,8 +6,10 @@
 }
 
 
-
-
+@font-face {
+  font-family: 'Montserrat';
+  src: url('Grandesign-Neue-Roman.ttf');
+}
 
 /*------------------------------------------------------------------
 Pages Frontend v1.1.1

@@ -190,7 +190,7 @@ class Tpos
     public function __toString() {
 
 
-        return $this->fposid . ' - ' . $this->fserial;
+        return $this->fserial;
     }
 }
 

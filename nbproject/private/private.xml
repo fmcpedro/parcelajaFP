@@ -3,20 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/public/backend/assets/js/scripts.js</file>
-            <file>file:/home/luis/sfprojects/parcelaja/app/Resources/AppBundle/translations/messages.pt.xlf</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/views/base.html.twig</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/views/default/footer.html.twig</file>
-            <file>file:/home/luis/sfprojects/parcelaja/app/Resources/views/base.html.twig</file>
-            <file>file:/home/luis/sfprojects/parcelaja/app/Resources/views/tpos/index.html.twig</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/views/default/contactus_old.html.twig</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/views/default/callforaction.html.twig</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/views/default/faqs.html.twig</file>
             <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/views/default/contactus.html.twig</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Controller/TposController.php</file>
-            <file>file:/home/luis/sfprojects/parcelaja/app/Resources/views/tpos/edit.html.twig</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Form/TposSearchType.php</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/views/default/process.html.twig</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/views/default/map_footer.html.twig</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/views/default/features.html.twig</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/views/base.html.twig</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/public/frontend/pages/css/pages.css</file>
             <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/views/default/header.html.twig</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/public/backend/assets/js/datatables.js</file>
-            <file>file:/home/luis/sfprojects/parcelaja/app/Resources/AppBundle/translations/messages.en.xlf</file>
-            <file>file:/home/luis/sfprojects/parcelaja/app/Resources/views/terminalpayment/edit.html.twig</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/views/default/portfolio.html.twig</file>
         </group>
     </open-files>
 </project-private>

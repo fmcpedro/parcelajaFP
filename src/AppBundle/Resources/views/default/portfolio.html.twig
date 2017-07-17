@@ -1,12 +1,12 @@
 {# empty Twig template #}
 <!-- BEGIN CONTENT SECTION PORTFOLIO -->
 
-<section id="{% trans %}bookmark_portfolio{% endtrans %}" class="">
+{#<section id="{% trans %}bookmark_portfolio{% endtrans %}" class="">
     <div class="container">
         <h5 class="block-title hint-text no-margin">{% trans %}portfolio_block_title_01{% endtrans %}</h5>
         <h5>{% trans %}portfolio_text_01{% endtrans %}</h5>
     </div>
-</section>
+</section>#}
 <!-- END CONTENT SECTION -->
 
 
@@ -23,15 +23,18 @@
 </div>
 
 
-
-
-
 <!-- BEGIN CONTENT SECTION -->
-<section class="bg-master-lightest p-b-85 p-t-75">
-    <div class="container">
+    <section class="bg-master-lightest p-b-85 p-t-75">
+      <div class="container">
         <div class="md-p-l-20 md-p-r-20 xs-no-padding">
-            {#<h5 class="block-title hint-text no-margin">{% trans %}portfolio_block_title_02{% endtrans %}</h5>#}
-            <div class="row">
+          <h5 class="block-title hint-text no-margin">Explore</h5>
+          <div class="row">
+            <div class="col-sm-4 col-md-4">
+              <h1 class="m-t-5">{% trans %}portfolio_block_title_02{% endtrans %}</h1>
+            </div>
+            <div class="col-sm-8 col-md-8 no-padding xs-p-l-15 xs-p-r-15">
+                
+                <div class="row">
                 {#            <div class="col-sm-5 col-md-4">
                               <h1 class="m-t-5">aaaa{% trans %}portfolio_title_01{% endtrans %}</h1>
                             </div>
@@ -39,25 +42,28 @@
                     <img src="{{ asset('bundles/app/frontend/assets/images/logo_set-02.png') }}" class="image-responsive-height lazy sm-m-t-30" alt="">
                 </div>#}
 
-                <div class="col-md-2 col-sm-4 col-xs-6"><img src="{{ asset('bundles/app/frontend/assets/images/aderentes/logo_set-01.png') }}" class="img-responsive" alt=""></div>
-                <div class="col-md-2 col-sm-4 col-xs-6"><img src="{{ asset('bundles/app/frontend/assets/images/aderentes/logo_set-02.png') }}" class="img-responsive" alt=""></div>
-                <div class="col-md-2 col-sm-4 col-xs-6"><img src="{{ asset('bundles/app/frontend/assets/images/aderentes/logo_set-03.png') }}" class="img-responsive" alt=""></div>
-                <div class="col-md-2 col-sm-4 col-xs-6"><img src="{{ asset('bundles/app/frontend/assets/images/aderentes/logo_set-04.png') }}" class="img-responsive" alt=""></div>
-                <div class="col-md-2 col-sm-4 col-xs-6"><img src="{{ asset('bundles/app/frontend/assets/images/aderentes/logo_set-05.png') }}" class="img-responsive" alt=""></div>
-                <div class="col-md-2 col-sm-4 col-xs-6"><img src="{{ asset('bundles/app/frontend/assets/images/aderentes/logo_set-06.png') }}" class="img-responsive" alt=""></div>
+                <div class="col-md-2 col-sm-4 col-xs-4"><img src="{{ asset('bundles/app/frontend/assets/images/aderentes/logo_set-01.png') }}" class="img-responsive" alt=""></div>
+                <div class="col-md-2 col-sm-4 col-xs-4"><img src="{{ asset('bundles/app/frontend/assets/images/aderentes/logo_set-02.png') }}" class="img-responsive" alt=""></div>
+                <div class="col-md-2 col-sm-4 col-xs-4"><img src="{{ asset('bundles/app/frontend/assets/images/aderentes/logo_set-03.png') }}" class="img-responsive" alt=""></div>
+                <div class="col-md-2 col-sm-4 col-xs-4"><img src="{{ asset('bundles/app/frontend/assets/images/aderentes/logo_set-04.png') }}" class="img-responsive" alt=""></div>
+                <div class="col-md-2 col-sm-4 col-xs-4"><img src="{{ asset('bundles/app/frontend/assets/images/aderentes/logo_set-05.png') }}" class="img-responsive" alt=""></div>
+                <div class="col-md-2 col-sm-4 col-xs-4"><img src="{{ asset('bundles/app/frontend/assets/images/aderentes/logo_set-06.png') }}" class="img-responsive" alt=""></div>
 
 
             </div>
 
             <div class="row">
-                <div class="col-md-2 col-sm-4 col-xs-6"><img src="{{ asset('bundles/app/frontend/assets/images/aderentes/logo_set-07.png') }}" class="img-responsive" alt=""></div>
-                <div class="col-md-2 col-sm-4 col-xs-6"><img src="{{ asset('bundles/app/frontend/assets/images/aderentes/logo_set-08.png') }}" class="img-responsive" alt=""></div>
-                <div class="col-md-2 col-sm-4 col-xs-6"><img src="{{ asset('bundles/app/frontend/assets/images/aderentes/logo_set-09.png') }}" class="img-responsive" alt=""></div>
-                <div class="col-md-2 col-sm-4 col-xs-6"><img src="{{ asset('bundles/app/frontend/assets/images/aderentes/logo_set-10.png') }}" class="img-responsive" alt=""></div>
-                <div class="col-md-2 col-sm-4 col-xs-6"><img src="{{ asset('bundles/app/frontend/assets/images/aderentes/logo_set-11.png') }}" class="img-responsive" alt=""></div>
-                <div class="col-md-2 col-sm-4 col-xs-6"></div>
+                <div class="col-md-2 col-sm-4 col-xs-4"><img src="{{ asset('bundles/app/frontend/assets/images/aderentes/logo_set-07.png') }}" class="img-responsive" alt=""></div>
+                <div class="col-md-2 col-sm-4 col-xs-4"><img src="{{ asset('bundles/app/frontend/assets/images/aderentes/logo_set-08.png') }}" class="img-responsive" alt=""></div>
+                <div class="col-md-2 col-sm-4 col-xs-4"><img src="{{ asset('bundles/app/frontend/assets/images/aderentes/logo_set-09.png') }}" class="img-responsive" alt=""></div>
+                <div class="col-md-2 col-sm-4 col-xs-4"><img src="{{ asset('bundles/app/frontend/assets/images/aderentes/logo_set-10.png') }}" class="img-responsive" alt=""></div>
+                <div class="col-md-2 col-sm-4 col-xs-4"><img src="{{ asset('bundles/app/frontend/assets/images/aderentes/logo_set-11.png') }}" class="img-responsive" alt=""></div>
+                <div class="col-md-2 col-sm-4 col-xs-4"></div>
             </div>
-
+            </div>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
+    <!-- END CONTENT SECTION -->
+
