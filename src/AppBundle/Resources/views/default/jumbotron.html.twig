@@ -1,66 +1,52 @@
 {# empty Twig template #}
-
 <!-- BEGIN JUMBOTRON -->
-<section class="jumbotron demo-custom-height-2 full-width" data-pages="parallax">
-    <div class="inner full-height">
-        <!-- BEGIN SLIDER -->
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-
-                <!-- BEGIN SLIDE -->
-                <div class="swiper-slide fit slide1">
-                    <!-- BEGIN IMAGE PARRALAX -->
-                    <div class="slider-wrapper">
-                        {% if app.request.locale == "en" %}
-                                 {#<img class="image"  src="{{ asset('bundles/app/frontend/assets/images/banner_01_en.jpg') }}"/>#}
-                        {% else %}
-                            {#<img class="image"  src="{{ asset('bundles/app/frontend/assets/images/banner_01_pt.jpg') }}"/>#}
-                            
-                            <img class="image"  src="{{ asset('bundles/app/frontend/assets/images/index.jpeg') }}"/>
-                            
-                            
-                            
-                        {% endif %}
+{#<section class="jumbotron full-height bg-primary demo-height-2" data-pages="parallax">
+    <div class="full-height" data-pages-bg-image="{{ asset('bundles/app/frontend/assets/images/index.jpeg') }}" data-bg-overlay="black" data-overlay-opacity="0.4">
+        <div class="container-xs-height full-height inner">
+            <div class="col-xs-height col-middle text-left">
+                <div class="container">
+                    <div class="col-sm-12">
+                        <h1 class="light text-white text-center">Powerful, Highly Customizable UI Framework</h1>
                     </div>
-                    <!-- END IMAGE PARRALAX -->
-                    <!-- BEGIN CONTENT -->
-                    <div class="content-layer">
-                        <div class="inner full-height">
-                            <div class="container-xs-height full-height">
-                                <div class="col-xs-height col-middle text-center">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-md-8 col-md-offset-2">
-                                                {# <h1 class="light text-white" data-swiper-parallax="-15%">
-                                                     <b>{% trans %}jumbotron_title_01{% endtrans %}</b>
-                                                 </h1>
-                                                 <h5 class="text-white hint-text">{% trans %}jumbotron_text_01{% endtrans %}</h5>
-                                                 <a href="#" class="btn btn-white font-montserrat all-caps btn-cons fs-12 m-t-25">Demo</a>#}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- END CONTENT -->
-                </div>
-                <!-- END SLIDE -->
-
-
-
-            </div>
-            <!-- BEGIN ANIMATED MOUSE -->
-            <div class="mouse-wrapper">
-                <div class="mouse">
-                    <div class="mouse-scroll"></div>
                 </div>
             </div>
-            <!-- Add Navigation -->
-{#            <div class="swiper-navigation swiper-dark-solid swiper-rounded swiper-button-prev"></div>
-            <div class="swiper-navigation swiper-dark-solid swiper-rounded swiper-button-next"></div>#}
         </div>
     </div>
-    <!-- END SLIDER -->
 </section>
-<!-- END JUMBOTRON -->
+#}<!-- END JUMBOTRON -->
+
+
+
+
+
+
+<section class="full-height bg-primary demo-height-2" data-pages="parallax">
+    <div class="full-height" data-pages-bg-image="{{ asset('bundles/app/frontend/assets/images/index.jpeg') }}" data-bg-overlay="black" data-overlay-opacity="0.4">
+        <div class="container-xs-height full-height inner">
+            <div class="col-xs-height col-middle text-left">
+                <div class="container">
+                    <div class="col-sm-12">
+                        <h1 class="light text-white text-center">Parcela Já.<br/> Compre Já. Pague depois.
+</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{#
+
+<section class="p-b-65 p-t-60 bg-master-darkest demo-custom-height-2" 
+         data-pages-bg-image="{{ asset('bundles/app/frontend/assets/images/index.jpeg') }}"  
+         data-pages="parallax" 
+         data-bg-overlay="black" 
+         data-overlay-opacity="0.4">
+    <div class="inner"> Parcela Já.
+Compre Já.
+Pague depois.
+
+    </div>
+
+</section>#}
