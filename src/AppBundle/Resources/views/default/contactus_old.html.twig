@@ -1,4 +1,5 @@
 {# empty Twig template #}
+{# empty Twig template #}
 
             <!-- START CONTACT SECTION -->
       {#<section id="{% trans %}bookmark_contactus{% endtrans %}" class="container container-fixed-lg p-t-65 p-b-100  sm-p-b-30 sm-m-b-30">#}
@@ -6,16 +7,16 @@
           
 
           
-          <section id="{% trans %}bookmark_contactus{% endtrans %}" style="background-color: #074067;" class="p-b-85 p-t-75">
-        <div class="container">
+          <section id="{% trans %}bookmark_contactus{% endtrans %}" style="background-color: #074067;" class="container container-fluid p-t-65 p-b-100  sm-p-b-30 sm-m-b-30">
+        <div class="row">
           <div class="col-md-6">
-            <h2 style="color: white">{% trans %}contactus_question_title{% endtrans %}</h2>
+            <h2>{% trans %}contactus_question_title{% endtrans %}</h2>
             <div class="p-r-40 sm-p-r-0">
-              <p style="color: white">{% trans %}contactus_question_text{% endtrans %}</p>
+              <p>{% trans %}contactus_question_text{% endtrans %}</p>
               <br>
-              
-              <div class="" id="contact-panel">
-                <p style="color: white" class="semi-bold no-margin">{% trans %}contactus_fill_form{% endtrans %}</p>
+              <br>
+              <div class="panel" id="contact-panel">
+                <p class="semi-bold no-margin">{% trans %}contactus_fill_form{% endtrans %}</p>
                 <form role="form" autocomplete="off" class="m-t-15" id="contact-form" action="{{ path('email') }}" method="post">
                   <div class="row">
                     <div class="col-sm-6">
@@ -53,7 +54,7 @@
                   
                   <div class="sm-p-t-10 clearfix">
                     <p class="pull-left small hint-text m-t-5 font-arial">{% trans %}contactus_true_information{% endtrans %}</p>
-                    <button class="btn btn1 btn-primary font-montserrat all-caps fs-12 pull-right xs-pull-left">{% trans %}contactus_submit_button{% endtrans %}</button>
+                    <button class="btn btn-primary font-montserrat all-caps fs-12 pull-right xs-pull-left">{% trans %}contactus_submit_button{% endtrans %}</button>
                   </div>
                   <div class="clearfix"></div>
                 </form>
@@ -63,17 +64,17 @@
           <div class="col-md-6">
             <div class="visible-xs visible-sm b-b b-grey-light m-t-35 m-b-30"></div>
             <div class="p-l-40 sm-p-l-0 sm-p-t-10">
-              <h3 style="color: white">{% trans %}contactus_title{% endtrans %}</h3>
-              <p style="color: white">{% trans %}contactus_text{% endtrans %}</p>
+              <h3>{% trans %}contactus_title{% endtrans %}</h3>
+              <p>{% trans %}contactus_text{% endtrans %}</p>
               <br>
               <div class="row">
                 <div class="col-sm-6">
-                  <h5 style="color: white" class="block-title hint-text m-b-0">{% trans %}contactus_location_name_01{% endtrans %} </h5>
-                  <address style="color: white" class="m-t-10">{% trans %}contactus_location_description_01{% endtrans %}</address>
+                  <h5 class="block-title hint-text m-b-0">{% trans %}contactus_location_name_01{% endtrans %} </h5>
+                  <address class="m-t-10">{% trans %}contactus_location_description_01{% endtrans %}</address>
                   <br>
-                  <p style="color: white" class="hint-text no-margin"><span class="fs-12 font-montserrat bold all-caps p-r-10">Tel</span> <span class="fs-14">+351 215 881 280</span></p>
+                  <p class="hint-text no-margin"><span class="fs-12 font-montserrat bold all-caps p-r-10">Tel</span> <span class="fs-14">+351 215 881 280</span></p>
                   {#<p class="hint-text"><span class="fs-12 font-montserrat bold all-caps p-r-10">Fax</span> <span class="fs-14">(877) 412-7766</span></p>#}
-                  <p style="color: white" class="hint-text"><span class="fs-12 font-montserrat bold all-caps p-r-10">Email</span> <span class="fs-14">geral[at]parcelaja.pt</span></p>
+                  <p class="hint-text"><span class="fs-12 font-montserrat bold all-caps p-r-10">Email</span> <span class="fs-14">geral[at]parcelaja.pt</span></p>
                   
                   
                   
