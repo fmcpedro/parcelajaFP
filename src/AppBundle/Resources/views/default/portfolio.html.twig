@@ -10,7 +10,7 @@
 <!-- END CONTENT SECTION -->
 
 
-<div class="container-fluid">
+{#<div class="container-fluid">
     <div class="row">
         <div class="col-sm-12 col-md-12 no-padding xs-p-l-15 xs-p-r-15">
             {% if app.request.locale == "en" %}
@@ -20,11 +20,11 @@
             {% endif %}
         </div>
     </div>
-</div>
+</div>#}
 
 
 <!-- BEGIN CONTENT SECTION -->
-    <section class="bg-master-lightest p-b-85 p-t-75">
+    <section id="{% trans %}bookmark_portfolio{% endtrans %}" class="bg-master-lightest p-b-85 p-t-75">
       <div class="container">
         <div class="md-p-l-20 md-p-r-20 xs-no-padding">
           <h5 class="block-title hint-text no-margin">Explore</h5>
