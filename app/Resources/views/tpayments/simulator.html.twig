@@ -1,0 +1,437 @@
+{# empty Twig template #}
+
+
+
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+    <!-- START PAGE CONTENT -->
+    <div class="content">
+        <!-- START JUMBOTRON -->
+        <div class="jumbotron" data-pages="parallax">
+            <div class="container-fluid container-fixed-lg sm-p-l-20 sm-p-r-20">
+                <div class="inner">
+                    <!-- START BREADCRUMB -->
+                    <ul class="breadcrumb">
+                        <li><a href="#" class="">Parcela Ja</a></li>
+                        <li><a href="#" class="active">Mapa de parcelas a pagar numa compra</a></li>
+                    </ul>
+                    <!-- END BREADCRUMB -->
+                </div>
+            </div>
+        </div>
+        <!-- END JUMBOTRON -->
+
+
+
+        <!-- START CONTAINER FLUID -->
+        <div class="container-fluid container-fixed-lg bg-white">
+            <!-- START PANEL -->
+            <div class="panel panel-transparent">
+                <div class="panel-heading">
+                    <div class="panel-title">Simulador de uma compra 
+                    </div>
+                    <div class="export-options-container pull-right"></div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="panel-body">
+
+
+                    <div class="row">
+                        <div class="col-sm-10">
+                            {#<h3>form_title</h3>#}
+                            <p>Preencha os campos abaixo para simular uma compra</p>
+
+                           {# <form method="post" action="{{ path('admin_payments_simulator') }}" class="form-horizontal">#}
+                           {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }} 
+                                <div class="form-group">
+                                    <label for="valor_compra" class="col-sm-3 control-label">Valor Compra</label>
+                                    <div class="col-sm-9">
+                                        {{ form_widget(form.valorCompra, {'attr': {'class': 'form-control'}}) }}
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="numero_prestacoes" class="col-sm-3 control-label">Número Parcelas</label>
+                                    <div class="col-sm-9">
+                                        {{ form_widget(form.numeroParcelas, {'attr': {'class': 'form-control'}}) }}
+                                    </div>
+                                </div>
+                                    
+                                    <div class="form-group">
+                                <label class="col-sm-3 control-label">Taxa</label>
+
+                                <div class="col-sm-9">
+                                    <div class="radio radio-success">
+                                        {{ form_widget(form.taxa) }}
+                                    </div>                                    
+
+                                </div>
+                            </div>
+
+
+                                <br>
+
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        {#<p>I hereby certify that the information above is true and accurate. </p>#}
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <button class="btn btn-complete btn-cons m-b-10" type="submit">
+                                            <i class="pg-form"></i> <span class="bold">Update</span>
+                                        </button>
+                                        <button class="btn btn-default btn-cons m-b-10" type="reset">
+                                            <i class="pg-close"></i> <span class="bold">Clear</span>
+                                        </button>
+
+
+                                    </div>
+                                </div>
+                            {{ form_end(form) }}
+
+                        </div>
+                    </div>
+
+
+
+
+
+                    {% if tpayments is defined %}
+
+
+<br/>
+<br/>
+<br/>
+
+                        <table style="" class="rtable rtable--flip" id="">
+                            <thead>
+                                <tr>
+
+
+                                    <th>Nº DA PARCELA</th>
+                                    <th>VALOR COMISSAO PAGAR ADERENTE</th>
+                                    <th>VALOR COMISSAO SUJEITA A IVA</th>
+                                    <th>IVA COMISSAO</th>
+                                    <th>CUSTO DE CAPTURA</th>
+                                    <th>IVA CUSTO DE CAPTURA</th>
+                                    <th>IVA TOTAL</th>
+                                    <th>VALOR TOTAL COBRADO AO ADERENTE</th>
+                                    <th>VALOR FINANCIANDO AO ADERENTE</th>
+                                    <th>VALOR PAGO AO ADERENTE</th>
+                                    <th>VALOR DAS PARCELAS</th>
+                                    <th>COMISSAO OGONE</th>
+                                    <th>COMISSAO EVO PAYMENTS</th>
+                                    <th>VALOR A RECEBER DA EVO PAYMENTS</th>
+                                    <th>CAPITAL A AMORTIZADO MENSALMENTE</th>
+                                    <th>CAPITAL AMORTIZADO ACUMULADO</th>
+                                    <th>CAPITAL EM DÍVIDA</th>
+                                    <th>JURO</th>
+                                    <th>JURO ACUMULADO</th>
+                                    <th>IMPOSTO SELO</th>
+                                    <th>IMPOSTO SELO ACUMULADO</th>
+                                    <th>π PARCIAL</th>
+                                    <th>π ACUMULADA</th>
+                                    <th>LUCRO PARCELA</th>
+                                    <th>LUCRO BNI EUROPA</th>
+                                    <th>VALOR TRANSF/PARCELA JÁ</th>
+                                    <th>IVA VALOR PARCELA JÁ</th>
+                                    <th>VALOR TRANSF/PARCELA JÁ (C/IVA)</th>
+                                    <th>VALOR TRANSF BNI</th>
+                                    <th>IS VALOR BNI</th>
+                                    <th>VALOR TRANSF BNI (C/IS)</th>
+                                    <th>TAXA COMISSSAO SUJEITA A IVA</th>
+                                    <th>TAXA PROCESSAMENTO</th>
+                                    <th>IVA</th>
+                                    <th>SERVIÇOS FINANCEIROS</th>
+                                    <th>IMP. SELO</th>
+
+
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for key, tpayment in tpayments %}
+                                    <tr>
+                                        <td>{{ tpayment.numParcela }}</td>
+                                        <td>
+                                            {% if key == 0 %}
+                                                {{ tpayment.valorComissaoPagarAderente|number_format(2, '.', ',') }} €
+                                            {%else%}
+                                                &nbsp;
+                                            {%endif%}
+                                        </td>
+                                        <td>
+                                            {% if key == 0 %}
+                                                {{ tpayment.valorComissaoSujeitaIva|number_format(2, '.', ',') }} €
+                                            {%else%}
+                                                &nbsp;
+                                            {%endif%}
+
+                                        </td>
+                                        <td>
+                                            {% if key == 0 %}
+                                                {{ tpayment.ivaComissao|number_format(2, '.', ',') }} €
+                                            {%else%}
+                                                &nbsp;
+                                            {%endif%}
+                                        </td>
+                                        <td>
+                                            {% if key == 0 %}
+                                                {{ tpayment.custoCaptura|number_format(2, '.', ',') }} €
+                                            {%else%}
+                                                &nbsp;
+                                            {%endif%}
+                                        </td>
+                                        <td>
+                                            {% if key == 0 %}
+                                                {{ tpayment.ivaCustoCaptura|number_format(2, '.', ',') }} €
+                                            {%else%}
+                                                &nbsp;
+                                            {%endif%}
+                                        </td>
+                                        <td>
+                                            {% if key == 0 %}
+                                                {{ tpayment.ivaTotal|number_format(2, '.', ',') }} €
+                                            {%else%}
+                                                &nbsp;
+                                            {%endif%}
+                                        </td>
+                                        <td>
+                                            {% if key == 0 %}
+                                                {{ tpayment.valorTotalCobradoAderente|number_format(2, '.', ',') }} €
+                                            {%else%}
+                                                &nbsp;
+                                            {%endif%}
+                                        </td>
+                                        <td>
+                                            {% if key == 0 %}
+                                                {{ tpayment.valorFinanciadoAderente|number_format(2, '.', ',') }} €
+                                            {%else%}
+                                                &nbsp;
+                                            {%endif%}
+                                        </td>
+                                        <td>
+
+                                            {% if key == 0 %}
+                                                {{ tpayment.valorPagoAderente|number_format(2, '.', ',') }} €
+                                            {%else%}
+                                                &nbsp;
+                                            {%endif%}
+                                        </td>
+                                        <td>{{ tpayment.valParcelas|number_format(2, '.', ',') }} €</td>
+                                        <td>{{ tpayment.comOgone|number_format(2, '.', ',') }} €</td>
+                                        <td>{{ tpayment.comEvoPayments|number_format(2, '.', ',') }} €</td>
+                                        <td>{{ tpayment.valorReceberEvoPayments|number_format(2, '.', ',') }} €</td>
+                                        <td>{{ tpayment.capitalAmortizadoMensalmente|number_format(2, '.', ',') }} €</td>
+                                        <td>{{ tpayment.capitalAmortizadoAcumulado|number_format(2, '.', ',') }} €</td>
+                                        <td>{{ tpayment.capitalEmDivida|number_format(2, '.', ',') }} €</td>
+                                        <td>{{ tpayment.juro|number_format(2, '.', ',') }} €</td>
+                                        <td>{{ tpayment.juroAcumulado|number_format(2, '.', ',') }} €</td>
+                                        <td>{{ tpayment.impostoSelo|number_format(2, '.', ',') }} €</td>
+                                        <td>{{ tpayment.impostoSeloAcumulado|number_format(2, '.', ',') }} €</td>
+                                        <td>{{ tpayment.piiParcial|number_format(2, '.', ',') }} €</td>
+                                        <td>{{ tpayment.piiAcumulado|number_format(2, '.', ',') }} €</td>
+                                        <td>{{ tpayment.lucroParcela|number_format(2, '.', ',') }} €</td>
+                                        <td>{{ tpayment.lucroBniEuropa|number_format(2, '.', ',') }} €</td>
+                                        <td>{{ tpayment.valorTransferParcela|number_format(2, '.', ',') }} €</td>
+                                        <td>{{ tpayment.ivaValorParcela|number_format(2, '.', ',') }} €</td>
+                                        <td>{{ tpayment.valorTransfParcelaComIva|number_format(2, '.', ',') }} €</td>
+                                        <td>{{ tpayment.valorTransfBni|number_format(2, '.', ',') }} €</td>
+                                        <td>{{ tpayment.impostoSeloValorBni|number_format(2, '.', ',') }} €</td>
+                                        <td>{{ tpayment.valorTransfBniComImpostoSelo|number_format(2, '.', ',') }} €</td>
+                                        <td>
+                                            {% if key == 0 %}
+                                                {{ tpayment.taxaComissaoSujeitaIva|number_format(2, '.', ',') }} €
+                                            {%else%}
+                                                &nbsp;
+                                            {%endif%}
+                                        </td>
+                                        <td>
+                                            {% if key == 0 %}
+                                                {{ tpayment.taxaProcessamento|number_format(2, '.', ',') }} €
+                                            {%else%}
+                                                &nbsp;
+                                            {%endif%}
+                                        </td>
+                                        <td>
+                                            {% if key == 0 %}
+                                                {{ tpayment.iva|number_format(2, '.', ',') }} €
+                                            {%else%}
+                                                &nbsp;
+                                            {%endif%}
+
+                                        </td>
+                                        <td>
+                                            {% if key == 0 %}
+                                                {{ tpayment.servicosFinanceiros|number_format(2, '.', ',') }} €
+                                            {%else%}
+                                                &nbsp;
+                                            {%endif%}
+                                        </td>
+                                        <td>
+                                            {% if key == 0 %}
+                                                {{ tpayment.impSelo|number_format(2, '.', ',') }} €
+                                            {%else%}
+                                                &nbsp;
+                                            {%endif%}
+                                        </td>
+
+
+
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+
+
+
+
+                    {% endif%}
+
+
+
+                </div>
+            </div>
+            <!-- END PANEL -->
+        </div>
+        <!-- END CONTAINER FLUID -->
+
+
+    </div>
+    <!-- END PAGE CONTENT -->
+
+
+
+
+
+    <style>
+        /*!
+        // CSS only Responsive Tables
+        // http://dbushell.com/2016/03/04/css-only-responsive-tables/
+        // by David Bushell
+        */
+
+        .rtable {
+            /*!
+            // IE needs inline-block to position scrolling shadows otherwise use:
+            // display: block;
+            // max-width: min-content;
+            */
+            display: inline-block;
+            vertical-align: top;
+            max-width: 100%;
+
+            overflow-x: auto;
+
+            // optional - looks better for small cell values
+            white-space: nowrap;
+
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        .rtable,
+        .rtable--flip tbody {
+            // optional - enable iOS momentum scrolling
+            -webkit-overflow-scrolling: touch;
+
+            // scrolling shadows
+            background: radial-gradient(left, ellipse, rgba(0,0,0, .2) 0%, rgba(0,0,0, 0) 75%) 0 center,
+                radial-gradient(right, ellipse, rgba(0,0,0, .2) 0%, rgba(0,0,0, 0) 75%) 100% center;
+            background-size: 10px 100%, 10px 100%;
+            background-attachment: scroll, scroll;
+            background-repeat: no-repeat;
+        }
+
+        // change these gradients from white to your background colour if it differs
+        // gradient on the first cells to hide the left shadow
+        .rtable td:first-child,
+        .rtable--flip tbody tr:first-child {
+            background-image: linear-gradient(to right, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
+            background-repeat: no-repeat;
+            background-size: 20px 100%;
+        }
+
+        // gradient on the last cells to hide the right shadow
+        .rtable td:last-child,
+        .rtable--flip tbody tr:last-child {
+            background-image: linear-gradient(to left, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
+            background-repeat: no-repeat;
+            background-position: 100% 0;
+            background-size: 20px 100%;
+        }
+
+        .rtable th {
+          {#  font-size: 11px;#}
+            text-align: left;
+            text-transform: uppercase;
+            background: #f2f0e6;
+        }
+
+        .rtable th,
+        .rtable td {
+            padding: 4px 12px;
+            border: 1px solid #d9d7ce;
+        }
+
+        .rtable--flip {
+            display: flex;
+            overflow: hidden;
+            background: none;
+        }
+
+        .rtable--flip thead {
+            display: flex;
+            flex-shrink: 0;
+            min-width: min-content;
+        }
+
+        .rtable--flip tbody {
+            display: flex;
+            position: relative;
+            overflow-x: auto;
+            overflow-y: hidden;
+        }
+
+        .rtable--flip tr {
+            display: flex;
+            flex-direction: column;
+            min-width: min-content;
+            flex-shrink: 0;
+        }
+
+        .rtable--flip td,
+        .rtable--flip th {
+            display: block;
+        }
+
+        .rtable--flip td {
+            background-image: none !important;
+            // border-collapse is no longer active
+            border-left: 0;
+        }
+
+        // border-collapse is no longer active
+        .rtable--flip th:not(:last-child),
+        .rtable--flip td:not(:last-child) {
+            border-bottom: 0;
+        }
+
+    </style>
+
+
+    <script>
+
+        /*! * iOS doesn't respect the meta viewport tag inside a frame * add a link to the debug view (for demo purposes only) */if (/(iPhone|iPad|iPod)/gi.test(navigator.userAgent) && window.location.pathname.indexOf('/full') > -1) {
+            var p = document.createElement('p');
+            p.innerHTML = '<a target="_blank" href="https://s.codepen.io/dbushell/debug/wGaamR"><b>Click here to view this demo properly on iOS devices (remove the top frame)</b></a>';
+            document.body.insertBefore(p, document.body.querySelector('h1'));
+        }
+
+    </script>
+
+
+
+{% endblock %}

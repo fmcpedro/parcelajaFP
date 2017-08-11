@@ -1,0 +1,142 @@
+
+
+
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+    <!-- START PAGE CONTENT -->
+    <div class="content">
+        <!-- START JUMBOTRON -->
+        <div class="jumbotron" data-pages="parallax">
+            <div class="container-fluid container-fixed-lg sm-p-l-20 sm-p-r-20">
+                <div class="inner">
+                    <!-- START BREADCRUMB -->
+                    <ul class="breadcrumb">
+                        <li><a href="#" class="">Parcela Ja</a></li>
+                        <li><a href="#" class="active">Mapa de Pagamentos de Terminais</a></li>
+                    </ul>
+                    <!-- END BREADCRUMB -->
+                </div>
+            </div>
+        </div>
+        <!-- END JUMBOTRON -->
+
+
+
+        <!-- START CONTAINER FLUID -->
+        <div class="container-fluid container-fixed-lg bg-white">
+            <!-- START PANEL -->
+            <div class="panel panel-transparent">
+                <div class="panel-heading">
+                    <div class="panel-title">Lista de Pagamentos dos Terminais 
+                    </div>
+                    <div class="export-options-container pull-right"></div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="panel-body">
+                    
+                        
+                      
+                    
+                    
+                    
+                    
+
+
+
+
+
+
+
+
+
+VALOR A RECEBER DA EVO PAYMENTS
+
+CAPITAL A AMORTIZADO MENSALMENTE
+CAPITAL AMORTIZADO ACUMULADO
+CAPITAL EM DÍVIDA
+JURO
+JURO ACUMULADO
+
+PROC. SEPA CT
+IMPOSTO SELO
+IMPOSTO SELO ACUMULADO
+
+π PARCIAL
+π ACUMULADA
+
+LUCRO PARCELA
+LUCRO BNI EUROPA
+
+VALOR TRANSF/PARCELA JÁ
+IVA VALOR PARCELA JÁ
+VALOR TRANSF/PARCELA JÁ (C/IVA)
+
+VALOR TRANSF BNI
+IS VALOR BNI
+VALOR TRANSF BNI (C/IS)
+
+                    
+                        
+                        
+                        
+    <table class="table table-striped table-condensed" id="tableWithExportOptions">
+        <thead>
+            <tr>
+                <th>Nº DA PARCELA</th>
+                <th>VALOR DAS PARCELAS</th>
+                <th>COMISSAO OGONE</th>
+                <th>COMISSAO EVO PAYMENTS</th>
+                <th>Fdate</th>
+                <th>Famountevo</th>
+                <th>Fdateevo</th>
+                <th>Fchargebackevo</th>
+                <th>Fpurchaseid</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+        {% for tpayment in tpayments %}
+            <tr>
+                <td>{{ tpayment.finstallment }}</td>
+                <td>{{ tpayment.famount }}</td>
+                <td>>> 0.10 € <<</td>
+
+                
+                <td>{{ tpayment.fpayid }}</td>
+                
+                
+                <td>{% if tpayment.fdate %}{{ tpayment.fdate|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ tpayment.famountevo }}</td>
+                <td>{% if tpayment.fdateevo %}{{ tpayment.fdateevo|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ tpayment.fchargebackevo }}</td>
+                <td>{{ tpayment.fpurchaseid }}</td>
+               
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+                    <a href="{{ path('admin_terminal_payment_new') }}" class="btn btn-success btn-cons m-b-10" type="submit">
+                        <i class="pg-plus"></i> <span class="bold">New</span>
+                    </a>
+
+                </div>
+            </div>
+            <!-- END PANEL -->
+        </div>
+        <!-- END CONTAINER FLUID -->
+
+
+    </div>
+    <!-- END PAGE CONTENT -->
+
+{% endblock %}

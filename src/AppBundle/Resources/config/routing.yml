@@ -5,5 +5,11 @@ app_admin_tpos:
 app_admin_terminal_payment:
     resource: "@AppBundle/Resources/config/routing/terminalpayment.yml"
     prefix:   /admin_terminal_payment
+    
+    
+app_admin_payments:
+    resource: "@AppBundle/Resources/config/routing/tpayments.yml"
+    prefix:   /admin_payments
+
 
 

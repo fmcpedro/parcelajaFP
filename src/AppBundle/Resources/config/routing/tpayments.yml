@@ -1,0 +1,30 @@
+admin_payments_index:
+    path:     /
+    defaults: { _controller: "AppBundle:Tpayments:index" }
+    methods:  GET
+
+admin_payments_simulator:
+    path:     /simulator
+    defaults: { _controller: "AppBundle:Tpayments:simulator" }
+    methods:  [GET, POST]
+
+
+admin_payments_show:
+    path:     /{fpurchaseid}/show
+    defaults: { _controller: "AppBundle:Tpayments:show" }
+    methods:  GET
+
+admin_payments_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Tpayments:new" }
+    methods:  [GET, POST]
+
+admin_payments_edit:
+    path:     /{fpurchaseid}/edit
+    defaults: { _controller: "AppBundle:Tpayments:edit" }
+    methods:  [GET, POST]
+
+admin_payments_delete:
+    path:     /{fpurchaseid}/delete
+    defaults: { _controller: "AppBundle:Tpayments:delete" }
+    methods:  DELETE
