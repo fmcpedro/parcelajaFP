@@ -101,6 +101,10 @@
                     {% if tpayments is defined %}
 
 
+                        
+                        
+                 
+                        
 <br/>
 <br/>
 <br/>
@@ -111,16 +115,16 @@
 
 
                                     <th>Nº DA PARCELA</th>
-                                    <th>VALOR COMISSAO PAGAR ADERENTE</th>
+                                    <th>valor Comissao Pagar Cliente</th>
                                     <th>VALOR COMISSAO SUJEITA A IVA</th>
                                     <th>IVA COMISSAO</th>
                                     <th>CUSTO DE CAPTURA</th>
                                     <th>IVA CUSTO DE CAPTURA</th>
                                     <th>IVA TOTAL</th>
-                                    <th>VALOR TOTAL COBRADO AO ADERENTE</th>
+                                    <th>valor Total Cobrado Cliente</th>
                                     <th>VALOR FINANCIANDO AO ADERENTE</th>
                                     <th>VALOR PAGO AO ADERENTE</th>
-                                    <th>VALOR DAS PARCELAS</th>
+                                    <th>val Parcelas Emissor</th>
                                     <th>COMISSAO OGONE</th>
                                     <th>COMISSAO EVO PAYMENTS</th>
                                     <th>VALOR A RECEBER DA EVO PAYMENTS</th>
@@ -157,7 +161,7 @@
                                         <td>{{ tpayment.numParcela }}</td>
                                         <td>
                                             {% if key == 0 %}
-                                                {{ tpayment.valorComissaoPagarAderente|number_format(2, '.', ',') }} €
+                                                {{ tpayment.valorComissaoPagarCliente|number_format(2, '.', ',') }} €
                                             {%else%}
                                                 &nbsp;
                                             {%endif%}
@@ -200,7 +204,7 @@
                                         </td>
                                         <td>
                                             {% if key == 0 %}
-                                                {{ tpayment.valorTotalCobradoAderente|number_format(2, '.', ',') }} €
+                                                {{ tpayment.valorTotalCobradoCliente|number_format(2, '.', ',') }} €
                                             {%else%}
                                                 &nbsp;
                                             {%endif%}
@@ -220,7 +224,7 @@
                                                 &nbsp;
                                             {%endif%}
                                         </td>
-                                        <td>{{ tpayment.valParcelas|number_format(2, '.', ',') }} €</td>
+                                        <td>{{ tpayment.valParcelasEmissor|number_format(2, '.', ',') }} €</td>
                                         <td>{{ tpayment.comOgone|number_format(2, '.', ',') }} €</td>
                                         <td>{{ tpayment.comEvoPayments|number_format(2, '.', ',') }} €</td>
                                         <td>{{ tpayment.valorReceberEvoPayments|number_format(2, '.', ',') }} €</td>
@@ -364,7 +368,7 @@
         }
 
         .rtable th {
-          {#  font-size: 11px;#}
+            font-size: 12px;
             text-align: left;
             text-transform: uppercase;
             background: #f2f0e6;
@@ -372,8 +376,10 @@
 
         .rtable th,
         .rtable td {
+            font-size: 12px;
             padding: 4px 12px;
             border: 1px solid #d9d7ce;
+            text-align: right;
         }
 
         .rtable--flip {

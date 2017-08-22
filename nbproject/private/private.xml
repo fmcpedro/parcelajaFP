@@ -3,18 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Entity/TpaymentsTaxaDesconto.php</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/views/default/callforaction.html.twig</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/config/routing.yml</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/config/routing/tpayments.yml</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/views/default/faqs.html.twig</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/views/default/contactus.html.twig</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/views/default/process.html.twig</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/views/default/features.html.twig</file>
-            <file>file:/home/luis/sfprojects/parcelaja/app/Resources/views/tpayments/simulator.html.twig</file>
+            <file>file:/home/luis/sfprojects/parcelaja/app/Resources/views/tpayments/blank.html.twig</file>
+            <file>file:/home/luis/sfprojects/parcelaja/app/config/config.yml</file>
+            <file>file:/home/luis/sfprojects/parcelaja/var/logs/dev.log</file>
             <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Controller/TpaymentsController.php</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/views/default/portfolio.html.twig</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Entity/Tpayments.php</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Utils/CalculateIva.php</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Utils/CalculateImpostoSeloBNIE.php</file>
         </group>
     </open-files>
 </project-private>

@@ -3,10 +3,15 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Tpayments;
+use AppBundle\Entity\TpaymentsSimulator;
+use AppBundle\Entity\TpaymentsTaxaDesconto;
+use AppBundle\Entity\TpaymentsTaxaServico;
+use AppBundle\Utils\CalculateImpostoSeloBNIE;
+use AppBundle\Utils\CalculateIva;
+use Proxies\__CG__\AppBundle\Entity\Tpurchase;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Form;
 use Symfony\Component\HttpFoundation\Request;
-use AppBundle\Entity\TpaymentsTaxaDesconto;
 
 /**
  * Tpayment controller.
@@ -16,48 +21,119 @@ class TpaymentsController extends Controller {
 
     public function simulatorAction(Request $request) {
 
+        $logger = $this->get('logger');
+        $logger->info("simulatorAction");
 
-
-        $simulation = new \AppBundle\Entity\TpaymentsSimulator();
+        $simulation = new TpaymentsSimulator();
         $form = $this->createForm('AppBundle\Form\TpaymentsSimulatorType', $simulation);
         $form->handleRequest($request);
+        $tpayments = array();
 
         if ($form->isSubmitted() && $form->isValid()) {
 //            $em = $this->getDoctrine()->getManager();
 //            $em->persist($tpayment);
 //            $em->flush();
-            
-            if($form["taxa"]->getData() == 1 ):
-                $tpayments = $this->generatePaymentsTaxaDesconto($form["valorCompra"]->getData(), $form["numeroParcelas"]->getData());
-            
-            else:
-                
-                $tpayments = $this->generatePaymentsTaxaServico($form["valorCompra"]->getData(), $form["numeroParcelas"]->getData());
-            
-            endif;
-            
-            
-            
 
-            return $this->render('tpayments/simulator.html.twig', array(
-                        'simulation' => $simulation,
-                        'tpayments' => $tpayments,
-                        'form' => $form->createView(),
-            ));
+            if ($form["taxa"]->getData() == 1):
+                $tpayments = $this->generatePaymentsTaxaDesconto($form["valorCompra"]->getData(), $form["numeroParcelas"]->getData());
+                return $this->render('tpayments/simulatorDesconto.html.twig', array(
+                            'simulation' => $simulation,
+                            'tpayments' => $tpayments,
+                            'form' => $form->createView(),
+                ));
+            else:
+                $tpayments = $this->generatePaymentsTaxaServico($form["valorCompra"]->getData(), $form["numeroParcelas"]->getData());
+                return $this->render('tpayments/simulatorServico.html.twig', array(
+                            'simulation' => $simulation,
+                            'tpayments' => $tpayments,
+                            'form' => $form->createView(),
+                ));
+            endif;
         }
 
-        return $this->render('tpayments/simulator.html.twig', array(
+        return $this->render('tpayments/simulatorDesconto.html.twig', array(
                     'simulation' => $simulation,
                     'form' => $form->createView(),
         ));
     }
 
-    
     public function generatePaymentsTaxaServico($valorCompra, $numeroPrestacoes) {
-        return null;
+
+
+        $logger = $this->get('logger');
+        $logger->info("generatePaymentsTaxaServico");
+
+        $prestacoes = array();
+        $capitalAmortizadoAnterior = 0;
+        $capitalEmDividaAnterior = 0;
+        $juroAcumuladoAnterior = 0;
+        $impostoSeloAcumuladoAnterior = 0;
+        $piiAcumuladoAnterior = 0;
+        $valorTransfBniComImpostoSelo = 0;
+        $valorTransfBni = 0;
+        $impostoSelo = 0;
+
+
+        for ($i = 0; $i < $numeroPrestacoes; $i++) {
+
+            $prestacao = new TpaymentsTaxaServico($valorCompra, $numeroPrestacoes, $i);
+
+            //ok, validado
+            $prestacao->setCapitalAmortizadoAcumulado($prestacao->getCapitalAmortizadoMensalmente() + $capitalAmortizadoAnterior);
+            $capitalAmortizadoAnterior = $prestacao->getCapitalAmortizadoAcumulado();
+
+            //ok, validado  
+            $prestacao->setJuro($capitalEmDividaAnterior * (TpaymentsTaxaDesconto::TAXA_JURO / $prestacao->getNumeroPrestacoes()));
+            $capitalEmDividaAnterior = $prestacao->getCapitalEmDivida();
+
+            //ok, validado
+            $prestacao->setJuroAcumulado($prestacao->getJuro() + $juroAcumuladoAnterior);
+            $juroAcumuladoAnterior = $prestacao->getJuroAcumulado();
+
+            //ok, validado
+            if ($i == 0):
+                $prestacao->setProcSepaCt(TpaymentsTaxaServico::PROC_SEPA_CT);
+            else:
+                $prestacao->setProcSepaCt(0);
+            endif;
+
+            //ok, validado
+            $prestacao->setImpostoSeloAcumulado($prestacao->getImpostoSelo() + $impostoSeloAcumuladoAnterior);
+            $impostoSeloAcumuladoAnterior = $prestacao->getImpostoSeloAcumulado();
+
+            //os calculos seguintes têm de vir depois desta função
+            $this->executarCalculosCirculares($prestacao);
+
+            //ok, validado, utilizado mais abaixo
+            $valorTransfBniComImpostoSelo += $prestacao->getValorTransfBniComImpostoSelo();
+            //ok, validado, utilizado abaixo
+            $valorTransfBni += $prestacao->getValorTransfBni();
+            //ok, validado, utilizado abaixo
+            $impostoSelo += $prestacao->getImpostoSeloValorBni();
+
+
+            $prestacoes[] = $prestacao;
+        }
+
+
+        //calculo de volores dependentes dos valores dos caculos circulares(pii, imposto selo, e Iva)
+        foreach ($prestacoes as $prestacao) {
+            //ok, validado
+            $prestacao->setValorComissaoSujeitaIva(($prestacao->getValorComissaoPagarCliente() - $valorTransfBniComImpostoSelo) / (1 + TpaymentsTaxaServico::IVA));
+            //ok, validado
+            $prestacao->setImpSelo($impostoSelo);
+            //ok, validado
+            $prestacao->setPiiAcumulado($prestacao->getPiiParcial() + $piiAcumuladoAnterior);
+            $piiAcumuladoAnterior = $prestacao->getPiiAcumulado();
+
+            //ok, validado
+            $prestacao->setServicosFinanceiros($valorTransfBni);
+        }
+
+
+        return $prestacoes;
     }
-    
-    
+
     public function generatePaymentsTaxaDesconto($valorCompra, $numeroPrestacoes) {
 
         $prestacoes = array();
@@ -66,7 +142,9 @@ class TpaymentsController extends Controller {
         $juroAcumuladoAnterior = 0;
         $impostoSeloAcumuladoAnterior = 0;
         $piiAcumuladoAnterior = 0;
-        $valorTransfBniComIva = 0;
+        $valorTransfBniComImpostoSelo = 0;
+        $valorTransfBni = 0;
+        $impostoSelo = 0;
 
 
         for ($i = 0; $i < $numeroPrestacoes; $i++) {
@@ -94,7 +172,13 @@ class TpaymentsController extends Controller {
             $prestacao->setPiiAcumulado($prestacao->getPiiParcial() + $piiAcumuladoAnterior);
             $piiAcumuladoAnterior = $prestacao->getPiiAcumulado();
 
-            $valorTransfBniComIva += $prestacao->getValorTransfBniComImpostoSelo();
+            $valorTransfBniComImpostoSelo += $prestacao->getValorTransfBniComImpostoSelo();
+            $valorTransfBni += $prestacao->getValorTransfBni();
+
+
+            $impostoSelo += $prestacao->getImpostoSeloValorBni();
+            //echo "ImpostoSeloValorBni = " . $prestacao->getImpostoSeloValorBni();
+
 
             $prestacoes[] = $prestacao;
         }
@@ -102,16 +186,66 @@ class TpaymentsController extends Controller {
 
 
         foreach ($prestacoes as $prestacao) {
-            $prestacao->setValorComissaoSujeitaIva($valorTransfBniComIva);
+            $prestacao->setValorComissaoSujeitaIva($prestacao->getValorComissaoPagarAderente() - $valorTransfBniComImpostoSelo);
+            $prestacao->setServicosFinanceiros($valorTransfBni);
+            $prestacao->setImpSelo($impostoSelo);
             //echo $prestacao->getValorComissaoSujeitaIva();
         }
 
-
-
-
-
-
         return $prestacoes;
+    }
+
+    public function executarCalculosCirculares(TpaymentsTaxaServico $prestacao) {
+
+        // na primeira chamada o IMPOSTO DE SELO vai com zero
+        $iva = new CalculateIva($prestacao->getJuro(), 0, $prestacao->getComissaoPagarClienteFinal(), $prestacao->getNumeroPrestacoes());
+        // na primeira chamada o IVA vai com zero
+        $impostoSelo = new CalculateImpostoSeloBNIE($prestacao->getJuro(), 0, $prestacao->getComissaoPagarClienteFinal(), $prestacao->getNumeroPrestacoes());
+
+        $resultadoIva = 0;
+        $resultadoImpostoSelo = 0;
+        $resultadoIvaAnterior = -1;
+        $resultadoImpostoSeloAnterior = -1;
+
+        // para depois de fazer um maximo de 10000 iterações, ou quando a diferença entre o resultado anterior for demasiado pequena.
+        // em cada iteração ou valor do IVA entra na no calculo do Imposto de Selo e o valor do Imposto de selo entra no calculo do IVA.
+        $iteracoes = 0;
+        $maximoIteracoes = 10000;
+
+        for ($iteracoes = 0; $iteracoes <= $maximoIteracoes; $iteracoes++) {
+
+            $resultadoIva = $iva->calculate($prestacao->getComOgone(), $prestacao->getComEvoPayments(), $prestacao->getProcSepaCt());
+            $resultadoImpostoSelo = $impostoSelo->calculate($prestacao->getComOgone(), $prestacao->getComEvoPayments(), $prestacao->getProcSepaCt());
+
+//            echo "<br/> Prestacao                       = " . $prestacao->getNumParcela();
+//            echo "<br/> Iteracao                        = " . $iteracoes;
+//            echo "<br/> Resultado Iva                   = " . $resultadoIva;
+//            echo "<br/> Resultado Imposto Selo          = " . $resultadoImpostoSelo;
+//            echo "<br/>";
+
+            $iva = new CalculateIva($prestacao->getJuro(), $resultadoImpostoSelo, $prestacao->getComissaoPagarClienteFinal(), $prestacao->getNumeroPrestacoes());
+            $impostoSelo = new CalculateImpostoSeloBNIE($prestacao->getJuro(), $resultadoIva, $prestacao->getComissaoPagarClienteFinal(), $prestacao->getNumeroPrestacoes());
+
+            if ($resultadoIva - $resultadoIvaAnterior <= TpaymentsTaxaServico::DIFERENCA_ENTRE_ITERACOES && $resultadoImpostoSelo - $resultadoImpostoSeloAnterior <= TpaymentsTaxaServico::DIFERENCA_ENTRE_ITERACOES) {
+                break;
+            }
+
+            $resultadoIvaAnterior = $resultadoIva;
+            $resultadoImpostoSeloAnterior = $resultadoImpostoSelo;
+        }
+
+        //escrever resultados
+        $prestacao->setIvaValorParcela($resultadoIva);
+        $prestacao->setImpostoSeloValorBni($resultadoImpostoSelo);
+
+
+//
+//        echo "<br/> FINAL : Valor Comissão Pagar Cliente = " . $prestacao->getComissaoPagarClienteFinal();
+//        echo "<br/> FINAL : Iva Valor Parcela = " . $prestacao->getIvaValorParcela();
+//        echo "<br/> FINAL : Imposto Selo BNIE = " . $prestacao->getImpostoSeloValorBni();
+//        echo "<br/> FINAL : Pii parcial       = " . $prestacao->getPiiParcial();
+//        echo "<br/>";
+//        echo "<br/>";
     }
 
     /**
@@ -121,7 +255,41 @@ class TpaymentsController extends Controller {
     public function indexAction() {
         $em = $this->getDoctrine()->getManager();
 
-        $tpayments = $em->getRepository('AppBundle:Tpayments')->findAll();
+
+
+        // tabela payments
+        //FInstalment = numero da parcela paga
+        //FAmounth = montante capturado efectivamente
+        //FPurchaseID = id da compra
+        //table purchase
+        //FmountData = numero de meses/parcelas
+        //FCalcAmounth = valor sem taxas
+        //FTotPurchaseValue = valor total da compra com taxas
+
+
+
+        $payment = new Tpayments();
+        $purchase = new Tpurchase();
+        $generatedPayments = array();
+        $result = array();
+
+        $payments = $em->getRepository('AppBundle:Tpayments')->findAll();
+
+
+        foreach ($payments as $payment) {
+
+
+            //buscar a compra
+            $purchase = $em->getRepository('AppBundle:Tpurchase')->find($payment->getFpurchaseid());
+
+            //gerados todos os pagamentos da compra
+            $generatedPayments = $this->generatePaymentsTaxaDesconto($purchase->getFtotpurchasevalue(), $purchase->getFmonthdata());
+
+            //adicionar a parcela relativa ao pagamento
+            $tpayments[] = $generatedPayments[$payment->getFinstallment() - 1];
+        }
+
+
 
         return $this->render('tpayments/index.html.twig', array(
                     'tpayments' => $tpayments,
