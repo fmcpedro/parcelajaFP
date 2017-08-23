@@ -39,7 +39,7 @@
                 <div class="panel-body">
 
 
-    
+
 
 
 
@@ -48,27 +48,36 @@
                     {% if tpayments is defined %}
 
 
-<br/>
-<br/>
-<br/>
+                        <br/>
+                        <br/>
+                        <br/>
 
-                        <table style="" class="rtable rtable--flip" id="">
+                        <table style="font-size: smaller" class="" id="tableWithExportOptions">
                             <thead>
                                 <tr>
 
-
+{# 
                                     <th>Nº DA PARCELA</th>
-                                    <th>VALOR COMISSAO PAGAR ADERENTE</th>
-                                    <th>VALOR COMISSAO SUJEITA A IVA</th>
-                                    <th>IVA COMISSAO</th>
-                                    <th>CUSTO DE CAPTURA</th>
-                                    <th>IVA CUSTO DE CAPTURA</th>
-                                    <th>IVA TOTAL</th>
-                                    <th>VALOR TOTAL COBRADO AO ADERENTE</th>
-                                    <th>VALOR FINANCIANDO AO ADERENTE</th>
-                                    <th>VALOR PAGO AO ADERENTE</th>
-                                    <th>VALOR DAS PARCELAS</th>
-                                    <th>COMISSAO OGONE</th>
+
+                                                                       <th>VALOR COMISSAO PAGAR ADERENTE</th><!-- taxa desconto -->
+                                                                        <th>VALOR COMISSAO PAGAR CLIENTE</th><!--taxa serviço-->
+                                                                        
+                                                                        <th>VALOR COMISSAO SUJEITA A IVA</th>
+                                                                        <th>IVA COMISSAO</th>
+                                                                        <th>CUSTO DE CAPTURA</th>
+                                                                        <th>IVA CUSTO DE CAPTURA</th>
+                                                                        <th>IVA TOTAL</th>
+                                                                        
+                                                                        <th>VALOR TOTAL COBRADO AO ADERENTE</th><!-- taxa desconto -->
+                                                                        <th>VALOR TOTAL COBRADO AO CLIENTE</th><!--taxa serviço-->
+                                                                        
+                                                                        <th>VALOR FINANCIANDO AO ADERENTE</th>
+                                                                        <th>VALOR PAGO AO ADERENTE</th>
+                                                                        
+                                                                        <th>VALOR DAS PARCELAS</th><!-- taxa desconto -->
+                                                                        <th>VALOR DAS PARCELAS EMISSOR</th><!--taxa serviço-->#}
+
+                                  {#  <th>COMISSAO OGONE</th>
                                     <th>COMISSAO EVO PAYMENTS</th>
                                     <th>VALOR A RECEBER DA EVO PAYMENTS</th>
                                     <th>CAPITAL A AMORTIZADO MENSALMENTE</th>
@@ -87,12 +96,38 @@
                                     <th>VALOR TRANSF/PARCELA JÁ (C/IVA)</th>
                                     <th>VALOR TRANSF BNI</th>
                                     <th>IS VALOR BNI</th>
-                                    <th>VALOR TRANSF BNI (C/IS)</th>
-                                    <th>TAXA COMISSSAO SUJEITA A IVA</th>
-                                    <th>TAXA PROCESSAMENTO</th>
-                                    <th>IVA</th>
-                                    <th>SERVIÇOS FINANCEIROS</th>
-                                    <th>IMP. SELO</th>
+                                    <th>VALOR TRANSF BNI (C/IS)</th>#}
+                                    
+                                    
+                                    
+                                    <th class="rotate90">2</th>
+                                    <th class="rotate90">3</th>
+                                    <th class="rotate90">4</th>
+                                    <th class="rotate90">5</th>
+                                    <th class="rotate90">6</th>
+                                    <th class="rotate90">7</th>
+                                    <th class="rotate90">8</th>
+                                    <th class="rotate90">9</th>
+                                    <th class="rotate90">10</th>
+                                    <th class="rotate90">11</th>
+                                    <th class="rotate90">12</th>
+                                    <th class="rotate90">13</th>
+                                    <th class="rotate90">14</th>
+                                    <th class="rotate90">15</th>
+                                    <th class="rotate90">16</th>
+                                    <th class="rotate90">17</th>
+                                    <th class="rotate90">18</th>
+                                    <th class="rotate90">19</th>
+                                    <th class="rotate90">20</th>
+                                    <th class="rotate90">21</th>
+                                    
+                                       
+                                    
+                                    {#                                    <th>TAXA COMISSSAO SUJEITA A IVA</th>
+                                                                            <th>TAXA PROCESSAMENTO</th>
+                                                                            <th>IVA</th>
+                                                                            <th>SERVIÇOS FINANCEIROS</th>
+                                                                            <th>IMP. SELO</th>#}
 
 
 
@@ -101,13 +136,31 @@
                             <tbody>
                                 {% for key, tpayment in tpayments %}
                                     <tr>
-                                        <td>{{ tpayment.numParcela }}</td>
+                                        {#  <td>{{ tpayment.numParcela }}</td>
+
+                                      
                                         <td>
+                                            
+                                            {% if tpayment.valorComissaoPagarAderente is defined %}
                                             {% if key == 0 %}
                                                 {{ tpayment.valorComissaoPagarAderente|number_format(2, '.', ',') }} €
                                             {%else%}
                                                 &nbsp;
                                             {%endif%}
+                                            {%endif%}
+                                            </td>
+                                        <td>
+                                            {% if tpayment.valorComissaoPagarCliente is defined %}
+                                            {% if key == 0 %}
+                                                {{ tpayment.valorComissaoPagarCliente|number_format(2, '.', ',') }} €
+                                            {%else%}
+                                                &nbsp;
+                                            {%endif%}
+                                            {%endif%}
+                                            
+                                            
+                                            
+                                            
                                         </td>
                                         <td>
                                             {% if key == 0 %}
@@ -146,11 +199,25 @@
                                             {%endif%}
                                         </td>
                                         <td>
+                                            {% if tpayment.valorTotalCobradoAderente is defined %}
                                             {% if key == 0 %}
                                                 {{ tpayment.valorTotalCobradoAderente|number_format(2, '.', ',') }} €
                                             {%else%}
                                                 &nbsp;
                                             {%endif%}
+                                            {%endif%}
+                                            
+                                            </td>
+                                        <td>
+                                            {% if tpayment.valorTotalCobradoCliente is defined %}
+                                            {% if key == 0 %}
+                                                {{ tpayment.valorTotalCobradoCliente|number_format(2, '.', ',') }} €
+                                            {%else%}
+                                                &nbsp;
+                                            {%endif%}
+                                            {%endif%}
+                                            
+                                            
                                         </td>
                                         <td>
                                             {% if key == 0 %}
@@ -167,7 +234,23 @@
                                                 &nbsp;
                                             {%endif%}
                                         </td>
-                                        <td>{{ tpayment.valParcelas|number_format(2, '.', ',') }} €</td>
+                                        
+                                        
+                                        
+                                        <td>
+                                            {% if tpayment.valParcelas is defined %}
+                                            {{ tpayment.valParcelas|number_format(2, '.', ',') }} €
+                                            {% endif %}
+                                            </td>
+                                        <td>
+                                            {% if tpayment.valParcelasEmissor is defined %}
+                                            {{ tpayment.valParcelasEmissor|number_format(2, '.', ',') }} €
+                                            {% endif %}
+                                        </td>
+                                        #}
+
+
+
                                         <td>{{ tpayment.comOgone|number_format(2, '.', ',') }} €</td>
                                         <td>{{ tpayment.comEvoPayments|number_format(2, '.', ',') }} €</td>
                                         <td>{{ tpayment.valorReceberEvoPayments|number_format(2, '.', ',') }} €</td>
@@ -188,7 +271,7 @@
                                         <td>{{ tpayment.valorTransfBni|number_format(2, '.', ',') }} €</td>
                                         <td>{{ tpayment.impostoSeloValorBni|number_format(2, '.', ',') }} €</td>
                                         <td>{{ tpayment.valorTransfBniComImpostoSelo|number_format(2, '.', ',') }} €</td>
-                                        <td>
+                                        {#<td>
                                             {% if key == 0 %}
                                                 {{ tpayment.taxaComissaoSujeitaIva|number_format(2, '.', ',') }} €
                                             {%else%}
@@ -223,7 +306,7 @@
                                             {%else%}
                                                 &nbsp;
                                             {%endif%}
-                                        </td>
+                                        </td>#}
 
 
 
@@ -250,136 +333,16 @@
     <!-- END PAGE CONTENT -->
 
 
-
-
-
     <style>
-        /*!
-        // CSS only Responsive Tables
-        // http://dbushell.com/2016/03/04/css-only-responsive-tables/
-        // by David Bushell
-        */
-
-        .rtable {
-            /*!
-            // IE needs inline-block to position scrolling shadows otherwise use:
-            // display: block;
-            // max-width: min-content;
-            */
-            display: inline-block;
-            vertical-align: top;
-            max-width: 100%;
-
-            overflow-x: auto;
-
-            // optional - looks better for small cell values
-            white-space: nowrap;
-
-            border-collapse: collapse;
-            border-spacing: 0;
-        }
-
-        .rtable,
-        .rtable--flip tbody {
-            // optional - enable iOS momentum scrolling
-            -webkit-overflow-scrolling: touch;
-
-            // scrolling shadows
-            background: radial-gradient(left, ellipse, rgba(0,0,0, .2) 0%, rgba(0,0,0, 0) 75%) 0 center,
-                radial-gradient(right, ellipse, rgba(0,0,0, .2) 0%, rgba(0,0,0, 0) 75%) 100% center;
-            background-size: 10px 100%, 10px 100%;
-            background-attachment: scroll, scroll;
-            background-repeat: no-repeat;
-        }
-
-        // change these gradients from white to your background colour if it differs
-        // gradient on the first cells to hide the left shadow
-        .rtable td:first-child,
-        .rtable--flip tbody tr:first-child {
-            background-image: linear-gradient(to right, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
-            background-repeat: no-repeat;
-            background-size: 20px 100%;
-        }
-
-        // gradient on the last cells to hide the right shadow
-        .rtable td:last-child,
-        .rtable--flip tbody tr:last-child {
-            background-image: linear-gradient(to left, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
-            background-repeat: no-repeat;
-            background-position: 100% 0;
-            background-size: 20px 100%;
-        }
-
-        .rtable th {
-            font-size: 12px;
-            text-align: left;
-            text-transform: uppercase;
-            background: #f2f0e6;
-        }
-
-        .rtable th,
-        .rtable td {
-            font-size: 12px;
-            padding: 4px 12px;
-            border: 1px solid #d9d7ce;
-            text-align: right;
-        }
-
-        .rtable--flip {
-            display: flex;
-            overflow: hidden;
-            background: none;
-        }
-
-        .rtable--flip thead {
-            display: flex;
-            flex-shrink: 0;
-            min-width: min-content;
-        }
-
-        .rtable--flip tbody {
-            display: flex;
-            position: relative;
-            overflow-x: auto;
-            overflow-y: hidden;
-        }
-
-        .rtable--flip tr {
-            display: flex;
-            flex-direction: column;
-            min-width: min-content;
-            flex-shrink: 0;
-        }
-
-        .rtable--flip td,
-        .rtable--flip th {
-            display: block;
-        }
-
-        .rtable--flip td {
-            background-image: none !important;
-            // border-collapse is no longer active
-            border-left: 0;
-        }
-
-        // border-collapse is no longer active
-        .rtable--flip th:not(:last-child),
-        .rtable--flip td:not(:last-child) {
-            border-bottom: 0;
-        }
-
+        .rotate90 {
+-webkit-transform: rotate(-45deg);
+-moz-transform: rotate(-45deg);
+filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+}
     </style>
 
 
-    <script>
 
-        /*! * iOS doesn't respect the meta viewport tag inside a frame * add a link to the debug view (for demo purposes only) */if (/(iPhone|iPad|iPod)/gi.test(navigator.userAgent) && window.location.pathname.indexOf('/full') > -1) {
-            var p = document.createElement('p');
-            p.innerHTML = '<a target="_blank" href="https://s.codepen.io/dbushell/debug/wGaamR"><b>Click here to view this demo properly on iOS devices (remove the top frame)</b></a>';
-            document.body.insertBefore(p, document.body.querySelector('h1'));
-        }
-
-    </script>
 
 
 

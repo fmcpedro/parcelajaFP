@@ -59,7 +59,6 @@ class TpaymentsController extends Controller {
 
     public function generatePaymentsTaxaServico($valorCompra, $numeroPrestacoes) {
 
-
         $logger = $this->get('logger');
         $logger->info("generatePaymentsTaxaServico");
 
@@ -72,11 +71,35 @@ class TpaymentsController extends Controller {
         $valorTransfBniComImpostoSelo = 0;
         $valorTransfBni = 0;
         $impostoSelo = 0;
+        
+//        $comissaoPagarClienteFinal = 0;
+//        $payMethod = new \AppBundle\Entity\Tpaymethod(); 
+//        $payMethodFee = new \AppBundle\Entity\Tpaymethodfee();
+        
+        $em = $this->getDoctrine()->getManager();
+        $payMethod = $em->getRepository('AppBundle:Tpaymethod')->findOneBy(array('fpmonths' => $numeroPrestacoes));
 
+
+        //SELECT * FROM parcelaja_payments.TPayMethodFee where fpaymethodid=19 and FFixedAddCharge = 0 and FFixedAddCharge3 <> 0 and FStartValue < 1200 and FEndValue > 1200
+        $query = $em->createQuery('SELECT fee
+    FROM AppBundle:Tpaymethodfee fee
+    WHERE fee.fpaymethodid = :fpaymethodid
+    AND fee.ffixedaddcharge = :ffixedaddcharge
+        AND fee.ffixedaddcharge3 <> :ffixedaddcharge3
+    AND fee.fstartvalue <= :fstartvalue
+    AND fee.fendvalue >= :fendvalue')
+                ->setParameter('fpaymethodid', $payMethod->getFpaymethodid())
+                ->setParameter('ffixedaddcharge', 0)
+                ->setParameter('ffixedaddcharge3', 0)
+                ->setParameter('fstartvalue', $valorCompra)
+                ->setParameter('fendvalue', $valorCompra);
+        $payMethodFee = $query->getSingleResult();
+
+        $comissaoPagarClienteFinal = $payMethodFee->getFfixedaddcharge3();
 
         for ($i = 0; $i < $numeroPrestacoes; $i++) {
 
-            $prestacao = new TpaymentsTaxaServico($valorCompra, $numeroPrestacoes, $i);
+            $prestacao = new TpaymentsTaxaServico($valorCompra, $numeroPrestacoes, $i, $comissaoPagarClienteFinal);
 
             //ok, validado
             $prestacao->setCapitalAmortizadoAcumulado($prestacao->getCapitalAmortizadoMensalmente() + $capitalAmortizadoAnterior);
@@ -255,8 +278,6 @@ class TpaymentsController extends Controller {
     public function indexAction() {
         $em = $this->getDoctrine()->getManager();
 
-
-
         // tabela payments
         //FInstalment = numero da parcela paga
         //FAmounth = montante capturado efectivamente
@@ -266,25 +287,31 @@ class TpaymentsController extends Controller {
         //FCalcAmounth = valor sem taxas
         //FTotPurchaseValue = valor total da compra com taxas
 
-
-
         $payment = new Tpayments();
         $purchase = new Tpurchase();
         $generatedPayments = array();
-        $result = array();
 
         $payments = $em->getRepository('AppBundle:Tpayments')->findAll();
 
-
         foreach ($payments as $payment) {
-
-
             //buscar a compra
             $purchase = $em->getRepository('AppBundle:Tpurchase')->find($payment->getFpurchaseid());
 
-            //gerados todos os pagamentos da compra
-            $generatedPayments = $this->generatePaymentsTaxaDesconto($purchase->getFtotpurchasevalue(), $purchase->getFmonthdata());
+            // FFee = Quando é feita uma transação através de uma taxa de desconto, esta percentagem é cobrada a Loja.
+            // FExtraCharge = Quando é feita uma transação através de taxa de serviço, este é o valor cobrado da taxa de serviço.
 
+            // Se tiver FExtraCharge diferente de 0, então é Taxa de Serviço
+//            if($purchase->getFextracharge() <> 0):
+//                //gerar todos os pagamentos da compra
+//                $generatedPayments = $this->generatePaymentsTaxaServico($purchase->getFtotpurchasevalue(), $purchase->getFmonthdata());
+//                else:
+//                //gerar todos os pagamentos da compra
+//                $generatedPayments = $this->generatePaymentsTaxaDesconto($purchase->getFtotpurchasevalue(), $purchase->getFmonthdata());
+//            endif;
+//            
+//            
+            $generatedPayments = $this->generatePaymentsTaxaDesconto($purchase->getFtotpurchasevalue(), $purchase->getFmonthdata());
+            
             //adicionar a parcela relativa ao pagamento
             $tpayments[] = $generatedPayments[$payment->getFinstallment() - 1];
         }

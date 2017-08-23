@@ -76,11 +76,11 @@ class TpaymentsTaxaServico {
     private $servicosFinanceiros; //SERVIÇOS FINANCEIROS
     private $impSelo; //IMP. SELO
 
-    function __construct($valorCompra, $numeroPrestacoes, $numParcela) {
+    function __construct($valorCompra, $numeroPrestacoes, $numParcela, $comissaoPagarClienteFinal ) {
         $this->valorCompra = $valorCompra;
         $this->numeroPrestacoes = $numeroPrestacoes;
         $this->numParcela = $numParcela;
-        $this->comissaoPagarClienteFinal = 114; //????
+        $this->comissaoPagarClienteFinal = $comissaoPagarClienteFinal;
     }
 
     function getValorCompra() {
