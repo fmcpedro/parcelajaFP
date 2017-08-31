@@ -70,12 +70,15 @@ class TpaymentsTaxaDesconto {
     private $iva; //IVA
     private $servicosFinanceiros; //SERVIÇOS FINANCEIROS
     private $impSelo; //IMP. SELO
+    
+    private $tipoTransacao; //Pré-parceria (PP), A crédito (AC), Sem crédito (SC) 
 
-    function __construct($valorCompra, $numeroPrestacoes, $numParcela) {
+    function __construct($valorCompra, $numeroPrestacoes, $numParcela, $tipoTransacao) {
         $this->valorCompra = $valorCompra;
         $this->numeroPrestacoes = $numeroPrestacoes;
         $this->numParcela = $numParcela;
         $this->comissaoPagarAderente = ((($numeroPrestacoes / 2) + 0.5) / 100);
+        $this->tipoTransacao = $tipoTransacao;
     }
 
     function getValorCompra() {
@@ -100,7 +103,7 @@ class TpaymentsTaxaDesconto {
 
     function getValorComissaoSujeitaIva() {
         //return 39.18; //tem um somatório
-        return $this->valorComissaoSujeitaIva;
+        return round($this->valorComissaoSujeitaIva, self::NUM_CASAS_DECIMAIS);
     }
 
     function getIvaComissao() {
@@ -221,7 +224,7 @@ class TpaymentsTaxaDesconto {
 
     function getImpostoSeloValorBni() {
         //return round($this->getValorTransfBni() * self::IMPOSTO_SELO, self::NUM_CASAS_DECIMAIS);
-        return ((self::LUCRO_BNI * self::IMPOSTO_SELO * (($this->getValParcelas() * $this->getComissaoPagarAderente() + self::CAPTURA) - ($this->getComOgone() + $this->getComEvoPayments() + $this->getJuro() + $this->getProcSepaCt()))) + (self::IMPOSTO_SELO * ($this->getJuro() + $this->getProcSepaCt()))) / ((self::LUCRO_BNI * self::IMPOSTO_SELO) + 1);
+        return round(((self::LUCRO_BNI * self::IMPOSTO_SELO * (($this->getValParcelas() * $this->getComissaoPagarAderente() + self::CAPTURA) - ($this->getComOgone() + $this->getComEvoPayments() + $this->getJuro() + $this->getProcSepaCt()))) + (self::IMPOSTO_SELO * ($this->getJuro() + $this->getProcSepaCt()))) / ((self::LUCRO_BNI * self::IMPOSTO_SELO) + 1), self::NUM_CASAS_DECIMAIS);
     }
 
     function getValorTransfBniComImpostoSelo() {
@@ -229,7 +232,7 @@ class TpaymentsTaxaDesconto {
     }
 
     function getTaxaComissaoSujeitaIva() {
-        return $this->getValorComissaoSujeitaIva();
+        return round($this->getValorComissaoSujeitaIva(), self::NUM_CASAS_DECIMAIS);
     }
 
     function getTaxaProcessamento() {
@@ -398,7 +401,7 @@ class TpaymentsTaxaDesconto {
     }
 
     function getImpSelo() {
-        return $this->impSelo;
+        return round($this->impSelo, self::NUM_CASAS_DECIMAIS);
     }
 
     function setImpSelo($impSelo) {
@@ -413,4 +416,16 @@ class TpaymentsTaxaDesconto {
         $this->procSepaCt = $procSepaCt;
     }
 
+    function getTipoTransacao() {
+        return $this->tipoTransacao;
+    }
+
+    function setTipoTransacao($tipoTransacao) {
+        $this->tipoTransacao = $tipoTransacao;
+    }
+
+
+    
+    
+    
 }

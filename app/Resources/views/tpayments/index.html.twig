@@ -52,13 +52,13 @@
                         <br/>
                         <br/>
 
-                        <table style="font-size: smaller" class="" id="tableWithExportOptions">
+                        <table style="font-size: smaller" class="table" id="">
                             <thead>
                                 <tr>
 
-{# 
+ 
                                     <th>Nº DA PARCELA</th>
-
+{#
                                                                        <th>VALOR COMISSAO PAGAR ADERENTE</th><!-- taxa desconto -->
                                                                         <th>VALOR COMISSAO PAGAR CLIENTE</th><!--taxa serviço-->
                                                                         
@@ -136,9 +136,9 @@
                             <tbody>
                                 {% for key, tpayment in tpayments %}
                                     <tr>
-                                        {#  <td>{{ tpayment.numParcela }}</td>
+                                          <td>{{ tpayment.numParcela }}</td>
 
-                                      
+                                      {#
                                         <td>
                                             
                                             {% if tpayment.valorComissaoPagarAderente is defined %}

@@ -15,109 +15,31 @@
             </trans-unit>
             <trans-unit id="d71f019e59b6d0c272ed71ad9acdac24" resname="process_small_text_01">
                 <source>process_small_text_01</source>
-
-
-
                 <target></target>
-
-
-
             </trans-unit>
-
-
-
             <trans-unit id="bdd269f8c5e73767fdca16e710a08974" resname="process_block_title_02">
-
-
-
                 <source>process_block_title_02</source>
-
-
-
                 <target>Cartão de cidadão e crédito</target>
-
-
-
             </trans-unit>
-
-
-
             <trans-unit id="e470c14e0304b336424592c23baeb08f" resname="process_text_02">
-
-
-
                 <source>process_text_02</source>
-
-
-
                 <target>Agora, tem apenas que introduzir o seu cartão de cidadão e o seu cartão de crédito no terminal Parcela Já para efetuar a sua compra.</target>
-
-
-
             </trans-unit>
-
-
-
             <trans-unit id="33a7783d2d74817db733426e9eb8b10e" resname="process_small_text_02">
-
-
-
                 <source>process_small_text_02</source>
-
-
-
                 <target></target>
-
-
-
             </trans-unit>
-
-
-
             <trans-unit id="bab9a636b4d7c2b0e56886774bba13e7" resname="process_block_title_03">
-
-
-
                 <source>process_block_title_03</source>
-
-
-
                 <target>Assine o talão</target>
-
-
-
             </trans-unit>
-
-
-
             <trans-unit id="3a4aaebecefa2b663ba697cfdb90282e" resname="process_text_03">
-
-
-
                 <source>process_text_03</source>
-
-
-
                 <target>Para finalizar, assine o talão de compra e guarde-o consigo. E já está, usufrua das compras sem preocupações.</target>
-
-
-
             </trans-unit>
-
-
-
             <trans-unit id="543a015264b301bf189e5f4dd9166843" resname="process_small_text_03">
-
-
-
                 <source>process_small_text_03</source>
-
-
-
                 <target></target>
-
-
-
             </trans-unit>
 
 

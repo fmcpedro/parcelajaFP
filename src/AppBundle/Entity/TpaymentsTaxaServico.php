@@ -75,12 +75,16 @@ class TpaymentsTaxaServico {
     private $iva; //IVA
     private $servicosFinanceiros; //SERVIÇOS FINANCEIROS
     private $impSelo; //IMP. SELO
+    
+    private $tipoTransacao; //Pré-parceria (PP), A crédito (AC), Sem crédito (SC) 
 
-    function __construct($valorCompra, $numeroPrestacoes, $numParcela, $comissaoPagarClienteFinal ) {
+
+    function __construct($valorCompra, $numeroPrestacoes, $numParcela, $comissaoPagarClienteFinal, $tipoTransacao) {
         $this->valorCompra = $valorCompra;
         $this->numeroPrestacoes = $numeroPrestacoes;
         $this->numParcela = $numParcela;
         $this->comissaoPagarClienteFinal = $comissaoPagarClienteFinal;
+        $this->tipoTransacao = $tipoTransacao;
     }
 
     function getValorCompra() {
@@ -105,7 +109,7 @@ class TpaymentsTaxaServico {
 
     function getValorComissaoSujeitaIva() {
         //return 39.18; //tem um somatório
-        return $this->valorComissaoSujeitaIva;
+        return round($this->valorComissaoSujeitaIva, self::NUM_CASAS_DECIMAIS);
     }
 
     function getIvaComissao() {
@@ -185,7 +189,8 @@ class TpaymentsTaxaServico {
     }
 
     function getPiiAcumulado() {
-        return $this->piiAcumulado;
+        return round($this->piiAcumulado, self::NUM_CASAS_DECIMAIS);
+        ;
     }
 
     function getLucroParcela() {
@@ -193,7 +198,8 @@ class TpaymentsTaxaServico {
     }
 
     function getLucroBniEuropa() {
-        return $this->getPiiParcial() * self::LUCRO_BNI;
+        return round($this->getPiiParcial() * self::LUCRO_BNI, self::NUM_CASAS_DECIMAIS);
+        ;
     }
 
     function getValorTransferParcela() {
@@ -213,7 +219,7 @@ class TpaymentsTaxaServico {
     function getImpostoSeloValorBni() {
         //return round($this->getValorTransfBni() * self::IMPOSTO_SELO, self::NUM_CASAS_DECIMAIS);
 
-        return $this->impostoSeloValorBni;
+        return round($this->impostoSeloValorBni, self::NUM_CASAS_DECIMAIS);
     }
 
     function getValorTransfBniComImpostoSelo() {
@@ -221,7 +227,7 @@ class TpaymentsTaxaServico {
     }
 
     function getTaxaComissaoSujeitaIva() {
-        return $this->getValorComissaoSujeitaIva();
+        return round($this->getValorComissaoSujeitaIva(), self::NUM_CASAS_DECIMAIS);
     }
 
     function getTaxaProcessamento() {
@@ -394,7 +400,7 @@ class TpaymentsTaxaServico {
     }
 
     function setImpSelo($impSelo) {
-        $this->impSelo = $impSelo;
+        $this->impSelo = round($impSelo, self::NUM_CASAS_DECIMAIS);
     }
 
     function getProcSepaCt() {
@@ -432,7 +438,7 @@ class TpaymentsTaxaServico {
     }
 
     function getValParcelasEmissor() {
-        return ($this->getValorCompra() + $this->getComissaoPagarClienteFinal()) / $this->getNumeroPrestacoes();
+        return round(($this->getValorCompra() + $this->getComissaoPagarClienteFinal()) / $this->getNumeroPrestacoes(), self::NUM_CASAS_DECIMAIS);
     }
 
     function setValParcelasEmissor($valParcelasEmissor) {
@@ -440,13 +446,27 @@ class TpaymentsTaxaServico {
     }
 
     function getIvaValorParcela() {
-        return $this->ivaValorParcela;
+        return round($this->ivaValorParcela, self::NUM_CASAS_DECIMAIS);
     }
 
     //referencia circular
     function getPiiParcial() {
         //(($C$19/$C$18)-(E39+E40+E46+E49+E64+E60))/(1+$C$10*0)
-        return (($this->getComissaoPagarClienteFinal() / $this->getNumeroPrestacoes()) - ($this->getComOgone() + $this->getComEvoPayments() + $this->getJuro() + $this->getProcSepaCt() + $this->getImpostoSeloValorBni() + $this->getIvaValorParcela())) / (1 + self::IVA * 0);
+        return round((($this->getComissaoPagarClienteFinal() / $this->getNumeroPrestacoes()) - ($this->getComOgone() + $this->getComEvoPayments() + $this->getJuro() + $this->getProcSepaCt() + $this->getImpostoSeloValorBni() + $this->getIvaValorParcela())) / (1 + self::IVA * 0), self::NUM_CASAS_DECIMAIS);
     }
+    
+    
+    
+    function getTipoTransacao() {
+        return $this->tipoTransacao;
+    }
+
+    function setTipoTransacao($tipoTransacao) {
+        $this->tipoTransacao = $tipoTransacao;
+    }
+
+
+    
+    
 
 }
