@@ -22,3 +22,5 @@ admin_terminal_payment_delete:
     path:     /{id}/delete
     defaults: { _controller: "AppBundle:TerminalPayment:delete" }
     methods:  DELETE
+    
+

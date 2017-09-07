@@ -1,0 +1,620 @@
+<?php
+
+namespace AppBundle\Entity;
+
+/**
+ * IngenicoPayment
+ */
+class IngenicoPayment
+{
+    /**
+     * @var string
+     */
+    private $orderId;
+
+    /**
+     * @var string
+     */
+    private $payIdSub;
+
+    /**
+     * @var string
+     */
+    private $ncStatus;
+
+    /**
+     * @var string
+     */
+    private $ncError;
+
+    /**
+     * @var string
+     */
+    private $ncErrorPlus;
+
+    /**
+     * @var string
+     */
+    private $acceptance;
+
+    /**
+     * @var string
+     */
+    private $status;
+
+    /**
+     * @var string
+     */
+    private $ipcty;
+
+    /**
+     * @var string
+     */
+    private $cccty;
+
+    /**
+     * @var string
+     */
+    private $eci;
+
+    /**
+     * @var string
+     */
+    private $cvcCheck;
+
+    /**
+     * @var string
+     */
+    private $aavCheck;
+
+    /**
+     * @var string
+     */
+    private $vc;
+
+    /**
+     * @var string
+     */
+    private $amount;
+
+    /**
+     * @var string
+     */
+    private $currency;
+
+    /**
+     * @var string
+     */
+    private $pm;
+
+    /**
+     * @var string
+     */
+    private $brand;
+
+    /**
+     * @var string
+     */
+    private $cardNo;
+
+    /**
+     * @var string
+     */
+    private $scoring;
+
+    /**
+     * @var string
+     */
+    private $scoCategory;
+
+    /**
+     * @var integer
+     */
+    private $payId;
+
+
+    /**
+     * Set orderId
+     *
+     * @param string $orderId
+     *
+     * @return IngenicoPayment
+     */
+    public function setOrderId($orderId)
+    {
+        $this->orderId = $orderId;
+
+        return $this;
+    }
+
+    /**
+     * Get orderId
+     *
+     * @return string
+     */
+    public function getOrderId()
+    {
+        return $this->orderId;
+    }
+
+    /**
+     * Set payIdSub
+     *
+     * @param string $payIdSub
+     *
+     * @return IngenicoPayment
+     */
+    public function setPayIdSub($payIdSub)
+    {
+        $this->payIdSub = $payIdSub;
+
+        return $this;
+    }
+
+    /**
+     * Get payIdSub
+     *
+     * @return string
+     */
+    public function getPayIdSub()
+    {
+        return $this->payIdSub;
+    }
+
+    /**
+     * Set ncStatus
+     *
+     * @param string $ncStatus
+     *
+     * @return IngenicoPayment
+     */
+    public function setNcStatus($ncStatus)
+    {
+        $this->ncStatus = $ncStatus;
+
+        return $this;
+    }
+
+    /**
+     * Get ncStatus
+     *
+     * @return string
+     */
+    public function getNcStatus()
+    {
+        return $this->ncStatus;
+    }
+
+    /**
+     * Set ncError
+     *
+     * @param string $ncError
+     *
+     * @return IngenicoPayment
+     */
+    public function setNcError($ncError)
+    {
+        $this->ncError = $ncError;
+
+        return $this;
+    }
+
+    /**
+     * Get ncError
+     *
+     * @return string
+     */
+    public function getNcError()
+    {
+        return $this->ncError;
+    }
+
+    /**
+     * Set ncErrorPlus
+     *
+     * @param string $ncErrorPlus
+     *
+     * @return IngenicoPayment
+     */
+    public function setNcErrorPlus($ncErrorPlus)
+    {
+        $this->ncErrorPlus = $ncErrorPlus;
+
+        return $this;
+    }
+
+    /**
+     * Get ncErrorPlus
+     *
+     * @return string
+     */
+    public function getNcErrorPlus()
+    {
+        return $this->ncErrorPlus;
+    }
+
+    /**
+     * Set acceptance
+     *
+     * @param string $acceptance
+     *
+     * @return IngenicoPayment
+     */
+    public function setAcceptance($acceptance)
+    {
+        $this->acceptance = $acceptance;
+
+        return $this;
+    }
+
+    /**
+     * Get acceptance
+     *
+     * @return string
+     */
+    public function getAcceptance()
+    {
+        return $this->acceptance;
+    }
+
+    /**
+     * Set status
+     *
+     * @param string $status
+     *
+     * @return IngenicoPayment
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+
+        return $this;
+    }
+
+    /**
+     * Get status
+     *
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Set ipcty
+     *
+     * @param string $ipcty
+     *
+     * @return IngenicoPayment
+     */
+    public function setIpcty($ipcty)
+    {
+        $this->ipcty = $ipcty;
+
+        return $this;
+    }
+
+    /**
+     * Get ipcty
+     *
+     * @return string
+     */
+    public function getIpcty()
+    {
+        return $this->ipcty;
+    }
+
+    /**
+     * Set cccty
+     *
+     * @param string $cccty
+     *
+     * @return IngenicoPayment
+     */
+    public function setCccty($cccty)
+    {
+        $this->cccty = $cccty;
+
+        return $this;
+    }
+
+    /**
+     * Get cccty
+     *
+     * @return string
+     */
+    public function getCccty()
+    {
+        return $this->cccty;
+    }
+
+    /**
+     * Set eci
+     *
+     * @param string $eci
+     *
+     * @return IngenicoPayment
+     */
+    public function setEci($eci)
+    {
+        $this->eci = $eci;
+
+        return $this;
+    }
+
+    /**
+     * Get eci
+     *
+     * @return string
+     */
+    public function getEci()
+    {
+        return $this->eci;
+    }
+
+    /**
+     * Set cvcCheck
+     *
+     * @param string $cvcCheck
+     *
+     * @return IngenicoPayment
+     */
+    public function setCvcCheck($cvcCheck)
+    {
+        $this->cvcCheck = $cvcCheck;
+
+        return $this;
+    }
+
+    /**
+     * Get cvcCheck
+     *
+     * @return string
+     */
+    public function getCvcCheck()
+    {
+        return $this->cvcCheck;
+    }
+
+    /**
+     * Set aavCheck
+     *
+     * @param string $aavCheck
+     *
+     * @return IngenicoPayment
+     */
+    public function setAavCheck($aavCheck)
+    {
+        $this->aavCheck = $aavCheck;
+
+        return $this;
+    }
+
+    /**
+     * Get aavCheck
+     *
+     * @return string
+     */
+    public function getAavCheck()
+    {
+        return $this->aavCheck;
+    }
+
+    /**
+     * Set vc
+     *
+     * @param string $vc
+     *
+     * @return IngenicoPayment
+     */
+    public function setVc($vc)
+    {
+        $this->vc = $vc;
+
+        return $this;
+    }
+
+    /**
+     * Get vc
+     *
+     * @return string
+     */
+    public function getVc()
+    {
+        return $this->vc;
+    }
+
+    /**
+     * Set amount
+     *
+     * @param string $amount
+     *
+     * @return IngenicoPayment
+     */
+    public function setAmount($amount)
+    {
+        $this->amount = $amount;
+
+        return $this;
+    }
+
+    /**
+     * Get amount
+     *
+     * @return string
+     */
+    public function getAmount()
+    {
+        return $this->amount;
+    }
+
+    /**
+     * Set currency
+     *
+     * @param string $currency
+     *
+     * @return IngenicoPayment
+     */
+    public function setCurrency($currency)
+    {
+        $this->currency = $currency;
+
+        return $this;
+    }
+
+    /**
+     * Get currency
+     *
+     * @return string
+     */
+    public function getCurrency()
+    {
+        return $this->currency;
+    }
+
+    /**
+     * Set pm
+     *
+     * @param string $pm
+     *
+     * @return IngenicoPayment
+     */
+    public function setPm($pm)
+    {
+        $this->pm = $pm;
+
+        return $this;
+    }
+
+    /**
+     * Get pm
+     *
+     * @return string
+     */
+    public function getPm()
+    {
+        return $this->pm;
+    }
+
+    /**
+     * Set brand
+     *
+     * @param string $brand
+     *
+     * @return IngenicoPayment
+     */
+    public function setBrand($brand)
+    {
+        $this->brand = $brand;
+
+        return $this;
+    }
+
+    /**
+     * Get brand
+     *
+     * @return string
+     */
+    public function getBrand()
+    {
+        return $this->brand;
+    }
+
+    /**
+     * Set cardNo
+     *
+     * @param string $cardNo
+     *
+     * @return IngenicoPayment
+     */
+    public function setCardNo($cardNo)
+    {
+        $this->cardNo = $cardNo;
+
+        return $this;
+    }
+
+    /**
+     * Get cardNo
+     *
+     * @return string
+     */
+    public function getCardNo()
+    {
+        return $this->cardNo;
+    }
+
+    /**
+     * Set scoring
+     *
+     * @param string $scoring
+     *
+     * @return IngenicoPayment
+     */
+    public function setScoring($scoring)
+    {
+        $this->scoring = $scoring;
+
+        return $this;
+    }
+
+    /**
+     * Get scoring
+     *
+     * @return string
+     */
+    public function getScoring()
+    {
+        return $this->scoring;
+    }
+
+    /**
+     * Set scoCategory
+     *
+     * @param string $scoCategory
+     *
+     * @return IngenicoPayment
+     */
+    public function setScoCategory($scoCategory)
+    {
+        $this->scoCategory = $scoCategory;
+
+        return $this;
+    }
+
+    /**
+     * Get scoCategory
+     *
+     * @return string
+     */
+    public function getScoCategory()
+    {
+        return $this->scoCategory;
+    }
+
+    /**
+     * Set payId
+     *
+     * @param integer $payId
+     *
+     * @return IngenicoPayment
+     */
+    public function setPayId($payId)
+    {
+        $this->payId = $payId;
+
+        return $this;
+    }
+
+    /**
+     * Get payId
+     *
+     * @return integer
+     */
+    public function getPayId()
+    {
+        return $this->payId;
+    }
+}
+

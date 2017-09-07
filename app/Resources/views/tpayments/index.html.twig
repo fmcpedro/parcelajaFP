@@ -1,8 +1,58 @@
-{# empty Twig template #}
-
-
-
 {% extends 'base.html.twig' %}
+
+
+
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('#example').DataTable({
+                iDisplayLength: 20,
+                    dom: 'Bfrtip',
+                    buttons: [
+                        {
+                            extend: 'copy',
+                        },
+                        {
+                            extend: 'csv',
+                        },
+                        {
+                            extend: 'excel',
+                        },
+                        {
+                            extend: 'colvis',
+                            collectionLayout: 'fixed two-column'
+                        }
+                    ],
+                    columnDefs: [{
+                            targets: 0,
+                            render: function (data, type, row) {
+                                return data.length > 10 ?
+                                        data.substr(0, 4) + '…' :
+                                        data;
+                            }
+                        }]
+
+
+                });
+            });
+
+{#            $(document).ready(function () {
+                $('#tableWithExportOptions').DataTable({
+                    iDisplayLength: 20,
+                    dom: 'Bfrtip',
+                    buttons: [
+                        'copy', 'csv', 'excel', 'pdf', 'print'
+                    ]
+                });
+            });#}
+
+
+    </script>
+{% endblock %}
 
 
 {% block body %}
@@ -25,59 +75,50 @@
         <!-- END JUMBOTRON -->
 
 
+        
+        
+        
+        
 
         <!-- START CONTAINER FLUID -->
         <div class="container-fluid container-fixed-lg bg-white">
             <!-- START PANEL -->
             <div class="panel panel-transparent">
                 <div class="panel-heading">
-                    <div class="panel-title">Lista de Parcelas Capturadas 
-                    </div>
+                    <div class="panel-title">Lista de Parcelas Capturadas </div>
                     <div class="export-options-container pull-right"></div>
                     <div class="clearfix"></div>
                 </div>
                 <div class="panel-body">
 
-
-
-
-
-
-
-
                     {% if tpayments is defined %}
 
-
-                        <br/>
-                        <br/>
-                        <br/>
-
-                        <table style="font-size: smaller" class="table" id="">
+                        <table class="display responsive" id="example">
                             <thead>
                                 <tr>
 
- 
-                                    <th>Nº DA PARCELA</th>
-{#
-                                                                       <th>VALOR COMISSAO PAGAR ADERENTE</th><!-- taxa desconto -->
-                                                                        <th>VALOR COMISSAO PAGAR CLIENTE</th><!--taxa serviço-->
-                                                                        
-                                                                        <th>VALOR COMISSAO SUJEITA A IVA</th>
-                                                                        <th>IVA COMISSAO</th>
-                                                                        <th>CUSTO DE CAPTURA</th>
-                                                                        <th>IVA CUSTO DE CAPTURA</th>
-                                                                        <th>IVA TOTAL</th>
-                                                                        
-                                                                        <th>VALOR TOTAL COBRADO AO ADERENTE</th><!-- taxa desconto -->
-                                                                        <th>VALOR TOTAL COBRADO AO CLIENTE</th><!--taxa serviço-->
-                                                                        
-                                                                        <th>VALOR FINANCIANDO AO ADERENTE</th>
-                                                                        <th>VALOR PAGO AO ADERENTE</th>
-                                                                        
-                                                                        <th>VALOR DAS PARCELAS</th><!-- taxa desconto -->
-                                                                        <th>VALOR DAS PARCELAS EMISSOR</th><!--taxa serviço-->#}
 
-                                  {#  <th>COMISSAO OGONE</th>
+                                    <th style="width: 2px;">Nº DA PARCELA</th>
+                                        {#
+                                                                                                               <th>VALOR COMISSAO PAGAR ADERENTE</th><!-- taxa desconto -->
+                                                                                                                <th>VALOR COMISSAO PAGAR CLIENTE</th><!--taxa serviço-->
+                                                                                                                
+                                                                                                                <th>VALOR COMISSAO SUJEITA A IVA</th>
+                                                                                                                <th>IVA COMISSAO</th>
+                                                                                                                <th>CUSTO DE CAPTURA</th>
+                                                                                                                <th>IVA CUSTO DE CAPTURA</th>
+                                                                                                                <th>IVA TOTAL</th>
+                                                                                                                
+                                                                                                                <th>VALOR TOTAL COBRADO AO ADERENTE</th><!-- taxa desconto -->
+                                                                                                                <th>VALOR TOTAL COBRADO AO CLIENTE</th><!--taxa serviço-->
+                                                                                                                
+                                                                                                                <th>VALOR FINANCIANDO AO ADERENTE</th>
+                                                                                                                <th>VALOR PAGO AO ADERENTE</th>
+                                                                                                                
+                                                                                                                <th>VALOR DAS PARCELAS</th><!-- taxa desconto -->
+                                                                                                                <th>VALOR DAS PARCELAS EMISSOR</th><!--taxa serviço-->#}
+
+                                    <th>COMISSAO OGONE</th>
                                     <th>COMISSAO EVO PAYMENTS</th>
                                     <th>VALOR A RECEBER DA EVO PAYMENTS</th>
                                     <th>CAPITAL A AMORTIZADO MENSALMENTE</th>
@@ -96,33 +137,12 @@
                                     <th>VALOR TRANSF/PARCELA JÁ (C/IVA)</th>
                                     <th>VALOR TRANSF BNI</th>
                                     <th>IS VALOR BNI</th>
-                                    <th>VALOR TRANSF BNI (C/IS)</th>#}
-                                    
-                                    
-                                    
-                                    <th class="rotate90">2</th>
-                                    <th class="rotate90">3</th>
-                                    <th class="rotate90">4</th>
-                                    <th class="rotate90">5</th>
-                                    <th class="rotate90">6</th>
-                                    <th class="rotate90">7</th>
-                                    <th class="rotate90">8</th>
-                                    <th class="rotate90">9</th>
-                                    <th class="rotate90">10</th>
-                                    <th class="rotate90">11</th>
-                                    <th class="rotate90">12</th>
-                                    <th class="rotate90">13</th>
-                                    <th class="rotate90">14</th>
-                                    <th class="rotate90">15</th>
-                                    <th class="rotate90">16</th>
-                                    <th class="rotate90">17</th>
-                                    <th class="rotate90">18</th>
-                                    <th class="rotate90">19</th>
-                                    <th class="rotate90">20</th>
-                                    <th class="rotate90">21</th>
-                                    
-                                       
-                                    
+                                    <th>VALOR TRANSF BNI (C/IS)</th>
+
+
+
+
+
                                     {#                                    <th>TAXA COMISSSAO SUJEITA A IVA</th>
                                                                             <th>TAXA PROCESSAMENTO</th>
                                                                             <th>IVA</th>
@@ -136,118 +156,118 @@
                             <tbody>
                                 {% for key, tpayment in tpayments %}
                                     <tr>
-                                          <td>{{ tpayment.numParcela }}</td>
+                                        <td>{{ tpayment.numParcela }}</td>
 
-                                      {#
-                                        <td>
-                                            
-                                            {% if tpayment.valorComissaoPagarAderente is defined %}
-                                            {% if key == 0 %}
-                                                {{ tpayment.valorComissaoPagarAderente|number_format(2, '.', ',') }} €
-                                            {%else%}
-                                                &nbsp;
-                                            {%endif%}
-                                            {%endif%}
-                                            </td>
-                                        <td>
-                                            {% if tpayment.valorComissaoPagarCliente is defined %}
-                                            {% if key == 0 %}
-                                                {{ tpayment.valorComissaoPagarCliente|number_format(2, '.', ',') }} €
-                                            {%else%}
-                                                &nbsp;
-                                            {%endif%}
-                                            {%endif%}
-                                            
-                                            
-                                            
-                                            
-                                        </td>
-                                        <td>
-                                            {% if key == 0 %}
-                                                {{ tpayment.valorComissaoSujeitaIva|number_format(2, '.', ',') }} €
-                                            {%else%}
-                                                &nbsp;
-                                            {%endif%}
-
-                                        </td>
-                                        <td>
-                                            {% if key == 0 %}
-                                                {{ tpayment.ivaComissao|number_format(2, '.', ',') }} €
-                                            {%else%}
-                                                &nbsp;
-                                            {%endif%}
-                                        </td>
-                                        <td>
-                                            {% if key == 0 %}
-                                                {{ tpayment.custoCaptura|number_format(2, '.', ',') }} €
-                                            {%else%}
-                                                &nbsp;
-                                            {%endif%}
-                                        </td>
-                                        <td>
-                                            {% if key == 0 %}
-                                                {{ tpayment.ivaCustoCaptura|number_format(2, '.', ',') }} €
-                                            {%else%}
-                                                &nbsp;
-                                            {%endif%}
-                                        </td>
-                                        <td>
-                                            {% if key == 0 %}
-                                                {{ tpayment.ivaTotal|number_format(2, '.', ',') }} €
-                                            {%else%}
-                                                &nbsp;
-                                            {%endif%}
-                                        </td>
-                                        <td>
-                                            {% if tpayment.valorTotalCobradoAderente is defined %}
-                                            {% if key == 0 %}
-                                                {{ tpayment.valorTotalCobradoAderente|number_format(2, '.', ',') }} €
-                                            {%else%}
-                                                &nbsp;
-                                            {%endif%}
-                                            {%endif%}
-                                            
-                                            </td>
-                                        <td>
-                                            {% if tpayment.valorTotalCobradoCliente is defined %}
-                                            {% if key == 0 %}
-                                                {{ tpayment.valorTotalCobradoCliente|number_format(2, '.', ',') }} €
-                                            {%else%}
-                                                &nbsp;
-                                            {%endif%}
-                                            {%endif%}
-                                            
-                                            
-                                        </td>
-                                        <td>
-                                            {% if key == 0 %}
-                                                {{ tpayment.valorFinanciadoAderente|number_format(2, '.', ',') }} €
-                                            {%else%}
-                                                &nbsp;
-                                            {%endif%}
-                                        </td>
-                                        <td>
-
-                                            {% if key == 0 %}
-                                                {{ tpayment.valorPagoAderente|number_format(2, '.', ',') }} €
-                                            {%else%}
-                                                &nbsp;
-                                            {%endif%}
-                                        </td>
-                                        
-                                        
-                                        
-                                        <td>
-                                            {% if tpayment.valParcelas is defined %}
-                                            {{ tpayment.valParcelas|number_format(2, '.', ',') }} €
-                                            {% endif %}
-                                            </td>
-                                        <td>
-                                            {% if tpayment.valParcelasEmissor is defined %}
-                                            {{ tpayment.valParcelasEmissor|number_format(2, '.', ',') }} €
-                                            {% endif %}
-                                        </td>
-                                        #}
+                                        {#
+                                          <td>
+                                              
+                                              {% if tpayment.valorComissaoPagarAderente is defined %}
+                                              {% if key == 0 %}
+                                                  {{ tpayment.valorComissaoPagarAderente|number_format(2, '.', ',') }} €
+                                              {%else%}
+                                                  &nbsp;
+                                              {%endif%}
+                                              {%endif%}
+                                              </td>
+                                          <td>
+                                              {% if tpayment.valorComissaoPagarCliente is defined %}
+                                              {% if key == 0 %}
+                                                  {{ tpayment.valorComissaoPagarCliente|number_format(2, '.', ',') }} €
+                                              {%else%}
+                                                  &nbsp;
+                                              {%endif%}
+                                              {%endif%}
+                                              
+                                              
+                                              
+                                              
+                                          </td>
+                                          <td>
+                                              {% if key == 0 %}
+                                                  {{ tpayment.valorComissaoSujeitaIva|number_format(2, '.', ',') }} €
+                                              {%else%}
+                                                  &nbsp;
+                                              {%endif%}
+  
+                                          </td>
+                                          <td>
+                                              {% if key == 0 %}
+                                                  {{ tpayment.ivaComissao|number_format(2, '.', ',') }} €
+                                              {%else%}
+                                                  &nbsp;
+                                              {%endif%}
+                                          </td>
+                                          <td>
+                                              {% if key == 0 %}
+                                                  {{ tpayment.custoCaptura|number_format(2, '.', ',') }} €
+                                              {%else%}
+                                                  &nbsp;
+                                              {%endif%}
+                                          </td>
+                                          <td>
+                                              {% if key == 0 %}
+                                                  {{ tpayment.ivaCustoCaptura|number_format(2, '.', ',') }} €
+                                              {%else%}
+                                                  &nbsp;
+                                              {%endif%}
+                                          </td>
+                                          <td>
+                                              {% if key == 0 %}
+                                                  {{ tpayment.ivaTotal|number_format(2, '.', ',') }} €
+                                              {%else%}
+                                                  &nbsp;
+                                              {%endif%}
+                                          </td>
+                                          <td>
+                                              {% if tpayment.valorTotalCobradoAderente is defined %}
+                                              {% if key == 0 %}
+                                                  {{ tpayment.valorTotalCobradoAderente|number_format(2, '.', ',') }} €
+                                              {%else%}
+                                                  &nbsp;
+                                              {%endif%}
+                                              {%endif%}
+                                              
+                                              </td>
+                                          <td>
+                                              {% if tpayment.valorTotalCobradoCliente is defined %}
+                                              {% if key == 0 %}
+                                                  {{ tpayment.valorTotalCobradoCliente|number_format(2, '.', ',') }} €
+                                              {%else%}
+                                                  &nbsp;
+                                              {%endif%}
+                                              {%endif%}
+                                              
+                                              
+                                          </td>
+                                          <td>
+                                              {% if key == 0 %}
+                                                  {{ tpayment.valorFinanciadoAderente|number_format(2, '.', ',') }} €
+                                              {%else%}
+                                                  &nbsp;
+                                              {%endif%}
+                                          </td>
+                                          <td>
+  
+                                              {% if key == 0 %}
+                                                  {{ tpayment.valorPagoAderente|number_format(2, '.', ',') }} €
+                                              {%else%}
+                                                  &nbsp;
+                                              {%endif%}
+                                          </td>
+                                          
+                                          
+                                          
+                                          <td>
+                                              {% if tpayment.valParcelas is defined %}
+                                              {{ tpayment.valParcelas|number_format(2, '.', ',') }} €
+                                              {% endif %}
+                                              </td>
+                                          <td>
+                                              {% if tpayment.valParcelasEmissor is defined %}
+                                              {{ tpayment.valParcelasEmissor|number_format(2, '.', ',') }} €
+                                              {% endif %}
+                                          </td>
+                                          #}
 
 
 
@@ -333,13 +353,6 @@
     <!-- END PAGE CONTENT -->
 
 
-    <style>
-        .rotate90 {
--webkit-transform: rotate(-45deg);
--moz-transform: rotate(-45deg);
-filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
-}
-    </style>
 
 
 

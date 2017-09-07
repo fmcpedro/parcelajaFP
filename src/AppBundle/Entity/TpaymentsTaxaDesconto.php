@@ -72,13 +72,15 @@ class TpaymentsTaxaDesconto {
     private $impSelo; //IMP. SELO
     
     private $tipoTransacao; //Pré-parceria (PP), A crédito (AC), Sem crédito (SC) 
+    private $payID; //para conseguir ir buscar dados EVO e OGONE
 
-    function __construct($valorCompra, $numeroPrestacoes, $numParcela, $tipoTransacao) {
+    function __construct($valorCompra, $numeroPrestacoes, $numParcela, $tipoTransacao, $payID) {
         $this->valorCompra = $valorCompra;
         $this->numeroPrestacoes = $numeroPrestacoes;
         $this->numParcela = $numParcela;
         $this->comissaoPagarAderente = ((($numeroPrestacoes / 2) + 0.5) / 100);
         $this->tipoTransacao = $tipoTransacao;
+        $this->payID = $payID;
     }
 
     function getValorCompra() {
@@ -425,7 +427,15 @@ class TpaymentsTaxaDesconto {
     }
 
 
-    
+    function getPayID() {
+        return $this->payID;
+    }
+
+    function setPayID($payID) {
+        $this->payID = $payID;
+    }
+
+
     
     
 }

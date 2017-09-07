@@ -44,25 +44,24 @@
                             {#<h3>form_title</h3>#}
                             <p>Preencha os campos abaixo para simular uma compra</p>
 
-                           {# <form method="post" action="{{ path('admin_payments_simulator') }}" class="form-horizontal">#}
-                           {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }} 
-                                <div class="form-group">
-                                    <label for="valor_compra" class="col-sm-3 control-label">Valor Compra</label>
-                                    <div class="col-sm-9">
-                                        {{ form_widget(form.valorCompra, {'attr': {'class': 'form-control'}}) }}
-                                    </div>
+                            {# <form method="post" action="{{ path('admin_payments_simulator') }}" class="form-horizontal">#}
+                            {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }} 
+                            <div class="form-group">
+                                <label for="valor_compra" class="col-sm-3 control-label">Valor Compra</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(form.valorCompra, {'attr': {'class': 'form-control'}}) }}
                                 </div>
+                            </div>
 
-                                <div class="form-group">
-                                    <label for="numero_prestacoes" class="col-sm-3 control-label">Número Parcelas</label>
-                                    <div class="col-sm-9">
-                                        {{ form_widget(form.numeroParcelas, {'attr': {'class': 'form-control'}}) }}
-                                    </div>
+                            <div class="form-group">
+                                <label for="numero_prestacoes" class="col-sm-3 control-label">Número Parcelas</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(form.numeroParcelas, {'attr': {'class': 'form-control'}}) }}
                                 </div>
-                                    
-                                    <div class="form-group">
+                            </div>
+
+                            <div class="form-group">
                                 <label class="col-sm-3 control-label">Taxa</label>
-
                                 <div class="col-sm-9">
                                     <div class="radio radio-success">
                                         {{ form_widget(form.taxa) }}
@@ -72,23 +71,23 @@
                             </div>
 
 
-                                <br>
+                            <br>
 
-                                <div class="row">
-                                    <div class="col-sm-3">
-                                        {#<p>I hereby certify that the information above is true and accurate. </p>#}
-                                    </div>
-                                    <div class="col-sm-9">
-                                        <button class="btn btn-complete btn-cons m-b-10" type="submit">
-                                            <i class="pg-form"></i> <span class="bold">Update</span>
-                                        </button>
-                                        <button class="btn btn-default btn-cons m-b-10" type="reset">
-                                            <i class="pg-close"></i> <span class="bold">Clear</span>
-                                        </button>
-
-
-                                    </div>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    {#<p>I hereby certify that the information above is true and accurate. </p>#}
                                 </div>
+                                <div class="col-sm-9">
+                                    <button class="btn btn-complete btn-cons m-b-10" type="submit">
+                                        <i class="pg-form"></i> <span class="bold">Update</span>
+                                    </button>
+                                    <button class="btn btn-default btn-cons m-b-10" type="reset">
+                                        <i class="pg-close"></i> <span class="bold">Clear</span>
+                                    </button>
+
+
+                                </div>
+                            </div>
                             {{ form_end(form) }}
 
                         </div>
@@ -101,9 +100,9 @@
                     {% if tpayments is defined %}
 
 
-<br/>
-<br/>
-<br/>
+                        <br/>
+                        <br/>
+                        <br/>
 
                         <table style="" class="rtable rtable--flip" id="">
                             <thead>

@@ -28,3 +28,8 @@ admin_payments_delete:
     path:     /{fpurchaseid}/delete
     defaults: { _controller: "AppBundle:Tpayments:delete" }
     methods:  DELETE
+
+admin_payments_blank:
+    path:     /blank
+    defaults: { _controller: "AppBundle:Tpayments:blank" }
+    methods:  [GET, POST]

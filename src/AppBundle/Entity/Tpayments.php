@@ -8,14 +8,14 @@ namespace AppBundle\Entity;
 class Tpayments
 {
     /**
-     * @var string
+     * @var integer
      */
-    private $frefcontractnum;
+    private $fpurchaseid;
 
     /**
      * @var string
      */
-    private $fpayid;
+    private $frefcontractnum;
 
     /**
      * @var integer
@@ -33,25 +33,104 @@ class Tpayments
     private $fdate;
 
     /**
-     * @var float
+     * @var string
      */
-    private $famountevo;
+    private $fclientevo;
+
+    /**
+     * @var string
+     */
+    private $fpaymethodevo;
+
+    /**
+     * @var string
+     */
+    private $ftypeevo;
 
     /**
      * @var \DateTime
      */
-    private $fdateevo;
+    private $fbookingdateevo;
+
+    /**
+     * @var \DateTime
+     */
+    private $fpaydateevo;
+
+    /**
+     * @var string
+     */
+    private $fcustomerevo;
+
+    /**
+     * @var string
+     */
+    private $fproccustomeridevo;
+
+    /**
+     * @var string
+     */
+    private $fclientcustomernumevo;
+
+    /**
+     * @var string
+     */
+    private $fcreditcardnumevo;
 
     /**
      * @var float
      */
-    private $fchargebackevo;
+    private $fdepositsevo;
 
     /**
-     * @var integer
+     * @var float
      */
-    private $fpurchaseid;
+    private $frefundsevo;
 
+    /**
+     * @var float
+     */
+    private $fcftcreditsevo;
+
+    /**
+     * @var float
+     */
+    private $fchargebacksevo;
+
+    /**
+     * @var string
+     */
+    private $fcurrencyevo;
+
+    /**
+     * @var string
+     */
+    private $fpayid;
+
+
+    /**
+     * Set fpurchaseid
+     *
+     * @param integer $fpurchaseid
+     *
+     * @return Tpayments
+     */
+    public function setFpurchaseid($fpurchaseid)
+    {
+        $this->fpurchaseid = $fpurchaseid;
+
+        return $this;
+    }
+
+    /**
+     * Get fpurchaseid
+     *
+     * @return integer
+     */
+    public function getFpurchaseid()
+    {
+        return $this->fpurchaseid;
+    }
 
     /**
      * Set frefcontractnum
@@ -75,30 +154,6 @@ class Tpayments
     public function getFrefcontractnum()
     {
         return $this->frefcontractnum;
-    }
-
-    /**
-     * Set fpayid
-     *
-     * @param string $fpayid
-     *
-     * @return Tpayments
-     */
-    public function setFpayid($fpayid)
-    {
-        $this->fpayid = $fpayid;
-
-        return $this;
-    }
-
-    /**
-     * Get fpayid
-     *
-     * @return string
-     */
-    public function getFpayid()
-    {
-        return $this->fpayid;
     }
 
     /**
@@ -174,84 +229,349 @@ class Tpayments
     }
 
     /**
-     * Set famountevo
+     * Set fclientevo
      *
-     * @param float $famountevo
+     * @param string $fclientevo
      *
      * @return Tpayments
      */
-    public function setFamountevo($famountevo)
+    public function setFclientevo($fclientevo)
     {
-        $this->famountevo = $famountevo;
+        $this->fclientevo = $fclientevo;
 
         return $this;
     }
 
     /**
-     * Get famountevo
+     * Get fclientevo
      *
-     * @return float
+     * @return string
      */
-    public function getFamountevo()
+    public function getFclientevo()
     {
-        return $this->famountevo;
+        return $this->fclientevo;
     }
 
     /**
-     * Set fdateevo
+     * Set fpaymethodevo
      *
-     * @param \DateTime $fdateevo
+     * @param string $fpaymethodevo
      *
      * @return Tpayments
      */
-    public function setFdateevo($fdateevo)
+    public function setFpaymethodevo($fpaymethodevo)
     {
-        $this->fdateevo = $fdateevo;
+        $this->fpaymethodevo = $fpaymethodevo;
 
         return $this;
     }
 
     /**
-     * Get fdateevo
+     * Get fpaymethodevo
+     *
+     * @return string
+     */
+    public function getFpaymethodevo()
+    {
+        return $this->fpaymethodevo;
+    }
+
+    /**
+     * Set ftypeevo
+     *
+     * @param string $ftypeevo
+     *
+     * @return Tpayments
+     */
+    public function setFtypeevo($ftypeevo)
+    {
+        $this->ftypeevo = $ftypeevo;
+
+        return $this;
+    }
+
+    /**
+     * Get ftypeevo
+     *
+     * @return string
+     */
+    public function getFtypeevo()
+    {
+        return $this->ftypeevo;
+    }
+
+    /**
+     * Set fbookingdateevo
+     *
+     * @param \DateTime $fbookingdateevo
+     *
+     * @return Tpayments
+     */
+    public function setFbookingdateevo($fbookingdateevo)
+    {
+        $this->fbookingdateevo = $fbookingdateevo;
+
+        return $this;
+    }
+
+    /**
+     * Get fbookingdateevo
      *
      * @return \DateTime
      */
-    public function getFdateevo()
+    public function getFbookingdateevo()
     {
-        return $this->fdateevo;
+        return $this->fbookingdateevo;
     }
 
     /**
-     * Set fchargebackevo
+     * Set fpaydateevo
      *
-     * @param float $fchargebackevo
+     * @param \DateTime $fpaydateevo
      *
      * @return Tpayments
      */
-    public function setFchargebackevo($fchargebackevo)
+    public function setFpaydateevo($fpaydateevo)
     {
-        $this->fchargebackevo = $fchargebackevo;
+        $this->fpaydateevo = $fpaydateevo;
 
         return $this;
     }
 
     /**
-     * Get fchargebackevo
+     * Get fpaydateevo
      *
-     * @return float
+     * @return \DateTime
      */
-    public function getFchargebackevo()
+    public function getFpaydateevo()
     {
-        return $this->fchargebackevo;
+        return $this->fpaydateevo;
     }
 
     /**
-     * Get fpurchaseid
+     * Set fcustomerevo
      *
-     * @return integer
+     * @param string $fcustomerevo
+     *
+     * @return Tpayments
      */
-    public function getFpurchaseid()
+    public function setFcustomerevo($fcustomerevo)
     {
-        return $this->fpurchaseid;
+        $this->fcustomerevo = $fcustomerevo;
+
+        return $this;
+    }
+
+    /**
+     * Get fcustomerevo
+     *
+     * @return string
+     */
+    public function getFcustomerevo()
+    {
+        return $this->fcustomerevo;
+    }
+
+    /**
+     * Set fproccustomeridevo
+     *
+     * @param string $fproccustomeridevo
+     *
+     * @return Tpayments
+     */
+    public function setFproccustomeridevo($fproccustomeridevo)
+    {
+        $this->fproccustomeridevo = $fproccustomeridevo;
+
+        return $this;
+    }
+
+    /**
+     * Get fproccustomeridevo
+     *
+     * @return string
+     */
+    public function getFproccustomeridevo()
+    {
+        return $this->fproccustomeridevo;
+    }
+
+    /**
+     * Set fclientcustomernumevo
+     *
+     * @param string $fclientcustomernumevo
+     *
+     * @return Tpayments
+     */
+    public function setFclientcustomernumevo($fclientcustomernumevo)
+    {
+        $this->fclientcustomernumevo = $fclientcustomernumevo;
+
+        return $this;
+    }
+
+    /**
+     * Get fclientcustomernumevo
+     *
+     * @return string
+     */
+    public function getFclientcustomernumevo()
+    {
+        return $this->fclientcustomernumevo;
+    }
+
+    /**
+     * Set fcreditcardnumevo
+     *
+     * @param string $fcreditcardnumevo
+     *
+     * @return Tpayments
+     */
+    public function setFcreditcardnumevo($fcreditcardnumevo)
+    {
+        $this->fcreditcardnumevo = $fcreditcardnumevo;
+
+        return $this;
+    }
+
+    /**
+     * Get fcreditcardnumevo
+     *
+     * @return string
+     */
+    public function getFcreditcardnumevo()
+    {
+        return $this->fcreditcardnumevo;
+    }
+
+    /**
+     * Set fdepositsevo
+     *
+     * @param float $fdepositsevo
+     *
+     * @return Tpayments
+     */
+    public function setFdepositsevo($fdepositsevo)
+    {
+        $this->fdepositsevo = $fdepositsevo;
+
+        return $this;
+    }
+
+    /**
+     * Get fdepositsevo
+     *
+     * @return float
+     */
+    public function getFdepositsevo()
+    {
+        return $this->fdepositsevo;
+    }
+
+    /**
+     * Set frefundsevo
+     *
+     * @param float $frefundsevo
+     *
+     * @return Tpayments
+     */
+    public function setFrefundsevo($frefundsevo)
+    {
+        $this->frefundsevo = $frefundsevo;
+
+        return $this;
+    }
+
+    /**
+     * Get frefundsevo
+     *
+     * @return float
+     */
+    public function getFrefundsevo()
+    {
+        return $this->frefundsevo;
+    }
+
+    /**
+     * Set fcftcreditsevo
+     *
+     * @param float $fcftcreditsevo
+     *
+     * @return Tpayments
+     */
+    public function setFcftcreditsevo($fcftcreditsevo)
+    {
+        $this->fcftcreditsevo = $fcftcreditsevo;
+
+        return $this;
+    }
+
+    /**
+     * Get fcftcreditsevo
+     *
+     * @return float
+     */
+    public function getFcftcreditsevo()
+    {
+        return $this->fcftcreditsevo;
+    }
+
+    /**
+     * Set fchargebacksevo
+     *
+     * @param float $fchargebacksevo
+     *
+     * @return Tpayments
+     */
+    public function setFchargebacksevo($fchargebacksevo)
+    {
+        $this->fchargebacksevo = $fchargebacksevo;
+
+        return $this;
+    }
+
+    /**
+     * Get fchargebacksevo
+     *
+     * @return float
+     */
+    public function getFchargebacksevo()
+    {
+        return $this->fchargebacksevo;
+    }
+
+    /**
+     * Set fcurrencyevo
+     *
+     * @param string $fcurrencyevo
+     *
+     * @return Tpayments
+     */
+    public function setFcurrencyevo($fcurrencyevo)
+    {
+        $this->fcurrencyevo = $fcurrencyevo;
+
+        return $this;
+    }
+
+    /**
+     * Get fcurrencyevo
+     *
+     * @return string
+     */
+    public function getFcurrencyevo()
+    {
+        return $this->fcurrencyevo;
+    }
+
+    /**
+     * Get fpayid
+     *
+     * @return string
+     */
+    public function getFpayid()
+    {
+        return $this->fpayid;
     }
 }
+

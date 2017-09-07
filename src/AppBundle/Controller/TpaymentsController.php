@@ -4,11 +4,6 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Tpayments;
 use AppBundle\Entity\TpaymentsSimulator;
-use AppBundle\Entity\TpaymentsTaxaDesconto;
-use AppBundle\Entity\TpaymentsTaxaServico;
-use AppBundle\Utils\CalculateImpostoSeloBNIE;
-use AppBundle\Utils\CalculateIva;
-use Proxies\__CG__\AppBundle\Entity\Tpurchase;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Form;
 use Symfony\Component\HttpFoundation\Request;
@@ -18,6 +13,74 @@ use Symfony\Component\HttpFoundation\Request;
  *
  */
 class TpaymentsController extends Controller {
+
+    public function blankAction(Request $request) {
+
+        $em = $this->getContainer()->get('doctrine.orm.entity_manager');
+        //$em = $this->getDoctrine()->getManager();
+        
+        $payments = $em->getRepository('AppBundle:Tpayments')->findLastDaysPayments(30);
+        
+        foreach ($payments as $key => $payment) {
+            
+            $data = $this->getIngenicoObject($payment->getFpayid());
+            
+            
+            $entity = new \AppBundle\Entity\IngenicoPayment();
+            $entity->setOrderId($this->xml_attribute($data, 'orderID'));
+            $entity->setPayId(intval($this->xml_attribute($data, 'PAYID')));
+            $entity->setPayIdSub($this->xml_attribute($data, 'PAYIDSUB'));
+            $entity->setNcStatus($this->xml_attribute($data, 'NCSTATUS'));
+            $entity->setNcError($this->xml_attribute($data, 'NCERROR'));
+            $entity->setNcErrorPlus($this->xml_attribute($data, 'NCERRORPLUS'));
+            $entity->setAcceptance($this->xml_attribute($data, 'ACCEPTANCE'));
+            $entity->setStatus($this->xml_attribute($data, 'STATUS'));
+            $entity->setIpcty($this->xml_attribute($data, 'IPCTY'));
+            $entity->setCccty($this->xml_attribute($data, 'CCCTY'));
+            $entity->setEci($this->xml_attribute($data, 'ECI'));
+            $entity->setCvcCheck($this->xml_attribute($data, 'CVCCheck'));
+            $entity->setAavCheck($this->xml_attribute($data, 'AAVCheck'));
+            $entity->setVc($this->xml_attribute($data, 'VC'));
+            $entity->setAmount($this->xml_attribute($data, 'amount'));
+            $entity->setCurrency($this->xml_attribute($data, 'currency'));
+            $entity->setPm($this->xml_attribute($data, 'PM'));
+            $entity->setBrand($this->xml_attribute($data, 'BRAND'));
+            $entity->setCardNo($this->xml_attribute($data, 'CARDNO'));
+            $entity->setScoring($this->xml_attribute($data, 'SCORING'));
+            $entity->setScoCategory($this->xml_attribute($data, 'SCO_CATEGORY'));
+
+            $entity = $em->merge($entity); //it's important to use result of function, not the same element
+            $em->flush();
+            
+        }
+
+
+        return $this->render('tpayments/blank.html.twig');
+    }
+
+    function getIngenicoObject($payID) {
+
+        $ch = curl_init();
+        $params = array('PAYID' => $payID, 'PSPID' => 'PARCELAJA', 'USERID' => 'Autopay', 'PSWD' => '#osga2016#0707');
+
+        curl_setopt($ch, CURLOPT_URL, "https://secure.ogone.com/ncol/prod/querydirect.asp");
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($params));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        $response = curl_exec($ch);
+        $data = new \SimpleXMLElement($response);
+        
+        //dump($data);
+        curl_close($ch);
+
+        return $data;
+    }
+
+    public function xml_attribute($object, $attribute) {
+        if (isset($object[$attribute]))
+            return (string) $object[$attribute];
+    }
 
     public function simulatorAction(Request $request) {
 
@@ -65,7 +128,10 @@ class TpaymentsController extends Controller {
     public function indexAction() {
         $em = $this->getDoctrine()->getManager();
 
-       $tpayments = $em->getRepository('AppBundle:Tpayments')->findAllProcessedPayments();
+        $tpayments = $em->getRepository('AppBundle:Tpayments')->findAllProcessedPayments();
+
+
+
 
         return $this->render('tpayments/index.html.twig', array(
                     'tpayments' => $tpayments,

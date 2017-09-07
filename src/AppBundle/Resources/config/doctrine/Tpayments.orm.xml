@@ -4,15 +4,15 @@
     <indexes>
       <index name="FRefContractNum" columns="FRefContractNum"/>
     </indexes>
-    <id name="fpurchaseid" type="integer" column="FPurchaseID">
+    <id name="fpayid" type="string" column="FPayID" length="255">
       <generator strategy="IDENTITY"/>
     </id>
-    <field name="frefcontractnum" type="string" column="FRefContractNum" length="255" nullable="false">
+    <field name="fpurchaseid" type="integer" column="FPurchaseID" nullable="false">
       <options>
-        <option name="fixed"/>
+        <option name="unsigned"/>
       </options>
     </field>
-    <field name="fpayid" type="string" column="FPayID" length="255" nullable="false">
+    <field name="frefcontractnum" type="string" column="FRefContractNum" length="255" nullable="false">
       <options>
         <option name="fixed"/>
       </options>
@@ -24,8 +24,51 @@
     </field>
     <field name="famount" type="float" column="FAmount" precision="10" scale="0" nullable="false"/>
     <field name="fdate" type="date" column="FDate" nullable="false"/>
-    <field name="famountevo" type="float" column="FAmountEVO" precision="10" scale="0" nullable="true"/>
-    <field name="fdateevo" type="date" column="FDateEVO" nullable="true"/>
-    <field name="fchargebackevo" type="float" column="FChargebackEVO" precision="10" scale="0" nullable="true"/>
+    <field name="fclientevo" type="string" column="FClientEVO" length="50" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="fpaymethodevo" type="string" column="FPayMethodEVO" length="50" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="ftypeevo" type="string" column="FTypeEVO" length="50" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="fbookingdateevo" type="date" column="FBookingDateEVO" nullable="true"/>
+    <field name="fpaydateevo" type="date" column="FPayDateEVO" nullable="true"/>
+    <field name="fcustomerevo" type="string" column="FCustomerEVO" length="50" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="fproccustomeridevo" type="string" column="FProcCustomerIdEVO" length="255" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="fclientcustomernumevo" type="string" column="FClientCustomerNumEVO" length="255" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="fcreditcardnumevo" type="string" column="FCreditCardNumEVO" length="50" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="fdepositsevo" type="float" column="FDepositsEVO" precision="10" scale="0" nullable="true"/>
+    <field name="frefundsevo" type="float" column="FRefundsEVO" precision="10" scale="0" nullable="true"/>
+    <field name="fcftcreditsevo" type="float" column="FCFTCreditsEVO" precision="10" scale="0" nullable="true"/>
+    <field name="fchargebacksevo" type="float" column="FChargebacksEVO" precision="10" scale="0" nullable="true"/>
+    <field name="fcurrencyevo" type="string" column="FCurrencyEVO" length="3" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
   </entity>
 </doctrine-mapping>

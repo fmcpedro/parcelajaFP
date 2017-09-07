@@ -20,7 +20,7 @@ use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class ExportCommand extends ContainerAwareCommand {
+class ExportPaymentsCommand extends ContainerAwareCommand {
 
     protected function configure() {
         $this
@@ -49,7 +49,7 @@ class ExportCommand extends ContainerAwareCommand {
         $em = $this->getContainer()->get('doctrine.orm.entity_manager');
         $tpayments = $em->getRepository('AppBundle:Tpayments')->findAllProcessedPayments();
 
-        self::generateCsvFile($tpayments);
+        $this->generateCsvFile($tpayments);
 
 
         // outputs a message followed by a "\n"
@@ -63,9 +63,10 @@ class ExportCommand extends ContainerAwareCommand {
         $output->write('create a user.');
     }
 
-    public static function generateCsvFile($tpayments) {
+    public function generateCsvFile($tpayments) {
+
+        $em = $this->getContainer()->get('doctrine.orm.entity_manager');
         $filename = date('YmdHis') . 'FicheiroAgregador.csv';
-        //$filename = "yyyyMMddhhmmssFicheiroAgregador.csv";
 
         $handle = fopen($filename, 'w+');
 
@@ -125,7 +126,44 @@ class ExportCommand extends ContainerAwareCommand {
             'IVA',
             'SERVIÇOS_FINANCEIROS',
             'IMP_SELO',
-            'TIPO_TRANSACAO'), ';');
+            'TIPO_TRANSACAO',
+            //dados evo
+            'CLIENT_EVO',
+            'PAYMETHOD_EVO',
+            'TYPE_EVO',
+            'BOOKING_DATE_EVO',
+            'PAY_DATE_EVO',
+            'CUSTOMER_EVO',
+            'PROC_CUSTOMER_ID_EVO',
+            'CLIENT_CUSTOMER_NUM_EVO',
+            'CREDIT_CARD_NUM_EVO',
+            'DEPOSITS_EVO',
+            'REFUNDS_EVO',
+            'CFT_CREDITS_EVO',
+            'CHARGEBACKS_EVO',
+            'CURRENCY_EVO',
+            'orderID_INGENICO',
+            'PAYID_INGENICO',
+            'PAYIDSUB_INGENICO',
+            'NCSTATUS_INGENICO',
+            'NCERROR_INGENICO',
+            'NCERRORPLUS_INGENICO',
+            'ACCEPTANCE_INGENICO',
+            'STATUS_INGENICO',
+            'IPCTY_INGENICO',
+            'CCCTY_INGENICO',
+            'ECI_INGENICO',
+            'CVCCheck_INGENICO',
+            'AAVCheck_INGENICO',
+            'VC_INGENICO',
+            'amount_INGENICO',
+            'currency_INGENICO',
+            'PM_INGENICO',
+            'BRAND_INGENICO',
+            'CARDNO_INGENICO',
+            'SCORING_INGENICO',
+            'SCO_CATEGORY_INGENICO',
+                ), ';');
 
 
         foreach ($tpayments as $payment) {
@@ -155,7 +193,7 @@ class ExportCommand extends ContainerAwareCommand {
                 $LUCRO_BNI = TpaymentsTaxaDesconto::LUCRO_BNI;
             }
 
-//Pressupostos  Variáveis
+            //Pressupostos  Variáveis
             $valorCompra = $payment->getValorCompra();
             $numeroPrestacoes = $payment->getNumeroPrestacoes();
 
@@ -168,7 +206,7 @@ class ExportCommand extends ContainerAwareCommand {
                 $comissaoPagarClienteFinal = 0;
             }
 
-//Variáveis Dependentes
+            //Variáveis Dependentes
             $numParcela = $payment->getNumParcela(); //Nº DA PARCELA
 
             if ($payment instanceof TpaymentsTaxaServico) {
@@ -232,6 +270,65 @@ class ExportCommand extends ContainerAwareCommand {
             $impSelo = $payment->getImpSelo(); //IMP. SELO
             $tipoTransacao = $payment->getTipoTransacao();
 
+
+
+            //TRATAMENTO DOS DADOS DA EVO PAYMENTS
+            //como os objectos que vêm são os dos calculos necessito de ir buscar dados a tabela de payments
+
+            $tpayment = $em->getRepository('AppBundle:Tpayments')->find($payment->getPayID());
+
+            $clientEVO = $tpayment->getFclientevo();
+            $payMethodEVO = $tpayment->getFpaymethodevo();
+            $typeEVO = $tpayment->getFtypeevo();
+            $bookingDateEVO = $tpayment->getFbookingdateevo();
+            $payDateEVO = $tpayment->getFpaydateevo();
+            $customerEVO = $tpayment->getFcustomerevo();
+            $procCustomerIdEVO = $tpayment->getFproccustomeridevo();
+            $clientCustomerNumEVO = $tpayment->getFclientcustomernumevo();
+            $creditCardNumEVO = $tpayment->getFcreditcardnumevo();
+            $depositsEVO = $tpayment->getFdepositsevo();
+            $refundsEVO = $tpayment->getFrefundsevo();
+            $CFTCreditsEVO = $tpayment->getFcftcreditsevo();
+            $chargebacksEVO = $tpayment->getFchargebacksevo();
+            $currencyEVO = $tpayment->getFcurrencyevo();
+
+
+
+            //TRATAMENTO DOS DADOS DA INGENICO
+            //necessito de ir buscar os dados a tabela ingenico_payments
+
+
+            //$ingenico_payment = new \AppBundle\Entity\IngenicoPayment();
+            $ingenico_payment = $em->getRepository('AppBundle:IngenicoPayment')->find($payment->getPayID());
+
+            $orderIdINGENICO = $ingenico_payment->getOrderId();
+            $paiIDINGENICO = $ingenico_payment->getPayId();
+            $payIdSubINGENICO = $ingenico_payment->getPayIdSub();
+            $ncStatusINGENICO = $ingenico_payment->getNcStatus();
+            $ncErrorINGENICO = $ingenico_payment->getNcError();
+            $ncErrorPlusINGENICO = $ingenico_payment->getNcErrorPlus();
+            $acceptanceINGENICO = $ingenico_payment->getAcceptance();
+            $statusINGENICO = $ingenico_payment->getStatus();
+            $ipctyINGENICO = $ingenico_payment->getIpcty();
+            $ccctyINGENICO = $ingenico_payment->getCccty();
+            $eciINGENICO = $ingenico_payment->getEci();
+            $cvcCheckINGENICO = $ingenico_payment->getCvcCheck();
+            $aavCheckINGENICO = $ingenico_payment->getAavCheck();
+            $vcINGENICO = $ingenico_payment->getVc();
+            $amountINGENICO = $ingenico_payment->getAmount();
+            $currencyINGENICO = $ingenico_payment->getCurrency();
+            $pmINGENICO = $ingenico_payment->getPm();
+            $brandINGENICO = $ingenico_payment->getBrand();
+            $cardNoINGENICO = $ingenico_payment->getCardNo();
+            $scoringINGENICO = $ingenico_payment->getScoring();
+            $scoCategoryINGENICO = $ingenico_payment->getScoCategory();
+
+
+
+
+
+
+
             fputcsv(
                     $handle, // The file pointer
                     array(
@@ -289,7 +386,43 @@ class ExportCommand extends ContainerAwareCommand {
                 ($numParcela == 0) ? $iva : 0,
                 ($numParcela == 0) ? $servicosFinanceiros : 0,
                 ($numParcela == 0) ? $impSelo : 0,
-                $tipoTransacao), // The fields
+                $tipoTransacao,
+                $clientEVO, //EVO PAYMENTS FROM HERE
+                $payMethodEVO,
+                $typeEVO,
+                $bookingDateEVO,
+                $payDateEVO,
+                $customerEVO,
+                $procCustomerIdEVO,
+                $clientCustomerNumEVO,
+                $creditCardNumEVO,
+                $depositsEVO,
+                $refundsEVO,
+                $CFTCreditsEVO,
+                $chargebacksEVO,
+                $currencyEVO,
+                $orderIdINGENICO, //INGENICO PAYMENTS FROM HERE
+                $paiIDINGENICO,
+                $payIdSubINGENICO,
+                $ncStatusINGENICO,
+                $ncErrorINGENICO,
+                $ncErrorPlusINGENICO,
+                $acceptanceINGENICO,
+                $statusINGENICO,
+                $ipctyINGENICO,
+                $ccctyINGENICO,
+                $eciINGENICO,
+                $cvcCheckINGENICO,
+                $aavCheckINGENICO,
+                $vcINGENICO,
+                $amountINGENICO,
+                $currencyINGENICO,
+                $pmINGENICO,
+                $brandINGENICO,
+                $cardNoINGENICO,
+                $scoringINGENICO,
+                $scoCategoryINGENICO,
+                    ), // The fields
                     ';' // The delimiter
             );
         }
