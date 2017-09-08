@@ -29,7 +29,7 @@
         <option name="fixed"/>
       </options>
     </field>
-    <field name="ncErrorPlus" type="string" column="nc_error_plus" length="45" nullable="true">
+      <field name="ncErrorPlus" type="text" column="nc_error_plus" length="65535" nullable="true">
       <options>
         <option name="fixed"/>
       </options>
