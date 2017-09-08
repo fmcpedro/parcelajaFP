@@ -66,9 +66,10 @@ class ExportPaymentsCommand extends ContainerAwareCommand {
     public function generateCsvFile($tpayments) {
 
         $em = $this->getContainer()->get('doctrine.orm.entity_manager');
-        $filename = date('YmdHis') . 'FicheiroAgregador.csv';
 
-        $handle = fopen($filename, 'w+');
+        $path = $this->getContainer()->getParameter('EXPORT_PATH');
+        $filename = date('YmdHis') . 'FicheiroAgregador.csv';
+        $handle = fopen($path.$filename, 'w+');
 
         // Add the header of the CSV file
         fputcsv($handle, array(
@@ -274,7 +275,6 @@ class ExportPaymentsCommand extends ContainerAwareCommand {
 
             //TRATAMENTO DOS DADOS DA EVO PAYMENTS
             //como os objectos que vêm são os dos calculos necessito de ir buscar dados a tabela de payments
-
             $tpayment = $em->getRepository('AppBundle:Tpayments')->find($payment->getPayID());
 
             $clientEVO = $tpayment->getFclientevo();
@@ -282,11 +282,6 @@ class ExportPaymentsCommand extends ContainerAwareCommand {
             $typeEVO = $tpayment->getFtypeevo();
             $bookingDateEVO = ($tpayment->getFbookingdateevo()==null)?' ':$tpayment->getFbookingdateevo()->format('Y-m-d');
             $payDateEVO = ($tpayment->getFpaydateevo()==null)?' ':$tpayment->getFpaydateevo()->format('Y-m-d');
-
-
-//              $bookingDateEVO = "";
-//            $payDateEVO = "";
-            
             $customerEVO = $tpayment->getFcustomerevo();
             $procCustomerIdEVO = $tpayment->getFproccustomeridevo();
             $clientCustomerNumEVO = $tpayment->getFclientcustomernumevo();
@@ -301,9 +296,6 @@ class ExportPaymentsCommand extends ContainerAwareCommand {
 
             //TRATAMENTO DOS DADOS DA INGENICO
             //necessito de ir buscar os dados a tabela ingenico_payments
-
-
-            //$ingenico_payment = new \AppBundle\Entity\IngenicoPayment();
             $ingenico_payment = $em->getRepository('AppBundle:IngenicoPayment')->find($payment->getPayID());
 
             $orderIdINGENICO = $ingenico_payment->getOrderId();

@@ -100,7 +100,6 @@ class ImportPaymentsIngenicoCommand extends \Symfony\Bundle\FrameworkBundle\Comm
         $PSWD = $this->getContainer()->getParameter('PSWD');
           
           
-          
         $ch = curl_init();
         $params = array('PAYID' => $payID, 'PSPID' => $PSPID, 'USERID' => $USERID, 'PSWD' => $PSWD);
 
