@@ -280,8 +280,13 @@ class ExportPaymentsCommand extends ContainerAwareCommand {
             $clientEVO = $tpayment->getFclientevo();
             $payMethodEVO = $tpayment->getFpaymethodevo();
             $typeEVO = $tpayment->getFtypeevo();
-            $bookingDateEVO = $tpayment->getFbookingdateevo();
-            $payDateEVO = $tpayment->getFpaydateevo();
+            $bookingDateEVO = ($tpayment->getFbookingdateevo()==null)?' ':$tpayment->getFbookingdateevo()->format('Y-m-d');
+            $payDateEVO = ($tpayment->getFpaydateevo()==null)?' ':$tpayment->getFpaydateevo()->format('Y-m-d');
+
+
+//              $bookingDateEVO = "";
+//            $payDateEVO = "";
+            
             $customerEVO = $tpayment->getFcustomerevo();
             $procCustomerIdEVO = $tpayment->getFproccustomeridevo();
             $clientCustomerNumEVO = $tpayment->getFclientcustomernumevo();
