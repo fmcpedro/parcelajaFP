@@ -97,14 +97,14 @@ class ImportPaymentsIngenicoCommand extends \Symfony\Bundle\FrameworkBundle\Comm
 
         $PSPID = $this->getContainer()->getParameter('PSPID');
         $USERID = $this->getContainer()->getParameter('USERID');
-        $PSWD = $this->getContainer()->getParameter('PSWD');
-        //$PSWD = "#osga2016#0707";
+        //$PSWD = $this->getContainer()->getParameter('PSWD');
+        $PSWD = "#osga2016#0707";
         
         
         
 //        echo "PSPID = " . $PSPID;
 //        echo "USERID = " . $USERID;
-        echo "PSWD = <<".$PSWD.">>";
+        //echo "PSWD = <<".$PSWD.">>";
 //        $data = array();
           
         $ch = curl_init();
