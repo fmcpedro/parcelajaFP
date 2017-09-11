@@ -104,7 +104,7 @@ class ImportPaymentsIngenicoCommand extends \Symfony\Bundle\FrameworkBundle\Comm
         
 //        echo "PSPID = " . $PSPID;
 //        echo "USERID = " . $USERID;
-//        echo "PSWD = " . $PSWD;
+        echo "PSWD = <<".$PSWD.">>";
 //        $data = array();
           
         $ch = curl_init();
