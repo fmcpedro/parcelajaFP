@@ -96,15 +96,15 @@ class ImportPaymentsIngenicoCommand extends \Symfony\Bundle\FrameworkBundle\Comm
         $USERID = $this->getContainer()->getParameter('USERID');
         $PSWD = $this->getContainer()->getParameter('PSWD');
         
-        echo $PSWD;
+        //echo $PSWD;
 
 
         $ch = curl_init();
 
         //Necessita de ser alterado, para ir buscar os dados ao parameters.yml
-        $params = array('PAYID' => $payID, 'PSPID' => $PSPID, 'USERID' => $USERID, 'PSWD' => $PSWD);
+        //$params = array('PAYID' => $payID, 'PSPID' => $PSPID, 'USERID' => $USERID, 'PSWD' => $PSWD);
         //$params = array('PAYID' => $payID, 'PSPID' => 'PARCELAJA', 'USERID' => 'Autopay', 'PSWD' => '#osga2016#0707');
-
+        $params = array('PAYID' => $payID, 'PSPID' => $PSPID, 'USERID' => $USERID, 'PSWD' => '#osga2016#0707');
 
         curl_setopt($ch, CURLOPT_URL, "https://secure.ogone.com/ncol/prod/querydirect.asp");
         curl_setopt($ch, CURLOPT_POST, 1);
