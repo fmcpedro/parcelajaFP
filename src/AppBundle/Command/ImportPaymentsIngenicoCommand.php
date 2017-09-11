@@ -44,16 +44,16 @@ class ImportPaymentsIngenicoCommand extends \Symfony\Bundle\FrameworkBundle\Comm
         ]);
 
 
-     $em = $this->getContainer()->get('doctrine.orm.entity_manager');
+        $em = $this->getContainer()->get('doctrine.orm.entity_manager');
         //$em = $this->getDoctrine()->getManager();
-        
+
         $payments = $em->getRepository('AppBundle:Tpayments')->findLastDaysPayments(30);
-        
+
         foreach ($payments as $key => $payment) {
-            
+
             $data = $this->getIngenicoObject($payment->getFpayid());
-            
-            
+
+
             $entity = new \AppBundle\Entity\IngenicoPayment();
             $entity->setOrderId($this->xml_attribute($data, 'orderID'));
             $entity->setPayId(intval($this->xml_attribute($data, 'PAYID')));
@@ -79,37 +79,31 @@ class ImportPaymentsIngenicoCommand extends \Symfony\Bundle\FrameworkBundle\Comm
 
             $em->merge($entity); //it's important to use result of function, not the same element
             $em->flush();
-            
         }
-        
-        
-      // outputs multiple lines to the console (adding "\n" at the end of each line)
+
+
+        // outputs multiple lines to the console (adding "\n" at the end of each line)
         $output->writeln([
-            count($payments).' updated from Ingenico...',
+            count($payments) . ' updated from Ingenico...',
             '==========================================',
             'END',
         ]);
-        
     }
 
-    
-      function getIngenicoObject($payID) {
+    function getIngenicoObject($payID) {
 
         $PSPID = $this->getContainer()->getParameter('PSPID');
         $USERID = $this->getContainer()->getParameter('USERID');
-        //$PSWD = $this->getContainer()->getParameter('PSWD');
-        $PSWD = "#osga2016#0707";
+        $PSWD = $this->getContainer()->getParameter('PSWD');
         
-        
-        
-//        echo "PSPID = " . $PSPID;
-//        echo "USERID = " . $USERID;
-        //echo "PSWD = <<".$PSWD.">>";
-//        $data = array();
-          
+        echo $PSWD;
+
+
         $ch = curl_init();
-        //$params = array('PAYID' => $payID, 'PSPID' => $PSPID, 'USERID' => $USERID, 'PSWD' => $PSWD);
-        $params = array('PAYID' => $payID, 'PSPID' => 'PARCELAJA', 'USERID' => 'Autopay', 'PSWD' => '#osga2016#0707');
+
+        //Necessita de ser alterado, para ir buscar os dados ao parameters.yml
+        $params = array('PAYID' => $payID, 'PSPID' => $PSPID, 'USERID' => $USERID, 'PSWD' => $PSWD);
+        //$params = array('PAYID' => $payID, 'PSPID' => 'PARCELAJA', 'USERID' => 'Autopay', 'PSWD' => '#osga2016#0707');
 
 
         curl_setopt($ch, CURLOPT_URL, "https://secure.ogone.com/ncol/prod/querydirect.asp");
@@ -119,7 +113,7 @@ class ImportPaymentsIngenicoCommand extends \Symfony\Bundle\FrameworkBundle\Comm
 
         $response = curl_exec($ch);
         $data = new \SimpleXMLElement($response);
-        
+
         curl_close($ch);
 
         return $data;
@@ -130,6 +124,4 @@ class ImportPaymentsIngenicoCommand extends \Symfony\Bundle\FrameworkBundle\Comm
             return (string) $object[$attribute];
     }
 
-    
-    
 }
