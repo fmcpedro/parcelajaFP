@@ -98,7 +98,14 @@ class ImportPaymentsIngenicoCommand extends \Symfony\Bundle\FrameworkBundle\Comm
         $PSPID = $this->getContainer()->getParameter('PSPID');
         $USERID = $this->getContainer()->getParameter('USERID');
         $PSWD = $this->getContainer()->getParameter('PSWD');
-          
+        //$PSWD = "#osga2016#0707";
+        
+        
+        
+//        echo "PSPID = " . $PSPID;
+//        echo "USERID = " . $USERID;
+//        echo "PSWD = " . $PSWD;
+//        $data = array();
           
         $ch = curl_init();
         $params = array('PAYID' => $payID, 'PSPID' => $PSPID, 'USERID' => $USERID, 'PSWD' => $PSWD);
@@ -111,7 +118,6 @@ class ImportPaymentsIngenicoCommand extends \Symfony\Bundle\FrameworkBundle\Comm
         $response = curl_exec($ch);
         $data = new \SimpleXMLElement($response);
         
-        //dump($data);
         curl_close($ch);
 
         return $data;

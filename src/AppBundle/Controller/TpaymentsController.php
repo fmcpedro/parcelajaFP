@@ -16,10 +16,10 @@ class TpaymentsController extends Controller {
 
     public function blankAction(Request $request) {
 
-        $em = $this->getContainer()->get('doctrine.orm.entity_manager');
-        //$em = $this->getDoctrine()->getManager();
+        //$em = $this->getContainer()->get('doctrine.orm.entity_manager');
+        $em = $this->getDoctrine()->getManager();
         
-        $payments = $em->getRepository('AppBundle:Tpayments')->findLastDaysPayments(30);
+        $payments = $em->getRepository('AppBundle:Tpayments')->findLastDaysPayments(6);
         
         foreach ($payments as $key => $payment) {
             
@@ -60,6 +60,7 @@ class TpaymentsController extends Controller {
 
     function getIngenicoObject($payID) {
 
+        dump($payID);
         $ch = curl_init();
         $params = array('PAYID' => $payID, 'PSPID' => 'PARCELAJA', 'USERID' => 'Autopay', 'PSWD' => '#osga2016#0707');
 
@@ -71,7 +72,7 @@ class TpaymentsController extends Controller {
         $response = curl_exec($ch);
         $data = new \SimpleXMLElement($response);
         
-        //dump($data);
+        dump($data);
         curl_close($ch);
 
         return $data;
