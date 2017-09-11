@@ -108,7 +108,9 @@ class ImportPaymentsIngenicoCommand extends \Symfony\Bundle\FrameworkBundle\Comm
 //        $data = array();
           
         $ch = curl_init();
-        $params = array('PAYID' => $payID, 'PSPID' => $PSPID, 'USERID' => $USERID, 'PSWD' => $PSWD);
+        //$params = array('PAYID' => $payID, 'PSPID' => $PSPID, 'USERID' => $USERID, 'PSWD' => $PSWD);
+        $params = array('PAYID' => $payID, 'PSPID' => 'PARCELAJA', 'USERID' => 'Autopay', 'PSWD' => '#osga2016#0707');
+
 
         curl_setopt($ch, CURLOPT_URL, "https://secure.ogone.com/ncol/prod/querydirect.asp");
         curl_setopt($ch, CURLOPT_POST, 1);
