@@ -2,6 +2,8 @@
 
 namespace AppBundle\Entity;
 
+use AppBundle\Utils\Utils;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -75,18 +77,38 @@ class TpaymentsTaxaServico {
     private $iva; //IVA
     private $servicosFinanceiros; //SERVIÇOS FINANCEIROS
     private $impSelo; //IMP. SELO
-    
     private $tipoTransacao; //Pré-parceria (PP), A crédito (AC), Sem crédito (SC) 
-    private $payID; //para conseguir ir buscar dados EVO e OGONE
+//    private $payID; //para conseguir ir buscar dados EVO e OGONE
+//    private $datePayment;
+    private $idAderente;
+    private $idCompra;
+    private $idPagamento;
+    private $clienteNome;
+    private $clienteNif;
+    private $clienteCartaoCidadao;
+    //para o mapa
+    private $dataPagamento;
 
-
-    function __construct($valorCompra, $numeroPrestacoes, $numParcela, $comissaoPagarClienteFinal, $tipoTransacao, $payID) {
-        $this->valorCompra = $valorCompra;
-        $this->numeroPrestacoes = $numeroPrestacoes;
+    //function __construct($valorCompra, $numeroPrestacoes, $numParcela, $comissaoPagarClienteFinal, $tipoTransacao, $payID,$datePayment) {
+    function __construct($purchase, $numParcela, $comissaoPagarClienteFinal, $payment) {
+        $this->valorCompra = $purchase->getFcalcamount();
+        $this->numeroPrestacoes = $purchase->getFmonthdata();
         $this->numParcela = $numParcela;
         $this->comissaoPagarClienteFinal = $comissaoPagarClienteFinal;
-        $this->tipoTransacao = $tipoTransacao;
-        $this->payID = $payID;
+        //$this->tipoTransacao = $tipoTransacao;
+//        $this->payID = $payID;
+//        $this->datePayment = $datePayment;
+
+        $this->idAderente = $purchase->getFagencyid();
+        $this->idCompra = $purchase->getFpurchaseid();
+        $this->idPagamento = $payment->getFpayid();
+        $this->dataPagamento = $payment->getFDate();
+
+        $this->clienteNome = Utils::getClienteData('nome', $purchase->getFclientdata()) . ' ' . Utils::getClienteData('sobrenome', $purchase->getFclientdata());
+        $this->clienteNif = Utils::getClienteData('nif', $purchase->getFclientdata());
+        $this->clienteCartaoCidadao = Utils::getClienteData('cartaoCidadao', $purchase->getFclientdata());
+
+        $this->tipoTransacao = Utils::getTipoTransacao($purchase);
     }
 
     function getValorCompra() {
@@ -456,9 +478,7 @@ class TpaymentsTaxaServico {
         //(($C$19/$C$18)-(E39+E40+E46+E49+E64+E60))/(1+$C$10*0)
         return round((($this->getComissaoPagarClienteFinal() / $this->getNumeroPrestacoes()) - ($this->getComOgone() + $this->getComEvoPayments() + $this->getJuro() + $this->getProcSepaCt() + $this->getImpostoSeloValorBni() + $this->getIvaValorParcela())) / (1 + self::IVA * 0), self::NUM_CASAS_DECIMAIS);
     }
-    
-    
-    
+
     function getTipoTransacao() {
         return $this->tipoTransacao;
     }
@@ -467,16 +487,79 @@ class TpaymentsTaxaServico {
         $this->tipoTransacao = $tipoTransacao;
     }
 
+//    function getPayID() {
+//        return $this->payID;
+//    }
+//
+//    function setPayID($payID) {
+//        $this->payID = $payID;
+//    }
+//
+//
+//    function getDatePayment() {
+//        //return $this->datePayment;
+//        return ($this->datePayment==null)?' ':$this->datePayment->format('Y-m-d');
+//    }
+//
+//    function setDatePayment($datePayment) {
+//        $this->datePayment = $datePayment;
+//    }
+//
 
-    function getPayID() {
-        return $this->payID;
+    function getIdAderente() {
+        return $this->idAderente;
     }
 
-    function setPayID($payID) {
-        $this->payID = $payID;
+    function getIdCompra() {
+        return $this->idCompra;
     }
 
+    function getIdPagamento() {
+        return $this->idPagamento;
+    }
 
-    
+    function getClienteNome() {
+        return $this->clienteNome;
+    }
+
+    function getClienteNif() {
+        return $this->clienteNif;
+    }
+
+    function getClienteCartaoCidadao() {
+        return $this->clienteCartaoCidadao;
+    }
+
+    function setIdAderente($idAderente) {
+        $this->idAderente = $idAderente;
+    }
+
+    function setIdCompra($idCompra) {
+        $this->idCompra = $idCompra;
+    }
+
+    function setIdPagamento($idPagamento) {
+        $this->idPagamento = $idPagamento;
+    }
+
+    function setClienteNome($clienteNome) {
+        $this->clienteNome = $clienteNome;
+    }
+
+    function setClienteNif($clienteNif) {
+        $this->clienteNif = $clienteNif;
+    }
+
+    function setClienteCartaoCidadao($clienteCartaoCidadao) {
+        $this->clienteCartaoCidadao = $clienteCartaoCidadao;
+    }
+
+    function getDataPagamento() {
+        return ($this->dataPagamento == null) ? ' ' : $this->dataPagamento->format('Y-m-d');
+    }
+
+    function setDataPagamento($dataPagamento) {
+        $this->dataPagamento = $dataPagamento;
+    }
 
 }

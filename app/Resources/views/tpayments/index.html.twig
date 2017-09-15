@@ -97,7 +97,7 @@
                             <thead>
                                 <tr>
 
-
+<th style="width: 2px;">DATA</th>
                                     <th style="width: 2px;">Nº DA PARCELA</th>
                                         {#
                                                                                                                <th>VALOR COMISSAO PAGAR ADERENTE</th><!-- taxa desconto -->
@@ -156,6 +156,7 @@
                             <tbody>
                                 {% for key, tpayment in tpayments %}
                                     <tr>
+                                        <td>{{ tpayment.dataPagamento}}</td>
                                         <td>{{ tpayment.numParcela }}</td>
 
                                         {#

@@ -69,7 +69,7 @@ class ExportPaymentsCommand extends ContainerAwareCommand {
 
         $path = $this->getContainer()->getParameter('EXPORT_PATH');
         $filename = date('YmdHis') . 'FicheiroAgregador.csv';
-        $handle = fopen($path.$filename, 'w+');
+        $handle = fopen($path . $filename, 'w+');
 
         // Add the header of the CSV file
         fputcsv($handle, array(
@@ -88,6 +88,12 @@ class ExportPaymentsCommand extends ContainerAwareCommand {
             'COMISSAO_PAGAR_ADERENTE',
             'COMISSAO_PAGAR_CLIENTE_FINAL',
             'Nº_DA_PARCELA',
+            'ADERENTE_ID',
+            'COMPRA_ID',
+            'PAGAMENTO_ID',
+            'CLIENTE_NOME',
+            'CLIENTE_NIF',
+            'CLIENTE_CARTAO_CIDADAO',
             'VALOR_COMISSAO_PAGAR_ADERENTE',
             'VALOR_COMISSAO_PAGAR_CLIENTE',
             'VALOR_COMISSAO_SUJEITA_A_IVA',
@@ -169,6 +175,13 @@ class ExportPaymentsCommand extends ContainerAwareCommand {
 
         foreach ($tpayments as $payment) {
 
+
+
+
+
+
+
+
             //Pressupostos  Fixos
             if ($payment instanceof TpaymentsTaxaServico) {
                 $CUSTO_CAPTURA = TpaymentsTaxaServico::CUSTO_CAPTURA;
@@ -209,6 +222,18 @@ class ExportPaymentsCommand extends ContainerAwareCommand {
 
             //Variáveis Dependentes
             $numParcela = $payment->getNumParcela(); //Nº DA PARCELA
+
+            //Variáveis Novas
+            $idAderente = $payment->getIdAderente();
+            $idCompra = $payment->getIdCompra();
+            $idPagamento = $payment->getIdPagamento();
+            $clienteNome = $payment->getClienteNome();
+            $clienteNif = $payment->getClienteNif();
+            $clienteCartaoCidadao = $payment->getClienteCartaoCidadao();
+
+
+
+
 
             if ($payment instanceof TpaymentsTaxaServico) {
                 $valorComissaoPagarAderente = 0; //VALOR COMISSAO PAGAR ADERENTE
@@ -275,13 +300,13 @@ class ExportPaymentsCommand extends ContainerAwareCommand {
 
             //TRATAMENTO DOS DADOS DA EVO PAYMENTS
             //como os objectos que vêm são os dos calculos necessito de ir buscar dados a tabela de payments
-            $tpayment = $em->getRepository('AppBundle:Tpayments')->find($payment->getPayID());
+            $tpayment = $em->getRepository('AppBundle:Tpayments')->find($payment->getIdPagamento());
 
             $clientEVO = $tpayment->getFclientevo();
             $payMethodEVO = $tpayment->getFpaymethodevo();
             $typeEVO = $tpayment->getFtypeevo();
-            $bookingDateEVO = ($tpayment->getFbookingdateevo()==null)?' ':$tpayment->getFbookingdateevo()->format('Y-m-d');
-            $payDateEVO = ($tpayment->getFpaydateevo()==null)?' ':$tpayment->getFpaydateevo()->format('Y-m-d');
+            $bookingDateEVO = ($tpayment->getFbookingdateevo() == null) ? ' ' : $tpayment->getFbookingdateevo()->format('Y-m-d');
+            $payDateEVO = ($tpayment->getFpaydateevo() == null) ? ' ' : $tpayment->getFpaydateevo()->format('Y-m-d');
             $customerEVO = $tpayment->getFcustomerevo();
             $procCustomerIdEVO = $tpayment->getFproccustomeridevo();
             $clientCustomerNumEVO = $tpayment->getFclientcustomernumevo();
@@ -296,7 +321,7 @@ class ExportPaymentsCommand extends ContainerAwareCommand {
 
             //TRATAMENTO DOS DADOS DA INGENICO
             //necessito de ir buscar os dados a tabela ingenico_payments
-            $ingenico_payment = $em->getRepository('AppBundle:IngenicoPayment')->find($payment->getPayID());
+            $ingenico_payment = $em->getRepository('AppBundle:IngenicoPayment')->find($payment->getIdPagamento());
 
             $orderIdINGENICO = $ingenico_payment->getOrderId();
             $paiIDINGENICO = $ingenico_payment->getPayId();
@@ -344,6 +369,12 @@ class ExportPaymentsCommand extends ContainerAwareCommand {
                 $comissaoPagarAderente,
                 $comissaoPagarClienteFinal,
                 $numParcela,
+                $idAderente,
+                $idCompra,
+                $idPagamento,
+                $clienteNome,
+                $clienteNif,
+                $clienteCartaoCidadao,
                 $valorComissaoPagarAderente,
                 ($numParcela == 0) ? $valorComissaoPagarCliente : 0,
                 ($numParcela == 0) ? $valorComissaoSujeitaIva : 0,

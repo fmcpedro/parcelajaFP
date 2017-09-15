@@ -5,7 +5,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+namespace AppBundle\Utils;
 /**
  * Description of Utils
  *
@@ -14,15 +14,55 @@
 class Utils {
     //put your code here
     
-    public static function generateCsvFile(){
-        $file = 'people.txt';
-// The new person to add to the file
-$person = "John Smith\n";
-// Write the contents to the file, 
-// using the FILE_APPEND flag to append the content to the end of the file
-// and the LOCK_EX flag to prevent anyone else writing to the file at the same time
-file_put_contents($file, $person, FILE_APPEND | LOCK_EX);
+
+        static function  getClienteData($propriedade, $clientData) {
+        if ($propriedade == "nome") {
+            if (preg_match('/»fld_id_0«(.*?)»fld_id_1«/', $clientData, $display) === 1) {
+                return $display[1];
+            }
+        } elseif ($propriedade == "sobrenome") {
+            if (preg_match('/»fld_id_1«(.*?)»fld_id_2«/', $clientData, $display) === 1) {
+                return $display[1];
+            }
+        } elseif ($propriedade == "nif") {
+            if (preg_match('/»fld_id_2«(.*?)»fld_id_3«/', $clientData, $display) === 1) {
+                return $display[1];
+            }
+        } elseif ($propriedade == "cartaoCidadao") {
+            if (preg_match('/»fld_id_3«(.*?)»/', $clientData, $display) === 1) {
+                return $display[1];
+            }
+        }
     }
+    
+    
+    
+    static function getTipoTransacao($purchase){
+        
+        
+            //apenas são criados os pagamentos de compras após 10-03-2017
+            $purchase_date = strtotime($purchase->getFpurchasedate()->format('d-m-Y'));
+            $start_date = strtotime('10-03-2017');
+
+
+            //se a data da compra for maior que a data de inicio da parceria
+            if ($purchase_date >= $start_date):
+                if ($purchase->getFmonthdata() == 1):
+                    //se for uma pagamento numa unica vez = SC(sem credito)
+                    $tipoTransacao = "SC";
+                else:
+                    //dentro da parceria AC=(a credito)
+                    $tipoTransacao = "AC";
+                endif;
+            else:
+                //antes da parceria com o banco = PP(pre-parceria)
+                $tipoTransacao = "PP";
+            endif;
+        
+        
+    }
+    
+    
     
     
 }

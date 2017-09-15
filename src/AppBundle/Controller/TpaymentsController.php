@@ -17,44 +17,49 @@ class TpaymentsController extends Controller {
     public function blankAction(Request $request) {
 
         //$em = $this->getContainer()->get('doctrine.orm.entity_manager');
-        $em = $this->getDoctrine()->getManager();
+//        $em = $this->getDoctrine()->getManager();
+//        
+//        $payments = $em->getRepository('AppBundle:Tpayments')->findLastDaysPayments(6);
+//        
+//        foreach ($payments as $key => $payment) {
+//            
+//            $data = $this->getIngenicoObject($payment->getFpayid());
+//            
+//            
+//            $entity = new \AppBundle\Entity\IngenicoPayment();
+//            $entity->setOrderId($this->xml_attribute($data, 'orderID'));
+//            $entity->setPayId(intval($this->xml_attribute($data, 'PAYID')));
+//            $entity->setPayIdSub($this->xml_attribute($data, 'PAYIDSUB'));
+//            $entity->setNcStatus($this->xml_attribute($data, 'NCSTATUS'));
+//            $entity->setNcError($this->xml_attribute($data, 'NCERROR'));
+//            $entity->setNcErrorPlus($this->xml_attribute($data, 'NCERRORPLUS'));
+//            $entity->setAcceptance($this->xml_attribute($data, 'ACCEPTANCE'));
+//            $entity->setStatus($this->xml_attribute($data, 'STATUS'));
+//            $entity->setIpcty($this->xml_attribute($data, 'IPCTY'));
+//            $entity->setCccty($this->xml_attribute($data, 'CCCTY'));
+//            $entity->setEci($this->xml_attribute($data, 'ECI'));
+//            $entity->setCvcCheck($this->xml_attribute($data, 'CVCCheck'));
+//            $entity->setAavCheck($this->xml_attribute($data, 'AAVCheck'));
+//            $entity->setVc($this->xml_attribute($data, 'VC'));
+//            $entity->setAmount($this->xml_attribute($data, 'amount'));
+//            $entity->setCurrency($this->xml_attribute($data, 'currency'));
+//            $entity->setPm($this->xml_attribute($data, 'PM'));
+//            $entity->setBrand($this->xml_attribute($data, 'BRAND'));
+//            $entity->setCardNo($this->xml_attribute($data, 'CARDNO'));
+//            $entity->setScoring($this->xml_attribute($data, 'SCORING'));
+//            $entity->setScoCategory($this->xml_attribute($data, 'SCO_CATEGORY'));
+//
+//            $entity = $em->merge($entity); //it's important to use result of function, not the same element
+//            $em->flush();
+//            
+//        }
+
+ 
         
-        $payments = $em->getRepository('AppBundle:Tpayments')->findLastDaysPayments(6);
         
-        foreach ($payments as $key => $payment) {
-            
-            $data = $this->getIngenicoObject($payment->getFpayid());
-            
-            
-            $entity = new \AppBundle\Entity\IngenicoPayment();
-            $entity->setOrderId($this->xml_attribute($data, 'orderID'));
-            $entity->setPayId(intval($this->xml_attribute($data, 'PAYID')));
-            $entity->setPayIdSub($this->xml_attribute($data, 'PAYIDSUB'));
-            $entity->setNcStatus($this->xml_attribute($data, 'NCSTATUS'));
-            $entity->setNcError($this->xml_attribute($data, 'NCERROR'));
-            $entity->setNcErrorPlus($this->xml_attribute($data, 'NCERRORPLUS'));
-            $entity->setAcceptance($this->xml_attribute($data, 'ACCEPTANCE'));
-            $entity->setStatus($this->xml_attribute($data, 'STATUS'));
-            $entity->setIpcty($this->xml_attribute($data, 'IPCTY'));
-            $entity->setCccty($this->xml_attribute($data, 'CCCTY'));
-            $entity->setEci($this->xml_attribute($data, 'ECI'));
-            $entity->setCvcCheck($this->xml_attribute($data, 'CVCCheck'));
-            $entity->setAavCheck($this->xml_attribute($data, 'AAVCheck'));
-            $entity->setVc($this->xml_attribute($data, 'VC'));
-            $entity->setAmount($this->xml_attribute($data, 'amount'));
-            $entity->setCurrency($this->xml_attribute($data, 'currency'));
-            $entity->setPm($this->xml_attribute($data, 'PM'));
-            $entity->setBrand($this->xml_attribute($data, 'BRAND'));
-            $entity->setCardNo($this->xml_attribute($data, 'CARDNO'));
-            $entity->setScoring($this->xml_attribute($data, 'SCORING'));
-            $entity->setScoCategory($this->xml_attribute($data, 'SCO_CATEGORY'));
-
-            $entity = $em->merge($entity); //it's important to use result of function, not the same element
-            $em->flush();
-            
-        }
-
-
+        
+        
+        
         return $this->render('tpayments/blank.html.twig');
     }
 

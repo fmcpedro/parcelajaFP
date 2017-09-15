@@ -2,14 +2,15 @@
 
 namespace AppBundle\Repository;
 
+use AppBundle\Entity\Tpayments;
 use AppBundle\Entity\TpaymentsTaxaDesconto;
 use AppBundle\Entity\TpaymentsTaxaServico;
+use AppBundle\Entity\Tpurchase;
 use AppBundle\Utils\CalculateImpostoSeloBNIE;
 use AppBundle\Utils\CalculateIva;
 use DateTime;
 use Doctrine\ORM\EntityRepository;
-use Proxies\__CG__\AppBundle\Entity\Tpayments;
-use Proxies\__CG__\AppBundle\Entity\Tpurchase;
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -66,28 +67,8 @@ class TpaymentsRepository extends EntityRepository {
         foreach ($payments as $payment) {
             //buscar a compra
             $purchase = $em->getRepository('AppBundle:Tpurchase')->find($payment->getFpurchaseid());
-
-
-            //apenas são criados os pagamentos de compras após 10-03-2017
             $purchase_date = strtotime($purchase->getFpurchasedate()->format('d-m-Y'));
             $start_date = strtotime('10-03-2017');
-
-
-            //se a data da compra for maior que a data de inicio da parceria
-            if ($purchase_date >= $start_date):
-                if ($purchase->getFmonthdata() == 1):
-                    //se for uma pagamento numa unica vez = SC(sem credito)
-                    $tipoTransacao = "SC";
-                else:
-                    //dentro da parceria AC=(a credito)
-                    $tipoTransacao = "AC";
-                endif;
-            else:
-                //antes da parceria com o banco = PP(pre-parceria)
-                $tipoTransacao = "PP";
-            endif;
-
-
 
             if ($purchase_date > $start_date) {
                 // FFee = Quando é feita uma transação através de uma taxa de desconto, esta percentagem é cobrada a Loja.
@@ -96,20 +77,16 @@ class TpaymentsRepository extends EntityRepository {
                 if ($purchase->getFextracharge() <> 0):
                     //echo "TaxaServico <br/>";
                     //gerar todos os pagamentos da compra
-                    $generatedPayments = $this->generatePaymentsTaxaServico($purchase->getFcalcamount(), $purchase->getFmonthdata(), $tipoTransacao, $payment->getFpayid());
+                    //$generatedPayments = $this->generatePaymentsTaxaServico($purchase->getFcalcamount(), $purchase->getFmonthdata(), $tipoTransacao, $payment->getFpayid(), $payment->getFDate());
+                $generatedPayments = $this->generatePaymentsTaxaServico($purchase, $payment);
                 else:
                     //echo "TaxaDesconto <br/>";
                     //gerar todos os pagamentos da compra
-                    $generatedPayments = $this->generatePaymentsTaxaDesconto($purchase->getFcalcamount(), $purchase->getFmonthdata(), $tipoTransacao, $payment->getFpayid());
+                    //$generatedPayments = $this->generatePaymentsTaxaDesconto($purchase->getFcalcamount(), $purchase->getFmonthdata(), $tipoTransacao, $payment->getFpayid(), $payment->getFDate());
+                $generatedPayments = $this->generatePaymentsTaxaDesconto($purchase, $payment);
                 endif;
 
 
-//                foreach ($generatedPayments as $key => $value) {
-//                    echo "NUMERO PARCELA = " . $value->getNumParcela();
-//                }
-
-
-                //echo "valor do installment = " . $payment->getFinstallment();
 
 
                 //adicionar a parcela relativa ao pagamento
@@ -117,13 +94,6 @@ class TpaymentsRepository extends EntityRepository {
             }
         }
 
-
-
-//        $value = new TpaymentsTaxaDesconto();
-//        foreach ($tpayments as $key => $value) {
-//            echo "NUMERO PARCELA = " . $value->getNumParcela();
-//            
-//        }
 
 
 
@@ -137,8 +107,12 @@ class TpaymentsRepository extends EntityRepository {
      * @param type $numeroPrestacoes
      * @return array
      */
-    public function generatePaymentsTaxaDesconto($valorCompra, $numeroPrestacoes, $tipoTransacao = "SC", $payID=0) {
+    //public function generatePaymentsTaxaDesconto($valorCompra, $numeroPrestacoes, $tipoTransacao = "SC", $payID=0, $dataPayment=0) {
+    public function generatePaymentsTaxaDesconto(Tpurchase $purchase, Tpayments $payment=null) {
 
+                
+        $numeroPrestacoes = $purchase->getFmonthdata();
+        
         $prestacoes = array();
         $capitalAmortizadoAnterior = 0;
         $capitalEmDividaAnterior = 0;
@@ -152,7 +126,7 @@ class TpaymentsRepository extends EntityRepository {
 
         for ($i = 0; $i < $numeroPrestacoes; $i++) {
 
-            $prestacao = new TpaymentsTaxaDesconto($valorCompra, $numeroPrestacoes, $i, $tipoTransacao, $payID);
+            $prestacao = new TpaymentsTaxaDesconto($purchase, $i, $payment);
 
             $prestacao->setCapitalAmortizadoAcumulado($prestacao->getCapitalAmortizadoMensalmente() + $capitalAmortizadoAnterior);
             $capitalAmortizadoAnterior = $prestacao->getCapitalAmortizadoAcumulado();
@@ -206,11 +180,15 @@ class TpaymentsRepository extends EntityRepository {
      * @param type $numeroPrestacoes
      * @return array
      */
-    public function generatePaymentsTaxaServico($valorCompra, $numeroPrestacoes, $tipoTransacao = "SC", $payID) {
+    //public function generatePaymentsTaxaServico($valorCompra, $numeroPrestacoes, $tipoTransacao = "SC", $payID=0, $dataPayment=0) {
+    
+    
+    public function generatePaymentsTaxaServico(Tpurchase $purchase, Tpayments $payment) {
 
-//        $logger = $this->get('logger');
-//        $logger->info("generatePaymentsTaxaServico");
-
+        $valorCompra = $purchase->getFcalcamount();
+        $numeroPrestacoes = $purchase->getFmonthdata();
+        
+        
         $prestacoes = array();
         $capitalAmortizadoAnterior = 0;
         $capitalEmDividaAnterior = 0;
@@ -256,7 +234,8 @@ class TpaymentsRepository extends EntityRepository {
 
         for ($i = 0; $i < $numeroPrestacoes; $i++) {
 
-            $prestacao = new TpaymentsTaxaServico($valorCompra, $numeroPrestacoes, $i, $comissaoPagarClienteFinal, $tipoTransacao, $payID);
+            $prestacao = new TpaymentsTaxaServico($purchase, $i, $comissaoPagarClienteFinal, $payment);
+            //$prestacao = new TpaymentsTaxaServico($valorCompra, $numeroPrestacoes, $i, $comissaoPagarClienteFinal, $tipoTransacao, $payID, $dataPayment);
 
             //ok, validado
             $prestacao->setCapitalAmortizadoAcumulado($prestacao->getCapitalAmortizadoMensalmente() + $capitalAmortizadoAnterior);
