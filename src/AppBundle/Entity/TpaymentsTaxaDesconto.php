@@ -85,26 +85,22 @@ class TpaymentsTaxaDesconto {
     private $dataPagamento;
 
     //function __construct($valorCompra, $numeroPrestacoes, $numParcela, $tipoTransacao, $payID, $datePayment) {
-    function __construct(Tpurchase $purchase, $numParcela, Tpayments $payment) {
+    function __construct(Tpurchase $purchase, $numParcela, Tpayments $payment=null) {
         $this->valorCompra = $purchase->getFcalcamount();
         $this->numeroPrestacoes = $purchase->getFmonthdata();
         $this->numParcela = $numParcela;
         $this->comissaoPagarAderente = ((($this->numeroPrestacoes / 2) + 0.5) / 100);
-        //$this->tipoTransacao = $tipoTransacao;
-
+        
         $this->idAderente = $purchase->getFagencyid();
         $this->idCompra = $purchase->getFpurchaseid();
-        $this->idPagamento = $payment->getFpayid();
-        $this->dataPagamento = $payment->getFDate();
+        $this->idPagamento = is_null($payment)?0:$payment->getFpayid();
+        $this->dataPagamento = is_null($payment)?0:$payment->getFDate();
 
         $this->clienteNome = Utils::getClienteData('nome', $purchase->getFclientdata()) . ' ' . Utils::getClienteData('sobrenome', $purchase->getFclientdata());
         $this->clienteNif = Utils::getClienteData('nif', $purchase->getFclientdata());
         $this->clienteCartaoCidadao = Utils::getClienteData('cartaoCidadao', $purchase->getFclientdata());
 
         $this->tipoTransacao = Utils::getTipoTransacao($purchase);
-
-        //$this->payID = $payID;
-        //$this->datePayment = $datePayment;
     }
 
     function getValorCompra() {

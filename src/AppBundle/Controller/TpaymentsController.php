@@ -62,31 +62,7 @@ class TpaymentsController extends Controller {
         
         return $this->render('tpayments/blank.html.twig');
     }
-
-    function getIngenicoObject($payID) {
-
-        dump($payID);
-        $ch = curl_init();
-        $params = array('PAYID' => $payID, 'PSPID' => 'PARCELAJA', 'USERID' => 'Autopay', 'PSWD' => '#osga2016#0707');
-
-        curl_setopt($ch, CURLOPT_URL, "https://secure.ogone.com/ncol/prod/querydirect.asp");
-        curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($params));
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-        $response = curl_exec($ch);
-        $data = new \SimpleXMLElement($response);
-        
-        dump($data);
-        curl_close($ch);
-
-        return $data;
-    }
-
-    public function xml_attribute($object, $attribute) {
-        if (isset($object[$attribute]))
-            return (string) $object[$attribute];
-    }
+//
 
     public function simulatorAction(Request $request) {
 
@@ -104,15 +80,23 @@ class TpaymentsController extends Controller {
 //            $em->persist($tpayment);
 //            $em->flush();
 
+            
+            
+                $purchase = new \AppBundle\Entity\Tpurchase();
+            $purchase->setFcalcamount($form["valorCompra"]->getData());
+            $purchase->setFmonthdata($form["numeroParcelas"]->getData());
+            
             if ($form["taxa"]->getData() == 1):
-                $tpayments = $em->getRepository('AppBundle:Tpayments')->generatePaymentsTaxaDesconto($form["valorCompra"]->getData(), $form["numeroParcelas"]->getData());
+                
+                
+                $tpayments = $em->getRepository('AppBundle:Tpayments')->generatePaymentsTaxaDesconto($purchase);
                 return $this->render('tpayments/simulatorDesconto.html.twig', array(
                             'simulation' => $simulation,
                             'tpayments' => $tpayments,
                             'form' => $form->createView(),
                 ));
             else:
-                $tpayments = $em->getRepository('AppBundle:Tpayments')->generatePaymentsTaxaServico($form["valorCompra"]->getData(), $form["numeroParcelas"]->getData());
+                $tpayments = $em->getRepository('AppBundle:Tpayments')->generatePaymentsTaxaServico($purchase);
                 return $this->render('tpayments/simulatorServico.html.twig', array(
                             'simulation' => $simulation,
                             'tpayments' => $tpayments,

@@ -183,7 +183,7 @@ class TpaymentsRepository extends EntityRepository {
     //public function generatePaymentsTaxaServico($valorCompra, $numeroPrestacoes, $tipoTransacao = "SC", $payID=0, $dataPayment=0) {
     
     
-    public function generatePaymentsTaxaServico(Tpurchase $purchase, Tpayments $payment) {
+    public function generatePaymentsTaxaServico(Tpurchase $purchase, Tpayments $payment=null) {
 
         $valorCompra = $purchase->getFcalcamount();
         $numeroPrestacoes = $purchase->getFmonthdata();

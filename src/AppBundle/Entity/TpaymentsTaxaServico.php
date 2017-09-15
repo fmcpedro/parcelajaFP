@@ -95,14 +95,11 @@ class TpaymentsTaxaServico {
         $this->numeroPrestacoes = $purchase->getFmonthdata();
         $this->numParcela = $numParcela;
         $this->comissaoPagarClienteFinal = $comissaoPagarClienteFinal;
-        //$this->tipoTransacao = $tipoTransacao;
-//        $this->payID = $payID;
-//        $this->datePayment = $datePayment;
 
         $this->idAderente = $purchase->getFagencyid();
         $this->idCompra = $purchase->getFpurchaseid();
-        $this->idPagamento = $payment->getFpayid();
-        $this->dataPagamento = $payment->getFDate();
+        $this->idPagamento = is_null($payment) ? 0 : $payment->getFpayid();
+        $this->dataPagamento = is_null($payment) ? 0 : $payment->getFDate();
 
         $this->clienteNome = Utils::getClienteData('nome', $purchase->getFclientdata()) . ' ' . Utils::getClienteData('sobrenome', $purchase->getFclientdata());
         $this->clienteNif = Utils::getClienteData('nif', $purchase->getFclientdata());
