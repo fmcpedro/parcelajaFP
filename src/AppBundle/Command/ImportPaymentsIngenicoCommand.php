@@ -8,8 +8,8 @@
 
 namespace AppBundle\Command;
 
-use AppBundle\Entity\TpaymentsTaxaDesconto;
-use AppBundle\Entity\TpaymentsTaxaServico;
+use AppBundle\Entity\IngenicoPayment;
+use SimpleXMLElement;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -19,7 +19,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  *
  * @author Luis Miguens <lmiguens@consolidador.com>
  */
-class ImportPaymentsIngenicoCommand extends \Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand {
+class ImportPaymentsIngenicoCommand extends ContainerAwareCommand {
 
     protected function configure() {
         $this
@@ -54,7 +54,7 @@ class ImportPaymentsIngenicoCommand extends \Symfony\Bundle\FrameworkBundle\Comm
             $data = $this->getIngenicoObject($payment->getFpayid());
 
 
-            $entity = new \AppBundle\Entity\IngenicoPayment();
+            $entity = new IngenicoPayment();
             $entity->setOrderId($this->xml_attribute($data, 'orderID'));
             $entity->setPayId(intval($this->xml_attribute($data, 'PAYID')));
             $entity->setPayIdSub($this->xml_attribute($data, 'PAYIDSUB'));
@@ -107,7 +107,7 @@ class ImportPaymentsIngenicoCommand extends \Symfony\Bundle\FrameworkBundle\Comm
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
         $response = curl_exec($ch);
-        $data = new \SimpleXMLElement($response);
+        $data = new SimpleXMLElement($response);
 
         curl_close($ch);
 

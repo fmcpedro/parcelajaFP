@@ -128,13 +128,21 @@
                                     <th>JURO ACUMULADO</th>
                                     <th>IMPOSTO SELO</th>
                                     <th>IMPOSTO SELO ACUMULADO</th>
+                                    
+                                    {% if is_granted('ROLE_ADMIN') %} 
                                     <th>π PARCIAL</th>
                                     <th>π ACUMULADA</th>
                                     <th>LUCRO PARCELA</th>
+                                    {% endif %} 
+                                    
                                     <th>LUCRO BNI EUROPA</th>
+                                    
+                                    {% if is_granted('ROLE_ADMIN') %} 
                                     <th>VALOR TRANSF/PARCELA JÁ</th>
                                     <th>IVA VALOR PARCELA JÁ</th>
                                     <th>VALOR TRANSF/PARCELA JÁ (C/IVA)</th>
+                                    {% endif %} 
+                                    
                                     <th>VALOR TRANSF BNI</th>
                                     <th>IS VALOR BNI</th>
                                     <th>VALOR TRANSF BNI (C/IS)</th>
@@ -282,13 +290,20 @@
                                         <td>{{ tpayment.juroAcumulado|number_format(2, '.', ',') }} €</td>
                                         <td>{{ tpayment.impostoSelo|number_format(2, '.', ',') }} €</td>
                                         <td>{{ tpayment.impostoSeloAcumulado|number_format(2, '.', ',') }} €</td>
+                                        {% if is_granted('ROLE_ADMIN') %} 
                                         <td>{{ tpayment.piiParcial|number_format(2, '.', ',') }} €</td>
                                         <td>{{ tpayment.piiAcumulado|number_format(2, '.', ',') }} €</td>
                                         <td>{{ tpayment.lucroParcela|number_format(2, '.', ',') }} €</td>
+                                        {%endif%}
+                                        
                                         <td>{{ tpayment.lucroBniEuropa|number_format(2, '.', ',') }} €</td>
+                                        
+                                        {% if is_granted('ROLE_ADMIN') %} 
                                         <td>{{ tpayment.valorTransferParcela|number_format(2, '.', ',') }} €</td>
                                         <td>{{ tpayment.ivaValorParcela|number_format(2, '.', ',') }} €</td>
                                         <td>{{ tpayment.valorTransfParcelaComIva|number_format(2, '.', ',') }} €</td>
+                                        {%endif%}
+                                        
                                         <td>{{ tpayment.valorTransfBni|number_format(2, '.', ',') }} €</td>
                                         <td>{{ tpayment.impostoSeloValorBni|number_format(2, '.', ',') }} €</td>
                                         <td>{{ tpayment.valorTransfBniComImpostoSelo|number_format(2, '.', ',') }} €</td>

@@ -19,3 +19,7 @@ email:
     defaults:  { _controller: AppBundle:Default:email, _locale: pt }
     requirements:
         _locale:  en|pt
+        
+        
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
