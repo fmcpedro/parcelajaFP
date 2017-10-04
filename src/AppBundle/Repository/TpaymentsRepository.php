@@ -11,7 +11,6 @@ use AppBundle\Utils\CalculateIva;
 use DateTime;
 use Doctrine\ORM\EntityRepository;
 
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -24,6 +23,27 @@ use Doctrine\ORM\EntityRepository;
  * @author Luis Miguens
  */
 class TpaymentsRepository extends EntityRepository {
+
+    public function findLastPayment(Tpurchase $tpurchase) {
+
+
+        $em = $this->getEntityManager();
+        $query = $em->createQuery('SELECT payments '
+                . 'FROM AppBundle:Tpayments payments '
+                . 'where payments.fpurchaseid = :purchase_id '
+                . 'order by payments.finstallment DESC');
+
+        $query->setParameter('purchase_id', $tpurchase->getFpurchaseid());
+        $payments = $query->getResult();
+
+        //return only last payment
+
+        if (!empty($payments)):
+            return $payments[0];
+        else:
+            return null;
+        endif;
+    }
 
     //put your code here
     //devolve os pagamentos dos ultimos x dias (utilizado para exportar ficheiro)
@@ -78,12 +98,12 @@ class TpaymentsRepository extends EntityRepository {
                     //echo "TaxaServico <br/>";
                     //gerar todos os pagamentos da compra
                     //$generatedPayments = $this->generatePaymentsTaxaServico($purchase->getFcalcamount(), $purchase->getFmonthdata(), $tipoTransacao, $payment->getFpayid(), $payment->getFDate());
-                $generatedPayments = $this->generatePaymentsTaxaServico($purchase, $payment);
+                    $generatedPayments = $this->generatePaymentsTaxaServico($purchase, $payment);
                 else:
                     //echo "TaxaDesconto <br/>";
                     //gerar todos os pagamentos da compra
                     //$generatedPayments = $this->generatePaymentsTaxaDesconto($purchase->getFcalcamount(), $purchase->getFmonthdata(), $tipoTransacao, $payment->getFpayid(), $payment->getFDate());
-                $generatedPayments = $this->generatePaymentsTaxaDesconto($purchase, $payment);
+                    $generatedPayments = $this->generatePaymentsTaxaDesconto($purchase, $payment);
                 endif;
 
 
@@ -100,6 +120,8 @@ class TpaymentsRepository extends EntityRepository {
         return $tpayments;
     }
 
+
+
     /**
      * Função que gera um array com a lista de pagamentos de uma compra (TpaymentsTaxaDesconto)
      * 
@@ -108,11 +130,11 @@ class TpaymentsRepository extends EntityRepository {
      * @return array
      */
     //public function generatePaymentsTaxaDesconto($valorCompra, $numeroPrestacoes, $tipoTransacao = "SC", $payID=0, $dataPayment=0) {
-    public function generatePaymentsTaxaDesconto(Tpurchase $purchase, Tpayments $payment=null) {
+    public function generatePaymentsTaxaDesconto(Tpurchase $purchase, Tpayments $payment = null) {
 
-                
+
         $numeroPrestacoes = $purchase->getFmonthdata();
-        
+
         $prestacoes = array();
         $capitalAmortizadoAnterior = 0;
         $capitalEmDividaAnterior = 0;
@@ -122,6 +144,9 @@ class TpaymentsRepository extends EntityRepository {
         $valorTransfBniComImpostoSelo = 0;
         $valorTransfBni = 0;
         $impostoSelo = 0;
+
+
+        $dataPagamentoAnterior = $purchase->getFpurchasedate()->getTimestamp();
 
 
         for ($i = 0; $i < $numeroPrestacoes; $i++) {
@@ -158,6 +183,9 @@ class TpaymentsRepository extends EntityRepository {
             //echo "ImpostoSeloValorBni = " . $prestacao->getImpostoSeloValorBni();
 
 
+            $prestacao->setDataPagamento($dataPagamentoAnterior);
+            $dataPagamentoAnterior = strtotime("+1 month", $dataPagamentoAnterior);
+
             $prestacoes[] = $prestacao;
         }
 
@@ -167,7 +195,6 @@ class TpaymentsRepository extends EntityRepository {
             $prestacao->setValorComissaoSujeitaIva($prestacao->getValorComissaoPagarAderente() - $valorTransfBniComImpostoSelo);
             $prestacao->setServicosFinanceiros($valorTransfBni);
             $prestacao->setImpSelo($impostoSelo);
-            //echo $prestacao->getValorComissaoSujeitaIva();
         }
 
         return $prestacoes;
@@ -181,14 +208,14 @@ class TpaymentsRepository extends EntityRepository {
      * @return array
      */
     //public function generatePaymentsTaxaServico($valorCompra, $numeroPrestacoes, $tipoTransacao = "SC", $payID=0, $dataPayment=0) {
-    
-    
-    public function generatePaymentsTaxaServico(Tpurchase $purchase, Tpayments $payment=null) {
+
+
+    public function generatePaymentsTaxaServico(Tpurchase $purchase, Tpayments $payment = null) {
 
         $valorCompra = $purchase->getFcalcamount();
         $numeroPrestacoes = $purchase->getFmonthdata();
-        
-        
+
+
         $prestacoes = array();
         $capitalAmortizadoAnterior = 0;
         $capitalEmDividaAnterior = 0;
@@ -228,15 +255,19 @@ class TpaymentsRepository extends EntityRepository {
                 ->setParameter('ffixedaddcharge3', 0)
                 ->setParameter('fstartvalue', $valorCompra)
                 ->setParameter('fendvalue', $valorCompra);
+
+        //dump($query);
+
         $payMethodFee = $query->getSingleResult();
 
         $comissaoPagarClienteFinal = $payMethodFee->getFfixedaddcharge3();
+
+        $dataPagamentoAnterior = $purchase->getFpurchasedate()->getTimestamp();
 
         for ($i = 0; $i < $numeroPrestacoes; $i++) {
 
             $prestacao = new TpaymentsTaxaServico($purchase, $i, $comissaoPagarClienteFinal, $payment);
             //$prestacao = new TpaymentsTaxaServico($valorCompra, $numeroPrestacoes, $i, $comissaoPagarClienteFinal, $tipoTransacao, $payID, $dataPayment);
-
             //ok, validado
             $prestacao->setCapitalAmortizadoAcumulado($prestacao->getCapitalAmortizadoMensalmente() + $capitalAmortizadoAnterior);
             $capitalAmortizadoAnterior = $prestacao->getCapitalAmortizadoAcumulado();
@@ -271,7 +302,10 @@ class TpaymentsRepository extends EntityRepository {
             //ok, validado, utilizado abaixo
             $impostoSelo += $prestacao->getImpostoSeloValorBni();
 
+            $prestacao->setDataPagamento($dataPagamentoAnterior);
+            $dataPagamentoAnterior = strtotime("+1 month", $dataPagamentoAnterior);
 
+            //dump($dataPagamentoAnterior);
             //echo "numero parcela = " . $prestacao->getNumParcela();
 
             $prestacoes[] = $prestacao;

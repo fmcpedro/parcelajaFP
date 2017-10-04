@@ -1,0 +1,147 @@
+{% extends 'base.html.twig' %}
+
+
+
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('#example').DataTable({
+                iDisplayLength: 20,
+                    dom: 'Bfrtip',
+                    buttons: [
+                        {
+                            extend: 'copy',
+                        },
+                        {
+                            extend: 'csv',
+                        },
+                        {
+                            extend: 'excel',
+                        },
+                        {
+                            extend: 'colvis',
+                            collectionLayout: 'fixed two-column'
+                        }
+                    ],
+                    columnDefs: [{
+                            targets: 0,
+                            render: function (data, type, row) {
+                                return data.length > 10 ?
+                                        data.substr(0, 4) + '…' :
+                                        data;
+                            }
+                        }]
+
+
+                });
+            });
+
+{#            $(document).ready(function () {
+                $('#tableWithExportOptions').DataTable({
+                    iDisplayLength: 20,
+                    dom: 'Bfrtip',
+                    buttons: [
+                        'copy', 'csv', 'excel', 'pdf', 'print'
+                    ]
+                });
+            });#}
+
+
+    </script>
+{% endblock %}
+
+
+{% block body %}
+
+    <!-- START PAGE CONTENT -->
+    <div class="content">
+        <!-- START JUMBOTRON -->
+        <div class="jumbotron" data-pages="parallax">
+            <div class="container-fluid container-fixed-lg sm-p-l-20 sm-p-r-20">
+                <div class="inner">
+                    <!-- START BREADCRUMB -->
+                    <ul class="breadcrumb">
+                        <li><a href="#" class="">Parcela Ja</a></li>
+                        <li><a href="#" class="active">Mapa de parcelas por capturar</a></li>
+                    </ul>
+                    <!-- END BREADCRUMB -->
+                </div>
+            </div>
+        </div>
+        <!-- END JUMBOTRON -->
+
+
+        
+        
+        
+        
+
+        <!-- START CONTAINER FLUID -->
+        <div class="container-fluid container-fixed-lg bg-white">
+            <!-- START PANEL -->
+            <div class="panel panel-transparent">
+                <div class="panel-heading">
+                    <div class="panel-title">Lista de Parcelas Por Capturar </div>
+                    <div class="export-options-container pull-right"></div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="panel-body">
+
+                    {% if tpayments is defined %}
+
+                        <table class="display responsive" id="example">
+                            <thead>
+                                <tr>
+
+                                    <th style="width: 2px;">DATA</th>
+                                    <th style="width: 2px;">Nº DA PARCELA</th>
+                                    <th>VALOR A RECEBER DA EVO PAYMENTS</th>
+                                    <th>CAPITAL A AMORTIZADO MENSALMENTE</th>
+                                    <th>CAPITAL AMORTIZADO ACUMULADO</th>
+                                    <th>CAPITAL EM DÍVIDA</th>
+                                   
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for key, tpayment in tpayments %}
+                                    <tr>
+                                        <td>{{ tpayment.dataPagamento|date('Y-m-d')}}</td>
+                                        <td>{{ tpayment.numParcela }}</td>
+                                        <td>{{ tpayment.valorReceberEvoPayments|number_format(2, '.', ',') }} €</td>
+                                        <td>{{ tpayment.capitalAmortizadoMensalmente|number_format(2, '.', ',') }} €</td>
+                                        <td>{{ tpayment.capitalAmortizadoAcumulado|number_format(2, '.', ',') }} €</td>
+                                        <td>{{ tpayment.capitalEmDivida|number_format(2, '.', ',') }} €</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+
+
+
+
+                    {% endif%}
+
+
+
+                </div>
+            </div>
+            <!-- END PANEL -->
+        </div>
+        <!-- END CONTAINER FLUID -->
+
+
+    </div>
+    <!-- END PAGE CONTENT -->
+
+
+
+
+
+
+
+
+{% endblock %}

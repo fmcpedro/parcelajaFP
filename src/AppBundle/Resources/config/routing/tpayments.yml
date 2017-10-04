@@ -2,6 +2,11 @@ admin_payments_index:
     path:     /
     defaults: { _controller: "AppBundle:Tpayments:index" }
     methods:  GET
+    
+admin_payments_next_payments:
+    path:     /next_payments
+    defaults: { _controller: "AppBundle:Tpayments:nextPayments" }
+    methods:  GET
 
 admin_payments_simulator:
     path:     /simulator

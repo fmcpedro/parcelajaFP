@@ -115,6 +115,7 @@
 
 
                                     <th>Nº DA PARCELA</th>
+                                    <th>DATA</th>
                                     <th>valor Comissao Pagar Cliente</th>
                                     <th>VALOR COMISSAO SUJEITA A IVA</th>
                                     <th>IVA COMISSAO</th>
@@ -159,6 +160,7 @@
                                 {% for key, tpayment in tpayments %}
                                     <tr>
                                         <td>{{ tpayment.numParcela }}</td>
+                                        <td>{{ tpayment.dataPagamento|date('Y-m-d')}}</td>
                                         <td>
                                             {% if key == 0 %}
                                                 {{ tpayment.valorComissaoPagarCliente|number_format(2, '.', ',') }} €

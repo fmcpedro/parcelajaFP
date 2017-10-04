@@ -6,7 +6,10 @@
  * and open the template in the editor.
  */
 
-
+//mquintas  = @XjSNv64=$
+//cvalente  = 6SA{nstDG$
+//rcampanha = Ua5Uc+rT/#
+//bancobni  = eGPa*D2va2
 
 
 //php bin/console fos:user:create lmiguens lmiguens@consolidador.com lmiguens

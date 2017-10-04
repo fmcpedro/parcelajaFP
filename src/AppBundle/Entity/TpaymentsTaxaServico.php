@@ -552,7 +552,9 @@ class TpaymentsTaxaServico {
     }
 
     function getDataPagamento() {
-        return ($this->dataPagamento == null) ? ' ' : $this->dataPagamento->format('Y-m-d');
+        //return ($this->dataPagamento == null) ? ' ' : $this->dataPagamento->format('Y-m-d');
+        return $this->dataPagamento;
+        
     }
 
     function setDataPagamento($dataPagamento) {

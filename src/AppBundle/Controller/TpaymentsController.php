@@ -54,14 +54,15 @@ class TpaymentsController extends Controller {
 //            
 //        }
 
- 
-        
-        
-        
-        
-        
+
+
+
+
+
+
         return $this->render('tpayments/blank.html.twig');
     }
+
 //
 
     public function simulatorAction(Request $request) {
@@ -80,15 +81,16 @@ class TpaymentsController extends Controller {
 //            $em->persist($tpayment);
 //            $em->flush();
 
-            
-            
-                $purchase = new \AppBundle\Entity\Tpurchase();
+
+
+            $purchase = new \AppBundle\Entity\Tpurchase();
             $purchase->setFcalcamount($form["valorCompra"]->getData());
             $purchase->setFmonthdata($form["numeroParcelas"]->getData());
-            
+            $purchase->setFpurchasedate(new \DateTime());
+
             if ($form["taxa"]->getData() == 1):
-                
-                
+
+
                 $tpayments = $em->getRepository('AppBundle:Tpayments')->generatePaymentsTaxaDesconto($purchase);
                 return $this->render('tpayments/simulatorDesconto.html.twig', array(
                             'simulation' => $simulation,
@@ -120,11 +122,60 @@ class TpaymentsController extends Controller {
 
         $tpayments = $em->getRepository('AppBundle:Tpayments')->findAllProcessedPayments();
 
-
-
-
         return $this->render('tpayments/index.html.twig', array(
                     'tpayments' => $tpayments,
+        ));
+    }
+
+    /**
+     * Metodo que devolve as próximas transações que serão efectuadas, indicando as que já deveriam ter sido efectuadas.
+     *
+     */
+    public function nextPaymentsAction() {
+        $em = $this->getDoctrine()->getManager();
+
+        //1) ir buscar todas as compras com valor superiro a 20€
+        $query = 'SELECT p FROM AppBundle:Tpurchase p WHERE p.fcalcamount > :fcalcamount AND p.fpurchaseid > :fpurchaseid';
+        $tpurchases = $em->createQuery($query)
+                          ->setParameter('fcalcamount', 20)
+                ->setParameter('fpurchaseid', 202)
+                          ->getResult();
+        
+        foreach ($tpurchases as $key => $tpurchase) {
+            
+            //2) gerar pagamentos para todas as compras
+            if ($tpurchase->getFextracharge() <> 0):
+                //gerar todos os pagamentos da compra
+                $generatedPayments = $em->getRepository('AppBundle:Tpayments')->generatePaymentsTaxaServico($tpurchase);
+            else:
+                //gerar todos os pagamentos da compra
+                $generatedPayments = $em->getRepository('AppBundle:Tpayments')->generatePaymentsTaxaDesconto($tpurchase);
+            endif;
+
+            //dump($generatedPayments);
+
+            //3) para cada compra ir buscar o ultimo pagamento efectuado
+            //$lastPayment =new Tpayments();
+            $lastPayment = $em->getRepository('AppBundle:Tpayments')->findLastPayment($tpurchase);
+
+            if (!is_null($lastPayment)):
+
+                //4) verificar todos os pagamentos gerados, e adicionar apenas os que têm um installmemt superior ao ultimo da compra
+                foreach ($generatedPayments as $key => $generatedPayment) {
+                    if ($generatedPayment->getNumParcela() >= $lastPayment->getFinstallment()):
+                        $nextPayments[] = $generatedPayment;
+                    endif;
+                }
+            endif;
+
+
+
+
+
+        }
+
+        return $this->render('tpayments/nextPayments.html.twig', array(
+                    'tpayments' => $nextPayments,
         ));
     }
 

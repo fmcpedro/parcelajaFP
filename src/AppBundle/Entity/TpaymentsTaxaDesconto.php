@@ -514,7 +514,10 @@ class TpaymentsTaxaDesconto {
     }
 
     function getDataPagamento() {
-        return ($this->dataPagamento == null) ? ' ' : $this->dataPagamento->format('Y-m-d');
+        
+        //return ($this->dataPagamento == null) ? ' ' : $this->dataPagamento->format('Y-m-d');
+        return $this->dataPagamento;
+        //return $this->dataPagamento->format('Y-m-d');
     }
 
     function setDataPagamento($dataPagamento) {

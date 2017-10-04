@@ -164,7 +164,7 @@
                             <tbody>
                                 {% for key, tpayment in tpayments %}
                                     <tr>
-                                        <td>{{ tpayment.dataPagamento}}</td>
+                                        <td>{{ tpayment.dataPagamento|date('Y-m-d')}}</td>
                                         <td>{{ tpayment.numParcela }}</td>
 
                                         {#
