@@ -135,10 +135,12 @@ class TpaymentsController extends Controller {
         $em = $this->getDoctrine()->getManager();
 
         //1) ir buscar todas as compras com valor superiro a 20€
-        $query = 'SELECT p FROM AppBundle:Tpurchase p WHERE p.fcalcamount > :fcalcamount AND p.fpurchaseid > :fpurchaseid';
+        $query = 'SELECT p FROM AppBundle:Tpurchase p WHERE p.fcalcamount > :fcalcamount '
+                //. 'AND p.fpurchaseid > :fpurchaseid'
+                ;
         $tpurchases = $em->createQuery($query)
                           ->setParameter('fcalcamount', 20)
-                ->setParameter('fpurchaseid', 202)
+                //->setParameter('fpurchaseid', 202)
                           ->getResult();
         
         foreach ($tpurchases as $key => $tpurchase) {
