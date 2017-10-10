@@ -50,8 +50,6 @@ class TposController extends Controller {
 
             $tpos_list = $em->getRepository('AppBundle:Tpos')->findBy($search);
 
-
-            //$search = array('fserial' => $fserial, 'fstate' => $fstate, 'fsoftversion' => $fsoftversion, 'fagencyid' => $fagencyid);
         } else {
             $tpos_list = $em->getRepository('AppBundle:Tpos')->findAll();
         }

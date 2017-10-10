@@ -12,10 +12,10 @@ class Tpurchase
      */
     private $fuserid;
 
-    /**
-     * @var integer
-     */
-    private $fagencyid;
+//    /**
+//     * @var integer
+//     */
+//    private $fagencyid;
 
     /**
      * @var integer
@@ -113,6 +113,14 @@ class Tpurchase
     private $fpurchaseid;
 
 
+    /**
+     * @var \AppBundle\Entity\Tagency
+     */
+    private $agency;
+
+    
+    
+    
     /**
      * Set fuserid
      *
@@ -602,4 +610,19 @@ class Tpurchase
     {
         return $this->fpurchaseid;
     }
+    
+    
+    function getAgency() {
+        return $this->agency;
+    }
+
+    function setAgency(\AppBundle\Entity\Tagency $agency) {
+        $this->agency = $agency;
+    }
+
+
+    
+    
+    
+    
 }

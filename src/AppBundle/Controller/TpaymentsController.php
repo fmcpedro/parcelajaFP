@@ -2,6 +2,8 @@
 
 namespace AppBundle\Controller;
 
+
+use AppBundle\Entity\Tpurchase;
 use AppBundle\Entity\Tpayments;
 use AppBundle\Entity\TpaymentsSimulator;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -131,17 +133,60 @@ class TpaymentsController extends Controller {
      * Metodo que devolve as próximas transações que serão efectuadas, indicando as que já deveriam ter sido efectuadas.
      *
      */
-    public function nextPaymentsAction() {
+    public function nextPaymentsAction(Request $request) {
         $em = $this->getDoctrine()->getManager();
 
-        //1) ir buscar todas as compras com valor superiro a 20€
-        $query = 'SELECT p FROM AppBundle:Tpurchase p WHERE p.fcalcamount > :fcalcamount '
-                //. 'AND p.fpurchaseid > :fpurchaseid'
-                ;
-        $tpurchases = $em->createQuery($query)
-                          ->setParameter('fcalcamount', 20)
-                //->setParameter('fpurchaseid', 202)
-                          ->getResult();
+        $tpurchase = new Tpurchase();
+        $searchForm = $this->createForm('AppBundle\Form\TpurchaseSearchType', $tpurchase);
+        $searchForm->handleRequest($request);
+
+        $search = array();
+        $nextPayments = array();
+
+        if ($searchForm->isSubmitted()) {
+
+
+            $fagencyid = $searchForm["agency"]->getData();
+            $fcontractnumber = $searchForm["fcontractnumber"]->getData();
+            $fstatus = $searchForm["fstatus"]->getData();
+            $fpurchasedate = $searchForm["fpurchasedate"]->getData();
+
+            
+            if (!empty($fagencyid)) {
+                $search['agency'] = $fagencyid;
+            }
+
+            if (!empty($fcontractnumber)) {
+                $search['fcontractnumber'] = $fcontractnumber;
+            }
+            
+            //if (!is_null($fstatus)) {$search['fstatus']=$fstatus;}
+            
+             if (!empty($fstatus)) {
+                $search['fstatus'] = $fstatus;
+            }
+            
+            
+            if (!empty($fpurchasedate)) {
+                $search['fpurchasedate'] = $fpurchasedate;
+            }
+
+            $tpurchases = $em->getRepository('AppBundle:Tpurchase')->findByFilter($search);
+
+        
+        }else{
+            $tpurchases = $em->getRepository('AppBundle:Tpurchase')->findByFilter($search);
+        }
+        
+        
+      
+        
+        
+        
+        
+        
+        
+        
         
         foreach ($tpurchases as $key => $tpurchase) {
             
@@ -178,6 +223,7 @@ class TpaymentsController extends Controller {
 
         return $this->render('tpayments/nextPayments.html.twig', array(
                     'tpayments' => $nextPayments,
+            'search_form' =>  $searchForm->createView()
         ));
     }
 

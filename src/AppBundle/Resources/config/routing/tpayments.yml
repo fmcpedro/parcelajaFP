@@ -6,7 +6,7 @@ admin_payments_index:
 admin_payments_next_payments:
     path:     /next_payments
     defaults: { _controller: "AppBundle:Tpayments:nextPayments" }
-    methods:  GET
+    methods:  [GET, POST]
 
 admin_payments_simulator:
     path:     /simulator

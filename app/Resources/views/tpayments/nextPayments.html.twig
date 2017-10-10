@@ -10,49 +10,41 @@
 
         $(document).ready(function () {
             $('#example').DataTable({
-                iDisplayLength: 20,
-                    dom: 'Bfrtip',
-                    buttons: [
-                        {
-                            extend: 'copy',
-                        },
-                        {
-                            extend: 'csv',
-                        },
-                        {
-                            extend: 'excel',
-                        },
-                        {
-                            extend: 'colvis',
-                            collectionLayout: 'fixed two-column'
+                iDisplayLength: 50,
+                dom: 'Bfrtip',
+                buttons: [
+                    {
+                        extend: 'copy',
+                    },
+                    {
+                        extend: 'csv',
+                    },
+                    {
+                        extend: 'excel',
+                    },
+                    {
+                        extend: 'colvis',
+                        collectionLayout: 'fixed two-column'
+                    }
+                ],
+                columnDefs: [{
+                        targets: 0,
+                        render: function (data, type, row) {
+                            return data.length > 10 ?
+                                    data.substr(0, 4) + '…' :
+                                    data;
                         }
-                    ],
-                    columnDefs: [{
-                            targets: 0,
-                            render: function (data, type, row) {
-                                return data.length > 10 ?
-                                        data.substr(0, 4) + '…' :
-                                        data;
-                            }
-                        }]
+                    }]
 
 
-                });
             });
-
-{#            $(document).ready(function () {
-                $('#tableWithExportOptions').DataTable({
-                    iDisplayLength: 20,
-                    dom: 'Bfrtip',
-                    buttons: [
-                        'copy', 'csv', 'excel', 'pdf', 'print'
-                    ]
-                });
-            });#}
-
-
+        });
     </script>
 {% endblock %}
+
+
+
+
 
 
 {% block body %}
@@ -75,10 +67,108 @@
         <!-- END JUMBOTRON -->
 
 
-        
-        
-        
-        
+
+
+
+
+
+
+
+
+
+
+        <!-- START CONTAINER FLUID -->
+        <div class="container-fluid container-fixed-lg">
+            <!-- START PANEL -->
+            <div class="panel panel-transparent">
+                <div class="panel-heading">
+                    <div class="panel-title">Filtro de Pagamentos por Capturar </div>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-10">
+                            {#<h3>form_title</h3>#}
+                            <p>Preencha os campos abaixo pelos quais quer filtrar os pagamentos por capturar</p>
+
+                            {{ form_start(search_form, {'attr': {'class': 'form-horizontal'}}) }} 
+
+                            <div class="form-group">
+                                <label for="agency" class="col-sm-3 control-label">agency</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(search_form.agency, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="fcontractnumber" class="col-sm-3 control-label">fcontractnumber</label>
+                                <div class="col-sm-3">
+                                    {{ form_widget(search_form.fcontractnumber, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            
+                            
+                            
+                    
+                                <label for="fstatus" class="col-sm-3 control-label">fstatus</label>
+                                <div class="col-sm-3">
+                                    {{ form_widget(search_form.fstatus, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <label for="fpurchasedate" class="col-sm-3 control-label">fpurchasedate</label>
+                                <div class="col-sm-3">
+                                    {{ form_widget(search_form.fpurchasedate.day, {'attr': {'class': 'form-control'}}) }}
+                                </div>    
+                                    
+                                    <div class="col-sm-3">
+                                    {{ form_widget(search_form.fpurchasedate.month, {'attr': {'class': 'form-control'}}) }}
+                                </div>    
+                                    
+                                    <div class="col-sm-3">
+                                    {{ form_widget(search_form.fpurchasedate.year, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div>
+
+
+                            <br>
+
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    {#<p>I hereby certify that the information above is true and accurate. </p>#}
+                                </div>
+                                <div class="col-sm-9">
+                                    <button class="btn btn-success btn-cons m-b-10" type="submit">
+                                        <i class="fa fa-filter"></i> <span class="bold">Filter</span>
+                                    </button>
+                                    <button class="btn btn-default btn-cons m-b-10" type="reset">
+                                        <i class="pg-close"></i> <span class="bold">Clear</span>
+                                    </button>
+                                </div>
+                            </div>
+                            {{ form_end(search_form) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END PANEL -->
+        </div>
+        <!-- END CONTAINER FLUID -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         <!-- START CONTAINER FLUID -->
         <div class="container-fluid container-fixed-lg bg-white">
@@ -96,20 +186,25 @@
                         <table class="display responsive" id="example">
                             <thead>
                                 <tr>
-
-                                    <th style="width: 2px;">DATA</th>
-                                    <th style="width: 2px;">Nº DA PARCELA</th>
+                                    <th>DATA</th>
+                                    <th>CONTRACT NUMBER</th>
+                                    <th>Nº DA PARCELA</th>
                                     <th>VALOR A RECEBER DA EVO PAYMENTS</th>
                                     <th>CAPITAL A AMORTIZADO MENSALMENTE</th>
                                     <th>CAPITAL AMORTIZADO ACUMULADO</th>
                                     <th>CAPITAL EM DÍVIDA</th>
-                                   
+
                                 </tr>
                             </thead>
                             <tbody>
                                 {% for key, tpayment in tpayments %}
-                                    <tr>
+                                    {% if date().timestamp >= tpayment.dataPagamento %}
+                                        <tr style="color: red">
+                                        {% else %}
+                                        <tr>
+                                        {% endif %}
                                         <td>{{ tpayment.dataPagamento|date('Y-m-d')}}</td>
+                                        <td>{{ tpayment.contractNumber }}</td>
                                         <td>{{ tpayment.numParcela }}</td>
                                         <td>{{ tpayment.valorReceberEvoPayments|number_format(2, '.', ',') }} €</td>
                                         <td>{{ tpayment.capitalAmortizadoMensalmente|number_format(2, '.', ',') }} €</td>

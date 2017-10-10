@@ -83,6 +83,7 @@ class TpaymentsTaxaDesconto {
     private $clienteCartaoCidadao;
     //para o mapa
     private $dataPagamento;
+    private $contractNumber;
 
     //function __construct($valorCompra, $numeroPrestacoes, $numParcela, $tipoTransacao, $payID, $datePayment) {
     function __construct(Tpurchase $purchase, $numParcela, Tpayments $payment=null) {
@@ -91,10 +92,11 @@ class TpaymentsTaxaDesconto {
         $this->numParcela = $numParcela;
         $this->comissaoPagarAderente = ((($this->numeroPrestacoes / 2) + 0.5) / 100);
         
-        $this->idAderente = $purchase->getFagencyid();
+        $this->idAderente = is_null($purchase->getAgency())?0:$purchase->getAgency()->getFagencyid();
         $this->idCompra = $purchase->getFpurchaseid();
         $this->idPagamento = is_null($payment)?0:$payment->getFpayid();
         $this->dataPagamento = is_null($payment)?0:$payment->getFDate();
+        $this->contractNumber = $purchase->getFcontractnumber();
 
         $this->clienteNome = Utils::getClienteData('nome', $purchase->getFclientdata()) . ' ' . Utils::getClienteData('sobrenome', $purchase->getFclientdata());
         $this->clienteNif = Utils::getClienteData('nif', $purchase->getFclientdata());
@@ -523,5 +525,17 @@ class TpaymentsTaxaDesconto {
     function setDataPagamento($dataPagamento) {
         $this->dataPagamento = $dataPagamento;
     }
+    
+    
+    
+    function getContractNumber() {
+        return $this->contractNumber;
+    }
+
+    function setContractNumber($contractNumber) {
+        $this->contractNumber = $contractNumber;
+    }
+
+
 
 }

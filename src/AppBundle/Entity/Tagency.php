@@ -5,8 +5,8 @@ namespace AppBundle\Entity;
 /**
  * Tagency
  */
-class Tagency
-{
+class Tagency {
+
     /**
      * @var string
      */
@@ -118,6 +118,11 @@ class Tagency
     private $terminalList;
 
     /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $purchaseList;
+
+    /**
      * @var \AppBundle\Entity\Tsubgroup
      */
     private $subgroup;
@@ -125,8 +130,7 @@ class Tagency
     /**
      * Constructor
      */
-    public function __construct()
-    {
+    public function __construct() {
         $this->terminalList = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
@@ -137,8 +141,7 @@ class Tagency
      *
      * @return Tagency
      */
-    public function setFagencyname($fagencyname)
-    {
+    public function setFagencyname($fagencyname) {
         $this->fagencyname = $fagencyname;
 
         return $this;
@@ -149,8 +152,7 @@ class Tagency
      *
      * @return string
      */
-    public function getFagencyname()
-    {
+    public function getFagencyname() {
         return $this->fagencyname;
     }
 
@@ -161,8 +163,7 @@ class Tagency
      *
      * @return Tagency
      */
-    public function setFfiscalname($ffiscalname)
-    {
+    public function setFfiscalname($ffiscalname) {
         $this->ffiscalname = $ffiscalname;
 
         return $this;
@@ -173,8 +174,7 @@ class Tagency
      *
      * @return string
      */
-    public function getFfiscalname()
-    {
+    public function getFfiscalname() {
         return $this->ffiscalname;
     }
 
@@ -185,8 +185,7 @@ class Tagency
      *
      * @return Tagency
      */
-    public function setFtaxidnumber($ftaxidnumber)
-    {
+    public function setFtaxidnumber($ftaxidnumber) {
         $this->ftaxidnumber = $ftaxidnumber;
 
         return $this;
@@ -197,8 +196,7 @@ class Tagency
      *
      * @return string
      */
-    public function getFtaxidnumber()
-    {
+    public function getFtaxidnumber() {
         return $this->ftaxidnumber;
     }
 
@@ -209,8 +207,7 @@ class Tagency
      *
      * @return Tagency
      */
-    public function setFaddress($faddress)
-    {
+    public function setFaddress($faddress) {
         $this->faddress = $faddress;
 
         return $this;
@@ -221,8 +218,7 @@ class Tagency
      *
      * @return string
      */
-    public function getFaddress()
-    {
+    public function getFaddress() {
         return $this->faddress;
     }
 
@@ -233,8 +229,7 @@ class Tagency
      *
      * @return Tagency
      */
-    public function setFpostalcode1($fpostalcode1)
-    {
+    public function setFpostalcode1($fpostalcode1) {
         $this->fpostalcode1 = $fpostalcode1;
 
         return $this;
@@ -245,8 +240,7 @@ class Tagency
      *
      * @return string
      */
-    public function getFpostalcode1()
-    {
+    public function getFpostalcode1() {
         return $this->fpostalcode1;
     }
 
@@ -257,8 +251,7 @@ class Tagency
      *
      * @return Tagency
      */
-    public function setFpostalcode2($fpostalcode2)
-    {
+    public function setFpostalcode2($fpostalcode2) {
         $this->fpostalcode2 = $fpostalcode2;
 
         return $this;
@@ -269,8 +262,7 @@ class Tagency
      *
      * @return string
      */
-    public function getFpostalcode2()
-    {
+    public function getFpostalcode2() {
         return $this->fpostalcode2;
     }
 
@@ -281,8 +273,7 @@ class Tagency
      *
      * @return Tagency
      */
-    public function setFlocation($flocation)
-    {
+    public function setFlocation($flocation) {
         $this->flocation = $flocation;
 
         return $this;
@@ -293,8 +284,7 @@ class Tagency
      *
      * @return string
      */
-    public function getFlocation()
-    {
+    public function getFlocation() {
         return $this->flocation;
     }
 
@@ -305,8 +295,7 @@ class Tagency
      *
      * @return Tagency
      */
-    public function setFemail1($femail1)
-    {
+    public function setFemail1($femail1) {
         $this->femail1 = $femail1;
 
         return $this;
@@ -317,8 +306,7 @@ class Tagency
      *
      * @return string
      */
-    public function getFemail1()
-    {
+    public function getFemail1() {
         return $this->femail1;
     }
 
@@ -329,8 +317,7 @@ class Tagency
      *
      * @return Tagency
      */
-    public function setFemail2($femail2)
-    {
+    public function setFemail2($femail2) {
         $this->femail2 = $femail2;
 
         return $this;
@@ -341,8 +328,7 @@ class Tagency
      *
      * @return string
      */
-    public function getFemail2()
-    {
+    public function getFemail2() {
         return $this->femail2;
     }
 
@@ -353,8 +339,7 @@ class Tagency
      *
      * @return Tagency
      */
-    public function setFcontactperson($fcontactperson)
-    {
+    public function setFcontactperson($fcontactperson) {
         $this->fcontactperson = $fcontactperson;
 
         return $this;
@@ -365,8 +350,7 @@ class Tagency
      *
      * @return string
      */
-    public function getFcontactperson()
-    {
+    public function getFcontactperson() {
         return $this->fcontactperson;
     }
 
@@ -377,8 +361,7 @@ class Tagency
      *
      * @return Tagency
      */
-    public function setFtelephone($ftelephone)
-    {
+    public function setFtelephone($ftelephone) {
         $this->ftelephone = $ftelephone;
 
         return $this;
@@ -389,8 +372,7 @@ class Tagency
      *
      * @return string
      */
-    public function getFtelephone()
-    {
+    public function getFtelephone() {
         return $this->ftelephone;
     }
 
@@ -401,8 +383,7 @@ class Tagency
      *
      * @return Tagency
      */
-    public function setFmobilephone($fmobilephone)
-    {
+    public function setFmobilephone($fmobilephone) {
         $this->fmobilephone = $fmobilephone;
 
         return $this;
@@ -413,8 +394,7 @@ class Tagency
      *
      * @return string
      */
-    public function getFmobilephone()
-    {
+    public function getFmobilephone() {
         return $this->fmobilephone;
     }
 
@@ -425,8 +405,7 @@ class Tagency
      *
      * @return Tagency
      */
-    public function setFwebsite($fwebsite)
-    {
+    public function setFwebsite($fwebsite) {
         $this->fwebsite = $fwebsite;
 
         return $this;
@@ -437,8 +416,7 @@ class Tagency
      *
      * @return string
      */
-    public function getFwebsite()
-    {
+    public function getFwebsite() {
         return $this->fwebsite;
     }
 
@@ -449,8 +427,7 @@ class Tagency
      *
      * @return Tagency
      */
-    public function setFbank($fbank)
-    {
+    public function setFbank($fbank) {
         $this->fbank = $fbank;
 
         return $this;
@@ -461,8 +438,7 @@ class Tagency
      *
      * @return string
      */
-    public function getFbank()
-    {
+    public function getFbank() {
         return $this->fbank;
     }
 
@@ -473,8 +449,7 @@ class Tagency
      *
      * @return Tagency
      */
-    public function setFiban($fiban)
-    {
+    public function setFiban($fiban) {
         $this->fiban = $fiban;
 
         return $this;
@@ -485,8 +460,7 @@ class Tagency
      *
      * @return string
      */
-    public function getFiban()
-    {
+    public function getFiban() {
         return $this->fiban;
     }
 
@@ -497,8 +471,7 @@ class Tagency
      *
      * @return Tagency
      */
-    public function setFbicswift($fbicswift)
-    {
+    public function setFbicswift($fbicswift) {
         $this->fbicswift = $fbicswift;
 
         return $this;
@@ -509,8 +482,7 @@ class Tagency
      *
      * @return string
      */
-    public function getFbicswift()
-    {
+    public function getFbicswift() {
         return $this->fbicswift;
     }
 
@@ -521,8 +493,7 @@ class Tagency
      *
      * @return Tagency
      */
-    public function setFrnavt($frnavt)
-    {
+    public function setFrnavt($frnavt) {
         $this->frnavt = $frnavt;
 
         return $this;
@@ -533,8 +504,7 @@ class Tagency
      *
      * @return string
      */
-    public function getFrnavt()
-    {
+    public function getFrnavt() {
         return $this->frnavt;
     }
 
@@ -545,8 +515,7 @@ class Tagency
      *
      * @return Tagency
      */
-    public function setFpaymethodid($fpaymethodid)
-    {
+    public function setFpaymethodid($fpaymethodid) {
         $this->fpaymethodid = $fpaymethodid;
 
         return $this;
@@ -557,8 +526,7 @@ class Tagency
      *
      * @return string
      */
-    public function getFpaymethodid()
-    {
+    public function getFpaymethodid() {
         return $this->fpaymethodid;
     }
 
@@ -569,8 +537,7 @@ class Tagency
      *
      * @return Tagency
      */
-    public function setFlogo($flogo)
-    {
+    public function setFlogo($flogo) {
         $this->flogo = $flogo;
 
         return $this;
@@ -581,8 +548,7 @@ class Tagency
      *
      * @return string
      */
-    public function getFlogo()
-    {
+    public function getFlogo() {
         return $this->flogo;
     }
 
@@ -593,8 +559,7 @@ class Tagency
      *
      * @return Tagency
      */
-    public function setFstate($fstate)
-    {
+    public function setFstate($fstate) {
         $this->fstate = $fstate;
 
         return $this;
@@ -605,8 +570,7 @@ class Tagency
      *
      * @return boolean
      */
-    public function getFstate()
-    {
+    public function getFstate() {
         return $this->fstate;
     }
 
@@ -615,8 +579,7 @@ class Tagency
      *
      * @return integer
      */
-    public function getFagencyid()
-    {
+    public function getFagencyid() {
         return $this->fagencyid;
     }
 
@@ -627,8 +590,7 @@ class Tagency
      *
      * @return Tagency
      */
-    public function addTerminalList(\AppBundle\Entity\Tpos $terminalList)
-    {
+    public function addTerminalList(\AppBundle\Entity\Tpos $terminalList) {
         $this->terminalList[] = $terminalList;
 
         return $this;
@@ -639,8 +601,7 @@ class Tagency
      *
      * @param \AppBundle\Entity\Tpos $terminalList
      */
-    public function removeTerminalList(\AppBundle\Entity\Tpos $terminalList)
-    {
+    public function removeTerminalList(\AppBundle\Entity\Tpos $terminalList) {
         $this->terminalList->removeElement($terminalList);
     }
 
@@ -649,8 +610,7 @@ class Tagency
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getTerminalList()
-    {
+    public function getTerminalList() {
         return $this->terminalList;
     }
 
@@ -661,8 +621,7 @@ class Tagency
      *
      * @return Tagency
      */
-    public function setSubgroup(\AppBundle\Entity\Tsubgroup $subgroup = null)
-    {
+    public function setSubgroup(\AppBundle\Entity\Tsubgroup $subgroup = null) {
         $this->subgroup = $subgroup;
 
         return $this;
@@ -673,16 +632,25 @@ class Tagency
      *
      * @return \AppBundle\Entity\Tsubgroup
      */
-    public function getSubgroup()
-    {
+    public function getSubgroup() {
         return $this->subgroup;
+    }
+
+    public function __toString() {
+        return $this->fagencyname;
     }
     
     
-    public function __toString()
-{
-        return $this->fagencyname;
-}
+    function getPurchaseList() {
+        return $this->purchaseList;
+    }
+
+    function setPurchaseList(\Doctrine\Common\Collections\Collection $purchaseList) {
+        $this->purchaseList = $purchaseList;
+    }
+
+
+    
+    
 
 }
-

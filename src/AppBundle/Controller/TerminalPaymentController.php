@@ -80,19 +80,6 @@ class TerminalPaymentController extends Controller {
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
         return $this->render('terminalpayment/index.html.twig', array(
                     'search_form' => $searchForm->createView(),
                     'terminalPayments' => $terminalPayments,
