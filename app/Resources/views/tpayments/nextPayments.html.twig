@@ -1,8 +1,5 @@
 {% extends 'base.html.twig' %}
 
-
-
-
 {% block javascripts %}
     {{ parent() }}
 
@@ -35,8 +32,6 @@
                                     data;
                         }
                     }]
-
-
             });
         });
     </script>
@@ -67,16 +62,6 @@
         <!-- END JUMBOTRON -->
 
 
-
-
-
-
-
-
-
-
-
-
         <!-- START CONTAINER FLUID -->
         <div class="container-fluid container-fixed-lg">
             <!-- START PANEL -->
@@ -104,34 +89,27 @@
                                 <div class="col-sm-3">
                                     {{ form_widget(search_form.fcontractnumber, {'attr': {'class': 'form-control'}}) }}
                                 </div>
-                            
-                            
-                            
-                    
+
                                 <label for="fstatus" class="col-sm-3 control-label">fstatus</label>
                                 <div class="col-sm-3">
                                     {{ form_widget(search_form.fstatus, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div>
 
-
-
                             <div class="form-group">
                                 <label for="fpurchasedate" class="col-sm-3 control-label">fpurchasedate</label>
                                 <div class="col-sm-3">
                                     {{ form_widget(search_form.fpurchasedate.day, {'attr': {'class': 'form-control'}}) }}
                                 </div>    
-                                    
-                                    <div class="col-sm-3">
+
+                                <div class="col-sm-3">
                                     {{ form_widget(search_form.fpurchasedate.month, {'attr': {'class': 'form-control'}}) }}
                                 </div>    
-                                    
-                                    <div class="col-sm-3">
+
+                                <div class="col-sm-3">
                                     {{ form_widget(search_form.fpurchasedate.year, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div>
-
-
                             <br>
 
                             <div class="row">
@@ -162,14 +140,6 @@
 
 
 
-
-
-
-
-
-
-
-
         <!-- START CONTAINER FLUID -->
         <div class="container-fluid container-fixed-lg bg-white">
             <!-- START PANEL -->
@@ -180,9 +150,7 @@
                     <div class="clearfix"></div>
                 </div>
                 <div class="panel-body">
-
                     {% if tpayments is defined %}
-
                         <table class="display responsive" id="example">
                             <thead>
                                 <tr>
@@ -193,7 +161,6 @@
                                     <th>CAPITAL A AMORTIZADO MENSALMENTE</th>
                                     <th>CAPITAL AMORTIZADO ACUMULADO</th>
                                     <th>CAPITAL EM DÍVIDA</th>
-
                                 </tr>
                             </thead>
                             <tbody>
@@ -214,14 +181,7 @@
                                 {% endfor %}
                             </tbody>
                         </table>
-
-
-
-
                     {% endif%}
-
-
-
                 </div>
             </div>
             <!-- END PANEL -->

@@ -5,6 +5,66 @@
             <tool tool-id="symfony" tool-name="Symfony"/>
         </header>
         <body>
+            
+            
+            <trans-unit id="jumbotron_block_title_01" resname="jumbotron_block_title_01">
+                <source>jumbotron_block_title_01</source>
+                <target>Parcela Já. Buy Now. Pay later.</target>
+            </trans-unit>
+            
+            
+            <trans-unit id="features_over_title_01" resname="features_over_title_01">
+                <source>features_over_title_01</source>
+                <target>Why Parcela Já?</target>
+            </trans-unit>
+            
+            <trans-unit id="features_title_01" resname="features_title_01">
+                <source>features_title_01</source>
+                <target>Buy Now. Pay later.</target>
+            </trans-unit>
+            
+            <trans-unit id="features_bellow_title_01" resname="features_bellow_title_01">
+                <source>features_bellow_title_01</source>
+                <target>Now you can buy with no regrets</target>
+            </trans-unit>
+            
+            
+              <trans-unit id="process_over_title_01" resname="process_over_title_01">
+                <source>process_over_title_01</source>
+                <target>How it works? </target>
+            </trans-unit>
+            
+            <trans-unit id="process_title_01" resname="process_title_01">
+                <source>process_title_01</source>
+                <target>3 simple steps</target>
+            </trans-unit>
+            
+            <trans-unit id="process_bellow_title_01" resname="process_bellow_title_01">
+                <source>process_bellow_title_01</source>
+                <target> A new way to do your shopping</target>
+            </trans-unit>
+            
+            
+            <trans-unit id="faqs_over_title_01" resname="faqs_over_title_01">
+                <source>faqs_over_title_01</source>
+                <target>FAQS</target>
+            </trans-unit>
+            
+            <trans-unit id="faqs_title_01" resname="faqs_title_01">
+                <source>faqs_title_01</source>
+                <target>Frequently Asked Question</target>
+            </trans-unit>
+            
+            <trans-unit id="faqs_bellow_title_01" resname="faqs_bellow_title_01">
+                <source>faqs_bellow_title_01</source>
+                <target>We have the solution for you</target>
+            </trans-unit>
+
+            
+            
+            
+            
+            
             <trans-unit id="377ad3e3bfc553159260faa3f39aa0aa" resname="process_block_title_01">
                 <source>process_block_title_01</source>
                 <target>NUMBER OF PARCELS</target>
