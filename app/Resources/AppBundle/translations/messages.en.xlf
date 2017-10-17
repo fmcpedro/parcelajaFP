@@ -67,7 +67,7 @@
             
             <trans-unit id="377ad3e3bfc553159260faa3f39aa0aa" resname="process_block_title_01">
                 <source>process_block_title_01</source>
-                <target>NUMBER OF PARCELS</target>
+                <target>NUMBER OF INSTALMENTS</target>
             </trans-unit>
             <trans-unit id="2b511073d8afc0162103289d9ab8951b" resname="process_text_01">
                 <source>process_text_01</source>
@@ -340,7 +340,7 @@
 
  
 
-                <target>Get on with a new life while shopping! With Parcela Já, you can pay all your purchases up to 12 installments. Just use your credit card in one of our shops. No extra taxes, no extra interests, no hidden costs! You just pay the exact good/service price. Now, you have the chance to increase your purchasing power at the same time you make the perfect management of your personal wallet. And with no extra worries. Get to a partner shop and generate installments payments up to as many times you wish with Parcela Já. You just need to bring with personal ID and your personal Mastercard or Visa credit card. You’ll have an immediate approval and bureaucracy free, in a matter of seconds.</target>
+                <target>Get on with a new life while shopping! With Parcela Já, you can pay all your purchases up to 12 instalments. Just use your own credit card in one of our merchant shops. No extra taxes, no extra interests, no hidden costs! You just pay the exact good/service price. Now, you have the chance to increase your purchasing power at the same time you make the perfect management of your personal wallet. And with no extra worries. Go to a merchant shops and generate instalments payments up to as many times you wish with Parcela Já. You just need to bring your personal ID and your personal Mastercard or Visa credit card. You’ll have an immediate approval and bureaucracy free, in a matter of seconds.</target>
 
  
 
@@ -887,7 +887,7 @@
 
  
 
-                <target>Acceding stores</target>
+                <target>Merchant Stores</target>
 
  
 
@@ -1069,12 +1069,12 @@
             
             <trans-unit id="faqs_question_01" resname="faqs_question_01">
                 <source>faqs_question_01</source>
-                <target>I want to parcel my purchases. What I have to do?</target>
+                <target>I WANT TO SPLIT MY PURCHASES. WHAT I HAVE TO DO?</target>
             </trans-unit>
             
               <trans-unit id="faqs_answer_01" resname="faqs_answer_01">
                 <source>faqs_answer_01</source>
-                <target>To parcel a purchase, you just need to have a citizen card and a credit card. The process is made in our POS and it's simple, fast and with no bureaucracy associated.</target>
+                <target>To split a purchase, you just need to have your citizen card and a VISA or MASTERCARD credit card. The process is made in our POS and it's simple, fast and with no bureaucracy associated.</target>
             </trans-unit>
             
             
@@ -1106,12 +1106,12 @@
  
       <trans-unit id="faqs_question_04" resname="faqs_question_04">
                 <source>faqs_question_04</source>
-                <target>Is the amount of my purchase blocked on my credit card?</target>
+                <target>IS THE AMOUNT OF MY PURCHASE BLOCKED ON MY CREDIT CARD?</target>
             </trans-unit>
             
               <trans-unit id="faqs_answer_04" resname="faqs_answer_04">
                 <source>faqs_answer_04</source>
-                <target>Yes. The amount you pay through Parcela Já is captive on your credit card, being released as you settle the respective installments.</target>
+                <target>Yes. The amount you pay through Parcela Já is captive on your credit card, being released as you settle the respective instalments.</target>
             </trans-unit>
  
  
