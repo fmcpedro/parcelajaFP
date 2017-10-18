@@ -41,7 +41,7 @@
             
             <trans-unit id="process_bellow_title_01" resname="process_bellow_title_01">
                 <source>process_bellow_title_01</source>
-                <target> A new way to do your shopping</target>
+                <target> A new way to make your shoppings</target>
             </trans-unit>
             
             
@@ -71,7 +71,7 @@
             </trans-unit>
             <trans-unit id="2b511073d8afc0162103289d9ab8951b" resname="process_text_01">
                 <source>process_text_01</source>
-                 <target>Using Parcela Já, you can choose to pay your purchase from 2 to 12 times without taxes.</target>
+                 <target>Using Parcela Já, you can select your payment terms from 2 up to 12 instalments without any extra cost.</target>
             </trans-unit>
             <trans-unit id="d71f019e59b6d0c272ed71ad9acdac24" resname="process_small_text_01">
                 <source>process_small_text_01</source>
@@ -79,11 +79,11 @@
             </trans-unit>
             <trans-unit id="bdd269f8c5e73767fdca16e710a08974" resname="process_block_title_02">
                 <source>process_block_title_02</source>
-                <target>CITIZEN AND CREDIT CARD</target>
+                <target>Identity and Credit Card</target>
             </trans-unit>
             <trans-unit id="e470c14e0304b336424592c23baeb08f" resname="process_text_02">
                 <source>process_text_02</source>
-                <target>Now, you just have to introduce your citizen card and your credit card in POS Parcela Já to make your purchase.</target>
+                <target>Now, you just need to insert your identity card and your credit card in the Parcela Já POS to fulfill your payment.</target>
             </trans-unit>
             <trans-unit id="33a7783d2d74817db733426e9eb8b10e" resname="process_small_text_02">
                 <source>process_small_text_02</source>
@@ -116,7 +116,7 @@
 
  
 
-                <target>To conclude, sign the purchase receipt and keep it with you. Now, enjoy your purchases carefree and with no surprises.</target>
+                <target>To conclude, sign the sale receipt and keep it with you. Now, enjoy your shoppings carefree and with no surprises.</target>
 
  
 
@@ -148,7 +148,7 @@
 
  
 
-                <target>0% taxes</target>
+                <target>No costs</target>
 
  
 
@@ -164,7 +164,7 @@
 
  
 
-                <target>Make your shopping in how many times you want with Parcela Já, without tax or other associated costs.</target>
+                <target>Parcela Já POS provides immediate approval for your purchase. Do not lose unnecessary time and enjoy your shoppings.</target>
 
  
 
@@ -196,7 +196,7 @@
 
  
 
-                <target>To use Parcela Já, you just need your citizen card and credit card. (VISA or Mastercard).</target>
+                <target>To use Parcela Já, you just need your identity card and credit card. (VISA or Mastercard).</target>
 
  
 
@@ -532,7 +532,7 @@
 
  
 
-                <target>Parcel Now!</target>
+                <target>Parcela Já!</target>
 
  
 
@@ -548,7 +548,7 @@
 
  
 
-                <target>Do you have any doubt? Suggestions? Please contact us.</target>
+                <target>Do you have any question? Suggestions? Please contact us.</target>
 
  
 
@@ -731,7 +731,7 @@
 
  
 
-                <target>Headquarters</target>
+                <target></target>
 
  
 
@@ -1015,7 +1015,7 @@
 
  
 
-                <target>Merchant <![CDATA[<br/>]]>Stores</target>
+                <target>Available on the following <![CDATA[<br/>]]>Stores</target>
 
  
 
@@ -1074,7 +1074,7 @@
             
               <trans-unit id="faqs_answer_01" resname="faqs_answer_01">
                 <source>faqs_answer_01</source>
-                <target>To split a purchase, you just need to have your citizen card and a VISA or MASTERCARD credit card. The process is made in our POS and it's simple, fast and with no bureaucracy associated.</target>
+                <target>To split a purchase (instalment), you just need to have your identity card and a VISA or Mastercard credit card. The whole process runs in Parcela Já POS and it is simple, fast and without any other bureaucracy.</target>
             </trans-unit>
             
             
@@ -1087,7 +1087,7 @@
             
               <trans-unit id="faqs_answer_02" resname="faqs_answer_02">
                 <source>faqs_answer_02</source>
-                <target>You do not have any associated costs or interest using Parcela Já, except for purchases at Travel Agencies, where there is a cost of to open the process.</target>
+                <target>No. You do not have any associated costs or interests using Parcela Já.</target>
             </trans-unit>
             
  
@@ -1099,7 +1099,7 @@
             
               <trans-unit id="faqs_answer_03" resname="faqs_answer_03">
                 <source>faqs_answer_03</source>
-                <target>Yes. You need to have the purchase amount available on your credit card. But if you do not have the total amount, you can pay part of the amount through Parcela Já and the rest in another payment mode of your choice.</target>
+                <target> Yes. You need to have the total sale amount due available on your credit card. But if you do not have the whole money available on your credit card, you can decide to pay up to just the remaining value at your disposal on your credit card.</target>
             </trans-unit>
  
  
@@ -1111,7 +1111,7 @@
             
               <trans-unit id="faqs_answer_04" resname="faqs_answer_04">
                 <source>faqs_answer_04</source>
-                <target>Yes. The amount you pay through Parcela Já is captive on your credit card, being released as you settle the respective instalments.</target>
+                <target>Yes. The amount you pay through Parcela Já will be kept captive on your credit card and will be released as you settle the respective instalments.</target>
             </trans-unit>
  
  
@@ -1122,7 +1122,7 @@
             
               <trans-unit id="faqs_answer_05" resname="faqs_answer_05">
                 <source>faqs_answer_05</source>
-                <target>You can use any Visa and Mastercard credit card except for companies credit cards. </target>
+                <target>You can use any personal VISA and Mastercard credit card. We do not accept corporate credit cards.</target>
             </trans-unit>
  
 
