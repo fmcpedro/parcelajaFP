@@ -84,6 +84,8 @@ class TpaymentsTaxaDesconto {
     //para o mapa
     private $dataPagamento;
     private $contractNumber;
+    
+    private $tipoTaxa;
 
     //function __construct($valorCompra, $numeroPrestacoes, $numParcela, $tipoTransacao, $payID, $datePayment) {
     function __construct(Tpurchase $purchase, $numParcela, Tpayments $payment=null) {
@@ -103,6 +105,7 @@ class TpaymentsTaxaDesconto {
         $this->clienteCartaoCidadao = Utils::getClienteData('cartaoCidadao', $purchase->getFclientdata());
 
         $this->tipoTransacao = Utils::getTipoTransacao($purchase);
+        $this->tipoTaxa = "TD";
     }
 
     function getValorCompra() {
@@ -537,5 +540,17 @@ class TpaymentsTaxaDesconto {
     }
 
 
+    function getTipoTaxa() {
+        return $this->tipoTaxa;
+    }
+
+    function setTipoTaxa($tipoTaxa) {
+        $this->tipoTaxa = $tipoTaxa;
+    }
+
+
+    
+    
+    
 
 }

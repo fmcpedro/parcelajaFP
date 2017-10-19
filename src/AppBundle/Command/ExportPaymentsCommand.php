@@ -134,6 +134,7 @@ class ExportPaymentsCommand extends ContainerAwareCommand {
             'SERVIÇOS_FINANCEIROS',
             'IMP_SELO',
             'TIPO_TRANSACAO',
+            'TIPO_TAXA',
             //dados evo
             'CLIENT_EVO',
             'PAYMETHOD_EVO',
@@ -174,13 +175,6 @@ class ExportPaymentsCommand extends ContainerAwareCommand {
 
 
         foreach ($tpayments as $payment) {
-
-
-
-
-
-
-
 
             //Pressupostos  Fixos
             if ($payment instanceof TpaymentsTaxaServico) {
@@ -295,6 +289,7 @@ class ExportPaymentsCommand extends ContainerAwareCommand {
             $servicosFinanceiros = $payment->getServicosFinanceiros(); //SERVIÇOS FINANCEIROS
             $impSelo = $payment->getImpSelo(); //IMP. SELO
             $tipoTransacao = $payment->getTipoTransacao();
+            $tipoTaxa = $payment->getTipoTaxa();
 
 
 
@@ -344,12 +339,6 @@ class ExportPaymentsCommand extends ContainerAwareCommand {
             $cardNoINGENICO = $ingenico_payment->getCardNo();
             $scoringINGENICO = $ingenico_payment->getScoring();
             $scoCategoryINGENICO = $ingenico_payment->getScoCategory();
-
-
-
-
-
-
 
             fputcsv(
                     $handle, // The file pointer
@@ -415,6 +404,7 @@ class ExportPaymentsCommand extends ContainerAwareCommand {
                 ($numParcela == 0) ? $servicosFinanceiros : 0,
                 ($numParcela == 0) ? $impSelo : 0,
                 $tipoTransacao,
+                $tipoTaxa,
                 $clientEVO, //EVO PAYMENTS FROM HERE
                 $payMethodEVO,
                 $typeEVO,
