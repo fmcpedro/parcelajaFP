@@ -28,7 +28,7 @@ class TpaymentsTaxaDesconto {
     const TAXA_JURO = 0.05;
     const LUCRO_PARCELA = 0.75;
     const LUCRO_BNI = 0.25;
-    const NUM_CASAS_DECIMAIS = 3;
+    const NUM_CASAS_DECIMAIS = 5;
 
     //Pressupostos  Variáveis
     private $valorCompra;
