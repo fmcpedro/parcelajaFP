@@ -29,7 +29,7 @@
       <!-- Footer Parcela Já -->
       <div class="col-lg-5 g-mb-60 g-mb-0--lg col-sm-6">
         <address class="g-line-height-2 g-mt-minus-4">
-          <h5 class="text-uppercase g-mb-15 g-color-white">Sede</h5>
+          <h5 class="text-uppercase g-mb-15 g-color-white">{% trans %}footer_title{% endtrans %}</h5>
           <ul class="list-unstyled g-mb-35">
             <li class="g-mb-5">
               Av. da República, 48-B, 6º
@@ -40,18 +40,18 @@
           </ul>
           <ul class="list-unstyled g-mb-35">
             <li class="g-mb-5">
-              Geral: <a class="g-color-white-opacity-0_8 g-color-primary--hover" href="mailto:geral@parcelaja.pt">geral@parcelaja.pt</a>
+              {% trans %}footer_geral{% endtrans %}: <a class="g-color-white-opacity-0_8 g-color-primary--hover" href="mailto:geral@parcelaja.pt">geral@parcelaja.pt</a>
             </li>
             <li class="g-mb-5">
-              Comercial: <a class="g-color-white-opacity-0_8 g-color-primary--hover" href="mailto:suporte@parcelaja.pt">suporte@parcelaja.pt</a>
+              {% trans %}footer_comercial{% endtrans %}: <a class="g-color-white-opacity-0_8 g-color-primary--hover" href="mailto:suporte@parcelaja.pt">suporte@parcelaja.pt</a>
             </li>
             <li class="g-mb-5">
-              Clientes: <a class="g-color-white-opacity-0_8 g-color-primary--hover" href="mailto:suporte@parcelaja.pt">suporte@parcelaja.pt</a>
+              {% trans %}footer_clientes{% endtrans %}: <a class="g-color-white-opacity-0_8 g-color-primary--hover" href="mailto:suporte@parcelaja.pt">suporte@parcelaja.pt</a>
             </li>
           </ul>
           <ul class="list-unstyled">
             <li class="g-mb-5">
-              Geral: <a class="g-color-white-opacity-0_8 g-color-primary--hover" href="tel:+351215881280">+351 215 881 280</a>
+              {% trans %}footer_geral{% endtrans %}: <a class="g-color-white-opacity-0_8 g-color-primary--hover" href="tel:+351215881280">+351 215 881 280</a>
             </li>
           </ul>
         </address>
@@ -60,16 +60,16 @@
 
       <!-- Footer Produto -->
       <div class="col-lg-2 col-sm-6">
-        <h5 class="text-uppercase g-mb-15 g-color-white">Produto</h5>
+        <h5 class="text-uppercase g-mb-15 g-color-white">{% trans %}footer_title_produto{% endtrans %}</h5>
         <ul class="list-unstyled g-mb-35">
           <li class="g-mb-5">
-            <a class="g-color-white-opacity-0_8 g-color-primary--hover" href="{{ path('como_funciona') }}">Como funciona</a>
+            <a class="g-color-white-opacity-0_8 g-color-primary--hover" href="{{ path('como_funciona') }}">{% trans %}footer_comofunciona{% endtrans %}</a>
           </li>
           <li class="g-mb-5">
-            <a class="g-color-white-opacity-0_8 g-color-primary--hover" href="{{ path('para_clientes') }}">Para clientes</a>
+            <a class="g-color-white-opacity-0_8 g-color-primary--hover" href="{{ path('para_clientes') }}">{% trans %}footer_paraclientes{% endtrans %}</a>
           </li>
           <li class="g-mb-5">
-            <a class="g-color-white-opacity-0_8 g-color-primary--hover" href="{{ path('faqs') }}">Perguntas frequentes</a>
+            <a class="g-color-white-opacity-0_8 g-color-primary--hover" href="{{ path('faqs') }}">{% trans %}footer_perguntasfrequentes{% endtrans %}</a>
           </li>
         </ul>
       </div>
@@ -77,25 +77,25 @@
 
       <!-- Footer Empresas -->
       <div class="col-lg-2 col-sm-6">
-        <h5 class="text-uppercase g-mb-15 g-color-white">Empresa</h5>
+        <h5 class="text-uppercase g-mb-15 g-color-white">{% trans %}footer_title_empresa{% endtrans %}</h5>
         <ul class="list-unstyled g-mb-35">
           <li class="g-mb-5">
-            <a class="g-color-white-opacity-0_8 g-color-primary--hover" href="{{ path('emprego') }}">Emprego</a>
+            <a class="g-color-white-opacity-0_8 g-color-primary--hover" href="{{ path('emprego') }}">{% trans %}footer_emprego{% endtrans %}</a>
           </li>
           <li class="g-mb-5">
-            <a class="g-color-white-opacity-0_8 g-color-primary--hover" href="{{ path('noticias') }}">Notícias e Media</a>
+            <a class="g-color-white-opacity-0_8 g-color-primary--hover" href="{{ path('noticias') }}">{% trans %}footer_noticiasemedia{% endtrans %}</a>
           </li>
           <li class="g-mb-5">
-            <a class="g-color-white-opacity-0_8 g-color-primary--hover" href="{{ path('blog') }}">Blog</a>
+            <a class="g-color-white-opacity-0_8 g-color-primary--hover" href="{{ path('blog') }}">{% trans %}footer_blog{% endtrans %}</a>
           </li>
           <li class="g-mb-5">
-            <a class="g-color-white-opacity-0_8 g-color-primary--hover" href="{{ path('contactos') }}">Contactos</a>
+            <a class="g-color-white-opacity-0_8 g-color-primary--hover" href="{{ path('contactos') }}">{% trans %}footer_contactos{% endtrans %}</a>
           </li>
           <li class="g-mb-5">
-            <a class="g-color-white-opacity-0_8 g-color-primary--hover" href="{{ path('legal') }}">Informação legal</a>
+            <a class="g-color-white-opacity-0_8 g-color-primary--hover" href="{{ path('legal') }}">{% trans %}footer_informacaolegal{% endtrans %}</a>
           </li>
           <li class="g-mb-5">
-            <a class="g-color-white-opacity-0_8 g-color-primary--hover" href="{{ path('pci') }}">PCI</a>
+            <a class="g-color-white-opacity-0_8 g-color-primary--hover" href="{{ path('pci') }}">{% trans %}header_paraaderentes{% endtrans %}</a>
           </li>
         </ul>
       </div>

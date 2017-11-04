@@ -83,7 +83,7 @@
       </trans-unit>
       <trans-unit id="footer_text01" resname="footer_text01">
         <source>footer_text01</source>
-        <target>Av. da República, 48-B, 6th floor 1050-195 Lisbon </target>
+        <target>Av. da República, 48-B, 6th floor <![CDATA[<br>]]> 1050-195 Lisbon </target>
       </trans-unit>
       <trans-unit id="footer_text02" resname="footer_text02">
         <source>footer_text02</source>
@@ -108,7 +108,7 @@
       </trans-unit>
       <trans-unit id="howitworks_block_02_text02" resname="howitworks_block_02_text02">
         <source>howitworks_block_02_text02</source>
-        <target>For this, you must have a Parcela Já terminal in your store or the online app on your website and when your clients use their Visa or Mastercard credit card, they can choose in how many times they want to pay for their purchases.</target>
+        <target>For this, you must have a <![CDATA[<b>]]>Parcela Já<![CDATA[</b>]]> terminal in your store or the online app on your website and when your clients use their Visa or Mastercard credit card, they can choose in how many times they want to pay for their purchases.</target>
       </trans-unit>
       <trans-unit id="howitworks_block_03_title01" resname="howitworks_block_03_title01">
         <source>howitworks_block_03_title01</source>
@@ -391,15 +391,15 @@ In case of any thoughts or questions, the client must contact the store where pu
       </trans-unit>
       <trans-unit id="contactus_block_01_geral" resname="contactus_block_01_geral">
         <source>contactus_block_01_geral</source>
-        <target>General: geral@parcelaja.pt</target>
+        <target>General: </target>
       </trans-unit>
       <trans-unit id="contactus_block_01_comercial" resname="contactus_block_01_comercial">
         <source>contactus_block_01_comercial</source>
-        <target>Commercial: suporte@parcelaja.pt</target>
+        <target>Commercial: </target>
       </trans-unit>
       <trans-unit id="contactus_block_01_clientes" resname="contactus_block_01_clientes">
         <source>contactus_block_01_clientes</source>
-        <target>Clients: suporte@parcelaja.pt</target>
+        <target>Clients: </target>
       </trans-unit>
       <trans-unit id="contactus_block_01_telephone02" resname="contactus_block_01_telephone02">
         <source>contactus_block_01_telephone02</source>
@@ -407,7 +407,7 @@ In case of any thoughts or questions, the client must contact the store where pu
       </trans-unit>
       <trans-unit id="contactus_block_01_telephonenumber" resname="contactus_block_01_telephonenumber">
         <source>contactus_block_01_telephonenumber</source>
-        <target>Phone: +351 215 881 280</target>
+        <target>Phone: </target>
       </trans-unit>
       <trans-unit id="contactus_block_01_workdays" resname="contactus_block_01_workdays">
         <source>contactus_block_01_workdays</source>
@@ -424,24 +424,132 @@ In case of any thoughts or questions, the client must contact the store where pu
       <trans-unit id="legalinformation_block_01_text" resname="legalinformation_block_01_text">
         <source>legalinformation_block_01_text</source>
         <target>A Parcela Já, marca registada no Instituto Nacional de Propriedade Industrial e a detentora do sítio www.parcelaja.pt, tem como objetivo a divulgação de toda a informação sobre a sua atividade. A informação sobre os seus serviços não constitui proposta contratual, estando as condições gerais dos seus serviços reguladas em documento próprio.
-
+<![CDATA[<br/>]]> 
 Além da informação institucional da Parcela Já e da informação relativa aos seus serviços, é também disponibilizada informação sobre o funcionamento dos seus serviços, dos seus clientes e dos seus parceiros tecnológicos e financeiros.
 A Parcela Já tenta assegurar que o seu sítio www.parcelaja.pt encontra-se em constante atualização e dispõe de toda a informação necessária para os seus clientes e fornecedores.
-
+<![CDATA[<br/>]]>
 Todas as informações contidas no sítio www.parcelaja.pt, destinam-se exclusivamente à utilização privada, estando proibido a sua utilização para fins comerciais sem o consentimento escrito e assinada Parcela Já. Por outro lado, a informação disponibilizada tem o objetivo de constituir conselhos e recomendações para os seus clientes, fornecedores e parceiros.
-
+<![CDATA[<br/>]]>
 A Parcela Já e o seu sítio www.parcelaja.pt não se responsabiliza por quaisquer prejuízos ou danos materiais ou pessoais que possam advir direta ou indiretamente da utilização da informação disponibilizada, sendo o utilizador o único e exclusivo responsável por todas as decisões tomadas com base nessa informação.
-
+<![CDATA[<br/>]]>
 A Parcela Já no seu sítio www.parcelaja.pt possibilita a ligação a outros sítios de internet através de links fornecidos para o efeito. No entanto, a Parcela Já não assume qualquer responsabilidade pela informação disponibilizada nesses sítios ou pela prestação de serviços por entidades externas.
-
+<![CDATA[<br/>]]>
 O utilizador pode aceder ao sítio www.parcelaja.pt através que quaisquer dispositivos remotos, não assumindo a Parcela Já qualquer responsabilidade pelos prejuízos decorrentes de eventuais situações de impossibilidade, atraso, suspensão ou interrupção no acesso.
-
+<![CDATA[<br/>]]>
 A Parcela Já tentará sempre que o seu sítio www.parcelaja.pt funcione corretamente em todos os dispositivos remotos, através do desenvolvimento de contantes verificações e atualizações, não garantindo a seu correto funcionamento nos mais diversos dispositivos. Caso verifique alguma destas falhas, contacte a Parcela Já através do e-mail suporte@parcelaja.pt
-
+<![CDATA[<br/>]]>
 Todas as informações e conteúdos disponibilizados no sítio www.parcelaja.pt podem ser alteradas sem aviso prévio, com exceção daqueles a que a lei expressamente o obrigue.
-
+<![CDATA[<br/>]]>
 Não é permitida a reprodução total ou parcial de qualquer informação ou conteúdo da Parcela Já nem do sítio www.parcelaja.pt, bem como das imagens, vídeos, ou qualquer outro elemento, sem autorização prévia da Parcela Já.
 O acesso ou a utilização da Parcela Já sobre o domínio de www.parcelaja.pt implica a aceitação pelo utilizador das condições anteriormente referidas.</target>
+      </trans-unit>
+<trans-unit id="blog_recentarticles" resname="blog_recentarticles">
+        <source>blog_recentarticles</source>
+        <target>Recent articles</target>
+      </trans-unit>
+<trans-unit id="blog_readmore" resname="blog_readmore">
+        <source>blog_readmore</source>
+        <target>Read more...</target>
+      </trans-unit>
+<trans-unit id="newsandmedia_readmore" resname="newsandmedia_readmore">
+        <source>newsandmedia_readmore</source>
+        <target>Read more...</target>
+      </trans-unit>
+<trans-unit id="footer_geral" resname="footer_geral">
+        <source>footer_geral</source>
+        <target>General</target>
+      </trans-unit>
+<trans-unit id="footer_comercial" resname="footer_comercial">
+        <source>footer_comercial</source>
+        <target>Commercial</target>
+      </trans-unit>
+<trans-unit id="footer_clientes" resname="footer_clientes">
+        <source>footer_clientes</source>
+        <target>Clients</target>
+      </trans-unit>
+<trans-unit id="footer_title_produto" resname="footer_title_produto">
+        <source>footer_title_produto</source>
+        <target>PRODUCT</target>
+      </trans-unit>
+<trans-unit id="footer_comofunciona" resname="footer_comofunciona">
+        <source>footer_comofunciona</source>
+        <target>How it works</target>
+      </trans-unit>
+<trans-unit id="footer_paraclientes" resname="footer_paraclientes">
+        <source>footer_paraclientes</source>
+        <target>For clients</target>
+      </trans-unit>
+<trans-unit id="footer_perguntasfrequentes" resname="footer_perguntasfrequentes">
+        <source>footer_perguntasfrequentes</source>
+        <target>Frequently Asked Questions</target>
+      </trans-unit>
+<trans-unit id="footer_title_empresa" resname="footer_title_empresa">
+        <source>footer_title_empresa</source>
+        <target>BUSINESS</target>
+      </trans-unit>
+<trans-unit id="footer_emprego" resname="footer_emprego">
+        <source>footer_emprego</source>
+        <target>Carreers</target>
+      </trans-unit>
+<trans-unit id="footer_noticiasemedia" resname="footer_noticiasemedia">
+        <source>footer_noticiasemedia</source>
+        <target>News and Media</target>
+      </trans-unit>
+<trans-unit id="footer_blog" resname="footer_blog">
+        <source>footer_blog</source>
+        <target>Blog</target>
+      </trans-unit>
+<trans-unit id="footer_contactos" resname="footer_contactos">
+        <source>footer_contactos</source>
+        <target>Contacts</target>
+      </trans-unit>
+<trans-unit id="footer_informacaolegal" resname="footer_informacaolegal">
+        <source>footer_informacaolegal</source>
+        <target>Legal information</target>
+      </trans-unit>
+<trans-unit id="header_paraaderentes" resname="header_paraaderentes">
+        <source>header_paraaderentes</source>
+        <target>FOR MERCHANTS</target>
+      </trans-unit>
+<trans-unit id="header_paraclientes" resname="header_paraclientes">
+        <source>header_paraclientes</source>
+        <target>FOR CLIENTS</target>
+      </trans-unit>
+<trans-unit id="header_comofunciona" resname="header_comofunciona">
+        <source>header_comofunciona</source>
+        <target>HOW IT WORKS</target>
+      </trans-unit>
+<trans-unit id="header_blog" resname="header_blog">
+        <source>header_blog</source>
+        <target>BLOG</target>
+      </trans-unit>
+<trans-unit id="homepage_grupos_all" resname="homepage_grupos_all">
+        <source>homepage_grupos_all</source>
+        <target>All</target>
+      </trans-unit>
+<trans-unit id="homepage_grupos_agenciasdeviagens" resname="homepage_grupos_agenciasdeviagens">
+        <source>homepage_grupos_agenciasdeviagens</source>
+        <target>Travel Agencies</target>
+      </trans-unit>
+<trans-unit id="homepage_grupos_perfumarias" resname="homepage_grupos_perfumarias">
+        <source>homepage_grupos_perfumarias</source>
+        <target>Perfumeries</target>
+      </trans-unit>
+<trans-unit id="homepage_grupos_opticas" resname="homepage_grupos_opticas">
+        <source>homepage_grupos_opticas</source>
+        <target>Optics</target>
+      </trans-unit>
+<trans-unit id="homepage_grupos_lojasdeinformatica" resname="homepage_grupos_lojasdeinformatica">
+        <source>homepage_grupos_lojasdeinformatica</source>
+        <target>Informatic Stores</target>
+      </trans-unit>
+<trans-unit id="homepage_grupos_oficinasdeautomoveis" resname="homepage_grupos_oficinasdeautomoveis">
+        <source>homepage_grupos_oficinasdeautomoveis</source>
+        <target>Car Shops</target>
+      </trans-unit>
+<trans-unit id="footer_todososdireitosreservados" resname="footer_todososdireitosreservados">
+        <source>footer_todososdireitosreservados</source>
+        <target>2017 © All rights reserved.</target>
       </trans-unit>
     </body>
   </file>

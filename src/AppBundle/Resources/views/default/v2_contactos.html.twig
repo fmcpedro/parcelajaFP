@@ -15,70 +15,53 @@
     <section class="container g-pt-70">
         <div class="row justify-content-between">
             <div class="col-md-7 g-mt-50 g-mb-100">
-                <h2 class="h2 h2--md h2--lg mb-0">Contacte-nos</h2>
-                <p class="mb-5">Escreva-nos a sua mensagem.</p>
-                
-                
+                <h2 class="h2 h2--md h2--lg mb-0">{% trans %}contactus_block_01_title01{% endtrans %}</h2>
+                <p class="mb-5">{% trans %}contactus_block_01_subtitle01{% endtrans %}</p>
+
                 {% for flashMessage in app.session.flashbag.get('notice') %}
+                    <div class="alert alert-success">
+                        {{ flashMessage }}
+                    </div>
+                {% endfor %}
 
-                                <div class="alert alert-success">
-                                    {{ flashMessage }}
-                                </div>
-
-                            {% endfor %}
-                
-                
-                
-                
                 <!-- Contact Form -->
                 {{ form_start(form) }} 
-                    <div class="row">
-                        <div class="col-md-6 form-group g-mb-20">
-                            <label class="g-font-size-14">Nome: <span class="g-color-red">*</span></label>
-                            {#<input name="name" class="" type="text" required>#}
+                <div class="row">
+                    <div class="col-md-6 form-group g-mb-20">
+                        <label class="g-font-size-14">{% trans %}contactus_block_01_name{% endtrans %} <span class="g-color-red">*</span></label>
                         {{ form_widget(form.name, {'attr': {'class': 'form-control g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15'}}) }}
-                        
-                        </div>
-
-                        <div class="col-md-6 form-group g-mb-20">
-                            <label class="g-font-size-14">Email: <span class="g-color-red">*</span></label>
-                            {#<input name="email" class="" type="email" required>#}
-                       {{ form_widget(form.email, {'attr': {'class': 'form-control g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15'}}) }}
-                        
-                        </div>
-
-                        <div class="col-md-6 form-group g-mb-20">
-                            <label class="g-font-size-14">Assunto: <span class="g-color-red">*</span></label>
-                            {#<input name="subject" class="" type="text" required>#}
-                        {{ form_widget(form.subject, {'attr': {'class': 'form-control g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15'}}) }}
-                        </div>
-
-                        <div class="col-md-6 form-group g-mb-20">
-                            <label class="g-font-size-14">Telefone: <span class="g-color-red">*</span></label>
-                            {#<input name="phone" class="" type="tel" required>#}
-                        {{ form_widget(form.phone, {'attr': {'class': 'form-control g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15'}}) }}
-                        </div>
-
-                        <div class="col-md-12 form-group g-mb-40">
-                            <label class="g-font-size-14">Mensagem: <span class="g-color-red">*</span></label>
-                            {#<textarea name="message" class="" rows="7" required></textarea>#}
-                        {{ form_widget(form.message, {'attr': {'class': 'form-control g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus g-resize-none rounded-3 g-py-13 g-px-15'}}) }}
-                        </div>
-                        
-                        
-                        <div class="col-md-12 form-group g-mb-40">
-                    <label class="g-font-size-14">{{ form.vars.value.firstValue }} + {{ form.vars.value.secondValue }} = ? <span class="g-color-red">*</span></label>
-                    
-                    {{ form_widget(form.firstValue, {'attr': {'class': ''}}) }}
-                    {{ form_widget(form.secondValue, {'attr': {'class': ''}}) }}
-                    {{ form_widget(form.validation, {'attr': {'class': 'form-control g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus g-resize-none rounded-3 g-py-13 g-px-15'}}) }}
-                    
-                  </div>
-                        
-                        
                     </div>
 
-                    <button class="btn u-btn-primary rounded-3 g-py-12 g-px-20" type="submit" role="button">Enviar</button>
+                    <div class="col-md-6 form-group g-mb-20">
+                        <label class="g-font-size-14">{% trans %}contactus_block_01_email{% endtrans %}  <span class="g-color-red">*</span></label>
+                        {{ form_widget(form.email, {'attr': {'class': 'form-control g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15'}}) }}
+                    </div>
+
+                    <div class="col-md-6 form-group g-mb-20">
+                        <label class="g-font-size-14">{% trans %}contactus_block_01_subject{% endtrans %}  <span class="g-color-red">*</span></label>
+                        {{ form_widget(form.subject, {'attr': {'class': 'form-control g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15'}}) }}
+                    </div>
+
+                    <div class="col-md-6 form-group g-mb-20">
+                        <label class="g-font-size-14">{% trans %}contactus_block_01_telephone{% endtrans %}  <span class="g-color-red">*</span></label>
+                        {{ form_widget(form.phone, {'attr': {'class': 'form-control g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15'}}) }}
+                    </div>
+
+                    <div class="col-md-12 form-group g-mb-40">
+                        <label class="g-font-size-14">{% trans %}contactus_block_01_message{% endtrans %}  <span class="g-color-red">*</span></label>
+                        {{ form_widget(form.message, {'attr': {'class': 'form-control g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus g-resize-none rounded-3 g-py-13 g-px-15'}}) }}
+                    </div>
+
+
+                    <div class="col-md-12 form-group g-mb-40">
+                        <label class="g-font-size-14">{{ form.vars.value.firstValue }} + {{ form.vars.value.secondValue }} = ? <span class="g-color-red">*</span></label>
+                        {{ form_widget(form.firstValue, {'attr': {'class': ''}}) }}
+                        {{ form_widget(form.secondValue, {'attr': {'class': ''}}) }}
+                        {{ form_widget(form.validation, {'attr': {'class': 'form-control g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus g-resize-none rounded-3 g-py-13 g-px-15'}}) }}
+                    </div>
+                </div>
+
+                <button class="btn u-btn-primary rounded-3 g-py-12 g-px-20" type="submit" role="button">{% trans %}contactus_block_01_button{% endtrans %}</button>
                 {{ form_end(form) }}
                 <!-- End Contact Form -->
             </div>
@@ -88,7 +71,7 @@
                 <p class="mb-5"> </p>
 
                 <div class="mb-4">
-                    <h5 class="g-font-size-18">Morada:</h5>
+                    <h5 class="g-font-size-18">{% trans %}contactus_block_01_address01{% endtrans %}:</h5>
                     <p class="g-font-size-16">Avenida da República, 48-b, 6º
                         <br>1050-195 Lisboa</p>
                 </div>
@@ -96,26 +79,26 @@
                 <div class="mb-4">
                     <h5 class="g-font-size-18">Email:</h5>
                     <p>
-                        <strong>Geral:</strong> <a class="g-color-primary--hover" href="mailto:geral@parcelaja.pt">geral@parcelaja.pt</a></br>
-                        <strong>Comercial:</strong> <a class="g-color-primary--hover" href="mailto:suporte@parcelaja.pt">suporte@parcelaja.pt</a></br>
-                        <strong>Clientes:</strong> <a class="g-color-primary--hover" href="mailto:suporte@parcelaja.pt">suporte@parcelaja.pt</a></br>
+                        <strong>{% trans %}contactus_block_01_geral{% endtrans %}:</strong> <a class="g-color-primary--hover" href="mailto:geral@parcelaja.pt">geral@parcelaja.pt</a></br>
+                        <strong>{% trans %}contactus_block_01_comercial{% endtrans %}:</strong> <a class="g-color-primary--hover" href="mailto:suporte@parcelaja.pt">suporte@parcelaja.pt</a></br>
+                        <strong>{% trans %}contactus_block_01_clientes{% endtrans %}:</strong> <a class="g-color-primary--hover" href="mailto:suporte@parcelaja.pt">suporte@parcelaja.pt</a></br>
                     </p>
                 </div>
 
                 <div class="mb-3">
-                    <h5 class="g-font-size-18">Telefone:</h5>
-                    <p>Geral: <a class="g-color-primary--hover" href="tel:+351215881280">+351 215 881 280</a>
+                    <h5 class="g-font-size-18">{% trans %}contactus_block_01_telephone02{% endtrans %}:</h5>
+                    <p>{% trans %}contactus_block_01_geral{% endtrans %}: <a class="g-color-primary--hover" href="tel:+351215881280">+351 215 881 280</a>
                     </p>
                 </div>
 
                 <div class="g-mb-30">
-                    <p class="g-font-size-14"><em>Segunda a Sexta: das 9:00 às 18:00</em>
+                    <p class="g-font-size-14"><em>{% trans %}contactus_block_01_workdays{% endtrans %}</em>
                     </p>
                 </div>
 
-       
-                
-                
+
+
+
                 <!-- Figure Social Icons -->
                 <ul class="list-inline">
                     <li class="list-inline-item">

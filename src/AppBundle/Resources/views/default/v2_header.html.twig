@@ -28,11 +28,11 @@
                         <!-- Para Aderentes -->
                         {% if selected_menu == 'homepage' %}
                             <li class="nav-item g-mx-20--lg active">
-                                <a href="{{ path('homepage') }}" class="nav-link px-0">Para aderentes</a>
+                                <a href="{{ path('homepage') }}" class="nav-link px-0">{% trans %}header_paraaderentes{% endtrans %}</a>
                             </li>
                         {% else %}
                             <li class="nav-item g-mx-20--lg ">
-                                <a href="{{ path('homepage') }}" class="nav-link px-0">Para aderentes</a>
+                                <a href="{{ path('homepage') }}" class="nav-link px-0">{% trans %}header_paraaderentes{% endtrans %}</a>
                             </li>
                         {% endif %}
                         <!-- End - Para Aderentes -->
@@ -42,11 +42,11 @@
                         <!-- Para Clientes -->
                         {% if selected_menu == 'para_clientes' %}
                         <li class="nav-item g-mx-20--lg active">
-                            <a href="{{ path('para_clientes') }}" class="nav-link px-0">Para clientes</a>
+                            <a href="{{ path('para_clientes') }}" class="nav-link px-0">{% trans %}header_paraclientes{% endtrans %}</a>
                         </li>
                         {% else %}
                         <li class="nav-item g-mx-20--lg">
-                            <a href="{{ path('para_clientes') }}" class="nav-link px-0">Para clientes</a>
+                            <a href="{{ path('para_clientes') }}" class="nav-link px-0">{% trans %}header_paraclientes{% endtrans %}</a>
                         </li>    
                             {% endif %}
                         <!-- End - Para Clientes -->
@@ -57,11 +57,11 @@
                         <!-- Como Funciona -->
                         {% if selected_menu == 'como_funciona' %}
                         <li class="nav-item g-color-red g-color-primary--hover g-mx-20--lg active">
-                            <a href="{{ path('como_funciona') }}" class="nav-link px-0">Como funciona</a>
+                            <a href="{{ path('como_funciona') }}" class="nav-link px-0">{% trans %}header_comofunciona{% endtrans %}</a>
                         </li>
                         {% else %}
                         <li class="nav-item g-color-red g-color-primary--hover g-mx-20--lg">
-                            <a href="{{ path('como_funciona') }}" class="nav-link px-0">Como funciona</a>
+                            <a href="{{ path('como_funciona') }}" class="nav-link px-0">{% trans %}header_comofunciona{% endtrans %}</a>
                         </li>
                             {% endif %}
                         <!-- End - Como Funciona -->
@@ -70,11 +70,11 @@
                         <!-- Blog -->
                         {% if selected_menu == 'blog' %}
                         <li class="nav-item g-mx-20--lg active">
-                            <a href="{{ path('blog') }}" class="nav-link px-0">Blog</a>
+                            <a href="{{ path('blog') }}" class="nav-link px-0">{% trans %}header_blog{% endtrans %}</a>
                         </li>
                         {% else %}
                         <li class="nav-item g-mx-20--lg">
-                            <a href="{{ path('blog') }}" class="nav-link px-0">Blog</a>
+                            <a href="{{ path('blog') }}" class="nav-link px-0">{% trans %}header_blog{% endtrans %}</a>
                         </li>
                         {% endif %}
                         <!-- End Blog -->
@@ -95,25 +95,31 @@
                         <!-- Idiomas -->
                         <li class="nav-item g-mx-20--lg">
                             <div class="g-pos-rel g-width-50 g-pt-7--lg g-ml-20 g-ml-20--lg">
-                                <a href="#" id="languages-dropdown-invoker-2" class="g-color-primary--hover g-text-underline--none--hover text-uppercase" aria-controls="languages-dropdown-2" aria-haspopup="true" aria-expanded="false" data-dropdown-event="click" data-dropdown-target="#languages-dropdown-2" data-dropdown-type="css-animation" data-dropdown-duration="500" data-dropdown-hide-on-scroll="true" data-dropdown-animation-in="fadeIn" data-dropdown-animation-out="fadeOut">pt&nbsp;<i class="fa fa-angle-down g-ml-3"></i>
+                                <a href="#" id="languages-dropdown-invoker-2" class="g-color-primary--hover g-text-underline--none--hover text-uppercase" aria-controls="languages-dropdown-2" aria-haspopup="true" aria-expanded="false" data-dropdown-event="click" data-dropdown-target="#languages-dropdown-2" data-dropdown-type="css-animation" data-dropdown-duration="500" data-dropdown-hide-on-scroll="true" data-dropdown-animation-in="fadeIn" data-dropdown-animation-out="fadeOut">{{ app.request.locale }}<i class="fa fa-angle-down g-ml-3"></i>
                                 </a>
                                 <ul id="languages-dropdown-2" class="list-unstyled text-left u-shadow-v23 g-pos-abs g-left-0 g-bg-white g-width-160 g-z-index-2 g-py-20 g-pb-15 g-mt-25--lg g-mt-20--lg--scrolling" aria-labelledby="languages-dropdown-invoker-2">
                                     <li>
                                         <a class="d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-py-8 g-px-20" href="{{ path('homepage', {'_locale':'pt' }) }}">Português</a>
                                     </li>
                                     <li>
-                                        <a class="d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-py-8 g-px-20" href="{{ path('homepage', {'_locale':'en' }) }}">Inglês</a>
+                                        <a class="d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-py-8 g-px-20" href="{{ path('homepage', {'_locale':'en' }) }}">English</a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
-                        
-                        
-                        
-                        
-                        
                         <!-- End Idiomas -->
 
+                        
+         
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
                     </ul>
                 </div>
                 <!-- End Navigation -->

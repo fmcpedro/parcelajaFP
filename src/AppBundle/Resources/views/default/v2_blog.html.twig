@@ -90,7 +90,7 @@
         <!-- End Info -->
 
         <div class="g-mb-25">
-          <a class="g-font-weight-600 g-font-size-13 text-uppercase" href="{{ url_to_post(post) }}">Ler mais</a>
+          <a class="g-font-weight-600 g-font-size-13 text-uppercase" href="{{ url_to_post(post) }}">{% trans %}blog_readmore{% endtrans %}</a>
         </div>
 
         <!-- Social Icons -->
@@ -213,7 +213,7 @@
       <!-- Recent Posts -->
       <div class="g-mb-30">
         <div class="u-heading-v3-1 g-mb-30">
-          <h2 class="h5 u-heading-v3__title text-uppercase g-brd-primary">Artigos recentes</h2>
+          <h2 class="h5 u-heading-v3__title text-uppercase g-brd-primary">{% trans %}blog_recentarticles{% endtrans %}</h2>
         </div>
 
           
@@ -225,7 +225,7 @@
             {#<img class="g-width-60 g-height-60" src="../assets/img-temp/100x100/img4.jpg" alt="Image Description">#}
             
             
-            <img class="g-width-60 g-height-60" src="{{ post.getWebPath }}" alt="Image Description">
+            <img class="g-width-60 g-height-60" src="{{ post.getWebPath | imagine_filter('small_thumb') }}" alt="Image Description">
             
             
           </a>

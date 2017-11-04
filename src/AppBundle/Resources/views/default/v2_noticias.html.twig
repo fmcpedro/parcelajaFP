@@ -16,7 +16,7 @@
     <!-- News -->
     <div class="container g-pt-70 g-mb-50 g-px-25 g-px-50--md">
         <div class="u-heading-v3-1 g-mt-50 g-mb-50">
-            <h2 class="u-heading-v3__title g-brd-primary h2 h2--md h2--lg">Notícias e Media</h2>
+            <h2 class="u-heading-v3__title g-brd-primary h2 h2--md h2--lg">{% trans %}newsandmedia_block_01_title{% endtrans %}</h2>
         </div>
 
         <div class="row">
@@ -42,7 +42,7 @@
                             </li>
                         </ul>
                         <p>{{ noticia.message }}</p>
-                        <a class="g-font-size-12" href="{{ noticia.link }}">Ler mais...</a>
+                        <a class="g-font-size-12" href="{{ noticia.link }}">{% trans %}newsandmedia_readmore{% endtrans %}</a>
                     </article>
                     <!-- End Article -->
                 </div>
