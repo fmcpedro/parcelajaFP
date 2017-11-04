@@ -1,0 +1,5 @@
+AppBundle\Entity\Tagency:
+    imageFile:
+        mapping:           aderente_image
+        filename_property: flogo
+

@@ -1,0 +1,155 @@
+{#{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Wsmedia creation</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Create" />
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_media_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}#}
+
+
+
+
+
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+    <!-- START PAGE CONTENT -->
+    <div class="content">
+        <!-- START JUMBOTRON -->
+        <div class="jumbotron" data-pages="parallax">
+            <div class="container-fluid container-fixed-lg sm-p-l-20 sm-p-r-20">
+                <div class="inner">
+                    <!-- START BREADCRUMB -->
+                    <ul class="breadcrumb">
+                        <li><a href="#" class="">Parcela Ja</a></li>
+                        <li><a href="#" class="active">Noticias no website</a></li>
+                    </ul>
+                    <!-- END BREADCRUMB -->
+                </div>
+            </div>
+        </div>
+        <!-- END JUMBOTRON -->
+
+
+
+        <!-- START CONTAINER FLUID -->
+        <div class="container-fluid container-fixed-lg">
+            <!-- START PANEL -->
+            <div class="panel panel-transparent">
+                <div class="panel-heading">
+                    <div class="panel-title">Adicionar nova noticia no website </div>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-10">
+                            {#<h3>form_title</h3>#}
+                            <p>Preencha os campos abaixo para adicionar uma noticia</p>
+
+                            {% for flashMessage in app.session.flashbag.get('notice') %}
+                                <div class="alert alert-success">
+                                    {{ flashMessage }}
+                                </div>
+                            {% endfor %}
+
+
+                            {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }} 
+                            <div class="form-group">
+                                <label for="fserial" class="col-sm-3 control-label">title</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(form.title, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">message</label>
+
+                                <div class="col-sm-9">
+                                    <div class="radio radio-success">
+                                        {{ form_widget(form.message) }}
+                                    </div>                                   
+                                </div>
+                            </div>
+                                    
+                            <div class="form-group">
+                                <label for="imageFile" class="col-sm-3 control-label">imageFile</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(form.imageFile, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="link" class="col-sm-3 control-label">link</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(form.link, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div>
+
+                                
+                                
+                                  <div class="form-group">
+                                <label for="createdAt" class="col-sm-3 control-label">createdAt</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(form.createdAt, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div>
+                                
+                                
+                                  <div class="form-group">
+                                <label for="updatedAt" class="col-sm-3 control-label">updatedAt</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(form.updatedAt, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div>
+                                
+                                
+                                
+                            <br>
+
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    {#<p>I hereby certify that the information above is true and accurate. </p>#}
+                                </div>
+                                <div class="col-sm-9">
+                                    <button class="btn btn-complete btn-cons m-b-10" type="submit">
+                                        <i class="pg-form"></i> <span class="bold">Create</span>
+                                    </button>
+                                    <button class="btn btn-default btn-cons m-b-10" type="reset">
+                                        <i class="pg-close"></i> <span class="bold">Clear</span>
+                                    </button>
+                                </div>
+                            </div>
+                            {{ form_end(form) }}
+                            
+                            
+    
+                            
+
+                            
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END PANEL -->
+        </div>
+        <!-- END CONTAINER FLUID -->
+
+    </div>
+    <!-- END PAGE CONTENT -->
+
+{% endblock %}
+
+
+

@@ -1,0 +1,148 @@
+{#{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Wsposts list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Message</th>
+                <th>Image</th>
+                <th>Publishedat</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for wsPost in wsPosts %}
+            <tr>
+                <td><a href="{{ path('admin_website_post_show', { 'id': wsPost.id }) }}">{{ wsPost.title }}</a></td>
+                <td>{{ wsPost.message }}</td>
+                <td>{{ wsPost.image }}</td>
+                <td>{% if wsPost.publishedAt %}{{ wsPost.publishedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ wsPost.id }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_website_post_show', { 'id': wsPost.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_website_post_edit', { 'id': wsPost.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_website_post_new') }}">Create a new wsPost</a>
+        </li>
+    </ul>
+{% endblock %}#}
+
+
+
+
+{% extends 'base.html.twig' %}
+
+
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}
+
+
+
+{% block body %}
+
+    <!-- START PAGE CONTENT -->
+    <div class="content">
+        <!-- START JUMBOTRON -->
+        <div class="jumbotron" data-pages="parallax">
+            <div class="container-fluid container-fixed-lg sm-p-l-20 sm-p-r-20">
+                <div class="inner">
+                    <!-- START BREADCRUMB -->
+                    <ul class="breadcrumb">
+                        <li><a href="#" class="">Parcela Ja</a></li>
+                        <li><a href="#" class="active">Posts no Website</a></li>
+                    </ul>
+                    <!-- END BREADCRUMB -->
+                </div>
+            </div>
+        </div>
+        <!-- END JUMBOTRON -->
+
+
+
+
+
+
+
+
+
+
+
+        <!-- START CONTAINER FLUID -->
+        <div class="container-fluid container-fixed-lg bg-white">
+            <!-- START PANEL -->
+            <div class="panel panel-transparent">
+                <div class="panel-heading">
+                    <div class="panel-title">Lista de Posts 
+                    </div>
+                    <div class="export-options-container pull-right"></div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="panel-body">
+                    <table class="table display">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Message</th>
+                <th>Image</th>
+                <th>Publishedat</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for wsPost in wsPosts %}
+            <tr>
+                <td><a href="{{ path('admin_post_show', { 'id': wsPost.id }) }}">{{ wsPost.title }}</a></td>
+                <td>{{ wsPost.message }}</td>
+                <td>{{ wsPost.image }}</td>
+                <td>{% if wsPost.publishedAt %}{{ wsPost.publishedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ wsPost.id }}</td>
+                <td>
+                    <ul>
+{#                        <li>
+                            <a href="{{ path('admin_post_show', { 'id': wsPost.id }) }}">show</a>
+                        </li>#}
+                        <li>
+                            <a href="{{ path('admin_post_edit', { 'id': wsPost.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+                    <a href="{{ path('admin_post_new') }}" class="btn btn-success btn-cons m-b-10" type="submit">
+                        <i class="pg-plus"></i> <span class="bold">New</span>
+                    </a>
+
+                </div>
+            </div>
+            <!-- END PANEL -->
+        </div>
+        <!-- END CONTAINER FLUID -->
+
+
+    </div>
+    <!-- END PAGE CONTENT -->
+
+{% endblock %}

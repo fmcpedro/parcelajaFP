@@ -1,0 +1,5 @@
+AppBundle\Entity\WsMedia:
+    imageFile:
+        mapping:           media_image
+        filename_property: image
+

@@ -1,0 +1,24 @@
+admin_post_index:
+    path:     /
+    defaults: { _controller: "AppBundle:WsPost:index" }
+    methods:  GET
+
+admin_post_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:WsPost:show" }
+    methods:  GET
+
+admin_post_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:WsPost:new" }
+    methods:  [GET, POST]
+
+admin_post_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:WsPost:edit" }
+    methods:  [GET, POST]
+
+admin_post_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:WsPost:delete" }
+    methods:  DELETE

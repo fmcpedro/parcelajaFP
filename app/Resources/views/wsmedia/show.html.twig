@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Wsmedia</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Title</th>
+                <td>{{ wsMedia.title }}</td>
+            </tr>
+            <tr>
+                <th>Message</th>
+                <td>{{ wsMedia.message }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ wsMedia.image }}</td>
+            </tr>
+            <tr>
+                <th>Link</th>
+                <td>{{ wsMedia.link }}</td>
+            </tr>
+            <tr>
+                <th>Createdat</th>
+                <td>{% if wsMedia.createdAt %}{{ wsMedia.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Updatedat</th>
+                <td>{% if wsMedia.updatedAt %}{{ wsMedia.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Id</th>
+                <td>{{ wsMedia.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_media_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('admin_media_edit', { 'id': wsMedia.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,484 @@
+{% extends 'AppBundle::v2_base.html.twig' %}
+
+
+{% block stylesheets %}
+    {{ parent() }}
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="{{ asset('bundles/app/frontend/v2/assets/vendor/cubeportfolio-full/cubeportfolio/css/cubeportfolio.min.css') }}">
+{% endblock %}
+
+
+
+{% block body %}
+
+
+    <!--@LM header -->
+    {% include 'AppBundle:default:v2_header.html.twig'   with {'selected_menu': 'para_clientes'} %}
+
+    <!-- Promo Block -->
+    <section class="g-flex-centered g-bg-pos-center g-bg-img-hero g-py-150 u-bg-overlay g-bg-black-opacity-0_5--after parcelaja-hero" style="background-image: url({{ asset('bundles/app/frontend/v2/assets/img-parcelaja/clientes/hero/hero-para-clientes-1920x1080.jpg') }});">
+        <div class="container text-center g-z-index-1">
+            <div class="g-py-50 g-mt-100" data-animation="fadeInUp" data-animation-delay="200" data-animation-duration="1500">
+                {% if app.request.locale == "en" %}
+                    <a class="js-fancybox-media u-link-v5 g-color-black" href="https://vimeo.com/241046229" title="Parcela Já - InStore Video">
+                        <span class="botao-play--sm botao-play--md botao-play--lg align-middle u-icon-v3 u-block-hover--scale g-bg-primary g-color-white g-color-white--hover g-rounded-50x g-cursor-pointer mr-2">
+                            <i class="g-font-size-20 g-font-size-28--md g-font-size-35--lg g-pos-rel g-left-2 fa fa-play"></i>
+                        </span>
+                    </a>
+                {% else %}
+                    <a class="js-fancybox-media u-link-v5 g-color-black" href="https://vimeo.com/241048391" title="Parcela Já - Loja Video">
+                        <span class="botao-play--sm botao-play--md botao-play--lg align-middle u-icon-v3 u-block-hover--scale g-bg-primary g-color-white g-color-white--hover g-rounded-50x g-cursor-pointer mr-2">
+                            <i class="g-font-size-20 g-font-size-28--md g-font-size-35--lg g-pos-rel g-left-2 fa fa-play"></i>
+                        </span>
+                    </a>
+                {% endif %}
+            </div>
+            <h1 class="g-color-white titulo-hero titulo-hero--sm titulo-hero--md titulo-hero--lg titulo-hero--xl text-uppercase g-mb-100" data-animation="fadeInUp" data-animation-delay="800" data-animation-duration="1500">
+                {% trans %}forclients_block_01_title{% endtrans %}
+            </h1>
+        </div>
+    </section>
+    <!-- End Promo Block -->
+    <!-- Icon Blocks -->
+    <section id="seccao1" class="g-py-100 g-px-25 g-px-50--lg">
+        <div class="container">
+            <div class="text-center g-mb-50">
+                <h2 class="h2 h2--md h2--lg">{% trans %}forclients_block_02_title{% endtrans %}</h2>
+            </div>
+            <div class="row no-gutters">
+
+                <div class="col-sm-6 col-lg-4 g-px-40 g-mb-50 g-mb-50--lg">
+                    <!-- Icon Blocks -->
+                    <div class="text-center">
+                        <span class="d-inline-block u-icon-v3 u-icon-size--xl g-bg-primary g-color-white rounded-circle g-mb-30">
+                            <i class="icon-finance-222 u-line-icon-pro"></i>
+                        </span>
+                        <p class="paragrafo-icones g-font-size-14 mb-0">{% trans %}forclients_block_02_subtitle01{% endtrans %}</p>
+                    </div>
+                    <!-- End Icon Blocks -->
+                </div>
+
+                <div class="col-sm-6 col-lg-4 g-brd-left--lg g-brd-gray-light-v4 g-px-40 g-mb-50 g-mb-50--lg">
+                    <!-- Icon Blocks -->
+                    <div class="text-center">
+                        <span class="d-inline-block u-icon-v3 u-icon-size--xl g-bg-primary g-color-white rounded-circle g-mb-30">
+                            <i class="icon-finance-212 u-line-icon-pro"></i>
+                        </span>
+                        <p class="paragrafo-icones g-font-size-14 mb-0">{% trans %}forclients_block_02_subtitle02{% endtrans %}</p>
+                    </div>
+                    <!-- End Icon Blocks -->
+                </div>
+
+                <div class="col-sm-6 col-lg-4 g-brd-left--lg g-brd-gray-light-v4 g-px-40 g-mb-50 g-mb-50--lg">
+                    <!-- Icon Blocks -->
+                    <div class="text-center">
+                        <span class="d-inline-block u-icon-v3 u-icon-size--xl g-bg-primary g-color-white rounded-circle g-mb-30">
+                            <i class="icon-finance-164 u-line-icon-pro"></i>
+                        </span>
+                        <p class="paragrafo-icones g-font-size-14 mb-0">{% trans %}forclients_block_02_subtitle03{% endtrans %}</p>
+                    </div>
+                    <!-- End Icon Blocks -->
+                </div>
+
+                <div class="col-sm-6 col-lg-4 g-px-40 g-mb-50 g-mb-0--lg">
+                    <!-- Icon Blocks -->
+                    <div class="text-center">
+                        <span class="d-inline-block u-icon-v3 u-icon-size--xl g-bg-primary g-color-white rounded-circle g-mb-30">
+                            <i class="icon-finance-225 u-line-icon-pro"></i>
+                        </span>
+                        <p class="paragrafo-icones g-font-size-14 mb-0">{% trans %}forclients_block_02_subtitle04{% endtrans %}</p>
+                    </div>
+                    <!-- End Icon Blocks -->
+                </div>
+
+                <div class="col-sm-6 col-lg-4 g-brd-left--lg g-brd-gray-light-v4 g-px-40 g-mb-50 g-mb-0--lg">
+                    <!-- Icon Blocks -->
+                    <div class="text-center">
+                        <span class="d-inline-block u-icon-v3 u-icon-size--xl g-bg-primary g-color-white rounded-circle g-mb-30">
+                            <i class="icon-travel-032 u-line-icon-pro"></i>
+                        </span>
+                        <p class="paragrafo-icones g-font-size-14 mb-0">{% trans %}forclients_block_02_subtitle05{% endtrans %}</p>
+                    </div>
+                    <!-- End Icon Blocks -->
+                </div>
+
+                <div class="col-sm-6 col-lg-4 g-brd-left--lg g-brd-gray-light-v4 g-px-40 g-mb-0 g-mb-0--lg">
+                    <!-- Icon Blocks -->
+                    <div class="text-center">
+                        <span class="d-inline-block u-icon-v3 u-icon-size--xl g-bg-primary g-color-white rounded-circle g-mb-30">
+                            <i class="icon-finance-018 u-line-icon-pro"></i>
+                        </span>
+                        <p class="paragrafo-icones g-font-size-14 mb-0">{% trans %}forclients_block_02_subtitle06{% endtrans %}</p>
+                    </div>
+                    <!-- End Icon Blocks -->
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- End Icon Blocks -->
+    <section id="lojas" class="g-py-100 g-px-25 g-px-50--md g-bg-secondary">
+        <!-- Cube Portfolio Blocks -->
+        <div class="container">
+            <div class="row justify-content-center text-center g-mb-50">
+                <div class="col-lg-8">
+                    <h2 class="h2 h2--md h2--lg mb-0">{% trans %}forclients_block_03_title{% endtrans %}</h2>
+                </div>
+            </div>
+
+            <!-- Cube Portfolio Blocks - Filter -->
+            <ul id="filterControls" class="d-block list-inline text-center g-mb-50">
+                <li class="list-inline-item cbp-filter-item g-color-primary--active g-font-weight-600 g-font-size-14 text-uppercase pr-2 mb-2" role="button" data-filter="*">Todas</li>
+
+                {% for grupo in grupos %}
+                    <li class="list-inline-item cbp-filter-item g-color-primary--hover g-color-gray-dark-v5--active g-font-weight-600 g-font-size-14 text-uppercase px-2 mb-2" role="button" data-filter=".{{grupo.fgroupid}}">{{grupo.fgroupname}}</li>
+                    {% endfor %} 
+
+                {#    <li class="list-inline-item cbp-filter-item g-color-primary--hover g-color-gray-dark-v5--active g-font-weight-600 g-font-size-14 text-uppercase px-2 mb-2" role="button" data-filter=".loja_agencia_viagens">Agências de Viagens</li>
+                      <li class="list-inline-item cbp-filter-item g-color-black g-color-primary--hover g-color-gray-dark-v5--active g-font-weight-600 g-font-size-14 text-uppercase px-2 mb-2" role="button" data-filter=".loja_perfumaria">Perfumarias</li>
+                      <li class="list-inline-item cbp-filter-item g-color-black g-color-primary--hover g-color-gray-dark-v5--active g-font-weight-600 g-font-size-14 text-uppercase px-2 mb-2" role="button" data-filter=".loja_informatica">Informática</li>
+                      <li class="list-inline-item cbp-filter-item g-color-black g-color-primary--hover g-color-gray-dark-v5--active g-font-weight-600 g-font-size-14 text-uppercase px-2 mb-2" role="button" data-filter=".loja_reparacao_veiculos">Reparação de Veículos</li>#}
+            </ul>
+            <!-- End Cube Portfolio Blocks - Filter -->
+        </div>
+        <!-- End Cube Portfolio Blocks -->
+
+
+        <!-- Cube Portfolio Blocks - Content -->
+        <div class="container">
+            <div class="cbp" data-controls="#filterControls" data-animation="quicksand" data-x-gap="5" data-y-gap="5" data-media-queries='[
+                 {"width": 1500, "cols": 4},
+                 {"width": 1100, "cols": 4},
+                 {"width": 800, "cols": 3},
+                 {"width": 480, "cols": 2},
+                 {"width": 300, "cols": 1}
+                 ]'>
+
+                {% for agencia in agencias %}
+
+                    <!-- Cube Portfolio Blocks  -->
+                    <div class="cbp-item {{agencia.subgroup.group.fgroupid}}">
+                        <div class="u-block-hover g-parent">
+                            <img class="img-fluid g-transform-scale-1_1--parent-hover g-transition-0_5 g-transition--ease-in-out" src="/uploads/aderentes/{{agencia.flogo}}" alt="{{agencia.fagencyname}}">
+                            <div class="d-flex w-100 h-100 u-block-hover__additional--fade u-block-hover__additional--fade-in g-bg-bluegray-opacity-0_5 opacity-0 g-opacity-1--parent-hover g-pos-abs g-top-0 g-left-0 g-transition-0_3 g-transition--ease-in g-pa-20">
+                                <div class="d-flex align-items-start flex-column mb-auto">
+                                    <h3 class="h5 g-color-white g-font-weight-600 mb-1">{{agencia.fagencyname}}</h3>
+                                    <span class="d-block g-color-white-opacity-0_8">{{agencia.subgroup.group.fgroupname}}</span>
+                                </div>
+                                <ul class="align-items-end flex-column list-inline mt-auto ml-auto mb-0">
+                                    <li class="list-inline-item">
+                                        <a class="u-icon-v2 u-icon-size--xs g-brd-white g-color-black g-bg-white rounded-circle" href="#">
+                                            <i class="icon-communication-095 u-line-icon-pro"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Cube Portfolio Blocks -->
+
+                {% endfor %}
+
+
+
+                {#      <!-- Cube Portfolio Blocks - Item Agência de Viagens-->
+                      <div class="cbp-item loja_agencia_viagens">
+                        <div class="u-block-hover g-parent">
+                          <img class="img-fluid g-transform-scale-1_1--parent-hover g-transition-0_5 g-transition--ease-in-out" src="../assets/img-temp/400x270/img10.jpg" alt="Image description">
+                          <div class="d-flex w-100 h-100 u-block-hover__additional--fade u-block-hover__additional--fade-in g-bg-bluegray-opacity-0_5 opacity-0 g-opacity-1--parent-hover g-pos-abs g-top-0 g-left-0 g-transition-0_3 g-transition--ease-in g-pa-20">
+                            <div class="d-flex align-items-start flex-column mb-auto">
+                              <h3 class="h5 g-color-white g-font-weight-600 mb-1">Viagens Abreu</h3>
+                              <span class="d-block g-color-white-opacity-0_8">Agência de Viagens</span>
+                            </div>
+                            <ul class="align-items-end flex-column list-inline mt-auto ml-auto mb-0">
+                              <li class="list-inline-item">
+                                <a class="u-icon-v2 u-icon-size--xs g-brd-white g-color-black g-bg-white rounded-circle" href="#">
+                                  <i class="icon-communication-095 u-line-icon-pro"></i>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- End Cube Portfolio Blocks - Item Agência de Viagens-->
+                
+                      <!-- Cube Portfolio Blocks - Item Perfumaria -->
+                      <div class="cbp-item loja_perfumaria">
+                        <div class="u-block-hover g-parent">
+                          <img class="img-fluid g-transform-scale-1_1--parent-hover g-transition-0_5 g-transition--ease-in-out" src="../assets/img-temp/400x270/img9.jpg" alt="Image description">
+                          <div class="d-flex w-100 h-100 u-block-hover__additional--fade u-block-hover__additional--fade-in g-bg-bluegray-opacity-0_5 opacity-0 g-opacity-1--parent-hover g-pos-abs g-top-0 g-left-0 g-transition-0_3 g-transition--ease-in g-pa-20">
+                            <div class="d-flex align-items-start flex-column mb-auto">
+                              <h3 class="h5 g-color-white g-font-weight-600 mb-1">Perfumaria de Benfica</h3>
+                              <span class="d-block g-color-white-opacity-0_8">Perfumaria</span>
+                            </div>
+                            <ul class="align-items-end flex-column list-inline mt-auto ml-auto mb-0">
+                              <li class="list-inline-item">
+                                <a class="u-icon-v2 u-icon-size--xs g-brd-white g-color-black g-bg-white rounded-circle" href="#">
+                                  <i class="icon-communication-095 u-line-icon-pro"></i>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- End Cube Portfolio Blocks - Item -->
+                
+                      <!-- Cube Portfolio Blocks - Item Perfumaria -->
+                      <div class="cbp-item loja_perfumaria">
+                        <div class="u-block-hover g-parent">
+                          <img class="img-fluid g-transform-scale-1_1--parent-hover g-transition-0_5 g-transition--ease-in-out" src="../assets/img-temp/400x270/img10.jpg" alt="Image description">
+                          <div class="d-flex w-100 h-100 u-block-hover__additional--fade u-block-hover__additional--fade-in g-bg-bluegray-opacity-0_5 opacity-0 g-opacity-1--parent-hover g-pos-abs g-top-0 g-left-0 g-transition-0_3 g-transition--ease-in g-pa-20">
+                            <div class="d-flex align-items-start flex-column mb-auto">
+                              <h3 class="h5 g-color-white g-font-weight-600 mb-1">Perfumes Lalande</h3>
+                              <span class="d-block g-color-white-opacity-0_8">Perfumaria</span>
+                            </div>
+                            <ul class="align-items-end flex-column list-inline mt-auto ml-auto mb-0">
+                              <li class="list-inline-item">
+                                <a class="u-icon-v2 u-icon-size--xs g-brd-white g-color-black g-bg-white rounded-circle" href="#">
+                                  <i class="icon-communication-095 u-line-icon-pro"></i>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- End Cube Portfolio Blocks - Item -->
+                
+                      <!-- Cube Portfolio Blocks - Item Óptica -->
+                      <div class="cbp-item loja_optica">
+                        <div class="u-block-hover g-parent">
+                          <img class="img-fluid g-transform-scale-1_1--parent-hover g-transition-0_5 g-transition--ease-in-out" src="../assets/img-parcelaja/clientes/lojas-aderentes/lg-lojas-exemplo.png" alt="Image description">
+                          <div class="d-flex w-100 h-100 u-block-hover__additional--fade u-block-hover__additional--fade-in g-bg-bluegray-opacity-0_5 opacity-0 g-opacity-1--parent-hover g-pos-abs g-top-0 g-left-0 g-transition-0_3 g-transition--ease-in g-pa-20">
+                            <div class="d-flex align-items-start flex-column mb-auto">
+                              <h3 class="h5 g-color-white g-font-weight-600 mb-1">Vision Lab</h3>
+                              <span class="d-block g-color-white-opacity-0_8">Óptica</span>
+                            </div>
+                            <ul class="align-items-end flex-column list-inline mt-auto ml-auto mb-0">
+                              <li class="list-inline-item">
+                                <a class="u-icon-v2 u-icon-size--xs g-brd-white g-color-black g-bg-white rounded-circle" href="#">
+                                  <i class="icon-communication-095 u-line-icon-pro"></i>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- End Cube Portfolio Blocks - Item Óptica -->
+                
+                      <!-- Cube Portfolio Blocks - Item Perfumaria -->
+                      <div class="cbp-item loja_perfumaria">
+                        <div class="u-block-hover g-parent">
+                          <img class="img-fluid g-transform-scale-1_1--parent-hover g-transition-0_5 g-transition--ease-in-out" src="../assets/img-temp/400x270/img16.jpg" alt="Image description">
+                          <div class="d-flex w-100 h-100 u-block-hover__additional--fade u-block-hover__additional--fade-in g-bg-bluegray-opacity-0_5 opacity-0 g-opacity-1--parent-hover g-pos-abs g-top-0 g-left-0 g-transition-0_3 g-transition--ease-in g-pa-20">
+                            <div class="d-flex align-items-start flex-column mb-auto">
+                              <h3 class="h5 g-color-white g-font-weight-600 mb-1">Drogaria Maia e Filhos, Lda.</h3>
+                              <span class="d-block g-color-white-opacity-0_8">Perfumaria</span>
+                            </div>
+                            <ul class="align-items-end flex-column list-inline mt-auto ml-auto mb-0">
+                              <li class="list-inline-item">
+                                <a class="u-icon-v2 u-icon-size--xs g-brd-white g-color-black g-bg-white rounded-circle" href="#">
+                                  <i class="icon-communication-095 u-line-icon-pro"></i>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- End Cube Portfolio Blocks - Item Perfumaria -->
+                
+                      <!-- Cube Portfolio Blocks - Item Informática -->
+                      <div class="cbp-item loja_informatica">
+                        <div class="u-block-hover g-parent">
+                          <img class="img-fluid g-transform-scale-1_1--parent-hover g-transition-0_5 g-transition--ease-in-out" src="../assets/img-temp/400x270/img13.jpg" alt="Image description">
+                          <div class="d-flex w-100 h-100 u-block-hover__additional--fade u-block-hover__additional--fade-in g-bg-bluegray-opacity-0_5 opacity-0 g-opacity-1--parent-hover g-pos-abs g-top-0 g-left-0 g-transition-0_3 g-transition--ease-in g-pa-20">
+                            <div class="d-flex align-items-start flex-column mb-auto">
+                              <h3 class="h5 g-color-white g-font-weight-600 mb-1">PC Clinic</h3>
+                              <span class="d-block g-color-white-opacity-0_8">Informática</span>
+                            </div>
+                            <ul class="align-items-end flex-column list-inline mt-auto ml-auto mb-0">
+                              <li class="list-inline-item">
+                                <a class="u-icon-v2 u-icon-size--xs g-brd-white g-color-black g-bg-white rounded-circle" href="#">
+                                  <i class="icon-communication-095 u-line-icon-pro"></i>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- End Cube Portfolio Blocks - Item Informática-->
+                
+                      <!-- Cube Portfolio Blocks - Item Reparação de Veículos -->
+                      <div class="cbp-item loja_reparacao_veiculos">
+                        <div class="u-block-hover g-parent">
+                          <img class="img-fluid g-transform-scale-1_1--parent-hover g-transition-0_5 g-transition--ease-in-out" src="../assets/img-temp/400x270/img14.jpg" alt="Image description">
+                          <div class="d-flex w-100 h-100 u-block-hover__additional--fade u-block-hover__additional--fade-in g-bg-bluegray-opacity-0_5 opacity-0 g-opacity-1--parent-hover g-pos-abs g-top-0 g-left-0 g-transition-0_3 g-transition--ease-in g-pa-20">
+                            <div class="d-flex align-items-start flex-column mb-auto">
+                              <h3 class="h5 g-color-white g-font-weight-600 mb-1">Midas</h3>
+                              <span class="d-block g-color-white-opacity-0_8">Reparação de Veículos</span>
+                            </div>
+                            <ul class="align-items-end flex-column list-inline mt-auto ml-auto mb-0">
+                              <li class="list-inline-item">
+                                <a class="u-icon-v2 u-icon-size--xs g-brd-white g-color-black g-bg-white rounded-circle" href="#">
+                                  <i class="icon-communication-095 u-line-icon-pro"></i>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- End Cube Portfolio Blocks - Item Reparação de Veículos -->#}
+            </div>
+        </div>
+        <!-- End Cube Portfolio Blocks - Content -->
+<!-- End Cube Portfolio Blocks - Content -->
+</section>
+        <!--@LM Footer Call to Action -->
+        {% include 'AppBundle:default:v2_footer_call_to_action.html.twig' %}
+
+        <!--@LM Footer -->
+        {% include 'AppBundle:default:v2_footer.html.twig' %}
+
+
+
+    {% endblock %}
+
+
+    {% block javascripts %}
+        <script src="{{ asset('bundles/app/frontend/v2/assets/vendor/jquery/jquery.min.js') }}"></script>
+
+
+
+
+        <!-- JS Global Compulsory -->
+        <script src="{{ asset('bundles/app/frontend/v2/assets/vendor/jquery-migrate/jquery-migrate.min.js') }}"></script>
+        <script src="{{ asset('bundles/app/frontend/v2/assets/vendor/jquery.easing/js/jquery.easing.js') }}"></script>
+        <script src="{{ asset('bundles/app/frontend/v2/assets/vendor/popper.min.js') }}"></script>
+        <script src="{{ asset('bundles/app/frontend/v2/assets/vendor/bootstrap/bootstrap.min.js') }}"></script>
+
+
+        <!-- JS Implementing Plugins -->
+        <script src="{{ asset('bundles/app/frontend/v2/assets/vendor/appear.js') }}"></script>
+        <script src="{{ asset('bundles/app/frontend/v2/assets/vendor/slick-carousel/slick/slick.js') }}"></script>
+        <script src="{{ asset('bundles/app/frontend/v2/assets/vendor/hs-megamenu/src/hs.megamenu.js') }}"></script>
+        <script src="{{ asset('bundles/app/frontend/v2/assets/vendor/dzsparallaxer/dzsparallaxer.js') }}"></script>
+        <script src="{{ asset('bundles/app/frontend/v2/assets/vendor/dzsparallaxer/dzsscroller/scroller.js') }}"></script>
+        <script src="{{ asset('bundles/app/frontend/v2/assets/vendor/dzsparallaxer/advancedscroller/plugin.js') }}"></script>
+        <script src="{{ asset('bundles/app/frontend/v2/assets/vendor/hs-bg-video/hs-bg-video.js') }}"></script>
+        <script src="{{ asset('bundles/app/frontend/v2/assets/vendor/hs-bg-video/vendor/player.min.js') }}"></script>
+        <script src="{{ asset('bundles/app/frontend/v2/assets/vendor/fancybox/jquery.fancybox.js') }}"></script>
+
+        <!-- para clientes -->
+        <script src="{{ asset('bundles/app/frontend/v2/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
+        <script src="{{ asset('bundles/app/frontend/v2/assets/vendor/cubeportfolio-full/cubeportfolio/js/jquery.cubeportfolio.min.js') }}"></script>
+        <script src="{{ asset('bundles/app/frontend/v2/assets/vendor/masonry/dist/masonry.pkgd.min.js') }}"></script>
+        <!-- fim para clientes -->
+
+        <!-- JS Unify -->
+        <script src="{{ asset('bundles/app/frontend/v2/assets/js/hs.core.js') }}"></script>
+        <script src="{{ asset('bundles/app/frontend/v2/assets/js/components/hs.header.js') }}"></script>
+        <script src="{{ asset('bundles/app/frontend/v2/assets/js/helpers/hs.hamburgers.js') }}"></script>
+        <script src="{{ asset('bundles/app/frontend/v2/assets/js/components/hs.dropdown.js') }}"></script>
+        <script src="{{ asset('bundles/app/frontend/v2/assets/js/components/hs.tabs.js') }}"></script>
+        <script src="{{ asset('bundles/app/frontend/v2/assets/js/helpers/hs.height-calc.js') }}"></script>
+        <script src="{{ asset('bundles/app/frontend/v2/assets/js/components/hs.onscroll-animation.js') }}"></script>
+        <script src="{{ asset('bundles/app/frontend/v2/assets/js/helpers/hs.bg-video.js') }}"></script>
+        <script src="{{ asset('bundles/app/frontend/v2/assets/js/components/hs.popup.js') }}"></script>
+        <script src="{{ asset('bundles/app/frontend/v2/assets/js/components/hs.carousel.js') }}"></script>
+        <script src="{{ asset('bundles/app/frontend/v2/assets/js/components/hs.go-to.js') }}"></script>
+
+        <!-- para clientes -->
+        <script src="{{ asset('bundles/app/frontend/v2/assets/js/components/hs.cubeportfolio.js') }}"></script>
+        <!-- fim para clientes -->
+
+
+
+        <!-- JS Custom -->
+        <script src="{{ asset('bundles/app/frontend/v2/assets/js/custom.js') }}"></script>
+
+
+
+
+
+
+        <!-- JS Plugins Init. -->
+        <script>
+            $(document).on('ready', function () {
+                // initialization of carousel
+                $.HSCore.components.HSCarousel.init('.js-carousel');
+
+                $('#we-provide').slick('setOption', 'responsive', [{
+                        breakpoint: 992,
+                        settings: {
+                            slidesToShow: 2
+                        }
+                    }, {
+                        breakpoint: 576,
+                        settings: {
+                            slidesToShow: 1
+                        }
+                    }], true);
+
+                // initialization of tabs
+                $.HSCore.components.HSTabs.init('[role="tablist"]');
+
+                // initialization of header's height equal offset
+                $.HSCore.helpers.HSHeightCalc.init();
+
+                // initialization of scroll animation
+                $.HSCore.components.HSOnScrollAnimation.init('[data-animation]');
+
+                // initialization of video on background
+                $.HSCore.helpers.HSBgVideo.init('.js-bg-video');
+
+                // initialization of popups with media
+                $.HSCore.components.HSPopup.init('.js-fancybox-media', {
+                    helpers: {
+                        media: {},
+                        overlay: {
+                            css: {
+                                'background': 'rgba(0, 0, 0, .8)'
+                            }
+                        }
+                    }
+                });
+
+                // initialization of masonry
+                $('.masonry-grid').imagesLoaded().then(function () {
+                    $('.masonry-grid').masonry({
+                        columnWidth: '.masonry-grid-sizer',
+                        itemSelector: '.masonry-grid-item',
+                        percentPosition: true
+                    });
+                });
+
+                // initialization of HSDropdown component
+                $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'));
+
+                // initialization of go to
+                $.HSCore.components.HSGoTo.init('.js-go-to');
+            });
+
+            $(window).on('load', function () {
+                // initialization of header
+                $.HSCore.components.HSHeader.init($('#js-header'));
+                $.HSCore.helpers.HSHamburgers.init('.hamburger');
+
+                // initialization of HSMegaMenu component
+                $('.js-mega-menu').HSMegaMenu({
+                    event: 'hover',
+                    pageContainer: $('.container'),
+                    breakpoint: 991
+                });
+
+                // initialization of cubeportfolio
+                $.HSCore.components.HSCubeportfolio.init('.cbp');
+            });
+
+            $(window).on('resize', function () {
+                setTimeout(function () {
+                    $.HSCore.components.HSTabs.init('[role="tablist"]');
+                }, 200);
+            });
+
+        </script>    
+    {% endblock %}

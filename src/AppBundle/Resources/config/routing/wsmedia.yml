@@ -1,0 +1,24 @@
+admin_media_index:
+    path:     /
+    defaults: { _controller: "AppBundle:WsMedia:index" }
+    methods:  GET
+
+admin_media_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:WsMedia:show" }
+    methods:  GET
+
+admin_media_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:WsMedia:new" }
+    methods:  [GET, POST]
+
+admin_media_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:WsMedia:edit" }
+    methods:  [GET, POST]
+
+admin_media_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:WsMedia:delete" }
+    methods:  DELETE

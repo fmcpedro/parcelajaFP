@@ -1,0 +1,273 @@
+{% extends 'AppBundle::v2_base.html.twig' %}
+
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
+
+
+{% block body %}
+
+    <!--@LM header -->
+    {% include 'AppBundle:default:v2_header.html.twig'   with {'selected_menu': 'homepage'} %}
+
+    <section class="container g-pt-70">
+        <div class="row justify-content-between">
+            <div class="col-md-7 g-mt-50 g-mb-100">
+                <h2 class="h2 h2--md h2--lg mb-0">Contacte-nos</h2>
+                <p class="mb-5">Escreva-nos a sua mensagem.</p>
+                
+                
+                {% for flashMessage in app.session.flashbag.get('notice') %}
+
+                                <div class="alert alert-success">
+                                    {{ flashMessage }}
+                                </div>
+
+                            {% endfor %}
+                
+                
+                
+                
+                <!-- Contact Form -->
+                {{ form_start(form) }} 
+                    <div class="row">
+                        <div class="col-md-6 form-group g-mb-20">
+                            <label class="g-font-size-14">Nome: <span class="g-color-red">*</span></label>
+                            {#<input name="name" class="" type="text" required>#}
+                        {{ form_widget(form.name, {'attr': {'class': 'form-control g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15'}}) }}
+                        
+                        </div>
+
+                        <div class="col-md-6 form-group g-mb-20">
+                            <label class="g-font-size-14">Email: <span class="g-color-red">*</span></label>
+                            {#<input name="email" class="" type="email" required>#}
+                       {{ form_widget(form.email, {'attr': {'class': 'form-control g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15'}}) }}
+                        
+                        </div>
+
+                        <div class="col-md-6 form-group g-mb-20">
+                            <label class="g-font-size-14">Assunto: <span class="g-color-red">*</span></label>
+                            {#<input name="subject" class="" type="text" required>#}
+                        {{ form_widget(form.subject, {'attr': {'class': 'form-control g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15'}}) }}
+                        </div>
+
+                        <div class="col-md-6 form-group g-mb-20">
+                            <label class="g-font-size-14">Telefone: <span class="g-color-red">*</span></label>
+                            {#<input name="phone" class="" type="tel" required>#}
+                        {{ form_widget(form.phone, {'attr': {'class': 'form-control g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15'}}) }}
+                        </div>
+
+                        <div class="col-md-12 form-group g-mb-40">
+                            <label class="g-font-size-14">Mensagem: <span class="g-color-red">*</span></label>
+                            {#<textarea name="message" class="" rows="7" required></textarea>#}
+                        {{ form_widget(form.message, {'attr': {'class': 'form-control g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus g-resize-none rounded-3 g-py-13 g-px-15'}}) }}
+                        </div>
+                        
+                        
+                        <div class="col-md-12 form-group g-mb-40">
+                    <label class="g-font-size-14">{{ form.vars.value.firstValue }} + {{ form.vars.value.secondValue }} = ? <span class="g-color-red">*</span></label>
+                    
+                    {{ form_widget(form.firstValue, {'attr': {'class': ''}}) }}
+                    {{ form_widget(form.secondValue, {'attr': {'class': ''}}) }}
+                    {{ form_widget(form.validation, {'attr': {'class': 'form-control g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus g-resize-none rounded-3 g-py-13 g-px-15'}}) }}
+                    
+                  </div>
+                        
+                        
+                    </div>
+
+                    <button class="btn u-btn-primary rounded-3 g-py-12 g-px-20" type="submit" role="button">Enviar</button>
+                {{ form_end(form) }}
+                <!-- End Contact Form -->
+            </div>
+
+            <div class="col-md-4 g-mt-50 g-mb-100">
+                <h2 class="h2 h2--md h2--lg mb-5">Parcela Já</h2>
+                <p class="mb-5"> </p>
+
+                <div class="mb-4">
+                    <h5 class="g-font-size-18">Morada:</h5>
+                    <p class="g-font-size-16">Avenida da República, 48-b, 6º
+                        <br>1050-195 Lisboa</p>
+                </div>
+
+                <div class="mb-4">
+                    <h5 class="g-font-size-18">Email:</h5>
+                    <p>
+                        <strong>Geral:</strong> <a class="g-color-primary--hover" href="mailto:geral@parcelaja.pt">geral@parcelaja.pt</a></br>
+                        <strong>Comercial:</strong> <a class="g-color-primary--hover" href="mailto:suporte@parcelaja.pt">suporte@parcelaja.pt</a></br>
+                        <strong>Clientes:</strong> <a class="g-color-primary--hover" href="mailto:suporte@parcelaja.pt">suporte@parcelaja.pt</a></br>
+                    </p>
+                </div>
+
+                <div class="mb-3">
+                    <h5 class="g-font-size-18">Telefone:</h5>
+                    <p>Geral: <a class="g-color-primary--hover" href="tel:+351215881280">+351 215 881 280</a>
+                    </p>
+                </div>
+
+                <div class="g-mb-30">
+                    <p class="g-font-size-14"><em>Segunda a Sexta: das 9:00 às 18:00</em>
+                    </p>
+                </div>
+
+       
+                
+                
+                <!-- Figure Social Icons -->
+                <ul class="list-inline">
+                    <li class="list-inline-item">
+                        <a class="u-icon-v1 g-bg-gray-light-v5 g-color-white--hover g-bg-primary--hover rounded-circle" href="https://www.facebook.com/parcelajapt/" target="_blank">
+                            <i class="g-font-size-default fa fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item g-mx-4">
+                        <a class="u-icon-v1 g-bg-gray-light-v5 g-color-white--hover g-bg-primary--hover rounded-circle" href="https://www.linkedin.com/company/parcela-j%C3%A1" target="_blank">
+                            <i class="g-font-size-default fa fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+                <!-- End Figure Social Icons -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Google Map -->
+    <div id="GMapCustomized-light" class="js-g-map embed-responsive embed-responsive-21by9 g-height-400" data-type="custom" data-lat="38.740223" data-lng="-9.146112" data-zoom="16" data-title="Agency" data-styles='[["", "", [{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]], ["", "labels", [{"visibility":"on"}]], ["water", "", [{"color":"#bac6cb"}]] ]'
+         data-pin="true" data-pin-icon="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/contactos/pin-map.png') }}">
+    </div>
+    <!-- End Google Map -->
+
+
+
+
+
+
+
+    <!--@LM Footer Call to Action -->
+    {% include 'AppBundle:default:v2_footer_call_to_action.html.twig' %}
+
+    <!--@LM Footer -->
+    {% include 'AppBundle:default:v2_footer.html.twig' %}
+
+
+
+{% endblock %}
+
+
+
+
+{% block javascripts %}
+
+    <script src="{{ asset('bundles/app/frontend/v2/assets/vendor/jquery/jquery.min.js') }}"></script>
+
+    <!-- JS Global Compulsory -->
+    <script src="{{ asset('bundles/app/frontend/v2/assets/vendor/jquery-migrate/jquery-migrate.min.js') }}"></script>
+    <script src="{{ asset('bundles/app/frontend/v2/assets/vendor/jquery.easing/js/jquery.easing.js') }}"></script>
+    <script src="{{ asset('bundles/app/frontend/v2/assets/vendor/popper.min.js') }}"></script>
+    <script src="{{ asset('bundles/app/frontend/v2/assets/vendor/bootstrap/bootstrap.min.js') }}"></script>
+
+    <!-- JS Implementing Plugins -->
+    <script src="{{ asset('bundles/app/frontend/v2/assets/vendor/appear.js') }}"></script>
+    <script src="{{ asset('bundles/app/frontend/v2/assets/vendor/slick-carousel/slick/slick.js') }}"></script>
+    <script src="{{ asset('bundles/app/frontend/v2/assets/vendor/hs-megamenu/src/hs.megamenu.js') }}"></script>
+    <script src="{{ asset('bundles/app/frontend/v2/assets/vendor/dzsparallaxer/dzsparallaxer.js') }}"></script>
+    <script src="{{ asset('bundles/app/frontend/v2/assets/vendor/dzsparallaxer/dzsscroller/scroller.js') }}"></script>
+    <script src="{{ asset('bundles/app/frontend/v2/assets/vendor/dzsparallaxer/advancedscroller/plugin.js') }}"></script>
+    <script src="{{ asset('bundles/app/frontend/v2/assets/vendor/hs-bg-video/hs-bg-video.js') }}"></script>
+    <script src="{{ asset('bundles/app/frontend/v2/assets/vendor/hs-bg-video/vendor/player.min.js') }}"></script>
+    <script src="{{ asset('bundles/app/frontend/v2/assets/vendor/fancybox/jquery.fancybox.js') }}"></script>
+    <script src="{{ asset('bundles/app/frontend/v2/assets/vendor/gmaps/gmaps.min.js') }}"></script>
+
+    <!-- JS Unify -->
+    <script src="{{ asset('bundles/app/frontend/v2/assets/js/hs.core.js') }}"></script>
+    <script src="{{ asset('bundles/app/frontend/v2/assets/js/components/hs.header.js') }}"></script>
+    <script src="{{ asset('bundles/app/frontend/v2/assets/js/helpers/hs.hamburgers.js') }}"></script>
+    <script src="{{ asset('bundles/app/frontend/v2/assets/js/components/hs.dropdown.js') }}"></script>
+    <script src="{{ asset('bundles/app/frontend/v2/assets/js/components/hs.tabs.js') }}"></script>
+    <script src="{{ asset('bundles/app/frontend/v2/assets/js/helpers/hs.height-calc.js') }}"></script>
+    <script src="{{ asset('bundles/app/frontend/v2/assets/js/components/hs.onscroll-animation.js') }}"></script>
+    <script src="{{ asset('bundles/app/frontend/v2/assets/js/helpers/hs.bg-video.js') }}"></script>
+    <script src="{{ asset('bundles/app/frontend/v2/assets/js/components/hs.popup.js') }}"></script>
+    <script src="{{ asset('bundles/app/frontend/v2/assets/js/components/hs.carousel.js') }}"></script>
+    <script src="{{ asset('bundles/app/frontend/v2/assets/js/components/gmap/hs.map.js') }}"></script>
+    <script src="{{ asset('bundles/app/frontend/v2/assets/js/components/hs.go-to.js') }}"></script>
+
+    <!-- JS Custom -->
+    <script src="{{ asset('bundles/app/frontend/v2/assets/js/custom.js') }}"></script>
+
+
+
+    <!-- JS Plugins Init. -->
+    <script>
+        // initialization of google map
+        function initMap() {
+            $.HSCore.components.HSGMap.init('.js-g-map');
+        }
+        $(document).on('ready', function () {
+            // initialization of carousel
+            $.HSCore.components.HSCarousel.init('.js-carousel');
+            $('#we-provide').slick('setOption', 'responsive', [{
+                    breakpoint: 992,
+                    settings: {
+                        slidesToShow: 2
+                    }
+                }, {
+                    breakpoint: 576,
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }], true);
+            // initialization of tabs
+            $.HSCore.components.HSTabs.init('[role="tablist"]');
+            // initialization of header's height equal offset
+            $.HSCore.helpers.HSHeightCalc.init();
+            // initialization of scroll animation
+            $.HSCore.components.HSOnScrollAnimation.init('[data-animation]');
+            // initialization of video on background
+            $.HSCore.helpers.HSBgVideo.init('.js-bg-video');
+            // initialization of popups with media
+            $.HSCore.components.HSPopup.init('.js-fancybox-media', {
+                helpers: {
+                    media: {},
+                    overlay: {
+                        css: {
+                            'background': 'rgba(0, 0, 0, .8)'
+                        }
+                    }
+                }
+            });
+            // initialization of HSDropdown component
+            $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'));
+            // initialization of go to
+            $.HSCore.components.HSGoTo.init('.js-go-to');
+        });
+        $(window).on('load', function () {
+            // initialization of header
+            $.HSCore.components.HSHeader.init($('#js-header'));
+            $.HSCore.helpers.HSHamburgers.init('.hamburger');
+            // initialization of HSMegaMenu component
+            $('.js-mega-menu').HSMegaMenu({
+                event: 'hover',
+                pageContainer: $('.container'),
+                breakpoint: 991
+            });
+        });
+        $(window).on('resize', function () {
+            setTimeout(function () {
+                $.HSCore.components.HSTabs.init('[role="tablist"]');
+            }, 200);
+        });
+    </script>
+
+    <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyAtt1z99GtrHZt_IcnK-wryNsQ30A112J0&callback=initMap" async defer></script>
+
+
+
+
+
+{% endblock %}
+
+

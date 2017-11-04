@@ -73,40 +73,31 @@ swiftmailer:
 #    spool: { type: memory }
 
 
+
 #monolog:
 #    handlers:
-#        # this "file_log" key could be anything
-#        file_log:
-#            type: stream
-#            # log to var/logs/(environment).log
-#            path: "%kernel.logs_dir%/%kernel.environment%.log"
-#            # log *all* messages (debug is lowest level)
-#            level: info
-
-monolog:
-    handlers:
-        main:
-            type:         fingers_crossed
-            action_level: critical
-            handler:      grouped
-        grouped:
-            type:    group
-            members: [streamed, deduplicated]
-        streamed:
-            type:  stream
-            path:  '%kernel.logs_dir%/%kernel.environment%.log'
-            level: error
-        deduplicated:
-            type:    deduplication
-            handler: swift
-        swift:
-            type:       swift_mailer
-            from_email: 'suporte@parcelaja.pt'
-            to_email:   ['lmiguens@consolidador.com']
-            subject:    'An Error Occurred! %%message%%'
-            level:      error
-            formatter:  monolog.formatter.html
-            content_type: text/html
+#        main:
+#            type:         fingers_crossed
+#            action_level: critical
+#            handler:      grouped
+#        grouped:
+#            type:    group
+#            members: [streamed, deduplicated]
+#        streamed:
+#            type:  stream
+#            path:  '%kernel.logs_dir%/%kernel.environment%.log'
+#            level: error
+#        deduplicated:
+#            type:    deduplication
+#            handler: swift
+#        swift:
+#            type:       swift_mailer
+#            from_email: 'suporte@parcelaja.pt'
+#            to_email:   ['lmiguens@consolidador.com']
+#            subject:    'An Error Occurred! %%message%%'
+#            level:      error
+#            formatter:  monolog.formatter.html
+#            content_type: text/html
 
 
 
@@ -117,3 +108,55 @@ fos_user:
     from_email:
         address: "%mailer_user%"
         sender_name: "%mailer_user%"
+        
+        
+#        
+#vich_uploader:
+#    # ...
+#    mappings:
+#        post_images:
+#            uri_prefix:         '%app.path.post_images%'
+#            upload_destination: '%kernel.root_dir%/../web/uploads/images/posts'
+
+vich_uploader:
+    db_driver: orm
+    twig:       true
+    mappings:
+        post_image:
+            uri_prefix:         /uploads/posts
+            upload_destination: %kernel.root_dir%/../web/uploads/posts
+            inject_on_load:     false
+            delete_on_update:   true
+            delete_on_remove:   true
+            namer:              vich_uploader.namer_uniqid
+        media_image:
+            uri_prefix:         /uploads/medias
+            upload_destination: %kernel.root_dir%/../web/uploads/medias
+            inject_on_load:     false
+            delete_on_update:   true
+            delete_on_remove:   true
+            namer:              vich_uploader.namer_uniqid    
+        aderente_image:
+            uri_prefix:         /uploads/aderentes
+            upload_destination: %kernel.root_dir%/../web/uploads/aderentes
+            inject_on_load:     false
+            delete_on_update:   true
+            delete_on_remove:   true
+            namer:              vich_uploader.namer_uniqid   
+            
+            
+            
+            
+#http://symfony.com/doc/master/bundles/LiipImagineBundle/filters.html
+liip_imagine:
+    resolvers:
+       default:
+          web_path: ~
+    filter_sets:
+        cache: ~
+        small_thumb:
+            quality: 100
+            filters:
+                thumbnail: { size: [100, 100], mode: outbound }
+                
+                

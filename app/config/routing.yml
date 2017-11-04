@@ -7,13 +7,79 @@ backend:
     prefix:   /
 
 
+
+
+
 homepage:
     path:      /{_locale}
     defaults:  { _controller: AppBundle:Default:index, _locale: pt }
     requirements:
         _locale:  en|pt
         
-        
+para_clientes:
+    path:      /{_locale}/para-clientes
+    defaults:  { _controller: AppBundle:Default:paraClientes, _locale: pt }
+    requirements:
+        _locale:  en|pt        
+
+como_funciona:
+    path:      /{_locale}/como-funciona
+    defaults:  { _controller: AppBundle:Default:comoFunciona, _locale: pt }
+    requirements:
+        _locale:  en|pt
+            
+blog:
+    path:      /{_locale}/blog
+    defaults:  { _controller: AppBundle:Default:blog, _locale: pt }
+    requirements:
+        _locale:  en|pt        
+                
+post:
+    path:      /{_locale}/post/{title}
+    defaults:  { _controller: AppBundle:Default:post, _locale: pt }
+    requirements:
+        _locale:  en|pt
+
+contactos:
+    path:      /{_locale}/contactos
+    defaults:  { _controller: AppBundle:Default:contactos, _locale: pt }
+    requirements:
+        _locale:  en|pt
+
+faqs:
+    path:      /{_locale}/faqs
+    defaults:  { _controller: AppBundle:Default:faqs, _locale: pt }
+    requirements:
+        _locale:  en|pt
+
+emprego:
+    path:      /{_locale}/emprego
+    defaults:  { _controller: AppBundle:Default:emprego, _locale: pt }
+    requirements:
+        _locale:  en|pt
+
+noticias:
+    path:      /{_locale}/noticias
+    defaults:  { _controller: AppBundle:Default:noticias, _locale: pt }
+    requirements:
+        _locale:  en|pt
+
+legal:
+    path:      /{_locale}/legal
+    defaults:  { _controller: AppBundle:Default:legal, _locale: pt }
+    requirements:
+        _locale:  en|pt
+
+pci:
+    path:      /{_locale}/pci
+    defaults:  { _controller: AppBundle:Default:pci, _locale: pt }
+    requirements:
+        _locale:  en|pt
+
+
+
+
+            
 email:
     path:      /{_locale}/email
     defaults:  { _controller: AppBundle:Default:email, _locale: pt }
@@ -23,3 +89,7 @@ email:
         
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+    
+    
+_liip_imagine:
+    resource: "@LiipImagineBundle/Resources/config/routing.xml"

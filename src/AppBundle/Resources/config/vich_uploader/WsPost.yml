@@ -1,0 +1,5 @@
+AppBundle\Entity\WsPost:
+    imageFile:
+        mapping:           post_image
+        filename_property: image
+

@@ -1,0 +1,278 @@
+{% extends 'AppBundle::v2_base.html.twig' %}
+
+
+{% block stylesheets %}
+ {{ parent() }}
+{% endblock %}
+
+
+
+{% block body %}
+    
+    
+    <!--@LM header -->
+    {% include 'AppBundle:default:v2_header.html.twig'  with {'selected_menu': 'como_funciona'} %}
+
+    
+    
+    
+
+<!-- Promo Block -->
+<section class="g-flex-centered g-bg-pos-center g-bg-img-hero g-py-150 u-bg-overlay g-bg-black-opacity-0_5--after parcelaja-hero" style="background-image: url({{ asset('bundles/app/frontend/v2/assets/img-parcelaja/como-funciona/hero/hero-como-funciona1920x1080-01.jpg') }});">
+  <div class="container text-center g-z-index-1">
+    <div class="g-py-50 g-mt-100" data-animation="fadeInUp" data-animation-delay="200" data-animation-duration="1500">
+      {% if app.request.locale == "en" %}
+                    <a class="js-fancybox-media u-link-v5 g-color-black" href="https://vimeo.com/241046229" title="Parcela Já - InStore Video">
+                        <span class="botao-play--sm botao-play--md botao-play--lg align-middle u-icon-v3 u-block-hover--scale g-bg-primary g-color-white g-color-white--hover g-rounded-50x g-cursor-pointer mr-2">
+                            <i class="g-font-size-20 g-font-size-28--md g-font-size-35--lg g-pos-rel g-left-2 fa fa-play"></i>
+                        </span>
+                    </a>
+                {% else %}
+                    <a class="js-fancybox-media u-link-v5 g-color-black" href="https://vimeo.com/241048391" title="Parcela Já - Loja Video">
+                        <span class="botao-play--sm botao-play--md botao-play--lg align-middle u-icon-v3 u-block-hover--scale g-bg-primary g-color-white g-color-white--hover g-rounded-50x g-cursor-pointer mr-2">
+                            <i class="g-font-size-20 g-font-size-28--md g-font-size-35--lg g-pos-rel g-left-2 fa fa-play"></i>
+                        </span>
+                    </a>
+                {% endif %}
+    </div>
+    <h1 class="g-color-white titulo-hero titulo-hero--sm titulo-hero--md titulo-hero--lg titulo-hero--xl text-uppercase g-mb-100" data-animation="fadeInUp" data-animation-delay="800" data-animation-duration="1500">
+      {% trans %}howitworks_block_01_title{% endtrans %}
+    </h1>
+</section>
+<!-- End Promo Block -->
+<!-- Como Funciona -->
+<section id="seccao1" class="g-bg-gray-light-v5">
+  <div class="container g-py-100">
+    <div class="row justify-content-center g-px-25 g-px-50--md">
+      <div class="col-lg-8">
+        <!-- Heading -->
+        <div class="text-center">
+          <h5 class="d-block g-color-primary g-font-size-18 titulo-largo text-uppercase mb-5">{% trans %}howitworks_block_02_title{% endtrans %}</h5>
+          <h2 class="h2 h2--md h2--lg mb-5">{% trans %}howitworks_block_02_subtitle{% endtrans %}</h2>
+          <p class="paragrafo-lead g-font-size-18 mb-5">{% trans %}howitworks_block_02_text01{% endtrans %}</p>
+          <p class="paragrafo-lead g-font-size-18 mb-0">{% trans %}howitworks_block_02_text02{% endtrans %}</p>
+        </div>
+        <!-- End Heading -->
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End - Como Funciona -->
+<!-- Passo 1 -->
+<section class="g-py-100">
+  <div class="container">
+    <div class="row g-px-25 g-px-50--md">
+
+      <div class="col-md-6 order-md-2 align-self-center text-center g-overflow-hidden">
+        <img class="img-fluid" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/como-funciona/3-passos/step1-whiteBG.png') }}" alt="Image Description" data-animation="fadeInUp" data-animation-delay="0" data-animation-duration="1000">
+      </div>
+
+      <div class="col-md-6 order-md-1 align-self-center g-mb-50--md g-mb-0--md">
+        <div class="u-heading-v2-3--bottom g-brd-primary g-mb-30">
+          <h2 class="u-heading-v2__title text-uppercase h2 h2--md h2--lg">{% trans %}howitworks_block_03_title01{% endtrans %}</h2>
+        </div>
+        <div class="g-font-size-18 g-mb-50">
+          <p>{% trans %}howitworks_block_03_subtitle01{% endtrans %}</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- End Passo 1 -->
+<!-- Passo 2 -->
+<section class="fundo-azul g-color-white g-py-100">
+  <div class="container">
+    <div class="row g-px-25 g-px-50--md">
+      <div class="col-md-6 align-self-center text-center g-overflow-hidden g-mb-50--md g-mb-0--md">
+        <img class="img-fluid" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/como-funciona/3-passos/step2-blueBG.png') }}" alt="Image Description" data-animation="fadeInUp" data-animation-delay="0" data-animation-duration="1000">
+      </div>
+
+      <div class="col-md-6 align-self-center">
+        <div class="u-heading-v2-3--bottom g-brd-white g-mb-30">
+          <h2 class="g-color-white u-heading-v2__title text-uppercase h2 h2--md h2--lg">{% trans %}howitworks_block_03_title02{% endtrans %}</h2>
+        </div>
+        <div class="g-font-size-18 g-mb-50">
+          <p>{% trans %}howitworks_block_03_subtitle02{% endtrans %}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Passo 2 -->
+<!-- Passo 3 -->
+<section class="g-py-100">
+  <div class="container">
+    <div class="row g-px-25 g-px-50--md">
+
+      <div class="col-md-6 order-md-2 align-self-center text-center g-overflow-hidden g-mb-50">
+        <img class="img-fluid" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/como-funciona/3-passos/step3-whiteBG.png') }}" alt="Image Description" data-animation="fadeInUp" data-animation-delay="0" data-animation-duration="1000">
+      </div>
+
+      <div class="col-md-6 order-md-1 align-self-center g-mb-50--md g-mb-50">
+        <div class="u-heading-v2-3--bottom g-brd-primary g-mb-30">
+          <h2 class="u-heading-v2__title text-uppercase h2 h2--md h2--lg">{% trans %}howitworks_block_03_title03{% endtrans %}</h2>
+        </div>
+        <div class="g-font-size-18 g-mb-30">
+          <p>{% trans %}howitworks_block_03_subtitle03{% endtrans %}</p>
+        </div>
+      </div>
+
+      <div class="offset-md-2 col-md-8 order-md-3 align-self-center text-center g-mt-50">
+        <div class="g-font-size-18">
+          <p><strong>{% trans %}howitworks_block_03_text01{% endtrans %}</strong></p>
+          <p>{% trans %}howitworks_block_03_text02{% endtrans %}</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- End Passo 3 -->
+<!-- Toda a gestão das compras sem letras pequenas -->
+<section class="g-bg-secondary g-py-100">
+  <div class="container">
+    <div class="text-center g-mb-50">
+      <h3 class="h3 h3--md h3--lg">{% trans %}howitworks_block_04_title{% endtrans %}</h3>
+    </div>
+
+    <!-- Icon Blocks -->
+    <div class="row g-px-25 g-px-50--md">
+
+      <div class="col-sm-6 col-lg-3 g-mb-30 g-mb-0--lg">
+        <!-- Icon Blocks -->
+        <div class="text-center">
+          <span class="u-icon-v2 u-icon-size--3xl g-brd-7 g-brd-gray-light-v4 g-color-primary g-rounded-50x g-mb-25">
+            <i class="icon-education-124 u-line-icon-pro"></i>
+          </span>
+          <p class="paragrafo-icones g-font-size-14 g-mb-0">{% trans %}howitworks_block_04_subtitle01{% endtrans %}</p>
+        </div>
+        <!-- End Icon Blocks -->
+      </div>
+
+      <div class="col-sm-6 col-lg-3 g-mb-30 g-mb-0--lg">
+        <!-- Icon Blocks -->
+        <div class="text-center">
+          <span class="u-icon-v2 u-icon-size--3xl g-brd-7 g-brd-gray-light-v4 g-color-primary g-rounded-50x g-mb-25">
+            <i class="icon-finance-227 u-line-icon-pro"></i>
+          </span>
+          <p class="paragrafo-icones g-font-size-14 g-mb-0">{% trans %}howitworks_block_04_subtitle02{% endtrans %}</p>
+        </div>
+        <!-- End Icon Blocks -->
+      </div>
+
+      <div class="col-sm-6 col-lg-3 g-mb-30 g-mb-0--lg">
+        <!-- Icon Blocks -->
+        <div class="text-center">
+          <span class="u-icon-v2 u-icon-size--3xl g-brd-7 g-brd-gray-light-v4 g-color-primary g-rounded-50x g-mb-25">
+            <i class="icon-finance-228 u-line-icon-pro"></i>
+          </span>
+          <p class="paragrafo-icones g-font-size-14 g-mb-0">{% trans %}howitworks_block_04_subtitle03{% endtrans %}</p>
+        </div>
+        <!-- End Icon Blocks -->
+      </div>
+
+      <div class="col-sm-6 col-lg-3 g-mb-0">
+        <!-- Icon Blocks -->
+        <div class="text-center">
+          <span class="u-icon-v2 u-icon-size--3xl g-brd-7 g-brd-gray-light-v4 g-color-primary g-rounded-50x g-mb-25">
+            <i class="icon-education-104 u-line-icon-pro"></i>
+          </span>
+          <p class="paragrafo-icones g-font-size-14 g-mb-0">{% trans %}howitworks_block_04_subtitle04{% endtrans %}</p>
+        </div>
+        <!-- End Icon Blocks -->
+      </div>
+
+    </div>
+    <!-- End Icon Blocks -->
+
+  </div>
+</section>
+<!-- End - Toda a gestão das compras sem letras pequenas -->
+
+            <!--@LM Footer Call to Action -->
+            {% include 'AppBundle:default:v2_footer_call_to_action.html.twig' %}
+
+            <!--@LM Footer -->
+            {% include 'AppBundle:default:v2_footer.html.twig' %}
+
+
+
+{% endblock %}
+
+
+{% block javascripts %}
+    
+     {{ parent() }}
+
+
+<!-- JS Plugins Init. -->
+    <script>
+      $(document).on('ready', function () {
+          // initialization of carousel
+          $.HSCore.components.HSCarousel.init('.js-carousel');
+
+          $('#we-provide').slick('setOption', 'responsive', [{
+            breakpoint: 992,
+            settings: {
+              slidesToShow: 2
+            }
+          }, {
+            breakpoint: 576,
+            settings: {
+              slidesToShow: 1
+            }
+          }], true);
+
+          // initialization of tabs
+          $.HSCore.components.HSTabs.init('[role="tablist"]');
+
+          // initialization of header's height equal offset
+          $.HSCore.helpers.HSHeightCalc.init();
+
+          // initialization of scroll animation
+          $.HSCore.components.HSOnScrollAnimation.init('[data-animation]');
+
+          // initialization of video on background
+          $.HSCore.helpers.HSBgVideo.init('.js-bg-video');
+
+          // initialization of popups with media
+          $.HSCore.components.HSPopup.init('.js-fancybox-media', {
+            helpers: {
+              media: {},
+              overlay: {
+                css: {
+                  'background': 'rgba(0, 0, 0, .8)'
+                }
+              }
+            }
+          });
+
+          // initialization of HSDropdown component
+          $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'));
+
+          // initialization of go to
+          $.HSCore.components.HSGoTo.init('.js-go-to');
+        });
+
+        $(window).on('load', function () {
+          // initialization of header
+          $.HSCore.components.HSHeader.init($('#js-header'));
+          $.HSCore.helpers.HSHamburgers.init('.hamburger');
+
+          // initialization of HSMegaMenu component
+          $('.js-mega-menu').HSMegaMenu({
+            event: 'hover',
+            pageContainer: $('.container'),
+            breakpoint: 991
+          });
+        });
+
+        $(window).on('resize', function () {
+          setTimeout(function () {
+            $.HSCore.components.HSTabs.init('[role="tablist"]');
+          }, 200);
+        });
+    </script>
+    
+    {% endblock %}

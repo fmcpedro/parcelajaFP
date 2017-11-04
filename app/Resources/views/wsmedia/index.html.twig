@@ -1,0 +1,94 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}
+
+
+
+{% block body %}
+
+    <!-- START PAGE CONTENT -->
+    <div class="content">
+        <!-- START JUMBOTRON -->
+        <div class="jumbotron" data-pages="parallax">
+            <div class="container-fluid container-fixed-lg sm-p-l-20 sm-p-r-20">
+                <div class="inner">
+                    <!-- START BREADCRUMB -->
+                    <ul class="breadcrumb">
+                        <li><a href="#" class="">Parcela Ja</a></li>
+                        <li><a href="#" class="active">Noticias no Website</a></li>
+                    </ul>
+                    <!-- END BREADCRUMB -->
+                </div>
+            </div>
+        </div>
+        <!-- END JUMBOTRON -->
+
+
+        <!-- START CONTAINER FLUID -->
+        <div class="container-fluid container-fixed-lg bg-white">
+            <!-- START PANEL -->
+            <div class="panel panel-transparent">
+                <div class="panel-heading">
+                    <div class="panel-title">Lista de Noticias 
+                    </div>
+                    <div class="export-options-container pull-right"></div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="panel-body">
+                    <table class="table display">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Message</th>
+                <th>Image</th>
+                <th>Link</th>
+                <th>Createdat</th>
+                <th>Updatedat</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for wsMedia in wsMedia %}
+            <tr>
+                <td><a href="{{ path('admin_media_show', { 'id': wsMedia.id }) }}">{{ wsMedia.title }}</a></td>
+                <td>{{ wsMedia.message }}</td>
+                <td>{{ wsMedia.image }}</td>
+                <td>{{ wsMedia.link }}</td>
+                <td>{% if wsMedia.createdAt %}{{ wsMedia.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if wsMedia.updatedAt %}{{ wsMedia.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ wsMedia.id }}</td>
+                <td>
+                    <ul>
+{#                        <li>
+                            <a href="{{ path('admin_media_show', { 'id': wsMedia.id }) }}">show</a>
+                        </li>#}
+                        <li>
+                            <a href="{{ path('admin_media_edit', { 'id': wsMedia.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+                    <a href="{{ path('admin_media_new') }}" class="btn btn-success btn-cons m-b-10" type="submit">
+                        <i class="pg-plus"></i> <span class="bold">New</span>
+                    </a>
+
+                </div>
+            </div>
+            <!-- END PANEL -->
+        </div>
+        <!-- END CONTAINER FLUID -->
+
+
+    </div>
+    <!-- END PAGE CONTENT -->
+
+{% endblock %}

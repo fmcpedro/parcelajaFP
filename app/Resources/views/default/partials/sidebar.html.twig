@@ -77,6 +77,36 @@
                     </ul>
                 </li>
             {% endif %}
+            
+            
+            
+            
+            
+            {% if is_granted('ROLE_ADMIN') %} 
+
+                <li class="">
+                    <a href="javascript:;">
+                        <span class="title">Website</span>
+                        <span class=" arrow"></span>
+                    </a>
+                    <span class="icon-thumbnail"><i class="pg-phone"></i></span>
+                    <ul class="sub-menu">
+                        <li class="">
+                            <a href="{{ path('admin_post_index') }}">Posts</a>
+                            <span class="icon-thumbnail">TI</span>
+                        </li>
+                        <li class="">
+                            <a href="{{ path('admin_media_index') }}">Noticias</a>
+                            <span class="icon-thumbnail">TP</span>
+                        </li>
+
+                    </ul>
+                </li>
+            {% endif %}
+            
+            
+            
+            
         </ul>
         <div class="clearfix"></div>
     </div>

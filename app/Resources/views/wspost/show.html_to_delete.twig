@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Wspost</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Title</th>
+                <td>{{ wsPost.title }}</td>
+            </tr>
+            <tr>
+                <th>Message</th>
+                <td>{{ wsPost.message }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ wsPost.image }}</td>
+            </tr>
+            <tr>
+                <th>Publishedat</th>
+                <td>{% if wsPost.publishedAt %}{{ wsPost.publishedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Id</th>
+                <td>{{ wsPost.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_website_post_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('admin_website_post_edit', { 'id': wsPost.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

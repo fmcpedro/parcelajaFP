@@ -1,0 +1,349 @@
+{% extends 'AppBundle::v2_base.html.twig' %}
+
+
+{% block stylesheets %}
+ {{ parent() }}
+{% endblock %}
+
+
+
+{% block body %}
+    
+    
+    <!--@LM header -->
+    {% include 'AppBundle:default:v2_header.html.twig'  with {'selected_menu': 'blog'} %}
+
+
+    
+    
+    
+    
+<!-- Promo Block -->
+<section class="dzsparallaxer auto-init height-is-based-on-content use-loading mode-scroll loaded dzsprx-readyall " data-options='{direction: "fromtop", animation_duration: 25, direction: "reverse"}'>
+  <!-- Parallax Image -->
+  <div class="divimage dzsparallaxer--target w-100 u-bg-overlay g-bg-black-opacity-0_4--after" style="height: 140%; background-image: url({{ asset('bundles/app/frontend/v2/assets/img-parcelaja/blog/Blog.jpg') }});">
+  </div>
+  <!-- End Parallax Image -->
+
+  <!-- Promo Block Content -->
+  <div class="container g-py-150">
+  </div>
+  <!-- Promo Block Content -->
+</section>
+<!-- End Promo Block -->
+
+<!-- Heading -->
+<div class="container g-pt-100 g-px-25 g-px-50--md">
+  <div class="u-heading-v3-1 g-mb-50">
+    <h2 class="u-heading-v3__title h2 h2--md h2--lg g-brd-primary">Blog</h2>
+  </div>
+</div>
+<!-- End Heading -->
+
+<!-- News Content -->
+<div class="container g-pb-100 g-px-25 g-px-50--md">
+  <div class="row">
+    <!-- Articles Content -->
+    <div class="col-lg-9 g-mb-50 g-mb-0--lg">
+      
+        
+         {% for post in posts %}
+        
+        <!-- Article -->
+      <article class="text-center g-mb-100">
+        <figure class="g-pos-rel mb-5">
+          {#<img class="img-fluid" src="{{ asset('bundles/app/frontend/v2/assets/img-temp/900x400/img3.jpg') }}" alt="Image Description">#}
+          <img class="img-fluid" src="{{ vich_uploader_asset(post, 'imageFile') }}" alt="{{ post.title }}" /> 
+        </figure>
+
+        <!-- Category & Date -->
+        <ul class="list-inline g-font-weight-600 g-font-size-12 text-uppercase mb-3">
+          <li class="list-inline-item g-ml-10">
+            <i class="align-middle mr-1 icon-education-124 u-line-icon-pro"></i>
+            {{post.publishedAt|date("F j, Y, g:i a")}}  
+          </li>
+        </ul>
+        <!-- End Category & Date -->
+
+        
+        
+{#        
+<div class="col-md-4 col-sm-6 blog wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+    <span>{{post.createdAt|date("d")}}<br>{{post.createdAt|date("F")|slice(0, 3) }}</span>
+        {% if (post.image|length) %}
+        <a href="{{ url_to_post(post) }}"><img class="post-img" src="{{ post.getWebPath | imagine_filter('sk_downscale_max_600_600') }}" /> </a>
+        {% else %}
+            {{ post.video|replace({' height="315"':'', 'width="560"':'width="350"'})|raw }}
+        {% endif %}
+    <h3>{{post.title}}</h3>
+    <h4>{{post.author}} . {{post.createdAt|date("d/m/Y")}}</h4>
+    <p>{{post.text|slice(0, 260)|raw}}</p>
+    <a href="{{ url_to_post(post) }}" class="read-more"><b>Read more <i class="fa fa-angle-right"></i></b></a>
+</div>
+#}
+        
+        <!-- Info -->
+        <div class="g-px-50 g-px-100--md mb-4">
+          <h3 class="mb-4"><a class="u-link-v5 h3 h3--md h3--lg g-color-primary--hover" href="{{ url_to_post(post) }}">{{post.title}}</a></h3>
+          <p class="g-font-size-17">{{post.message|slice(0, 198)}}...</p>
+        </div>
+        <!-- End Info -->
+
+        <div class="g-mb-25">
+          <a class="g-font-weight-600 g-font-size-13 text-uppercase" href="{{ url_to_post(post) }}">Ler mais</a>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="g-overflow-hidden">
+          <ul class="list-inline u-info-v10-1 mb-0">
+            <li class="list-inline-item g-mx-2">
+              <a class="u-icon-v3 u-icon-size--xs g-color-primary g-color-white--hover g-bg-secondary g-bg-primary--hover rounded-circle" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://parcelaja.pt{{ url_to_post(post) }}">
+                <i class="fa fa-facebook"></i>
+              </a>
+            </li>
+            <li class="list-inline-item g-mx-2">
+              <a class="u-icon-v3 u-icon-size--xs g-color-primary g-color-white--hover g-bg-secondary g-bg-primary--hover rounded-circle" target="_blank" href="https://www.linkedin.com/cws/share?url=http://parcelaja.pt{{ url_to_post(post) }}">
+                <i class="fa fa-linkedin"></i>
+              </a>
+            </li>
+{#            <li class="list-inline-item g-mx-2">
+              <a class="u-icon-v3 u-icon-size--xs g-color-primary g-color-white--hover g-bg-secondary g-bg-primary--hover rounded-circle" href="#">
+                <i class="fa fa-google-plus"></i>
+              </a>
+            </li>#}
+          </ul>
+        </div>
+        <!-- End Social Icons -->
+      </article>
+      <!-- End Article -->
+{% endfor %}
+
+
+      <div id="stickyblock-end"></div>
+
+      
+      <!-- Pagination -->
+{#      <nav class="g-pb-0" aria-label="Page Navigation">
+        <ul class="list-inline text-center mb-0">
+          <li class="list-inline-item">
+            <a class="active u-pagination-v1__item g-width-30 g-height-30 g-brd-secondary-light-v2 g-brd-primary--active g-color-white g-bg-primary--active g-font-size-12 rounded g-pa-5" href="#">1</a>
+          </li>
+          <li class="list-inline-item">
+            <a class="u-pagination-v1__item g-width-30 g-height-30 g-brd-transparent g-brd-primary--hover g-brd-primary--active g-bg-primary--active g-font-size-12 rounded g-pa-5" href="#">2</a>
+          </li>
+          <li class="list-inline-item g-hidden-xs-down">
+            <a class="u-pagination-v1__item g-width-30 g-height-30 g-brd-transparent g-brd-primary--hover g-brd-primary--active g-bg-primary--active g-font-size-12 rounded g-pa-5" href="#">3</a>
+          </li>
+          <li class="list-inline-item">
+            <span class="g-width-30 g-height-30 g-color-gray-dark-v5 g-font-size-12 rounded g-pa-5">...</span>
+          </li>
+          <li class="list-inline-item g-hidden-xs-down">
+            <a class="u-pagination-v1__item g-width-30 g-height-30 g-brd-transparent g-brd-primary--hover g-brd-primary--active g-bg-primary--active g-font-size-12 rounded g-pa-5" href="#">15</a>
+          </li>
+          <li class="list-inline-item">
+            <a class="u-pagination-v1__item g-brd-secondary-light-v2 g-brd-primary--hover g-color-gray-dark-v5 g-color-primary--hover g-font-size-12 rounded g-px-15 g-py-5 g-ml-15" href="#" aria-label="Next">
+              <span aria-hidden="true">
+                Seguinte
+                <i class="ml-2 fa fa-angle-right"></i>
+              </span>
+              <span class="sr-only">Seguinte</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+#}      <!-- End Pagination -->
+      
+      
+      
+      
+      
+    </div>
+
+    <!-- Sidebar -->
+    <div class="col-lg-3">
+      <!-- Useful Links -->
+      {#
+      <div class="g-mb-50">
+        <div class="u-heading-v3-1 g-mb-30">
+          <h2 class="h5 u-heading-v3__title text-uppercase g-brd-primary">Arquivo</h2>
+        </div>
+
+        <ul class="list-unstyled">
+          <li class="g-brd-bottom g-brd-gray-light-v4 g-pb-10 g-mb-12">
+            <h4 class="h6">
+              <i class="fa fa-angle-right g-color-gray-dark-v5 g-mr-5"></i>
+              <a class="u-link-v5 g-color-primary--hover" href="#">Outubro</a>
+            </h4>
+          </li>
+          <li class="g-brd-bottom g-brd-gray-light-v4 g-pb-10 g-mb-12">
+            <h4 class="h6">
+              <i class="fa fa-angle-right g-color-gray-dark-v5 g-mr-5"></i>
+              <a class="u-link-v5 g-color-primary--hover" href="#">Setembro</a>
+            </h4>
+          </li>
+          <li class="g-brd-bottom g-brd-gray-light-v4 g-pb-10 g-mb-12">
+            <h4 class="h6">
+              <i class="fa fa-angle-right g-color-gray-dark-v5 g-mr-5"></i>
+              <a class="u-link-v5 g-color-primary--hover" href="#">Agosto</a>
+            </h4>
+          </li>
+          <li class="g-brd-bottom g-brd-gray-light-v4 g-pb-10 g-mb-12">
+            <h4 class="h6">
+              <i class="fa fa-angle-right g-color-gray-dark-v5 g-mr-5"></i>
+              <a class="u-link-v5 g-color-primary--hover" href="#">Julho</a>
+            </h4>
+          </li>
+          <li class="g-brd-bottom g-brd-gray-light-v4 g-pb-10 g-mb-12">
+            <h4 class="h6">
+              <i class="fa fa-angle-right g-color-gray-dark-v5 g-mr-5"></i>
+              <a class="u-link-v5 g-color-primary--hover" href="#">Junho</a>
+            </h4>
+          </li>
+          <li class="mb-0">
+            <h4 class="h6">
+              <i class="fa fa-angle-right g-color-gray-dark-v5 g-mr-5"></i>
+              <a class="u-link-v5 g-color-primary--hover" href="#">Maio</a>
+            </h4>
+          </li>
+        </ul>
+      </div>
+      #}
+      <!-- End Useful Links -->
+
+      <!-- Recent Posts -->
+      <div class="g-mb-30">
+        <div class="u-heading-v3-1 g-mb-30">
+          <h2 class="h5 u-heading-v3__title text-uppercase g-brd-primary">Artigos recentes</h2>
+        </div>
+
+          
+          
+          {% for post in posts %}
+        <!-- Article -->
+        <article class="media g-mb-30">
+          <a class="d-flex mr-3" href="#">
+            {#<img class="g-width-60 g-height-60" src="../assets/img-temp/100x100/img4.jpg" alt="Image Description">#}
+            
+            
+            <img class="g-width-60 g-height-60" src="{{ post.getWebPath }}" alt="Image Description">
+            
+            
+          </a>
+
+          <div class="media-body">
+            <h3 class="h6">
+              <a class="u-link-v5 g-color-primary--hover" href="{{ url_to_post(post) }}">{{post.title|slice(0, 47)}}.....</a>
+            </h3>
+
+            <ul class="u-list-inline g-font-size-12">
+              <li class="list-inline-item">
+               {{post.publishedAt|date("F j, Y")}} 
+              </li>
+            </ul>
+          </div>
+        </article>
+        <!-- End Article -->
+        
+          {% endfor %}
+
+
+      </div>
+      <!-- End Recent Posts -->
+    </div>
+    <!-- End Sidebar -->
+  </div>
+</div>
+<!-- End News Content -->
+
+    
+    
+    
+    
+    
+
+            <!--@LM Footer Call to Action -->
+            {% include 'AppBundle:default:v2_footer_call_to_action.html.twig' %}
+
+            <!--@LM Footer -->
+            {% include 'AppBundle:default:v2_footer.html.twig' %}
+
+
+
+{% endblock %}
+
+
+{% block javascripts %}
+    <script src="{{ asset('bundles/app/frontend/v2/assets/vendor/jquery/jquery.min.js') }}"></script>
+     {{ parent() }}
+
+
+<!-- JS Plugins Init. -->
+    <script>
+      $(document).on('ready', function () {
+          // initialization of carousel
+          $.HSCore.components.HSCarousel.init('.js-carousel');
+
+          $('#we-provide').slick('setOption', 'responsive', [{
+            breakpoint: 992,
+            settings: {
+              slidesToShow: 2
+            }
+          }, {
+            breakpoint: 576,
+            settings: {
+              slidesToShow: 1
+            }
+          }], true);
+
+          // initialization of tabs
+          $.HSCore.components.HSTabs.init('[role="tablist"]');
+
+          // initialization of header's height equal offset
+          $.HSCore.helpers.HSHeightCalc.init();
+
+          // initialization of scroll animation
+          $.HSCore.components.HSOnScrollAnimation.init('[data-animation]');
+
+          // initialization of video on background
+          $.HSCore.helpers.HSBgVideo.init('.js-bg-video');
+
+          // initialization of popups with media
+          $.HSCore.components.HSPopup.init('.js-fancybox-media', {
+            helpers: {
+              media: {},
+              overlay: {
+                css: {
+                  'background': 'rgba(0, 0, 0, .8)'
+                }
+              }
+            }
+          });
+
+          // initialization of HSDropdown component
+          $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'));
+
+          // initialization of go to
+          $.HSCore.components.HSGoTo.init('.js-go-to');
+        });
+
+        $(window).on('load', function () {
+          // initialization of header
+          $.HSCore.components.HSHeader.init($('#js-header'));
+          $.HSCore.helpers.HSHamburgers.init('.hamburger');
+
+          // initialization of HSMegaMenu component
+          $('.js-mega-menu').HSMegaMenu({
+            event: 'hover',
+            pageContainer: $('.container'),
+            breakpoint: 991
+          });
+        });
+
+        $(window).on('resize', function () {
+          setTimeout(function () {
+            $.HSCore.components.HSTabs.init('[role="tablist"]');
+          }, 200);
+        });
+    </script>
+
+    {% endblock %}
