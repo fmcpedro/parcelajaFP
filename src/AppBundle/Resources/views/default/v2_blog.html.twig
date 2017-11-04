@@ -85,7 +85,7 @@
         <!-- Info -->
         <div class="g-px-50 g-px-100--md mb-4">
           <h3 class="mb-4"><a class="u-link-v5 h3 h3--md h3--lg g-color-primary--hover" href="{{ url_to_post(post) }}">{{post.title}}</a></h3>
-          <p class="g-font-size-17">{{post.message|slice(0, 198)}}...</p>
+          <p class="g-font-size-17">{{post.message|slice(0, 198)|raw}}...</p>
         </div>
         <!-- End Info -->
 
