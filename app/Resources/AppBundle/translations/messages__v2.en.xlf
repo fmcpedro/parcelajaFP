@@ -7,7 +7,7 @@
     <body>
       <trans-unit id="homepage_block_01_title" resname="homepage_block_01_title">
         <source>homepage_block_01_title</source>
-        <target>OFFER YOUR CUSTOMER CREDIT CARD INSTALMENTS. FROM 2x UP TO 12x. USE YOUR POS TERMINAL</target>
+        <target>PROPOSE YOUR CLIENTS PAYMENT SPLITS UNTIL 12X WITH IMMEDIATE APPROVAL AND WITHOUT INTERESTS</target>
       </trans-unit>
       <trans-unit id="homepage_block_02_title" resname="homepage_block_02_title">
         <source>homepage_block_02_title</source>
@@ -19,23 +19,23 @@
       </trans-unit>
       <trans-unit id="homepage_block_02_subtitle_02" resname="homepage_block_02_subtitle_02">
         <source>homepage_block_02_subtitle_02</source>
-        <target>ERADICATE THE BUREAUCRATIC PROCESS FROM YOUR SALES</target>
+        <target>ERADICATE THE BUREAUCRATIC PROCESS OF YOUR STORE</target>
       </trans-unit>
       <trans-unit id="homepage_block_02_subtitle_03" resname="homepage_block_02_subtitle_03">
         <source>homepage_block_02_subtitle_03</source>
-        <target>LET YOUR CLIENTS PAY IN AS MANY INSTALMENTS AS THEY WANT</target>
+        <target>LET YOUR CLIENTS PAY IN AS MANY TIMES AS THEY WANT</target>
       </trans-unit>
       <trans-unit id="homepage_block_02_text_01" resname="homepage_block_02_text_01">
         <source>homepage_block_02_text_01</source>
-        <target>When offering an instalment monthly plan, your customer will increase his financial availability, does increasing your upscaling sales opportunities. Help your customers and offer what they want and reduce the financial commitments by using Parcela Já.</target>
+        <target>When you proceed with an installment monthly plan for your client, it will increase your sales. Assist your clients to get what they really want to and reduce their financial commitments by using our service.</target>
       </trans-unit>
       <trans-unit id="homepage_block_02_text_02" resname="homepage_block_02_text_02">
         <source>homepage_block_02_text_02</source>
-        <target>You truly don't need to ask for sensitive documentation from your customer or wait for any financial approval. With <![CDATA[<b>]]>Parcela Já<![CDATA[</b>]]>, the approval is immediate and without bureaucratic paperwork.</target>
+        <target>Unlike other solutions on the market, you truly don't need to request for sensitive documentation from your client or wait for any financial approval. With <![CDATA[<b>]]>Parcela Já<![CDATA[</b>]]>, the approval is immediate and without bureaucratic paperwork. </target>
       </trans-unit>
       <trans-unit id="homepage_block_02_text_03" resname="homepage_block_02_text_03">
         <source>homepage_block_02_text_03</source>
-        <target>With <![CDATA[<b>]]>Parcela Já<![CDATA[</b>]]>, your clients can pay for their purchases up to 12 interest free instalments, allowing them to adjust their payments in soft settlements, preserving their financial capacity.</target>
+        <target>With <![CDATA[<b>]]>Parcela Já<![CDATA[</b>]]>, your clients can pay for their purchases up to 12 interest free installments, allowing them to adjust their payments in soft settlements, preserving their financial capacity.</target>
       </trans-unit>
       <trans-unit id="homepage_block_03_title" resname="homepage_block_03_title">
         <source>homepage_block_03_title</source>
@@ -91,7 +91,7 @@
       </trans-unit>
       <trans-unit id="howitworks_block_01_title" resname="howitworks_block_01_title">
         <source>howitworks_block_01_title</source>
-        <target>PAY YOUR PURCHASES FROM 2x TO 12x WITHOUT INTERESTS OR ANY FEES</target>
+        <target>PAY EVERYTHING FROM 2X TO 12X WITHOUT INTERESTS OR ANY FEES</target>
       </trans-unit>
       <trans-unit id="howitworks_block_02_title" resname="howitworks_block_02_title">
         <source>howitworks_block_02_title</source>
@@ -99,15 +99,16 @@
       </trans-unit>
       <trans-unit id="howitworks_block_02_subtitle" resname="howitworks_block_02_subtitle">
         <source>howitworks_block_02_subtitle</source>
-        <target>No records, no paperwork and no credit approval delays</target>
+        <target>No records, no paperwork and no credit approval</target>
       </trans-unit>
       <trans-unit id="howitworks_block_02_text01" resname="howitworks_block_02_text01">
         <source>howitworks_block_02_text01</source>
-        <target>With Parcela Já, the stores can now offer the customers an instalment payment system. The solution uses customer credit cards and offers an outstanding opportunity to generate new purchases. The customer can decide to pay up to 12 interest free instalments, without any bureaucratic paperwork or credit approval.</target>
+        <target>With Parcela Já, you can have on your own store an installment payment system that offers an outstanding opportunity to your customers to make their purchases up to 12 interest free installments, without any bureaucratic paperwork or credit approval.
+</target>
       </trans-unit>
       <trans-unit id="howitworks_block_02_text02" resname="howitworks_block_02_text02">
         <source>howitworks_block_02_text02</source>
-        <target>For this, the stores must have a <![CDATA[<b>]]>Parcela Já<![CDATA[</b>]]> POS terminal or the online app on their website. Once the customer use their Visa or Mastercard credit card, he can choose in how many instalments he want to pay for his purchase.</target>
+        <target>For this, you must have a <![CDATA[<b>]]>Parcela Já<![CDATA[</b>]]> terminal in your store or the online app on your website and when your clients use their Visa or Mastercard credit card, they can choose in how many times they want to pay for their purchases.</target>
       </trans-unit>
       <trans-unit id="howitworks_block_03_title01" resname="howitworks_block_03_title01">
         <source>howitworks_block_03_title01</source>
@@ -115,7 +116,7 @@
       </trans-unit>
       <trans-unit id="howitworks_block_03_subtitle01" resname="howitworks_block_03_subtitle01">
         <source>howitworks_block_03_subtitle01</source>
-        <target>At the checkout time, the customer selects the number of interest free instalments</target>
+        <target>At the checkout time, the client selects the number of interest free installments</target>
       </trans-unit>
       <trans-unit id="howitworks_block_03_title02" resname="howitworks_block_03_title02">
         <source>howitworks_block_03_title02</source>
@@ -123,7 +124,7 @@
       </trans-unit>
       <trans-unit id="howitworks_block_03_subtitle02" resname="howitworks_block_03_subtitle02">
         <source>howitworks_block_03_subtitle02</source>
-        <target>The customer inserts his ID card in the terminal</target>
+        <target>The client inserts his citizen's card in the terminal</target>
       </trans-unit>
       <trans-unit id="howitworks_block_03_title03" resname="howitworks_block_03_title03">
         <source>howitworks_block_03_title03</source>
@@ -131,15 +132,15 @@
       </trans-unit>
       <trans-unit id="howitworks_block_03_subtitle03" resname="howitworks_block_03_subtitle03">
         <source>howitworks_block_03_subtitle03</source>
-        <target>The customer swipes his credit card, types in its CVV and signs the receipt</target>
+        <target>The client inserts his credit card and signs the receipt</target>
       </trans-unit>
       <trans-unit id="howitworks_block_03_text01" resname="howitworks_block_03_text01">
         <source>howitworks_block_03_text01</source>
-        <target>Finished!</target>
+        <target>Completed!</target>
       </trans-unit>
       <trans-unit id="howitworks_block_03_text02" resname="howitworks_block_03_text02">
         <source>howitworks_block_03_text02</source>
-        <target>In 3 simple steps the customers can pay for their purchase in several instalments without any cost or paperwork</target>
+        <target>In 3 simple steps your clients can pay for their purchase in several installments without any cost or paperwork</target>
       </trans-unit>
       <trans-unit id="howitworks_block_04_title" resname="howitworks_block_04_title">
         <source>howitworks_block_04_title</source>
@@ -147,7 +148,7 @@
       </trans-unit>
       <trans-unit id="howitworks_block_04_subtitle01" resname="howitworks_block_04_subtitle01">
         <source>howitworks_block_04_subtitle01</source>
-        <target>When the customer pays with Parcela Já the system generates a personal instalment plan</target>
+        <target>When the client pays with Parcela Já the system generates a personal installment plan</target>
       </trans-unit>
       <trans-unit id="howitworks_block_04_subtitle02" resname="howitworks_block_04_subtitle02">
         <source>howitworks_block_04_subtitle02</source>
@@ -155,11 +156,11 @@
       </trans-unit>
       <trans-unit id="howitworks_block_04_subtitle03" resname="howitworks_block_04_subtitle03">
         <source>howitworks_block_04_subtitle03</source>
-        <target>The 1st instalment is charged a immediately following the purchase and generates an authorization that holds the remaining due value on the credit card</target>
+        <target>The 1st installment is charged a few moments following the purchase and generates an authorization that holds the remaining value on the credit card</target>
       </trans-unit>
       <trans-unit id="howitworks_block_04_subtitle04" resname="howitworks_block_04_subtitle04">
         <source>howitworks_block_04_subtitle04</source>
-        <target>Parcela Já charges the monthly instalments in the customer's credit card until the plan is completed. Reducing the blocked due value in the credit card</target>
+        <target>Parcela Já charges the monthly installments in the client's credit card until the plan is completed; reducing the monthly value also blocked in the card</target>
       </trans-unit>
       <trans-unit id="forclients_block_01_title" resname="forclients_block_01_title">
         <source>forclients_block_01_title</source>
@@ -167,15 +168,15 @@
       </trans-unit>
       <trans-unit id="forclients_block_02_title" resname="forclients_block_02_title">
         <source>forclients_block_02_title</source>
-        <target>Pay your purchases with your credit card, interest free</target>
+        <target>Pay your purchases with Parcela Já interest free</target>
       </trans-unit>
       <trans-unit id="forclients_block_02_subtitle01" resname="forclients_block_02_subtitle01">
         <source>forclients_block_02_subtitle01</source>
-        <target>Use your credit card and select an instalment plan from 2 to 12 times interest free and no other costs affiliated</target>
+        <target>Use your credit card and create an installment plan from 2 to 12 times interest free and no other costs affiliated</target>
       </trans-unit>
       <trans-unit id="forclients_block_02_subtitle02" resname="forclients_block_02_subtitle02">
         <source>forclients_block_02_subtitle02</source>
-        <target>Increase your purchasing power. With Parcela Já you no longer need to pay all at once, this will provide you a way to better manage your finances</target>
+        <target>Increase your purchasing power. With Parcela Já you no longer need to pay all at once, this will give you a way to better manage your finances</target>
       </trans-unit>
       <trans-unit id="forclients_block_02_subtitle03" resname="forclients_block_02_subtitle03">
         <source>forclients_block_02_subtitle03</source>
@@ -183,15 +184,15 @@
       </trans-unit>
       <trans-unit id="forclients_block_02_subtitle04" resname="forclients_block_02_subtitle04">
         <source>forclients_block_02_subtitle04</source>
-        <target>The purchase approval is done over the counter, in just a few seconds. Insert your ID card as well as your credit card into our terminal and you're done! You can now enjoy your purchases</target>
+        <target>The approval of the purchase is made in just a few seconds. Just insert your citizen card as well as your credit card into our terminal and you're done! You can now enjoy your purchases</target>
       </trans-unit>
       <trans-unit id="forclients_block_02_subtitle05" resname="forclients_block_02_subtitle05">
         <source>forclients_block_02_subtitle05</source>
-        <target>With Parcela Já, you will only pay the value of the instalment you choose to without any surprises or additional costs</target>
+        <target>With Parcela Já, you will only pay the value of the installment you choose to without any surprises or additional costs</target>
       </trans-unit>
       <trans-unit id="forclients_block_02_subtitle06" resname="forclients_block_02_subtitle06">
         <source>forclients_block_02_subtitle06</source>
-        <target>Continue to enjoy all the benefits that your Visa card and Mastercard offer you</target>
+        <target>Continue to enjoy all the benefits that your Visa card and Mastercard offer</target>
       </trans-unit>
       <trans-unit id="forclients_block_03_title" resname="forclients_block_03_title">
         <source>forclients_block_03_title</source>
@@ -508,11 +509,11 @@ O acesso ou a utilização da Parcela Já sobre o domínio de www.parcelaja.pt i
       </trans-unit>
 <trans-unit id="header_paraaderentes" resname="header_paraaderentes">
         <source>header_paraaderentes</source>
-        <target>FOR STORES</target>
+        <target>FOR MERCHANTS</target>
       </trans-unit>
 <trans-unit id="header_paraclientes" resname="header_paraclientes">
         <source>header_paraclientes</source>
-        <target>FOR CUSTOMERS</target>
+        <target>FOR CLIENTS</target>
       </trans-unit>
 <trans-unit id="header_comofunciona" resname="header_comofunciona">
         <source>header_comofunciona</source>

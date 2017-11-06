@@ -7,11 +7,11 @@
     <body>
       <trans-unit id="homepage_block_01_title" resname="homepage_block_01_title">
         <source>homepage_block_01_title</source>
-        <target>PROPONHA AO SEU CLIENTE PAGAR ATÉ 12X COM APROVAÇÃO IMEDIATA, SEM JUROS E NO SEU TERMINAL DE PAGAMENTOS</target>
+        <target>OFEREÇA AO SEU CLIENTE PAGAMENTOS PARCELADOS NO SEU CARTÃO DE CRÉDITO ATÉ 12x. APROVAÇÃO IMEDIATA NO SEU TERMINAL DE PAGAMENTOS</target>
       </trans-unit>
       <trans-unit id="homepage_block_02_title" resname="homepage_block_02_title">
         <source>homepage_block_02_title</source>
-        <target>Diferencie o seu negócio com a Parcela Já</target>
+        <target>Financie o seu cliente com a Parcela Já</target>
       </trans-unit>
       <trans-unit id="homepage_block_02_subtitle_01" resname="homepage_block_02_subtitle_01">
         <source>homepage_block_02_subtitle_01</source>
@@ -19,9 +19,9 @@
       </trans-unit>
       <trans-unit id="homepage_block_02_subtitle_02" resname="homepage_block_02_subtitle_02">
         <source>homepage_block_02_subtitle_02</source>
-        <target>ELIMINE OS PROCESSOS BUROCRÁTICOS DA SUA LOJA</target>
+        <target>ELIMINE OS PROCESSOS BUROCRÁTICOS DAS SUAS VENDAS</target>
       </trans-unit>
-      <trans-unit id="homepage_block_02_subtitle_03" resname="homepage_block_02_subtitle_03">
+      <trans-unit id="homepage_block_02l_subtitle_03" resname="homepage_block_02_subtitle_03">
         <source>homepage_block_02_subtitle_03</source>
         <target>PERMITA QUE OS SEUS CLIENTES PAGUEM EM QUANTAS VEZES QUISEREM</target>
       </trans-unit>
@@ -31,7 +31,7 @@
       </trans-unit>
       <trans-unit id="homepage_block_02_text_02" resname="homepage_block_02_text_02">
         <source>homepage_block_02_text_02</source>
-        <target>Ao contrário das restantes soluções existentes no mercado, não precisa de pedir qualquer documentação sensível ao seu cliente nem esperar pela aprovação financeira. Com a <![CDATA[<b>]]>Parcela Já<![CDATA[</b>]]>, a aprovação é imediata e sem burocracias.</target>
+        <target>Não precisa de pedir qualquer documentação sensível ao seu cliente nem esperar pela aprovação financeira. Com a <![CDATA[<b>]]>Parcela Já<![CDATA[</b>]]>, a aprovação é imediata e sem burocracias.</target>
       </trans-unit>
       <trans-unit id="homepage_block_02_text_03" resname="homepage_block_02_text_03">
         <source>homepage_block_02_text_03</source>
@@ -91,7 +91,7 @@
       </trans-unit>
       <trans-unit id="howitworks_block_01_title" resname="howitworks_block_01_title">
         <source>howitworks_block_01_title</source>
-        <target>PAGUE TODAS AS SUAS COMPRAS DE UMA FORMA PARCELADA SEM CUSTOS E ENCARGOS</target>
+        <target>PAGUE AS SUAS COMPRAS DE UMA FORMA PARCELADA SEM CUSTOS E ENCARGOS</target>
       </trans-unit>
       <trans-unit id="howitworks_block_02_title" resname="howitworks_block_02_title">
         <source>howitworks_block_02_title</source>
@@ -99,15 +99,15 @@
       </trans-unit>
       <trans-unit id="howitworks_block_02_subtitle" resname="howitworks_block_02_subtitle">
         <source>howitworks_block_02_subtitle</source>
-        <target>Sem registos, sem burocracias e sem aprovação de crédito</target>
+        <target>Sem registos, sem burocracias e sem demora na aprovação de crédito</target>
       </trans-unit>
       <trans-unit id="howitworks_block_02_text01" resname="howitworks_block_02_text01">
         <source>howitworks_block_02_text01</source>
-        <target>Com a Parcela Já, pode ter na sua loja um sistema de pagamentos parcelados que oferece a oportunidade aos seus clientes de fazerem as suas compras de 2 a 12 vezes, sem juros e sem necessidade de burocracias ou aprovação de crédito.</target>
+        <target>Com a Parcela Já, as lojas podem ter um sistema de pagamentos parcelados que oferece a oportunidade aos seus clientes de fazerem as suas compras de 2 a 12 vezes, sem juros e sem necessidade de burocracias ou aprovação de crédito.</target>
       </trans-unit>
       <trans-unit id="howitworks_block_02_text02" resname="howitworks_block_02_text02">
         <source>howitworks_block_02_text02</source>
-        <target>Para isso, tenha um terminal <![CDATA[<b>]]>Parcela Já<![CDATA[</b>]]> na sua loja ou a aplicação online no seu website e, ao utilizar o seu cartão crédito Visa ou Mastercard, o seu cliente pode escolher em quantas vezes pretende pagar as suas compras.</target>
+        <target>Para isso, a loja necessita de um terminal <![CDATA[<b>]]>Parcela Já<![CDATA[</b>]]> ou a aplicação online no seu website. O cliente pode então utilizar o seu cartão crédito Visa ou Mastercard e escolher em quantas vezes pretende pagar as suas compras.</target>
       </trans-unit>
       <trans-unit id="howitworks_block_03_title01" resname="howitworks_block_03_title01">
         <source>howitworks_block_03_title01</source>
@@ -131,7 +131,7 @@
       </trans-unit>
       <trans-unit id="howitworks_block_03_subtitle03" resname="howitworks_block_03_subtitle03">
         <source>howitworks_block_03_subtitle03</source>
-        <target>O cliente introduz o seu cartão de crédito e assina o talão</target>
+        <target>O cliente passa o seu cartão de crédito, introduz o CVV e assina o talão</target>
       </trans-unit>
       <trans-unit id="howitworks_block_03_text01" resname="howitworks_block_03_text01">
         <source>howitworks_block_03_text01</source>
@@ -139,7 +139,7 @@
       </trans-unit>
       <trans-unit id="howitworks_block_03_text02" resname="howitworks_block_03_text02">
         <source>howitworks_block_03_text02</source>
-        <target>Em 3 simples passos os seus clientes podem pagar as suas compras de forma parcelada sem qualquer custo ou burocracia associados</target>
+        <target>Em 3 simples passos os clientes podem pagar as suas compras de forma parcelada sem qualquer custo ou burocracia associados</target>
       </trans-unit>
       <trans-unit id="howitworks_block_04_title" resname="howitworks_block_04_title">
         <source>howitworks_block_04_title</source>
@@ -147,19 +147,19 @@
       </trans-unit>
       <trans-unit id="howitworks_block_04_subtitle01" resname="howitworks_block_04_subtitle01">
         <source>howitworks_block_04_subtitle01</source>
-        <target>Quando o cliente paga com a Parcela Já é criado um plano pessoal de pagamentos parcelados.</target>
+        <target>Quando o cliente paga com a Parcela Já é criado um plano pessoal de pagamentos parcelados</target>
       </trans-unit>
       <trans-unit id="howitworks_block_04_subtitle02" resname="howitworks_block_04_subtitle02">
         <source>howitworks_block_04_subtitle02</source>
-        <target>A Parcela Já faz um bloqueio do valor total da compra no cartão de crédito.</target>
+        <target>A Parcela Já faz um bloqueio do valor total da compra no cartão de crédito</target>
       </trans-unit>
       <trans-unit id="howitworks_block_04_subtitle03" resname="howitworks_block_04_subtitle03">
         <source>howitworks_block_04_subtitle03</source>
-        <target>A 1ª parcela é cobrada no dia da compra e é criada uma autorização que bloqueia o restante valor no cartão de crédito.</target>
+        <target>A 1ª parcela é cobrada imediatamente após a compra e é criada uma autorização que bloqueia o restante valor devido no cartão de crédito</target>
       </trans-unit>
       <trans-unit id="howitworks_block_04_subtitle04" resname="howitworks_block_04_subtitle04">
         <source>howitworks_block_04_subtitle04</source>
-        <target>A Parcela Já cobra mensalmente as parcelas no cartão de crédito do cliente até ao final do plano de pagamentos, reduzindo também mensalmente o valor bloqueado no cartão.</target>
+        <target>A Parcela Já cobra mensalmente as parcelas no cartão de crédito do cliente até ao final do plano de pagamentos, reduzindo também mensalmente o valor bloqueado no cartão</target>
       </trans-unit>
       <trans-unit id="forclients_block_01_title" resname="forclients_block_01_title">
         <source>forclients_block_01_title</source>
@@ -167,15 +167,15 @@
       </trans-unit>
       <trans-unit id="forclients_block_02_title" resname="forclients_block_02_title">
         <source>forclients_block_02_title</source>
-        <target>Pague as suas compras com a Parcela Já sem juros</target>
+        <target>Pague as suas compras com cartão de crédito sem juros</target>
       </trans-unit>
       <trans-unit id="forclients_block_02_subtitle01" resname="forclients_block_02_subtitle01">
         <source>forclients_block_02_subtitle01</source>
-        <target>Use o seu cartão de crédito e divida o pagamento de 2 a 12 vezes sem juros ou outros custos associados.</target>
+        <target>Use o seu cartão de crédito e parcele o pagamento de 2 a 12 vezes sem juros ou outros custos associados</target>
       </trans-unit>
       <trans-unit id="forclients_block_02_subtitle02" resname="forclients_block_02_subtitle02">
         <source>forclients_block_02_subtitle02</source>
-        <target>Aumente o seu poder de compra. Com a Parcela Já não precisa de pagar tudo de uma vez, podendo assim fazer uma melhor gestão das suas finanças.</target>
+        <target>Aumente o seu poder de compra. Com a Parcela Já não precisa de pagar tudo de uma vez, podendo assim fazer uma melhor gestão das suas finanças</target>
       </trans-unit>
       <trans-unit id="forclients_block_02_subtitle03" resname="forclients_block_02_subtitle03">
         <source>forclients_block_02_subtitle03</source>
@@ -183,15 +183,15 @@
       </trans-unit>
       <trans-unit id="forclients_block_02_subtitle04" resname="forclients_block_02_subtitle04">
         <source>forclients_block_02_subtitle04</source>
-        <target>A aprovação da compra é feita em apenas alguns segundos. Basta introduzir no nosso terminal o seu cartão de cidadão e cartão de crédito e já está! Já pode começar a usufruir das suas compras.</target>
+        <target>A aprovação da compra é feita em apenas alguns segundos. Basta introduzir no nosso terminal o seu cartão de cidadão e cartão de crédito e já está! Já pode começar a usufruir das suas compras</target>
       </trans-unit>
       <trans-unit id="forclients_block_02_subtitle05" resname="forclients_block_02_subtitle05">
         <source>forclients_block_02_subtitle05</source>
-        <target>Não se preocupe com cobranças indevidas. Com a Parcela Já, apenas vai pagar o valor da parcela acordada, sem quaisquer surpresas ou custos adicionais.</target>
+        <target>Não se preocupe com cobranças indevidas. Com a Parcela Já, apenas vai pagar o valor da parcela acordada, sem quaisquer surpresas ou custos adicionais</target>
       </trans-unit>
       <trans-unit id="forclients_block_02_subtitle06" resname="forclients_block_02_subtitle06">
         <source>forclients_block_02_subtitle06</source>
-        <target>Continue a usufruir de todos os benefícios que o seu atual cartão Visa e Mastercard lhe oferecem.</target>
+        <target>Continue a usufruir de todos os benefícios que o seu atual cartão Visa e Mastercard lhe oferecem</target>
       </trans-unit>
       <trans-unit id="forclients_block_03_title" resname="forclients_block_03_title">
         <source>forclients_block_03_title</source>
@@ -505,7 +505,7 @@ O acesso ou a utilização da Parcela Já sobre o domínio de www.parcelaja.pt i
       </trans-unit>
 <trans-unit id="header_paraaderentes" resname="header_paraaderentes">
         <source>header_paraaderentes</source>
-        <target>PARA ADERENTES</target>
+        <target>PARA LOJAS</target>
       </trans-unit>
 <trans-unit id="header_paraclientes" resname="header_paraclientes">
         <source>header_paraclientes</source>

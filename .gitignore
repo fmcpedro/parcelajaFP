@@ -15,3 +15,5 @@
 /vendor/
 /web/bundles/
 /web/thumbnails/*
+/web/uploads/*
+/web/media/*
