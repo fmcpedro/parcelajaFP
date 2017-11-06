@@ -14,7 +14,6 @@ class DefaultController extends Controller {
     public function indexAction(Request $request) {
 
         return $this->render('AppBundle:default:v2_index.html.twig');
- 
     }
 
     public function paraClientesAction(Request $request) {
@@ -59,42 +58,60 @@ class DefaultController extends Controller {
 
     public function contactosAction(Request $request) {
 
-
-
         $contact = new Contact();
         $contact->setFirstValue(rand(0, 9));
         $contact->setSecondValue(rand(0, 9));
-        
+
         $form = $this->createForm('AppBundle\Form\WsContactType', $contact);
         $form->handleRequest($request);
 
+        if ($form->isSubmitted()) {
 
+            $name = $form["name"]->getData();
+            $email = $form["email"]->getData();
+            $subject = $form["subject"]->getData();
+            $phone = $form["phone"]->getData();
+            $message = $form["message"]->getData();
 
-//        if ($form->isSubmitted()) {
-//
-//
-//
-//            $firstValue = $form["firstValue"]->getData();
-//            $secondValue = $form["secondValue"]->getData();
-//            $firstValue = $form["validation"]->getData();
-//
+            $firstValue = $form["firstValue"]->getData();
+            $secondValue = $form["secondValue"]->getData();
+            $validation = $form["validation"]->getData();
+
 //            //VALIDACAO ARITMETICA CORRECTA
-//            if (($firstValue + $secondValue) != $validation) {
-//                $form->get('validation')->addError(new FormError('Validação aritmetica incorrecta!'));
-//            }
-//
-//            if ($form->isValid()) {
-//                //enviar email
-//                
-//                
-//               $this->get('session')->getFlashBag()->add('notice', 'Obrigado por nos contactar!');
-//            return $this->redirectToRoute('contactos');
-//            }
-//            
-//        }
+            if (($firstValue + $secondValue) != $validation) {
+                $form->get('validation')->addError(new \Symfony\Component\Form\FormError('Validação aritmetica incorrecta!'));
+            }
+
+            if ($form->isValid()) {
+//                            //enviar email   
+                // CONFIG YOUR EMAIL MESSAGE
+                //============================================================
+                $body = '<p>The following request was sent from: </p>';
+                $body .= '<p>Name: ' . $name . '</p>';
+                $body .= '<p>Email: ' . $email . '</p>';
+                $body .= '<p>Subject: ' . $subject . '</p>';
+                $body .= '<p>Phone: ' . $phone . '</p>';
+                $body .= '<p>Message: ' . $message . '</p>';
+
+                $emailSubject = 'ParcelaJá - Contacto/Sugestão/Duvida de ' . $name;
+
+                $email_message = Swift_Message::newInstance()
+                        ->setSubject($emailSubject)
+                        ->setFrom('suporte@parcelaja.pt')
+                        ->setTo('suporte@parcelaja.pt')
+                        ->setCc('lmiguens@consolidador.com')
+                        ->setReplyTo($email)
+                        ->setBody($body, 'text/html');
+
+                $this->get('mailer')->send($email_message);
+
+                $this->get('session')->getFlashBag()->add('notice', 'Obrigado por nos contactar!');
+                return $this->redirectToRoute('contactos');
+            }
+        }
 
         return $this->render('AppBundle:default:v2_contactos.html.twig', array(
-                   // 'contact' => $contact,
+                    'contact' => $contact,
                     'form' => $form->createView(),
         ));
 

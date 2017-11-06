@@ -3,7 +3,10 @@
 namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -21,8 +24,21 @@ class WsContactType extends AbstractType
                 ->add('message')
                 ->add('firstValue', HiddenType::class)
                 ->add('secondValue', HiddenType::class)
-                ->add('validation')
-                ;
+                ->add('validation');
+        
+        
+//        $builder->add('name', TextType::class, array('required' => true))
+//                ->add('email', EmailType::class, array('required' => true))
+//                ->add('subject', TextType::class, array('required' => true))
+//                ->add('phone', TextType::class, array('required' => true))
+//                ->add('message', TextareaType::class, array('required' => true))
+//                ->add('firstValue', HiddenType::class)
+//                ->add('secondValue', HiddenType::class)
+//                ->add('validation', TextType::class, array('required' => true));
+        
+        
+        
+        
     }
     
     /**

@@ -24,32 +24,57 @@
                     </div>
                 {% endfor %}
 
+
+
+
+                {% if not form.vars.valid %}
+                    {# Loop through every form item #}
+                    {% for child in form.children %}
+                        {# Display the errors of the form item #}
+                        {%for error in child.vars.errors%}
+                            <div class="alert alert-danger">
+                                {{error.message}}
+                            </div>
+                        {%endfor%}
+                    {%endfor%}
+                {%endif%}
+
+
+
+
+
+
                 <!-- Contact Form -->
                 {{ form_start(form) }} 
                 <div class="row">
                     <div class="col-md-6 form-group g-mb-20">
                         <label class="g-font-size-14">{% trans %}contactus_block_01_name{% endtrans %} <span class="g-color-red">*</span></label>
                         {{ form_widget(form.name, {'attr': {'class': 'form-control g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15'}}) }}
+                        {{ form_errors(form.name) }}
                     </div>
 
                     <div class="col-md-6 form-group g-mb-20">
                         <label class="g-font-size-14">{% trans %}contactus_block_01_email{% endtrans %}  <span class="g-color-red">*</span></label>
                         {{ form_widget(form.email, {'attr': {'class': 'form-control g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15'}}) }}
+                        {{ form_errors(form.email) }}
                     </div>
 
                     <div class="col-md-6 form-group g-mb-20">
                         <label class="g-font-size-14">{% trans %}contactus_block_01_subject{% endtrans %}  <span class="g-color-red">*</span></label>
                         {{ form_widget(form.subject, {'attr': {'class': 'form-control g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15'}}) }}
+                        {{ form_errors(form.subject) }}
                     </div>
 
                     <div class="col-md-6 form-group g-mb-20">
                         <label class="g-font-size-14">{% trans %}contactus_block_01_telephone{% endtrans %}  <span class="g-color-red">*</span></label>
                         {{ form_widget(form.phone, {'attr': {'class': 'form-control g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15'}}) }}
+                        {{ form_errors(form.phone) }}
                     </div>
 
                     <div class="col-md-12 form-group g-mb-40">
                         <label class="g-font-size-14">{% trans %}contactus_block_01_message{% endtrans %}  <span class="g-color-red">*</span></label>
                         {{ form_widget(form.message, {'attr': {'class': 'form-control g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus g-resize-none rounded-3 g-py-13 g-px-15'}}) }}
+                        {{ form_errors(form.message) }}
                     </div>
 
 
@@ -58,6 +83,7 @@
                         {{ form_widget(form.firstValue, {'attr': {'class': ''}}) }}
                         {{ form_widget(form.secondValue, {'attr': {'class': ''}}) }}
                         {{ form_widget(form.validation, {'attr': {'class': 'form-control g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus g-resize-none rounded-3 g-py-13 g-px-15'}}) }}
+                        {{ form_errors(form.validation) }}
                     </div>
                 </div>
 

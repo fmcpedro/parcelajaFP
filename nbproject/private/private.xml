@@ -3,18 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Form/TpurchaseType.php</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/views/default/footer.html.twig</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/views/default/v2_contactos.html.twig</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/views/default/v2_noticias.html.twig</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/views/default/v2_footer.html.twig</file>
             <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/views/default/v2_para_clientes.html.twig</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/views/default/v2_index.html.twig</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Controller/DefaultController.php</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Entity/Contact.php</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/views/v2_base.html.twig</file>
-            <file>file:/home/luis/sfprojects/parcelaja/app/Resources/views/tpos/edit.html.twig</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Form/WsContactType.php</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/views/default/v2_como_funciona.html.twig</file>
-            <file>file:/home/luis/sfprojects/parcelaja/app/config/routing.yml</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/views/default/v2_header.html.twig</file>
+            <file>file:/home/luis/sfprojects/parcelaja/app/Resources/AppBundle/translations/messages.pt.xlf</file>
         </group>
     </open-files>
 </project-private>
