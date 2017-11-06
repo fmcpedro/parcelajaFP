@@ -10,7 +10,11 @@
       </options>
     </field>
     
-
+ <field name="fgroupslugname" type="string" column="FGroupSlugName" length="100" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
 
         <one-to-many field="subgroupList" target-entity="Tsubgroup" mapped-by="group" />
 

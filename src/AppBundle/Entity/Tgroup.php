@@ -12,6 +12,11 @@ class Tgroup
      */
     private $fgroupname;
 
+        /**
+     * @var string
+     */
+    private $fgroupslugname;
+    
     /**
      * @var boolean
      */
@@ -126,5 +131,19 @@ class Tgroup
     {
         return $this->subgroupList;
     }
+    
+    
+    function getFgroupslugname() {
+        return $this->fgroupslugname;
+    }
+
+    function setFgroupslugname($fgroupslugname) {
+        $this->fgroupslugname = $fgroupslugname;
+    }
+
+
+    
+    
+    
 }
 

@@ -128,11 +128,11 @@
 
             <!-- Cube Portfolio Blocks - Filter -->
             <ul id="filterControls" class="d-block list-inline text-center g-mb-50">
-                <li class="list-inline-item cbp-filter-item g-color-primary--active g-font-weight-600 g-font-size-14 text-uppercase pr-2 mb-2" role="button" data-filter="*">Todas</li>
+                <li class="list-inline-item cbp-filter-item g-color-primary--active g-font-weight-600 g-font-size-14 text-uppercase pr-2 mb-2" role="button" data-filter="*">{% trans %}homepage_grupos_all{% endtrans %}</li>
 
                 {% for grupo in grupos %}
                     <li class="list-inline-item cbp-filter-item g-color-primary--hover g-color-gray-dark-v5--active g-font-weight-600 g-font-size-14 text-uppercase px-2 mb-2" role="button" data-filter=".{{grupo.fgroupid}}">
-                        {{grupo.fgroupname}}
+                        {{grupo.fgroupslugname|trans}}
                     </li>
                     {% endfor %} 
 
