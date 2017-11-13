@@ -15,37 +15,42 @@ use AppBundle\Utils\Utils;
  *
  * @author Luis Miguens <lmiguens@consolidador.com>
  */
-class TpaymentsTaxaDesconto {
+class TpaymentsTaxaServico {
 
     //Pressupostos  Fixos
-    const CUSTO_CAPTURA = 0.20;
+    const CUSTO_CAPTURA = 0.00;
     const EVO_PAYMENTS = 0.0045;
     const OGONE = 0.10;
     const PROC_SEPA_CT = 0.008;
-    const CAPTURA = 0.20;
+    const CAPTURA = 0.00;
     const IMPOSTO_SELO = 0.04;
     const IVA = 0.23;
     const TAXA_JURO = 0.05;
     const LUCRO_PARCELA = 0.75;
     const LUCRO_BNI = 0.25;
     const NUM_CASAS_DECIMAIS = 5;
+    const DIFERENCA_ENTRE_ITERACOES = 0.00000000000000000000000000000000000000000000000001;
 
     //Pressupostos  Variáveis
     private $valorCompra;
     private $numeroPrestacoes;
-    private $comissaoPagarAderente;
-    //Variáveis Dependentes
+//private $comissaoPagarAderente;
+    private $comissaoPagarClienteFinal;
+//Variáveis Dependentes
     private $numParcela; //Nº DA PARCELA
-    private $valorComissaoPagarAderente; //VALOR COMISSAO PAGAR ADERENTE
+//private $valorComissaoPagarAderente; //VALOR COMISSAO PAGAR ADERENTE
+    private $valorComissaoPagarCliente; //VALOR COMISSAO PAGAR CLIENTE
     private $valorComissaoSujeitaIva; //VALOR COMISSAO SUJEITA A IVA
     private $ivaComissao; //IVA COMISSAO
     private $custoCaptura; //CUSTO DE CAPTURA
     private $ivaCustoCaptura; //IVA CUSTO DE CAPTURA
     private $ivaTotal; //IVA TOTAL
-    private $valorTotalCobradoAderente; //VALOR TOTAL COBRADO AO ADERENTE
+//private $valorTotalCobradoAderente; //VALOR TOTAL COBRADO AO ADERENTE  
+    private $valorTotalCobradoCliente; //VALOR TOTAL COBRADO AO CLIENTE
     private $valorFinanciadoAderente; //VALOR FINANCIANDO AO ADERENTE
     private $valorPagoAderente; //VALOR PAGO AO ADERENTE
-    private $valParcelas; //VALOR DAS PARCELAS
+//private $valParcelas; //VALOR DAS PARCELAS
+    private $valParcelasEmissor; //VALOR DAS PARCELAS EMISSOR
     private $comOgone = 0; //COMISSAO OGONE
     private $comEvoPayments = 0; //COMISSAO EVO PAYMENTS
     private $valorReceberEvoPayments = 0; //VALOR A RECEBER DA EVO PAYMENTS
@@ -87,17 +92,17 @@ class TpaymentsTaxaDesconto {
     
     private $tipoTaxa;
 
-    //function __construct($valorCompra, $numeroPrestacoes, $numParcela, $tipoTransacao, $payID, $datePayment) {
-    function __construct(Tpurchase $purchase, $numParcela, Tpayments $payment=null) {
+    //function __construct($valorCompra, $numeroPrestacoes, $numParcela, $comissaoPagarClienteFinal, $tipoTransacao, $payID,$datePayment) {
+    function __construct($purchase, $numParcela, $comissaoPagarClienteFinal, $payment) {
         $this->valorCompra = $purchase->getFcalcamount();
         $this->numeroPrestacoes = $purchase->getFmonthdata();
         $this->numParcela = $numParcela;
-        $this->comissaoPagarAderente = ((($this->numeroPrestacoes / 2) + 0.5) / 100);
-        
+        $this->comissaoPagarClienteFinal = $comissaoPagarClienteFinal;
+
         $this->idAderente = is_null($purchase->getAgency())?0:$purchase->getAgency()->getFagencyid();
         $this->idCompra = $purchase->getFpurchaseid();
-        $this->idPagamento = is_null($payment)?0:$payment->getFpayid();
-        $this->dataPagamento = is_null($payment)?0:$payment->getFDate();
+        $this->idPagamento = is_null($payment) ? 0 : $payment->getFpayid();
+        $this->dataPagamento = is_null($payment) ? 0 : $payment->getFDate();
         $this->contractNumber = $purchase->getFcontractnumber();
 
         $this->clienteNome = Utils::getClienteData('nome', $purchase->getFclientdata()) . ' ' . Utils::getClienteData('sobrenome', $purchase->getFclientdata());
@@ -105,7 +110,7 @@ class TpaymentsTaxaDesconto {
         $this->clienteCartaoCidadao = Utils::getClienteData('cartaoCidadao', $purchase->getFclientdata());
 
         $this->tipoTransacao = Utils::getTipoTransacao($purchase);
-        $this->tipoTaxa = "TD";
+        $this->tipoTaxa = "TS";
     }
 
     function getValorCompra() {
@@ -116,150 +121,139 @@ class TpaymentsTaxaDesconto {
         return $this->numeroPrestacoes;
     }
 
-    function getComissaoPagarAderente() {
-        return $this->comissaoPagarAderente;
-    }
+//    function getComissaoPagarAderente() {
+//        return $this->comissaoPagarAderente;
+//    }
 
     function getNumParcela() {
         return $this->numParcela;
     }
 
-    function getValorComissaoPagarAderente() {
-        return $this->getValorCompra() * $this->getComissaoPagarAderente();
-    }
+//    function getValorComissaoPagarAderente() {
+//        return round($this->getValorCompra() * $this->getComissaoPagarAderente(), self::NUM_CASAS_DECIMAIS);
+//    }
 
     function getValorComissaoSujeitaIva() {
         //return 39.18; //tem um somatório
-        return $this->valorComissaoSujeitaIva;
+        return round($this->valorComissaoSujeitaIva, self::NUM_CASAS_DECIMAIS);
     }
 
     function getIvaComissao() {
-        return $this->getValorComissaoSujeitaIva() * self::IVA;
+        return round($this->getValorComissaoSujeitaIva() * self::IVA, self::NUM_CASAS_DECIMAIS);
     }
 
     function getCustoCaptura() {
-        return $this->getNumeroPrestacoes() * self::CUSTO_CAPTURA;
+        return round($this->getNumeroPrestacoes() * self::CUSTO_CAPTURA, self::NUM_CASAS_DECIMAIS);
     }
 
     function getIvaCustoCaptura() {
-        return $this->getCustoCaptura() * self::IVA;
+        return round($this->getCustoCaptura() * self::IVA, self::NUM_CASAS_DECIMAIS);
     }
 
     function getIvaTotal() {
-        return $this->getIvaComissao() + $this->getIvaCustoCaptura();
+        return round($this->getIvaComissao() + $this->getIvaCustoCaptura(), self::NUM_CASAS_DECIMAIS);
     }
 
-    function getValorTotalCobradoAderente() {
-        return $this->getValorComissaoPagarAderente() + $this->getCustoCaptura() + $this->getIvaTotal();
-    }
+//    function getValorTotalCobradoAderente() {
+//        return round($this->getValorComissaoPagarAderente() + $this->getCustoCaptura() + $this->getIvaTotal(), self::NUM_CASAS_DECIMAIS);
+//    }
 
     function getValorFinanciadoAderente() {
-        return $this->getValorCompra() - $this->getValorComissaoPagarAderente() - $this->getCustoCaptura();
+        //return round($this->getValorCompra() - $this->getValorComissaoPagarAderente() - $this->getCustoCaptura(), self::NUM_CASAS_DECIMAIS);
+        return $this->getValorCompra();
     }
 
     function getValorPagoAderente() {
-        return $this->getValorCompra() - $this->getValorComissaoPagarAderente() - $this->getCustoCaptura() - $this->getIvaTotal();
+        //return round($this->getValorCompra() - $this->getValorComissaoPagarAderente() - $this->getCustoCaptura() - $this->getIvaTotal(), self::NUM_CASAS_DECIMAIS);
+        return $this->getValorCompra();
     }
 
-    function getValParcelas() {
-        return $this->getValorCompra() / $this->getNumeroPrestacoes();
-    }
+//    function getValParcelas() {
+//        return round($this->getValorCompra() / $this->getNumeroPrestacoes(), self::NUM_CASAS_DECIMAIS);
+//    }
 
     function getComOgone() {
-        return self::OGONE;
+        return round(self::OGONE, self::NUM_CASAS_DECIMAIS);
     }
 
     function getComEvoPayments() {
-        return $this->getValParcelas() * self::EVO_PAYMENTS;
+        return round($this->getValParcelasEmissor() * self::EVO_PAYMENTS, self::NUM_CASAS_DECIMAIS);
     }
 
     function getValorReceberEvoPayments() {
-        return $this->getValParcelas() - $this->getComEvoPayments();
+        return round($this->getValParcelasEmissor() - $this->getComEvoPayments(), self::NUM_CASAS_DECIMAIS);
     }
 
     function getCapitalAmortizadoMensalmente() {
-        return $this->getValorFinanciadoAderente() / $this->getNumeroPrestacoes();
+        return round($this->getValorFinanciadoAderente() / $this->getNumeroPrestacoes(), self::NUM_CASAS_DECIMAIS);
     }
 
     function getCapitalAmortizadoAcumulado() {
+        //somatorio, calculado fora
         return $this->capitalAmortizadoAcumulado;
     }
 
     function getCapitalEmDivida() {
-        return $this->getValorFinanciadoAderente() - $this->getCapitalAmortizadoAcumulado();
+        return round($this->getValorFinanciadoAderente() - $this->getCapitalAmortizadoAcumulado(), self::NUM_CASAS_DECIMAIS);
     }
 
     function getJuro() {
         //como o capital em em divida é do mês anterior tem de ser calculado fora
-        return $this->juro;
+        return round($this->juro, self::NUM_CASAS_DECIMAIS);
     }
 
     function getJuroAcumulado() {
-        return $this->juroAcumulado;
+        return round($this->juroAcumulado, self::NUM_CASAS_DECIMAIS);
     }
 
     function getImpostoSelo() {
-        return ($this->getJuro() + $this->getProcSepaCt()) * self::IMPOSTO_SELO;
+        return round(($this->getJuro() + $this->getProcSepaCt()) * self::IMPOSTO_SELO, self::NUM_CASAS_DECIMAIS);
     }
 
     function getImpostoSeloAcumulado() {
         return $this->impostoSeloAcumulado;
     }
 
-    function getPiiParcial() {
-//        
-//        echo $this->getValParcelas()."Valor Parcelas <br/>";
-//        echo $this->getComissaoPagarAderente()."Comissao Pagar Aderente<br/>";
-//        echo $this->getComOgone()."Com Ogone<br/>";
-//        echo $this->getComEvoPayments()."Com Evo Payments<br/>";
-//        echo $this->getJuro()."Juro <br/>";
-//                echo $this->getProcSepaCt()."Proc Sepa <br/>";
-//                echo $this->getImpostoSeloValorBni()." Imposto Selo Valor Bni<br/>";
-
-        return ($this->getValParcelas() * $this->getComissaoPagarAderente() + self::CAPTURA) - (($this->getComOgone() + $this->getComEvoPayments() + $this->getJuro() + $this->getProcSepaCt() + $this->getImpostoSeloValorBni())
-                );
-    }
-
     function getPiiAcumulado() {
-        return $this->piiAcumulado;
+        return round($this->piiAcumulado, self::NUM_CASAS_DECIMAIS);
+        
     }
 
     function getLucroParcela() {
-        return $this->getPiiParcial() * self::LUCRO_PARCELA;
+        return round($this->getPiiParcial() * self::LUCRO_PARCELA, self::NUM_CASAS_DECIMAIS);
     }
 
     function getLucroBniEuropa() {
-        return $this->getPiiParcial() * self::LUCRO_BNI;
+        return round($this->getPiiParcial() * self::LUCRO_BNI, self::NUM_CASAS_DECIMAIS);
+        ;
     }
 
     function getValorTransferParcela() {
-        //return $this->getLucroParcela() * (1 + self::IVA);
-        return $this->getLucroParcela() + $this->getComOgone();
-    }
-
-    function getIvaValorParcela() {
-        return (($this->getValParcelas() * $this->getComissaoPagarAderente() + self::CAPTURA) - ($this->getProcSepaCt() + $this->getJuro() + $this->getImpostoSeloValorBni() + $this->getLucroBniEuropa())) * self::IVA;
+        return round($this->getLucroParcela() + $this->getComOgone(), self::NUM_CASAS_DECIMAIS);
     }
 
     function getValorTransfParcelaComIva() {
-        return $this->getValorTransferParcela() + $this->getIvaValorParcela();
+        return round($this->getValorTransferParcela() + $this->getIvaValorParcela(), self::NUM_CASAS_DECIMAIS);
     }
 
+    //referencia circular
     function getValorTransfBni() {
-        return $this->getLucroBniEuropa() + $this->getJuro() + $this->getProcSepaCt();
+        return round($this->getLucroBniEuropa() + $this->getJuro() + $this->getProcSepaCt(), self::NUM_CASAS_DECIMAIS);
     }
 
+    //referencia circular
     function getImpostoSeloValorBni() {
-        //return $this->getValorTransfBni() * self::IMPOSTO_SELO;
-        return ((self::LUCRO_BNI * self::IMPOSTO_SELO * (($this->getValParcelas() * $this->getComissaoPagarAderente() + self::CAPTURA) - ($this->getComOgone() + $this->getComEvoPayments() + $this->getJuro() + $this->getProcSepaCt()))) + (self::IMPOSTO_SELO * ($this->getJuro() + $this->getProcSepaCt()))) / ((self::LUCRO_BNI * self::IMPOSTO_SELO) + 1);
+        //return round($this->getValorTransfBni() * self::IMPOSTO_SELO, self::NUM_CASAS_DECIMAIS);
+
+        return round($this->impostoSeloValorBni, self::NUM_CASAS_DECIMAIS);
     }
 
     function getValorTransfBniComImpostoSelo() {
-        return $this->getValorTransfBni() + $this->getImpostoSeloValorBni();
+        return round($this->getValorTransfBni() + $this->getImpostoSeloValorBni(), self::NUM_CASAS_DECIMAIS);
     }
 
     function getTaxaComissaoSujeitaIva() {
-        return $this->getValorComissaoSujeitaIva();
+        return round($this->getValorComissaoSujeitaIva(), self::NUM_CASAS_DECIMAIS);
     }
 
     function getTaxaProcessamento() {
@@ -271,7 +265,7 @@ class TpaymentsTaxaDesconto {
     }
 
     function getServicosFinanceiros() {
-        //return $this->getJuroAcumulado() + $this->getProcSepaCt();
+        //tem somatorio
         return $this->servicosFinanceiros;
     }
 
@@ -283,17 +277,17 @@ class TpaymentsTaxaDesconto {
         $this->numeroPrestacoes = $numeroPrestacoes;
     }
 
-    function setComissaoPagarAderente($comissaoPagarAderente) {
-        $this->comissaoPagarAderente = $comissaoPagarAderente;
-    }
+//    function setComissaoPagarAderente($comissaoPagarAderente) {
+//        $this->comissaoPagarAderente = $comissaoPagarAderente;
+//    }
 
     function setNumParcela($numParcela) {
         $this->numParcela = $numParcela;
     }
 
-    function setValorComissaoPagarAderente($valorComissaoPagarAderente) {
-        $this->valorComissaoPagarAderente = $valorComissaoPagarAderente;
-    }
+//    function setValorComissaoPagarAderente($valorComissaoPagarAderente) {
+//        $this->valorComissaoPagarAderente = $valorComissaoPagarAderente;
+//    }
 
     function setValorComissaoSujeitaIva($valorComissaoSujeitaIva) {
         $this->valorComissaoSujeitaIva = $valorComissaoSujeitaIva;
@@ -315,9 +309,9 @@ class TpaymentsTaxaDesconto {
         $this->ivaTotal = $ivaTotal;
     }
 
-    function setValorTotalCobradoAderente($valorTotalCobradoAderente) {
-        $this->valorTotalCobradoAderente = $valorTotalCobradoAderente;
-    }
+//    function setValorTotalCobradoAderente($valorTotalCobradoAderente) {
+//        $this->valorTotalCobradoAderente = $valorTotalCobradoAderente;
+//    }
 
     function setValorFinanciadoAderente($valorFinanciadoAderente) {
         $this->valorFinanciadoAderente = $valorFinanciadoAderente;
@@ -327,9 +321,9 @@ class TpaymentsTaxaDesconto {
         $this->valorPagoAderente = $valorPagoAderente;
     }
 
-    function setValParcelas($valParcelas) {
-        $this->valParcelas = $valParcelas;
-    }
+//    function setValParcelas($valParcelas) {
+//        $this->valParcelas = $valParcelas;
+//    }
 
     function setComOgone($comOgone) {
         $this->comOgone = $comOgone;
@@ -432,7 +426,7 @@ class TpaymentsTaxaDesconto {
     }
 
     function setImpSelo($impSelo) {
-        $this->impSelo = $impSelo;
+        $this->impSelo = round($impSelo, self::NUM_CASAS_DECIMAIS);
     }
 
     function getProcSepaCt() {
@@ -441,6 +435,50 @@ class TpaymentsTaxaDesconto {
 
     function setProcSepaCt($procSepaCt) {
         $this->procSepaCt = $procSepaCt;
+    }
+
+    // novos campos
+
+    function getComissaoPagarClienteFinal() {
+        return $this->comissaoPagarClienteFinal;
+    }
+
+    function getValorComissaoPagarCliente() {
+        return $this->getComissaoPagarClienteFinal();
+    }
+
+    function getValorTotalCobradoCliente() {
+        return $this->getValorComissaoPagarCliente();
+    }
+
+    function setComissaoPagarClienteFinal($comissaoPagarClienteFinal) {
+        $this->comissaoPagarClienteFinal = $comissaoPagarClienteFinal;
+    }
+
+    function setValorComissaoPagarCliente($valorComissaoPagarCliente) {
+        $this->valorComissaoPagarCliente = $valorComissaoPagarCliente;
+    }
+
+    function setValorTotalCobradoCliente($valorTotalCobradoCliente) {
+        $this->valorTotalCobradoCliente = $valorTotalCobradoCliente;
+    }
+
+    function getValParcelasEmissor() {
+        return round(($this->getValorCompra() + $this->getComissaoPagarClienteFinal()) / $this->getNumeroPrestacoes(), self::NUM_CASAS_DECIMAIS);
+    }
+
+    function setValParcelasEmissor($valParcelasEmissor) {
+        $this->valParcelasEmissor = $valParcelasEmissor;
+    }
+
+    function getIvaValorParcela() {
+        return round($this->ivaValorParcela, self::NUM_CASAS_DECIMAIS);
+    }
+
+    //referencia circular
+    function getPiiParcial() {
+        //(($C$19/$C$18)-(E39+E40+E46+E49+E64+E60))/(1+$C$10*0)
+        return round((($this->getComissaoPagarClienteFinal() / $this->getNumeroPrestacoes()) - ($this->getComOgone() + $this->getComEvoPayments() + $this->getJuro() + $this->getProcSepaCt() + $this->getImpostoSeloValorBni() + $this->getIvaValorParcela())) / (1 + self::IVA * 0), self::NUM_CASAS_DECIMAIS);
     }
 
     function getTipoTransacao() {
@@ -459,16 +497,16 @@ class TpaymentsTaxaDesconto {
 //        $this->payID = $payID;
 //    }
 //
+//
 //    function getDatePayment() {
 //        //return $this->datePayment;
-//
-//        return ($this->datePayment == null) ? ' ' : $this->datePayment->format('Y-m-d');
+//        return ($this->datePayment==null)?' ':$this->datePayment->format('Y-m-d');
 //    }
 //
 //    function setDatePayment($datePayment) {
 //        $this->datePayment = $datePayment;
 //    }
-
+//
 
     function getIdAderente() {
         return $this->idAderente;
@@ -519,17 +557,15 @@ class TpaymentsTaxaDesconto {
     }
 
     function getDataPagamento() {
-        
         //return ($this->dataPagamento == null) ? ' ' : $this->dataPagamento->format('Y-m-d');
         return $this->dataPagamento;
-        //return $this->dataPagamento->format('Y-m-d');
+        
     }
 
     function setDataPagamento($dataPagamento) {
         $this->dataPagamento = $dataPagamento;
     }
-    
-    
+
     
     function getContractNumber() {
         return $this->contractNumber;
@@ -539,7 +575,7 @@ class TpaymentsTaxaDesconto {
         $this->contractNumber = $contractNumber;
     }
 
-
+    
     function getTipoTaxa() {
         return $this->tipoTaxa;
     }
@@ -549,8 +585,6 @@ class TpaymentsTaxaDesconto {
     }
 
 
-    
-    
-    
 
+    
 }

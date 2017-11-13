@@ -21,6 +21,8 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 class ExportPaymentsCommand extends ContainerAwareCommand {
+    
+    const NUM_CASAS_DECIMAIS = 5;
 
     protected function configure() {
         $this
@@ -228,14 +230,24 @@ class ExportPaymentsCommand extends ContainerAwareCommand {
 
 
 
-
-            if ($payment instanceof TpaymentsTaxaServico) {
+            
+            if($payment->getNumParcela()==0):
+                if ($payment instanceof TpaymentsTaxaServico) {
                 $valorComissaoPagarAderente = 0; //VALOR COMISSAO PAGAR ADERENTE
                 $valorComissaoPagarCliente = $payment->getValorComissaoPagarCliente(); //VALOR COMISSAO PAGAR CLIENTE
             } else {
                 $valorComissaoPagarAderente = $payment->getValorComissaoPagarAderente(); //VALOR COMISSAO PAGAR ADERENTE
                 $valorComissaoPagarCliente = 0; //VALOR COMISSAO PAGAR CLIENTE 
-            }
+            } 
+                
+                else:
+                  
+                $valorComissaoPagarAderente = 0; //VALOR COMISSAO PAGAR ADERENTE
+                $valorComissaoPagarCliente = 0; //VALOR COMISSAO PAGAR CLIENTE
+            
+            endif;
+
+           
 
             $valorComissaoSujeitaIva = $payment->getValorComissaoSujeitaIva(); //VALOR COMISSAO SUJEITA A IVA
             $ivaComissao = $payment->getIvaComissao(); //IVA COMISSAO
@@ -366,43 +378,43 @@ class ExportPaymentsCommand extends ContainerAwareCommand {
                 $clienteCartaoCidadao,
                 $valorComissaoPagarAderente,
                 ($numParcela == 0) ? $valorComissaoPagarCliente : 0,
-                ($numParcela == 0) ? $valorComissaoSujeitaIva : 0,
-                ($numParcela == 0) ? $ivaComissao : 0,
-                ($numParcela == 0) ? $custoCaptura : 0,
-                ($numParcela == 0) ? $ivaCustoCaptura : 0,
-                ($numParcela == 0) ? $ivaTotal : 0,
-                ($numParcela == 0) ? $valorTotalCobradoAderente : 0,
+                ($numParcela == 0) ? round($valorComissaoSujeitaIva, self::NUM_CASAS_DECIMAIS) : 0,
+                ($numParcela == 0) ? round($ivaComissao, self::NUM_CASAS_DECIMAIS) : 0,
+                ($numParcela == 0) ? round($custoCaptura, self::NUM_CASAS_DECIMAIS) : 0,
+                ($numParcela == 0) ? round($ivaCustoCaptura, self::NUM_CASAS_DECIMAIS) : 0,
+                ($numParcela == 0) ? round($ivaTotal, self::NUM_CASAS_DECIMAIS) : 0,
+                ($numParcela == 0) ? round($valorTotalCobradoAderente, self::NUM_CASAS_DECIMAIS) : 0,
                 ($numParcela == 0) ? $valorTotalCobradoCliente : 0,
-                ($numParcela == 0) ? $valorFinanciadoAderente : 0,
-                ($numParcela == 0) ? $valorPagoAderente : 0,
-                $valParcelas,
-                $valParcelasEmissor,
-                $comOgone,
-                $comEvoPayments,
-                $valorReceberEvoPayments,
-                $capitalAmortizadoMensalmente,
-                $capitalAmortizadoAcumulado,
-                $capitalEmDivida,
-                $juro,
-                $juroAcumulado,
+                ($numParcela == 0) ? round($valorFinanciadoAderente, self::NUM_CASAS_DECIMAIS) : 0,
+                ($numParcela == 0) ? round($valorPagoAderente, self::NUM_CASAS_DECIMAIS) : 0,
+                round($valParcelas, self::NUM_CASAS_DECIMAIS),
+                round($valParcelasEmissor, self::NUM_CASAS_DECIMAIS),
+                round($comOgone, self::NUM_CASAS_DECIMAIS),
+                round($comEvoPayments, self::NUM_CASAS_DECIMAIS),
+                round($valorReceberEvoPayments, self::NUM_CASAS_DECIMAIS),
+                round($capitalAmortizadoMensalmente, self::NUM_CASAS_DECIMAIS),
+                round($capitalAmortizadoAcumulado, self::NUM_CASAS_DECIMAIS),
+                round($capitalEmDivida, self::NUM_CASAS_DECIMAIS),
+                round($juro, self::NUM_CASAS_DECIMAIS),
+                round($juroAcumulado, self::NUM_CASAS_DECIMAIS),
                 ($numParcela == 0) ? $procSepaCt : 0,
-                $impostoSelo,
-                $impostoSeloAcumulado,
-                $piiParcial,
-                $piiAcumulado,
-                $lucroParcela,
-                $lucroBniEuropa,
-                $valorTransferParcela,
-                $ivaValorParcela,
-                $valorTransfParcelaComIva,
-                $valorTransfBni,
-                $impostoSeloValorBni,
-                $valorTransfBniComImpostoSelo,
-                ($numParcela == 0) ? $taxaComissaoSujeitaIva : 0,
+                round($impostoSelo, self::NUM_CASAS_DECIMAIS),
+                round($impostoSeloAcumulado, self::NUM_CASAS_DECIMAIS),
+                round($piiParcial, self::NUM_CASAS_DECIMAIS),
+                round($piiAcumulado, self::NUM_CASAS_DECIMAIS),
+                round($lucroParcela, self::NUM_CASAS_DECIMAIS),
+                round($lucroBniEuropa, self::NUM_CASAS_DECIMAIS),
+                round($valorTransferParcela, self::NUM_CASAS_DECIMAIS),
+                round($ivaValorParcela, self::NUM_CASAS_DECIMAIS),
+                round($valorTransfParcelaComIva, self::NUM_CASAS_DECIMAIS),
+                round($valorTransfBni, self::NUM_CASAS_DECIMAIS),
+                round($impostoSeloValorBni, self::NUM_CASAS_DECIMAIS),
+                round($valorTransfBniComImpostoSelo, self::NUM_CASAS_DECIMAIS),
+                ($numParcela == 0) ? round($taxaComissaoSujeitaIva, self::NUM_CASAS_DECIMAIS) : 0,
                 ($numParcela == 0) ? $taxaProcessamento : 0,
-                ($numParcela == 0) ? $iva : 0,
-                ($numParcela == 0) ? $servicosFinanceiros : 0,
-                ($numParcela == 0) ? $impSelo : 0,
+                ($numParcela == 0) ? round($iva, self::NUM_CASAS_DECIMAIS) : 0,
+                ($numParcela == 0) ? round($servicosFinanceiros, self::NUM_CASAS_DECIMAIS) : 0,
+                ($numParcela == 0) ? round($impSelo, self::NUM_CASAS_DECIMAIS) : 0,
                 $tipoTransacao,
                 $tipoTaxa,
                 $clientEVO, //EVO PAYMENTS FROM HERE

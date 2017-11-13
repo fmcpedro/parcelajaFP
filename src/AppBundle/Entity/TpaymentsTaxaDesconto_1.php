@@ -125,60 +125,60 @@ class TpaymentsTaxaDesconto {
     }
 
     function getValorComissaoPagarAderente() {
-        return $this->getValorCompra() * $this->getComissaoPagarAderente();
+        return round($this->getValorCompra() * $this->getComissaoPagarAderente(), self::NUM_CASAS_DECIMAIS);
     }
 
     function getValorComissaoSujeitaIva() {
         //return 39.18; //tem um somatório
-        return $this->valorComissaoSujeitaIva;
+        return round($this->valorComissaoSujeitaIva, self::NUM_CASAS_DECIMAIS);
     }
 
     function getIvaComissao() {
-        return $this->getValorComissaoSujeitaIva() * self::IVA;
+        return round($this->getValorComissaoSujeitaIva() * self::IVA, self::NUM_CASAS_DECIMAIS);
     }
 
     function getCustoCaptura() {
-        return $this->getNumeroPrestacoes() * self::CUSTO_CAPTURA;
+        return round($this->getNumeroPrestacoes() * self::CUSTO_CAPTURA, self::NUM_CASAS_DECIMAIS);
     }
 
     function getIvaCustoCaptura() {
-        return $this->getCustoCaptura() * self::IVA;
+        return round($this->getCustoCaptura() * self::IVA, self::NUM_CASAS_DECIMAIS);
     }
 
     function getIvaTotal() {
-        return $this->getIvaComissao() + $this->getIvaCustoCaptura();
+        return round($this->getIvaComissao() + $this->getIvaCustoCaptura(), self::NUM_CASAS_DECIMAIS);
     }
 
     function getValorTotalCobradoAderente() {
-        return $this->getValorComissaoPagarAderente() + $this->getCustoCaptura() + $this->getIvaTotal();
+        return round($this->getValorComissaoPagarAderente() + $this->getCustoCaptura() + $this->getIvaTotal(), self::NUM_CASAS_DECIMAIS);
     }
 
     function getValorFinanciadoAderente() {
-        return $this->getValorCompra() - $this->getValorComissaoPagarAderente() - $this->getCustoCaptura();
+        return round($this->getValorCompra() - $this->getValorComissaoPagarAderente() - $this->getCustoCaptura(), self::NUM_CASAS_DECIMAIS);
     }
 
     function getValorPagoAderente() {
-        return $this->getValorCompra() - $this->getValorComissaoPagarAderente() - $this->getCustoCaptura() - $this->getIvaTotal();
+        return round($this->getValorCompra() - $this->getValorComissaoPagarAderente() - $this->getCustoCaptura() - $this->getIvaTotal(), self::NUM_CASAS_DECIMAIS);
     }
 
     function getValParcelas() {
-        return $this->getValorCompra() / $this->getNumeroPrestacoes();
+        return round($this->getValorCompra() / $this->getNumeroPrestacoes(), self::NUM_CASAS_DECIMAIS);
     }
 
     function getComOgone() {
-        return self::OGONE;
+        return round(self::OGONE, self::NUM_CASAS_DECIMAIS);
     }
 
     function getComEvoPayments() {
-        return $this->getValParcelas() * self::EVO_PAYMENTS;
+        return round($this->getValParcelas() * self::EVO_PAYMENTS, self::NUM_CASAS_DECIMAIS);
     }
 
     function getValorReceberEvoPayments() {
-        return $this->getValParcelas() - $this->getComEvoPayments();
+        return round($this->getValParcelas() - $this->getComEvoPayments(), self::NUM_CASAS_DECIMAIS);
     }
 
     function getCapitalAmortizadoMensalmente() {
-        return $this->getValorFinanciadoAderente() / $this->getNumeroPrestacoes();
+        return round($this->getValorFinanciadoAderente() / $this->getNumeroPrestacoes(), self::NUM_CASAS_DECIMAIS);
     }
 
     function getCapitalAmortizadoAcumulado() {
@@ -186,20 +186,20 @@ class TpaymentsTaxaDesconto {
     }
 
     function getCapitalEmDivida() {
-        return $this->getValorFinanciadoAderente() - $this->getCapitalAmortizadoAcumulado();
+        return round($this->getValorFinanciadoAderente() - $this->getCapitalAmortizadoAcumulado(), self::NUM_CASAS_DECIMAIS);
     }
 
     function getJuro() {
         //como o capital em em divida é do mês anterior tem de ser calculado fora
-        return $this->juro;
+        return round($this->juro, self::NUM_CASAS_DECIMAIS);
     }
 
     function getJuroAcumulado() {
-        return $this->juroAcumulado;
+        return round($this->juroAcumulado, self::NUM_CASAS_DECIMAIS);
     }
 
     function getImpostoSelo() {
-        return ($this->getJuro() + $this->getProcSepaCt()) * self::IMPOSTO_SELO;
+        return round(($this->getJuro() + $this->getProcSepaCt()) * self::IMPOSTO_SELO, self::NUM_CASAS_DECIMAIS);
     }
 
     function getImpostoSeloAcumulado() {
@@ -216,8 +216,8 @@ class TpaymentsTaxaDesconto {
 //                echo $this->getProcSepaCt()."Proc Sepa <br/>";
 //                echo $this->getImpostoSeloValorBni()." Imposto Selo Valor Bni<br/>";
 
-        return ($this->getValParcelas() * $this->getComissaoPagarAderente() + self::CAPTURA) - (($this->getComOgone() + $this->getComEvoPayments() + $this->getJuro() + $this->getProcSepaCt() + $this->getImpostoSeloValorBni())
-                );
+        return round(($this->getValParcelas() * $this->getComissaoPagarAderente() + self::CAPTURA) - (($this->getComOgone() + $this->getComEvoPayments() + $this->getJuro() + $this->getProcSepaCt() + $this->getImpostoSeloValorBni())
+                ), self::NUM_CASAS_DECIMAIS);
     }
 
     function getPiiAcumulado() {
@@ -225,7 +225,7 @@ class TpaymentsTaxaDesconto {
     }
 
     function getLucroParcela() {
-        return $this->getPiiParcial() * self::LUCRO_PARCELA;
+        return round($this->getPiiParcial() * self::LUCRO_PARCELA, self::NUM_CASAS_DECIMAIS);
     }
 
     function getLucroBniEuropa() {
@@ -233,33 +233,33 @@ class TpaymentsTaxaDesconto {
     }
 
     function getValorTransferParcela() {
-        //return $this->getLucroParcela() * (1 + self::IVA);
-        return $this->getLucroParcela() + $this->getComOgone();
+        //return round($this->getLucroParcela() * (1 + self::IVA), self::NUM_CASAS_DECIMAIS);
+        return round($this->getLucroParcela() + $this->getComOgone(), self::NUM_CASAS_DECIMAIS);
     }
 
     function getIvaValorParcela() {
-        return (($this->getValParcelas() * $this->getComissaoPagarAderente() + self::CAPTURA) - ($this->getProcSepaCt() + $this->getJuro() + $this->getImpostoSeloValorBni() + $this->getLucroBniEuropa())) * self::IVA;
+        return round((($this->getValParcelas() * $this->getComissaoPagarAderente() + self::CAPTURA) - ($this->getProcSepaCt() + $this->getJuro() + $this->getImpostoSeloValorBni() + $this->getLucroBniEuropa())) * self::IVA, self::NUM_CASAS_DECIMAIS);
     }
 
     function getValorTransfParcelaComIva() {
-        return $this->getValorTransferParcela() + $this->getIvaValorParcela();
+        return round($this->getValorTransferParcela() + $this->getIvaValorParcela(), self::NUM_CASAS_DECIMAIS);
     }
 
     function getValorTransfBni() {
-        return $this->getLucroBniEuropa() + $this->getJuro() + $this->getProcSepaCt();
+        return round($this->getLucroBniEuropa() + $this->getJuro() + $this->getProcSepaCt(), self::NUM_CASAS_DECIMAIS);
     }
 
     function getImpostoSeloValorBni() {
-        //return $this->getValorTransfBni() * self::IMPOSTO_SELO;
-        return ((self::LUCRO_BNI * self::IMPOSTO_SELO * (($this->getValParcelas() * $this->getComissaoPagarAderente() + self::CAPTURA) - ($this->getComOgone() + $this->getComEvoPayments() + $this->getJuro() + $this->getProcSepaCt()))) + (self::IMPOSTO_SELO * ($this->getJuro() + $this->getProcSepaCt()))) / ((self::LUCRO_BNI * self::IMPOSTO_SELO) + 1);
+        //return round($this->getValorTransfBni() * self::IMPOSTO_SELO, self::NUM_CASAS_DECIMAIS);
+        return round(((self::LUCRO_BNI * self::IMPOSTO_SELO * (($this->getValParcelas() * $this->getComissaoPagarAderente() + self::CAPTURA) - ($this->getComOgone() + $this->getComEvoPayments() + $this->getJuro() + $this->getProcSepaCt()))) + (self::IMPOSTO_SELO * ($this->getJuro() + $this->getProcSepaCt()))) / ((self::LUCRO_BNI * self::IMPOSTO_SELO) + 1), self::NUM_CASAS_DECIMAIS);
     }
 
     function getValorTransfBniComImpostoSelo() {
-        return $this->getValorTransfBni() + $this->getImpostoSeloValorBni();
+        return round($this->getValorTransfBni() + $this->getImpostoSeloValorBni(), self::NUM_CASAS_DECIMAIS);
     }
 
     function getTaxaComissaoSujeitaIva() {
-        return $this->getValorComissaoSujeitaIva();
+        return round($this->getValorComissaoSujeitaIva(), self::NUM_CASAS_DECIMAIS);
     }
 
     function getTaxaProcessamento() {
@@ -271,7 +271,7 @@ class TpaymentsTaxaDesconto {
     }
 
     function getServicosFinanceiros() {
-        //return $this->getJuroAcumulado() + $this->getProcSepaCt();
+        //return round($this->getJuroAcumulado() + $this->getProcSepaCt(), self::NUM_CASAS_DECIMAIS);
         return $this->servicosFinanceiros;
     }
 
@@ -428,7 +428,7 @@ class TpaymentsTaxaDesconto {
     }
 
     function getImpSelo() {
-        return $this->impSelo;
+        return round($this->impSelo, self::NUM_CASAS_DECIMAIS);
     }
 
     function setImpSelo($impSelo) {
