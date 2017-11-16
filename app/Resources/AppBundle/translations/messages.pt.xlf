@@ -109,6 +109,13 @@
                 <source>howitworks_block_02_text02</source>
                 <target>Para isso, a loja necessita de um terminal <![CDATA[<b>]]>Parcela Já<![CDATA[</b>]]> ou a aplicação online no seu website. O cliente pode então utilizar o seu cartão crédito Visa ou Mastercard e escolher em quantas vezes pretende pagar as suas compras.</target>
             </trans-unit>
+            
+            <trans-unit id="howitworks_block_03_simple_steps" resname="howitworks_block_03_simple_steps">
+                <source>howitworks_block_03_simple_steps</source>
+                <target>Três simples passos</target>
+            </trans-unit>
+            
+            
             <trans-unit id="howitworks_block_03_title01" resname="howitworks_block_03_title01">
                 <source>howitworks_block_03_title01</source>
                 <target>PASSO 1</target>
