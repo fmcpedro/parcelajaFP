@@ -73,33 +73,33 @@ swiftmailer:
 #    spool: { type: memory }
 
 
-
-monolog:
-    handlers:
-        main:
-            type:         fingers_crossed
-            action_level: critical
-            handler:      grouped
-        grouped:
-            type:    group
-            members: [streamed, deduplicated]
-        streamed:
-            type:  stream
-            path:  '%kernel.logs_dir%/%kernel.environment%.log'
-            level: error
-        deduplicated:
-            type:    deduplication
-            handler: swift
-        swift:
-            type:       swift_mailer
-            from_email: 'suporte@parcelaja.pt'
-            to_email:   ['lmiguens@consolidador.com']
-            subject:    'An Error Occurred! %%message%%'
-            level:      error
-            formatter:  monolog.formatter.html
-            content_type: text/html
-
-
+#
+#monolog:
+#    handlers:
+#        main:
+#            type:         fingers_crossed
+#            action_level: critical
+#            handler:      grouped
+#        grouped:
+#            type:    group
+#            members: [streamed, deduplicated]
+#        streamed:
+#            type:  stream
+#            path:  '%kernel.logs_dir%/%kernel.environment%.log'
+#            level: error
+#        deduplicated:
+#            type:    deduplication
+#            handler: swift
+#        swift:
+#            type:       swift_mailer
+#            from_email: 'suporte@parcelaja.pt'
+#            to_email:   ['lmiguens@consolidador.com']
+#            subject:    'An Error Occurred! %%message%%'
+#            level:      error
+#            formatter:  monolog.formatter.html
+#            content_type: text/html
+#
+#
 
 fos_user:
     db_driver: orm # other valid values are 'mongodb' and 'couchdb'

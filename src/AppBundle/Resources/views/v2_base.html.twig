@@ -7,6 +7,10 @@
         <meta charset="utf-8">
         <title>Parcela Já - Compre Já. Pague Depois.</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        
+        
+        
         <meta name="description" content="Com a Parcela Já, pode parcelar todas as suas compras no seu cartão de crédito, de 2 a 12 vezes, sem juros!.">
 
         <link rel="apple-touch-icon" sizes="128x128"  href="{{ asset('bundles/app/frontend/assets/images/icons/favicon-128.png') }}" alt=""/>
@@ -55,6 +59,7 @@
             <link rel="stylesheet" href="{{ asset('bundles/app/frontend/v2/assets/vendor/dzsparallaxer/dzsscroller/scroller.css') }}">
             <link rel="stylesheet" href="{{ asset('bundles/app/frontend/v2/assets/vendor/dzsparallaxer/advancedscroller/plugin.css') }}">
             <link rel="stylesheet" href="{{ asset('bundles/app/frontend/v2/assets/vendor/slick-carousel/slick/slick.css') }}">
+            <link rel="stylesheet" href="{{ asset('bundles/app/frontend/v2/assets/vendor/typedjs/typed.css') }}">
             <link rel="stylesheet" href="{{ asset('bundles/app/frontend/v2/assets/vendor/fancybox/jquery.fancybox.css') }}">
             <link rel="stylesheet" href="{{ asset('bundles/app/frontend/v2/assets/vendor/hs-bg-video/hs-bg-video.css') }}">
             <link rel="stylesheet" href="{{ asset('bundles/app/frontend/v2/assets/vendor/hs-megamenu/src/hs.megamenu.css') }}">
@@ -131,6 +136,17 @@
         <script src="{{ asset('bundles/app/frontend/v2/assets/js/custom.js') }}"></script>
 
     {% endblock %}
+    
+    
+    <!--@LM Cookies -->
+    {% include 'AppBundle:default:v2_cookies_embedded.html.twig' %}
+    
+    
+    
+    
+    
+    
+    
 
    <script>
         (function (i, s, o, g, r, a, m) {

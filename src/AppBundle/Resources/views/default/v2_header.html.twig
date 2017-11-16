@@ -1,12 +1,13 @@
 {# empty Twig template #}
 
+
 <!-- Header -->
 <header id="js-header" class="u-header u-header--sticky-top u-header--show-hide u-header--toggle-section navegacao-sombra" data-header-fix-moment="100" data-header-fix-effect="slide">
     <div class="u-header__section u-header__section--light g-bg-white g-py-5">
         <nav class="navbar navbar-expand-lg">
-            <div class="container">
+            <div class="container g-font-weight-500">
                 <!-- Responsive Toggle Button -->
-                <button class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
+                <button class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-minus-4 g-pt-1--sm g-pt-3--md g-right-0" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
                     <span class="hamburger hamburger--slider">
                         <span class="hamburger-box">
                             <span class="hamburger-inner"></span>
@@ -15,118 +16,145 @@
                 </button>
                 <!-- End Responsive Toggle Button -->
 
-                <!-- Logo -->
-                <a href="{{ path('homepage') }}" class="navbar-brand">
-                    <img src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/logo/logo-nb-ft-Blue.svg') }}" class="logo-altura logo-altura--sm" alt="Logo Parcela Já">
+                <!-- Logo Parcela Já -->
+                <a href="{{ path('homepage') }}" class="navbar-brand g-mr-10 g-mr-20--sm">
+                    <img src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/logo/logo-nb-ft-blue.svg') }}" class="logo-altura logo-altura--sm logo-altura--md" alt="Logo Parcela Já">
                 </a>
-                <!-- End Logo -->
+                <!-- End - Logo Parcela Já  -->
+
+                <!-- Logo BancoBNI -->
+                <a href="{{ path('homepage') }}" class="navbar-brand g-brd-left g-brd-gray-light-v4 g-pl-10 g-pl-20--sm">
+                    <img src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/logo/lg-bnieuro.svg') }}" class="logo-altura logo-altura--sm logo-altura--md" alt="Logo BancoBNI">
+                </a>
+                <!-- End - Logo BancoBNI  -->
 
                 <!-- Navigation -->
-                <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg" id="navBar">
-                    <ul class="navbar-nav text-uppercase g-font-weight-600 ml-auto">
+                <div class="js-mega-menu collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg parcelaja-menu" id="navBar">
+                    <ul class="navbar-nav text-uppercase ml-auto">
+
 
                         <!-- Para Aderentes -->
                         {% if selected_menu == 'homepage' %}
-                            <li class="nav-item g-mx-20--lg active">
-                                <a href="{{ path('homepage') }}" class="nav-link px-0">{% trans %}header_paraaderentes{% endtrans %}</a>
+                            <li class="nav-item g-mx-20--lg g-py-2 active">
+                                <a href="{{ path('homepage') }}" class="nav-link px-0 g-color-primary--hover">{% trans %}header_paraaderentes{% endtrans %}</a>
                             </li>
                         {% else %}
-                            <li class="nav-item g-mx-20--lg ">
-                                <a href="{{ path('homepage') }}" class="nav-link px-0">{% trans %}header_paraaderentes{% endtrans %}</a>
+                            <li class="nav-item g-mx-20--lg g-py-2 ">
+                                <a href="{{ path('homepage') }}" class="nav-link px-0 g-color-primary--hover">{% trans %}header_paraaderentes{% endtrans %}</a>
                             </li>
                         {% endif %}
                         <!-- End - Para Aderentes -->
 
-                        
-                        
+
                         <!-- Para Clientes -->
                         {% if selected_menu == 'para_clientes' %}
-                        <li class="nav-item g-mx-20--lg active">
-                            <a href="{{ path('para_clientes') }}" class="nav-link px-0">{% trans %}header_paraclientes{% endtrans %}</a>
-                        </li>
+                            <li class="nav-item g-mx-20--lg g-py-2 active">
+                                <a href="{{ path('para_clientes') }}" class="nav-link px-0 g-color-primary--hover">{% trans %}header_paraclientes{% endtrans %}</a>
+                            </li>
                         {% else %}
-                        <li class="nav-item g-mx-20--lg">
-                            <a href="{{ path('para_clientes') }}" class="nav-link px-0">{% trans %}header_paraclientes{% endtrans %}</a>
-                        </li>    
-                            {% endif %}
+                            <li class="nav-item g-mx-20--lg g-py-2">
+                                <a href="{{ path('para_clientes') }}" class="nav-link px-0 g-color-primary--hover">{% trans %}header_paraclientes{% endtrans %}</a>
+                            </li>    
+                        {% endif %}
                         <!-- End - Para Clientes -->
 
-                        
-                        
-                        
+
+
                         <!-- Como Funciona -->
                         {% if selected_menu == 'como_funciona' %}
-                        <li class="nav-item g-color-red g-color-primary--hover g-mx-20--lg active">
-                            <a href="{{ path('como_funciona') }}" class="nav-link px-0">{% trans %}header_comofunciona{% endtrans %}</a>
-                        </li>
+                            <li class="nav-item g-mx-20--lg g-py-2 active">
+                                <a href="{{ path('como_funciona') }}" class="nav-link px-0 g-color-primary--hover">{% trans %}header_comofunciona{% endtrans %}</a>
+                            </li>
                         {% else %}
-                        <li class="nav-item g-color-red g-color-primary--hover g-mx-20--lg">
-                            <a href="{{ path('como_funciona') }}" class="nav-link px-0">{% trans %}header_comofunciona{% endtrans %}</a>
-                        </li>
-                            {% endif %}
+                            <li class="nav-item g-mx-20--lg g-py-2">
+                                <a href="{{ path('como_funciona') }}" class="nav-link px-0 g-color-primary--hover">{% trans %}header_comofunciona{% endtrans %}</a>
+                            </li>
+                        {% endif %}
                         <!-- End - Como Funciona -->
 
-                        
+
+
+
                         <!-- Blog -->
                         {% if selected_menu == 'blog' %}
-                        <li class="nav-item g-mx-20--lg active">
-                            <a href="{{ path('blog') }}" class="nav-link px-0">{% trans %}header_blog{% endtrans %}</a>
-                        </li>
+                            <li class="nav-item g-mx-20--lg g-py-2 active">
+                                <a href="{{ path('blog') }}" class="nav-link px-0 g-color-primary--hover">{% trans %}header_blog{% endtrans %}</a>
+                            </li>
                         {% else %}
-                        <li class="nav-item g-mx-20--lg">
-                            <a href="{{ path('blog') }}" class="nav-link px-0">{% trans %}header_blog{% endtrans %}</a>
-                        </li>
+                            <li class="nav-item g-mx-20--lg g-py-2">
+                                <a href="{{ path('blog') }}" class="nav-link px-0 g-color-primary--hover">{% trans %}header_blog{% endtrans %}</a>
+                            </li>
                         {% endif %}
                         <!-- End Blog -->
 
-                        
-                        
-                        
-                        
-                        
-                        
-                        <!-- Login -->
-                        {#            <li class="nav-item g-ml-50--lg">
-                                      <a href="http://www.galifao.pt/parcelaja/login" class="nav-link px-0">
-                                        Entrar              </a>
+
+
+
+                        {#            
+                                    <!-- Login Mobile -->
+                                    <li class="nav-item g-hidden-lg-up g-mx-20--lg g-py-2<?php if($pagina == $pagina_login) {echo ' active'; }; ?>">
+                                      <a href="<?php echo $site_url . $idiomas[$idioma]['slug'] . $pagina_login['slug'][$idioma]; ?>" class="nav-link px-0 g-color-primary--hover">
+                                        <?php echo $pagina_login['titulo'][$idioma]; ?>
+                                      </a>
                                     </li>
-                        #}            <!-- End do Login -->
+                                    <!-- End - Login Mobile -->
+                        
+                                    <!-- Login -->
+                                    <div class="d-inline-block g-hidden-md-down g-pos-rel g-valign-middle g-mx-20--lg">
+                                      <a class="btn u-btn-outline-primary g-bg-primary--active g-bg-primary--hover text-uppercase g-py-8 g-px-15<?php if($pagina == $pagina_login) {echo ' active'; }; ?>" href="<?php echo $site_url . $pagina_login['slug'][$idioma]; ?>">
+                                        <?php echo $pagina_login['titulo'][$idioma]; ?>
+                                      </a>
+                                    </div>
+                                    <!-- End - Login -->
+                                    
+                                    
+                                    
+                                    #}
+
+
+
 
                         <!-- Idiomas -->
-                        <li class="nav-item g-mx-20--lg">
-                            <div class="g-pos-rel g-width-50 g-pt-7--lg g-ml-20 g-ml-20--lg">
-                                <a href="#" id="languages-dropdown-invoker-2" class="g-color-primary--hover g-text-underline--none--hover text-uppercase" aria-controls="languages-dropdown-2" aria-haspopup="true" aria-expanded="false" data-dropdown-event="click" data-dropdown-target="#languages-dropdown-2" data-dropdown-type="css-animation" data-dropdown-duration="500" data-dropdown-hide-on-scroll="true" data-dropdown-animation-in="fadeIn" data-dropdown-animation-out="fadeOut">{{ app.request.locale }}<i class="fa fa-angle-down g-ml-3"></i>
-                                </a>
-                                <ul id="languages-dropdown-2" class="list-unstyled text-left u-shadow-v23 g-pos-abs g-left-0 g-bg-white g-width-160 g-z-index-2 g-py-20 g-pb-15 g-mt-25--lg g-mt-20--lg--scrolling" aria-labelledby="languages-dropdown-invoker-2">
-                                    <li>
-                                        <a class="d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-py-8 g-px-20" href="{{ path('homepage', {'_locale':'pt' }) }}">Português</a>
-                                    </li>
-                                    <li>
-                                        <a class="d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-py-8 g-px-20" href="{{ path('homepage', {'_locale':'en' }) }}">English</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <!-- End Idiomas -->
+                        <li class="nav-item hs-has-sub-menu g-mx-20--lg g-py-2" data-animation-in="fadeIn" data-animation-out="fadeOut" data-position="right">
+                            <a id="mega-menu-label-1" class="nav-link g-px-0 g-color-primary--hover g-font-weight-500" href="#" aria-haspopup="true" aria-expanded="false">
+                                {{ app.request.locale }}
+                            </a>
+                            <!-- Submenu -->
+                            <ul class="hs-sub-menu list-unstyled g-text-transform-none g-mt-15 g-mt-10--lg--scrolling g-brd-left navegacao-sombra--lg" id="nav-submenu-1" aria-labelledby="nav-link-1">
 
-                        
-         
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
+                                <!-- Português -->
+                                <li class="dropdown-item">
+                                    <a class="nav-link g-px-0 text-uppercase g-color-primary--hover g-font-weight-500" href="{{ path('homepage', {'_locale':'pt' }) }}">Português</a>
+                                </li>
+                                <!-- End - Português -->
+
+                                <!-- Inglês -->
+                                <li class="dropdown-item">
+                                    <a class="nav-link g-px-0 text-uppercase g-color-primary--hover g-font-weight-500" href="{{ path('homepage', {'_locale':'en' }) }}">Inglês</a>
+                                </li>
+                                <!-- End - Inglês -->
+
+                            </ul>
+                            <!-- End Submenu -->
+                        </li>
+                        <!-- End - Idiomas -->
+
                     </ul>
                 </div>
                 <!-- End Navigation -->
+
             </div>
         </nav>
     </div>
 </header>
 <!-- End Header -->
+
+
+
+
+
+
+
+
 
 

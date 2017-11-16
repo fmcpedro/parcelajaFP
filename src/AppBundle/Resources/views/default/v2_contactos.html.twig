@@ -12,11 +12,31 @@
     <!--@LM header -->
     {% include 'AppBundle:default:v2_header.html.twig'   with {'selected_menu': 'homepage'} %}
 
-    <section class="container g-pt-70">
+
+
+
+
+    <section class="container g-pt-70 g-px-25 g-px-50--md">
         <div class="row justify-content-between">
+            <!-- Coluna Principal -->
             <div class="col-md-7 g-mt-50 g-mb-100">
-                <h2 class="h2 h2--md h2--lg mb-0">{% trans %}contactus_block_01_title01{% endtrans %}</h2>
+                <!-- Título -->
+                <div class="u-heading-v3-1 g-mb-50">
+                    <h2 class="u-heading-v3__title h2 h2--md h2--lg g-brd-primary">{% trans %}contactus_block_01_title01{% endtrans %}</h2>
+                </div>
+                <!-- End - Título -->
+
+
+
+
+
+
                 <p class="mb-5">{% trans %}contactus_block_01_subtitle01{% endtrans %}</p>
+
+
+
+
+
 
                 {% for flashMessage in app.session.flashbag.get('notice') %}
                     <div class="alert alert-success">
@@ -47,99 +67,136 @@
                 <!-- Contact Form -->
                 {{ form_start(form) }} 
                 <div class="row">
+
+
+
+
+
+
                     <div class="col-md-6 form-group g-mb-20">
-                        <label class="g-font-size-14">{% trans %}contactus_block_01_name{% endtrans %} <span class="g-color-red">*</span></label>
+                        <label>{% trans %}contactus_block_01_name{% endtrans %} <span class="g-color-red">*</span></label>
                         {{ form_widget(form.name, {'attr': {'class': 'form-control g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15'}}) }}
                         {{ form_errors(form.name) }}
+
+
+
                     </div>
 
                     <div class="col-md-6 form-group g-mb-20">
-                        <label class="g-font-size-14">{% trans %}contactus_block_01_email{% endtrans %}  <span class="g-color-red">*</span></label>
+                        <label>{% trans %}contactus_block_01_email{% endtrans %} <span class="g-color-red">*</span></label>
                         {{ form_widget(form.email, {'attr': {'class': 'form-control g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15'}}) }}
                         {{ form_errors(form.email) }}
+
                     </div>
 
                     <div class="col-md-6 form-group g-mb-20">
-                        <label class="g-font-size-14">{% trans %}contactus_block_01_subject{% endtrans %}  <span class="g-color-red">*</span></label>
+                        <label>{% trans %}contactus_block_01_subject{% endtrans %} <span class="g-color-red">*</span></label>
+
                         {{ form_widget(form.subject, {'attr': {'class': 'form-control g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15'}}) }}
                         {{ form_errors(form.subject) }}
+
+
                     </div>
 
                     <div class="col-md-6 form-group g-mb-20">
-                        <label class="g-font-size-14">{% trans %}contactus_block_01_telephone{% endtrans %}  <span class="g-color-red">*</span></label>
+                        <label>{% trans %}contactus_block_01_telephone{% endtrans %} <span class="g-color-red">*</span></label>
                         {{ form_widget(form.phone, {'attr': {'class': 'form-control g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15'}}) }}
                         {{ form_errors(form.phone) }}
+
                     </div>
 
                     <div class="col-md-12 form-group g-mb-40">
-                        <label class="g-font-size-14">{% trans %}contactus_block_01_message{% endtrans %}  <span class="g-color-red">*</span></label>
+                        <label>{% trans %}contactus_block_01_message{% endtrans %} <span class="g-color-red">*</span></label>
                         {{ form_widget(form.message, {'attr': {'class': 'form-control g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus g-resize-none rounded-3 g-py-13 g-px-15'}}) }}
                         {{ form_errors(form.message) }}
+
+                        {#<textarea class="" rows="7" placeholder="Escreva aqui a sua mensagem..."></textarea>#}
                     </div>
 
-
                     <div class="col-md-12 form-group g-mb-40">
-                        <label class="g-font-size-14">{{ form.vars.value.firstValue }} + {{ form.vars.value.secondValue }} = ? <span class="g-color-red">*</span></label>
+                        <label>{{ form.vars.value.firstValue }} + {{ form.vars.value.secondValue }} = ? <span class="g-color-red">*</span></label>
                         {{ form_widget(form.firstValue, {'attr': {'class': ''}}) }}
                         {{ form_widget(form.secondValue, {'attr': {'class': ''}}) }}
                         {{ form_widget(form.validation, {'attr': {'class': 'form-control g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus g-resize-none rounded-3 g-py-13 g-px-15'}}) }}
                         {{ form_errors(form.validation) }}
                     </div>
                 </div>
-
-                <button class="btn u-btn-primary rounded-3 g-py-12 g-px-20" type="submit" role="button">{% trans %}contactus_block_01_button{% endtrans %}</button>
+                <button class="btn u-btn-primary rounded-3 g-py-12 g-px-20 text-uppercase" type="submit" role="button">{% trans %}contactus_block_01_button{% endtrans %}</button>
                 {{ form_end(form) }}
-                <!-- End Contact Form -->
+                <!-- End - Formulário de Contacto -->
             </div>
+            <!-- End - Coluna Principal -->
 
-            <div class="col-md-4 g-mt-50 g-mb-100">
-                <h2 class="h2 h2--md h2--lg mb-5">Parcela Já</h2>
-                <p class="mb-5"> </p>
+            
+            
+            
+            
+            
+            
+            
+            
+            <!-- Barra Lateral -->
+    <div class="col-md-4 g-mt-50 g-mb-100">
+      <!-- Título -->
+      <div class="u-heading-v3-1 g-mb-50">
+        <h2 class="u-heading-v3__title h2 h2--md h2--lg g-brd-primary">Parcela&nbsp;Já</h2>
+      </div>
+      <!-- End - Título -->
 
-                <div class="mb-4">
-                    <h5 class="g-font-size-18">{% trans %}contactus_block_01_address01{% endtrans %}:</h5>
-                    <p class="g-font-size-16">Avenida da República, 48-b, 6º
-                        <br>1050-195 Lisboa</p>
-                </div>
+      <!-- Contactos -->
+      <div class="mb-4">
+        <h5 class="g-font-size-18">{% trans %}contactus_block_01_address01{% endtrans %}</h5>
+        <p>
+          Avenida da República, 48-b, 6º<br>
+          1050-195 Lisboa<br>
+          Portugal
+        </p>
+      </div>
 
-                <div class="mb-4">
-                    <h5 class="g-font-size-18">Email:</h5>
-                    <p>
-                        <strong>{% trans %}contactus_block_01_geral{% endtrans %}:</strong> <a class="g-color-primary--hover" href="mailto:geral@parcelaja.pt">geral@parcelaja.pt</a></br>
-                        <strong>{% trans %}contactus_block_01_comercial{% endtrans %}:</strong> <a class="g-color-primary--hover" href="mailto:suporte@parcelaja.pt">suporte@parcelaja.pt</a></br>
-                        <strong>{% trans %}contactus_block_01_clientes{% endtrans %}:</strong> <a class="g-color-primary--hover" href="mailto:suporte@parcelaja.pt">suporte@parcelaja.pt</a></br>
-                    </p>
-                </div>
+      <div class="mb-4">
+        <h5 class="g-font-size-18">Email</h5>
+        <p>
+          {% trans %}contactus_block_01_geral{% endtrans %}: <a class="g-color-primary--hover" href="mailto:geral@parcelaja.pt">geral@parcelaja.pt</a></br>
+          {% trans %}contactus_block_01_comercial{% endtrans %}: <a class="g-color-primary--hover" href="mailto:suporte@parcelaja.pt">suporte@parcelaja.pt</a></br>
+          {% trans %}contactus_block_01_clientes{% endtrans %}: <a class="g-color-primary--hover" href="mailto:suporte@parcelaja.pt">suporte@parcelaja.pt</a></br>
+        </p>
+      </div>
 
-                <div class="mb-3">
-                    <h5 class="g-font-size-18">{% trans %}contactus_block_01_telephone02{% endtrans %}:</h5>
-                    <p>{% trans %}contactus_block_01_geral{% endtrans %}: <a class="g-color-primary--hover" href="tel:+351215881280">+351 215 881 280</a>
-                    </p>
-                </div>
+      <div class="mb-4">
+        <h5 class="g-font-size-18">{% trans %}contactus_block_01_telephone02{% endtrans %}</h5>
+        <p>
+          {% trans %}contactus_block_01_geral{% endtrans %}: <a class="g-color-primary--hover" href="tel:+351215881280">+351 215 881 280</a>
+        </p>
+      </div>
 
-                <div class="g-mb-30">
-                    <p class="g-font-size-14"><em>{% trans %}contactus_block_01_workdays{% endtrans %}</em>
-                    </p>
-                </div>
+      <div class="g-mb-30">
+        <p>
+          {% trans %}contactus_block_01_workdays{% endtrans %}
+        </p>
+      </div>
+      <!-- End - Contactos -->
 
+      <!-- Ícones de Redes Sociais -->
+      <ul class="list-inline">
+        <li class="list-inline-item">
+          <a class="parcelaja-icone u-icon-v1 g-bg-gray-light-v5 g-color-white--hover g-bg-primary--hover rounded-circle" href="https://www.facebook.com/parcelajapt/" target="_blank">
+            <i class="g-font-size-default fa fa-facebook"></i>
+          </a>
+        </li>
+        <li class="list-inline-item g-mx-4">
+          <a class="parcelaja-icone u-icon-v1 g-bg-gray-light-v5 g-color-white--hover g-bg-primary--hover rounded-circle" href="https://www.linkedin.com/company/parcela-j%C3%A1" target="_blank">
+            <i class="g-font-size-default fa fa-linkedin"></i>
+          </a>
+        </li>
+      </ul>
+      <!-- End - Ícones de Redes Sociais -->
+    </div>
+    <!-- End - Barra Lateral -->
 
+            
+            
+          
 
-
-                <!-- Figure Social Icons -->
-                <ul class="list-inline">
-                    <li class="list-inline-item">
-                        <a class="u-icon-v1 g-bg-gray-light-v5 g-color-white--hover g-bg-primary--hover rounded-circle" href="https://www.facebook.com/parcelajapt/" target="_blank">
-                            <i class="g-font-size-default fa fa-facebook"></i>
-                        </a>
-                    </li>
-                    <li class="list-inline-item g-mx-4">
-                        <a class="u-icon-v1 g-bg-gray-light-v5 g-color-white--hover g-bg-primary--hover rounded-circle" href="https://www.linkedin.com/company/parcela-j%C3%A1" target="_blank">
-                            <i class="g-font-size-default fa fa-linkedin"></i>
-                        </a>
-                    </li>
-                </ul>
-                <!-- End Figure Social Icons -->
-            </div>
         </div>
     </section>
 
@@ -148,7 +205,8 @@
          data-pin="true" data-pin-icon="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/contactos/pin-map.png') }}">
     </div>
     <!-- End Google Map -->
-
+    
+  
 
 
 
@@ -272,9 +330,6 @@
     </script>
 
     <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyAtt1z99GtrHZt_IcnK-wryNsQ30A112J0&callback=initMap" async defer></script>
-
-
-
 
 
 {% endblock %}

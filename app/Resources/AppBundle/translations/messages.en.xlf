@@ -109,6 +109,12 @@
                 <source>howitworks_block_02_text02</source>
                 <target>For this, the stores must have a <![CDATA[<b>]]>Parcela Já<![CDATA[</b>]]> POS terminal or the online app on their website. Once the customer use their Visa or Mastercard credit card, he can choose in how many instalments he want to pay for his purchase.</target>
             </trans-unit>
+            
+             <trans-unit id="howitworks_block_03_simple_steps" resname="howitworks_block_03_simple_steps">
+                <source>howitworks_block_03_simple_steps</source>
+                <target>Three simple steps</target>
+            </trans-unit>
+            
             <trans-unit id="howitworks_block_03_title01" resname="howitworks_block_03_title01">
                 <source>howitworks_block_03_title01</source>
                 <target>STEP 1</target>

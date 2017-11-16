@@ -150,6 +150,11 @@ class DefaultController extends Controller {
 
         return $this->render('AppBundle:default:v2_pci.html.twig');
     }
+    
+    public function cookiesAction(Request $request) {
+
+        return $this->render('AppBundle:default:v2_cookies.html.twig');
+    }
 
     public function emailAction(Request $request) {
 

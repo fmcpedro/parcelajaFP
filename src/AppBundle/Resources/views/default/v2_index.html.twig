@@ -12,36 +12,51 @@
     <!--@LM header -->
     {% include 'AppBundle:default:v2_header.html.twig'   with {'selected_menu': 'homepage'} %}
 
-    <!-- Promo Block -->
-    <section class="g-flex-centered g-bg-pos-center g-bg-img-hero g-py-150 u-bg-overlay g-bg-black-opacity-0_5--after" style="background-image: url({{ asset('bundles/app/frontend/v2/assets/img-parcelaja/heros/hero3.jpg') }});" data-calc-target="#js-header">
-        <div class="container text-center g-z-index-1">
-            <div class="g-py-50 g-mt-100" data-animation="fadeInUp" data-animation-delay="200" data-animation-duration="1500">
 
-                {% if app.request.locale == "en" %}
-                    <a class="js-fancybox-media u-link-v5 g-color-black" href="https://vimeo.com/241046229" title="Parcela Já - InStore Video">
-                        <span class="botao-play--sm botao-play--md botao-play--lg align-middle u-icon-v3 u-block-hover--scale g-bg-primary g-color-white g-color-white--hover g-rounded-50x g-cursor-pointer mr-2">
-                            <i class="g-font-size-20 g-font-size-28--md g-font-size-35--lg g-pos-rel g-left-2 fa fa-play"></i>
-                        </span>
-                    </a>
-                {% else %}
-                    <a class="js-fancybox-media u-link-v5 g-color-black" href="https://vimeo.com/241048391" title="Parcela Já - Loja Video">
-                        <span class="botao-play--sm botao-play--md botao-play--lg align-middle u-icon-v3 u-block-hover--scale g-bg-primary g-color-white g-color-white--hover g-rounded-50x g-cursor-pointer mr-2">
-                            <i class="g-font-size-20 g-font-size-28--md g-font-size-35--lg g-pos-rel g-left-2 fa fa-play"></i>
-                        </span>
-                    </a>
-                {% endif %}
 
+
+    <!-- Hero -->
+    <section class="dzsparallaxer auto-init height-is-based-on-content use-loading mode-scroll fundo-branco" data-options="{direction: 'reverse', settings_mode_oneelement_max_offset: '150'}">
+        <!-- Parallax Image -->
+        <div class="divimage dzsparallaxer--target w-100 u-bg-overlay g-bg-black-opacity-0_5--after parcelaja-hero-pos-left-top" style="height: 140%; background-image: url({{ asset('bundles/app/frontend/v2/assets/img-parcelaja/home/hero/hero-home-1920x1080-parallax.jpg') }})"></div>
+        <!-- End Parallax Image -->
+        <div class="parcelaja-hero-container container text-center g-px-0">
+            <div class="row justify-content-center parcelaja-hero-seta text-center g-px-0 g-mx-0" data-animation="fadeInUp" data-animation-delay="1100" data-animation-duration="1500">
+                <a class="g-mb-20 g-mb-25--sm g-mb-30--md g-font-size-30 g-font-size-40--md g-text-underline--none js-go-to" href="#" data-target="#seccao1"><i class="icon-arrow-down u-simple-line-icon"></i></a>
             </div>
-            <h1 class="g-color-white titulo-hero titulo-hero--sm titulo-hero--md titulo-hero--lg titulo-hero--xl text-uppercase g-mb-100" data-animation="fadeInUp" data-animation-delay="800" data-animation-duration="1500">
-                {% trans %}homepage_block_01_title{% endtrans %}
-            </h1>
+            <div class="parcela-hero-play container text-center">
+                <div class="g-mb-25 g-mb-50--md" data-animation="fadeIn" data-animation-delay="200" data-animation-duration="800">
+                    {% if app.request.locale == "en" %}
+                        <a class="js-fancybox-media u-link-v5 g-color-black" href="https://vimeo.com/241046229" title="Parcela Já - InStore (PT Legendado)">
+                            <span class="align-middle g-cursor-pointer">
+                                <img class="botao-play botao-play--sm botao-play--md botao-play--lg botao-play--xl u-block-hover--scale" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/botoes/bt-video.svg') }}">
+                            </span>
+                        </a>
+                    {% else %}
+                        <a class="js-fancybox-media u-link-v5 g-color-black" href="https://vimeo.com/241048391" title="Parcela Já - InStore (PT Legendado)">
+                            <span class="align-middle g-cursor-pointer">
+                                <img class="botao-play botao-play--sm botao-play--md botao-play--lg botao-play--xl u-block-hover--scale" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/botoes/bt-video.svg') }}">
+                            </span>
+                        </a>
+                    {% endif %}
+                </div>
+                <h1 class="g-color-white titulo-hero titulo-hero--sm titulo-hero--md titulo-hero--lg titulo-hero--xl text-uppercase" data-animation="fadeIn" data-animation-delay="0" data-animation-duration="1500">
+                    <span class="u-text-animation u-text-animation--typing">aaa {% trans %}homepage_block_01_title{% endtrans %}</span>
+                </h1>
+            </div>
         </div>
     </section>
-    <!-- End Promo Block -->
+    <!-- End - Hero -->
+
+
+
+
+
+
 
 
     <!-- Diferencie o seu negócio com a Parcela Já -->
-    <section id="seccao1" class="g-py-100">
+    <section id="seccao1" class="g-py-50 g-py-100--sm">
         <div class="text-center g-mb-50">
             <h2 class="h2 h2--md h2--lg g-px-25 g-px-50--md">{% trans %}homepage_block_02_title{% endtrans %}</h2>
         </div>
@@ -52,9 +67,9 @@
                     <!-- Icon Blocks -->
                     <div class="text-center">
                         <span class="d-inline-block u-icon-v3 u-icon-size--xl g-bg-primary g-color-white rounded-circle g-mb-30">
-                            <i class="icon-finance-226 u-line-icon-pro"></i>
+                            <i class="icon-finance-226 u-line-icon-pro g-left-2"></i>
                         </span>
-                        <h5 class="ig-font-size-18 text-uppercase mb-3">{% trans %}homepage_block_02_subtitle_01{% endtrans %}</h5>
+                        <h5 class="g-font-size-18 text-uppercase mb-3">{% trans %}homepage_block_02_subtitle_01{% endtrans %}</h5>
                         <p class="paragrafo-icones g-font-size-14 mb-0">{% trans %}homepage_block_02_text_01{% endtrans %}</p>
                     </div>
                     <!-- End Icon Blocks -->
@@ -64,7 +79,7 @@
                     <!-- Icon Blocks -->
                     <div class="text-center">
                         <span class="d-inline-block u-icon-v3 u-icon-size--xl g-bg-primary g-color-white rounded-circle g-mb-30">
-                            <i class="icon-finance-212 u-line-icon-pro"></i>
+                            <i class="icon-finance-212 u-line-icon-pro g-left-2"></i>
                         </span>
                         <h5 class="g-font-size-18 text-uppercase mb-3">{% trans %}homepage_block_02_subtitle_02{% endtrans %}</h5>
                         <p class="paragrafo-icones g-font-size-14 mb-0">{% trans %}homepage_block_02_text_02{% endtrans %}</p>
@@ -88,6 +103,15 @@
         </div>
     </section>
     <!-- End Diferencie o seu negócio com a Parcela Já -->
+
+
+
+
+
+
+
+
+
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
 
@@ -100,25 +124,23 @@
     </script>
 
     <!-- VANTAGENS DAS LOJAS -->
-    <section class="g-pt-100 g-pb-50 g-bg-secondary">
+    <section class="g-pt-50 g-pt-100--sm g-pb-50 g-bg-secondary">
         <div class="container">
             <div class="text-center g-mb-50">
                 <h3 class="h3 h3--md h3--lg">{% trans %}homepage_block_03_title{% endtrans %}</h3>
             </div>
-            <div class="row">
+            <div class="row no-gutters justify-content-center">
 
-                <div class="col-lg-4 col-sm-6 g-mb-50 text-center">
+                <div class="col-lg-auto col-sm-auto g-mx-25 g-mb-50 text-center">
                     <!-- Bloco de ícone -->
                     <div class="icone-flip-card">
                         <!-- Frente Ícone -->
-                        <div class="front">
-                            <img class="" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/home/icones/01-pupj.svg') }}" alt="Aumento do número de vendas">
-                        </div>
+                        <div class="front row card1"></div>
                         <!-- End Frente Ícone -->
                         <!-- Fundo Ícone -->
-                        <div class="back">
-                            <div class="text-center g-flex-middle-item g-py-90 g-px-15">
-                                <h4 class="g-font-weight-400 g-color-white">{% trans %}homepage_block_03_text_01{% endtrans %}</h4>
+                        <div class="back row align-items-center">
+                            <div class="text-center g-px-15">
+                                <h5 class="g-font-size-18 g-font-weight-400 text-uppercase g-color-white g-my-0">{% trans %}homepage_block_03_text_01{% endtrans %}</h5>
                             </div>
                         </div>
                         <!-- End Fundo Ícone -->
@@ -126,18 +148,16 @@
                     <!-- End - Bloco de ícone -->
                 </div>
 
-                <div class="col-lg-4 col-sm-6 g-mb-50 text-center">
+                <div class="col-lg-auto col-sm-auto g-mx-25 g-mb-50 text-center">
                     <!-- Bloco de ícone -->
                     <div class="icone-flip-card">
                         <!-- Frente Ícone -->
-                        <div class="front">
-                            <img class="" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/home/icones/02-pupj.svg') }}" alt="Aumento do valor médio de cada venda">
-                        </div>
+                        <div class="front row card2"></div>
                         <!-- End Frente Ícone -->
                         <!-- Fundo Ícone -->
-                        <div class="back">
-                            <div class="text-center g-flex-middle-item g-py-90 g-px-15">
-                                <h4 class="g-font-weight-400 g-color-white">{% trans %}homepage_block_03_text_02{% endtrans %}</h4>
+                        <div class="back row align-items-center">
+                            <div class="text-center g-px-15">
+                                <h5 class="g-font-size-18 g-font-weight-400 text-uppercase g-color-white g-my-0">{% trans %}homepage_block_03_text_02{% endtrans %}</h5>
                             </div>
                         </div>
                         <!-- End Fundo Ícone -->
@@ -145,18 +165,16 @@
                     <!-- End - Bloco de ícone -->
                 </div>
 
-                <div class="col-lg-4 col-sm-6 g-mb-50 text-center">
+                <div class="col-lg-auto col-sm-auto g-mx-25 g-mb-50 text-center">
                     <!-- Bloco de ícone -->
                     <div class="icone-flip-card">
                         <!-- Frente Ícone -->
-                        <div class="front">
-                            <img class="" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/home/icones/03-pupj.svg') }}" alt="Diminuição do abandono de intenção de compra">
-                        </div>
+                        <div class="front row card3"></div>
                         <!-- End Frente Ícone -->
                         <!-- Fundo Ícone -->
-                        <div class="back">
-                            <div class="text-center g-flex-middle-item g-py-75 g-px-15">
-                                <h4 class="g-font-weight-400 g-color-white">{% trans %}homepage_block_03_text_03{% endtrans %}</h4>
+                        <div class="back row align-items-center">
+                            <div class="text-center g-px-15">
+                                <h5 class="g-font-size-18 g-font-weight-400 text-uppercase g-color-white g-my-0">{% trans %}homepage_block_03_text_03{% endtrans %}</h5>
                             </div>
                         </div>
                         <!-- End Fundo Ícone -->
@@ -164,18 +182,16 @@
                     <!-- End - Bloco de ícone -->
                 </div>
 
-                <div class="col-lg-4 col-sm-6 g-mb-50 text-center">
+                <div class="col-lg-auto col-sm-auto g-mx-25 g-mb-50 text-center">
                     <!-- Bloco de ícone -->
                     <div class="icone-flip-card">
                         <!-- Frente Ícone -->
-                        <div class="front">
-                            <img class="" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/home/icones/04-pupj.svg') }}" alt="Aumento da faturação">
-                        </div>
+                        <div class="front row card4"></div>
                         <!-- End Frente Ícone -->
                         <!-- Fundo Ícone -->
-                        <div class="back">
-                            <div class="text-center g-flex-middle-item g-py-90 g-px-15">
-                                <h4 class="g-font-weight-400 g-color-white">{% trans %}homepage_block_03_text_04{% endtrans %}</h4>
+                        <div class="back row align-items-center">
+                            <div class="text-center g-px-15">
+                                <h5 class="g-font-size-18 g-font-weight-400 text-uppercase g-color-white g-my-0">{% trans %}homepage_block_03_text_04{% endtrans %}</h5>
                             </div>
                         </div>
                         <!-- End Fundo Ícone -->
@@ -183,18 +199,16 @@
                     <!-- End - Bloco de ícone -->
                 </div>
 
-                <div class="col-lg-4 col-sm-6 g-mb-50 text-center">
+                <div class="col-lg-auto col-sm-auto g-mx-25 g-mb-50 text-center">
                     <!-- Bloco de ícone -->
                     <div class="icone-flip-card">
                         <!-- Frente Ícone -->
-                        <div class="front">
-                            <img class="" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/home/icones/05-pupj.svg') }}" alt="Aumento do número de clientes e sua fidelização">
-                        </div>
+                        <div class="front row card5"></div>
                         <!-- End Frente Ícone -->
                         <!-- Fundo Ícone -->
-                        <div class="back">
-                            <div class="text-center g-flex-middle-item g-py-75 g-px-15">
-                                <h4 class="g-font-weight-400 g-color-white">{% trans %}homepage_block_03_text_05{% endtrans %}</h4>
+                        <div class="back row align-items-center">
+                            <div class="text-center g-px-15">
+                                <h5 class="g-font-size-18 g-font-weight-400 text-uppercase g-color-white g-my-0">{% trans %}homepage_block_03_text_05{% endtrans %}</h5>
                             </div>
                         </div>
                         <!-- End Fundo Ícone -->
@@ -202,18 +216,16 @@
                     <!-- End - Bloco de ícone -->
                 </div>
 
-                <div class="col-lg-4 col-sm-6 g-mb-50 text-center">
+                <div class="col-lg-auto col-sm-auto g-mx-25 g-mb-50 text-center">
                     <!-- Bloco de ícone -->
                     <div class="icone-flip-card">
                         <!-- Frente Ícone -->
-                        <div class="front">
-                            <img class="" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/home/icones/06-pupj.svg') }}" alt="Diminuição da burocracia nas vendas a crédito">
-                        </div>
+                        <div class="front row card6"></div>
                         <!-- End Frente Ícone -->
                         <!-- Fundo Ícone -->
-                        <div class="back">
-                            <div class="text-center g-flex-middle-item g-py-75 g-px-15">
-                                <h4 class="g-font-weight-400 g-color-white">{% trans %}homepage_block_03_text_06{% endtrans %}</h4>
+                        <div class="back row align-items-center">
+                            <div class="text-center g-px-15">
+                                <h5 class="g-font-size-18 g-font-weight-400 text-uppercase g-color-white g-my-0">{% trans %}homepage_block_03_text_06{% endtrans %}</h5>
                             </div>
                         </div>
                         <!-- End Fundo Ícone -->
@@ -235,23 +247,22 @@
 
 
     <!-- Áreas de Negócio -->
-    <div class="cor-seccao1"><!-- Cor da seccção -->
-        <section class="container g-py-100 g-px-25 g-px-50--md">
+    <div id="areas-negocio" class="cor-seccao1"><!-- Cor da seccção -->
+        <section class="container g-py-50 g-py-100--sm g-px-0 g-px-25--sm g-px-50--md">
             <div class="text-center g-mb-50">
                 <h3 class="h3 h3--md h3--lg">{% trans %}homepage_block_04_title{% endtrans %}</h3>
-                <!-- <p class="lead">This is where we begin to visualize your napkin sketches and make them into pixels.</p> -->
             </div>
-            <div class="row g-mx-minus-10">
+            <div class="row g-mx-minus-10 justify-content-center">
 
-                <div class="col-sm-6 col-lg-4 col-xl-3 g-px-5 g-mb-10">
+                <div class="col-8 col-sm-6 col-lg-4 col-xl-3 g-px-25 g-px-5--sm g-mb-10">
                     <article class="u-block-hover">
-                        <a href="{{ path('para_clientes') }}#lojas">
+                        <a href="{{ path('para_clientes') }}#cbpf=.16">
                             <div class="u-bg-overlay g-bg-white-gradient-opacity-v1--after">
-                                <img class="img-fluid u-block-hover__main--zoom-v1" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/home/areas-negocio/viagens-01.jpg') }}" alt="Agências de Viagens">
+                                <img class="img-fluids u-block-hover__main--zoom-v1" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/home/areas-negocio/viagens-01.jpg') }}" alt="Agências de Viagens">
                             </div>
                             <div class="u-block-hover__additional--partially-slide-up g-z-index-1">
                                 <div class="u-block-hover__visible g-pa-10">
-                                    <h5 class="g-color-white text-center mb-3">
+                                    <h5 class="parcelaja-titulo-area-negocio text-center text-uppercase mb-3">
                                         {% trans %}homepage_grupos_agenciasdeviagens{% endtrans %}
                                     </h5>
                                 </div>
@@ -260,15 +271,15 @@
                     </article>
                 </div>
 
-                <div class="col-sm-6 col-lg-4 col-xl-3 g-px-5 g-mb-10">
+                <div class="col-8 col-sm-6 col-lg-4 col-xl-3 g-px-25 g-px-5--sm g-mb-10">
                     <article class="u-block-hover">
-                        <a href="{{ path('para_clientes') }}#lojas">
+                        <a href="{{ path('para_clientes') }}#cbpf=.20">
                             <div class="u-bg-overlay g-bg-white-gradient-opacity-v1--after">
                                 <img class="img-fluid u-block-hover__main--zoom-v1" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/home/areas-negocio/informatica-03.jpg') }}" alt="Informática">
                             </div>
                             <div class="u-block-hover__additional--partially-slide-up g-z-index-1">
                                 <div class="u-block-hover__visible g-pa-10">
-                                    <h5 class="g-color-white text-center mb-3">
+                                    <h5 class="parcelaja-titulo-area-negocio text-center text-uppercase mb-3">
                                         {% trans %}homepage_grupos_lojasdeinformatica{% endtrans %}
                                     </h5>
                                 </div>
@@ -277,15 +288,15 @@
                     </article>
                 </div>
 
-                <div class="col-sm-6 col-lg-4 col-xl-3 g-px-5 g-mb-10">
+                <div class="col-8 col-sm-6 col-lg-4 col-xl-3 g-px-25 g-px-5--sm g-mb-10">
                     <article class="u-block-hover">
-                        <a href="{{ path('para_clientes') }}#lojas">
+                        <a href="{{ path('para_clientes') }}#cbpf=.19">
                             <div class="u-bg-overlay g-bg-white-gradient-opacity-v1--after">
                                 <img class="img-fluid u-block-hover__main--zoom-v1" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/home/areas-negocio/oculos.jpg') }}" alt="Ópticas">
                             </div>
                             <div class="u-block-hover__additional--partially-slide-up g-z-index-1">
                                 <div class="u-block-hover__visible g-pa-10">
-                                    <h5 class="g-color-white text-center mb-3">
+                                    <h5 class="parcelaja-titulo-area-negocio text-center text-uppercase mb-3">
                                         {% trans %}homepage_grupos_opticas{% endtrans %}
                                     </h5>
                                 </div>
@@ -294,15 +305,15 @@
                     </article>
                 </div>
 
-                <div class="col-sm-6 col-lg-4 col-xl-3 g-px-5 g-mb-10">
+                <div class="col-8 col-sm-6 col-lg-4 col-xl-3 g-px-25 g-px-5--sm g-mb-10">
                     <article class="u-block-hover">
-                        <a href="{{ path('para_clientes') }}#lojas">
+                        <a href="{{ path('para_clientes') }}#cbpf=.18">
                             <div class="u-bg-overlay g-bg-white-gradient-opacity-v1--after">
                                 <img class="img-fluid u-block-hover__main--zoom-v1" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/home/areas-negocio/perfumes-01.jpg') }}" alt="Perfumarias">
                             </div>
                             <div class="u-block-hover__additional--partially-slide-up g-z-index-1">
                                 <div class="u-block-hover__visible g-pa-10">
-                                    <h5 class="g-color-white text-center mb-3">
+                                    <h5 class="parcelaja-titulo-area-negocio text-center text-uppercase mb-3">
                                         {% trans %}homepage_grupos_perfumarias{% endtrans %}
                                     </h5>
                                 </div>
@@ -311,15 +322,15 @@
                     </article>
                 </div>
 
-                <div class="col-sm-6 col-lg-4 col-xl-3 g-px-5 g-mb-10">
+                <div class="col-8 col-sm-6 col-lg-4 col-xl-3 g-px-25 g-px-5--sm g-mb-10">
                     <article class="u-block-hover">
-                        <a href="{{ path('para_clientes') }}#lojas">
+                        <a href="{{ path('para_clientes') }}#cbpf=.21">
                             <div class="u-bg-overlay g-bg-white-gradient-opacity-v1--after">
                                 <img class="img-fluid u-block-hover__main--zoom-v1" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/home/areas-negocio/oficina-02.jpg') }}" alt="Reparação de Veículos">
                             </div>
                             <div class="u-block-hover__additional--partially-slide-up g-z-index-1">
                                 <div class="u-block-hover__visible g-pa-10">
-                                    <h5 class="g-color-white text-center mb-3">
+                                    <h5 class="parcelaja-titulo-area-negocio text-center text-uppercase mb-3">
                                         {% trans %}homepage_grupos_oficinasdeautomoveis{% endtrans %}
                                     </h5>
                                 </div>
@@ -328,10 +339,26 @@
                     </article>
                 </div>
 
-                <div class="col-sm-6 col-lg-4 col-xl-3 g-px-5 g-mb-10">
+                <div class="g-hidden-xs-down col-8 col-sm-6 col-lg-4 col-xl-3 g-px-25 g-px-5--sm g-mb-10">
                     <!-- Blog Background Overlay Blocks -->
                     <article class="u-block-hover">
-                        <img class="img-fluid" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/home/areas-negocio/placeholder/placeholder-area-neg-01b.png') }}">
+                        <img style="width: 357px;" class="img-fluid" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/home/areas-negocio/placeholder/placeholder-area-neg-01b.png') }}">
+                    </article>
+                    <!-- End Blog Background Overlay Blocks -->
+                </div>
+
+                <div class="g-hidden-lg-down col-8 col-sm-6 col-lg-4 col-xl-3 g-px-25 g-px-5--sm g-mb-10">
+                    <!-- Blog Background Overlay Blocks -->
+                    <article class="u-block-hover">
+                        <img style="width: 357px;" class="img-fluid" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/home/areas-negocio/placeholder/placeholder-area-neg-01b.png') }}">
+                    </article>
+                    <!-- End Blog Background Overlay Blocks -->
+                </div>
+
+                <div class="g-hidden-lg-down col-8 col-sm-6 col-lg-4 col-xl-3 g-px-25 g-px-5--sm g-mb-10">
+                    <!-- Blog Background Overlay Blocks -->
+                    <article class="u-block-hover">
+                        <img style="width: 357px;" class="img-fluid" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/home/areas-negocio/placeholder/placeholder-area-neg-01b.png') }}">
                     </article>
                     <!-- End Blog Background Overlay Blocks -->
                 </div>
@@ -339,7 +366,7 @@
             </div>
         </section>
     </div><!-- End Cor da seccção -->
-    <!-- End - Áreas de Negócio -->
+    <!-- End - Áreas de Negócio -->    
 
 
 
@@ -375,6 +402,7 @@
     <script src="{{ asset('bundles/app/frontend/v2/assets/vendor/hs-bg-video/hs-bg-video.js') }}"></script>
     <script src="{{ asset('bundles/app/frontend/v2/assets/vendor/hs-bg-video/vendor/player.min.js') }}"></script>
     <script src="{{ asset('bundles/app/frontend/v2/assets/vendor/fancybox/jquery.fancybox.js') }}"></script>
+    <script src="{{ asset('bundles/app/frontend/v2/assets/vendor/typedjs/typed.min.js') }}"></script>
 
     <!-- JS Unify -->
     <script src="{{ asset('bundles/app/frontend/v2/assets/js/hs.core.js') }}"></script>
@@ -388,16 +416,19 @@
     <script src="{{ asset('bundles/app/frontend/v2/assets/js/components/hs.popup.js') }}"></script>
     <script src="{{ asset('bundles/app/frontend/v2/assets/js/components/hs.carousel.js') }}"></script>
     <script src="{{ asset('bundles/app/frontend/v2/assets/js/components/hs.go-to.js') }}"></script>
+    <script src="{{ asset('bundles/app/frontend/v2/assets/js/components/text-animation/hs.text-slideshow.js') }}"></script>
 
     <!-- JS Custom -->
     <script src="{{ asset('bundles/app/frontend/v2/assets/js/custom.js') }}"></script>
+
+    <!-- JS Custom -->
+    <script src="assets/js/custom.js"></script>
 
     <!-- JS Plugins Init. -->
     <script>
         $(document).on('ready', function () {
             // initialization of carousel
             $.HSCore.components.HSCarousel.init('.js-carousel');
-
             $('#we-provide').slick('setOption', 'responsive', [{
                     breakpoint: 992,
                     settings: {
@@ -409,19 +440,14 @@
                         slidesToShow: 1
                     }
                 }], true);
-
             // initialization of tabs
             $.HSCore.components.HSTabs.init('[role="tablist"]');
-
             // initialization of header's height equal offset
             $.HSCore.helpers.HSHeightCalc.init();
-
             // initialization of scroll animation
             $.HSCore.components.HSOnScrollAnimation.init('[data-animation]');
-
             // initialization of video on background
             $.HSCore.helpers.HSBgVideo.init('.js-bg-video');
-
             // initialization of popups with media
             $.HSCore.components.HSPopup.init('.js-fancybox-media', {
                 helpers: {
@@ -433,19 +459,25 @@
                     }
                 }
             });
-
             // initialization of HSDropdown component
             $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'));
-
+            // initialization of text animation (typing)
+            $(".u-text-animation.u-text-animation--typing").typed({
+                strings: [
+                    "Parcele os seus produtos",
+                    "Aumente as suas vendas"
+                ],
+                typeSpeed: 60,
+                loop: true,
+                backDelay: 1500
+            });
             // initialization of go to
             $.HSCore.components.HSGoTo.init('.js-go-to');
         });
-
         $(window).on('load', function () {
             // initialization of header
             $.HSCore.components.HSHeader.init($('#js-header'));
             $.HSCore.helpers.HSHamburgers.init('.hamburger');
-
             // initialization of HSMegaMenu component
             $('.js-mega-menu').HSMegaMenu({
                 event: 'hover',
@@ -453,14 +485,15 @@
                 breakpoint: 991
             });
         });
-
         $(window).on('resize', function () {
             setTimeout(function () {
                 $.HSCore.components.HSTabs.init('[role="tablist"]');
             }, 200);
         });
-
     </script>
+
+
+    
 
 
 {% endblock %}

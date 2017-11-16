@@ -1,162 +1,171 @@
 {# empty Twig template #}
 
-<!-- Footer -->
-<div class="fundo-azul g-color-white-opacity-0_8 g-py-60">
-  <div class="container">
-    <div class="row">
 
-      <!-- Footer Parcela Já -->
-      <div class="col-lg-3 g-mb-60 g-mb-0--lg col-sm-6">
-        <a class="d-block g-mb-25" href="{{ path('homepage') }}">
-          <img class="img-fluid" style="height: 2.75rem;" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/logo/logo-nb-ft.svg') }}" alt="Logo">
-        </a>
+<!-- Rodapé -->
+<div class="fundo-azul g-py-50">
+    <div class="container">
+        <div class="row justify-content-between">
 
-        <ul class="list-inline mb-0">
-          <li class="list-inline-item g-mr-10">
-            <a class="u-icon-v3 u-icon-size--xs g-bg-white-opacity-0_3 g-color-white-opacity-0_8 rounded-circle g-bg-primary--hover" href="https://www.facebook.com/parcelajapt/" target="_blank">
-              <i class="fa fa-facebook"></i>
-            </a>
-          </li>
-          <li class="list-inline-item g-mr-10">
-            <a class="u-icon-v3 u-icon-size--xs g-bg-white-opacity-0_3 g-color-white-opacity-0_8 rounded-circle g-bg-primary--hover" href="https://www.linkedin.com/company/parcela-j%C3%A1" target="_blank">
-              <i class="fa fa-linkedin"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <!-- End Footer Parcela Já -->
+            <!-- Footer Parcela Já -->
+            <div class="col-sm-6 col-lg-auto g-mb-50 g-mb-0--lg">
+                <a class="d-block g-mb-25" href="{{ path('homepage') }}">
+                    <img class="img-fluid" style="height: 4.30rem;" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/logo/logo2-nb-ft.svg') }}" alt="Logo Parcela Já">
+                </a>
 
-      <!-- Footer Parcela Já -->
-      <div class="col-lg-5 g-mb-60 g-mb-0--lg col-sm-6">
-        <address class="g-line-height-2 g-mt-minus-4">
-          <h5 class="text-uppercase g-mb-15 g-color-white">{% trans %}footer_title{% endtrans %}</h5>
-          <ul class="list-unstyled g-mb-35">
-            <li class="g-mb-5">
-              Av. da República, 48-B, 6º
-            </li>
-            <li class="g-mb-5">
-              1050-195 Lisboa
-            </li>
-          </ul>
-          <ul class="list-unstyled g-mb-35">
-            <li class="g-mb-5">
-              {% trans %}footer_geral{% endtrans %}: <a class="g-color-white-opacity-0_8 g-color-primary--hover" href="mailto:geral@parcelaja.pt">geral@parcelaja.pt</a>
-            </li>
-            <li class="g-mb-5">
-              {% trans %}footer_comercial{% endtrans %}: <a class="g-color-white-opacity-0_8 g-color-primary--hover" href="mailto:suporte@parcelaja.pt">suporte@parcelaja.pt</a>
-            </li>
-            <li class="g-mb-5">
-              {% trans %}footer_clientes{% endtrans %}: <a class="g-color-white-opacity-0_8 g-color-primary--hover" href="mailto:suporte@parcelaja.pt">suporte@parcelaja.pt</a>
-            </li>
-          </ul>
-          <ul class="list-unstyled">
-            <li class="g-mb-5">
-              {% trans %}footer_geral{% endtrans %}: <a class="g-color-white-opacity-0_8 g-color-primary--hover" href="tel:+351215881280">+351 215 881 280</a>
-            </li>
-          </ul>
-        </address>
-      </div>
-      <!-- End Footer Parcela Já -->
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item g-mr-10">
+                        <a class="parcelaja-icone u-icon-v3 u-icon-size--xs g-bg-white-opacity-0_3 g-color-white-opacity-0_8 rounded-circle g-bg-primary--hover" href="https://www.facebook.com/parcelajapt/" target="_blank">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item g-mr-10">
+                        <a class="parcelaja-icone u-icon-v3 u-icon-size--xs g-bg-white-opacity-0_3 g-color-white-opacity-0_8 rounded-circle g-bg-primary--hover" href="https://www.linkedin.com/company/parcela-j%C3%A1" target="_blank">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- End Footer Parcela Já -->
 
-      <!-- Footer Produto -->
-      <div class="col-lg-2 col-sm-6">
-        <h5 class="text-uppercase g-mb-15 g-color-white">{% trans %}footer_title_produto{% endtrans %}</h5>
-        <ul class="list-unstyled g-mb-35">
-          <li class="g-mb-5">
-            <a class="g-color-white-opacity-0_8 g-color-primary--hover" href="{{ path('como_funciona') }}">{% trans %}footer_comofunciona{% endtrans %}</a>
-          </li>
-          <li class="g-mb-5">
-            <a class="g-color-white-opacity-0_8 g-color-primary--hover" href="{{ path('para_clientes') }}">{% trans %}footer_paraclientes{% endtrans %}</a>
-          </li>
-          <li class="g-mb-5">
-            <a class="g-color-white-opacity-0_8 g-color-primary--hover" href="{{ path('faqs') }}">{% trans %}footer_perguntasfrequentes{% endtrans %}</a>
-          </li>
-        </ul>
-      </div>
-      <!-- End Footer Produto -->
+            <!-- Footer Parcela Já -->
+            <div class="col-sm-6 col-lg-auto g-mt-o g-mt-4--sm g-mb-50 g-mb-0--lg">
+                <address>
+                    <h5 class="g-font-size-16 g-font-weight-500 text-uppercase g-mb-30 u-heading-v3__title g-brd-primary-bottom">{% trans %}footer_title{% endtrans %}</h5>
+                    <ul class="list-unstyled">
+                        <li class="g-mb-5">
+                            Av. da República, 48-B, 6º
+                        </li>
+                        <li class="g-mb-5">
+                            1050-195 Lisboa
+                        </li>
+                    </ul>
+                    <ul class="list-unstyled">
+                        <li class="g-mb-5">
+                            {% trans %}footer_geral{% endtrans %}: <a href="mailto:geral@parcelaja.pt">geral@parcelaja.pt</a>
+                        </li>
+                        <li class="g-mb-5">
+                            {% trans %}footer_comercial{% endtrans %}: <a href="mailto:suporte@parcelaja.pt">suporte@parcelaja.pt</a>
+                        </li>
+                        <li class="g-mb-5">
+                            {% trans %}footer_clientes{% endtrans %}: <a href="mailto:suporte@parcelaja.pt">suporte@parcelaja.pt</a>
+                        </li>
+                    </ul>
+                    <ul class="list-unstyled">
+                        <li class="g-mb-5">
+                            {% trans %}footer_geral{% endtrans %}: <a href="tel:+351215881280">+351 215 881 280</a>
+                        </li>
+                    </ul>
+                </address>
+            </div>
+            <!-- End Footer Parcela Já -->
 
-      <!-- Footer Empresas -->
-      <div class="col-lg-2 col-sm-6">
-        <h5 class="text-uppercase g-mb-15 g-color-white">{% trans %}footer_title_empresa{% endtrans %}</h5>
-        <ul class="list-unstyled g-mb-35">
-          <li class="g-mb-5">
-            <a class="g-color-white-opacity-0_8 g-color-primary--hover" href="{{ path('emprego') }}">{% trans %}footer_emprego{% endtrans %}</a>
-          </li>
-          <li class="g-mb-5">
-            <a class="g-color-white-opacity-0_8 g-color-primary--hover" href="{{ path('noticias') }}">{% trans %}footer_noticiasemedia{% endtrans %}</a>
-          </li>
-          <li class="g-mb-5">
-            <a class="g-color-white-opacity-0_8 g-color-primary--hover" href="{{ path('blog') }}">{% trans %}footer_blog{% endtrans %}</a>
-          </li>
-          <li class="g-mb-5">
-            <a class="g-color-white-opacity-0_8 g-color-primary--hover" href="{{ path('contactos') }}">{% trans %}footer_contactos{% endtrans %}</a>
-          </li>
-          <li class="g-mb-5">
-            <a class="g-color-white-opacity-0_8 g-color-primary--hover" href="{{ path('legal') }}">{% trans %}footer_informacaolegal{% endtrans %}</a>
-          </li>
-          <li class="g-mb-5">
-            <a class="g-color-white-opacity-0_8 g-color-primary--hover" href="{{ path('pci') }}">PCI</a>
-          </li>
-        </ul>
-      </div>
-      <!-- End Footer Empresas -->
+            <!-- Footer Produto -->
+            <div class="col-sm-6 col-lg-auto col-lg-auto g-mt-o g-mt-4--sm g-mb-50 g-mb-0--lg">
+                <h5 class="g-font-size-16 g-font-weight-500 text-uppercase g-mb-30 u-heading-v3__title g-brd-primary-bottom">{% trans %}footer_title_produto{% endtrans %}</h5>
+                <ul class="list-unstyled">
+                    <li class="g-mb-5">
+                        <a href="{{ path('como_funciona') }}">{% trans %}footer_comofunciona{% endtrans %}</a>
+                    </li>
+                    <li class="g-mb-5">
+                        <a href="{{ path('para_clientes') }}">{% trans %}footer_paraclientes{% endtrans %}</a>
+                    </li>
+                    <li class="g-mb-5">
+                        <a href="{{ path('faqs') }}">{% trans %}footer_perguntasfrequentes{% endtrans %}</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- End Footer Produto -->
 
-    </div>
-  </div>
-</div>
-<!-- End Footer -->
+            <!-- Footer Empresas -->
+            <div class="col-sm-6 col-lg-auto col-lg-auto g-mt-o g-mt-4--sm">
+                <h5 class="g-font-size-16 g-font-weight-500 text-uppercase g-mb-30 u-heading-v3__title g-brd-primary-bottom">{% trans %}footer_title_empresa{% endtrans %}</h5>
+                <ul class="list-unstyled">
+                    <li class="g-mb-5">
+                        <a href="{{ path('emprego') }}">{% trans %}footer_emprego{% endtrans %}</a>
+                    </li>
+                    <li class="g-mb-5">
+                        <a href="{{ path('noticias') }}">{% trans %}footer_noticiasemedia{% endtrans %}</a>
+                    </li>
+                    <li class="g-mb-5">
+                        <a href="{{ path('blog') }}">{% trans %}footer_blog{% endtrans %}</a>
+                    </li>
+                    <li class="g-mb-5">
+                        <a href="{{ path('contactos') }}">{% trans %}footer_contactos{% endtrans %}</a>
+                    </li>
+                    <li class="g-mb-5">
+                        <a href="{{ path('legal') }}">{% trans %}footer_informacaolegal{% endtrans %}</a>
+                    </li>
+                    {#<li class="g-mb-5">
+                        <a href="{{ path('pci') }}">PCI</a>
+                    </li>#}
+                    <li class="g-mb-5">
+                        <a href="{{ path('cookies') }}">Cookies</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- End Footer Empresas -->
 
-<!-- Copyright Footer -->
-<footer class="g-bg-gray-dark-v1 g-color-white-opacity-0_8 g-py-20">
-  <div class="container">
-    <div class="row">
-
-      <!-- Copyright Content -->
-      <div class="col-xs-12 col-lg-5 align-self-center text-center text-lg-left g-mb-10 g-mb-0--md">
-        <div class="d-lg-flex">
-          <small class="d-block g-font-size-default g-mr-10 g-mb-10 g-mb-0--md">{% trans %}footer_todososdireitosreservados{% endtrans %}</small>
         </div>
-      </div>
-      <!-- End Copyright Content -->
-
-      <!-- Logos -->
-      <div class="col-xs-12 col-lg-7 align-self-center text-center text-lg-right">
-        <ul class="list-inline g-color-white g-font-size-40 g-line-height-1 mb-0">
-          <li class="list-inline-item">
-            <a href="https://www.madeira.gov.pt/" target="_blank">
-              <img style="height: 2rem !important;" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/footer/logos/lg-madeira-footer.svg') }}" alt="Região Autónoma da Madeira">
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a href="http://www.qren.pt/np4/home" target="_blank">
-              <img style="height: 2rem !important;" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/footer/logos/lg-qren-footer.svg') }}" alt="QREN">
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a href="http://www.idr.madeira.gov.pt/portal/Conteudo.aspx?IDMenu=2&IDSubMenu=74&Path=74&jmenu=3" target="_blank">
-              <img style="height: 2rem !important;" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/footer/logos/lg-intervir-footer@2x.png') }}" alt="Intervir">
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a href="http://ec.europa.eu/regional_policy/pt/funding/erdf/" target="_blank">
-              <img style="height: 2rem !important;" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/footer/logos/lg-ue-footer.svg') }}" alt="União Europeia">
-            </a>
-          </li>
-        </ul>
-      </div>
-      <!-- End Logos -->
     </div>
-  </div>
-</footer>
-<!-- End Copyright Footer -->
+</div>
+<!-- End - Rodapé -->
 
+<!-- Copyright Rodapé -->
+<footer class="fundo-azul-escuro g-py-20">
+    <div class="container">
+        <div class="row align-items-center no-gutters">
+
+            <!-- Copyright Content -->
+            <div class="col-xs-12 col-lg-4 text-center text-lg-left">
+                <small class="g-font-size-default">{% trans %}footer_todososdireitosreservados{% endtrans %}</small>
+            </div>
+            <!-- End Copyright Content -->
+
+            <!-- Logos -->
+            <div class="col-xs-12 col-lg-8">
+                <div class="row justify-content-center justify-content-lg-end no-gutters">
+                    <div class="col-6 col-lg-auto">
+                        <div class="row g-pt-10 g-pt-0--lg justify-content-center no-gutters">
+                            <div class="col-auto g-mx-10">
+                                <a href="https://www.madeira.gov.pt/" target="_blank">
+                                    <img style="height: 2rem !important;" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/footer/logos/lg-madeira-footer-tr.svg') }}" alt="Região Autónoma da Madeira">
+                                </a>
+                            </div>
+                            <div class="col-auto g-mx-10">
+                                <a href="http://www.qren.pt/np4/home" target="_blank">
+                                    <img style="height: 2rem !important;" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/footer/logos/lg-qren-footer-tr.svg') }}" alt="QREN">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-auto">
+                        <div class="row g-pt-10 g-pt-0--lg justify-content-center no-gutters">
+                            <div class="col-auto g-mx-10">
+                                <a href="http://www.idr.madeira.gov.pt/portal/Conteudo.aspx?IDMenu=2&IDSubMenu=74&Path=74&jmenu=3" target="_blank">
+                                    <img style="height: 2rem !important;" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/footer/logos/lg-intervir-footer-tr@3x.png') }}" alt="Intervir">
+                                </a>
+                            </div>
+                            <div class="col-auto g-mx-10">
+                                <a href="http://ec.europa.eu/regional_policy/pt/funding/erdf/" target="_blank">
+                                    <img style="height: 2rem !important;" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/footer/logos/lg-ue-footer-tr.svg') }}" alt="União Europeia">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Logos -->
+        </div>
+    </div>
+</footer>
+<!-- End - Copyright Rodapé -->
 
 
 <!-- Botão Voltar Para o Topo -->
 <a class="js-go-to u-go-to-v1" href="#" data-type="fixed" data-position='{
-  "bottom": 15,
-  "right": 15
-  }' data-offset-top="400" data-compensation="#js-header" data-show-effect="zoomIn">
-  <i class="hs-icon hs-icon-arrow-top"></i>
+   "bottom": 15,
+   "right": 15
+   }' data-offset-top="400" data-compensation="#js-header" data-show-effect="zoomIn">
+    <i class="hs-icon hs-icon-arrow-top"></i>
 </a>
 <!-- End Botão Voltar Para o Topo -->

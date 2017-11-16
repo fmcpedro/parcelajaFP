@@ -12,20 +12,34 @@
     <!--@LM header -->
     {% include 'AppBundle:default:v2_header.html.twig'   with {'selected_menu': 'homepage'} %}
 
-    
-    
-    <section>
-  <div class="container g-pt-70 g-px-25 g-px-50--md">
-    <div class="u-heading-v3-1 g-mt-50 g-mb-50">
-      <h2 class="u-heading-v3__title h2 h2--md h2--lg g-brd-primary">{% trans %}legalinformation_block_01_title{% endtrans %}</h2>
-    </div>
-  </div>
-</section>
-<!-- End Heading -->
 
-<section class="container g-mb-100 g-px-25 g-px-50--md">
-    {% trans %}legalinformation_block_01_text{% endtrans %}
-  </section>
+
+
+
+
+    <!-- Título -->
+    <section>
+        <div class="container g-pt-70 g-px-25 g-px-50--md">
+            <div class="u-heading-v3-1 g-mt-50 g-mb-50">
+                <h2 class="u-heading-v3__title h2 h2--md h2--lg g-brd-primary">{% trans %}legalinformation_block_01_title{% endtrans %}</h2>
+            </div>
+        </div>
+    </section>
+    <!-- End - Título -->
+
+    <!-- Conteúdo -->
+    <section class="container g-mb-100 g-px-25 g-px-50--md">
+        <div class="mb-4">
+            {% trans %}legalinformation_block_01_text{% endtrans %}
+        </div>
+
+    </section>
+    <!-- End - Conteúdo -->
+
+
+
+
+
 
 
 
@@ -51,7 +65,6 @@
         $(document).on('ready', function () {
             // initialization of carousel
             $.HSCore.components.HSCarousel.init('.js-carousel');
-
             $('#we-provide').slick('setOption', 'responsive', [{
                     breakpoint: 992,
                     settings: {
@@ -63,19 +76,14 @@
                         slidesToShow: 1
                     }
                 }], true);
-
             // initialization of tabs
             $.HSCore.components.HSTabs.init('[role="tablist"]');
-
             // initialization of header's height equal offset
             $.HSCore.helpers.HSHeightCalc.init();
-
             // initialization of scroll animation
             $.HSCore.components.HSOnScrollAnimation.init('[data-animation]');
-
             // initialization of video on background
             $.HSCore.helpers.HSBgVideo.init('.js-bg-video');
-
             // initialization of popups with media
             $.HSCore.components.HSPopup.init('.js-fancybox-media', {
                 helpers: {
@@ -87,19 +95,15 @@
                     }
                 }
             });
-
             // initialization of HSDropdown component
             $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'));
-
             // initialization of go to
             $.HSCore.components.HSGoTo.init('.js-go-to');
         });
-
         $(window).on('load', function () {
             // initialization of header
             $.HSCore.components.HSHeader.init($('#js-header'));
             $.HSCore.helpers.HSHamburgers.init('.hamburger');
-
             // initialization of HSMegaMenu component
             $('.js-mega-menu').HSMegaMenu({
                 event: 'hover',
@@ -107,15 +111,12 @@
                 breakpoint: 991
             });
         });
-
         $(window).on('resize', function () {
             setTimeout(function () {
                 $.HSCore.components.HSTabs.init('[role="tablist"]');
             }, 200);
         });
-
     </script>
-
 
 {% endblock %}
 

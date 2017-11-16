@@ -179,30 +179,12 @@
   Fonts
 ------------------------------------*/
 body {
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
-h1,
-.h1,
-h2,
-.h2,
-h3,
-.h3,
-h4,
-.h4,
-h5,
-.h5,
-h6,
-.h6 {
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
-  /*font-weight: bold;*/
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 }
 a {
-  color: #7a9a2b;
-  outline: none;
 }
-a:focus,
-a:hover {
-  color: #6a8625;
+a:focus, a:hover {
 }
 /*------------------------------------
   Bootstrap
@@ -1432,45 +1414,110 @@ input[type="radio"]:checked + * .g-overlay-primary-0_9--checked::after,
 /*------------------------------------
   Parcela Já
 ------------------------------------*/
-.h1, h1, .h2, h2, .h3, h3, .h4, h4, .h5, h5, .titulo-escuro {
-  /*color: red; /* DEGUB */
-  /*border-style: dotted !important; /* DEGUB */
-  /*border-color: orange !important; /* DEGUB */
-  /*border-width: 2px !important; /* DEGUB */
+/*------------------------------------
+  Fontes
+------------------------------------*/
+body {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
-
-.titulo-claro {
-  /*color: yellow !important; /* DEGUB */
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  color: #555555;
 }
 
 body, p, div, span {
-  /*color: cyan !important; /* DEGUB */
-  /*border-style: dotted !important; /* DEGUB */
-  /*border-color: gray !important; /* DEGUB */
-  /*border-width: 1px !important; /* DEGUB */
 }
 
+/*------------------------------------
+  LIGAÇÕES GENÉRICAS
+------------------------------------*/
 a {
-  /*background-color: yellow !important; /* DEGUB */
+  color: #7a9a2b;
+  outline: none;
+  text-decoration: underline;
+}
+a:focus, a:hover {
+  color: #7a9a2b;
+  text-decoration: none;
+}
+a.parcelaja-icone {
+  text-decoration: none;
 }
 
+/*------------------------------------
+  FUNDO BRANCO
+------------------------------------*/
+.fundo-branco {
+  background-color: #FFFFFF !important;
+}
 
+/*------------------------------------
+  FUNDO AZUL
+------------------------------------*/
 .fundo-azul {
-  background-color: #064169;!
+  background-color: #064169;
 }
 
+/*------------------------------------
+  FUNDO AZUL ESCURO - COPYRIGHT
+------------------------------------*/
+.fundo-azul-escuro {
+  background-color: #063A5E;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/*------------------------------------
+  FUNDO AZUL ESCURO - TÍTULOS
+------------------------------------*/
+.fundo-azul h1, .fundo-azul h2, .fundo-azul h3, .fundo-azul h4, .fundo-azul h5, .fundo-azul a {
+  color: white;
+}
+
+/*------------------------------------
+  FUNDO AZUL ESCURO - TEXTO
+------------------------------------*/
+.fundo-azul, .fundo-azul p, .fundo-azul div, .fundo-azul span, .fundo-azul li {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/*------------------------------------
+  FUNDO AZUL ESCURO - LIGAÇÕES
+------------------------------------*/
+.fundo-azul a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+.fundo-azul a:hover {
+  text-decoration: underline;
+  color: white !important;
+}
+.fundo-azul a.parcelaja-icone {
+  text-decoration: none;
+  color: white !important;
+}
+
+/*------------------------------------
+  FUNDO AZUL CLARO
+------------------------------------*/
 .fundo-azul-claro {
-  background-color: #edf1f4;!
+  background-color: #edf1f4;
+}
+
+/*------------------------------------
+  BOTÃO CALL TO ACTION
+------------------------------------*/
+.parcelaja-call-to-action a, .parcelaja-call-to-action a:hover, .parcelaja-call-to-action i {
+  text-decoration: none;
 }
 
 .h1, h1 {
-    font-weight: 600;
+    font-weight: 700;
 }
 .h2, h2 {
     font-weight: 500;
 }
 .h3, h3 {
-    font-weight: 500;
+    font-weight: 600;
 }
 .h4, h4 {
     font-weight: 500;
@@ -1509,15 +1556,35 @@ CARTÕES COM FLIP
   height: 236px;
   display: inline-block;
   border: 0px;
-  /* background-color: #fafafa; */
-}
-
-.icone-flip-card .back {
-  background-image: url("../img-parcelaja/home/icones/00-pupj-hover.svg");
   background-repeat: no-repeat;
   background-position: center;
 }
 
+.icone-flip-card .row {
+  margin: 0px;
+}
+
+.icone-flip-card .back {
+  background-image: url("../img-parcelaja/home/icones/00-pupj-hover.svg");
+}
+.icone-flip-card .front.card1 {
+  background-image: url("../img-parcelaja/home/icones/01-pupj.svg");
+}
+.icone-flip-card .front.card2 {
+  background-image: url("../img-parcelaja/home/icones/02-pupj.svg");
+}
+.icone-flip-card .front.card3 {
+  background-image: url("../img-parcelaja/home/icones/03-pupj.svg");
+}
+.icone-flip-card .front.card4 {
+  background-image: url("../img-parcelaja/home/icones/04-pupj.svg");
+}
+.icone-flip-card .front.card5 {
+  background-image: url("../img-parcelaja/home/icones/05-pupj.svg");
+}
+.icone-flip-card .front.card6 {
+  background-image: url("../img-parcelaja/home/icones/06-pupj.svg");
+}
 
 /* Tamanho do Hero
 ------------------------------------*/
@@ -1581,14 +1648,28 @@ CARTÕES COM FLIP
 /* Tamanho do Logo
 ------------------------------------*/
 .logo-altura {
-  height: 2.5rem; }
+  height: 1.8rem; }
+.u-header__section.u-header__section--light {
+  /* background-color: red !important; */  /* DEBUG */
+}
 
-/* Tamanho do Logo (sm)
+/* Tamanho personalizado do Logo (sm)
 ------------------------------------*/
 @media (min-width: 576px) {
   .logo-altura--sm {
-    height: 2.7rem; } }
+    height: 2.25rem; }
+  .u-header__section.u-header__section--light {
+    /* background-color: yellow !important; */  /* DEBUG */
+  } }
 
+/* Tamanho personalizado do Logo (md)
+------------------------------------*/
+@media (min-width: 768px) {
+  .logo-altura--md {
+    height: 2.7rem; }
+  .u-header__section.u-header__section--light {
+    /*background-color: #fff !important; */  /* DEBUG */
+  } }
 
 /* Tamanho dos títulos
 ------------------------------------*/
@@ -1626,7 +1707,7 @@ CARTÕES COM FLIP
   .h3--lg { /* Igual a g-font-size-26 */
     font-size: 1.85714rem !important;
   }
-  .h45--lg { /* Igual a g-font-size-18 */
+  .h5--lg { /* Igual a g-font-size-18 */
     font-size: 1.28571rem !important;
   }
 }
@@ -1634,3 +1715,118 @@ CARTÕES COM FLIP
 /* Tamanho personalizado dos títulos (xl)
 ------------------------------------*/
 
+/* HEROS COM PARALLAX
+------------------------------------*/
+.parcelaja-hero-container {
+  height: 100vh;
+  /*background-color: #ffffff !important;*/ /* DEBUG */
+  padding-top: 30vh;
+  align-items: flex-start;
+}
+.parcelaja-hero-play {
+  height: 40vh;
+  width: 100%;
+  /*background-color: green !important; /* DEBUG */
+  position: absolute;
+}
+.parcelaja-hero-seta {
+  height: 70vh;
+  width: 100%;
+  position: absolute;
+  align-items: flex-end !important;
+  /*background-color: red !important; /* DEBUG */
+}
+.parcelaja-hero-seta a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.parcelaja-hero-pos-left-top {
+  background-position: left top;
+}
+.parcelaja-hero-pos-right-top {
+  background-position: right top;
+}
+
+.parcelaja-404 img {
+  max-width: 80%;
+  height: auto;
+}
+
+
+/*------------------------------------
+  NAVEGAÇÃO / FILTRO DE LOJAS
+------------------------------------*/
+.parcelaja-menu a {
+  text-decoration: none;
+  font-size: 0.92857rem; /* Igual a g-font-size-13 */
+}
+/* Está a usar definições de botão */
+.parcelaja-menu a.btn {
+  color: #555555 !important;
+  border-color: #555555 !important;
+}
+.parcelaja-menu a.btn:hover,
+.parcelaja-menu a.btn.active,
+.parcelaja-menu a.btn:focus,
+.parcelaja-filtro .cbp-filter-item-active,
+.parcelaja-filtro .cbp-filter-item-active:hover,
+.parcelaja-filtro .cbp-filter-item-active:focus {
+  color: white !important;
+  border-color: #7a9a2b !important;
+  background-color: #7a9a2b !important;
+}
+
+/*------------------------------------
+  ÁREAS DE NEGÓCIO
+------------------------------------*/
+#areas-negocio a, #areas-negocio .parcelaja-titulo-area-negocio {
+  color: #ffffff;
+}
+
+/*------------------------------------
+  PERGUNTAS FREQUENTES
+------------------------------------*/
+.parcelaja-faq .collapsed {
+  color: #7a9a2b;
+}
+.parcelaja-faq a {
+  color: #555555;
+}
+
+.parcelaja-menu .hs-sub-menu {
+  min-width: 120px;
+}
+
+/* NAVEGAÇÃO PERSONALIZADA (lg)
+------------------------------------*/
+@media (min-width: 992px) {
+  .navegacao-sombra--lg {
+      box-shadow: 0px 10px 20px -15px rgba(0,0,0,.2);
+      border-left-color: #7a9a2b !important;
+  }
+}
+
+/* TAMANHOS DE LETRA NÃO EXISTENTES
+------------------------------------*/
+@media (min-width: 576px) {
+  .g-font-size-12--sm {
+    font-size: 0.85714rem !important; }
+  .g-font-size-16--sm {
+    font-size: 1.14286rem !important; } }
+
+
+/* AVISO DE COOKIES de https://cookieconsent.insites.com
+------------------------------------*/
+.cc-compliance a {
+  text-decoration: none;
+}
+.cc-window {
+  background-color: rgb(237, 241, 244, .9) !important;
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
+  box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
+}
+.cc-message {
+    margin: 1em 1em 1em !important;
+}

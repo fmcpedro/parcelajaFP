@@ -1,0 +1,67 @@
+{# empty Twig template #}
+
+
+
+ {% if app.request.locale == "en" %}
+<!-- Aviso de Cookies -->
+<!-- Código de https://cookieconsent.insites.com --> 
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#edf1f4",
+      "text": "#555555"
+    },
+    "button": {
+      "background": "#7a9a2b",
+      "text": "#ffffff"
+    }
+  },
+  "theme": "edgeless",
+  "position": "bottom-right",
+  "content": {
+    "message": "If you continue to use this site we will assume that you are happy with the use of cookies.",
+    "dismiss": "OK",
+    "link": "Learn more",
+    "href": "https://parcelaja.pt/en/cookies"
+  }
+})});
+</script>
+<!-- End - Aviso de Cookies -->
+
+{% else %}
+
+
+<!-- Aviso de Cookies -->
+<!-- Código de https://cookieconsent.insites.com --> 
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#edf1f4",
+      "text": "#555555"
+    },
+    "button": {
+      "background": "#7a9a2b",
+      "text": "#ffffff"
+    }
+  },
+  "theme": "edgeless",
+  "position": "bottom-right",
+  "content": {
+    "message": "Ao navegar neste site está a consentir a utilização de cookies.",
+    "dismiss": "OK",
+    "link": "Saiba mais",
+    "href": "https://parcelaja.pt/pt/cookies"
+  }
+})});
+</script>
+<!-- End - Aviso de Cookies -->
+
+{% endif %}

@@ -12,282 +12,298 @@
     <!--@LM header -->
     {% include 'AppBundle:default:v2_header.html.twig'   with {'selected_menu': 'homepage'} %}
 
-    
-    
-    
+
+
+
+
     <!-- Promo Block -->
-<section class="container text-center g-pt-70 g-px-25 g-px-50--md">
-  <h2 class="g-mt-50 h2 h2--md h2--lg g-mb-50">{% trans %}faqs_block_01_title{% endtrans %}</h2>
-  <ul class="list-inline g-mb-50">
-    <li class="list-inline-item px-4 mx-0">
-      <a class="h5 h5--md h5--lg js-go-to g-color-primary text-uppercase" href="#" data-target="#clientes">
-          {% trans %}faqs_block_01_subtitle01{% endtrans %}
-        </a>
-    </li>
-    <li class="list-inline-item g-brd-left g-brd-gray-light-v4 px-4 mx-0">
-      <a class="h5 h5--md h5--lg js-go-to g-color-primary text-uppercase" href="#" data-target="#comerciantes">
-          {% trans %}faqs_block_01_subtitle02{% endtrans %}
-        </a>
-    </li>
-  </ul>
-</section>
-<!-- End Promo Block -->
+    <section class="container text-center g-pt-70 g-px-25 g-px-50--md">
+        <h2 class="g-mt-50 h2 h2--md h2--lg g-mb-50">{% trans %}faqs_block_01_title{% endtrans %}</h2>
+        <ul class="list-inline g-mb-50">
+            <li class="list-inline-item px-4 mx-0">
+                <a class="h5 h5--md h5--lg js-go-to g-color-primary text-uppercase" href="#" data-target="#clientes">
+                    {% trans %}faqs_block_01_subtitle01{% endtrans %}
+                </a>
+            </li>
+            <li class="list-inline-item g-brd-left g-brd-gray-light-v4 px-4 mx-0">
+                <a class="h5 h5--md h5--lg js-go-to g-color-primary text-uppercase" href="#" data-target="#comerciantes">
+                    {% trans %}faqs_block_01_subtitle02{% endtrans %}
+                </a>
+            </li>
+        </ul>
+    </section>
+    <!-- End Promo Block -->
 
-<!-- Accordion -->
-<section class="container g-px-25 g-px-50--md">
-  <!-- Accordion -->
-  <div id="clientes" class="g-brd-top g-brd-gray-light-v4 g-py-50">
-    <div class="row justify-content-center">
 
-      <div class="col-lg-10">
-        <!-- Heading -->
-        <div class="text-center g-mb-50">
-          <h3 class="h3 h3--md h3--lg mb-2">{% trans %}faqs_block_02_title{% endtrans %}</h3>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Accordion -->
+    <section class="container g-px-25 g-px-50--md parcelaja-faq">
+        <!-- Accordion -->
+        <div id="clientes" class="g-brd-top g-brd-gray-light-v4 g-py-50">
+            <div class="row justify-content-center">
+
+                <div class="col-lg-10">
+                    <!-- Heading -->
+                    <div class="text-center g-mb-50">
+                        <h3 class="h3 h3--md h3--lg mb-2">{% trans %}faqs_block_02_title{% endtrans %}</h3>
+                    </div>
+                    <!-- End Heading -->
+
+                    <div id="accordion" class="u-accordion u-accordion-color-primary" role="tablist" aria-multiselectable="true">
+                        <!-- Card -->
+                        <div class="card g-brd-none rounded-0 g-mb-20">
+                            <div id="accordion-heading-01" class="g-bg-primary-opacity-0_1 g-brd-bottom g-brd-gray-light-v4 g-pa-0" role="tab">
+                                <h5 class="mb-0 h5 h5--md h5--lg">
+                                    <a class="collapsed d-flex justify-content-between rounded-0 g-px-30 g-py-20 u-link-v5" href="#accordion-body-01" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" aria-controls="accordion-body-01">
+                                        {% trans %}faqs_block_02_question01{% endtrans %}
+                                        <span class="u-accordion__control-icon">
+                                            <i class="fa fa-angle-down"></i>
+                                            <i class="fa fa-angle-up"></i>
+                                        </span>
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="accordion-body-01" class="collapse" role="tabpanel" aria-labelledby="accordion-heading-01">
+                                <div class="u-accordion__body g-pa-30">
+                                    {% trans %}faqs_block_02_answer01{% endtrans %}
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Card -->
+
+                        <!-- Card -->
+                        <div class="card g-brd-none rounded-0 g-mb-20">
+                            <div id="accordion-heading-02" class="g-bg-primary-opacity-0_1 g-brd-bottom g-brd-gray-light-v4 g-pa-0" role="tab">
+                                <h5 class="mb-0 h5 h5--md h5--lg">
+                                    <a class="collapsed d-flex justify-content-between rounded-0 g-px-30 g-py-20 u-link-v5" href="#accordion-body-02" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" aria-controls="accordion-body-02">
+                                        {% trans %}faqs_block_02_question02{% endtrans %}
+                                        <span class="u-accordion__control-icon">
+                                            <i class="fa fa-angle-down"></i>
+                                            <i class="fa fa-angle-up"></i>
+                                        </span>
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="accordion-body-02" class="collapse" role="tabpanel" aria-labelledby="accordion-heading-02">
+                                <div class="u-accordion__body g-pa-30">
+                                    {% trans %}faqs_block_02_answer02{% endtrans %}
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Card -->
+
+                        <!-- Card -->
+                        <div class="card g-brd-none rounded-0 g-mb-20">
+                            <div id="accordion-heading-03" class="g-bg-primary-opacity-0_1 g-brd-bottom g-brd-gray-light-v4 g-pa-0" role="tab">
+                                <h5 class="mb-0 h5 h5--md h5--lg">
+                                    <a class="collapsed d-flex justify-content-between rounded-0 g-px-30 g-py-20 u-link-v5" href="#accordion-body-03" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" aria-controls="accordion-body-03">
+                                        {% trans %}faqs_block_02_question03{% endtrans %}
+                                        <span class="u-accordion__control-icon">
+                                            <i class="fa fa-angle-down"></i>
+                                            <i class="fa fa-angle-up"></i>
+                                        </span>
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="accordion-body-03" class="collapse" role="tabpanel" aria-labelledby="accordion-heading-03">
+                                <div class="u-accordion__body g-pa-30">
+                                    {% trans %}faqs_block_02_answer03{% endtrans %}
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Card -->
+
+                        <!-- Card -->
+                        <div class="card g-brd-none rounded-0 g-mb-20">
+                            <div id="accordion-heading-04" class="g-bg-primary-opacity-0_1 g-brd-bottom g-brd-gray-light-v4 g-pa-0" role="tab">
+                                <h5 class="mb-0 h5 h5--md h5--lg">
+                                    <a class="collapsed d-flex justify-content-between rounded-0 g-px-30 g-py-20 u-link-v5" href="#accordion-body-04" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" aria-controls="accordion-body-04">
+                                        {% trans %}faqs_block_02_question04{% endtrans %}
+                                        <span class="u-accordion__control-icon">
+                                            <i class="fa fa-angle-down"></i>
+                                            <i class="fa fa-angle-up"></i>
+                                        </span>
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="accordion-body-04" class="collapse" role="tabpanel" aria-labelledby="accordion-heading-04">
+                                <div class="u-accordion__body g-pa-30">
+                                    {% trans %}faqs_block_02_answer04{% endtrans %}
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Card -->
+
+                        <!-- Card -->
+                        <div class="card g-brd-none rounded-0 g-mb-20">
+                            <div id="accordion-heading-05" class="g-bg-primary-opacity-0_1 g-brd-bottom g-brd-gray-light-v4 g-pa-0" role="tab">
+                                <h5 class="mb-0 h5 h5--md h5--lg">
+                                    <a class="collapsed d-flex justify-content-between rounded-0 g-px-30 g-py-20 u-link-v5" href="#accordion-body-05" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" aria-controls="accordion-body-05">
+                                        {% trans %}faqs_block_02_question05{% endtrans %}
+                                        <span class="u-accordion__control-icon">
+                                            <i class="fa fa-angle-down"></i>
+                                            <i class="fa fa-angle-up"></i>
+                                        </span>
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="accordion-body-05" class="collapse" role="tabpanel" aria-labelledby="accordion-heading-05">
+                                <div class="u-accordion__body g-pa-30">
+                                    {% trans %}faqs_block_02_answer05{% endtrans %}
+                                    {#<ol>
+                                      <li>Contacte o seu banco imediatamente a pedir o cancelamento do seu cartão de crédito;</li>
+                                      <li>Envie um email para suporte@parcelaja.pt com a informação do cancelamento do cartão;</li>
+                                      <li>Iremos enviar-me um documento para preencher com os dados do seu novo cartão de crédito e faremos a alteração dos valores em falta do seu cartão antigo para o seu novo cartão.</li>
+                                    </ol>#}
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Card -->
+
+                        <!-- Card -->
+                        <div class="card g-brd-none rounded-0 g-mb-20">
+                            <div id="accordion-heading-06" class="g-bg-primary-opacity-0_1 g-brd-bottom g-brd-gray-light-v4 g-pa-0" role="tab">
+                                <h5 class="mb-0 h5 h5--md h5--lg">
+                                    <a class="collapsed d-flex justify-content-between rounded-0 g-px-30 g-py-20 u-link-v5" href="#accordion-body-06" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" aria-controls="accordion-body-06">
+                                        {% trans %}faqs_block_02_question06{% endtrans %}
+                                        <span class="u-accordion__control-icon">
+                                            <i class="fa fa-angle-down"></i>
+                                            <i class="fa fa-angle-up"></i>
+                                        </span>
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="accordion-body-06" class="collapse" role="tabpanel" aria-labelledby="accordion-heading-06">
+                                <div class="u-accordion__body g-pa-30">
+                                    {% trans %}faqs_block_02_answer06{% endtrans %}
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Card -->
+
+                        <!-- Card -->
+                        <div class="card g-brd-none rounded-0 g-mb-20">
+                            <div id="accordion-heading-07" class="g-bg-primary-opacity-0_1 g-brd-bottom g-brd-gray-light-v4 g-pa-0" role="tab">
+                                <h5 class="mb-0 h5 h5--md h5--lg">
+                                    <a class="collapsed d-flex justify-content-between rounded-0 g-px-30 g-py-20 u-link-v5" href="#accordion-body-07" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" aria-controls="accordion-body-07">
+                                        {% trans %}faqs_block_02_question07{% endtrans %}
+                                        <span class="u-accordion__control-icon">
+                                            <i class="fa fa-angle-down"></i>
+                                            <i class="fa fa-angle-up"></i>
+                                        </span>
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="accordion-body-07" class="collapse" role="tabpanel" aria-labelledby="accordion-heading-7">
+                                <div class="u-accordion__body g-pa-30">
+                                    {% trans %}faqs_block_02_answer07{% endtrans %}
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Card -->
+
+                        <!-- Card -->
+                        <div class="card g-brd-none rounded-0 g-mb-20">
+                            <div id="accordion-heading-08" class="g-bg-primary-opacity-0_1 g-brd-bottom g-brd-gray-light-v4 g-pa-0" role="tab">
+                                <h5 class="mb-0 h5 h5--md h5--lg">
+                                    <a class="collapsed d-flex justify-content-between rounded-0 g-px-30 g-py-20 u-link-v5" href="#accordion-body-08" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" aria-controls="accordion-body-08">
+                                        {% trans %}faqs_block_02_question08{% endtrans %}
+                                        <span class="u-accordion__control-icon">
+                                            <i class="fa fa-angle-down"></i>
+                                            <i class="fa fa-angle-up"></i>
+                                        </span>
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="accordion-body-08" class="collapse" role="tabpanel" aria-labelledby="accordion-heading-7">
+                                <div class="u-accordion__body g-pa-30">
+                                    {% trans %}faqs_block_02_answer08{% endtrans %}
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Card -->
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- End Heading -->
+        <!-- End Accordion -->
 
-        <div id="accordion" class="u-accordion u-accordion-color-primary" role="tablist" aria-multiselectable="true">
-          <!-- Card -->
-          <div class="card g-brd-none rounded-0 g-mb-20">
-            <div id="accordion-heading-01" class="g-bg-primary-opacity-0_1 g-brd-bottom g-brd-gray-light-v4 g-pa-0" role="tab">
-              <h5 class="mb-0 h5 h5--md h5--lg">
-                  <a class="collapsed d-flex justify-content-between titulo-escuro g-text-underline--none--hover rounded-0 g-px-30 g-py-20" href="#accordion-body-01" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" aria-controls="accordion-body-01">
-                    {% trans %}faqs_block_02_question01{% endtrans %}
-                    <span class="u-accordion__control-icon">
-                      <i class="fa fa-angle-down"></i>
-                      <i class="fa fa-angle-up"></i>
-                    </span>
-                  </a>
-                </h5>
-            </div>
-            <div id="accordion-body-01" class="collapse" role="tabpanel" aria-labelledby="accordion-heading-01">
-              <div class="u-accordion__body g-pa-30">
-                {% trans %}faqs_block_02_answer01{% endtrans %}
-              </div>
-            </div>
-          </div>
-          <!-- End Card -->
+        <!-- Accordion -->
+        <div id="comerciantes" class="g-brd-top g-brd-gray-light-v4 g-pt-50 g-mb-100">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <!-- Heading -->
+                    <div class="text-center g-mb-50">
+                        <h3 class="h3 h3--md h3--lg mb-2">{% trans %}faqs_block_03_title{% endtrans %}</h3>
+                    </div>
+                    <!-- End Heading -->
 
-          <!-- Card -->
-          <div class="card g-brd-none rounded-0 g-mb-20">
-            <div id="accordion-heading-02" class="g-bg-primary-opacity-0_1 g-brd-bottom g-brd-gray-light-v4 g-pa-0" role="tab">
-              <h5 class="mb-0 h5 h5--md h5--lg">
-                  <a class="collapsed d-flex justify-content-between titulo-escuro g-text-underline--none--hover rounded-0 g-px-30 g-py-20" href="#accordion-body-02" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" aria-controls="accordion-body-02">
-                    {% trans %}faqs_block_02_question02{% endtrans %}
-                    <span class="u-accordion__control-icon">
-                      <i class="fa fa-angle-down"></i>
-                      <i class="fa fa-angle-up"></i>
-                    </span>
-                  </a>
-                </h5>
-            </div>
-            <div id="accordion-body-02" class="collapse" role="tabpanel" aria-labelledby="accordion-heading-02">
-              <div class="u-accordion__body g-pa-30">
-                {% trans %}faqs_block_02_answer02{% endtrans %}
-              </div>
-            </div>
-          </div>
-          <!-- End Card -->
+                    <div id="accordion-1" class="u-accordion u-accordion-color-primary" role="tablist" aria-multiselectable="true">
+                        <!-- Card -->
+                        <div class="card g-brd-none rounded-0 g-mb-20">
+                            <div id="accordion-1-heading-01" class="g-bg-primary-opacity-0_1 g-brd-bottom g-brd-gray-light-v4 g-pa-0" role="tab">
+                                <h5 class="mb-0 h5 h5--md h5--lg">
+                                    <a class="collapsed d-flex justify-content-between rounded-0 g-px-30 g-py-20 u-link-v5" href="#accordion-1-body-01" data-toggle="collapse" data-parent="#accordion-1" aria-expanded="false" aria-controls="accordion-1-body-01">
+                                        {% trans %}faqs_block_03_question01{% endtrans %}
+                                        <span class="u-accordion__control-icon">
+                                            <i class="fa fa-angle-down"></i>
+                                            <i class="fa fa-angle-up"></i>
+                                        </span>
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="accordion-1-body-01" class="collapse" role="tabpanel" aria-labelledby="accordion-1-heading-01">
+                                <div class="u-accordion__body g-pa-30">
+                                    {% trans %}faqs_block_03_answer01{% endtrans %}
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Card -->
 
-          <!-- Card -->
-          <div class="card g-brd-none rounded-0 g-mb-20">
-            <div id="accordion-heading-03" class="g-bg-primary-opacity-0_1 g-brd-bottom g-brd-gray-light-v4 g-pa-0" role="tab">
-              <h5 class="mb-0 h5 h5--md h5--lg">
-                  <a class="collapsed d-flex justify-content-between titulo-escuro g-text-underline--none--hover rounded-0 g-px-30 g-py-20" href="#accordion-body-03" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" aria-controls="accordion-body-03">
-                    {% trans %}faqs_block_02_question03{% endtrans %}
-                    <span class="u-accordion__control-icon">
-                      <i class="fa fa-angle-down"></i>
-                      <i class="fa fa-angle-up"></i>
-                    </span>
-                  </a>
-                </h5>
-            </div>
-            <div id="accordion-body-03" class="collapse" role="tabpanel" aria-labelledby="accordion-heading-03">
-              <div class="u-accordion__body g-pa-30">
-                {% trans %}faqs_block_02_answer03{% endtrans %}
-              </div>
-            </div>
-          </div>
-          <!-- End Card -->
+                        <!-- Card -->
+                        <div class="card g-brd-none rounded-0 g-mb-20">
+                            <div id="accordion-1-heading-02" class="g-bg-primary-opacity-0_1 g-brd-bottom g-brd-gray-light-v4 g-pa-0" role="tab">
+                                <h5 class="mb-0 h5 h5--md h5--lg">
+                                    <a class="collapsed d-flex justify-content-between rounded-0 g-px-30 g-py-20 u-link-v5" href="#accordion-1-body-02" data-toggle="collapse" data-parent="#accordion-1" aria-expanded="false" aria-controls="accordion-1-body-02">
+                                        {% trans %}faqs_block_03_question02{% endtrans %}
+                                        <span class="u-accordion__control-icon">
+                                            <i class="fa fa-angle-down"></i>
+                                            <i class="fa fa-angle-up"></i>
+                                        </span>
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="accordion-1-body-02" class="collapse" role="tabpanel" aria-labelledby="accordion-1-heading-02">
+                                <div class="u-accordion__body g-pa-30">
+                                    {% trans %}faqs_block_03_answer02{% endtrans %}
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Card -->
 
-          <!-- Card -->
-          <div class="card g-brd-none rounded-0 g-mb-20">
-            <div id="accordion-heading-04" class="g-bg-primary-opacity-0_1 g-brd-bottom g-brd-gray-light-v4 g-pa-0" role="tab">
-              <h5 class="mb-0 h5 h5--md h5--lg">
-                  <a class="collapsed d-flex justify-content-between titulo-escuro g-text-underline--none--hover rounded-0 g-px-30 g-py-20" href="#accordion-body-04" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" aria-controls="accordion-body-04">
-                    {% trans %}faqs_block_02_question04{% endtrans %}
-                    <span class="u-accordion__control-icon">
-                      <i class="fa fa-angle-down"></i>
-                      <i class="fa fa-angle-up"></i>
-                    </span>
-                  </a>
-                </h5>
+                    </div>
+                </div>
             </div>
-            <div id="accordion-body-04" class="collapse" role="tabpanel" aria-labelledby="accordion-heading-04">
-              <div class="u-accordion__body g-pa-30">
-                {% trans %}faqs_block_02_answer04{% endtrans %}
-              </div>
-            </div>
-          </div>
-          <!-- End Card -->
-
-          <!-- Card -->
-          <div class="card g-brd-none rounded-0 g-mb-20">
-            <div id="accordion-heading-05" class="g-bg-primary-opacity-0_1 g-brd-bottom g-brd-gray-light-v4 g-pa-0" role="tab">
-              <h5 class="mb-0 h5 h5--md h5--lg">
-                  <a class="collapsed d-flex justify-content-between titulo-escuro g-text-underline--none--hover rounded-0 g-px-30 g-py-20" href="#accordion-body-05" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" aria-controls="accordion-body-05">
-                    {% trans %}faqs_block_02_question05{% endtrans %}
-                    <span class="u-accordion__control-icon">
-                      <i class="fa fa-angle-down"></i>
-                      <i class="fa fa-angle-up"></i>
-                    </span>
-                  </a>
-                </h5>
-            </div>
-            <div id="accordion-body-05" class="collapse" role="tabpanel" aria-labelledby="accordion-heading-05">
-              <div class="u-accordion__body g-pa-30">
-                {% trans %}faqs_block_02_answer05{% endtrans %}
-                {#<ol>
-                  <li>{% trans %}{% endtrans %};</li>
-                  <li>Envie um email para suporte@parcelaja.pt com a informação do cancelamento do cartão;</li>
-                  <li>Iremos enviar-me um documento para preencher com os dados do seu novo cartão de crédito e faremos a alteração dos valores em falta do seu cartão antigo para o seu novo cartão.</li>
-                </ol>#}
-              </div>
-            </div>
-          </div>
-          <!-- End Card -->
-
-          <!-- Card -->
-          <div class="card g-brd-none rounded-0 g-mb-20">
-            <div id="accordion-heading-06" class="g-bg-primary-opacity-0_1 g-brd-bottom g-brd-gray-light-v4 g-pa-0" role="tab">
-              <h5 class="mb-0 h5 h5--md h5--lg">
-                  <a class="collapsed d-flex justify-content-between titulo-escuro g-text-underline--none--hover rounded-0 g-px-30 g-py-20" href="#accordion-body-06" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" aria-controls="accordion-body-06">
-                    {% trans %}faqs_block_02_question06{% endtrans %}
-                    <span class="u-accordion__control-icon">
-                      <i class="fa fa-angle-down"></i>
-                      <i class="fa fa-angle-up"></i>
-                    </span>
-                  </a>
-                </h5>
-            </div>
-            <div id="accordion-body-06" class="collapse" role="tabpanel" aria-labelledby="accordion-heading-06">
-              <div class="u-accordion__body g-pa-30">
-                {% trans %}faqs_block_02_answer06{% endtrans %}
-              </div>
-            </div>
-          </div>
-          <!-- End Card -->
-
-          <!-- Card -->
-          <div class="card g-brd-none rounded-0 g-mb-20">
-            <div id="accordion-heading-07" class="g-bg-primary-opacity-0_1 g-brd-bottom g-brd-gray-light-v4 g-pa-0" role="tab">
-              <h5 class="mb-0 h5 h5--md h5--lg">
-                  <a class="collapsed d-flex justify-content-between titulo-escuro g-text-underline--none--hover rounded-0 g-px-30 g-py-20" href="#accordion-body-07" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" aria-controls="accordion-body-07">
-                    {% trans %}faqs_block_02_question07{% endtrans %}
-                    <span class="u-accordion__control-icon">
-                      <i class="fa fa-angle-down"></i>
-                      <i class="fa fa-angle-up"></i>
-                    </span>
-                  </a>
-                </h5>
-            </div>
-            <div id="accordion-body-07" class="collapse" role="tabpanel" aria-labelledby="accordion-heading-7">
-              <div class="u-accordion__body g-pa-30">
-                {% trans %}faqs_block_02_answer07{% endtrans %}
-              </div>
-            </div>
-          </div>
-          <!-- End Card -->
-
-          <!-- Card -->
-          <div class="card g-brd-none rounded-0 g-mb-20">
-            <div id="accordion-heading-08" class="g-bg-primary-opacity-0_1 g-brd-bottom g-brd-gray-light-v4 g-pa-0" role="tab">
-              <h5 class="mb-0 h5 h5--md h5--lg">
-                  <a class="collapsed d-flex justify-content-between titulo-escuro g-text-underline--none--hover rounded-0 g-px-30 g-py-20" href="#accordion-body-08" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" aria-controls="accordion-body-08">
-                    {% trans %}faqs_block_02_question08{% endtrans %}
-                    <span class="u-accordion__control-icon">
-                      <i class="fa fa-angle-down"></i>
-                      <i class="fa fa-angle-up"></i>
-                    </span>
-                  </a>
-                </h5>
-            </div>
-            <div id="accordion-body-08" class="collapse" role="tabpanel" aria-labelledby="accordion-heading-7">
-              <div class="u-accordion__body g-pa-30">
-                {% trans %}faqs_block_02_answer08{% endtrans %}
-              </div>
-            </div>
-          </div>
-          <!-- End Card -->
         </div>
-      </div>
-    </div>
-  </div>
-  <!-- End Accordion -->
+        <!-- End Accordion -->
+    </section>
+    <!-- Accordion -->
 
-  <!-- Accordion -->
-  <div id="comerciantes" class="g-brd-top g-brd-gray-light-v4 g-pt-50 g-mb-100">
-    <div class="row justify-content-center">
-      <div class="col-lg-10">
-        <!-- Heading -->
-        <div class="text-center g-mb-50">
-          <h3 class="h3 h3--md h3--lg mb-2">{% trans %}faqs_block_03_title{% endtrans %}</h3>
-        </div>
-        <!-- End Heading -->
 
-        <div id="accordion-1" class="u-accordion u-accordion-color-primary" role="tablist" aria-multiselectable="true">
-          <!-- Card -->
-          <div class="card g-brd-none rounded-0 g-mb-20">
-            <div id="accordion-1-heading-01" class="g-bg-primary-opacity-0_1 g-brd-bottom g-brd-gray-light-v4 g-pa-0" role="tab">
-              <h5 class="mb-0 h5 h5--md h5--lg">
-                  <a class="collapsed d-flex justify-content-between titulo-escuro g-text-underline--none--hover rounded-0 g-px-30 g-py-20" href="#accordion-1-body-01" data-toggle="collapse" data-parent="#accordion-1" aria-expanded="false" aria-controls="accordion-1-body-01">
-                    {% trans %}faqs_block_03_question01{% endtrans %}
-                    <span class="u-accordion__control-icon">
-                      <i class="fa fa-angle-down"></i>
-                      <i class="fa fa-angle-up"></i>
-                    </span>
-                  </a>
-                </h5>
-            </div>
-            <div id="accordion-1-body-01" class="collapse" role="tabpanel" aria-labelledby="accordion-1-heading-01">
-              <div class="u-accordion__body g-pa-30">
-                {% trans %}faqs_block_03_answer01{% endtrans %}
-              </div>
-            </div>
-          </div>
-          <!-- End Card -->
 
-          <!-- Card -->
-          <div class="card g-brd-none rounded-0 g-mb-20">
-            <div id="accordion-1-heading-02" class="g-bg-primary-opacity-0_1 g-brd-bottom g-brd-gray-light-v4 g-pa-0" role="tab">
-              <h5 class="mb-0 h5 h5--md h5--lg">
-                  <a class="collapsed d-flex justify-content-between titulo-escuro g-text-underline--none--hover rounded-0 g-px-30 g-py-20" href="#accordion-1-body-02" data-toggle="collapse" data-parent="#accordion-1" aria-expanded="false" aria-controls="accordion-1-body-02">
-                    {% trans %}faqs_block_03_question02{% endtrans %}
-                    <span class="u-accordion__control-icon">
-                      <i class="fa fa-angle-down"></i>
-                      <i class="fa fa-angle-up"></i>
-                    </span>
-                  </a>
-                </h5>
-            </div>
-            <div id="accordion-1-body-02" class="collapse" role="tabpanel" aria-labelledby="accordion-1-heading-02">
-              <div class="u-accordion__body g-pa-30">
-                {% trans %}faqs_block_03_answer02{% endtrans %}
-              </div>
-            </div>
-          </div>
-          <!-- End Card -->
 
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- End Accordion -->
-</section>
-<!-- Accordion -->
-    
-    
-    
+
+
 
 
     <!--@LM Footer Call to Action -->
@@ -305,64 +321,65 @@
 
 {% block javascripts %}
     {{ parent() }}
-<!-- JS Plugins Init. -->
+
+
+    <!-- JS Plugins Init. -->
     <script>
-      $(document).on('ready', function () {
-          // initialization of carousel
-          $.HSCore.components.HSCarousel.init('.js-carousel');
-          $('#we-provide').slick('setOption', 'responsive', [{
-            breakpoint: 992,
-            settings: {
-              slidesToShow: 2
-            }
-          }, {
-            breakpoint: 576,
-            settings: {
-              slidesToShow: 1
-            }
-          }], true);
-          // initialization of tabs
-          $.HSCore.components.HSTabs.init('[role="tablist"]');
-          // initialization of header's height equal offset
-          $.HSCore.helpers.HSHeightCalc.init();
-          // initialization of scroll animation
-          $.HSCore.components.HSOnScrollAnimation.init('[data-animation]');
-          // initialization of video on background
-          $.HSCore.helpers.HSBgVideo.init('.js-bg-video');
-          // initialization of popups with media
-          $.HSCore.components.HSPopup.init('.js-fancybox-media', {
-            helpers: {
-              media: {},
-              overlay: {
-                css: {
-                  'background': 'rgba(0, 0, 0, .8)'
+        $(document).on('ready', function () {
+            // initialization of carousel
+            $.HSCore.components.HSCarousel.init('.js-carousel');
+            $('#we-provide').slick('setOption', 'responsive', [{
+                    breakpoint: 992,
+                    settings: {
+                        slidesToShow: 2
+                    }
+                }, {
+                    breakpoint: 576,
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }], true);
+            // initialization of tabs
+            $.HSCore.components.HSTabs.init('[role="tablist"]');
+            // initialization of header's height equal offset
+            $.HSCore.helpers.HSHeightCalc.init();
+            // initialization of scroll animation
+            $.HSCore.components.HSOnScrollAnimation.init('[data-animation]');
+            // initialization of video on background
+            $.HSCore.helpers.HSBgVideo.init('.js-bg-video');
+            // initialization of popups with media
+            $.HSCore.components.HSPopup.init('.js-fancybox-media', {
+                helpers: {
+                    media: {},
+                    overlay: {
+                        css: {
+                            'background': 'rgba(0, 0, 0, .8)'
+                        }
+                    }
                 }
-              }
-            }
-          });
-          // initialization of HSDropdown component
-          $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'));
-          // initialization of go to
-          $.HSCore.components.HSGoTo.init('.js-go-to');
+            });
+            // initialization of HSDropdown component
+            $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'));
+            // initialization of go to
+            $.HSCore.components.HSGoTo.init('.js-go-to');
         });
         $(window).on('load', function () {
-          // initialization of header
-          $.HSCore.components.HSHeader.init($('#js-header'));
-          $.HSCore.helpers.HSHamburgers.init('.hamburger');
-          // initialization of HSMegaMenu component
-          $('.js-mega-menu').HSMegaMenu({
-            event: 'hover',
-            pageContainer: $('.container'),
-            breakpoint: 991
-          });
+            // initialization of header
+            $.HSCore.components.HSHeader.init($('#js-header'));
+            $.HSCore.helpers.HSHamburgers.init('.hamburger');
+            // initialization of HSMegaMenu component
+            $('.js-mega-menu').HSMegaMenu({
+                event: 'hover',
+                pageContainer: $('.container'),
+                breakpoint: 991
+            });
         });
         $(window).on('resize', function () {
-          setTimeout(function () {
-            $.HSCore.components.HSTabs.init('[role="tablist"]');
-          }, 200);
+            setTimeout(function () {
+                $.HSCore.components.HSTabs.init('[role="tablist"]');
+            }, 200);
         });
     </script>
-
 
 {% endblock %}
 

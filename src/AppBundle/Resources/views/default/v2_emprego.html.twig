@@ -11,31 +11,43 @@
 
     <!--@LM header -->
     {% include 'AppBundle:default:v2_header.html.twig'   with {'selected_menu': 'homepage'} %}
-<!-- Promo Block -->
-<section class="dzsparallaxer auto-init height-is-based-on-content use-loading mode-scroll loaded dzsprx-readyall " data-options='{direction: "fromtop", animation_duration: 25, direction: "reverse"}'>
-  <!-- Parallax Image -->
-  <div class="divimage dzsparallaxer--target w-100 u-bg-overlay g-bg-black-opacity-0_4--after" style="height: 140%; background-image: url({{ asset('bundles/app/frontend/v2/assets/img-parcelaja/emprego/emprego-01.jpg') }});"></div>
-  <!-- End Parallax Image -->
 
-  <!-- Promo Block Content -->
-  <div class="container g-color-white text-center g-py-150">
-  </div>
-  <!-- Promo Block Content -->
-</section>
-<!-- End Promo Block -->
 
-<!-- Contact Form -->
 
-<section class="container g-mt-100 g-mb-50">
-  <div class="row justify-content-between">
-    <div class="col-md-8 g-mb-150">
-      <h2 class="h2 h2--md h2--lg mb-5">{% trans %}carreers_block_01_title{% endtrans %}</h2>
-      <p class="g-mb-150 g-font-size-16">{% trans %}carreers_block_01_text{% endtrans %}</p>
 
+
+    <!-- Promo Block -->
+    <section class="dzsparallaxer auto-init height-is-based-on-content use-loading mode-scroll loaded dzsprx-readyall " data-options='{direction: "fromtop", animation_duration: 25, direction: "reverse"}'>
+        <!-- Parallax Image -->
+        <div class="divimage dzsparallaxer--target w-100 u-bg-overlay g-bg-black-opacity-0_4--after" style="height: 140%; background-image: url({{ asset('bundles/app/frontend/v2/assets/img-parcelaja/emprego/emprego-01-1920x800.jpg') }});"></div>
+        <!-- End Parallax Image -->
+        <!-- Promo Block Content -->
+        <div class="container g-py-100 g-py-125--md g-py-150--xl"></div>
+        <!-- Promo Block Content -->
+    </section>
+    <!-- End Promo Block -->
+
+    <!-- Título -->
+    <div class="container g-pt-50 g-pt-100--sm g-px-25 g-px-50--md">
+        <div class="u-heading-v3-1 g-mb-50">
+            <h2 class="u-heading-v3__title h2 h2--md h2--lg g-brd-primary">{% trans %}carreers_block_01_title{% endtrans %}</h2>
+        </div>
     </div>
+    <!-- End - Título -->
 
-  </div>
-</section>
+    <!-- Conteúdo -->
+    <section class="container g-mb-150 g-px-25 g-px-50--md">
+        <div class="row">
+            <div class="col-md-9">
+                <p class="g-mb-50 g-mb-105--md g-mb-150--xl">{% trans %}carreers_block_01_text{% endtrans %}</p>
+            </div>
+        </div>
+    </section>
+    <!-- Ene - Conteúdo -->
+
+
+
+
 
 
 
@@ -61,7 +73,6 @@
         $(document).on('ready', function () {
             // initialization of carousel
             $.HSCore.components.HSCarousel.init('.js-carousel');
-
             $('#we-provide').slick('setOption', 'responsive', [{
                     breakpoint: 992,
                     settings: {
@@ -73,19 +84,14 @@
                         slidesToShow: 1
                     }
                 }], true);
-
             // initialization of tabs
             $.HSCore.components.HSTabs.init('[role="tablist"]');
-
             // initialization of header's height equal offset
             $.HSCore.helpers.HSHeightCalc.init();
-
             // initialization of scroll animation
             $.HSCore.components.HSOnScrollAnimation.init('[data-animation]');
-
             // initialization of video on background
             $.HSCore.helpers.HSBgVideo.init('.js-bg-video');
-
             // initialization of popups with media
             $.HSCore.components.HSPopup.init('.js-fancybox-media', {
                 helpers: {
@@ -97,19 +103,15 @@
                     }
                 }
             });
-
             // initialization of HSDropdown component
             $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'));
-
             // initialization of go to
             $.HSCore.components.HSGoTo.init('.js-go-to');
         });
-
         $(window).on('load', function () {
             // initialization of header
             $.HSCore.components.HSHeader.init($('#js-header'));
             $.HSCore.helpers.HSHamburgers.init('.hamburger');
-
             // initialization of HSMegaMenu component
             $('.js-mega-menu').HSMegaMenu({
                 event: 'hover',
@@ -117,13 +119,11 @@
                 breakpoint: 991
             });
         });
-
         $(window).on('resize', function () {
             setTimeout(function () {
                 $.HSCore.components.HSTabs.init('[role="tablist"]');
             }, 200);
         });
-
     </script>
 
 

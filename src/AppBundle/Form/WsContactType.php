@@ -17,24 +17,24 @@ class WsContactType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('name')
-                ->add('email')
-                ->add('subject')
-                ->add('phone')
-                ->add('message')
-                ->add('firstValue', HiddenType::class)
-                ->add('secondValue', HiddenType::class)
-                ->add('validation');
-        
-        
-//        $builder->add('name', TextType::class, array('required' => true))
-//                ->add('email', EmailType::class, array('required' => true))
-//                ->add('subject', TextType::class, array('required' => true))
-//                ->add('phone', TextType::class, array('required' => true))
-//                ->add('message', TextareaType::class, array('required' => true))
+//        $builder->add('name')
+//                ->add('email')
+//                ->add('subject')
+//                ->add('phone')
+//                ->add('message')
 //                ->add('firstValue', HiddenType::class)
 //                ->add('secondValue', HiddenType::class)
-//                ->add('validation', TextType::class, array('required' => true));
+//                ->add('validation');
+        
+        
+        $builder->add('name', TextType::class, array('required' => true))
+                ->add('email', EmailType::class, array('required' => true))
+                ->add('subject', TextType::class, array('required' => true))
+                ->add('phone', TextType::class, array('required' => true))
+                ->add('message', TextareaType::class, array('required' => true))
+                ->add('firstValue', HiddenType::class)
+                ->add('secondValue', HiddenType::class)
+                ->add('validation', TextType::class, array('required' => true));
         
         
         

@@ -77,6 +77,12 @@ pci:
         _locale:  en|pt
 
 
+cookies:
+    path:      /{_locale}/cookies
+    defaults:  { _controller: AppBundle:Default:cookies, _locale: pt }
+    requirements:
+        _locale:  en|pt
+
 
 
             

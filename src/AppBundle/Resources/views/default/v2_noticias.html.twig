@@ -13,46 +13,58 @@
     {% include 'AppBundle:default:v2_header.html.twig'   with {'selected_menu': 'homepage'} %}
 
 
-    <!-- News -->
+    <!-- Notícias -->
     <div class="container g-pt-70 g-mb-50 g-px-25 g-px-50--md">
-        <div class="u-heading-v3-1 g-mt-50 g-mb-50">
-            <h2 class="u-heading-v3__title g-brd-primary h2 h2--md h2--lg">{% trans %}newsandmedia_block_01_title{% endtrans %}</h2>
-        </div>
 
+        <!-- Título -->
+        <div class="u-heading-v3-1 g-mt-50 g-mb-50">
+            <h2 class="u-heading-v3__title g-brd-primary h2 h2--md h2--lg">Notícias e Media</h2>
+        </div>
+        <!-- End - Título -->
+
+        <!-- Lista de Notícias -->
         <div class="row">
 
 
-            <!-- Weekly News -->
+
             {% for noticia in noticias %}
+
+
+
+
+                <!-- Notícia -->
                 <div class="col-md-4 g-mb-50">
-                    <!-- Article -->
                     <article>
-                        <figure class="u-shadow-v25 g-pos-rel g-mb-20">
-                            {#<img class="img-fluid w-100" src="../assets/img-temp/400x270/img17.jpg" alt="Image Description">#}
-                            <img class="img-fluid" src="{{ vich_uploader_asset(noticia, 'imageFile') }}" alt="{{ noticia.title }}" /> 
+                        <figure class="g-pos-rel g-mb-20">
+                            <a href="#">
+                                <img class="img-fluid w-100" src="{{ vich_uploader_asset(noticia, 'imageFile') }}" alt="{{ noticia.title }}" />
+                            </a>
                         </figure>
-
                         <h3 class="h4 g-mb-10">
-                            <a class="u-link-v5 g-color-primary--hover" href="#">{{ noticia.title }}</a>
+                            <a class="u-link-v5 h3 g-color-primary--hover" href="#">{{ noticia.title }}</a>
                         </h3>
-
                         <ul class="list-inline g-font-size-12">
                             <li class="list-inline-item">
                                 {{noticia.createdAt|date("F j, Y, g:i a")}} 
                             </li>
                         </ul>
                         <p>{{ noticia.message }}</p>
-                        <a class="g-font-size-12" href="{{ noticia.link }}">{% trans %}newsandmedia_readmore{% endtrans %}</a>
+                        <a class="g-font-size-12 text-uppercase" href="{{ noticia.link }}">{% trans %}newsandmedia_readmore{% endtrans %}</a>
                     </article>
-                    <!-- End Article -->
                 </div>
+                <!-- End - Notícia -->
+
+
+
+
             {% endfor %}
-            <!-- End Weekly News -->
 
 
-        </div>
-    </div>
-    <!-- End News -->
+</div>
+  <!-- End - Lista de Notícias -->
+
+</div>
+<!-- End - Notícias -->
 
     <!-- Pagination -->
     {#<div class="container g-mb-100 g-px-25 g-px-50--md">
@@ -112,7 +124,6 @@
         $(document).on('ready', function () {
             // initialization of carousel
             $.HSCore.components.HSCarousel.init('.js-carousel');
-
             $('#we-provide').slick('setOption', 'responsive', [{
                     breakpoint: 992,
                     settings: {
@@ -124,19 +135,14 @@
                         slidesToShow: 1
                     }
                 }], true);
-
             // initialization of tabs
             $.HSCore.components.HSTabs.init('[role="tablist"]');
-
             // initialization of header's height equal offset
             $.HSCore.helpers.HSHeightCalc.init();
-
             // initialization of scroll animation
             $.HSCore.components.HSOnScrollAnimation.init('[data-animation]');
-
             // initialization of video on background
             $.HSCore.helpers.HSBgVideo.init('.js-bg-video');
-
             // initialization of popups with media
             $.HSCore.components.HSPopup.init('.js-fancybox-media', {
                 helpers: {
@@ -148,19 +154,15 @@
                     }
                 }
             });
-
             // initialization of HSDropdown component
             $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'));
-
             // initialization of go to
             $.HSCore.components.HSGoTo.init('.js-go-to');
         });
-
         $(window).on('load', function () {
             // initialization of header
             $.HSCore.components.HSHeader.init($('#js-header'));
             $.HSCore.helpers.HSHamburgers.init('.hamburger');
-
             // initialization of HSMegaMenu component
             $('.js-mega-menu').HSMegaMenu({
                 event: 'hover',
@@ -168,14 +170,13 @@
                 breakpoint: 991
             });
         });
-
         $(window).on('resize', function () {
             setTimeout(function () {
                 $.HSCore.components.HSTabs.init('[role="tablist"]');
             }, 200);
         });
-
     </script>
+
 
 
 {% endblock %}
