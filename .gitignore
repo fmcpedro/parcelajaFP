@@ -15,5 +15,6 @@
 /vendor/
 /web/bundles/
 /web/thumbnails/*
-/web/uploads/*
+/web/uploads/posts/*
+/web/uploads/medias/*
 /web/media/*
