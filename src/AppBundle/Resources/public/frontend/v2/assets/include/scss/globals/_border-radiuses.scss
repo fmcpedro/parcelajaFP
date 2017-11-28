@@ -123,6 +123,13 @@
   border-bottom-left-radius: 50px !important;
 }
 
+.g-rounded-circle--before::before {
+  border-radius: 50% !important;
+}
+.g-rounded-circle--after::after {
+  border-radius: 50% !important;
+}
+
 @media (min-width: $g-md) {
   .g-rounded-0--md {
     border-radius: 0 !important;

@@ -2,7 +2,7 @@
 {% set root = "../../../" %}
 {% set mainNavActive_1 = "shortcodes" %}
 {% set sidebarNavActive_1 = "shortcode-blocks-promo" %}
-{% set title = "Promo Blocks 34 | " %}
+{% set title = "Promo Blocks 34" %}
 
 {% include "html/assets/include/nunjucks/partials/head.njk" %}
 {% include "html/assets/include/nunjucks/partials/core-fonts.njk" %}
@@ -34,11 +34,11 @@
               <h1 class="g-color-white g-font-weight-600 g-font-size-50 mb-3">Fast. Flexible. Leaders.</h1>
               <p class="g-color-white g-font-size-18">Unify Marketing is a comprehensive, creation and management solution that helps business providers manage their shifts with complete accuracy. Our Unify management software Unify Marketing has earned us the position of market leaders for unscheduled business providers.</p>
             </div>
-            <a class="btn u-btn-primary g-font-weight-500 g-font-size-12 text-uppercase g-px-25 g-py-13 mr-3" href="#">
+            <a class="btn u-btn-primary g-font-weight-500 g-font-size-12 text-uppercase g-px-25 g-py-13 mr-3" href="#!">
               Our Services
               <i class="g-pos-rel g-top-minus-1 ml-2 fa fa-angle-right"></i>
             </a>
-            <a class="btn u-btn-black g-font-weight-500 g-font-size-12 text-uppercase g-px-25 g-py-13" href="#">
+            <a class="btn u-btn-black g-font-weight-500 g-font-size-12 text-uppercase g-px-25 g-py-13" href="#!">
               Our Works
               <i class="g-pos-rel g-top-minus-1 ml-2 fa fa-angle-right"></i>
             </a>
@@ -115,18 +115,6 @@
     $(document).on('ready', function () {
       // initialization of carousel
       $.HSCore.components.HSCarousel.init('.js-carousel');
-
-      $('#we-provide').slick('setOption', 'responsive', [{
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 2
-        }
-      }, {
-        breakpoint: 576,
-        settings: {
-          slidesToShow: 1
-        }
-      }], true);
 
       // initialization of masonry
       $('.masonry-grid').imagesLoaded().then(function () {

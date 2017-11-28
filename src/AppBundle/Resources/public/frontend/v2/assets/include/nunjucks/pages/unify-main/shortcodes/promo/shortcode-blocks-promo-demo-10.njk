@@ -2,7 +2,7 @@
 {% set root = "../../../" %}
 {% set mainNavActive_1 = "shortcodes" %}
 {% set sidebarNavActive_1 = "shortcode-blocks-promo" %}
-{% set title = "Promo Blocks 10 | " %}
+{% set title = "Promo Blocks 10" %}
 
 {% include "html/assets/include/nunjucks/partials/head.njk" %}
 {% include "html/assets/include/nunjucks/partials/core-fonts.njk" %}
@@ -23,10 +23,10 @@
     {% include "html/assets/include/nunjucks/partials/blocks/headers/header-main.njk" %}
 
     <!-- Promo Block -->
-    <section class="g-bg-cover g-bg-pos-center g-bg-img-hero g-bg-black-opacity-0_1--after g-flex-centered g-py-150" style="background-image: url({{ root }}assets/img-temp/1920x1080/img12.jpg);">
+    <section class="g-bg-cover g-bg-pos-center g-bg-img-hero g-bg-black-opacity-0_3--after g-flex-centered g-py-150" style="background-image: url({{ root }}assets/img-temp/1920x1080/img12.jpg);">
       <div class="container g-bg-cover__inner">
         <div class="row">
-          <div class="col-md-4 align-self-center g-overflow-hidden g-mb-30 g-mb-0--md">
+          <div class="col-md-5 align-self-center g-overflow-hidden g-mb-30 g-mb-0--md">
             <!-- Promo Block Content -->
             <h2 class="g-color-white g-font-size-30 g-font-size-45--md text-uppercase g-line-height-1 g-mb-5" data-animation="fadeInUp" data-animation-delay="200" data-animation-duration="1500">Amazing</h2>
             <h3 class="g-color-primary g-font-weight-700 g-font-size-40 g-font-size-60--md text-uppercase g-line-height-1 g-mb-20" data-animation="fadeInLeft" data-animation-delay="500" data-animation-duration="2000">Features</h3>
@@ -37,7 +37,7 @@
             <!-- End Promo Block Content -->
           </div>
 
-          <div class="col-md-8 g-overflow-hidden">
+          <div class="col-md-7 g-overflow-hidden">
             <div class="g-brd-around g-brd-7 g-brd-white" data-animation="fadeInRight" data-animation-delay="1700" data-animation-duration="1500">
               <!-- Promo Block - Video -->
               <div class="embed-responsive embed-responsive-16by9">
@@ -52,16 +52,16 @@
               <!-- Promo Block - Info -->
               <ul class="u-video-v1-info">
                 <li class="u-video-v1-info__item">
-                  <a href="#" target="_blank">View test video</a> &copy; Test Director
+                  <a href="#!" target="_blank">View test video</a> &copy; Test Director
                 </li>
                 <li class="u-video-v1-info__item">
-                  <a href="#" target="_blank">Test Director &ndash; &ldquo;test video&rdquo;</a> &copy; Test Director
+                  <a href="#!" target="_blank">Test Director &ndash; &ldquo;test video&rdquo;</a> &copy; Test Director
                 </li>
                 <li class="u-video-v1-info__item">
-                  <a href="#" target="_blank"> View test video</a> on <i class="fa fa-youtube"></i> Youtube
+                  <a href="#!" target="_blank"> View test video</a> on <i class="fa fa-youtube"></i> Youtube
                 </li>
                 <li class="u-video-v1-info__item">
-                  <a href="#" target="_blank"> View test video</a> on <i class="fa fa-vimeo"></i> Vimeo
+                  <a href="#!" target="_blank"> View test video</a> on <i class="fa fa-vimeo"></i> Vimeo
                 </li>
               </ul>
               <!-- End Promo Block - Info -->
@@ -104,18 +104,6 @@
     $(document).ready(function () {
       // initialization of carousel
       $.HSCore.components.HSCarousel.init('.js-carousel');
-
-      $('#we-provide').slick('setOption', 'responsive', [{
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 2
-        }
-      }, {
-        breakpoint: 576,
-        settings: {
-          slidesToShow: 1
-        }
-      }], true);
 
       // initialization of masonry
       $('.masonry-grid').imagesLoaded().then(function () {

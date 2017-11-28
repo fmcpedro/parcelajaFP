@@ -28,7 +28,7 @@ class TpaymentsTaxaDesconto {
     const TAXA_JURO = 0.05;
     const LUCRO_PARCELA = 0.75;
     const LUCRO_BNI = 0.25;
-    const NUM_CASAS_DECIMAIS = 5;
+    const NUM_CASAS_DECIMAIS = 8;
 
     //Pressupostos  Variáveis
     private $valorCompra;
@@ -89,7 +89,7 @@ class TpaymentsTaxaDesconto {
 
     //function __construct($valorCompra, $numeroPrestacoes, $numParcela, $tipoTransacao, $payID, $datePayment) {
     function __construct(Tpurchase $purchase, $numParcela, Tpayments $payment=null) {
-        $this->valorCompra = $purchase->getFcalcamount();
+        $this->valorCompra = str_replace(',', '.', $purchase->getFcalcamount());
         $this->numeroPrestacoes = $purchase->getFmonthdata();
         $this->numParcela = $numParcela;
         $this->comissaoPagarAderente = ((($this->numeroPrestacoes / 2) + 0.5) / 100);
@@ -162,7 +162,11 @@ class TpaymentsTaxaDesconto {
     }
 
     function getValParcelas() {
+        
         return $this->getValorCompra() / $this->getNumeroPrestacoes();
+        
+        
+        
     }
 
     function getComOgone() {

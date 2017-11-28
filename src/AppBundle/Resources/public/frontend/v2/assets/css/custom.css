@@ -1830,3 +1830,66 @@ CARTÕES COM FLIP
 .cc-message {
     margin: 1em 1em 1em !important;
 }
+
+/* Modal de Loja Aderente
+------------------------------------*/
+.parcelaja-modal-loja-aderente {
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15);
+    max-width: 500px !important;
+}
+.parcelaja-modal-loja-aderente a.btn {
+    text-decoration: none !important;
+}
+@media (min-width: 576px) {
+  .btn--sm {
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+  }
+} 
+  
+@media (min-width: 768px) {
+  .btn-sm--md {  
+    padding: .25rem .5rem;
+    font-size: .875rem;
+    line-height: 1.5;
+    border-radius: .2rem;
+  }
+  .btn--md {
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+  }
+  .btn-md--md {
+    line-height: 1.4;
+    padding: 0.57143rem 1.42857rem;
+    font-size: 1.07143rem;
+  }
+}
+@media (min-width: 992px) {
+  .g-width-50x--lg {
+    width: 50% !important; }
+  .btn-sm--lg {  
+    padding: .25rem .5rem;
+    font-size: .875rem;
+    line-height: 1.5;
+    border-radius: .2rem;
+  }
+  .btn--lg {
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+  }
+  .btn-md--lg {
+    line-height: 1.4;
+    padding: 0.57143rem 1.42857rem;
+    font-size: 1.07143rem;
+  }
+}
+@media (min-width: 1200px) {
+  .g-width-40x--xl {
+    width: 40% !important; }
+}

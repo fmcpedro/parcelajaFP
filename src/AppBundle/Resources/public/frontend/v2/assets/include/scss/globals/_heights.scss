@@ -35,6 +35,10 @@
 }
 
 /* Max Height in Viewport Height (vh) */
+.g-max-height-70vh {
+  max-height: 70vh !important;
+}
+
 .g-max-height-90vh {
   height: 90vh !important;
 }
@@ -167,6 +171,10 @@
   height: 20px !important;
 }
 
+.g-height-22 {
+  height: 22px !important;
+}
+
 .g-height-24 {
   height: 24px;
 }
@@ -267,6 +275,10 @@
   height: 120px;
 }
 
+.g-height-125 {
+  height: 125px;
+}
+
 .g-height-130 {
   height: 130px;
 }
@@ -341,6 +353,10 @@
   min-height: 4px; // Z
 }
 
+.g-min-height-35 {
+  min-height: 35px;
+}
+
 .g-min-height-200 {
   min-height: 200px;
 }
@@ -391,6 +407,9 @@
 }
 
 @media (min-width: $g-md) {
+  .g-height-40--md {
+    height: 40px !important;
+  }
   .g-height-45--md {
     height: 45px !important;
   }
@@ -427,6 +446,10 @@
 }
 
 @media (min-width: $g-lg) {
+  .g-height-80--lg {
+    height: 80px !important;
+  }
+
   .g-height-200--lg {
     height: 200px !important;
   }

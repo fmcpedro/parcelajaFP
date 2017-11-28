@@ -227,6 +227,10 @@
   &-md {
     padding: .8rem 1rem .6rem;
   }
+
+}
+.input-group-lg > .input-group-btn > select.btn:not([size]):not([multiple]), .input-group-lg > select.form-control:not([size]):not([multiple]), .input-group-lg > select.input-group-addon:not([size]):not([multiple]), select.form-control-lg:not([size]):not([multiple]) {
+  height: calc(2.3125rem + 10px);
 }
 
 .form-control,
@@ -237,6 +241,7 @@
 .form-control:focus,
 .custom-select:focus {
   border-color: $g-color-primary;
+  box-shadow: none;
 }
 
 .form-control::placeholder {

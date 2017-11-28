@@ -93,6 +93,7 @@
   }
 }
 
+
 // Hover v1-1
 @import "hovers/button-hover-v1-1";
 
@@ -111,18 +112,35 @@
 // Hover v2-2
 @import "hovers/button-hover-v2-2";
 
-/* Flat Buttons
-------------------------------------*/
-@import "flat/button-flat";
+//
+// Default Buttons
+@import "default/button-default";
 
-/* Outline Buttons
-------------------------------------*/
+//
+// Outline Buttons
 @import "outline/button-outline";
 
-/* Gradient Buttons
-------------------------------------*/
+//
+// Gradient Buttons
 @import "gradient/button-gradients";
 
-/* Gradient Outline Buttons
-------------------------------------*/
+//
+// Gradient Outline Buttons
 @import "gradient-ouline/button-ouline-gradients";
+
+
+/* Material Styles
+------------------------------------*/
+.u-btn-raised,
+.u-btn-raised:active:focus,
+.u-btn-raised:focus {
+  box-shadow: 0 2px 2px 0 rgba($g-color-black, .14), 0 3px 1px -2px rgba($g-color-black, .2), 0 1px 5px 0 rgba($g-color-black, .12);
+}
+
+//
+// Material: Floating
+@import "floating/button-floating";
+
+//
+// Material: Flat
+@import "flat/button-flat";

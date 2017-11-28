@@ -255,3 +255,24 @@
     }
   }
 }
+
+/*------------------------------------
+  Checked state Colors
+------------------------------------*/
+
+/* Primary Colors */
+.g-color-primary {
+  &--checked {
+    input[type="checkbox"]:checked + &,
+    input[type="radio"]:checked + &,
+    input[type="checkbox"]:checked + * &,
+    input[type="radio"]:checked + * & {
+      color: $g-color-primary !important;
+    }
+
+    &.g-checked,
+    .g-checked & {
+      color: $g-color-primary !important;
+    }
+  }
+}

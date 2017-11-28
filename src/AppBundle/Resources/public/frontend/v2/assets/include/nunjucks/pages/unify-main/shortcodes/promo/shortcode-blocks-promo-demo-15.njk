@@ -2,7 +2,7 @@
 {% set root = "../../../" %}
 {% set mainNavActive_1 = "shortcodes" %}
 {% set sidebarNavActive_1 = "shortcode-blocks-promo" %}
-{% set title = "Promo Blocks 15 | " %}
+{% set title = "Promo Blocks 15" %}
 
 {% include "html/assets/include/nunjucks/partials/head.njk" %}
 {% include "html/assets/include/nunjucks/partials/core-fonts.njk" %}
@@ -25,8 +25,8 @@
     <section class="g-pos-rel">
       <!-- Promo Block - Carousel -->
       <div class="js-carousel" data-autoplay="true" data-infinite="true" data-fade="true" data-speed="5000">
-        <div class="js-slide g-flex-centered g-bg-cover g-bg-pos-top-center g-bg-img-hero g-bg-bluegray-opacity-0_3--after" style="background-image: url({{ root }}assets/img-temp/1920x1080/img18.jpg);" data-calc-target="#js-header"></div>
-        <div class="js-slide g-flex-centered g-bg-cover g-bg-pos-top-center g-bg-img-hero g-bg-bluegray-opacity-0_3--after" style="background-image: url({{ root }}assets/img-temp/1920x1080/img19.jpg);" data-calc-target="#js-header"></div>
+        <div class="js-slide g-flex-centered g-bg-cover g-bg-pos-top-center g-bg-img-hero g-bg-bluegray-opacity-0_5--after" style="background-image: url({{ root }}assets/img-temp/1920x1080/img18.jpg);" data-calc-target="#js-header"></div>
+        <div class="js-slide g-flex-centered g-bg-cover g-bg-pos-top-center g-bg-img-hero g-bg-bluegray-opacity-0_5--after" style="background-image: url({{ root }}assets/img-temp/1920x1080/img19.jpg);" data-calc-target="#js-header"></div>
       </div>
       <!-- End Promo Block - Carousel -->
 
@@ -36,7 +36,7 @@
           <h2 class="h2 g-color-white g-font-weight-600 g-font-size-40 g-font-size-70--md g-line-height-1 mb-5">Plan your move.</h2>
           <p class="g-color-white g-font-weight-300 g-font-size-20 g-font-size-24--md mb-5">Just select where you want to move, we take care of everything.<br>Enjoy your move...
           </p>
-          <a class="btn u-btn-outline-white g-color-white g-bg-white-opacity-0_2 g-color-black--hover g-bg-white--hover g-font-weight-600 g-font-size-12 text-uppercase g-rounded-50 g-px-25 g-py-15" href="#">Start your move
+          <a class="btn u-btn-outline-white g-color-white g-bg-white-opacity-0_2 g-color-black--hover g-bg-white--hover g-font-weight-600 g-font-size-12 text-uppercase g-rounded-50 g-px-25 g-py-15" href="#!">Start your move
             <i class="ml-2 icon-real-estate-048 u-line-icon-pro"></i></a>
         </div>
       </div>
@@ -75,18 +75,6 @@
     $(document).ready(function () {
       // initialization of carousel
       $.HSCore.components.HSCarousel.init('.js-carousel');
-
-      $('#we-provide').slick('setOption', 'responsive', [{
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 2
-        }
-      }, {
-        breakpoint: 576,
-        settings: {
-          slidesToShow: 1
-        }
-      }], true);
 
       // initialization of masonry
       $('.masonry-grid').imagesLoaded().then(function () {

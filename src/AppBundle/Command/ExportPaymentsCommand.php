@@ -22,7 +22,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class ExportPaymentsCommand extends ContainerAwareCommand {
     
-    const NUM_CASAS_DECIMAIS = 5;
+    const NUM_CASAS_DECIMAIS = 8;
 
     protected function configure() {
         $this

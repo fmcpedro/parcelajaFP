@@ -1,3 +1,9 @@
+.slick-slide {
+  &:focus {
+    outline: 0 none;
+  }
+}
+
 [data-lazy] {
   opacity: 0;
   transition: {

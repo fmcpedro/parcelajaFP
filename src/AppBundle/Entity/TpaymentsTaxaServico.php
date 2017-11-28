@@ -28,7 +28,7 @@ class TpaymentsTaxaServico {
     const TAXA_JURO = 0.05;
     const LUCRO_PARCELA = 0.75;
     const LUCRO_BNI = 0.25;
-    const NUM_CASAS_DECIMAIS = 5;
+    const NUM_CASAS_DECIMAIS = 8;
     const DIFERENCA_ENTRE_ITERACOES = 0.00000000000000000000000000000000000000000000000001;
 
     //Pressupostos  Variáveis
@@ -94,7 +94,8 @@ class TpaymentsTaxaServico {
 
     //function __construct($valorCompra, $numeroPrestacoes, $numParcela, $comissaoPagarClienteFinal, $tipoTransacao, $payID,$datePayment) {
     function __construct($purchase, $numParcela, $comissaoPagarClienteFinal, $payment) {
-        $this->valorCompra = $purchase->getFcalcamount();
+        //$this->valorCompra = $purchase->getFcalcamount();
+        $this->valorCompra = str_replace(',', '.', $purchase->getFcalcamount());
         $this->numeroPrestacoes = $purchase->getFmonthdata();
         $this->numParcela = $numParcela;
         $this->comissaoPagarClienteFinal = $comissaoPagarClienteFinal;

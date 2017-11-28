@@ -72,6 +72,9 @@
 .g-mt-minus-70 {
   @include px-to-rem(margin-top, -70px);
 }
+.g-mt-minus-73 {
+  @include px-to-rem(margin-top, -72px !important);
+}
 .g-mt-minus-120 {
   @include px-to-rem(margin-top, -120px);
 }
@@ -90,6 +93,9 @@
 /* Minus Margin Left */
 .g-ml-minus-20 {
   @include px-to-rem(margin-left, -20px);
+}
+.g-ml-minus-23 {
+  @include px-to-rem(margin-left, -23px);
 }
 .g-ml-minus-35 {
   @include px-to-rem(margin-left, -35px);
@@ -168,6 +174,9 @@
 .g-mt-22 {
   @include px-to-rem(margin-top, 22px);
 }
+.g-mt-28 {
+  @include px-to-rem(margin-top, 28px !important);
+}
 .g-mt-32 {
   @include px-to-rem(margin-top, 32px !important); // Z
 }
@@ -243,11 +252,23 @@
 .g-mr-63 {
   @include px-to-rem(margin-right, 63px);
 }
+.g-mr-75 {
+  @include px-to-rem(margin-right, 75px);
+}
+.g-mr-85 {
+  @include px-to-rem(margin-right, 85px !important);
+}
 .g-mr-minus-10 {
   @include px-to-rem(margin-right, -10px);
 }
+.g-mr-minus-13 {
+  @include px-to-rem(margin-right, -13px);
+}
 .g-mr-minus-15 {
   @include px-to-rem(margin-right, -15px);
+}
+.g-mr-minus-23 {
+  @include px-to-rem(margin-right, -23px);
 }
 .g-mr-minus-30 {
   @include px-to-rem(margin-right, -30px);
@@ -329,6 +350,10 @@
     margin-top: 0;
     margin-bottom: 0;
   }
+
+  .g-mr-12--sm {
+    @include px-to-rem(margin-right, 12px);
+  }
 }
 
 @media (min-width: $g-md) {
@@ -348,14 +373,29 @@
   .g-ml-minus-1--md {
     @include px-to-rem(margin-left, -1px);
   }
+  .g-ml-minus-9--md {
+    @include px-to-rem(margin-left, -9px !important);
+  }
+  .g-ml-minus-15--md {
+    @include px-to-rem(margin-left, -15px !important);
+  }
+  .g-ml-minus-23--md {
+    @include px-to-rem(margin-left, -23px !important);
+  }
+  .g-ml-minus-25--md {
+    @include px-to-rem(margin-left, -25px !important);
+  }
   .g-mr-minus-1--md {
     @include px-to-rem(margin-right, -1px);
   }
-  .g-ml-minus-9--md {
-    @include px-to-rem(margin-left, 9px !important);
-  }
   .g-mr-minus-9--md {
-    @include px-to-rem(margin-right, 9px !important);
+    @include px-to-rem(margin-right, -9px !important);
+  }
+  .g-mr-minus-13--md {
+    @include px-to-rem(margin-right, -13px);
+  }
+  .g-mr-minus-23--md {
+    @include px-to-rem(margin-right, -23px);
   }
   .g-ml-minus-82--md {
     @include px-to-rem(margin-left, -82px !important);
@@ -374,6 +414,16 @@
   }
   .g-m-reset--md {
     margin: 0 !important;
+  }
+  .g-mt-130--md {
+    @include px-to-rem(margin-top, 130px !important);
+  }
+  .g-mt-minus-76--md {
+    @include px-to-rem(margin-top, -76px !important);
+  }
+  .g-my-30--md {
+    @include px-to-rem(margin-top, 30px !important);
+    @include px-to-rem(margin-bpttpm, 30px !important);
   }
 }
 
@@ -442,5 +492,9 @@
 
   .g-m-reset--xl {
     margin: 0 !important;
+  }
+
+  .g-mr-0--xl {
+    @include px-to-rem(margin-right, 0px !important);
   }
 }

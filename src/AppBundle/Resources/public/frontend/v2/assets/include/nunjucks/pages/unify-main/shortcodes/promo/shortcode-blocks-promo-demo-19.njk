@@ -2,7 +2,7 @@
 {% set root = "../../../" %}
 {% set mainNavActive_1 = "shortcodes" %}
 {% set sidebarNavActive_1 = "shortcode-blocks-promo" %}
-{% set title = "Promo Blocks 19 | " %}
+{% set title = "Promo Blocks 19" %}
 
 {% include "html/assets/include/nunjucks/partials/head.njk" %}
 {% include "html/assets/include/nunjucks/partials/core-fonts.njk" %}
@@ -30,16 +30,16 @@
             <h2 class="g-color-black g-font-size-36 text-uppercase g-line-height-1_2 g-mb-30">We created
               <br><span class="g-font-weight-700">Revolution in App</span></h2>
             <p class="g-color-gray-dark-v5 g-font-size-16 g-mb-35">We are a creative studio focusing on culture, luxury, editorial &amp; art. Somewhere between sophistication and simplicity.</p>
-            <a class="btn btn-md u-btn-primary u-btn-hover-v1-3 g-letter-spacing-0_5 text-uppercase g-rounded-10 g-px-20 g-py-10 mx-2 g-mb-15" href="#">
-              <i class="g-font-size-28 mr-3 fa fa-apple"></i>
-              <span class="d-inline-block text-left">
+            <a class="btn btn-md u-btn-primary u-btn-hover-v1-3 g-letter-spacing-0_5 text-uppercase g-rounded-10 g-px-20 g-py-10 mx-2 g-mb-15" href="#!">
+              <i class="fa fa-apple pull-left mr-3 g-font-size-28"></i>
+              <span class="pull-right text-left">
                 <span class="d-block g-font-weight-600 g-font-size-13">Download app</span>
                 <span class="d-block g-font-size-10">From App Store</span>
               </span>
             </a>
-            <a class="btn btn-md u-btn-teal u-btn-hover-v1-3 g-letter-spacing-0_5 text-uppercase g-rounded-10 g-px-20 g-py-10 mx-2 g-mb-15" href="#">
-              <i class="g-font-size-28 mr-3 fa fa-android"></i>
-              <span class="d-inline-block text-left">
+            <a class="btn btn-md u-btn-teal u-btn-hover-v1-3 g-letter-spacing-0_5 text-uppercase g-rounded-10 g-px-20 g-py-10 mx-2 g-mb-15" href="#!">
+              <i class="fa fa-android pull-left mr-3 g-font-size-28"></i>
+              <span class="d-inline-block pull-right text-left">
                 <span class="d-block g-font-weight-600 g-font-size-13">Download app</span>
                 <span class="d-block g-font-size-10">From Play Market</span>
               </span>
@@ -84,18 +84,6 @@
     $(document).ready(function () {
       // initialization of carousel
       $.HSCore.components.HSCarousel.init('.js-carousel');
-
-      $('#we-provide').slick('setOption', 'responsive', [{
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 2
-        }
-      }, {
-        breakpoint: 576,
-        settings: {
-          slidesToShow: 1
-        }
-      }], true);
 
       // initialization of masonry
       $('.masonry-grid').imagesLoaded().then(function () {

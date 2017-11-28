@@ -19,6 +19,10 @@
         }
 
         .ui-slider {
+          &-range {
+            height: 100%;
+          }
+
           &-handle {
             position: absolute;
             top: 50%;

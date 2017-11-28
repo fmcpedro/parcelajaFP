@@ -2,7 +2,7 @@
 {% set root = "../../../" %}
 {% set mainNavActive_1 = "shortcodes" %}
 {% set sidebarNavActive_1 = "shortcode-blocks-promo" %}
-{% set title = "Promo Blocks 17 | " %}
+{% set title = "Promo Blocks 17" %}
 
 {% include "html/assets/include/nunjucks/partials/head.njk" %}
 {% include "html/assets/include/nunjucks/partials/core-fonts.njk" %}
@@ -22,11 +22,11 @@
     {% include "html/assets/include/nunjucks/partials/blocks/headers/header-main.njk" %}
 
     <!-- Promo Block -->
-    <section class="container g-pt-100">
+    <section class="container g-pt-30">
       <div class="u-shadow-v24 g-bg-white rounded g-pa-20">
         <div class="g-bg-cover g-bg-img-hero g-bg-black-opacity-0_1--after g-px-20 g-py-200" style="background-image: url({{ root }}assets/img-temp/1500x1000/img1.jpg);">
           <div class="text-center g-pos-rel g-z-index-1">
-            <span class="d-block g-color-white g-font-size-20 text-uppercase g-letter-spacing-5 g-mb-50">Hello! We are Unify.</span>
+            <span class="d-block g-color-white g-font-size-20 text-uppercase g-letter-spacing-5 g-mb-50">Hello! We are Unify</span>
             <h1 class="d-inline-block g-brd-around g-brd-2 g-brd-white g-color-white g-font-weight-700 g-font-size-20 g-font-size-50--md text-uppercase g-line-height-1_2 g-letter-spacing-5 g-py-12 g-px-20 g-mb-50">Creative Studio</h1>
             <p class="g-color-white g-font-size-20 text-uppercase g-letter-spacing-5 mb-0">Jacks of All. Experts in All.</p>
           </div>
@@ -65,18 +65,6 @@
     $(document).ready(function () {
       // initialization of carousel
       $.HSCore.components.HSCarousel.init('.js-carousel');
-
-      $('#we-provide').slick('setOption', 'responsive', [{
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 2
-        }
-      }, {
-        breakpoint: 576,
-        settings: {
-          slidesToShow: 1
-        }
-      }], true);
 
       // initialization of masonry
       $('.masonry-grid').imagesLoaded().then(function () {

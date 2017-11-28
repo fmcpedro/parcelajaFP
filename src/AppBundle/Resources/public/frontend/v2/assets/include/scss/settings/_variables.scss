@@ -31,11 +31,9 @@ $g-xl: 1200px !default; // Extra large devices (large desktops, >=1200)
 // Colors
 //
 
-// Ruslan:
-// BG Colors
-// $g-bg-color-primary: #fff !default;
-// $g-bg-color-secondary: #fff !default;
-// tertiary, quaternary, quinary, senary, septenary, octonary, nonary
+// Main Colors
+$g-color-main: #555 !default;
+$g-bg-color-main: #fff !default;
 
 // Primary Color
 $g-color-primary: #72c02c !default;
@@ -45,53 +43,49 @@ $g-color-primary-dark-v3: darken($g-color-primary, 10%) !default;
 $g-color-primary-light-v1: rgba($g-color-primary, .2) !default;
 $g-color-primary-light-v2: rgba($g-color-primary, .8) !default; // R
 
-// Main Colors
-$g-color-main: #555 !default;
-// $g-color-main: #6f7885 !default;
-$g-bg-color-main: #fff !default;
-
-// Main Secondary
+// Secondary Color
+$g-color-secondary: #e74b3c !default;
 $g-bg-color-secondary: #fafafa !default;
 
 // Color Black
-$g-color-black: #000;
+$g-color-black: #000 !default;
 
 // Color White
-$g-color-white: #fff;
+$g-color-white: #fff !default;
 
 // Color Gray
-$g-color-gray-light-v1: #bbb !default; // $g-color-gray-light-v3
-$g-color-gray-light-v2: #ccc !default; // $g-color-gray-light-v4
-$g-color-gray-light-v3: #ddd !default; // $g-color-gray-light-v6
-$g-color-gray-light-v4: #eee !default; // $g-color-gray-light-v7
-$g-color-gray-light-v5: #f7f7f7 !default; // $g-color-gray-light-v9
+$g-color-gray-light-v1: #bbb !default;
+$g-color-gray-light-v2: #ccc !default;
+$g-color-gray-light-v3: #ddd !default;
+$g-color-gray-light-v4: #eee !default;
+$g-color-gray-light-v5: #f7f7f7 !default;
 
-$g-color-gray-dark-v1: #111 !default; // $g-color-gray-dark-v4:
-$g-color-gray-dark-v2: #333 !default; // $g-color-gray-dark-v2:
-$g-color-gray-dark-v3: #555 !default; // $g-color-gray-dark-v1:
-$g-color-gray-dark-v4: #777 !default; // $g-color-gray:
-$g-color-gray-dark-v5: #999 !default; // $g-color-gray-light-v1:
+$g-color-gray-dark-v1: #111 !default;
+$g-color-gray-dark-v2: #333 !default;
+$g-color-gray-dark-v3: #555 !default;
+$g-color-gray-dark-v4: #777 !default;
+$g-color-gray-dark-v5: #999 !default;
 
 
 //
 // Status Colors
 
-// Color Green
+// Color Success
 $g-color-success:             #5cb85c !default;
 $g-color-success-dark-v1:     darken($g-color-success, 2%) !default;
 $g-color-success-dark-v2:     darken($g-color-success, 5%) !default;
 
-// Color Green
+// Color Info
 $g-color-info:                #5bc0de !default;
 $g-color-info-dark-v1:        darken($g-color-info, 2%) !default;
 $g-color-info-dark-v2:        darken($g-color-info, 5%) !default;
 
-// Color Green
+// Color Warning
 $g-color-warning:             #f0ad4e !default;
 $g-color-warning-dark-v1:     darken($g-color-warning, 2%) !default;
 $g-color-warning-dark-v2:     darken($g-color-warning, 5%) !default;
 
-// Color Green
+// Color Danger
 $g-color-danger:              #d9534f !default;
 $g-color-danger-dark-v1:      darken($g-color-danger, 2%) !default;
 $g-color-danger-dark-v2:      darken($g-color-danger, 5%) !default;

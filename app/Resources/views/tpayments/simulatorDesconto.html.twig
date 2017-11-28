@@ -159,107 +159,14 @@
                                         
                                         <td>
                                             {% if key == 0 %}
-                                                {{ tpayment.valorComissaoPagarAderente|number_format(5, '.', ',') }} €
+                                                {{ tpayment.valorComissaoPagarAderente|number_format(6, '.', ',') }} €
                                             {%else%}
                                                 &nbsp;
                                             {%endif%}
                                         </td>
                                         <td>
                                             {% if key == 0 %}
-                                                {{ tpayment.valorComissaoSujeitaIva|number_format(5, '.', ',') }} €
-                                            {%else%}
-                                                &nbsp;
-                                            {%endif%}
-
-                                        </td>
-                                        <td>
-                                            {% if key == 0 %}
-                                                {{ tpayment.ivaComissao|number_format(5, '.', ',') }} €
-                                            {%else%}
-                                                &nbsp;
-                                            {%endif%}
-                                        </td>
-                                        <td>
-                                            {% if key == 0 %}
-                                                {{ tpayment.custoCaptura|number_format(5, '.', ',') }} €
-                                            {%else%}
-                                                &nbsp;
-                                            {%endif%}
-                                        </td>
-                                        <td>
-                                            {% if key == 0 %}
-                                                {{ tpayment.ivaCustoCaptura|number_format(5, '.', ',') }} €
-                                            {%else%}
-                                                &nbsp;
-                                            {%endif%}
-                                        </td>
-                                        <td>
-                                            {% if key == 0 %}
-                                                {{ tpayment.ivaTotal|number_format(5, '.', ',') }} €
-                                            {%else%}
-                                                &nbsp;
-                                            {%endif%}
-                                        </td>
-                                        <td>
-                                            {% if key == 0 %}
-                                                {{ tpayment.valorTotalCobradoAderente|number_format(5, '.', ',') }} €
-                                            {%else%}
-                                                &nbsp;
-                                            {%endif%}
-                                        </td>
-                                        <td>
-                                            {% if key == 0 %}
-                                                {{ tpayment.valorFinanciadoAderente|number_format(5, '.', ',') }} €
-                                            {%else%}
-                                                &nbsp;
-                                            {%endif%}
-                                        </td>
-                                        <td>
-
-                                            {% if key == 0 %}
-                                                {{ tpayment.valorPagoAderente|number_format(5, '.', ',') }} €
-                                            {%else%}
-                                                &nbsp;
-                                            {%endif%}
-                                        </td>
-                                        <td>{{ tpayment.valParcelas|number_format(5, '.', ',') }} €</td>
-                                        <td>{{ tpayment.comOgone|number_format(5, '.', ',') }} €</td>
-                                        <td>{{ tpayment.comEvoPayments|number_format(5, '.', ',') }} €</td>
-                                        <td>{{ tpayment.valorReceberEvoPayments|number_format(5, '.', ',') }} €</td>
-                                        <td>{{ tpayment.capitalAmortizadoMensalmente|number_format(5, '.', ',') }} €</td>
-                                        <td>{{ tpayment.capitalAmortizadoAcumulado|number_format(5, '.', ',') }} €</td>
-                                        <td>{{ tpayment.capitalEmDivida|number_format(5, '.', ',') }} €</td>
-                                        <td>{{ tpayment.juro|number_format(5, '.', ',') }} €</td>
-                                        <td>{{ tpayment.juroAcumulado|number_format(5, '.', ',') }} €</td>
-                                        <td>{{ tpayment.impostoSelo|number_format(5, '.', ',') }} €</td>
-                                        <td>{{ tpayment.impostoSeloAcumulado|number_format(5, '.', ',') }} €</td>
-                                        <td>{{ tpayment.piiParcial|number_format(5, '.', ',') }} €</td>
-                                        <td>{{ tpayment.piiAcumulado|number_format(5, '.', ',') }} €</td>
-                                        <td>{{ tpayment.lucroParcela|number_format(5, '.', ',') }} €</td>
-                                        <td>{{ tpayment.lucroBniEuropa|number_format(5, '.', ',') }} €</td>
-                                        <td>{{ tpayment.valorTransferParcela|number_format(5, '.', ',') }} €</td>
-                                        <td>{{ tpayment.ivaValorParcela|number_format(5, '.', ',') }} €</td>
-                                        <td>{{ tpayment.valorTransfParcelaComIva|number_format(5, '.', ',') }} €</td>
-                                        <td>{{ tpayment.valorTransfBni|number_format(5, '.', ',') }} €</td>
-                                        <td>{{ tpayment.impostoSeloValorBni|number_format(5, '.', ',') }} €</td>
-                                        <td>{{ tpayment.valorTransfBniComImpostoSelo|number_format(5, '.', ',') }} €</td>
-                                        <td>
-                                            {% if key == 0 %}
-                                                {{ tpayment.taxaComissaoSujeitaIva|number_format(5, '.', ',') }} €
-                                            {%else%}
-                                                &nbsp;
-                                            {%endif%}
-                                        </td>
-                                        <td>
-                                            {% if key == 0 %}
-                                                {{ tpayment.taxaProcessamento|number_format(5, '.', ',') }} €
-                                            {%else%}
-                                                &nbsp;
-                                            {%endif%}
-                                        </td>
-                                        <td>
-                                            {% if key == 0 %}
-                                                {{ tpayment.iva|number_format(5, '.', ',') }} €
+                                                {{ tpayment.valorComissaoSujeitaIva|number_format(6, '.', ',') }} €
                                             {%else%}
                                                 &nbsp;
                                             {%endif%}
@@ -267,14 +174,107 @@
                                         </td>
                                         <td>
                                             {% if key == 0 %}
-                                                {{ tpayment.servicosFinanceiros|number_format(5, '.', ',') }} €
+                                                {{ tpayment.ivaComissao|number_format(6, '.', ',') }} €
                                             {%else%}
                                                 &nbsp;
                                             {%endif%}
                                         </td>
                                         <td>
                                             {% if key == 0 %}
-                                                {{ tpayment.impSelo|number_format(5, '.', ',') }} €
+                                                {{ tpayment.custoCaptura|number_format(6, '.', ',') }} €
+                                            {%else%}
+                                                &nbsp;
+                                            {%endif%}
+                                        </td>
+                                        <td>
+                                            {% if key == 0 %}
+                                                {{ tpayment.ivaCustoCaptura|number_format(6, '.', ',') }} €
+                                            {%else%}
+                                                &nbsp;
+                                            {%endif%}
+                                        </td>
+                                        <td>
+                                            {% if key == 0 %}
+                                                {{ tpayment.ivaTotal|number_format(6, '.', ',') }} €
+                                            {%else%}
+                                                &nbsp;
+                                            {%endif%}
+                                        </td>
+                                        <td>
+                                            {% if key == 0 %}
+                                                {{ tpayment.valorTotalCobradoAderente|number_format(6, '.', ',') }} €
+                                            {%else%}
+                                                &nbsp;
+                                            {%endif%}
+                                        </td>
+                                        <td>
+                                            {% if key == 0 %}
+                                                {{ tpayment.valorFinanciadoAderente|number_format(6, '.', ',') }} €
+                                            {%else%}
+                                                &nbsp;
+                                            {%endif%}
+                                        </td>
+                                        <td>
+
+                                            {% if key == 0 %}
+                                                {{ tpayment.valorPagoAderente|number_format(6, '.', ',') }} €
+                                            {%else%}
+                                                &nbsp;
+                                            {%endif%}
+                                        </td>
+                                        <td>{{ tpayment.valParcelas|number_format(6, '.', ',') }} €</td>
+                                        <td>{{ tpayment.comOgone|number_format(6, '.', ',') }} €</td>
+                                        <td>{{ tpayment.comEvoPayments|number_format(6, '.', ',') }} €</td>
+                                        <td>{{ tpayment.valorReceberEvoPayments|number_format(6, '.', ',') }} €</td>
+                                        <td>{{ tpayment.capitalAmortizadoMensalmente|number_format(6, '.', ',') }} €</td>
+                                        <td>{{ tpayment.capitalAmortizadoAcumulado|number_format(6, '.', ',') }} €</td>
+                                        <td>{{ tpayment.capitalEmDivida|number_format(6, '.', ',') }} €</td>
+                                        <td>{{ tpayment.juro|number_format(6, '.', ',') }} €</td>
+                                        <td>{{ tpayment.juroAcumulado|number_format(6, '.', ',') }} €</td>
+                                        <td>{{ tpayment.impostoSelo|number_format(6, '.', ',') }} €</td>
+                                        <td>{{ tpayment.impostoSeloAcumulado|number_format(6, '.', ',') }} €</td>
+                                        <td>{{ tpayment.piiParcial|number_format(6, '.', ',') }} €</td>
+                                        <td>{{ tpayment.piiAcumulado|number_format(6, '.', ',') }} €</td>
+                                        <td>{{ tpayment.lucroParcela|number_format(6, '.', ',') }} €</td>
+                                        <td>{{ tpayment.lucroBniEuropa|number_format(6, '.', ',') }} €</td>
+                                        <td>{{ tpayment.valorTransferParcela|number_format(6, '.', ',') }} €</td>
+                                        <td>{{ tpayment.ivaValorParcela|number_format(6, '.', ',') }} €</td>
+                                        <td>{{ tpayment.valorTransfParcelaComIva|number_format(6, '.', ',') }} €</td>
+                                        <td>{{ tpayment.valorTransfBni|number_format(6, '.', ',') }} €</td>
+                                        <td>{{ tpayment.impostoSeloValorBni|number_format(6, '.', ',') }} €</td>
+                                        <td>{{ tpayment.valorTransfBniComImpostoSelo|number_format(6, '.', ',') }} €</td>
+                                        <td>
+                                            {% if key == 0 %}
+                                                {{ tpayment.taxaComissaoSujeitaIva|number_format(6, '.', ',') }} €
+                                            {%else%}
+                                                &nbsp;
+                                            {%endif%}
+                                        </td>
+                                        <td>
+                                            {% if key == 0 %}
+                                                {{ tpayment.taxaProcessamento|number_format(6, '.', ',') }} €
+                                            {%else%}
+                                                &nbsp;
+                                            {%endif%}
+                                        </td>
+                                        <td>
+                                            {% if key == 0 %}
+                                                {{ tpayment.iva|number_format(6, '.', ',') }} €
+                                            {%else%}
+                                                &nbsp;
+                                            {%endif%}
+
+                                        </td>
+                                        <td>
+                                            {% if key == 0 %}
+                                                {{ tpayment.servicosFinanceiros|number_format(6, '.', ',') }} €
+                                            {%else%}
+                                                &nbsp;
+                                            {%endif%}
+                                        </td>
+                                        <td>
+                                            {% if key == 0 %}
+                                                {{ tpayment.impSelo|number_format(6, '.', ',') }} €
                                             {%else%}
                                                 &nbsp;
                                             {%endif%}

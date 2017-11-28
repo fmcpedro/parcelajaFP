@@ -2,7 +2,7 @@
 {% set root = "../../../" %}
 {% set mainNavActive_1 = "shortcodes" %}
 {% set sidebarNavActive_1 = "shortcode-blocks-promo" %}
-{% set title = "Promo Blocks 29 | " %}
+{% set title = "Promo Blocks 29" %}
 
 {% include "html/assets/include/nunjucks/partials/head.njk" %}
 {% include "html/assets/include/nunjucks/partials/core-fonts.njk" %}
@@ -46,7 +46,7 @@
               <p class="g-font-size-24 g-mb-40"
                  data-animation="fadeInUp"
                  data-animation-delay="800"
-                 data-animation-duration="1500">Unify creative technology company providing key digital services.</p>
+                 data-animation-duration="1500">Unify creative technology company providing key digital services</p>
             </div>
           </div>
           <a class="js-fancybox d-block g-mb-130" href="https://vimeo.com/167434033" title="Single Image"
@@ -130,18 +130,6 @@
     $(document).ready(function () {
       // initialization of carousel
       $.HSCore.components.HSCarousel.init('.js-carousel');
-
-      $('#we-provide').slick('setOption', 'responsive', [{
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 2
-        }
-      }, {
-        breakpoint: 576,
-        settings: {
-          slidesToShow: 1
-        }
-      }], true);
 
       // initialization of masonry
       $('.masonry-grid').imagesLoaded().then(function () {

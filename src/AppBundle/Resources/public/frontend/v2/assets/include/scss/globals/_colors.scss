@@ -42,11 +42,26 @@
     }
   }
 
+  &--active.active {
+    color: $g-color-primary !important;
+  }
+
+  &--parent-active {
+    .active & {
+      color: $g-color-primary !important;
+    }
+  }
+
   //Pseudo-elements color // Z
   &--before::before,
   &--after::after {
     color: $g-color-primary;
   }
+}
+
+/* Secondary Colors */
+.g-color-secondary {
+  color: $g-color-secondary !important;
 }
 
 /* Black Colors */
@@ -98,6 +113,10 @@
 .g-color-white {
   color: $g-color-white !important;
 
+  &--opened-menu:not(.collapsed) {
+    color: $g-color-white !important;
+  }
+
   .u-block-hover:hover &--hover,
   &--hover:hover {
     color: $g-color-white !important;
@@ -109,7 +128,11 @@
     }
   }
 
-  &--active {
+  &--active.active {
+    color: $g-color-white !important;
+  }
+
+  &--parent-active {
     .active & {
       color: $g-color-white !important;
     }
@@ -165,6 +188,10 @@
       color: rgba($g-color-white, .9) !important;
     }
   }
+}
+
+.u-block-hover:hover .g-color-white-opacity-0_7--hover {
+  color: rgba($g-color-white, .7) !important;
 }
 
 /* Gray Colors */
@@ -327,6 +354,12 @@
 
   &--hover:hover {
     color: $g-color-red !important;
+  }
+
+  &--parent-hover {
+    *:hover > & {
+      color: $g-color-red !important;
+    }
   }
 }
 

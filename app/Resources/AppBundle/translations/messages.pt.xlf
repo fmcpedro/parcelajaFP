@@ -204,6 +204,18 @@
                 <source>forclients_block_03_title</source>
                 <target>Conheça aqui as nossas lojas aderentes</target>
             </trans-unit>
+            <trans-unit id="forclients_botao_ver_lojas" resname="forclients_botao_ver_lojas">
+                <source>forclients_botao_ver_lojas</source>
+                <target>Ver lojas </target>
+            </trans-unit>
+            
+                  <trans-unit id="forclients_botao_visitar" resname="forclients_botao_visitar">
+                <source>forclients_botao_visitar</source>
+                <target>Visitar </target>
+            </trans-unit>
+
+
+
             <trans-unit id="faqs_block_01_title" resname="faqs_block_01_title">
                 <source>faqs_block_01_title</source>
                 <target>Perguntas Frequentes</target>

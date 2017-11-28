@@ -195,6 +195,11 @@
   padding: 15% !important;
 }
 
+.g-px-17 {
+  @include px-to-rem(padding-left, 17px !important);
+  @include px-to-rem(padding-right, 17px !important);
+}
+
 .g-px-18 {
   @include px-to-rem(padding-left, 18px !important); /* O */
   @include px-to-rem(padding-right, 18px !important);
@@ -221,13 +226,26 @@
 .g-pl-7--hover:hover {
   @include px-to-rem(padding-left, 7px !important);
 }
-
+.g-pl-25--hover:hover {
+  @include px-to-rem(padding-left, 25px !important);
+}
+.active.g-pl-25--active {
+  @include px-to-rem(padding-left, 25px !important);
+}
 .g-pl-60--xs {
   @include px-to-rem(padding-left, 60px !important);
 }
 
+.pt-0 {
+  padding-top: 0 !important;
+}
+
 .g-pt-11 {
   @include px-to-rem(padding-top, 11px !important);
+}
+
+.g-pt-12 {
+  @include px-to-rem(padding-top, 12px !important);
 }
 
 .g-pt-25 {
@@ -254,6 +272,10 @@
   @include px-to-rem(padding-top, 195px !important);
 }
 
+.pb-0 {
+  padding-bottom: 0 !important;
+}
+
 .g-pb-170 {
   @include px-to-rem(padding-bottom, 170px !important);
 }
@@ -272,6 +294,10 @@
 
 .g-pb-13 {
   @include px-to-rem(padding-bottom, 13px !important);
+}
+
+.g-pb-16 {
+  @include px-to-rem(padding-bottom, 16px !important);
 }
 
 /* Custom Paddings (sm)
@@ -443,6 +469,10 @@
   .g-pb-250--md {
     @include px-to-rem(padding-bottom, 250px !important);
   }
+
+  .g-pl-300--md {
+    @include px-to-rem(padding-left, 300px !important);
+  }
 }
 
 /* Custom Paddings (lg)
@@ -477,5 +507,10 @@
   .g-py-0--xl {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
+  }
+
+  .g-px-23--xl {
+    @include px-to-rem(padding-left, 23px !important);
+    @include px-to-rem(padding-right, 23px !important);
   }
 }

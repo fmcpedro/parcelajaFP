@@ -23,7 +23,7 @@
       {% include "html/assets/include/nunjucks/partials/blocks/headers/header-main.njk" %}
 
       <!-- Promo Block -->
-      <div id="promo-carousel" class="js-carousel g-bg-gray-dark-v1"
+      <div class="js-carousel g-bg-gray-dark-v1"
            data-infinite="true"
            data-autoplay="true"
            data-lazy-load="ondemand"
@@ -33,7 +33,26 @@
            data-slides-show="3"
            data-arrows-classes="u-arrow-v1 g-absolute-centered--y g-width-45 g-height-45 g-font-size-20 g-brd-style-solid g-brd-2 g-color-white g-bg-black-opacity-0_5--hover g-transition-0_3 rounded-circle"
            data-arrow-left-classes="fa fa-angle-left g-left-20"
-           data-arrow-right-classes="fa fa-angle-right g-right-20">
+           data-arrow-right-classes="fa fa-angle-right g-right-20"
+           data-responsive='[{
+             "breakpoint": 1200,
+             "settings": {
+               "slidesToShow": 3,
+               "centerPadding": "30px"
+             }
+           }, {
+             "breakpoint": 992,
+             "settings": {
+               "slidesToShow": 2,
+               "centerPadding": "60px"
+             }
+           }, {
+             "breakpoint": 650,
+             "settings": {
+               "slidesToShow": 1,
+               "centerPadding": "40px"
+             }
+           }]'>
         <!-- Article -->
         <div class="js-slide g-py-10 g-px-5">
           <article class="u-block-hover">
@@ -42,10 +61,10 @@
             </figure>
 
             <span class="g-pos-abs g-top-20 g-left-20">
-              <a class="btn btn-sm u-btn-yellow rounded-0" href="#">
+              <a class="btn btn-sm u-btn-yellow rounded-0" href="#!">
                 <i class="icon-energy"></i>
               </a>
-              <a class="btn btn-sm u-btn-black rounded-0" href="#">July 06, 2017</a>
+              <a class="btn btn-sm u-btn-black rounded-0" href="#!">July 06, 2017</a>
             </span>
 
             <div class="g-pos-abs g-bottom-20 g-left-20 g-right-20">
@@ -64,7 +83,7 @@
               </ul>
 
               <h3 class="h3 g-font-weight-300 g-mb-20">
-                <a class="g-color-white g-color-white--hover" href="#">Best work places around the World for your company</a>
+                <a class="g-color-white g-color-white--hover" href="#!">Best work places around the World for your company</a>
               </h3>
 
               <div class="media">
@@ -88,10 +107,10 @@
             </figure>
 
             <span class="g-pos-abs g-top-20 g-left-20">
-              <a class="btn btn-sm u-btn-purple rounded-0" href="#">
+              <a class="btn btn-sm u-btn-purple rounded-0" href="#!">
                 <i class="icon-energy"></i>
               </a>
-              <a class="btn btn-sm u-btn-black rounded-0" href="#">July 15, 2017</a>
+              <a class="btn btn-sm u-btn-black rounded-0" href="#!">July 15, 2017</a>
             </span>
 
             <div class="g-pos-abs g-bottom-20 g-left-20 g-right-20">
@@ -110,7 +129,7 @@
               </ul>
 
               <h3 class="h3 g-font-weight-300 g-mb-20">
-                <a class="g-color-white g-color-white--hover" href="#">Top 10 bust be used iOS apps for your next project</a>
+                <a class="g-color-white g-color-white--hover" href="#!">Top 10 bust be used iOS apps for your next project</a>
               </h3>
 
               <div class="media">
@@ -134,10 +153,10 @@
             </figure>
 
             <span class="g-pos-abs g-top-20 g-left-20">
-              <a class="btn btn-sm u-btn-cyan rounded-0" href="#">
+              <a class="btn btn-sm u-btn-cyan rounded-0" href="#!">
                 <i class="icon-energy"></i>
               </a>
-              <a class="btn btn-sm u-btn-black rounded-0" href="#">July 22, 2017</a>
+              <a class="btn btn-sm u-btn-black rounded-0" href="#!">July 22, 2017</a>
             </span>
 
             <div class="g-pos-abs g-bottom-20 g-left-20 g-right-20">
@@ -156,7 +175,7 @@
               </ul>
 
               <h3 class="h3 g-font-weight-300 g-mb-20">
-                <a class="g-color-white g-color-white--hover" href="#">Discussing the project details is good step with team mates</a>
+                <a class="g-color-white g-color-white--hover" href="#!">Discussing the project details is good step with team mates</a>
               </h3>
 
               <div class="media">
@@ -180,10 +199,10 @@
             </figure>
 
             <span class="g-pos-abs g-top-20 g-left-20">
-              <a class="btn btn-sm u-btn-yellow rounded-0" href="#">
+              <a class="btn btn-sm u-btn-yellow rounded-0" href="#!">
                 <i class="icon-energy"></i>
               </a>
-              <a class="btn btn-sm u-btn-black rounded-0" href="#">July 06, 2017</a>
+              <a class="btn btn-sm u-btn-black rounded-0" href="#!">July 06, 2017</a>
             </span>
 
             <div class="g-pos-abs g-bottom-20 g-left-20 g-right-20">
@@ -202,7 +221,7 @@
               </ul>
 
               <h3 class="h3 g-font-weight-300 g-mb-20">
-                <a class="g-color-white g-color-white--hover" href="#">Best work places around the World for your company</a>
+                <a class="g-color-white g-color-white--hover" href="#!">Best work places around the World for your company</a>
               </h3>
 
               <div class="media">
@@ -226,10 +245,10 @@
             </figure>
 
             <span class="g-pos-abs g-top-20 g-left-20">
-              <a class="btn btn-sm u-btn-red rounded-0" href="#">
+              <a class="btn btn-sm u-btn-red rounded-0" href="#!">
                 <i class="icon-energy"></i>
               </a>
-              <a class="btn btn-sm u-btn-black rounded-0" href="#">July 06, 2017</a>
+              <a class="btn btn-sm u-btn-black rounded-0" href="#!">July 06, 2017</a>
             </span>
 
             <div class="g-pos-abs g-bottom-20 g-left-20 g-right-20">
@@ -248,7 +267,7 @@
               </ul>
 
               <h3 class="h3 g-font-weight-300 g-mb-20">
-                <a class="g-color-white g-color-white--hover" href="#">Best work places around the World for your company</a>
+                <a class="g-color-white g-color-white--hover" href="#!">Best work places around the World for your company</a>
               </h3>
 
               <div class="media">
@@ -272,10 +291,10 @@
             </figure>
 
             <span class="g-pos-abs g-top-20 g-left-20">
-              <a class="btn btn-sm u-btn-cyan rounded-0" href="#">
+              <a class="btn btn-sm u-btn-cyan rounded-0" href="#!">
                 <i class="icon-energy"></i>
               </a>
-              <a class="btn btn-sm u-btn-black rounded-0" href="#">July 22, 2017</a>
+              <a class="btn btn-sm u-btn-black rounded-0" href="#!">July 22, 2017</a>
             </span>
 
             <div class="g-pos-abs g-bottom-20 g-left-20 g-right-20">
@@ -294,7 +313,7 @@
               </ul>
 
               <h3 class="h3 g-font-weight-300 g-mb-20">
-                <a class="g-color-white g-color-white--hover" href="#">Discussing the project details is good step with team mates</a>
+                <a class="g-color-white g-color-white--hover" href="#!">Discussing the project details is good step with team mates</a>
               </h3>
 
               <div class="media">
@@ -324,7 +343,7 @@
                   <img class="img-fluid w-100 g-mb-20" src="{{ root }}assets/img-temp/600x450/img1.jpg" alt="Image description">
 
                   <figcaption class="g-pos-abs g-top-20 g-left-20">
-                    <a class="btn btn-sm u-btn-darkpurple rounded-0" href="#">UX Design</a>
+                    <a class="btn btn-sm u-btn-darkpurple rounded-0" href="#!">UX Design</a>
                   </figcaption>
                 </figure>
 
@@ -333,20 +352,20 @@
                     <li class="list-inline-item mr-3">
                       <img class="g-width-40 g-height-40 g-brd-around g-brd-2 g-brd-white rounded-circle mb-2" src="{{ root }}assets/img-temp/100x100/img7.jpg" alt="Image description">
                       <h4 class="h6 g-font-weight-600 mb-0">
-                        <a class="g-color-gray-dark-v4" href="#">Alex Teseir</a>
+                        <a class="g-color-gray-dark-v4" href="#!">Alex Teseir</a>
                       </h4>
                     </li>
                     <li class="list-inline-item">
                       <span class="g-font-size-13">July 03, 2017</span>
                     </li>
                     <li class="list-inline-item ml-auto">
-                      <a class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover" href="#">
+                      <a class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover" href="#!">
                         <i class="align-middle mr-1 icon-medical-022 u-line-icon-pro"></i>
                       </a>
                       <span class="g-color-gray-dark-v5">5k</span>
                     </li>
                     <li class="list-inline-item ml-3">
-                      <a class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover" href="#">
+                      <a class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover" href="#!">
                         <i class="align-middle mr-1 icon-finance-206 u-line-icon-pro"></i>
                       </a>
                       <span class="g-color-gray-dark-v5">10</span>
@@ -354,12 +373,12 @@
                   </ul>
 
                   <h2 class="h4">
-                    <a class="u-link-v5 g-color-black g-color-primary--hover" href="#">All about black Apple product</a>
+                    <a class="u-link-v5 g-color-black g-color-primary--hover" href="#!">All about black Apple product</a>
                   </h2>
 
                   <p class="g-color-gray-dark-v4">Clark Valberg is the founder and CEO of InVision. If you are a designer, you have probably gotten an email from Clark or from InVision at one time or another, but if you’re not familiar with the company.</p>
 
-                  <a class="g-font-size-12 text-uppercase g-font-weight-600 g-color-gray-dark-v4 g-color-primary--hover" href="#">Read More</a>
+                  <a class="g-font-size-12 text-uppercase g-font-weight-600 g-color-gray-dark-v4 g-color-primary--hover" href="#!">Read More</a>
                 </div>
               </article>
               <!-- End Article -->
@@ -373,17 +392,17 @@
                       <img class="img-fluid w-100 g-mb-20" src="{{ root }}assets/img-temp/400x270/img5.jpg" alt="Image description">
 
                       <figcaption class="g-pos-abs g-top-20 g-left-20">
-                        <a class="btn btn-sm u-btn-cyan rounded-0" href="#">Education</a>
+                        <a class="btn btn-sm u-btn-cyan rounded-0" href="#!">Education</a>
                       </figcaption>
                     </figure>
 
                     <h3 class="h4 g-mb-10">
-                      <a class="u-link-v5 g-color-black g-color-primary--hover" href="#">We Love Education</a>
+                      <a class="u-link-v5 g-color-black g-color-primary--hover" href="#!">We Love Education</a>
                     </h3>
 
                     <ul class="u-list-inline g-color-gray-dark-v4 g-font-size-12">
                       <li class="list-inline-item">
-                        <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#">Mike Coolman</a>
+                        <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">Mike Coolman</a>
                       </li>
                       <li class="list-inline-item">/</li>
                       <li class="list-inline-item">
@@ -391,7 +410,7 @@
                       </li>
                       <li class="list-inline-item">/</li>
                       <li class="list-inline-item">
-                        <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#">
+                        <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
                           <i class="icon-finance-206 u-line-icon-pro align-middle mr-1"></i> 24
                         </a>
                       </li>
@@ -407,17 +426,17 @@
                       <img class="img-fluid w-100 g-mb-20" src="{{ root }}assets/img-temp/400x270/img9.jpg" alt="Image description">
 
                       <figcaption class="g-pos-abs g-top-20 g-left-20">
-                        <a class="btn btn-sm u-btn-red rounded-0" href="#">Holidays</a>
+                        <a class="btn btn-sm u-btn-red rounded-0" href="#!">Holidays</a>
                       </figcaption>
                     </figure>
 
                     <h3 class="h4 g-mb-10">
-                      <a class="u-link-v5 g-color-black g-color-primary--hover" href="#">Awesome New Year Event</a>
+                      <a class="u-link-v5 g-color-black g-color-primary--hover" href="#!">Awesome New Year Event</a>
                     </h3>
 
                     <ul class="u-list-inline g-color-gray-dark-v4 g-font-size-12">
                       <li class="list-inline-item">
-                        <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#">Kathy Reyes</a>
+                        <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">Kathy Reyes</a>
                       </li>
                       <li class="list-inline-item">/</li>
                       <li class="list-inline-item">
@@ -425,7 +444,7 @@
                       </li>
                       <li class="list-inline-item">/</li>
                       <li class="list-inline-item">
-                        <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#">
+                        <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
                           <i class="icon-finance-206 u-line-icon-pro align-middle mr-1"></i> 18
                         </a>
                       </li>
@@ -442,7 +461,7 @@
                   <img class="img-fluid w-100 g-mb-20" src="{{ root }}assets/img-temp/600x450/img7.jpg" alt="Image description">
 
                   <figcaption class="g-pos-abs g-top-20 g-left-20">
-                    <a class="btn btn-sm u-btn-indigo rounded-0" href="#">UX Design</a>
+                    <a class="btn btn-sm u-btn-indigo rounded-0" href="#!">UX Design</a>
                   </figcaption>
                 </figure>
 
@@ -451,20 +470,20 @@
                     <li class="list-inline-item mr-3">
                       <img class="g-width-40 g-height-40 g-brd-around g-brd-2 g-brd-white rounded-circle mb-2" src="{{ root }}assets/img-temp/100x100/img5.jpg" alt="Image description">
                       <h4 class="h6 g-font-weight-600 mb-0">
-                        <a class="g-color-gray-dark-v4" href="#">Sara Watson</a>
+                        <a class="g-color-gray-dark-v4" href="#!">Sara Watson</a>
                       </h4>
                     </li>
                     <li class="list-inline-item">
                       <span class="g-font-size-13">July 29, 2017</span>
                     </li>
                     <li class="list-inline-item ml-auto">
-                      <a class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover" href="#">
+                      <a class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover" href="#!">
                         <i class="align-middle mr-1 icon-medical-022 u-line-icon-pro"></i>
                       </a>
                       <span class="g-color-gray-dark-v5">3.3k</span>
                     </li>
                     <li class="list-inline-item ml-3">
-                      <a class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover" href="#">
+                      <a class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover" href="#!">
                         <i class="align-middle mr-1 icon-finance-206 u-line-icon-pro"></i>
                       </a>
                       <span class="g-color-gray-dark-v5">23</span>
@@ -472,12 +491,12 @@
                   </ul>
 
                   <h2 class="h4">
-                    <a class="u-link-v5 g-color-black g-color-primary--hover" href="#">Announcing a free plan for small teams</a>
+                    <a class="u-link-v5 g-color-black g-color-primary--hover" href="#!">Announcing a free plan for small teams</a>
                   </h2>
 
                   <p class="g-color-gray-dark-v4">At Wake, our mission has always been focused on bringing openness and transparency to the design process. We’ve always believed that by providing a space where designers can share ongoing work not only empowers them to make better products.</p>
 
-                  <a class="g-font-size-12 text-uppercase g-font-weight-600 g-color-gray-dark-v4 g-color-primary--hover" href="#">Read More</a>
+                  <a class="g-font-size-12 text-uppercase g-font-weight-600 g-color-gray-dark-v4 g-color-primary--hover" href="#!">Read More</a>
                 </div>
               </article>
               <!-- End Article -->
@@ -489,7 +508,7 @@
                     <img class="img-fluid w-100" src="{{ root }}assets/img-temp/400x270/img6.jpg" alt="Image description">
 
                     <figcaption class="g-pos-abs g-top-20 g-left-20">
-                      <a class="btn btn-sm u-btn-pink rounded-0" href="#">UI Design</a>
+                      <a class="btn btn-sm u-btn-pink rounded-0" href="#!">UI Design</a>
                     </figcaption>
                   </figure>
                 </div>
@@ -498,7 +517,7 @@
                   <div class="g-pa-30--md">
                     <ul class="u-list-inline g-color-gray-dark-v4 g-font-size-12 g-mb-10">
                       <li class="list-inline-item">
-                        <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#">Alex Teseira</a>
+                        <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">Alex Teseira</a>
                       </li>
                       <li class="list-inline-item">/</li>
                       <li class="list-inline-item">
@@ -506,17 +525,17 @@
                       </li>
                       <li class="list-inline-item">/</li>
                       <li class="list-inline-item">
-                        <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#">
+                        <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
                           <i class="icon-finance-206 u-line-icon-pro align-middle mr-1"></i> 24
                         </a>
                       </li>
                     </ul>
 
                     <h3 class="h4 g-color-black g-mb-25">
-                      <a class="u-link-v5 g-color-black g-color-primary--hover" href="#">Announcing a free plan for small teams</a>
+                      <a class="u-link-v5 g-color-black g-color-primary--hover" href="#!">Announcing a free plan for small teams</a>
                     </h3>
 
-                    <a class="g-font-size-12 text-uppercase g-font-weight-600 g-color-gray-dark-v4 g-color-primary--hover" href="#">Read more</a>
+                    <a class="g-font-size-12 text-uppercase g-font-weight-600 g-color-gray-dark-v4 g-color-primary--hover" href="#!">Read more</a>
                   </div>
                 </div>
               </article>
@@ -529,7 +548,7 @@
                     <img class="img-fluid w-100" src="{{ root }}assets/img-temp/400x270/img12.jpg" alt="Image description">
 
                     <figcaption class="g-pos-abs g-top-20 g-left-20">
-                      <a class="btn btn-sm u-btn-aqua rounded-0" href="#">Business</a>
+                      <a class="btn btn-sm u-btn-aqua rounded-0" href="#!">Business</a>
                     </figcaption>
                   </figure>
                 </div>
@@ -538,7 +557,7 @@
                   <div class="g-pa-30--md">
                     <ul class="u-list-inline g-color-gray-dark-v4 g-font-size-12 g-mb-10">
                       <li class="list-inline-item">
-                        <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#">Mike Coolman</a>
+                        <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">Mike Coolman</a>
                       </li>
                       <li class="list-inline-item">/</li>
                       <li class="list-inline-item">
@@ -546,17 +565,17 @@
                       </li>
                       <li class="list-inline-item">/</li>
                       <li class="list-inline-item">
-                        <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#">
+                        <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
                           <i class="icon-finance-206 u-line-icon-pro align-middle mr-1"></i> 32
                         </a>
                       </li>
                     </ul>
 
                     <h3 class="h4 g-color-black g-mb-25">
-                      <a class="u-link-v5 g-color-black g-color-primary--hover" href="#">Exclusive interview with InVision's CEO</a>
+                      <a class="u-link-v5 g-color-black g-color-primary--hover" href="#!">Exclusive interview with InVision's CEO</a>
                     </h3>
 
-                    <a class="g-font-size-12 text-uppercase g-font-weight-600 g-color-gray-dark-v4 g-color-primary--hover" href="#">Read more</a>
+                    <a class="g-font-size-12 text-uppercase g-font-weight-600 g-color-gray-dark-v4 g-color-primary--hover" href="#!">Read more</a>
                   </div>
                 </div>
               </article>
@@ -568,7 +587,7 @@
                   <img class="img-fluid w-100 g-mb-20" src="{{ root }}assets/img-temp/600x450/img8.jpg" alt="Image description">
 
                   <figcaption class="g-pos-abs g-top-20 g-left-20">
-                    <a class="btn btn-sm u-btn-yellow rounded-0" href="#">Web Design</a>
+                    <a class="btn btn-sm u-btn-yellow rounded-0" href="#!">Web Design</a>
                   </figcaption>
                 </figure>
 
@@ -577,20 +596,20 @@
                     <li class="list-inline-item mr-3">
                       <img class="g-width-40 g-height-40 g-brd-around g-brd-2 g-brd-white rounded-circle mb-2" src="{{ root }}assets/img-temp/100x100/img6.jpg" alt="Image description">
                       <h4 class="h6 g-font-weight-600 mb-0">
-                        <a class="g-color-gray-dark-v4" href="#">James Woodman</a>
+                        <a class="g-color-gray-dark-v4" href="#!">James Woodman</a>
                       </h4>
                     </li>
                     <li class="list-inline-item">
                       <span class="g-font-size-13">July 12, 2017</span>
                     </li>
                     <li class="list-inline-item ml-auto">
-                      <a class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover" href="#">
+                      <a class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover" href="#!">
                         <i class="align-middle mr-1 icon-medical-022 u-line-icon-pro"></i>
                       </a>
                       <span class="g-color-gray-dark-v5">2.1k</span>
                     </li>
                     <li class="list-inline-item ml-3">
-                      <a class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover" href="#">
+                      <a class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover" href="#!">
                         <i class="align-middle mr-1 icon-finance-206 u-line-icon-pro"></i>
                       </a>
                       <span class="g-color-gray-dark-v5">16</span>
@@ -598,12 +617,12 @@
                   </ul>
 
                   <h2 class="h4">
-                    <a class="u-link-v5 g-color-black g-color-primary--hover" href="#">In the future, design principles won’t be about design</a>
+                    <a class="u-link-v5 g-color-black g-color-primary--hover" href="#!">In the future, design principles won’t be about design</a>
                   </h2>
 
                   <p class="g-color-gray-dark-v4">In an attempt to answer those questions, I poured over the biggest collections of design principles on the internet [1][2], and came to the following conclusion: corporate design principles are a set of shared guidelines that reflect the core design values and vision of a company.</p>
 
-                  <a class="g-font-size-12 text-uppercase g-font-weight-600 g-color-gray-dark-v4 g-color-primary--hover" href="#">Read More</a>
+                  <a class="g-font-size-12 text-uppercase g-font-weight-600 g-color-gray-dark-v4 g-color-primary--hover" href="#!">Read More</a>
                 </div>
               </article>
               <!-- End Article -->
@@ -612,7 +631,7 @@
               <nav id="stickyblock-end" class="text-center" aria-label="Page Navigation">
                 <ul class="list-inline">
                   <li class="list-inline-item float-left g-hidden-xs-down">
-                    <a class="u-pagination-v1__item u-pagination-v1-4 g-brd-gray-light-v3 g-brd-primary--hover g-rounded-50 g-pa-7-16" href="#" aria-label="Previous">
+                    <a class="u-pagination-v1__item u-pagination-v1-4 g-brd-gray-light-v3 g-brd-primary--hover g-rounded-50 g-pa-7-16" href="#!" aria-label="Previous">
                     <span aria-hidden="true">
                       <i class="fa fa-angle-left g-mr-5"></i> Previous
                     </span>
@@ -620,13 +639,13 @@
                     </a>
                   </li>
                   <li class="list-inline-item">
-                    <a class="u-pagination-v1__item u-pagination-v1-4 u-pagination-v1-4--active g-rounded-50 g-pa-7-14" href="#">1</a>
+                    <a class="u-pagination-v1__item u-pagination-v1-4 u-pagination-v1-4--active g-rounded-50 g-pa-7-14" href="#!">1</a>
                   </li>
                   <li class="list-inline-item">
-                    <a class="u-pagination-v1__item u-pagination-v1-4 g-rounded-50 g-pa-7-14" href="#">2</a>
+                    <a class="u-pagination-v1__item u-pagination-v1-4 g-rounded-50 g-pa-7-14" href="#!">2</a>
                   </li>
                   <li class="list-inline-item float-right g-hidden-xs-down">
-                    <a class="u-pagination-v1__item u-pagination-v1-4 g-brd-gray-light-v3 g-brd-primary--hover g-rounded-50 g-pa-7-16" href="#" aria-label="Next">
+                    <a class="u-pagination-v1__item u-pagination-v1-4 g-brd-gray-light-v3 g-brd-primary--hover g-rounded-50 g-pa-7-16" href="#!" aria-label="Next">
                     <span aria-hidden="true">
                       Next <i class="fa fa-angle-right g-ml-5"></i>
                     </span>
@@ -676,31 +695,31 @@
                   <li class="g-brd-bottom g-brd-gray-light-v4 g-pb-10 g-mb-12">
                     <h4 class="h6">
                       <i class="fa fa-angle-right g-color-gray-dark-v5 g-mr-5"></i>
-                      <a class="u-link-v5 g-color-gray-dark-v2 g-color-primary--hover" href="#">Wrapbootstrap Marketplace</a>
+                      <a class="u-link-v5 g-color-gray-dark-v2 g-color-primary--hover" href="#!">Wrapbootstrap Marketplace</a>
                     </h4>
                   </li>
                   <li class="g-brd-bottom g-brd-gray-light-v4 g-pb-10 g-mb-12">
                     <h4 class="h6">
                       <i class="fa fa-angle-right g-color-gray-dark-v5 g-mr-5"></i>
-                      <a class="u-link-v5 g-color-gray-dark-v2 g-color-primary--hover" href="#">Google Adwords &amp; Adsense</a>
+                      <a class="u-link-v5 g-color-gray-dark-v2 g-color-primary--hover" href="#!">Google Adwords &amp; Adsense</a>
                     </h4>
                   </li>
                   <li class="g-brd-bottom g-brd-gray-light-v4 g-pb-10 g-mb-12">
                     <h4 class="h6">
                       <i class="fa fa-angle-right g-color-gray-dark-v5 g-mr-5"></i>
-                      <a class="u-link-v5 g-color-gray-dark-v2 g-color-primary--hover" href="#">Digital Marketing</a>
+                      <a class="u-link-v5 g-color-gray-dark-v2 g-color-primary--hover" href="#!">Digital Marketing</a>
                     </h4>
                   </li>
                   <li class="g-brd-bottom g-brd-gray-light-v4 g-pb-10 g-mb-12">
                     <h4 class="h6">
                       <i class="fa fa-angle-right g-color-gray-dark-v5 g-mr-5"></i>
-                      <a class="u-link-v5 g-color-gray-dark-v2 g-color-primary--hover" href="#">Support Forum &amp; Community</a>
+                      <a class="u-link-v5 g-color-gray-dark-v2 g-color-primary--hover" href="#!">Support Forum &amp; Community</a>
                     </h4>
                   </li>
                   <li class="mb-0">
                     <h4 class="h6">
                       <i class="fa fa-angle-right g-color-gray-dark-v5 g-mr-5"></i>
-                      <a class="u-link-v5 g-color-gray-dark-v2 g-color-primary--hover" href="#">Unify Template Pages</a>
+                      <a class="u-link-v5 g-color-gray-dark-v2 g-color-primary--hover" href="#!">Unify Template Pages</a>
                     </h4>
                   </li>
                 </ul>
@@ -715,13 +734,13 @@
 
                 <!-- Article -->
                 <article class="media g-mb-30">
-                  <a class="d-flex mr-3" href="#">
+                  <a class="d-flex mr-3" href="#!">
                     <img class="rounded-circle g-width-60 g-height-60" src="{{ root }}assets/img-temp/100x100/img8.jpg" alt="Image description">
                   </a>
 
                   <div class="media-body">
                     <h3 class="h6">
-                      <a class="u-link-v5 g-color-black g-color-primary--hover" href="#">Best dessert recipes for breakfast which will make your day</a>
+                      <a class="u-link-v5 g-color-black g-color-primary--hover" href="#!">Best dessert recipes for breakfast which will make your day</a>
                     </h3>
 
                     <ul class="u-list-inline g-font-size-12 g-color-gray-dark-v4">
@@ -730,7 +749,7 @@
                       </li>
                       <li class="list-inline-item">/</li>
                       <li class="list-inline-item">
-                        <a class="g-color-gray-dark-v4 g-text-underline--none--hover" href="#">
+                        <a class="g-color-gray-dark-v4 g-text-underline--none--hover" href="#!">
                           <i class="icon-finance-206 u-line-icon-pro align-middle mr-1"></i> 18
                         </a>
                       </li>
@@ -741,13 +760,13 @@
 
                 <!-- Article -->
                 <article class="media g-mb-30">
-                  <a class="d-flex mr-3" href="#">
+                  <a class="d-flex mr-3" href="#!">
                     <img class="rounded-circle g-width-60 g-height-60" src="{{ root }}assets/img-temp/100x100/img9.jpg" alt="Image description">
                   </a>
 
                   <div class="media-body">
                     <h3 class="h6">
-                      <a class="u-link-v5 g-color-black g-color-primary--hover" href="#">Stylish things to do, see and purchase only this week</a>
+                      <a class="u-link-v5 g-color-black g-color-primary--hover" href="#!">Stylish things to do, see and purchase only this week</a>
                     </h3>
 
                     <ul class="u-list-inline g-font-size-12 g-color-gray-dark-v4">
@@ -756,7 +775,7 @@
                       </li>
                       <li class="list-inline-item">/</li>
                       <li class="list-inline-item">
-                        <a class="g-color-gray-dark-v4 g-text-underline--none--hover" href="#">
+                        <a class="g-color-gray-dark-v4 g-text-underline--none--hover" href="#!">
                           <i class="icon-finance-206 u-line-icon-pro align-middle mr-1"></i> 31
                         </a>
                       </li>
@@ -767,13 +786,13 @@
 
                 <!-- Article -->
                 <article class="media g-mb-30">
-                  <a class="d-flex mr-3" href="#">
+                  <a class="d-flex mr-3" href="#!">
                     <img class="rounded-circle g-width-60 g-height-60" src="{{ root }}assets/img-temp/100x100/img11.jpg" alt="Image description">
                   </a>
 
                   <div class="media-body">
                     <h3 class="h6">
-                      <a class="u-link-v5 g-color-black g-color-primary--hover" href="#">Government plans to test new primary school pupils and teachers..</a>
+                      <a class="u-link-v5 g-color-black g-color-primary--hover" href="#!">Government plans to test new primary school pupils and teachers..</a>
                     </h3>
 
                     <ul class="u-list-inline g-font-size-12 g-color-gray-dark-v4">
@@ -782,7 +801,7 @@
                       </li>
                       <li class="list-inline-item">/</li>
                       <li class="list-inline-item">
-                        <a class="g-color-gray-dark-v4 g-text-underline--none--hover" href="#">
+                        <a class="g-color-gray-dark-v4 g-text-underline--none--hover" href="#!">
                           <i class="icon-finance-206 u-line-icon-pro align-middle mr-1"></i> 24
                         </a>
                       </li>
@@ -793,13 +812,13 @@
 
                 <!-- Article -->
                 <article class="media">
-                  <a class="d-flex mr-3" href="#">
+                  <a class="d-flex mr-3" href="#!">
                     <img class="rounded-circle g-width-60 g-height-60" src="{{ root }}assets/img-temp/100x100/img13.jpg" alt="Image description">
                   </a>
 
                   <div class="media-body">
                     <h3 class="h6">
-                      <a class="u-link-v5 g-color-black g-color-primary--hover" href="#">Top 10 Luxury Hotels - 5 Star Best Luxury Hotels</a>
+                      <a class="u-link-v5 g-color-black g-color-primary--hover" href="#!">Top 10 Luxury Hotels - 5 Star Best Luxury Hotels</a>
                     </h3>
 
                     <ul class="u-list-inline g-font-size-12 g-color-gray-dark-v4">
@@ -808,7 +827,7 @@
                       </li>
                       <li class="list-inline-item">/</li>
                       <li class="list-inline-item">
-                        <a class="g-color-gray-dark-v4 g-text-underline--none--hover" href="#">
+                        <a class="g-color-gray-dark-v4 g-text-underline--none--hover" href="#!">
                           <i class="icon-finance-206 u-line-icon-pro align-middle mr-1"></i> 46
                         </a>
                       </li>
@@ -832,28 +851,28 @@
 
                     <ul class="u-list-inline g-font-size-12">
                       <li class="list-inline-item g-mb-10">
-                        <a class="u-tags-v1 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_6 g-color-white--hover g-rounded-50 g-py-5 g-px-15" href="#">Web Design</a>
+                        <a class="u-tags-v1 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_6 g-color-white--hover g-rounded-50 g-py-5 g-px-15" href="#!">Web Design</a>
                       </li>
                       <li class="list-inline-item g-mb-10">
-                        <a class="u-tags-v1 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_6 g-color-white--hover g-rounded-50 g-py-5 g-px-15" href="#">Bootstrap</a>
+                        <a class="u-tags-v1 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_6 g-color-white--hover g-rounded-50 g-py-5 g-px-15" href="#!">Bootstrap</a>
                       </li>
                       <li class="list-inline-item g-mb-10">
-                        <a class="u-tags-v1 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_6 g-color-white--hover g-rounded-50 g-py-5 g-px-15" href="#">SASS</a>
+                        <a class="u-tags-v1 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_6 g-color-white--hover g-rounded-50 g-py-5 g-px-15" href="#!">SASS</a>
                       </li>
                       <li class="list-inline-item g-mb-10">
-                        <a class="u-tags-v1 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_6 g-color-white--hover g-rounded-50 g-py-5 g-px-15" href="#">Marketing</a>
+                        <a class="u-tags-v1 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_6 g-color-white--hover g-rounded-50 g-py-5 g-px-15" href="#!">Marketing</a>
                       </li>
                       <li class="list-inline-item g-mb-10">
-                        <a class="u-tags-v1 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_6 g-color-white--hover g-rounded-50 g-py-5 g-px-15" href="#">Unify</a>
+                        <a class="u-tags-v1 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_6 g-color-white--hover g-rounded-50 g-py-5 g-px-15" href="#!">Unify</a>
                       </li>
                       <li class="list-inline-item g-mb-10">
-                        <a class="u-tags-v1 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_6 g-color-white--hover g-rounded-50 g-py-5 g-px-15" href="#">Htmlstream</a>
+                        <a class="u-tags-v1 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_6 g-color-white--hover g-rounded-50 g-py-5 g-px-15" href="#!">Htmlstream</a>
                       </li>
                       <li class="list-inline-item g-mb-10">
-                        <a class="u-tags-v1 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_6 g-color-white--hover g-rounded-50 g-py-5 g-px-15" href="#">Pixeel</a>
+                        <a class="u-tags-v1 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_6 g-color-white--hover g-rounded-50 g-py-5 g-px-15" href="#!">Pixeel</a>
                       </li>
                       <li class="list-inline-item g-mb-10">
-                        <a class="u-tags-v1 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_6 g-color-white--hover g-rounded-50 g-py-5 g-px-15" href="#">Free Themes</a>
+                        <a class="u-tags-v1 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_6 g-color-white--hover g-rounded-50 g-py-5 g-px-15" href="#!">Free Themes</a>
                       </li>
                     </ul>
                   </div>
@@ -871,7 +890,7 @@
                         <div class="media-body">
                           <h4 class="h6 g-color-black g-font-weight-600">Htmlstream</h4>
                           <p class="g-color-gray-dark-v4">This is where we sit down, grab a cup of coffee and dial in the details.</p>
-                          <a class="btn u-btn-outline-primary g-font-size-11 g-rounded-25" href="#">Follow</a>
+                          <a class="btn u-btn-outline-primary g-font-size-11 g-rounded-25" href="#!">Follow</a>
                         </div>
                       </li>
                       <li class="media g-mb-35">
@@ -879,7 +898,7 @@
                         <div class="media-body">
                           <h4 class="h6 g-color-black g-font-weight-600">Pixeel</h4>
                           <p class="g-color-gray-dark-v4">This is where we sit down, grab a cup of coffee and dial in the details.</p>
-                          <a class="btn u-btn-outline-primary g-font-size-11 g-rounded-25" href="#">Follow</a>
+                          <a class="btn u-btn-outline-primary g-font-size-11 g-rounded-25" href="#!">Follow</a>
                         </div>
                       </li>
                       <li class="media">
@@ -887,7 +906,7 @@
                         <div class="media-body">
                           <h4 class="h6 g-color-black g-font-weight-600">WrapBootstrap</h4>
                           <p class="g-color-gray-dark-v4">This is where we sit down, grab a cup of coffee and dial in the details.</p>
-                          <a class="btn u-btn-outline-primary g-font-size-11 g-rounded-25" href="#">Follow</a>
+                          <a class="btn u-btn-outline-primary g-font-size-11 g-rounded-25" href="#!">Follow</a>
                         </div>
                       </li>
                     </ul>
@@ -935,7 +954,7 @@
                 <div class="mb-0">
                   <h4 class="h6 g-font-weight-600">Email Address:</h4>
                   <p class="mb-0">
-                    <a class="g-color-white-opacity-0_8" href="#">support@htmlstream.com</a>
+                    <a class="g-color-white-opacity-0_8" href="#!">support@htmlstream.com</a>
                   </p>
                 </div>
               </address>
@@ -950,28 +969,28 @@
 
               <ul class="u-list-inline g-font-size-12 g-mb-30">
                 <li class="list-inline-item g-mb-10">
-                  <a class="u-tags-v1 g-brd-around g-brd-white-opacity-0_1 g-bg-primary--hover g-brd-primary--hover g-color-white-opacity-0_8 g-rounded-50 g-py-4 g-px-15" href="#">Web Design</a>
+                  <a class="u-tags-v1 g-brd-around g-brd-white-opacity-0_1 g-bg-primary--hover g-brd-primary--hover g-color-white-opacity-0_8 g-rounded-50 g-py-4 g-px-15" href="#!">Web Design</a>
                 </li>
                 <li class="list-inline-item g-mb-10">
-                  <a class="u-tags-v1 g-brd-around g-brd-white-opacity-0_1 g-bg-primary--hover g-brd-primary--hover g-color-white-opacity-0_8 g-rounded-50 g-py-4 g-px-15" href="#">Bootstrap</a>
+                  <a class="u-tags-v1 g-brd-around g-brd-white-opacity-0_1 g-bg-primary--hover g-brd-primary--hover g-color-white-opacity-0_8 g-rounded-50 g-py-4 g-px-15" href="#!">Bootstrap</a>
                 </li>
                 <li class="list-inline-item g-mb-10">
-                  <a class="u-tags-v1 g-brd-around g-brd-white-opacity-0_1 g-bg-primary--hover g-brd-primary--hover g-color-white-opacity-0_8 g-rounded-50 g-py-4 g-px-15" href="#">SASS</a>
+                  <a class="u-tags-v1 g-brd-around g-brd-white-opacity-0_1 g-bg-primary--hover g-brd-primary--hover g-color-white-opacity-0_8 g-rounded-50 g-py-4 g-px-15" href="#!">SASS</a>
                 </li>
                 <li class="list-inline-item g-mb-10">
-                  <a class="u-tags-v1 g-brd-around g-brd-white-opacity-0_1 g-bg-primary--hover g-brd-primary--hover g-color-white-opacity-0_8 g-rounded-50 g-py-4 g-px-15" href="#">Marketing</a>
+                  <a class="u-tags-v1 g-brd-around g-brd-white-opacity-0_1 g-bg-primary--hover g-brd-primary--hover g-color-white-opacity-0_8 g-rounded-50 g-py-4 g-px-15" href="#!">Marketing</a>
                 </li>
                 <li class="list-inline-item g-mb-10">
-                  <a class="u-tags-v1 g-brd-around g-brd-white-opacity-0_1 g-bg-primary--hover g-brd-primary--hover g-color-white-opacity-0_8 g-rounded-50 g-py-4 g-px-15" href="#">Unify</a>
+                  <a class="u-tags-v1 g-brd-around g-brd-white-opacity-0_1 g-bg-primary--hover g-brd-primary--hover g-color-white-opacity-0_8 g-rounded-50 g-py-4 g-px-15" href="#!">Unify</a>
                 </li>
                 <li class="list-inline-item g-mb-10">
-                  <a class="u-tags-v1 g-brd-around g-brd-white-opacity-0_1 g-bg-primary--hover g-brd-primary--hover g-color-white-opacity-0_8 g-rounded-50 g-py-4 g-px-15" href="#">Htmlstream</a>
+                  <a class="u-tags-v1 g-brd-around g-brd-white-opacity-0_1 g-bg-primary--hover g-brd-primary--hover g-color-white-opacity-0_8 g-rounded-50 g-py-4 g-px-15" href="#!">Htmlstream</a>
                 </li>
                 <li class="list-inline-item g-mb-10">
-                  <a class="u-tags-v1 g-brd-around g-brd-white-opacity-0_1 g-bg-primary--hover g-brd-primary--hover g-color-white-opacity-0_8 g-rounded-50 g-py-4 g-px-15" href="#">Pixeel</a>
+                  <a class="u-tags-v1 g-brd-around g-brd-white-opacity-0_1 g-bg-primary--hover g-brd-primary--hover g-color-white-opacity-0_8 g-rounded-50 g-py-4 g-px-15" href="#!">Pixeel</a>
                 </li>
                 <li class="list-inline-item g-mb-10">
-                  <a class="u-tags-v1 g-brd-around g-brd-white-opacity-0_1 g-bg-primary--hover g-brd-primary--hover g-color-white-opacity-0_8 g-rounded-50 g-py-4 g-px-15" href="#">Free Themes</a>
+                  <a class="u-tags-v1 g-brd-around g-brd-white-opacity-0_1 g-bg-primary--hover g-brd-primary--hover g-color-white-opacity-0_8 g-rounded-50 g-py-4 g-px-15" href="#!">Free Themes</a>
                 </li>
               </ul>
 
@@ -982,23 +1001,23 @@
               <ul class="list-unstyled">
                 <li class="g-mb-5">
                   <i class="fa fa-angle-right g-mr-5"></i>
-                  <a class="g-color-white-opacity-0_8" href="#">Wrapbootstrap</a>
+                  <a class="g-color-white-opacity-0_8" href="#!">Wrapbootstrap</a>
                 </li>
                 <li class="g-mb-5">
                   <i class="fa fa-angle-right g-mr-5"></i>
-                  <a class="g-color-white-opacity-0_8" href="#">Google</a>
+                  <a class="g-color-white-opacity-0_8" href="#!">Google</a>
                 </li>
                 <li class="g-mb-5">
                   <i class="fa fa-angle-right g-mr-5"></i>
-                  <a class="g-color-white-opacity-0_8" href="#">Marketing</a>
+                  <a class="g-color-white-opacity-0_8" href="#!">Marketing</a>
                 </li>
                 <li class="g-mb-5">
                   <i class="fa fa-angle-right g-mr-5"></i>
-                  <a class="g-color-white-opacity-0_8" href="#">Support Forum</a>
+                  <a class="g-color-white-opacity-0_8" href="#!">Support Forum</a>
                 </li>
                 <li class="mb-0">
                   <i class="fa fa-angle-right g-mr-5"></i>
-                  <a class="g-color-white-opacity-0_8" href="#">Themes</a>
+                  <a class="g-color-white-opacity-0_8" href="#!">Themes</a>
                 </li>
               </ul>
             </div>
@@ -1011,20 +1030,20 @@
               </div>
 
               <article class="media">
-                <a class="d-flex g-mt-3 mr-3" href="#">
+                <a class="d-flex g-mt-3 mr-3" href="#!">
                   <img class="g-width-60 g-height-60" src="{{ root }}assets/img-temp/100x100/img6.jpg" alt="Image description">
                 </a>
 
                 <div class="media-body">
                   <h3 class="h6">
-                    <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#">Top 7 luxury places to visit around Victoria, BC</a>
+                    <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">Top 7 luxury places to visit around Victoria, BC</a>
                   </h3>
 
                   <ul class="u-list-inline g-font-size-12">
                     <li class="list-inline-item">June 09, 2017</li>
                     <li class="list-inline-item">/</li>
                     <li class="list-inline-item">
-                      <a class="u-link-v5 g-color-white-opacity-0_8 g-color-white--hover" href="#">
+                      <a class="u-link-v5 g-color-white-opacity-0_8 g-color-white--hover" href="#!">
                         <i class="fa fa-comments-o"></i> 12
                       </a>
                     </li>
@@ -1035,20 +1054,20 @@
               <hr class="g-brd-white-opacity-0_1 g-mt-20 g-mb-15">
 
               <article class="media">
-                <a class="d-flex g-mt-3 mr-3" href="#">
+                <a class="d-flex g-mt-3 mr-3" href="#!">
                   <img class="g-width-60 g-height-60" src="{{ root }}assets/img-temp/100x100/img5.jpg" alt="Image description">
                 </a>
 
                 <div class="media-body">
                   <h3 class="h6">
-                    <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#">Coding week, 10 best premium templates</a>
+                    <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">Coding week, 10 best premium templates</a>
                   </h3>
 
                   <ul class="u-list-inline g-font-size-12">
                     <li class="list-inline-item">July 30, 2017</li>
                     <li class="list-inline-item">/</li>
                     <li class="list-inline-item">
-                      <a class="u-link-v5 g-color-white-opacity-0_8 g-color-white--hover" href="#">
+                      <a class="u-link-v5 g-color-white-opacity-0_8 g-color-white--hover" href="#!">
                         <i class="fa fa-comments-o"></i> 18
                       </a>
                     </li>
@@ -1059,20 +1078,20 @@
               <hr class="g-brd-white-opacity-0_1 g-mt-20 g-mb-15">
 
               <article class="media">
-                <a class="d-flex g-mt-3 mr-3" href="#">
+                <a class="d-flex g-mt-3 mr-3" href="#!">
                   <img class="g-width-60 g-height-60" src="{{ root }}assets/img-temp/100x100/img4.jpg" alt="Image description">
                 </a>
 
                 <div class="media-body">
                   <h3 class="h6">
-                    <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#">Top 10 luxury hotels - 5 star cozy rooms</a>
+                    <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">Top 10 luxury hotels - 5 star cozy rooms</a>
                   </h3>
 
                   <ul class="u-list-inline g-font-size-12">
                     <li class="list-inline-item">August 12, 2017</li>
                     <li class="list-inline-item">/</li>
                     <li class="list-inline-item">
-                      <a class="u-link-v5 g-color-white-opacity-0_8 g-color-white--hover" href="#">
+                      <a class="u-link-v5 g-color-white-opacity-0_8 g-color-white--hover" href="#!">
                         <i class="fa fa-comments-o"></i> 09
                       </a>
                     </li>
@@ -1105,22 +1124,22 @@
               <p>Follow us if you want to be kept up to date about what’s going on, minute by minute, then search for htmlstream and give us a follow!</p>
               <ul class="list-inline mb-0">
                 <li class="list-inline-item g-mr-10">
-                  <a class="u-icon-v3 u-icon-size--xs g-bg-white-opacity-0_1 g-bg-white-opacity-0_2--hover g-color-white-opacity-0_6 rounded" href="#">
+                  <a class="u-icon-v3 u-icon-size--xs g-bg-white-opacity-0_1 g-bg-white-opacity-0_2--hover g-color-white-opacity-0_6 rounded" href="#!">
                     <i class="fa fa-facebook"></i>
                   </a>
                 </li>
                 <li class="list-inline-item g-mr-10">
-                  <a class="u-icon-v3 u-icon-size--xs g-bg-white-opacity-0_1 g-bg-white-opacity-0_2--hover g-color-white-opacity-0_6 rounded" href="#">
+                  <a class="u-icon-v3 u-icon-size--xs g-bg-white-opacity-0_1 g-bg-white-opacity-0_2--hover g-color-white-opacity-0_6 rounded" href="#!">
                     <i class="fa fa-instagram"></i>
                   </a>
                 </li>
                 <li class="list-inline-item g-mr-10">
-                  <a class="u-icon-v3 u-icon-size--xs g-bg-white-opacity-0_1 g-bg-white-opacity-0_2--hover g-color-white-opacity-0_6 rounded" href="#">
+                  <a class="u-icon-v3 u-icon-size--xs g-bg-white-opacity-0_1 g-bg-white-opacity-0_2--hover g-color-white-opacity-0_6 rounded" href="#!">
                     <i class="fa fa-twitter"></i>
                   </a>
                 </li>
                 <li class="list-inline-item g-mr-10">
-                  <a class="u-icon-v3 u-icon-size--xs g-bg-white-opacity-0_1 g-bg-white-opacity-0_2--hover g-color-white-opacity-0_6 rounded" href="#">
+                  <a class="u-icon-v3 u-icon-size--xs g-bg-white-opacity-0_1 g-bg-white-opacity-0_2--hover g-color-white-opacity-0_6 rounded" href="#!">
                     <i class="fa fa-dribbble"></i>
                   </a>
                 </li>
@@ -1134,7 +1153,7 @@
         <div class="u-bg-overlay__inner g-bg-black-opacity-0_3 g-color-white-opacity-0_8 text-center g-py-20">
           <div class="container">
             <small class="g-font-size-default g-mr-10 g-mb-10 g-mb-0--md">2017 © All Rights Reserved. Unify Template by
-              <a href="#">Htmlstream</a></small>
+              <a href="#!">Htmlstream</a></small>
           </div>
         </div>
         <!-- End Copyright Footer -->
@@ -1172,26 +1191,6 @@
       $(document).on('ready', function () {
         // initialization of carousel
         $.HSCore.components.HSCarousel.init('.js-carousel');
-
-        $('#promo-carousel').slick('setOption', 'responsive', [{
-          breakpoint: 1200,
-          settings: {
-            slidesToShow: 3,
-            centerPadding: '30px'
-          }
-        }, {
-          breakpoint: 992,
-          settings: {
-            slidesToShow: 2,
-            centerPadding: '60px'
-          }
-        }, {
-          breakpoint: 650,
-          settings: {
-            slidesToShow: 1,
-            centerPadding: '40px'
-          }
-        }], true);
 
         // initialization of tabs
         $.HSCore.components.HSTabs.init('[role="tablist"]');

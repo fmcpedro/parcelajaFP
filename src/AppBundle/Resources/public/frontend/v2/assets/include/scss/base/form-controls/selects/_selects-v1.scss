@@ -134,6 +134,14 @@
           color: $g-color-primary-light-v1;
         }
         border-bottom-color: $g-color-primary-light-v1;
+
+        &.g-color-white--active {
+          color: $g-color-white !important;
+        }
+
+        &.g-bg-primary--active {
+          background-color: $g-color-primary !important;
+        }
       }
 
       &.result-selected {

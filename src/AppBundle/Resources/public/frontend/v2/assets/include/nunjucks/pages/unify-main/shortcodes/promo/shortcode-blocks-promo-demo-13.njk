@@ -2,7 +2,7 @@
 {% set root = "../../../" %}
 {% set mainNavActive_1 = "shortcodes" %}
 {% set sidebarNavActive_1 = "shortcode-blocks-promo" %}
-{% set title = "Promo Blocks 13 | " %}
+{% set title = "Promo Blocks 13" %}
 
 {% include "html/assets/include/nunjucks/partials/head.njk" %}
 {% include "html/assets/include/nunjucks/partials/core-fonts.njk" %}
@@ -41,7 +41,7 @@
           </div>
           <div class="g-brd-around g-brd-10 g-brd-white-opacity-0_8 g-bg-white-opacity-0_7">
             <div class="g-brd-around g-brd-white-opacity-0_4 g-pa-30 g-pa-60--md">
-              <span class="d-block g-color-black text-uppercase mb-2">Your favourite</span>
+              <span class="d-block text-uppercase mb-2 g-color-black g-font-size-13 g-letter-spacing-2">Your favourite</span>
               <h2 class="g-color-black g-font-weight-600 g-font-size-25 g-font-size-40--md mb-4">Consulting Company</h2>
               <p class="lead g-color-black mb-5">We are a consulting company focusing on culture, luxury &amp; art. Somewhere between sophistication and simplicity.</p>
               <img class="img-fluid g-width-50" src="{{ root }}assets/img-temp/125x115/img1.png" alt="Image Description">
@@ -84,18 +84,6 @@
     $(document).ready(function () {
       // initialization of carousel
       $.HSCore.components.HSCarousel.init('.js-carousel');
-
-      $('#we-provide').slick('setOption', 'responsive', [{
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 2
-        }
-      }, {
-        breakpoint: 576,
-        settings: {
-          slidesToShow: 1
-        }
-      }], true);
 
       // initialization of masonry
       $('.masonry-grid').imagesLoaded().then(function () {

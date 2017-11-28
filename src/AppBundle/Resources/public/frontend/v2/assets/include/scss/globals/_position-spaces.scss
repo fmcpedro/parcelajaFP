@@ -39,11 +39,15 @@
 }
 
 .g-top-5 {
-  @include px-to-rem(top, 5px);
+  @include px-to-rem(top, 5px !important);
+}
+
+.g-top-7 {
+  @include px-to-rem(top, 7px !important);
 }
 
 .g-top-10 {
-  @include px-to-rem(top, 10px);
+  @include px-to-rem(top, 10px !important);
 }
 
 .g-top-15 {
@@ -52,6 +56,10 @@
 
 .g-top-20 {
   @include px-to-rem(top, 20px);
+}
+
+.g-top-25 {
+  @include px-to-rem(top, 25px);
 }
 
 .g-top-30 {
@@ -108,7 +116,7 @@
 }
 
 .g-top-minus-3 {
-  @include px-to-rem(top, -3px);
+  @include px-to-rem(top, -3px !important);
 }
 
 .g-top-minus-4 {
@@ -279,6 +287,10 @@
   @include px-to-rem(left, -30px);
 }
 
+.g-left-minus-40 {
+  @include px-to-rem(left, -40px);
+}
+
 .g-left-minus-50 {
   @include px-to-rem(left, -50px);
 
@@ -309,11 +321,15 @@
 }
 
 .g-right-5 {
-  @include px-to-rem(right, 5px);
+  @include px-to-rem(right, 5px !important);
+}
+
+.g-right-7 {
+  @include px-to-rem(right, 7px !important);
 }
 
 .g-right-10 {
-  @include px-to-rem(right, 10px);
+  @include px-to-rem(right, 10px !important);
 }
 
 .g-right-15 {
@@ -338,6 +354,10 @@
 
 .g-right-55 {
   @include px-to-rem(right, 55px); /* O */
+}
+
+.g-right-65 {
+  @include px-to-rem(right, 65px);
 }
 
 .g-right-100 {
@@ -370,7 +390,7 @@
 
 /* Right Minus */
 .g-right-minus-3 {
-  @include px-to-rem(right, -3px);
+  @include px-to-rem(right, -3px !important);
 }
 
 .g-right-minus-6 {
@@ -399,6 +419,10 @@
 
 .g-right-minus-25 {
   @include px-to-rem(right, -25px);
+}
+
+.g-right-minus-40 {
+  @include px-to-rem(right, -40px);
 }
 
 .g-right-minus-50 {
@@ -492,6 +516,10 @@
 
 /* Z */
 @media (min-width: $g-sm) {
+  .g-top-auto--sm {
+    top: auto;
+  }
+
   .g-left-auto--sm {
     left: auto;
   }

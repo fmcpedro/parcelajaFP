@@ -8,6 +8,12 @@
   &--x {
     @include block-centered(absolute, true, false);
 
+    &--sm {
+      @media (min-width: $g-sm) {
+        @include block-centered(absolute, true, false);
+      }
+    }
+
     &--md {
       @media (min-width: $g-md) {
         @include block-centered(absolute, true, false);
@@ -19,6 +25,12 @@
 
     &--md {
       @media (min-width: $g-md) {
+        @include block-centered(absolute, false, true);
+      }
+    }
+
+    &--lg {
+      @media (min-width: $g-lg) {
         @include block-centered(absolute, false, true);
       }
     }
@@ -134,5 +146,14 @@
 @media (min-width: $g-sm) {
   .g-absolute-centered--sm {
     @include block-centered(absolute, true, true);
+  }
+}
+
+/* O */
+@media (min-width: $g-sm) {
+  .g-absolute-centered--x-sm--reset {
+    position: static !important;
+    left: auto !important;
+    transform: translateX(0) !important;
   }
 }

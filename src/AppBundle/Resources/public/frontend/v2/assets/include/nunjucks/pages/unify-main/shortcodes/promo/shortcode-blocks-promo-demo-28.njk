@@ -2,7 +2,7 @@
 {% set root = "../../../" %}
 {% set mainNavActive_1 = "shortcodes" %}
 {% set sidebarNavActive_1 = "shortcode-blocks-promo" %}
-{% set title = "Promo Blocks 28 | " %}
+{% set title = "Promo Blocks 28" %}
 
 {% include "html/assets/include/nunjucks/partials/head.njk" %}
 {% include "html/assets/include/nunjucks/partials/core-fonts.njk" %}
@@ -27,7 +27,7 @@
              data-fade="true"
              data-speed="5000"
              data-pagi-classes="u-carousel-indicators-v1 g-absolute-centered--x g-bottom-30">
-      <div class="js-slide g-min-height-600 g-flex-centered g-bg-cover g-bg-pos-top-center g-bg-img-hero g-bg-black-opacity-0_1--after" style="background-image: url({{ root }}assets/img-temp/1920x1080/img35.jpg);">
+      <div class="js-slide g-min-height-600 g-flex-centered g-bg-cover g-bg-pos-top-center g-bg-img-hero g-bg-black-opacity-0_3--after" style="background-image: url({{ root }}assets/img-temp/1920x1080/img35.jpg);">
         <!-- Promo Block Content -->
         <div class="g-flex-centered-item g-py-100" data-calc-target="#js-header">
           <div class="container g-bg-cover__inner">
@@ -49,17 +49,17 @@
 
             <p class="g-max-width-700 g-color-white g-font-size-18 g-mb-45">Now that we've aligned the details, it's time to get things mapped out and organized. This part is really crucial in keeping the project in line to completion.</p>
 
-            <a class="btn btn-lg u-btn-primary g-color-black g-font-weight-600 g-font-size-13 text-uppercase rounded-0 g-px-25 g-py-15 mr-2 mb-3" href="#">
+            <a class="btn btn-lg u-btn-primary g-color-black g-font-weight-600 g-font-size-13 text-uppercase rounded-0 g-px-25 g-py-15 mr-2 mb-3" href="#!">
               <i class="g-font-size-15 g-pos-rel g-top-2 mr-2 icon-finance-260 u-line-icon-pro"></i>
               Purchase now
             </a>
-            <a class="btn btn-lg u-btn-primary g-color-black g-font-weight-600 g-font-size-13 text-uppercase rounded-0 g-px-25 g-py-15 ml-2 mb-3" href="#">Learn more</a>
+            <a class="btn btn-lg u-btn-primary g-color-black g-font-weight-600 g-font-size-13 text-uppercase rounded-0 g-px-25 g-py-15 ml-2 mb-3" href="#!">Learn more</a>
           </div>
         </div>
         <!-- End Promo Block Content -->
       </div>
 
-      <div class="js-slide g-min-height-600 g-flex-centered g-bg-cover g-bg-pos-top-center g-bg-img-hero g-bg-black-opacity-0_1--after" style="background-image: url({{ root }}assets/img-temp/1920x1080/img2.jpg);">
+      <div class="js-slide g-min-height-600 g-flex-centered g-bg-cover g-bg-pos-top-center g-bg-img-hero g-bg-black-opacity-0_3--after" style="background-image: url({{ root }}assets/img-temp/1920x1080/img2.jpg);">
         <!-- Promo Block Content -->
         <div class="g-flex-centered g-py-100" data-calc-target="#js-header">
           <div class="container g-bg-cover__inner">
@@ -81,11 +81,11 @@
 
             <p class="g-max-width-700 g-color-white-opacity-0_8 g-font-size-18 g-mb-45">The time has come to bring those ideas and plans to life. This is where we really begin to visualize your napkin sketches and make them into beautiful pixels.</p>
 
-            <a class="btn btn-lg u-btn-primary g-color-black g-font-weight-600 g-font-size-13 text-uppercase rounded-0 g-px-25 g-py-15 mx-2 mb-3" href="#">
+            <a class="btn btn-lg u-btn-primary g-color-black g-font-weight-600 g-font-size-13 text-uppercase rounded-0 g-px-25 g-py-15 mx-2 mb-3" href="#!">
               <i class="g-font-size-15 g-pos-rel g-top-2 mr-2 icon-finance-053 u-line-icon-pro"></i>
               Hire Unify
             </a>
-            <a class="btn btn-lg u-btn-primary g-color-black g-font-weight-600 g-font-size-13 text-uppercase rounded-0 g-px-25 g-py-15 mx-2 mb-3" href="#">Learn more</a>
+            <a class="btn btn-lg u-btn-primary g-color-black g-font-weight-600 g-font-size-13 text-uppercase rounded-0 g-px-25 g-py-15 mx-2 mb-3" href="#!">Learn more</a>
           </div>
         </div>
         <!-- End Promo Block Content -->
@@ -124,18 +124,6 @@
     $(document).ready(function () {
       // initialization of carousel
       $.HSCore.components.HSCarousel.init('.js-carousel');
-
-      $('#we-provide').slick('setOption', 'responsive', [{
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 2
-        }
-      }, {
-        breakpoint: 576,
-        settings: {
-          slidesToShow: 1
-        }
-      }], true);
 
       // initialization of masonry
       $('.masonry-grid').imagesLoaded().then(function () {

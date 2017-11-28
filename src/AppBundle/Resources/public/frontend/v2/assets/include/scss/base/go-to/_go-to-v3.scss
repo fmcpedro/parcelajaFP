@@ -16,13 +16,13 @@
   z-index: 11;
 
   i {
-    @include px-to-rem(width, 40px);
-    @include px-to-rem(height, 40px);
+    @include px-to-rem(width, 50px);
+    @include px-to-rem(height, 50px);
     display: block;
     text-align: center;
     border-radius: 50%;
     @include px-to-rem(font-size, 16px);
-    @include px-to-rem(line-height, 36px);
+    @include px-to-rem(line-height, 46px);
     border: solid 1px $g-color-main;
     transition: .3s ease-out;
   }
@@ -51,6 +51,6 @@
 
 @media (max-width: #{$g-sm}-1) {
   .u-go-to-v3 {
-    transform:scale(.8, .8);
+    transform: scale(.8, .8);
   }
 }

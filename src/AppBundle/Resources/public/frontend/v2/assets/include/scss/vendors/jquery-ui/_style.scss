@@ -9,6 +9,7 @@
     overflow-y: auto;
     overflow-x: hidden;
     padding-bottom: 1px;
+    z-index: 991;
 
     .left {
       float: left;
@@ -26,7 +27,7 @@
         color: inherit;
         background-color: transparent;
         border-color: transparent;
-        padding: 5px 15px;
+        padding: 7px 15px;
 
         &.ui-state-active,
         &:hover {

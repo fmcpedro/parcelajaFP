@@ -2,7 +2,7 @@
   {
     "label": "Accrodions",
     "category": "Bases",
-    "url": "html/unify-main/shortcodes/shortcode-base-accrodions.html"
+    "url": "html/unify-main/shortcodes/shortcode-base-accordions.html"
   },
   {
     "label": "Alerts",
@@ -213,6 +213,11 @@
     "label": "Icon Fontawesome",
     "category": "Bases",
     "url": "html/unify-main/shortcodes/icons/shortcode-base-icon-fontawesome.html"
+  },
+  {
+    "label": "Material Icons",
+    "category": "Bases",
+    "url": "html/unify-main/shortcodes/icons/shortcode-base-icon-material.html"
   },
   {
     "label": "Icon Line Icons Pro 1",

@@ -203,6 +203,18 @@
                 <source>forclients_block_03_title</source>
                 <target>Our stores</target>
             </trans-unit>
+            
+             <trans-unit id="forclients_botao_ver_lojas" resname="forclients_botao_ver_lojas">
+                <source>forclients_botao_ver_lojas</source>
+                <target>See stores</target>
+            </trans-unit>
+            
+            
+                  <trans-unit id="forclients_botao_visitar" resname="forclients_botao_visitar">
+                <source>forclients_botao_visitar</source>
+                <target>Visit </target>
+            </trans-unit>
+            
             <trans-unit id="faqs_block_01_title" resname="faqs_block_01_title">
                 <source>faqs_block_01_title</source>
                 <target>Frequenty Asked Questions</target>

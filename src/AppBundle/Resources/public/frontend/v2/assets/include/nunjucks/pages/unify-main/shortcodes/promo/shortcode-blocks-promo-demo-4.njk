@@ -2,7 +2,7 @@
 {% set root = "../../../" %}
 {% set mainNavActive_1 = "shortcodes" %}
 {% set sidebarNavActive_1 = "shortcode-blocks-promo" %}
-{% set title = "Promo Blocks 4 | " %}
+{% set title = "Promo Blocks 4" %}
 
 {% include "html/assets/include/nunjucks/partials/head.njk" %}
 {% include "html/assets/include/nunjucks/partials/core-fonts.njk" %}
@@ -23,7 +23,7 @@
     {% include "html/assets/include/nunjucks/partials/blocks/headers/header-main.njk" %}
 
     <!-- Promo Block -->
-    <section class="g-bg-cover g-bg-pos-bottom-center g-bg-img-hero g-bg-bluegray-opacity-0_2--after g-min-height-100vh g-flex-centered g-py-150" style="background-image: url({{ root }}assets/img-temp/1920x1080/img7.jpg);">
+    <section class="g-bg-cover g-bg-pos-bottom-center g-bg-img-hero g-bg-bluegray-opacity-0_3--after g-min-height-100vh g-flex-centered g-py-150" style="background-image: url({{ root }}assets/img-temp/1920x1080/img7.jpg);">
       <div class="container text-center g-z-index-1">
         <div class="g-mb-50" data-animation="fadeInUp" data-animation-delay="200" data-animation-duration="1500">
           <a class="js-fancybox-media u-icon-v2 u-icon-size--lg g-brd-white g-color-primary g-brd-white--hover g-color-black--hover g-bg-white g-font-size-20 rounded-circle g-text-underline--none--hover" href="http://vimeo.com/36031564" data-open-effect="fadeIn" data-close-effect="fadeOut" data-open-speed="1000" data-close-speed="1000">
@@ -37,8 +37,8 @@
           Simple &amp; Colorful
         </h3>
         <div data-animation="fadeInUp" data-animation-delay="1100" data-animation-duration="1500">
-          <a class="btn btn-lg u-btn-outline-white g-color-white g-bg-white-opacity-0_2 g-color-black--hover g-bg-white--hover g-font-weight-600 g-font-size-13 text-uppercase g-rounded-50 mx-2 g-px-25 g-py-15" href="#">Discover More</a>
-          <a class="btn btn-lg u-btn-primary g-font-weight-600 g-font-size-13 text-uppercase g-rounded-50 mx-2 g-px-25 g-py-15" href="#">Purchase Now</a>
+          <a class="btn btn-lg u-btn-outline-white g-color-white g-bg-white-opacity-0_2 g-color-black--hover g-bg-white--hover g-font-weight-600 g-font-size-13 text-uppercase g-rounded-50 mx-2 g-px-25 g-py-15" href="#!">Discover More</a>
+          <a class="btn btn-lg u-btn-primary g-font-weight-600 g-font-size-13 text-uppercase g-rounded-50 mx-2 g-px-25 g-py-15" href="#!">Purchase Now</a>
         </div>
       </div>
     </section>
@@ -76,18 +76,6 @@
     $(document).ready(function () {
       // initialization of carousel
       $.HSCore.components.HSCarousel.init('.js-carousel');
-
-      $('#we-provide').slick('setOption', 'responsive', [{
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 2
-        }
-      }, {
-        breakpoint: 576,
-        settings: {
-          slidesToShow: 1
-        }
-      }], true);
 
       // initialization of masonry
       $('.masonry-grid').imagesLoaded().then(function () {

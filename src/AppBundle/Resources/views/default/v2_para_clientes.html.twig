@@ -5,6 +5,7 @@
     {{ parent() }}
     <!-- CSS Implementing Plugins -->
     <link rel="stylesheet" href="{{ asset('bundles/app/frontend/v2/assets/vendor/cubeportfolio-full/cubeportfolio/css/cubeportfolio.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/app/frontend/v2/assets/vendor/custombox/custombox.min.css') }}"> <!-- Modal de Lojas -->
 {% endblock %}
 
 
@@ -142,30 +143,11 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <!-- Lojas -->
     <section id="lojas" class="g-py-50 g-py-100--sm g-px-25 g-px-50--md g-bg-secondary">
 
         <!-- Cabeçalho -->
         <div class="container">
-
             <!-- Título -->
             <div class="row justify-content-center text-center g-mb-50">
                 <div class="col-lg-8">
@@ -176,26 +158,15 @@
 
             <!-- Filtro de Lojas -->
             <ul id="filterControls" class="d-block list-inline text-center g-mb-50 parcelaja-filtro">
-
-
-
-                <li class="list-inline-item cbp-filter-item g-brd-around g-brd-gray-light-v4 g-brd-primary--hover g-bg-primary--hover g-color-gray-dark-v4 g-color-white--hover g-color-white--active g-font-size-12 rounded g-transition-0_3 g-px-20 g-py-7 mb-2 cbp-filter-item-active" role="button" data-filter="*">{% trans %}homepage_grupos_all{% endtrans %}</li>
+                <li class="list-inline-item cbp-filter-item g-brd-around g-brd-gray-light-v4 g-brd-primary--hover g-bg-primary--hover g-color-gray-dark-v4 g-color-white--hover g-color-white--active g-font-size-12 rounded g-transition-0_3 g-px-20 g-py-7 mb-2 cbp-filter-item-active" role="button" data-filter="*">{{'homepage_grupos_all'|trans}}</li>
                     {% for grupo in grupos %}
-
-                    <li class="list-inline-item cbp-filter-item g-brd-around g-brd-gray-light-v4 g-brd-primary--hover g-bg-primary--hover g-color-gray-dark-v4 g-color-white--hover g-color-white--active g-font-size-12 rounded g-transition-0_3 g-px-20 g-py-7 mb-2" role="button" data-filter=".{{grupo.fgroupid}}">
-                        {{grupo.fgroupslugname|trans}}
-                    </li>
-                {% endfor %} 
-
-                {#    <li class="list-inline-item cbp-filter-item g-color-primary--hover g-color-gray-dark-v5--active g-font-weight-600 g-font-size-14 text-uppercase px-2 mb-2" role="button" data-filter=".loja_agencia_viagens">Agências de Viagens</li>
-                      <li class="list-inline-item cbp-filter-item g-color-black g-color-primary--hover g-color-gray-dark-v5--active g-font-weight-600 g-font-size-14 text-uppercase px-2 mb-2" role="button" data-filter=".loja_perfumaria">Perfumarias</li>
-                      <li class="list-inline-item cbp-filter-item g-color-black g-color-primary--hover g-color-gray-dark-v5--active g-font-weight-600 g-font-size-14 text-uppercase px-2 mb-2" role="button" data-filter=".loja_informatica">Informática</li>
-                      <li class="list-inline-item cbp-filter-item g-color-black g-color-primary--hover g-color-gray-dark-v5--active g-font-weight-600 g-font-size-14 text-uppercase px-2 mb-2" role="button" data-filter=".loja_reparacao_veiculos">Reparação de Veículos</li>#}
+                    <li class="list-inline-item cbp-filter-item g-brd-around g-brd-gray-light-v4 g-brd-primary--hover g-bg-primary--hover g-color-gray-dark-v4 g-color-white--hover g-color-white--active g-font-size-12 rounded g-transition-0_3 g-px-20 g-py-7 mb-2" role="button" data-filter=".{{grupo.fgroupid}}">{{grupo.fgroupslugname|trans}}</li>
+                    {% endfor %} 
             </ul>
             <!-- End - Filtro de Lojas -->
-
         </div>
         <!-- End - Cabeçalho -->
+
 
         <!-- Conteúdo -->
         <div class="container">
@@ -207,46 +178,75 @@
                  {"width": 300, "cols": 1}
                  ]'>
 
-                {% for agencia in agencias %}
 
+                {% for sub_grupo in sub_grupos %}
+                    {% set logo = '' %}
 
-
-
-
-                    <!-- Loja -->
-                    <div class="cbp-item {{agencia.subgroup.group.fgroupid}}">
+                    {% for agencia in sub_grupo.agencyList %}
+                        {% set logo = agencia.flogo %}
+                    {% endfor %}
+                    <!-- SubGrupo -->
+                    <div class="cbp-item {{sub_grupo.group.fgroupid}}">
                         <div class="u-block-hover g-parent">
-                            <img class="img-fluid g-transform-scale-1_1--parent-hover g-transition-0_5 g-transition--ease-in-out" src="/uploads/aderentes/{{agencia.flogo}}" alt="{{agencia.fagencyname}}">
+                            <img class="img-fluid g-transform-scale-1_1--parent-hover g-transition-0_5 g-transition--ease-in-out" src="/uploads/aderentes/{{logo}}" alt="" >
                             <div class="d-flex w-100 h-100 u-block-hover__additional--fade u-block-hover__additional--fade-in g-bg-bluegray-opacity-0_5 opacity-0 g-opacity-1--parent-hover g-pos-abs g-top-0 g-left-0 g-transition-0_3 g-transition--ease-in g-pa-20">
                                 <div class="d-flex align-items-start flex-column mb-auto">
-                                    <h3 class="h5 g-color-white g-font-weight-600 mb-1">{{agencia.fagencyname}}</h3>
-                                    <span class="d-block g-color-white">{{agencia.subgroup.group.fgroupname}}</span>
+                                    <h3 class="h5 g-color-white g-font-weight-600 mb-1">{{sub_grupo.fsubgroupname}}</h3>
+                                    <span class="d-block g-color-white">{{sub_grupo.group.fgroupslugname|trans}}</span>
                                 </div>
                                 <ul class="align-items-end flex-column list-inline mt-auto ml-auto mb-0">
                                     <li class="list-inline-item">
-                                        <a class="u-icon-v2 u-icon-size--xs g-brd-white g-color-primary g-bg-white rounded-circle" href="#">
-                                            <i class="icon-communication-095 u-line-icon-pro"></i>
+                                        <a class="btn u-btn-white g-color-primary" href="#modal-loja-{{sub_grupo.fsubgroupid}}" data-modal-target="#modal-loja-{{sub_grupo.fsubgroupid}}" data-modal-effect="fadein">
+                                            {{'forclients_botao_ver_lojas'|trans}}
                                         </a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <!-- End - Loja -->
+                    <!-- End - SubGrupo-->
 
+                    <!-- Modal -->
+                    <div id="modal-loja-{{sub_grupo.fsubgroupid}}" class="text-left g-bg-white g-overflow-y-auto g-mx-25 g-width-90x parcelaja-modal-loja-aderente" style="display: none;">
+                        <div class="fundo-azul-claro g-pa-20 g-mb-20">
+                            <button type="button" class="close" onclick="Custombox.modal.close();">
+                                <i class="hs-icon hs-icon-close"></i>
+                            </button>
+                            <h4>{{sub_grupo.fsubgroupname}}</h4>
+                            <p>{{sub_grupo.group.fgroupslugname|trans}}</p>
+                        </div>
+                        <div class="g-pa-20">
+                            {% for agencia in sub_grupo.agencyList %}
+                                <div class="row align-items-center justify-content-between g-mb-20 g-pt-20{% if loop.index0 > 0 %} g-brd-top g-brd-gray-light-v4 {%endif%}">
 
+                                    <div class="col-8 col-sm-9">
+                                        <h5 class="g-mb-0">{{agencia.fagencyname}}</h5>
+                                        <p class="g-mb-0">{{agencia.faddress}}</p>
+                                        <p class="g-mb-0">{{agencia.fpostalcode1}}</p>
 
+                                        {% if agencia.ftelephone is not empty %}
+                                            <p class="g-mb-0">Tel.: <a href="tel:{{agencia.ftelephone}}">{{agencia.ftelephone}}</a></p>
+                                            {%endif%}
+                                    </div>
+                                    <div class="col-4 col-sm-3 text-right">
+
+                                        {% if agencia.fwebsite is not empty %}
+                                            <a class="btn btn-xs btn--sm u-btn-primary g-text-underline--none" href="{{agencia.fwebsite}}" target="_blank">{{'forclients_botao_visitar'|trans}}</a>
+                                        {%endif%}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <!-- End - Modal -->
                 {% endfor %}
-
-
-
-
             </div>
         </div>
         <!-- End - Conteúdo -->
 
     </section>
     <!-- End - Lojas -->
+
 
 
 
@@ -291,10 +291,12 @@
     <script src="{{ asset('bundles/app/frontend/v2/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
     <script src="{{ asset('bundles/app/frontend/v2/assets/vendor/cubeportfolio-full/cubeportfolio/js/jquery.cubeportfolio.min.js') }}"></script>
     <script src="{{ asset('bundles/app/frontend/v2/assets/vendor/masonry/dist/masonry.pkgd.min.js') }}"></script>
+    <script src="{{ asset('bundles/app/frontend/v2/assets/vendor/custombox/custombox.min.js') }}"></script> <!-- Modal de Lojas -->
     <!-- fim para clientes -->
 
     <!-- JS Unify -->
     <script src="{{ asset('bundles/app/frontend/v2/assets/js/hs.core.js') }}"></script>
+
     <script src="{{ asset('bundles/app/frontend/v2/assets/js/components/hs.header.js') }}"></script>
     <script src="{{ asset('bundles/app/frontend/v2/assets/js/helpers/hs.hamburgers.js') }}"></script>
     <script src="{{ asset('bundles/app/frontend/v2/assets/js/components/hs.dropdown.js') }}"></script>
@@ -308,6 +310,8 @@
 
     <!-- para clientes -->
     <script src="{{ asset('bundles/app/frontend/v2/assets/js/components/hs.cubeportfolio.js') }}"></script>
+
+    <script src="{{ asset('bundles/app/frontend/v2/assets/js/components/hs.modal-window.js') }}"></script> <!-- Modal de Lojas -->
     <!-- fim para clientes -->
 
 
@@ -319,73 +323,75 @@
 
 
 
-
     <!-- JS Plugins Init. -->
     <script>
-        $(document).on('ready', function () {
-            // initialization of carousel
-            $.HSCore.components.HSCarousel.init('.js-carousel');
-            $('#we-provide').slick('setOption', 'responsive', [{
-                    breakpoint: 992,
-                    settings: {
-                        slidesToShow: 2
-                    }
-                }, {
-                    breakpoint: 576,
-                    settings: {
-                        slidesToShow: 1
-                    }
-                }], true);
-            // initialization of tabs
-            $.HSCore.components.HSTabs.init('[role="tablist"]');
-            // initialization of header's height equal offset
-            $.HSCore.helpers.HSHeightCalc.init();
-            // initialization of scroll animation
-            $.HSCore.components.HSOnScrollAnimation.init('[data-animation]');
-            // initialization of video on background
-            $.HSCore.helpers.HSBgVideo.init('.js-bg-video');
-            // initialization of popups with media
-            $.HSCore.components.HSPopup.init('.js-fancybox-media', {
-                helpers: {
-                    media: {},
-                    overlay: {
-                        css: {
-                            'background': 'rgba(0, 0, 0, .8)'
-                        }
-                    }
-                }
-            });
-            // initialization of masonry
-            $('.masonry-grid').imagesLoaded().then(function () {
-                $('.masonry-grid').masonry({
-                    columnWidth: '.masonry-grid-sizer',
-                    itemSelector: '.masonry-grid-item',
-                    percentPosition: true
-                });
-            });
-            // initialization of HSDropdown component
-            $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'));
-            // initialization of go to
-            $.HSCore.components.HSGoTo.init('.js-go-to');
-        });
-        $(window).on('load', function () {
-            // initialization of header
-            $.HSCore.components.HSHeader.init($('#js-header'));
-            $.HSCore.helpers.HSHamburgers.init('.hamburger');
-            // initialization of HSMegaMenu component
-            $('.js-mega-menu').HSMegaMenu({
-                event: 'hover',
-                pageContainer: $('.container'),
-                breakpoint: 991
-            });
-            // initialization of cubeportfolio - Filtragem de Lojas Aderentes
-            $.HSCore.components.HSCubeportfolio.init('.cbp');
-        });
-        $(window).on('resize', function () {
-            setTimeout(function () {
-                $.HSCore.components.HSTabs.init('[role="tablist"]');
-            }, 200);
-        });
+                                $(document).on('ready', function () {
+                                    // initialization of carousel
+                                    $.HSCore.components.HSCarousel.init('.js-carousel');
+                                    $('#we-provide').slick('setOption', 'responsive', [{
+                                            breakpoint: 992,
+                                            settings: {
+                                                slidesToShow: 2
+                                            }
+                                        }, {
+                                            breakpoint: 576,
+                                            settings: {
+                                                slidesToShow: 1
+                                            }
+                                        }], true);
+                                    // initialization of tabs
+                                    $.HSCore.components.HSTabs.init('[role="tablist"]');
+                                    // initialization of header's height equal offset
+                                    $.HSCore.helpers.HSHeightCalc.init();
+                                    // initialization of scroll animation
+                                    $.HSCore.components.HSOnScrollAnimation.init('[data-animation]');
+                                    // initialization of video on background
+                                    $.HSCore.helpers.HSBgVideo.init('.js-bg-video');
+                                    // initialization of popups with media
+                                    $.HSCore.components.HSPopup.init('.js-fancybox-media', {
+                                        helpers: {
+                                            media: {},
+                                            overlay: {
+                                                css: {
+                                                    'background': 'rgba(0, 0, 0, .8)'
+                                                }
+                                            }
+                                        }
+                                    });
+                                    // initialization of masonry
+                                    $('.masonry-grid').imagesLoaded().then(function () {
+                                        $('.masonry-grid').masonry({
+                                            columnWidth: '.masonry-grid-sizer',
+                                            itemSelector: '.masonry-grid-item',
+                                            percentPosition: true
+                                        });
+                                    });
+                                    // initialization of HSDropdown component
+                                    $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'));
+                                    // initialization of go to
+                                    $.HSCore.components.HSGoTo.init('.js-go-to');
+
+                                    // initialization of popups
+                                    $.HSCore.components.HSModalWindow.init('[data-modal-target]');
+                                });
+                                $(window).on('load', function () {
+                                    // initialization of header
+                                    $.HSCore.components.HSHeader.init($('#js-header'));
+                                    $.HSCore.helpers.HSHamburgers.init('.hamburger');
+                                    // initialization of HSMegaMenu component
+                                    $('.js-mega-menu').HSMegaMenu({
+                                        event: 'hover',
+                                        pageContainer: $('.container'),
+                                        breakpoint: 991
+                                    });
+                                    // initialization of cubeportfolio - Filtragem de Lojas Aderentes
+                                    $.HSCore.components.HSCubeportfolio.init('.cbp');
+                                });
+                                $(window).on('resize', function () {
+                                    setTimeout(function () {
+                                        $.HSCore.components.HSTabs.init('[role="tablist"]');
+                                    }, 200);
+                                });
     </script>
 
     <script>

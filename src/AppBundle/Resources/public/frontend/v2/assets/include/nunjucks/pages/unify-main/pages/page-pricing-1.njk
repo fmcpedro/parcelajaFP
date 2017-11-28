@@ -76,7 +76,7 @@
                     <li class="g-mb-20">Online Support</li>
                     <li class="g-mb-20">24 hour Support</li>
                   </ul>
-                  <a class="btn text-uppercase u-btn-primary g-rounded-50 g-font-size-12 g-font-weight-700 g-pa-15-30 g-mb-10" href="#">Order Now</a>
+                  <a class="btn text-uppercase u-btn-primary g-rounded-50 g-font-size-12 g-font-weight-700 g-pa-15-30 g-mb-10" href="#!">Order Now</a>
                 </div>
                 <!-- End Article Content -->
               </article>
@@ -113,7 +113,7 @@
                     <li class="g-mb-20">Online Support</li>
                     <li class="g-mb-20">24 hour Support</li>
                   </ul>
-                  <a class="btn text-uppercase u-btn-primary g-rounded-50 g-font-size-12 g-font-weight-700 g-pa-15-30 g-mb-10" href="#">Order Now</a>
+                  <a class="btn text-uppercase u-btn-primary g-rounded-50 g-font-size-12 g-font-weight-700 g-pa-15-30 g-mb-10" href="#!">Order Now</a>
                 </div>
                 <!-- End Article Content -->
               </article>
@@ -150,7 +150,7 @@
                     <li class="g-mb-20">Online Support</li>
                     <li class="g-mb-20">24 hour Support</li>
                   </ul>
-                  <a class="btn text-uppercase u-btn-primary g-rounded-50 g-font-size-12 g-font-weight-700 g-pa-15-30 g-mb-10" href="#">Order Now</a>
+                  <a class="btn text-uppercase u-btn-primary g-rounded-50 g-font-size-12 g-font-weight-700 g-pa-15-30 g-mb-10" href="#!">Order Now</a>
                 </div>
                 <!-- End Article Content -->
               </article>
@@ -221,7 +221,7 @@
                 </div>
               </div>
               <p class="g-color-gray-dark-v4">We strive to embrace and drive change in our industry which allows us to keep our clients relevant.</p>
-              <a class="g-color-gray-dark-v5 g-text-underline--none--hover" href="#">Learn More</a>
+              <a class="g-color-gray-dark-v5 g-text-underline--none--hover" href="#!">Learn More</a>
             </div>
             <!-- End Icon Blocks -->
 
@@ -238,11 +238,11 @@
                 </div>
               </div>
               <p class="g-color-gray-dark-v4">We strive to embrace and drive change in our industry which allows us to keep our clients relevant.</p>
-              <a class="g-color-gray-dark-v5 g-text-underline--none--hover" href="#">Learn More</a>
+              <a class="g-color-gray-dark-v5 g-text-underline--none--hover" href="#!">Learn More</a>
             </div>
             <!-- End Icon Blocks -->
 
-            <a class="btn btn-md u-btn-primary g-font-weight-600 g-font-size-11 text-uppercase g-rounded-25 g-py-12 g-px-30 mr-2" href="#">Purchase Now</a>
+            <a class="btn btn-md u-btn-primary g-font-weight-600 g-font-size-11 text-uppercase g-rounded-25 g-py-12 g-px-30 mr-2" href="#!">Purchase Now</a>
           </div>
         </div>
       </section>
@@ -353,10 +353,16 @@
 
       <!-- Clients -->
       <div class="container g-py-70">
-        <div id="carouselCus1" class="js-carousel"
+        <div class="js-carousel"
              data-infinite="true"
              data-autoplay="true"
-             data-slides-show="6">
+             data-slides-show="6"
+             data-responsive='[{
+               "breakpoint": 768,
+               "settings": {
+                 "slidesToShow": 1
+               }
+             }]'>
           <div class="js-slide u-block-hover">
             <img class="mx-auto g-width-80 u-block-hover__main--grayscale g-opacity-0_3 g-opacity-1--hover g-cursor-pointer" src="{{ root }}assets/img-temp/200x100/img1.png" alt="Image Description">
           </div>
@@ -426,13 +432,6 @@
       $(document).on('ready', function () {
         // initialization of carousel
         $.HSCore.components.HSCarousel.init('.js-carousel');
-
-        $('#carouselCus1').slick('setOption', 'responsive', [{
-          breakpoint: 768,
-          settings: {
-            slidesToShow: 1
-          }
-        }], true);
 
         // initialization of go to
         $.HSCore.components.HSGoTo.init('.js-go-to');

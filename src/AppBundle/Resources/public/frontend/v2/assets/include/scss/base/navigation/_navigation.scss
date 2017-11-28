@@ -69,8 +69,10 @@
 @import "navigation-dropdown-v2";
 @import "navigation-dropdown-v3";
 @import "navigation-dropdown-v4";
+@import "navigation-dropdown-v5";
 @import "navigation-dropdown-inline";
 @import "navigation-dropdown-columns";
+@import "navigation-dropdown-static";
 
 /* Main navigation behaviors */
 @import "navigation-overlay";
@@ -80,8 +82,8 @@
 /* Secondary navigation styles */
 @import "navigation-secondary";
 
-/* Sidebar navigation styles */
-@import "navigation-sidebar";
+/* Sidebar shortcode navigation styles */
+@import "navigation-shortcode-sidebar";
 
 /* Override vendor stylesheets */
 .hamburger-inner::before,
@@ -126,5 +128,12 @@ body.u-body--header-side {
 				content: "\e901";
 			}
 		}
+	}
+}
+
+/* Scroll on mobile devices */
+.u-nav-mobile-scroll {
+	@media (max-width: #{$g-lg}-1) {
+		overflow-y: auto;
 	}
 }

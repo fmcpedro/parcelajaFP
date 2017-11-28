@@ -97,4 +97,11 @@
   .g-brd-left-none--lg { // Z
     border-left: none !important;
   }
+  .g-brd-x--lg {
+    border-left: solid 1px transparent;
+    border-right: solid 1px transparent;
+  }
+  .g-brd-none--lg {
+    border: none !important;
+  }
 }
