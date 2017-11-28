@@ -564,6 +564,18 @@
                 <source>homepage_grupos_oficinasdeautomoveis</source>
                 <target>Car Shops</target>
             </trans-unit>
+            
+                        <trans-unit id="homepage_grupos_saude" resname="homepage_grupos_saude">
+                <source>homepage_grupos_saude</source>
+                <target>Health care</target>
+            </trans-unit>
+                        <trans-unit id="homepage_grupos_vestuario" resname="homepage_grupos_vestuario">
+                <source>homepage_grupos_vestuario</source>
+                <target>Clothing</target>
+            </trans-unit>
+            
+            
+            
             <trans-unit id="footer_todososdireitosreservados" resname="footer_todososdireitosreservados">
                 <source>footer_todososdireitosreservados</source>
                 <target>2017 © All rights reserved.</target>
