@@ -15,7 +15,7 @@ use AppBundle\Utils\Utils;
  *
  * @author Luis Miguens <lmiguens@consolidador.com>
  */
-class TpaymentsTaxaDesconto {
+class TpaymentsTaxaDesconto_1 {
 
     //Pressupostos  Fixos
     const CUSTO_CAPTURA = 0.20;

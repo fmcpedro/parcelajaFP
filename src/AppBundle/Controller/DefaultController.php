@@ -22,8 +22,8 @@ class DefaultController extends Controller {
         $agencias = $em->getRepository('AppBundle:Tagency')->findBy(array('fstate' => 1));
         $grupos = $em->getRepository('AppBundle:TGroup')->findBy(array('fstate' => 1));
         
-        //$subGrupos = $em->getRepository('AppBundle:TSubGroup')->findBy(array('fstate' => 1));
-        $subGrupos = $em->getRepository('AppBundle:TSubGroup')->findAll();
+        $subGrupos = $em->getRepository('AppBundle:TSubGroup')->findBy(array('fstate' => 1));
+        //$subGrupos = $em->getRepository('AppBundle:TSubGroup')->findAll();
         
         
         //dump($subGrupos);

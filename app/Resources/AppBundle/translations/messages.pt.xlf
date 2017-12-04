@@ -5,10 +5,17 @@
             <tool tool-id="symfony" tool-name="Symfony" />
         </header>
         <body>
-            <trans-unit id="homepage_block_01_title" resname="homepage_block_01_title">
-                <source>homepage_block_01_title</source>
-                <target>OFEREÇA AO SEU CLIENTE PAGAMENTOS PARCELADOS NO SEU CARTÃO DE CRÉDITO ATÉ 12x. APROVAÇÃO IMEDIATA NO SEU TERMINAL DE PAGAMENTOS</target>
+            <trans-unit id="homepage_block_01_title_01" resname="homepage_block_01_title_01">
+                <source>homepage_block_01_title_01</source>
+                <target>OFEREÇA AO SEU CLIENTE PAGAMENTOS PARCELADOS NO SEU CARTÃO DE CRÉDITO ATÉ 12x.</target>
             </trans-unit>
+            
+                        <trans-unit id="homepage_block_01_title_02" resname="homepage_block_01_title_02">
+                <source>homepage_block_01_title_02</source>
+                <target>APROVAÇÃO IMEDIATA NO SEU TERMINAL DE PAGAMENTOS</target>
+            </trans-unit>
+            
+            
             <trans-unit id="homepage_block_02_title" resname="homepage_block_02_title">
                 <source>homepage_block_02_title</source>
                 <target>Financie o seu cliente com a Parcela Já</target>
@@ -101,14 +108,26 @@
                 <source>howitworks_block_02_subtitle</source>
                 <target>Sem registos, sem burocracias e sem demora na aprovação de crédito</target>
             </trans-unit>
-            <trans-unit id="howitworks_block_02_text01" resname="howitworks_block_02_text01">
+<!--            <trans-unit id="howitworks_block_02_text01" resname="howitworks_block_02_text01">
                 <source>howitworks_block_02_text01</source>
                 <target>Com a Parcela Já, as lojas podem ter um sistema de pagamentos parcelados que oferece a oportunidade aos seus clientes de fazerem as suas compras de 2 a 12 vezes, sem juros e sem necessidade de burocracias ou aprovação de crédito.</target>
             </trans-unit>
             <trans-unit id="howitworks_block_02_text02" resname="howitworks_block_02_text02">
                 <source>howitworks_block_02_text02</source>
                 <target>Para isso, a loja necessita de um terminal <![CDATA[<b>]]>Parcela Já<![CDATA[</b>]]> ou a aplicação online no seu website. O cliente pode então utilizar o seu cartão crédito Visa ou Mastercard e escolher em quantas vezes pretende pagar as suas compras.</target>
+            </trans-unit>-->
+
+            <trans-unit id="howitworks_block_02_text01" resname="howitworks_block_02_text01">
+                <source>howitworks_block_02_text01</source>
+                <target>Utilizando a solução Parcela Já, as lojas podem agora oferecer aos seus clientes um plano de pagamento em parcelas. A solução oferecida requer o uso do cartão de crédito dos clientes e oferece uma excelente oportunidade para gerar novas compras, agendando  os pagamentos dos clientes numa base mensal pré-selecionada. O cliente pode decidir pagar até 12 parcelas sem juros, sem qualquer documentação burocrática ou aprovação de crédito.</target>
             </trans-unit>
+            <trans-unit id="howitworks_block_02_text02" resname="howitworks_block_02_text02">
+                <source>howitworks_block_02_text02</source>
+                <target>Para aderir à solução Parcela Já, as lojas têm de ter um terminal POS da Parcela Já ou a aplicação web no seu website. No momento em que o cliente utiliza o seu cartão de crédito Visa ou Mastercard, pode então decidir em quantas parcelas está disposto a pagar a sua compra.</target>
+            </trans-unit>
+                        
+            
+            
             
             <trans-unit id="howitworks_block_03_simple_steps" resname="howitworks_block_03_simple_steps">
                 <source>howitworks_block_03_simple_steps</source>
@@ -209,7 +228,7 @@
                 <target>Ver lojas </target>
             </trans-unit>
             
-                  <trans-unit id="forclients_botao_visitar" resname="forclients_botao_visitar">
+            <trans-unit id="forclients_botao_visitar" resname="forclients_botao_visitar">
                 <source>forclients_botao_visitar</source>
                 <target>Visitar </target>
             </trans-unit>
@@ -564,11 +583,11 @@
             </trans-unit>
             
             
-                        <trans-unit id="homepage_grupos_saude" resname="homepage_grupos_saude">
+            <trans-unit id="homepage_grupos_saude" resname="homepage_grupos_saude">
                 <source>homepage_grupos_saude</source>
                 <target>Saúde</target>
             </trans-unit>
-                        <trans-unit id="homepage_grupos_vestuario" resname="homepage_grupos_vestuario">
+            <trans-unit id="homepage_grupos_vestuario" resname="homepage_grupos_vestuario">
                 <source>homepage_grupos_vestuario</source>
                 <target>Vestuário</target>
             </trans-unit>

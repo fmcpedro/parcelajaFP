@@ -477,7 +477,9 @@ class TpaymentsTaxaServico {
     //referencia circular
     function getPiiParcial() {
         //(($C$19/$C$18)-(E39+E40+E46+E49+E64+E60))/(1+$C$10*0)
-        return (($this->getComissaoPagarClienteFinal() / $this->getNumeroPrestacoes()) - ($this->getComOgone() + $this->getComEvoPayments() + $this->getJuro() + $this->getProcSepaCt() + $this->getImpostoSeloValorBni() + $this->getIvaValorParcela())) / (1 + self::IVA * 0);
+        return (($this->getComissaoPagarClienteFinal() / $this->getNumeroPrestacoes()) 
+                - ($this->getComOgone() + $this->getComEvoPayments() + $this->getJuro() + $this->getProcSepaCt() + $this->getImpostoSeloValorBni() + $this->getIvaValorParcela()))
+        / (1 + self::IVA * 0);
     }
 
     function getTipoTransacao() {

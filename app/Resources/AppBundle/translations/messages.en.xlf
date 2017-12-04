@@ -1,14 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-    <file source-language="en" target-language="pt" datatype="plaintext" original="file.ext">
+    <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
         <header>
             <tool tool-id="symfony" tool-name="Symfony" />
         </header>
         <body>
-            <trans-unit id="homepage_block_01_title" resname="homepage_block_01_title">
-                <source>homepage_block_01_title</source>
-                <target>OFFER YOUR CUSTOMER CREDIT CARD INSTALMENTS. FROM 2x UP TO 12x. USE YOUR POS TERMINAL</target>
+            <trans-unit id="homepage_block_01_title_01" resname="homepage_block_01_title_01">
+                <source>homepage_block_01_title_01</source>
+                <target>OFFER YOUR CUSTOMER CREDIT CARD INSTALMENTS. </target>
             </trans-unit>
+            
+            <trans-unit id="homepage_block_01_title_02" resname="homepage_block_01_title_02">
+                <source>homepage_block_01_title_02</source>
+                <target>FROM 2x UP TO 12x. USE YOUR POS TERMINAL</target>
+            </trans-unit>
+            
+            
+            
             <trans-unit id="homepage_block_02_title" resname="homepage_block_02_title">
                 <source>homepage_block_02_title</source>
                 <target>Make a Difference with Parcela Já</target>
@@ -101,7 +109,7 @@
                 <source>howitworks_block_02_subtitle</source>
                 <target>No records, no paperwork and no credit approval delays</target>
             </trans-unit>
-            <trans-unit id="howitworks_block_02_text01" resname="howitworks_block_02_text01">
+<!--            <trans-unit id="howitworks_block_02_text01" resname="howitworks_block_02_text01">
                 <source>howitworks_block_02_text01</source>
                 <target>With Parcela Já, the stores can now offer the customers an instalment payment system. The solution uses customer credit cards and offers an outstanding opportunity to generate new purchases. The customer can decide to pay up to 12 interest free instalments, without any bureaucratic paperwork or credit approval.</target>
             </trans-unit>
@@ -110,7 +118,18 @@
                 <target>For this, the stores must have a <![CDATA[<b>]]>Parcela Já<![CDATA[</b>]]> POS terminal or the online app on their website. Once the customer use their Visa or Mastercard credit card, he can choose in how many instalments he want to pay for his purchase.</target>
             </trans-unit>
             
-             <trans-unit id="howitworks_block_03_simple_steps" resname="howitworks_block_03_simple_steps">
+            -->
+            
+                        <trans-unit id="howitworks_block_02_text01" resname="howitworks_block_02_text01">
+                <source>howitworks_block_02_text01</source>
+                <target>Using Parcela Já, stores can now offer their customers an instalment payment plan. The provided solution requires the usage of customers credit card and offers an outstanding opportunity to generate new purchases, while difering customers payments on a pre-selected monthly basis. The customer can decide to pay up to 12 interest free instalments, without any bureaucratic paperwork or credit approval.</target>
+            </trans-unit>
+            <trans-unit id="howitworks_block_02_text02" resname="howitworks_block_02_text02">
+                <source>howitworks_block_02_text02</source>
+                <target>To take the solution, stores must have a Parcela Já POS terminal or the online app on their website. Once the customer uses their Visa or Mastercard credit card, he can then decide on how many instalments he willing to take for his purchase payment.</target>
+            </trans-unit>
+            
+            <trans-unit id="howitworks_block_03_simple_steps" resname="howitworks_block_03_simple_steps">
                 <source>howitworks_block_03_simple_steps</source>
                 <target>Three simple steps</target>
             </trans-unit>
@@ -204,13 +223,13 @@
                 <target>Our stores</target>
             </trans-unit>
             
-             <trans-unit id="forclients_botao_ver_lojas" resname="forclients_botao_ver_lojas">
+            <trans-unit id="forclients_botao_ver_lojas" resname="forclients_botao_ver_lojas">
                 <source>forclients_botao_ver_lojas</source>
                 <target>See stores</target>
             </trans-unit>
             
             
-                  <trans-unit id="forclients_botao_visitar" resname="forclients_botao_visitar">
+            <trans-unit id="forclients_botao_visitar" resname="forclients_botao_visitar">
                 <source>forclients_botao_visitar</source>
                 <target>Visit </target>
             </trans-unit>
@@ -565,11 +584,11 @@
                 <target>Car Shops</target>
             </trans-unit>
             
-                        <trans-unit id="homepage_grupos_saude" resname="homepage_grupos_saude">
+            <trans-unit id="homepage_grupos_saude" resname="homepage_grupos_saude">
                 <source>homepage_grupos_saude</source>
                 <target>Health care</target>
             </trans-unit>
-                        <trans-unit id="homepage_grupos_vestuario" resname="homepage_grupos_vestuario">
+            <trans-unit id="homepage_grupos_vestuario" resname="homepage_grupos_vestuario">
                 <source>homepage_grupos_vestuario</source>
                 <target>Clothing</target>
             </trans-unit>

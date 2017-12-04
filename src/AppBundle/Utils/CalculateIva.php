@@ -30,6 +30,7 @@ class CalculateIva {
     function __construct($juro, $impostoSeloBNIE, $comissaoPagarClienteFinal, $numeroPrestacoes) {
         
         $this->calculateIva($juro, $impostoSeloBNIE, $comissaoPagarClienteFinal, $numeroPrestacoes);
+        //$this->calculateIva($juro, 0, $comissaoPagarClienteFinal, $numeroPrestacoes);
         
         
         

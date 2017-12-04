@@ -25,6 +25,7 @@ class CalculateImpostoSeloBNIE {
     function __construct($juro, $iva, $comissaoPagarClienteFinal, $numeroPrestacoes) {
 
         $this->calculateImpostoSeloBNIE($juro, $iva, $comissaoPagarClienteFinal, $numeroPrestacoes);
+        //$this->calculateImpostoSeloBNIE($juro, 0, $comissaoPagarClienteFinal, $numeroPrestacoes);
         
         //nota: segunda feira: chamar metodo de baixo. é o que está mal
         

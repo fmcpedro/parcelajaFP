@@ -301,6 +301,7 @@ class TpaymentsRepository extends EntityRepository {
             $valorTransfBni += $prestacao->getValorTransfBni();
             //ok, validado, utilizado abaixo
             $impostoSelo += $prestacao->getImpostoSeloValorBni();
+            
 
             $prestacao->setDataPagamento($dataPagamentoAnterior);
             $dataPagamentoAnterior = strtotime("+1 month", $dataPagamentoAnterior);
@@ -347,21 +348,22 @@ class TpaymentsRepository extends EntityRepository {
         $iteracoes = 0;
         $maximoIteracoes = 10000;
 
-        for ($iteracoes = 0; $iteracoes <= $maximoIteracoes; $iteracoes++) {
+        for ($iteracoes = 0; $iteracoes < $maximoIteracoes; $iteracoes++) {
 
             $resultadoIva = $iva->calculate($prestacao->getComOgone(), $prestacao->getComEvoPayments(), $prestacao->getProcSepaCt());
             $resultadoImpostoSelo = $impostoSelo->calculate($prestacao->getComOgone(), $prestacao->getComEvoPayments(), $prestacao->getProcSepaCt());
 
-//            echo "<br/> Prestacao                       = " . $prestacao->getNumParcela();
-//            echo "<br/> Iteracao                        = " . $iteracoes;
-//            echo "<br/> Resultado Iva                   = " . $resultadoIva;
-//            echo "<br/> Resultado Imposto Selo          = " . $resultadoImpostoSelo;
-//            echo "<br/>";
+            dump("Prestacao = " . $prestacao->getNumParcela()
+            ." Iteracao = " . $iteracoes
+            ." Resultado Iva = " . $resultadoIva
+            ." Resultado Imposto Selo = " . $resultadoImpostoSelo);
+            
 
             $iva = new CalculateIva($prestacao->getJuro(), $resultadoImpostoSelo, $prestacao->getComissaoPagarClienteFinal(), $prestacao->getNumeroPrestacoes());
             $impostoSelo = new CalculateImpostoSeloBNIE($prestacao->getJuro(), $resultadoIva, $prestacao->getComissaoPagarClienteFinal(), $prestacao->getNumeroPrestacoes());
 
-            if ($resultadoIva - $resultadoIvaAnterior <= TpaymentsTaxaServico::DIFERENCA_ENTRE_ITERACOES && $resultadoImpostoSelo - $resultadoImpostoSeloAnterior <= TpaymentsTaxaServico::DIFERENCA_ENTRE_ITERACOES) {
+            if ($resultadoIva - $resultadoIvaAnterior <= TpaymentsTaxaServico::DIFERENCA_ENTRE_ITERACOES 
+                    && $resultadoImpostoSelo - $resultadoImpostoSeloAnterior <= TpaymentsTaxaServico::DIFERENCA_ENTRE_ITERACOES) {
                 break;
             }
 
