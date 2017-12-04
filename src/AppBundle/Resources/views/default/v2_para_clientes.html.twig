@@ -183,7 +183,13 @@
                     {% set logo = '' %}
 
                     {% for agencia in sub_grupo.agencyList %}
-                        {% set logo = agencia.flogo %}
+                        
+
+
+{% if agencia.flogo is not empty %}
+{% set logo = agencia.flogo %}
+{% endif %}
+
                     {% endfor %}
                     <!-- SubGrupo -->
                     <div class="cbp-item {{sub_grupo.group.fgroupid}}">
