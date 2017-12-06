@@ -30,6 +30,10 @@ class TpaymentsTaxaServico {
     const LUCRO_BNI = 0.25;
     const NUM_CASAS_DECIMAIS = 8;
     const DIFERENCA_ENTRE_ITERACOES = 0.00000000000000000000000000000000000000000000000001;
+    
+    //const DIFERENCA_ENTRE_ITERACOES = 0.0001;
+    
+    
 
     //Pressupostos  Variáveis
     private $valorCompra;
@@ -429,7 +433,13 @@ class TpaymentsTaxaServico {
     }
 
     function getProcSepaCt() {
-        return $this->procSepaCt;
+        
+        if($this->getNumParcela()==0):
+            return $this->procSepaCt;
+            else:
+            return 0;
+        endif;
+        
     }
 
     function setProcSepaCt($procSepaCt) {

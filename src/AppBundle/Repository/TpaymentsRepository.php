@@ -120,8 +120,6 @@ class TpaymentsRepository extends EntityRepository {
         return $tpayments;
     }
 
-
-
     /**
      * Função que gera um array com a lista de pagamentos de uma compra (TpaymentsTaxaDesconto)
      * 
@@ -229,18 +227,6 @@ class TpaymentsRepository extends EntityRepository {
         $em = $this->getEntityManager();
         $payMethod = $em->getRepository('AppBundle:Tpaymethod')->findOneBy(array('fpmonths' => $numeroPrestacoes));
 
-        //echo "paymethodid : " . $payMethod->getFpaymethodid();
-
-
-        /*         * **************************
-         * NOTA - Verificar se isto pode ser feito assim, 
-         * ou tenho de ir buscar o valor que está na base de dados, no caso das transacoes efectivas
-         * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-         * 
-         */
-
-
-
 
         //SELECT * FROM parcelaja_payments.TPayMethodFee where fpaymethodid=19 and FFixedAddCharge = 0 and FFixedAddCharge3 <> 0 and FStartValue < 1200 and FEndValue > 1200
         $query = $em->createQuery('SELECT fee
@@ -301,7 +287,7 @@ class TpaymentsRepository extends EntityRepository {
             $valorTransfBni += $prestacao->getValorTransfBni();
             //ok, validado, utilizado abaixo
             $impostoSelo += $prestacao->getImpostoSeloValorBni();
-            
+
 
             $prestacao->setDataPagamento($dataPagamentoAnterior);
             $dataPagamentoAnterior = strtotime("+1 month", $dataPagamentoAnterior);
@@ -334,9 +320,9 @@ class TpaymentsRepository extends EntityRepository {
     public function executarCalculosCirculares(TpaymentsTaxaServico $prestacao) {
 
         // na primeira chamada o IMPOSTO DE SELO vai com zero
-        $iva = new CalculateIva($prestacao->getJuro(), 0, $prestacao->getComissaoPagarClienteFinal(), $prestacao->getNumeroPrestacoes());
+        $iva = new CalculateIva($prestacao->getJuro(), 0, $prestacao->getNumParcela(), $prestacao->getValParcelasEmissor(), $prestacao->getComissaoPagarClienteFinal(), $prestacao->getNumeroPrestacoes());
         // na primeira chamada o IVA vai com zero
-        $impostoSelo = new CalculateImpostoSeloBNIE($prestacao->getJuro(), 0, $prestacao->getComissaoPagarClienteFinal(), $prestacao->getNumeroPrestacoes());
+        $impostoSelo = new CalculateImpostoSeloBNIE($prestacao->getJuro(), 0, $prestacao->getNumParcela(),$prestacao->getValParcelasEmissor(), $prestacao->getComissaoPagarClienteFinal(), $prestacao->getNumeroPrestacoes());
 
         $resultadoIva = 0;
         $resultadoImpostoSelo = 0;
@@ -346,24 +332,31 @@ class TpaymentsRepository extends EntityRepository {
         // para depois de fazer um maximo de 10000 iterações, ou quando a diferença entre o resultado anterior for demasiado pequena.
         // em cada iteração ou valor do IVA entra na no calculo do Imposto de Selo e o valor do Imposto de selo entra no calculo do IVA.
         $iteracoes = 0;
-        $maximoIteracoes = 10000;
+        $maximoIteracoes = 1000;
 
         for ($iteracoes = 0; $iteracoes < $maximoIteracoes; $iteracoes++) {
 
-            $resultadoIva = $iva->calculate($prestacao->getComOgone(), $prestacao->getComEvoPayments(), $prestacao->getProcSepaCt());
-            $resultadoImpostoSelo = $impostoSelo->calculate($prestacao->getComOgone(), $prestacao->getComEvoPayments(), $prestacao->getProcSepaCt());
+            $resultadoIva = $iva->calculate();
+            $resultadoImpostoSelo = $impostoSelo->calculate();
 
-            dump("Prestacao = " . $prestacao->getNumParcela()
-            ." Iteracao = " . $iteracoes
-            ." Resultado Iva = " . $resultadoIva
-            ." Resultado Imposto Selo = " . $resultadoImpostoSelo);
+//            dump("Prestacao = " . $prestacao->getNumParcela()
+//                    . " Iteracao = " . $iteracoes
+//                    . " Resultado Iva = " . $resultadoIva
+//                    . " Resultado Imposto Selo = " . $resultadoImpostoSelo);
+
+
+            $iva = new CalculateIva($prestacao->getJuro(), $resultadoImpostoSelo, $prestacao->getNumParcela(), $prestacao->getValParcelasEmissor(),  $prestacao->getComissaoPagarClienteFinal(), $prestacao->getNumeroPrestacoes());
+            $impostoSelo = new CalculateImpostoSeloBNIE($prestacao->getJuro(), $resultadoIva, $prestacao->getNumParcela(), $prestacao->getValParcelasEmissor(), $prestacao->getComissaoPagarClienteFinal(), $prestacao->getNumeroPrestacoes());
+
             
-
-            $iva = new CalculateIva($prestacao->getJuro(), $resultadoImpostoSelo, $prestacao->getComissaoPagarClienteFinal(), $prestacao->getNumeroPrestacoes());
-            $impostoSelo = new CalculateImpostoSeloBNIE($prestacao->getJuro(), $resultadoIva, $prestacao->getComissaoPagarClienteFinal(), $prestacao->getNumeroPrestacoes());
-
-            if ($resultadoIva - $resultadoIvaAnterior <= TpaymentsTaxaServico::DIFERENCA_ENTRE_ITERACOES 
-                    && $resultadoImpostoSelo - $resultadoImpostoSeloAnterior <= TpaymentsTaxaServico::DIFERENCA_ENTRE_ITERACOES) {
+//            dump("resultado IVA = " . $resultadoIva);
+//            dump("resultado IVA ANTERIOR= " . $resultadoIvaAnterior);
+//            dump(abs($resultadoIva - $resultadoIvaAnterior) <= TpaymentsTaxaServico::DIFERENCA_ENTRE_ITERACOES);
+//            
+//            dump("resultado IS = " . $resultadoImpostoSelo);
+//            dump("resultado IS ANTERIOR = " . $resultadoImpostoSeloAnterior);
+            
+            if (abs($resultadoIva - $resultadoIvaAnterior) <= TpaymentsTaxaServico::DIFERENCA_ENTRE_ITERACOES && abs($resultadoImpostoSelo - $resultadoImpostoSeloAnterior) <= TpaymentsTaxaServico::DIFERENCA_ENTRE_ITERACOES) {
                 break;
             }
 
@@ -371,6 +364,12 @@ class TpaymentsRepository extends EntityRepository {
             $resultadoImpostoSeloAnterior = $resultadoImpostoSelo;
         }
 
+        
+//                    dump("Prestacao = " . $prestacao->getNumParcela()
+//                    . " Iteracao = " . $iteracoes
+//                    . " Resultado Iva = " . $resultadoIva
+//                    . " Resultado Imposto Selo = " . $resultadoImpostoSelo);
+        
         //escrever resultados
         $prestacao->setIvaValorParcela($resultadoIva);
         $prestacao->setImpostoSeloValorBni($resultadoImpostoSelo);

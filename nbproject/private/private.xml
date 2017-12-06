@@ -6,9 +6,8 @@
             <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Entity/TpaymentsTaxaServico.php</file>
             <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Utils/CalculateImpostoSeloBNIE.php</file>
             <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Repository/TpaymentsRepository.php</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Utils/CalculateIva.php</file>
-            <file>file:/home/luis/sfprojects/parcelaja/app/Resources/AppBundle/translations/messages.en.xlf</file>
-            <file>file:/home/luis/sfprojects/parcelaja/app/Resources/AppBundle/translations/messages.pt.xlf</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Utils/Constantes.php</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Utils/Utils.php</file>
         </group>
     </open-files>
 </project-private>
