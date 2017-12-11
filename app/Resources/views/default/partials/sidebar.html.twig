@@ -29,7 +29,7 @@
                 <span class="icon-thumbnail"><i class="pg-phone"></i></span>
                 <ul class="sub-menu">
 
-                    {% if is_granted('ROLE_ADMIN') %} 
+                    {% if is_granted('ROLE_BNI') %} 
                         <li class="">
                             <a href="{{ path('admin_payments_simulator') }}">Simulador</a>
                             <span class="icon-thumbnail">SI</span>
@@ -43,7 +43,7 @@
                         </li>
                     {% endif %}
 
-                    {% if is_granted('ROLE_ADMIN') %} 
+                    {% if is_granted('ROLE_BNI') %} 
                         <li class="">
                             <a href="{{ path('admin_payments_next_payments') }}">Por capturar </a>
                             <span class="icon-thumbnail">TP</span>
