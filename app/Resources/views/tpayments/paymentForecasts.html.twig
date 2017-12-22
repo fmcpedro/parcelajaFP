@@ -1,0 +1,216 @@
+{# empty Twig template #}
+{% extends 'base.html.twig' %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('#example').DataTable({
+                iDisplayLength: 50,
+                dom: 'Bfrtip',
+                buttons: [
+                    {
+                        extend: 'copy',
+                    },
+                    {
+                        extend: 'csv',
+                    },
+                    {
+                        extend: 'excel',
+                    },
+                    {
+                        extend: 'colvis',
+                        collectionLayout: 'fixed two-column'
+                    }
+                ],
+                columnDefs: [{
+                        targets: 0,
+                        render: function (data, type, row) {
+                            return data.length > 10 ?
+                                    data.substr(0, 4) + '…' :
+                                    data;
+                        }
+                    }]
+            });
+        });
+    </script>
+{% endblock %}
+
+
+
+
+
+
+{% block body %}
+
+    <!-- START PAGE CONTENT -->
+    <div class="content">
+        <!-- START JUMBOTRON -->
+        <div class="jumbotron" data-pages="parallax">
+            <div class="container-fluid container-fixed-lg sm-p-l-20 sm-p-r-20">
+                <div class="inner">
+                    <!-- START BREADCRUMB -->
+                    <ul class="breadcrumb">
+                        <li><a href="#" class="">Parcela Ja</a></li>
+                        <li><a href="#" class="active">Mapa de previsões de pagamentos</a></li>
+                    </ul>
+                    <!-- END BREADCRUMB -->
+                </div>
+            </div>
+        </div>
+        <!-- END JUMBOTRON -->
+
+
+        <!-- START CONTAINER FLUID -->
+        <div class="container-fluid container-fixed-lg">
+            <!-- START PANEL -->
+            <div class="panel panel-transparent">
+                <div class="panel-heading">
+                    <div class="panel-title">Filtro de Previsões de Pagamentos</div>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-10">
+                            {#<h3>form_title</h3>#}
+                            <p>Preencha os campos abaixo para simular uma compra</p>
+
+                            {# <form method="post" action="{{ path('admin_payments_simulator') }}" class="form-horizontal">#}
+                            {{ form_start(search_form, {'attr': {'class': 'form-horizontal'}}) }} 
+                            
+                            <div class="form-group">
+                                <label for="startDate" class="col-sm-3 control-label">Data de Inicio</label>
+                                <div class="col-sm-3">
+                                    {{ form_widget(search_form.startDate.day, {'attr': {'class': 'form-control'}}) }}
+                                </div>    
+
+                                <div class="col-sm-3">
+                                    {{ form_widget(search_form.startDate.month, {'attr': {'class': 'form-control'}}) }}
+                                </div>    
+
+                                <div class="col-sm-3">
+                                    {{ form_widget(search_form.startDate.year, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div>
+                                
+                            <div class="form-group">
+                                <label for="endDate" class="col-sm-3 control-label">Data de Fim</label>
+                                <div class="col-sm-3">
+                                    {{ form_widget(search_form.endDate.day, {'attr': {'class': 'form-control'}}) }}
+                                </div>    
+
+                                <div class="col-sm-3">
+                                    {{ form_widget(search_form.endDate.month, {'attr': {'class': 'form-control'}}) }}
+                                </div>    
+
+                                <div class="col-sm-3">
+                                    {{ form_widget(search_form.endDate.year, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Previsão</label>
+                                <div class="col-sm-9">
+                                    <div class="radio radio-success">
+                                        {{ form_widget(search_form.forecastsType) }}
+                                    </div>                                    
+
+                                </div>
+                            </div>
+
+                            <br>
+
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    {#<p>I hereby certify that the information above is true and accurate. </p>#}
+                                </div>
+                                <div class="col-sm-9">
+                                    <button class="btn btn-complete btn-cons m-b-10" type="submit">
+                                        <i class="pg-form"></i> <span class="bold">Update</span>
+                                    </button>
+                                    <button class="btn btn-default btn-cons m-b-10" type="reset">
+                                        <i class="pg-close"></i> <span class="bold">Clear</span>
+                                    </button>
+
+
+                                </div>
+                            </div>
+                            {{ form_end(search_form) }}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END PANEL -->
+        </div>
+        <!-- END CONTAINER FLUID -->
+
+
+        
+        
+        {% if forecasts is not empty %}
+          <!-- START CONTAINER FLUID -->
+        <div class="container-fluid container-fixed-lg bg-white">
+            <!-- START PANEL -->
+            <div class="panel panel-transparent">
+                <div class="panel-heading">
+                    <div class="panel-title">Lista de previsões de pagamentos </div>
+                    <div class="export-options-container pull-right"></div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="panel-body">
+                    
+                        <table class="display responsive" id="example">
+                            <thead>
+                                <tr>
+                                    <th>TOTAL</th>
+                                    
+                                    {% if search_form.vars.value.forecastsType == 1 %}
+                                    <th>WEEK</th>
+                                    {% else %}
+                                    <th>MONTH</th>
+                                    {% endif %}
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for key, forecast in forecasts %}
+                                    
+                                    <td>{{ forecast.total}}</td>
+                                    
+                                    {% if search_form.vars.value.forecastsType == 1 %}
+                                    <td>{{ forecast.week}}</td>
+                                    {% else %}
+                                    <td>{{ forecast.month}} - {{ forecast.year}}</td>
+                                    {% endif %}
+
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    
+                </div>
+            </div>
+            <!-- END PANEL -->
+        </div>
+        <!-- END CONTAINER FLUID -->
+        {% endif%}
+        
+        
+
+
+       
+
+
+    </div>
+    <!-- END PAGE CONTENT -->
+
+
+
+
+
+
+
+
+{% endblock %}

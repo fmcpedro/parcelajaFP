@@ -2,7 +2,6 @@
 
 namespace AppBundle\Controller;
 
-
 use AppBundle\Entity\Tpurchase;
 use AppBundle\Entity\Tpayments;
 use AppBundle\Entity\TpaymentsSimulator;
@@ -151,7 +150,7 @@ class TpaymentsController extends Controller {
             $fstatus = $searchForm["fstatus"]->getData();
             $fpurchasedate = $searchForm["fpurchasedate"]->getData();
 
-            
+
             if (!empty($fagencyid)) {
                 $search['agency'] = $fagencyid;
             }
@@ -159,37 +158,28 @@ class TpaymentsController extends Controller {
             if (!empty($fcontractnumber)) {
                 $search['fcontractnumber'] = $fcontractnumber;
             }
-            
+
             //if (!is_null($fstatus)) {$search['fstatus']=$fstatus;}
-            
-             if (!empty($fstatus)) {
+
+            if (!empty($fstatus)) {
                 $search['fstatus'] = $fstatus;
             }
-            
-            
+
+
             if (!empty($fpurchasedate)) {
                 $search['fpurchasedate'] = $fpurchasedate;
             }
 
             $tpurchases = $em->getRepository('AppBundle:Tpurchase')->findByFilter($search);
-
-        
-        }else{
+        } else {
             $tpurchases = $em->getRepository('AppBundle:Tpurchase')->findByFilter($search);
         }
-        
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
         foreach ($tpurchases as $key => $tpurchase) {
-            
+
             //2) gerar pagamentos para todas as compras
             if ($tpurchase->getFextracharge() <> 0):
                 //gerar todos os pagamentos da compra
@@ -200,7 +190,6 @@ class TpaymentsController extends Controller {
             endif;
 
             //dump($generatedPayments);
-
             //3) para cada compra ir buscar o ultimo pagamento efectuado
             //$lastPayment =new Tpayments();
             $lastPayment = $em->getRepository('AppBundle:Tpayments')->findLastPayment($tpurchase);
@@ -214,16 +203,95 @@ class TpaymentsController extends Controller {
                     endif;
                 }
             endif;
-
-
-
-
-
         }
 
         return $this->render('tpayments/nextPayments.html.twig', array(
                     'tpayments' => $nextPayments,
-            'search_form' =>  $searchForm->createView()
+                    'search_form' => $searchForm->createView()
+        ));
+    }
+
+    /**
+     * Metodo que devolve as próximas transações que serão efectuadas, agrupadas por mês ou semana.
+     *         
+     *   1 PASSO - ELIMINAR TODOS OS REGISTOS NA TABELA DE PREVISOES
+     *   2 PASSO - GERAR OS PAGAMENTOS DE TODAS AS COMPRAS
+     *   3 PASSO - REGISTAR NA TABELA TODOS OS PAGAMENTOS
+     *   4 PASSO - CALCULAR PREVISOES DE ACORDO COM O TIPO SELECIONADO (SEMANAL OU MENSAL)
+     */
+    public function paymentForecastsAction(Request $request) {
+        $em = $this->getDoctrine()->getManager();
+
+        $forecastSearch = new \AppBundle\Entity\PaymentForecastsSearch();
+        $searchForm = $this->createForm('AppBundle\Form\PaymentForecastsSearchType', $forecastSearch);
+        $searchForm->handleRequest($request);
+
+        $search = array();
+
+        $startDate = $searchForm["startDate"]->getData();
+        $endDate = $searchForm["endDate"]->getData();
+        $forecastsType = $searchForm["forecastsType"]->getData();
+
+
+        if ($searchForm->isSubmitted()) {
+
+            // 1 PASSO - ELIMINAR TODOS OS REGISTOS NA TABELA DE PREVISOES
+            $query = $em->createQuery('DELETE AppBundle:PaymentForecasts');
+            $query->execute();
+
+
+            // 2 PASSO - GERAR OS PAGAMENTOS DE TODAS AS COMPRAS
+            $tpurchases = $em->getRepository('AppBundle:Tpurchase')->findPurchasesForPaymentForecasts($search);
+            foreach ($tpurchases as $key => $tpurchase) {
+
+                if ($tpurchase->getFextracharge() <> 0):
+                    $generatedPayments = $em->getRepository('AppBundle:Tpayments')->generatePaymentsTaxaServico($tpurchase);
+                else:
+                    $generatedPayments = $em->getRepository('AppBundle:Tpayments')->generatePaymentsTaxaDesconto($tpurchase);
+                endif;
+
+
+                // 3 PASSO - REGISTAR NA TABELA DE PREVISOES TODOS OS PAGAMENTOS
+                foreach ($generatedPayments as $key => $generatedPayment) {
+                    $forecast = new \AppBundle\Entity\PaymentForecasts();
+                    
+                    $timestamp = $generatedPayment->getDataPagamento();
+$datetimeFormat = 'Y-m-d';
+
+$date = new \DateTime();
+// If you must have use time zones
+// $date = new \DateTime('now', new \DateTimeZone('Europe/Helsinki'));
+$date->setTimestamp($timestamp);
+$date->format($datetimeFormat);
+                    
+                    
+                    
+                    $forecast->setDate($date);
+                    $forecast->setValueEvoPayments($generatedPayment->getValorReceberEvoPayments());
+                    $em->persist($forecast);
+                    $em->flush();
+                }
+            }
+
+
+            // 4 CALCULAR PREVISOES DE ACORDO COM O TIPO SELECIONADO (SEMANAL OU MENSAL)
+            //semanal = 1 - mensal = 2
+            if ($forecastsType == 1) {
+                $forecasts = $em->getRepository('AppBundle:Tpurchase')->findPaymentForecastsByWeek();
+            } else {
+                $forecasts = $em->getRepository('AppBundle:Tpurchase')->findPaymentForecastsByMonth();
+            }
+        } else {
+            $forecasts = array();
+        }
+
+
+
+
+
+        return $this->render('tpayments/paymentForecasts.html.twig', array(
+                    'forecasts' => $forecasts,
+                    'search_form' => $searchForm->createView()
         ));
     }
 

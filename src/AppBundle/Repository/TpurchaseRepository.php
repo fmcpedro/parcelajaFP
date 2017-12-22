@@ -13,27 +13,15 @@ use Doctrine\ORM\EntityRepository;
 /**
  * Description of GroupRepository
  *
- * @author luis
+ * @author luis miguens
  */
 class TpurchaseRepository extends EntityRepository {
 
-    //put your code here
-
-
-
-    public function findByFilter_old($params) {
-
-
-        //1) ir buscar todas as compras com valor superiro a 20€
-        $query = 'SELECT p FROM AppBundle:Tpurchase p WHERE p.fcalcamount > :fcalcamount '
-        //. 'AND p.fpurchaseid > :fpurchaseid'
-        ;
-        $tpurchases = $em->createQuery($query)
-                ->setParameter('fcalcamount', 20)
-                //->setParameter('fpurchaseid', 202)
-                ->getResult();
-    }
-
+    /**
+     * 
+     * @param type $params
+     * @return type
+     */
     public function findByFilter($params) {
 
         $qb = $this->getEntityManager()->createQueryBuilder();
@@ -68,6 +56,65 @@ class TpurchaseRepository extends EntityRepository {
 
 
         return $qb->getQuery()->getResult();
+    }
+
+    /**
+     * 
+     * @param type $params
+     * @return type
+     */
+    public function findPurchasesForPaymentForecasts($params) {
+
+        $qb = $this->getEntityManager()->createQueryBuilder();
+        $qb->select('p')->from('AppBundle:Tpurchase', 'p');
+
+        $qb->andWhere('p.fcalcamount >= ?1');
+        $qb->setParameter(1, 20);
+
+
+        $qb->andWhere('p.fstatus = ?2');
+        $qb->setParameter(2, 1);
+
+        //$qb->orderBy('p.fpurchasedate', 'desc');
+
+
+        return $qb->getQuery()->getResult();
+    }
+
+    /**
+     * 
+     * @return type
+     */
+    
+    
+    //SELECT SUM(value_evo_payments) AS total, year(date) as year, month(date) as month FROM payment_forecasts GROUP BY year, month ORDER BY year, month;
+    
+    
+    
+    public function findPaymentForecastsByMonth() {
+        $em = $this->getEntityManager();
+
+        $query = $em->createQuery('SELECT SUM(value_evo_payments) AS total, year(date) as year, month(date) as month '
+                . 'FROM payment_forecasts '
+                . 'GROUP BY year, month '
+                . 'ORDER BY year, month;');
+
+        return $query->getResult();
+    }
+
+    /**
+     * 
+     * @return type
+     */
+    public function findPaymentForecastsByWeek() {
+        $em = $this->getEntityManager();
+
+        $query = $em->createQuery('SELECT SUM(value_evo_payments) AS total, CONCAT(date, ' - ', date + INTERVAL 6 DAY) AS week '
+                . 'FROM PaymentForecasts '
+                . 'GROUP BY WEEK(date) '
+                . 'ORDER BY WEEK(date)');
+
+        return $query->getResult();
     }
 
 }

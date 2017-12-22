@@ -49,6 +49,13 @@
                             <span class="icon-thumbnail">TP</span>
                         </li>
                     {% endif %}
+                    
+                    {% if is_granted('ROLE_ADMIN') %} 
+                        <li class="">
+                            <a href="{{ path('admin_payments_payment_forecasts') }}">Agregadas </a>
+                            <span class="icon-thumbnail">TP</span>
+                        </li>
+                    {% endif %}
 
                 </ul>
             </li>

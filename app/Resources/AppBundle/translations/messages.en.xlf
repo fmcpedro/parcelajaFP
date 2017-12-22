@@ -120,7 +120,7 @@
             
             -->
             
-                        <trans-unit id="howitworks_block_02_text01" resname="howitworks_block_02_text01">
+            <trans-unit id="howitworks_block_02_text01" resname="howitworks_block_02_text01">
                 <source>howitworks_block_02_text01</source>
                 <target>Using Parcela Já, stores can now offer their customers an instalment payment plan. The provided solution requires the usage of customers credit card and offers an outstanding opportunity to generate new purchases, while difering customers payments on a pre-selected monthly basis. The customer can decide to pay up to 12 interest free instalments, without any bureaucratic paperwork or credit approval.</target>
             </trans-unit>

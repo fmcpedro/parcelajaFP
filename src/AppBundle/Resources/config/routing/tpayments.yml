@@ -8,6 +8,13 @@ admin_payments_next_payments:
     defaults: { _controller: "AppBundle:Tpayments:nextPayments" }
     methods:  [GET, POST]
 
+
+admin_payments_payment_forecasts:
+    path:     /payment_forecasts
+    defaults: { _controller: "AppBundle:Tpayments:paymentForecasts" }
+    methods:  [GET, POST]
+
+
 admin_payments_simulator:
     path:     /simulator
     defaults: { _controller: "AppBundle:Tpayments:simulator" }

@@ -3,11 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Entity/TpaymentsTaxaServico.php</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Utils/CalculateImpostoSeloBNIE.php</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Repository/TpaymentsRepository.php</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Utils/Constantes.php</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Utils/Utils.php</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Repository/TpurchaseRepository.php</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/config/doctrine/PaymentForecasts.orm.xml</file>
+            <file>file:/home/luis/sfprojects/parcelaja/app/Resources/AppBundle/translations/messages.en.xlf</file>
+            <file>file:/home/luis/sfprojects/parcelaja/app/Resources/AppBundle/translations/messages.pt.xlf</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Controller/TpaymentsController.php</file>
+            <file>file:/home/luis/sfprojects/parcelaja/app/Resources/views/tpayments/paymentForecasts.html.twig</file>
         </group>
     </open-files>
 </project-private>
