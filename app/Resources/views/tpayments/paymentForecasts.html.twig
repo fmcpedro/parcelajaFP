@@ -178,8 +178,9 @@
                                 {% for key, forecast in forecasts %}
                                     
                                     <td>{{ forecast.total|number_format(2, ',', '.') }} €</td>
-                                   {% if search_form.vars.value.forecastsType == 1 %}
-                                    <td>{{ start_and_end_week(forecast.week,forecast.year)}}</td>
+                                   
+                                    {% if search_form.vars.value.forecastsType == 1 %}
+                                        <td>Semana {{ forecast.week}} do ano {{ forecast.year}} <b>({{ start_and_end_week(forecast.week,forecast.year)}})</b></td>
                                     {% else %}
                                     <td>{{ month_name(forecast.month)}}, {{ forecast.year}}</td>
                                     

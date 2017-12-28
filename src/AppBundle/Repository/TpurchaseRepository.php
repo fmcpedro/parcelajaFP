@@ -94,7 +94,7 @@ class TpurchaseRepository extends EntityRepository {
 
         $query = $em->createQuery('SELECT SUM(p.valueEvoPayments) AS total, year(p.date) as year, month(p.date) as month '
                 . 'FROM AppBundle:PaymentForecasts p '
-                . 'WHERE p.date > ?1 AND p.date < ?2 '
+                . 'WHERE p.date >= ?1 AND p.date < ?2 '
                 . 'GROUP BY year, month '
                 . 'ORDER BY year, month');
         
@@ -117,9 +117,9 @@ class TpurchaseRepository extends EntityRepository {
     public function findPaymentForecastsByWeek($startDate, $endDate) {
         $em = $this->getEntityManager();
 
-        $query = $em->createQuery('SELECT SUM(p.valueEvoPayments) AS total, WEEK(p.date) as week, year(p.date) as year '
+        $query = $em->createQuery('SELECT SUM(p.valueEvoPayments) AS total, WEEK(p.date, 3) as week, year(p.date) as year '
                 . 'FROM AppBundle:PaymentForecasts p '
-                . 'WHERE p.date > ?1 AND p.date < ?2 '
+                . 'WHERE p.date >= ?1 AND p.date < ?2 '
                 . 'GROUP BY year, week '
                 . 'ORDER BY year, week ');
         
