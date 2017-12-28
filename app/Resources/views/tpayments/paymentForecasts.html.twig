@@ -179,7 +179,7 @@
                                     
                                     <td>{{ forecast.total|number_format(2, ',', '.') }} €</td>
                                    {% if search_form.vars.value.forecastsType == 1 %}
-                                    <td>{{ forecast.week}}</td>
+                                    <td>{{ start_and_end_week(forecast.week,forecast.year)}}</td>
                                     {% else %}
                                     <td>{{ month_name(forecast.month)}}, {{ forecast.year}}</td>
                                     

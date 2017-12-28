@@ -48,6 +48,7 @@ class UtilsExtension extends \Twig_Extension {
             new \Twig_SimpleFunction('slugify', array($this, 'slugify')),
             new \Twig_SimpleFunction('unslugify', array($this, 'unslugify')),
             new \Twig_SimpleFunction('month_name', array($this, 'month_name')),
+            new \Twig_SimpleFunction('start_and_end_week', array($this, 'start_and_end_week')),
         );
     }
 
@@ -94,6 +95,16 @@ class UtilsExtension extends \Twig_Extension {
         $monthName = $dateObj->format('F'); // March
 
         return $monthName;
+    }
+
+    function start_and_end_week($week, $year) {
+
+        $dto = new \DateTime();
+        $dto->setISODate($year, $week);
+        $ret['week_start'] = $dto->format('Y-m-d');
+        $dto->modify('+6 days');
+        $ret['week_end'] = $dto->format('Y-m-d');
+        return $ret['week_start'] . " - " . $ret['week_end'];
     }
 
 }

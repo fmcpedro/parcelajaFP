@@ -117,16 +117,17 @@ class TpurchaseRepository extends EntityRepository {
     public function findPaymentForecastsByWeek($startDate, $endDate) {
         $em = $this->getEntityManager();
 
-        $query = $em->createQuery('SELECT SUM(p.valueEvoPayments) AS total, CONCAT(p.date, ' - ', p.date + INTERVAL 6 DAY) AS week '
+        $query = $em->createQuery('SELECT SUM(p.valueEvoPayments) AS total, WEEK(p.date) as week, year(p.date) as year '
                 . 'FROM AppBundle:PaymentForecasts p '
-                 . 'WHERE p.date > ?1 AND p.date < ?2 '
-                . 'GROUP BY WEEK(p.date) '
-                . 'ORDER BY WEEK(p.date)');
-        
+                . 'WHERE p.date > ?1 AND p.date < ?2 '
+                . 'GROUP BY year, week '
+                . 'ORDER BY year, week ');
         
         $query->setParameter(1,$startDate );
         $query->setParameter(2,$endDate );
 
+        dump($query->getResult());
+        
         return $query->getResult();
     }
 
