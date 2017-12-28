@@ -577,11 +577,11 @@
             </trans-unit>
             <trans-unit id="homepage_grupos_lojasdeinformatica" resname="homepage_grupos_lojasdeinformatica">
                 <source>homepage_grupos_lojasdeinformatica</source>
-                <target>Informatic Stores</target>
+                <target>Computer Stores</target>
             </trans-unit>
             <trans-unit id="homepage_grupos_oficinasdeautomoveis" resname="homepage_grupos_oficinasdeautomoveis">
                 <source>homepage_grupos_oficinasdeautomoveis</source>
-                <target>Car Shops</target>
+                <target>Car Dealers</target>
             </trans-unit>
             
             <trans-unit id="homepage_grupos_saude" resname="homepage_grupos_saude">
