@@ -226,14 +226,12 @@ class TpaymentsController extends Controller {
         $searchForm = $this->createForm('AppBundle\Form\PaymentForecastsSearchType', $forecastSearch);
         $searchForm->handleRequest($request);
 
-        $search = array();
-
-        $startDate = $searchForm["startDate"]->getData();
-        $endDate = $searchForm["endDate"]->getData();
-        $forecastsType = $searchForm["forecastsType"]->getData();
-
 
         if ($searchForm->isSubmitted()) {
+
+            $startDate = $searchForm["startDate"]->getData();
+            $endDate = $searchForm["endDate"]->getData();
+            $forecastsType = $searchForm["forecastsType"]->getData();
 
             // 1 PASSO - ELIMINAR TODOS OS REGISTOS NA TABELA DE PREVISOES
             $query = $em->createQuery('DELETE AppBundle:PaymentForecasts');
@@ -241,7 +239,7 @@ class TpaymentsController extends Controller {
 
 
             // 2 PASSO - GERAR OS PAGAMENTOS DE TODAS AS COMPRAS
-            $tpurchases = $em->getRepository('AppBundle:Tpurchase')->findPurchasesForPaymentForecasts($search);
+            $tpurchases = $em->getRepository('AppBundle:Tpurchase')->findPurchasesForPaymentForecasts();
             foreach ($tpurchases as $key => $tpurchase) {
 
                 if ($tpurchase->getFextracharge() <> 0):
@@ -254,18 +252,16 @@ class TpaymentsController extends Controller {
                 // 3 PASSO - REGISTAR NA TABELA DE PREVISOES TODOS OS PAGAMENTOS
                 foreach ($generatedPayments as $key => $generatedPayment) {
                     $forecast = new \AppBundle\Entity\PaymentForecasts();
-                    
-                    $timestamp = $generatedPayment->getDataPagamento();
-$datetimeFormat = 'Y-m-d';
 
-$date = new \DateTime();
-// If you must have use time zones
-// $date = new \DateTime('now', new \DateTimeZone('Europe/Helsinki'));
-$date->setTimestamp($timestamp);
-$date->format($datetimeFormat);
-                    
-                    
-                    
+                    $timestamp = $generatedPayment->getDataPagamento();
+                    $datetimeFormat = 'Y-m-d';
+
+                    $date = new \DateTime();
+                    // If you must have use time zones
+                    // $date = new \DateTime('now', new \DateTimeZone('Europe/Helsinki'));
+                    $date->setTimestamp($timestamp);
+                    $date->format($datetimeFormat);
+
                     $forecast->setDate($date);
                     $forecast->setValueEvoPayments($generatedPayment->getValorReceberEvoPayments());
                     $em->persist($forecast);
@@ -277,9 +273,9 @@ $date->format($datetimeFormat);
             // 4 CALCULAR PREVISOES DE ACORDO COM O TIPO SELECIONADO (SEMANAL OU MENSAL)
             //semanal = 1 - mensal = 2
             if ($forecastsType == 1) {
-                $forecasts = $em->getRepository('AppBundle:Tpurchase')->findPaymentForecastsByWeek();
+                $forecasts = $em->getRepository('AppBundle:Tpurchase')->findPaymentForecastsByWeek($startDate, $endDate);
             } else {
-                $forecasts = $em->getRepository('AppBundle:Tpurchase')->findPaymentForecastsByMonth();
+                $forecasts = $em->getRepository('AppBundle:Tpurchase')->findPaymentForecastsByMonth($startDate, $endDate);
             }
         } else {
             $forecasts = array();

@@ -177,7 +177,7 @@
                             <tbody>
                                 {% for key, forecast in forecasts %}
                                     
-                                    <td>{{ forecast.total}} €</td>
+                                    <td>{{ forecast.total|number_format(2, ',', '.') }} €</td>
                                    {% if search_form.vars.value.forecastsType == 1 %}
                                     <td>{{ forecast.week}}</td>
                                     {% else %}

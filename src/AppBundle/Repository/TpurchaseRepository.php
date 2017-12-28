@@ -63,7 +63,7 @@ class TpurchaseRepository extends EntityRepository {
      * @param type $params
      * @return type
      */
-    public function findPurchasesForPaymentForecasts($params) {
+    public function findPurchasesForPaymentForecasts() {
 
         $qb = $this->getEntityManager()->createQueryBuilder();
         $qb->select('p')->from('AppBundle:Tpurchase', 'p');
@@ -88,14 +88,18 @@ class TpurchaseRepository extends EntityRepository {
     
     
     //SELECT SUM(value_evo_payments) AS total, year(date) as year, month(date) as month FROM payment_forecasts GROUP BY year, month ORDER BY year, month;
-    
-    
-    
-    public function findPaymentForecastsByMonth() {
+      
+    public function findPaymentForecastsByMonth($startDate, $endDate) {
         $em = $this->getEntityManager();
 
         $query = $em->createQuery('SELECT SUM(p.valueEvoPayments) AS total, year(p.date) as year, month(p.date) as month '
-                . 'FROM AppBundle:PaymentForecasts p GROUP BY year, month ORDER BY year, month');
+                . 'FROM AppBundle:PaymentForecasts p '
+                . 'WHERE p.date > ?1 AND p.date < ?2 '
+                . 'GROUP BY year, month '
+                . 'ORDER BY year, month');
+        
+        $query->setParameter(1,$startDate );
+        $query->setParameter(2,$endDate );
 
         return $query->getResult();
     }
@@ -104,19 +108,24 @@ class TpurchaseRepository extends EntityRepository {
     
     
     
-    
+    //SELECT SUM(value_evo_payments) AS total, CONCAT(date, ' - ', date + INTERVAL 6 DAY) AS week FROM payment_forecasts GROUP BY WEEK(date) ORDER BY WEEK(date)
 
     /**
      * 
      * @return type
      */
-    public function findPaymentForecastsByWeek() {
+    public function findPaymentForecastsByWeek($startDate, $endDate) {
         $em = $this->getEntityManager();
 
-        $query = $em->createQuery('SELECT SUM(value_evo_payments) AS total, CONCAT(date, ' - ', date + INTERVAL 6 DAY) AS week '
-                . 'FROM PaymentForecasts '
-                . 'GROUP BY WEEK(date) '
-                . 'ORDER BY WEEK(date)');
+        $query = $em->createQuery('SELECT SUM(p.valueEvoPayments) AS total, CONCAT(p.date, ' - ', p.date + INTERVAL 6 DAY) AS week '
+                . 'FROM AppBundle:PaymentForecasts p '
+                 . 'WHERE p.date > ?1 AND p.date < ?2 '
+                . 'GROUP BY WEEK(p.date) '
+                . 'ORDER BY WEEK(p.date)');
+        
+        
+        $query->setParameter(1,$startDate );
+        $query->setParameter(2,$endDate );
 
         return $query->getResult();
     }
