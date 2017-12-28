@@ -94,13 +94,17 @@ class TpurchaseRepository extends EntityRepository {
     public function findPaymentForecastsByMonth() {
         $em = $this->getEntityManager();
 
-        $query = $em->createQuery('SELECT SUM(value_evo_payments) AS total, year(date) as year, month(date) as month '
-                . 'FROM payment_forecasts '
-                . 'GROUP BY year, month '
-                . 'ORDER BY year, month;');
+        $query = $em->createQuery('SELECT SUM(p.valueEvoPayments) AS total, year(p.date) as year, month(p.date) as month '
+                . 'FROM AppBundle:PaymentForecasts p GROUP BY year, month ORDER BY year, month');
 
         return $query->getResult();
     }
+    
+    
+    
+    
+    
+    
 
     /**
      * 

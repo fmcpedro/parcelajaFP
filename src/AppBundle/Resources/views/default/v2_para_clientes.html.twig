@@ -228,7 +228,7 @@
                                     <div class="col-8 col-sm-9">
                                         <h5 class="g-mb-0">{{agencia.fagencyname}}</h5>
                                         <p class="g-mb-0">{{agencia.faddress}}</p>
-                                        <p class="g-mb-0">{{agencia.fpostalcode1}}</p>
+                                        <p class="g-mb-0">{{agencia.fpostalcode1}}-{{agencia.fpostalcode2}}, {{agencia.flocation}}</p>
 
                                         {% if agencia.ftelephone is not empty %}
                                             <p class="g-mb-0">Tel.: <a href="tel:{{agencia.ftelephone}}">{{agencia.ftelephone}}</a></p>

@@ -161,15 +161,15 @@
                 </div>
                 <div class="panel-body">
                     
-                        <table class="display responsive" id="example">
+                        <table class="table table-condensed table-striped responsive" id="">
                             <thead>
                                 <tr>
                                     <th>TOTAL</th>
                                     
                                     {% if search_form.vars.value.forecastsType == 1 %}
-                                    <th>WEEK</th>
+                                    <th>Semana</th>
                                     {% else %}
-                                    <th>MONTH</th>
+                                   <th>Mês</th>
                                     {% endif %}
 
                                 </tr>
@@ -177,12 +177,12 @@
                             <tbody>
                                 {% for key, forecast in forecasts %}
                                     
-                                    <td>{{ forecast.total}}</td>
-                                    
-                                    {% if search_form.vars.value.forecastsType == 1 %}
+                                    <td>{{ forecast.total}} €</td>
+                                   {% if search_form.vars.value.forecastsType == 1 %}
                                     <td>{{ forecast.week}}</td>
                                     {% else %}
-                                    <td>{{ forecast.month}} - {{ forecast.year}}</td>
+                                    <td>{{ month_name(forecast.month)}}, {{ forecast.year}}</td>
+                                    
                                     {% endif %}
 
                                     </tr>

@@ -42,15 +42,12 @@ class UtilsExtension extends \Twig_Extension {
             // Intl helper functions.
             new \Twig_SimpleFunction('intl_country_name', array($this, 'intl_country_name')),
             new \Twig_SimpleFunction('intl_locale_name', array($this, 'intl_locale_name')),
-
-            
             new \Twig_SimpleFunction('url_to_post', array($this, 'url_to_post')),
-            
             // Other helpers
             new \Twig_SimpleFunction('sk_build_query', array($this, 'sk_build_query')),
             new \Twig_SimpleFunction('slugify', array($this, 'slugify')),
             new \Twig_SimpleFunction('unslugify', array($this, 'unslugify')),
-
+            new \Twig_SimpleFunction('month_name', array($this, 'month_name')),
         );
     }
 
@@ -65,10 +62,7 @@ class UtilsExtension extends \Twig_Extension {
         return Intl::getLocaleBundle()->getLocaleName($locale_code);
     }
 
-
-    
-    
-     public function url_to_post($post) {
+    public function url_to_post($post) {
         $path_function = $this->getPathFunction();
         $title = $post->getTitle();
         $slug = Utils::slugify($title);
@@ -92,6 +86,14 @@ class UtilsExtension extends \Twig_Extension {
 
     public function unslugify($string) {
         return Utils::unslugify($string);
+    }
+
+    public function month_name($monthNum) {
+
+        $dateObj = \DateTime::createFromFormat('!m', $monthNum);
+        $monthName = $dateObj->format('F'); // March
+
+        return $monthName;
     }
 
 }
