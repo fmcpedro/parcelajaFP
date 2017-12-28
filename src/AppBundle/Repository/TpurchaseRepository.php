@@ -126,7 +126,7 @@ class TpurchaseRepository extends EntityRepository {
         $query->setParameter(1,$startDate );
         $query->setParameter(2,$endDate );
 
-        dump($query->getResult());
+        //dump($query->getResult());
         
         return $query->getResult();
     }
