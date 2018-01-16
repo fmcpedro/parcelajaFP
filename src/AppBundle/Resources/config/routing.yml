@@ -6,19 +6,20 @@ app_admin_terminal_payment:
     resource: "@AppBundle/Resources/config/routing/terminalpayment.yml"
     prefix:   /admin/terminal_payment
     
-    
 app_admin_payments:
     resource: "@AppBundle/Resources/config/routing/tpayments.yml"
     prefix:   /admin/payments
-    
     
 app_admin_post:
     resource: "@AppBundle/Resources/config/routing/wspost.yml"
     prefix:   /admin/post
 
 app_admin_media:
-        resource: "@AppBundle/Resources/config/routing/wsmedia.yml"
-        prefix:   /admin/media
+    resource: "@AppBundle/Resources/config/routing/wsmedia.yml"
+    prefix:   /admin/media
 
+app_admin_bincode:
+    resource: "@AppBundle/Resources/config/routing/bincode.yml"
+    prefix:   /admin/bincode
 
 

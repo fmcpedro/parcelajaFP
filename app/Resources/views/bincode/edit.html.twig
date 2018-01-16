@@ -13,7 +13,7 @@
                     <!-- START BREADCRUMB -->
                     <ul class="breadcrumb">
                         <li><a href="#" class="">Parcela Ja</a></li>
-                        <li><a href="#" class="active">Noticias no website</a></li>
+                        <li><a href="#" class="active">Códigos BIN</a></li>
                     </ul>
                     <!-- END BREADCRUMB -->
                 </div>
@@ -28,13 +28,13 @@
             <!-- START PANEL -->
             <div class="panel panel-transparent">
                 <div class="panel-heading">
-                    <div class="panel-title">Actualizar Noticia no website </div>
+                    <div class="panel-title">Actualizar Código BIN </div>
                 </div>
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-sm-10">
                             {#<h3>form_title</h3>#}
-                            <p>Preencha os campos abaixo para actualizar uma noticia</p>
+                            <p>Preencha os campos abaixo para actualizar um código BIN</p>
 
                             {% for flashMessage in app.session.flashbag.get('notice') %}
                                 <div class="alert alert-success">
@@ -45,53 +45,77 @@
 
                             {{ form_start(edit_form, {'attr': {'class': 'form-horizontal'}}) }} 
                             <div class="form-group">
-                                <label for="fserial" class="col-sm-3 control-label">title</label>
+                                <label for="bin" class="col-sm-3 control-label">bin</label>
                                 <div class="col-sm-9">
-                                    {{ form_widget(edit_form.title, {'attr': {'class': 'form-control'}}) }}
+                                    {{ form_widget(edit_form.bin, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="col-sm-3 control-label">message</label>
-
+                                <label for="bank" class="col-sm-3 control-label">bank</label>
                                 <div class="col-sm-9">
-                                    <div class="radio radio-success">
-                                        {{ form_widget(edit_form.message) }}
-                                    </div>                                   
-                                </div>
-                            </div>
-                                    
-                            <div class="form-group">
-                                <label for="imageFile" class="col-sm-3 control-label">imageFile</label>
-                                <div class="col-sm-9">
-                                    {{ form_widget(edit_form.imageFile, {'attr': {'class': 'form-control'}}) }}
+                                    {{ form_widget(edit_form.bank, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="fagency" class="col-sm-3 control-label">link</label>
+                                <label for="card" class="col-sm-3 control-label">card</label>
                                 <div class="col-sm-9">
-                                    {{ form_widget(edit_form.link, {'attr': {'class': 'form-control'}}) }}
+                                    {{ form_widget(edit_form.card, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div>
 
-                                  <div class="form-group">
-                                <label for="createdAt" class="col-sm-3 control-label">createdAt</label>
+
+
+                            <div class="form-group">
+                                <label for="type" class="col-sm-3 control-label">type</label>
                                 <div class="col-sm-9">
-                                    {{ form_widget(edit_form.createdAt, {'attr': {'class': 'form-control'}}) }}
+                                    {{ form_widget(edit_form.type, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div>
-                                
-                                
-                                  <div class="form-group">
-                                <label for="updatedAt" class="col-sm-3 control-label">updatedAt</label>
+
+
+                            <div class="form-group">
+                                <label for="level" class="col-sm-3 control-label">level</label>
                                 <div class="col-sm-9">
-                                    {{ form_widget(edit_form.updatedAt, {'attr': {'class': 'form-control'}}) }}
+                                    {{ form_widget(edit_form.level, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div>
-                                
-                                
-                            <br>
+
+                            <div class="form-group">
+                                <label for="country" class="col-sm-3 control-label">country</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(edit_form.country, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="countrycode" class="col-sm-3 control-label">countrycode</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(edit_form.countrycode, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="website" class="col-sm-3 control-label">website</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(edit_form.website, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone" class="col-sm-3 control-label">phone</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(edit_form.phone, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="state" class="col-sm-3 control-label">state</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(edit_form.state, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div>
 
                             <div class="row">
                                 <div class="col-sm-3">
@@ -107,22 +131,16 @@
                                 </div>
                             </div>
                             {{ form_end(edit_form) }}
-                            
-                            
-                            
-                                {{ form_start(delete_form) }}
-                            <a class="btn btn-primary btn-cons m-b-10" href="{{ path('admin_media_index') }}">
+
+
+
+                            <a class="btn btn-primary btn-cons m-b-10" href="{{ path('admin_bincode_index') }}">
                                 <i class="fa fa-backward"></i> <span class="bold">Back to the list</span>
                             </a>
-                            <button class="btn btn-danger btn-cons m-b-10" type="submit">
-                                <i class="fa fa-warning"></i> <span class="bold">Delete</span>
-                            </button>
-
-
-                            {{ form_end(delete_form) }}
                             
 
-                            
+
+
 
                         </div>
                     </div>
@@ -136,6 +154,3 @@
     <!-- END PAGE CONTENT -->
 
 {% endblock %}
-
-
-

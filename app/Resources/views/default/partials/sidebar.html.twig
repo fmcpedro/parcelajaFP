@@ -56,6 +56,14 @@
                             <span class="icon-thumbnail">TP</span>
                         </li>
                     {% endif %}
+                    
+                    
+                    {% if is_granted('ROLE_ADMIN') %} 
+                        <li class="">
+                            <a href="">Códigos Bin</a>
+                            <span class="icon-thumbnail">BN</span>
+                        </li>
+                    {% endif %}
 
                 </ul>
             </li>

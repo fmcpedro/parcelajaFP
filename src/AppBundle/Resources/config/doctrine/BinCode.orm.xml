@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="AppBundle\Entity\BinCode" table="bin_code">
+
+        
+        
+              <id name="bin" type="integer" column="bin">
+      <generator strategy="NONE"/>
+    </id>
+
+    
+    
+    
+    
+<!--        <field name="bin" type="integer" column="bin" nullable="true" >
+            <options>
+                <option name="unsigned"/>
+            </options>
+        </field>-->
+    
+        <field name="bank" type="string" column="bank" length="45" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+  
+        <field name="card" type="string" column="card" length="45" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+    
+    
+    
+        <field name="type" type="string" column="type" length="45" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+    
+    
+        <field name="level" type="string" column="level" length="45" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+    
+    
+        <field name="country" type="string" column="country" length="45" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+    
+    
+        <field name="countrycode" type="string" column="countrycode" length="45" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+    
+    
+        <field name="website" type="string" column="website" length="80" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+    
+    
+        <field name="phone" type="string" column="phone" length="45" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+    
+        
+    
+        <field name="state" type="boolean" column="state" nullable="false"/>
+    
+    
+    
+    
+    
+    </entity>
+</doctrine-mapping>

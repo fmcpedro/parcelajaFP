@@ -40,42 +40,39 @@
                 </div>
                 <div class="panel-body">
                     <table class="table display">
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th>Message</th>
-                <th>Image</th>
-                <th>Link</th>
-                <th>Createdat</th>
-                <th>Updatedat</th>
-                <th>Id</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for wsMedia in wsMedia %}
-            <tr>
-                <td><a href="{{ path('admin_media_show', { 'id': wsMedia.id }) }}">{{ wsMedia.title }}</a></td>
-                <td>{{ wsMedia.message }}</td>
-                <td>{{ wsMedia.image }}</td>
-                <td>{{ wsMedia.link }}</td>
-                <td>{% if wsMedia.createdAt %}{{ wsMedia.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{% if wsMedia.updatedAt %}{{ wsMedia.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{{ wsMedia.id }}</td>
-                <td>
-                    <ul>
-{#                        <li>
-                            <a href="{{ path('admin_media_show', { 'id': wsMedia.id }) }}">show</a>
-                        </li>#}
-                        <li>
-                            <a href="{{ path('admin_media_edit', { 'id': wsMedia.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Message</th>
+                                <th>Image</th>
+                                <th>Link</th>
+                                <th>Createdat</th>
+                                <th>Updatedat</th>
+                                <th>Id</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for wsMedia in wsMedia %}
+                                <tr>
+                                    <td><a href="{{ path('admin_media_show', { 'id': wsMedia.id }) }}">{{ wsMedia.title }}</a></td>
+                                    <td>{{ wsMedia.message }}</td>
+                                    <td>{{ wsMedia.image }}</td>
+                                    <td>{{ wsMedia.link }}</td>
+                                    <td>{% if wsMedia.createdAt %}{{ wsMedia.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                                    <td>{% if wsMedia.updatedAt %}{{ wsMedia.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                                    <td>{{ wsMedia.id }}</td>
+                                    <td>
+                                        <ul>
+                                            <li>
+                                                <a href="{{ path('admin_media_edit', { 'id': wsMedia.id }) }}">edit</a>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
 
                     <a href="{{ path('admin_media_new') }}" class="btn btn-success btn-cons m-b-10" type="submit">
                         <i class="pg-plus"></i> <span class="bold">New</span>

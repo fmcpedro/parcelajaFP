@@ -1,0 +1,30 @@
+admin_bincode_index:
+    path:     /
+    defaults: { _controller: "AppBundle:BinCode:index" }
+    methods:  GET
+
+admin_bincode_import:
+    path:     /
+    defaults: { _controller: "AppBundle:BinCode:import" }
+    methods:  GET
+
+
+#admin_bincode_show:
+#    path:     /{id}/show
+#    defaults: { _controller: "AppBundle:BinCode:show" }
+#    methods:  GET
+#
+#admin_bincode_new:
+#    path:     /new
+#    defaults: { _controller: "AppBundle:BinCode:new" }
+#    methods:  [GET, POST]
+
+admin_bincode_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:BinCode:edit" }
+    methods:  [GET, POST]
+
+#admin_bincode_delete:
+#    path:     /{id}/delete
+#    defaults: { _controller: "AppBundle:BinCode:delete" }
+#    methods:  DELETE

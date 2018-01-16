@@ -1,0 +1,107 @@
+{% extends 'base.html.twig' %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}
+
+
+{% block body %}
+
+    <!-- START PAGE CONTENT -->
+    <div class="content">
+        <!-- START JUMBOTRON -->
+        <div class="jumbotron" data-pages="parallax">
+            <div class="container-fluid container-fixed-lg sm-p-l-20 sm-p-r-20">
+                <div class="inner">
+                    <!-- START BREADCRUMB -->
+                    <ul class="breadcrumb">
+                        <li><a href="#" class="">Parcela Ja</a></li>
+                        <li><a href="#" class="active">Códigos BIN</a></li>
+                    </ul>
+                    <!-- END BREADCRUMB -->
+                </div>
+            </div>
+        </div>
+        <!-- END JUMBOTRON -->
+
+
+        <!-- START CONTAINER FLUID -->
+        <div class="container-fluid container-fixed-lg bg-white">
+            <!-- START PANEL -->
+            <div class="panel panel-transparent">
+                <div class="panel-heading">
+                    <div class="panel-title">Lista de Códigos BIN 
+                    </div>
+                    <div class="export-options-container pull-right"></div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="panel-body">
+
+
+                    <table class="table display">
+                        <thead>
+                            <tr>
+                                <th>Bin</th>
+                                <th>Bank</th>
+                                <th>Card</th>
+                                <th>Type</th>
+                                <th>Level</th>
+                                <th>Country</th>
+                                <th>Countrycode</th>
+                                <th>Website</th>
+                                <th>Phone</th>
+                                <th>State</th>
+                                <th>Id</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for binCode in binCodes %}
+                                <tr>
+                                    <td><a href="{{ path('admin_bincode_show', { 'id': binCode.id }) }}">{{ binCode.bin }}</a></td>
+                                    <td>{{ binCode.bank }}</td>
+                                    <td>{{ binCode.card }}</td>
+                                    <td>{{ binCode.type }}</td>
+                                    <td>{{ binCode.level }}</td>
+                                    <td>{{ binCode.country }}</td>
+                                    <td>{{ binCode.countrycode }}</td>
+                                    <td>{{ binCode.website }}</td>
+                                    <td>{{ binCode.phone }}</td>
+                                    <td>{% if binCode.state %}Yes{% else %}No{% endif %}</td>
+                                    <td>{{ binCode.id }}</td>
+                                    <td>
+                                        <ul>
+                                            {#<li>
+                                                <a href="{{ path('admin_bincode_show', { 'id': binCode.id }) }}">show</a>
+                                            </li>#}
+                                            <li>
+                                                <a href="{{ path('admin_bincode_edit', { 'id': binCode.id }) }}">edit</a>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>    
+
+
+
+
+
+                   {# <ul>
+                        <li>
+                            <a href="{{ path('admin_bincode_new') }}">Create a new binCode</a>
+                        </li>
+                    </ul>#}
+
+                </div>
+            </div>
+            <!-- END PANEL -->
+        </div>
+        <!-- END CONTAINER FLUID -->
+
+
+    </div>
+    <!-- END PAGE CONTENT -->
+
+{% endblock %}
