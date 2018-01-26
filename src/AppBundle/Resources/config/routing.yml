@@ -21,5 +21,9 @@ app_admin_media:
 app_admin_bincode:
     resource: "@AppBundle/Resources/config/routing/bincode.yml"
     prefix:   /admin/bincode
+    
+app_admin_binbank:
+    resource: "@AppBundle/Resources/config/routing/binbank.yml"
+    prefix:   /admin/binbank
 
 

@@ -3,9 +3,14 @@ admin_bincode_index:
     defaults: { _controller: "AppBundle:BinCode:index" }
     methods:  GET
 
-admin_bincode_import:
-    path:     /
-    defaults: { _controller: "AppBundle:BinCode:import" }
+admin_bincode_update_bin_details:
+    path:     /importBinDetails
+    defaults: { _controller: "AppBundle:BinCode:importBinDetails" }
+    methods:  GET
+    
+admin_bincode_import_bin_list:
+    path:     /importBinList
+    defaults: { _controller: "AppBundle:BinCode:importBinList" }
     methods:  GET
 
 

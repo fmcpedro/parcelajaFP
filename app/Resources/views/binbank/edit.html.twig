@@ -1,3 +1,4 @@
+
 {% extends 'base.html.twig' %}
 
 {% block body %}
@@ -12,7 +13,7 @@
                     <!-- START BREADCRUMB -->
                     <ul class="breadcrumb">
                         <li><a href="#" class="">Parcela Ja</a></li>
-                        <li><a href="#" class="active">Posts no website</a></li>
+                        <li><a href="#" class="active">Bancos com códigos BIN</a></li>
                     </ul>
                     <!-- END BREADCRUMB -->
                 </div>
@@ -27,13 +28,13 @@
             <!-- START PANEL -->
             <div class="panel panel-transparent">
                 <div class="panel-heading">
-                    <div class="panel-title">Actualizar Post no website </div>
+                    <div class="panel-title">Actualizar Banco com código BIN </div>
                 </div>
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-sm-10">
                             {#<h3>form_title</h3>#}
-                            <p>Preencha os campos abaixo para adicionar um novo post</p>
+                            <p>Preencha os campos abaixo para actualizar um banco com código BIN</p>
 
                             {% for flashMessage in app.session.flashbag.get('notice') %}
                                 <div class="alert alert-success">
@@ -44,37 +45,37 @@
 
                             {{ form_start(edit_form, {'attr': {'class': 'form-horizontal'}}) }} 
                             <div class="form-group">
-                                <label for="fserial" class="col-sm-3 control-label">title</label>
+                                <label for="countryName" class="col-sm-3 control-label">countryName</label>
                                 <div class="col-sm-9">
-                                    {{ form_widget(edit_form.title, {'attr': {'class': 'form-control'}}) }}
+                                    {{ form_widget(edit_form.countryName, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="col-sm-3 control-label">message</label>
-
+                                <label for="countryCode" class="col-sm-3 control-label">countryCode</label>
                                 <div class="col-sm-9">
-                                    <div class="radio radio-success">
-                                        {{ form_widget(edit_form.message) }}
-                                    </div>                                   
+                                    {{ form_widget(edit_form.countryCode, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="imageFile" class="col-sm-3 control-label">imageFile</label>
+                                <label for="brand" class="col-sm-3 control-label">brand</label>
                                 <div class="col-sm-9">
-                                    {{ form_widget(edit_form.imageFile, {'attr': {'class': 'form-control'}}) }}
+                                    {{ form_widget(edit_form.brand, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div>
 
+
+
                             <div class="form-group">
-                                <label for="fagency" class="col-sm-3 control-label">publishedAt</label>
+                                <label for="bank" class="col-sm-3 control-label">bank</label>
                                 <div class="col-sm-9">
-                                    {{ form_widget(edit_form.publishedAt, {'attr': {'class': 'form-control'}}) }}
+                                    {{ form_widget(edit_form.bank, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div>
 
                             <br>
+
 
                             <div class="row">
                                 <div class="col-sm-3">
@@ -92,9 +93,8 @@
                             {{ form_end(edit_form) }}
 
 
-
                             {{ form_start(delete_form) }}
-                            <a class="btn btn-primary btn-cons m-b-10" href="{{ path('admin_post_index') }}">
+                            <a class="btn btn-primary btn-cons m-b-10" href="{{ path('admin_binbank_index') }}">
                                 <i class="fa fa-backward"></i> <span class="bold">Back to the list</span>
                             </a>
                             <button class="btn btn-danger btn-cons m-b-10" type="submit">
@@ -103,6 +103,10 @@
 
 
                             {{ form_end(delete_form) }}
+
+
+
+
 
 
 
@@ -119,8 +123,3 @@
     <!-- END PAGE CONTENT -->
 
 {% endblock %}
-
-
-
-
-

@@ -4,21 +4,21 @@
 
         
         
-              <id name="bin" type="integer" column="bin">
-      <generator strategy="NONE"/>
-    </id>
+        <id name="bin" type="integer" column="bin">
+            <generator strategy="NONE"/>
+        </id>
 
     
     
     
     
-<!--        <field name="bin" type="integer" column="bin" nullable="true" >
+        <!--        <field name="bin" type="integer" column="bin" nullable="true" >
             <options>
                 <option name="unsigned"/>
             </options>
         </field>-->
     
-        <field name="bank" type="string" column="bank" length="45" nullable="true">
+        <field name="bank" type="string" column="bank" length="255" nullable="true">
             <options>
                 <option name="fixed"/>
             </options>
@@ -73,9 +73,10 @@
             </options>
         </field>
     
-        
+        <field name="valid" type="boolean" column="valid" nullable="false"/>
     
-        <field name="state" type="boolean" column="state" nullable="false"/>
+    
+        <field name="ourstate" type="boolean" column="our_state" nullable="false"/>
     
     
     

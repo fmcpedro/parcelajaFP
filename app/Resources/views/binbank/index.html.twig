@@ -1,0 +1,95 @@
+{% extends 'base.html.twig' %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}
+
+
+{% block body %}
+
+    <!-- START PAGE CONTENT -->
+    <div class="content">
+        <!-- START JUMBOTRON -->
+        <div class="jumbotron" data-pages="parallax">
+            <div class="container-fluid container-fixed-lg sm-p-l-20 sm-p-r-20">
+                <div class="inner">
+                    <!-- START BREADCRUMB -->
+                    <ul class="breadcrumb">
+                        <li><a href="#" class="">Parcela Ja</a></li>
+                        <li><a href="#" class="active">Bancos com códigos BIN</a></li>
+                    </ul>
+                    <!-- END BREADCRUMB -->
+                </div>
+            </div>
+        </div>
+        <!-- END JUMBOTRON -->
+
+
+        <!-- START CONTAINER FLUID -->
+        <div class="container-fluid container-fixed-lg bg-white">
+            <!-- START PANEL -->
+            <div class="panel panel-transparent">
+                <div class="panel-heading">
+                    <div class="panel-title">Lista de Bancos com códigos BIN 
+                    </div>
+                    <div class="export-options-container pull-right"></div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="panel-body">
+
+
+                    <table class="table display">
+                        <thead>
+                            <tr>
+                                <th>Countryname</th>
+                                <th>Countrycode</th>
+                                <th>Brand</th>
+                                <th>Bank</th>
+                                <th>Id</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for binBank in binBanks %}
+                                <tr>
+                                    <td><a href="{{ path('admin_binbank_show', { 'id': binBank.id }) }}">{{ binBank.countryName }}</a></td>
+                                    <td>{{ binBank.countryCode }}</td>
+                                    <td>{{ binBank.brand }}</td>
+                                    <td>{{ binBank.bank }}</td>
+                                    <td>{{ binBank.id }}</td>
+                                    <td>
+                                        <ul>
+                                            {#<li>
+                                                <a href="{{ path('admin_binbank_show', { 'id': binBank.id }) }}">show</a>
+                                            </li>#}
+                                            <li>
+                                                <a href="{{ path('admin_binbank_edit', { 'id': binBank.id }) }}">edit</a>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>   
+
+
+
+
+
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_binbank_new') }}">Create a new binBank</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            <!-- END PANEL -->
+        </div>
+        <!-- END CONTAINER FLUID -->
+
+
+    </div>
+    <!-- END PAGE CONTENT -->
+
+{% endblock %}

@@ -3,17 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/luis/sfprojects/parcelaja/app/Resources/views/bincode/index.html.twig</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/config/doctrine/IngenicoPayment.orm.xml</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/config/routing/bincode.yml</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Controller/BinCodeController.php</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Data/bin_brands</file>
             <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/config/doctrine/BinCode.orm.xml</file>
-            <file>file:/home/luis/sfprojects/parcelaja/app/Resources/views/wsmedia/index.html.twig</file>
-            <file>file:/home/luis/sfprojects/parcelaja/app/Resources/views/bincode/edit.html.twig</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Form/BinCodeType.php</file>
-            <file>file:/home/luis/sfprojects/parcelaja/app/Resources/views/bincode/import.html.twig</file>
-            <file>file:/home/luis/sfprojects/parcelaja/app/Resources/views/wsmedia/edit.html.twig</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Entity/BinCode.php</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Controller/BinCodeController.php</file>
         </group>
     </open-files>
 </project-private>

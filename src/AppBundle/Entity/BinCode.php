@@ -55,9 +55,36 @@ class BinCode
     /**
      * @var boolean
      */
-    private $state;
+    private $valid;
 
+   /**
+     * @var boolean
+     */
+    private $ourstate;
 
+    function getValid() {
+        return $this->valid;
+    }
+
+    function getOurstate() {
+        return $this->ourstate;
+    }
+
+    function setValid($valid) {
+        
+        
+        if($valid == "false"):
+        $this->valid = 0;
+        else:
+        $this->valid = 1;    
+        endif;
+    }
+
+    function setOurstate($ourstate) {
+        $this->ourstate = $ourstate;
+    }
+
+        
 
     /**
      * Set bin
@@ -275,30 +302,7 @@ class BinCode
         return $this->phone;
     }
 
-    /**
-     * Set state
-     *
-     * @param boolean $state
-     *
-     * @return BinCode
-     */
-    public function setState($state)
-    {
-        $this->state = $state;
-
-        return $this;
-    }
-
-    /**
-     * Get state
-     *
-     * @return boolean
-     */
-    public function getState()
-    {
-        return $this->state;
-    }
-
+ 
  
 }
 

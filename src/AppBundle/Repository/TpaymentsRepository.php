@@ -82,7 +82,7 @@ class TpaymentsRepository extends EntityRepository {
         $payment = new Tpayments();
         $purchase = new Tpurchase();
 
-        $payments = $em->getRepository('AppBundle:Tpayments')->findLastDaysPayments(30);
+        $payments = $em->getRepository('AppBundle:Tpayments')->findLastDaysPayments(90);
 
         foreach ($payments as $payment) {
             //buscar a compra

@@ -2,8 +2,11 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\BinBank;
 use AppBundle\Entity\BinCode;
+use SimpleXMLElement;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Form\Form;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -26,19 +29,58 @@ class BinCodeController extends Controller {
         ));
     }
 
-    /**
-     * https://api.bincodes.com/bin-search/?format=[FORMAT]&api_key=[API_KEY]&country=[COUNTRY]&
-      card=[CARD]&bank=[BANK]&type=[TYPE]&level=[LEVEL]&bins=[BINS]
-     */
-    public function getAllBins($COUNTRY = 'PT') {
+    //https://api.bincodes.com/bin-search/?format=json&api_key=fcf66fc0bdff574708c47602a4ce90aa&country=PT&card=VISA&bank=BANCO BEST
+    //https://api.bincodes.com/bin-search/?format=json&api_key=fcf66fc0bdff574708c47602a4ce90aa&country=PT&card=VISA&bank=BANCO BPI
 
-//        $KEY = "";
-//        
+    public function importBinListAction() {
+
+        // para cada registo na tabela de Bin Banks, fazer chamada ao serviço e se o Bin não existir, inserir os Bins na tabela Bin Codes
+
+        $em = $this->getDoctrine()->getManager();
+        $binBanks = $em->getRepository('AppBundle:BinBank')->findAll();
+
+        foreach ($binBanks as $key => $binBank) {
+
+            $KEY = "fcf66fc0bdff574708c47602a4ce90aa";
+
+            $query = http_build_query([
+                'api_key' => $KEY,
+                'country' => $binBank->getCountryCode(),
+                'card' => $binBank->getBrand(),
+                'bank' => $binBank->getBank()
+            ]);
+
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_URL, "https://api.bincodes.com/bin-search/?format=json&" . $query);
+            $result = curl_exec($ch);
+            curl_close($ch);
+            $obj = json_decode($result);
+
+            foreach ($obj->result as $bin) {
+                $entity = new BinCode();
+                $entity->setBin($bin->bin);
+                $em->merge($entity);
+                $em->flush();
+            }
+        }
+
+        return $this->render('bincode/importBinList.html.twig');
+    }
+
+//    public function getBinCodeObject($BIN) {
+//
+////      $PSPID = $this->getContainer()->getParameter('PSPID');
+////      $USERID = $this->getContainer()->getParameter('USERID');
+////      $PSWD = $this->getContainer()->getParameter('PSWD');
+//        $KEY = "fcf66fc0bdff574708c47602a4ce90aa";
+//
 //        $ch = curl_init();
 //
-//        $params = array('api_key' => $KEY, 'country' => $COUNTRY);
+//        $params = array('api_key' => $KEY, 'bin' => $BIN);
 //
-//        curl_setopt($ch, CURLOPT_URL, "https://api.bincodes.com/bin-search/?format=xml");
+//        curl_setopt($ch, CURLOPT_URL, "https://api.bincodes.com/bin/?format=xml");
 //        curl_setopt($ch, CURLOPT_POST, 1);
 //        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($params));
 //        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -47,91 +89,60 @@ class BinCodeController extends Controller {
 //        $data = new SimpleXMLElement($response);
 //
 //        curl_close($ch);
+//
+//        return $data;
+//    }
 
-
-        $data = "<?xml version='1.0' encoding='utf-8'?>
-<root>
-  <result>
-    <bin>433042</bin>
-  </result>
-  <result>
-    <bin>435255</bin>
-  </result>
-  <result>
-    <bin>447050</bin>
-  </result>
-  <result_info>
-    <total>3</total>
-    <display>3</display>
-    <error></error>
-    <message></message>
-  </result_info>
-</root>";
-
-
-
-
-
-
-        return $data;
-    }
-
-    public function getBinCodeObject($BIN) {
-
-//      $PSPID = $this->getContainer()->getParameter('PSPID');
-//      $USERID = $this->getContainer()->getParameter('USERID');
-//      $PSWD = $this->getContainer()->getParameter('PSWD');
-        $KEY = "";
-
-        $ch = curl_init();
-
-        $params = array('api_key' => $KEY, 'bin' => $BIN);
-
-        curl_setopt($ch, CURLOPT_URL, "https://api.bincodes.com/bin/?format=xml");
-        curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($params));
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-        $response = curl_exec($ch);
-        $data = new SimpleXMLElement($response);
-
-        curl_close($ch);
-
-        return $data;
-    }
-
-    public function xml_attribute($object, $attribute) {
-        if (isset($object[$attribute]))
-            return (string) $object[$attribute];
-    }
+//    public function xml_attribute($object, $attribute) {
+//        if (isset($object[$attribute]))
+//            return (string) $object[$attribute];
+//    }
 
     /**
      * Import all binCodes from BinCodes.com
-     * 
+     * https://api.bincodes.com/bin/?format=json&api_key=9fc53b3db09ca830488d19546a4fc2a1&bin=515735
      */
-    public function importAction(Request $request) {
+    public function importBinDetailsAction(Request $request) {
         $em = $this->getDoctrine()->getManager();
 
-        //1 - Ir procurar todos os BINS de PT
-        $bins = $this->getAllBins();
+        
+        //1) ir buscar os BINS que ainda não têm details
+        $binCodes = $em->getRepository('AppBundle:BinCode')->findBy(['bank'=>NULL]);
 
+        $KEY = "fcf66fc0bdff574708c47602a4ce90aa";
 
-        //2 - Para cada BIN actualizar a base de dados 
-        foreach ($bins as $key => $bin) {
+        foreach ($binCodes as $key => $binCode) {
 
-            $data = $this->getBinCodeObject($bin);
+            echo "bin code = " . $binCode->getBin();
+            
+            
+            $query = http_build_query([
+                'api_key' => $KEY,
+                'bin' => $binCode->getBin(),
+            ]);
 
+            //2) invocar o serviço para pedir os detalhes do BIN
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_URL, "https://api.bincodes.com/bin/?format=json&" . $query);
+            $result = curl_exec($ch);
+            curl_close($ch);
+            $obj = json_decode($result);
+            
+
+            //3) actualizar a tabela dos BINS com os detalhes
             $entity = new BinCode();
-            $entity->setBin($this->xml_attribute($data, 'bin'));
-            $entity->setBank($this->xml_attribute($data, 'bank'));
-            $entity->setCard($this->xml_attribute($data, 'card'));
-            $entity->setType($this->xml_attribute($data, 'type'));
-            $entity->setLevel($this->xml_attribute($data, 'level'));
-            $entity->setCountry($this->xml_attribute($data, 'country'));
-            $entity->setCountrycode($this->xml_attribute($data, 'countrycode'));
-            $entity->setWebsite($this->xml_attribute($data, 'website'));
-            $entity->setPhone($this->xml_attribute($data, 'phone'));
-            $entity->setState($this->xml_attribute($data, 'state'));
+            $entity->setBin($obj->bin);
+            $entity->setBank($obj->bank);
+            $entity->setCard($obj->card);
+            $entity->setType($obj->type);
+            $entity->setLevel($obj->level);
+            $entity->setCountry($obj->country);
+            $entity->setCountrycode($obj->countrycode);
+            $entity->setWebsite($obj->website);
+            $entity->setPhone($obj->phone);
+            $entity->setValid($obj->valid);
 
             $em->merge($entity);
             $em->flush();
@@ -223,7 +234,7 @@ class BinCodeController extends Controller {
      *
      * @param BinCode $binCode The binCode entity
      *
-     * @return \Symfony\Component\Form\Form The form
+     * @return Form The form
      */
 //    private function createDeleteForm(BinCode $binCode)
 //    {
