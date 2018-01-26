@@ -99,6 +99,7 @@
 
 <th style="width: 2px;">DATA</th>
                                     <th style="width: 2px;">Nº DA PARCELA</th>
+                                    <th style="width: 2px;">CONTRACT NUMBER</th>
                                         {#
                                                                                                                <th>VALOR COMISSAO PAGAR ADERENTE</th><!-- taxa desconto -->
                                                                                                                 <th>VALOR COMISSAO PAGAR CLIENTE</th><!--taxa serviço-->
@@ -166,6 +167,7 @@
                                     <tr>
                                         <td>{{ tpayment.dataPagamento|date('Y-m-d')}}</td>
                                         <td>{{ tpayment.numParcela }}</td>
+                                        <td>{{ tpayment.contractNumber }}</td>
 
                                         {#
                                           <td>

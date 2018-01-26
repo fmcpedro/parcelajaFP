@@ -54,6 +54,9 @@ class TpaymentsRepository extends EntityRepository {
                 . 'FROM AppBundle:Tpayments payments '
                 . 'where payments.fdate > :date');
 
+        
+        //dump(new DateTime('-' . $days . ' day'));
+        
         $query->setParameter('date', new DateTime('-' . $days . ' day'));
         $payments = $query->getResult();
 
@@ -82,15 +85,25 @@ class TpaymentsRepository extends EntityRepository {
         $payment = new Tpayments();
         $purchase = new Tpurchase();
 
-        $payments = $em->getRepository('AppBundle:Tpayments')->findLastDaysPayments(90);
+        $payments = $em->getRepository('AppBundle:Tpayments')->findLastDaysPayments(220);
 
-        foreach ($payments as $payment) {
+        foreach ($payments as $key => $payment) {
             //buscar a compra
             $purchase = $em->getRepository('AppBundle:Tpurchase')->find($payment->getFpurchaseid());
+            
+            //$purchase = new Tpurchase();
+//            if($purchase->getFpurchaseid() == 149):
+//                dump($purchase);
+//            endif;
+            
+            
             $purchase_date = strtotime($purchase->getFpurchasedate()->format('d-m-Y'));
             $start_date = strtotime('10-03-2017');
 
             if ($purchase_date > $start_date) {
+                
+                
+                                
                 // FFee = Quando é feita uma transação através de uma taxa de desconto, esta percentagem é cobrada a Loja.
                 // FExtraCharge = Quando é feita uma transação através de taxa de serviço, este é o valor cobrado da taxa de serviço.
                 // Se tiver FExtraCharge diferente de 0, então é Taxa de Serviço
@@ -104,13 +117,28 @@ class TpaymentsRepository extends EntityRepository {
                     //gerar todos os pagamentos da compra
                     //$generatedPayments = $this->generatePaymentsTaxaDesconto($purchase->getFcalcamount(), $purchase->getFmonthdata(), $tipoTransacao, $payment->getFpayid(), $payment->getFDate());
                     $generatedPayments = $this->generatePaymentsTaxaDesconto($purchase, $payment);
+//                if($purchase->getFpurchaseid() == 149  ):
+//                dump($generatedPayments);
+//            endif;
                 endif;
 
-
+ 
+                
+//                
+//                if($purchase->getFpurchaseid() == 149  ):
+//dump($payment->getFinstallment()-1);
+//     dump($generatedPayments);
+//            endif;
 
 
                 //adicionar a parcela relativa ao pagamento
-                $tpayments[] = $generatedPayments[$payment->getFinstallment() - 1];
+                $tpayments[] = $generatedPayments[$payment->getFinstallment()-1];
+                
+//                if($purchase->getFpurchaseid() == 149  ):
+//                dump($tpayments[$key]);
+//            endif;
+                
+                
             }
         }
 
