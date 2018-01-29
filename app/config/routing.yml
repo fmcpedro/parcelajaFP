@@ -6,6 +6,9 @@ backend:
     resource: "@AppBundle/Resources/config/routing.yml"
     prefix:   /
 
+check_bin:
+    path:      /check_bin/{binCodeNumber}
+    defaults:  { _controller: AppBundle:BinCode:checkBin}
 
 
 

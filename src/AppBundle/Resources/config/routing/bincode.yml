@@ -25,7 +25,7 @@ admin_bincode_import_bin_list:
 #    methods:  [GET, POST]
 
 admin_bincode_edit:
-    path:     /{id}/edit
+    path:     /{bin}/edit
     defaults: { _controller: "AppBundle:BinCode:edit" }
     methods:  [GET, POST]
 

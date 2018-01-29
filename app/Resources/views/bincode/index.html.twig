@@ -2,6 +2,19 @@
 
 {% block javascripts %}
     {{ parent() }}
+
+    <!-- Apply the plugin -->
+    <script type="text/javascript" >
+        $(document).ready(function () {
+            $('#tableWithExportOptions').DataTable({
+                iDisplayLength: 20,
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ]
+            });
+        });
+    </script>
 {% endblock %}
 
 
@@ -25,6 +38,57 @@
         <!-- END JUMBOTRON -->
 
 
+
+        <!-- START CONTAINER FLUID -->
+        <div class="container-fluid container-fixed-lg">
+            <!-- START PANEL -->
+            <div class="panel panel-transparent">
+              {#  <div class="panel-heading">
+                    <div class="panel-title">Actualização dos BINS dos cartões de crédito </div>
+                </div>#}
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <a class="btn btn-primary btn-cons m-b-10" href="{{ path('admin_bincode_import_bin_list') }}">
+                                <i class="fa fa-filter"></i> Importar<span class="bold"> BINS </span>dos Bancos
+                            </a>
+
+                            <a class="btn btn-primary btn-cons m-b-10" href="{{ path('admin_bincode_update_bin_details') }}">
+                                <i class="fa fa-file-text-o"></i> Actualizar<span class="bold"> INFORMAÇÕES </span>dos Bins
+                            </a>
+                        </div>
+
+                        <div class="col-sm-3">
+                            {#<p>I hereby certify that the information above is true and accurate. </p>#}
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+            <!-- END PANEL -->
+        </div>
+        <!-- END CONTAINER FLUID -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <!-- START CONTAINER FLUID -->
         <div class="container-fluid container-fixed-lg bg-white">
             <!-- START PANEL -->
@@ -38,44 +102,48 @@
                 <div class="panel-body">
 
 
-                    <table class="table display">
+                    <table class="table display" id="tableWithExportOptions">
                         <thead>
                             <tr>
+                                {#<th>Id</th>#}
                                 <th>Bin</th>
                                 <th>Bank</th>
                                 <th>Card</th>
                                 <th>Type</th>
                                 <th>Level</th>
-                                <th>Country</th>
-                                <th>Countrycode</th>
-                                <th>Website</th>
-                                <th>Phone</th>
-                                <th>State</th>
-                                <th>Id</th>
+                                <th>Valid</th>
+                                    {# <th>Country</th>
+                                    <th>Countrycode</th>
+                                   <th>Website</th>
+                                    <th>Phone</th>
+    #}                                <th>State</th>
+
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             {% for binCode in binCodes %}
                                 <tr>
-                                    <td><a href="{{ path('admin_bincode_show', { 'id': binCode.id }) }}">{{ binCode.bin }}</a></td>
+                                    {#<td>{{ binCode.id }}</td>#}
+                                    <td>{{ binCode.bin }}</td>
                                     <td>{{ binCode.bank }}</td>
                                     <td>{{ binCode.card }}</td>
                                     <td>{{ binCode.type }}</td>
                                     <td>{{ binCode.level }}</td>
-                                    <td>{{ binCode.country }}</td>
-                                    <td>{{ binCode.countrycode }}</td>
-                                    <td>{{ binCode.website }}</td>
-                                    <td>{{ binCode.phone }}</td>
-                                    <td>{% if binCode.state %}Yes{% else %}No{% endif %}</td>
-                                    <td>{{ binCode.id }}</td>
+                                    <td>{% if binCode.valid %}Yes{% else %}No{% endif %}</td>
+                                    {#                                    <td>{{ binCode.country }}</td>
+                                                                       <td>{{ binCode.countrycode }}</td>
+                                                                      <td>{{ binCode.website }}</td>
+                                                                       <td>{{ binCode.phone }}</td>
+                                   #}                                    <td>{% if binCode.ourstate %}Yes{% else %}No{% endif %}</td>
+
                                     <td>
                                         <ul>
                                             {#<li>
                                                 <a href="{{ path('admin_bincode_show', { 'id': binCode.id }) }}">show</a>
                                             </li>#}
                                             <li>
-                                                <a href="{{ path('admin_bincode_edit', { 'id': binCode.id }) }}">edit</a>
+                                                <a href="{{ path('admin_bincode_edit', { 'bin': binCode.bin }) }}">edit</a>
                                             </li>
                                         </ul>
                                     </td>
@@ -88,11 +156,11 @@
 
 
 
-                   {# <ul>
-                        <li>
-                            <a href="{{ path('admin_bincode_new') }}">Create a new binCode</a>
-                        </li>
-                    </ul>#}
+                    {# <ul>
+                         <li>
+                             <a href="{{ path('admin_bincode_new') }}">Create a new binCode</a>
+                         </li>
+                     </ul>#}
 
                 </div>
             </div>

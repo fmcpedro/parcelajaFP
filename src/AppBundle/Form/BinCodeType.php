@@ -13,7 +13,17 @@ class BinCodeType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('bin')->add('bank')->add('card')->add('type')->add('level')->add('country')->add('countrycode')->add('website')->add('phone')->add('state');
+        $builder->add('bin')
+                ->add('bank')
+                ->add('card')
+                ->add('type')
+                ->add('level')
+                ->add('country')
+                ->add('countrycode')
+                ->add('website')
+                ->add('phone')
+                ->add('valid')
+                ->add('ourstate');
     }
     
     /**

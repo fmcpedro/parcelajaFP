@@ -5,8 +5,8 @@ namespace AppBundle\Entity;
 /**
  * BinCode
  */
-class BinCode
-{
+class BinCode {
+
     /**
      * @var integer
      */
@@ -57,7 +57,7 @@ class BinCode
      */
     private $valid;
 
-   /**
+    /**
      * @var boolean
      */
     private $ourstate;
@@ -66,25 +66,27 @@ class BinCode
         return $this->valid;
     }
 
+    
+    
+
+        
     function getOurstate() {
+     
         return $this->ourstate;
     }
 
     function setValid($valid) {
-        
-        
-        if($valid == "false"):
-        $this->valid = 0;
+
+        if ($valid == "false"):
+            $this->valid = 0;
         else:
-        $this->valid = 1;    
+            $this->valid = 1;
         endif;
     }
 
     function setOurstate($ourstate) {
         $this->ourstate = $ourstate;
     }
-
-        
 
     /**
      * Set bin
@@ -93,8 +95,7 @@ class BinCode
      *
      * @return BinCode
      */
-    public function setBin($bin)
-    {
+    public function setBin($bin) {
         $this->bin = $bin;
 
         return $this;
@@ -105,8 +106,7 @@ class BinCode
      *
      * @return integer
      */
-    public function getBin()
-    {
+    public function getBin() {
         return $this->bin;
     }
 
@@ -117,8 +117,7 @@ class BinCode
      *
      * @return BinCode
      */
-    public function setBank($bank)
-    {
+    public function setBank($bank) {
         $this->bank = $bank;
 
         return $this;
@@ -129,8 +128,7 @@ class BinCode
      *
      * @return string
      */
-    public function getBank()
-    {
+    public function getBank() {
         return $this->bank;
     }
 
@@ -141,8 +139,7 @@ class BinCode
      *
      * @return BinCode
      */
-    public function setCard($card)
-    {
+    public function setCard($card) {
         $this->card = $card;
 
         return $this;
@@ -153,8 +150,7 @@ class BinCode
      *
      * @return string
      */
-    public function getCard()
-    {
+    public function getCard() {
         return $this->card;
     }
 
@@ -165,8 +161,7 @@ class BinCode
      *
      * @return BinCode
      */
-    public function setType($type)
-    {
+    public function setType($type) {
         $this->type = $type;
 
         return $this;
@@ -177,8 +172,7 @@ class BinCode
      *
      * @return string
      */
-    public function getType()
-    {
+    public function getType() {
         return $this->type;
     }
 
@@ -189,8 +183,7 @@ class BinCode
      *
      * @return BinCode
      */
-    public function setLevel($level)
-    {
+    public function setLevel($level) {
         $this->level = $level;
 
         return $this;
@@ -201,8 +194,7 @@ class BinCode
      *
      * @return string
      */
-    public function getLevel()
-    {
+    public function getLevel() {
         return $this->level;
     }
 
@@ -213,8 +205,7 @@ class BinCode
      *
      * @return BinCode
      */
-    public function setCountry($country)
-    {
+    public function setCountry($country) {
         $this->country = $country;
 
         return $this;
@@ -225,8 +216,7 @@ class BinCode
      *
      * @return string
      */
-    public function getCountry()
-    {
+    public function getCountry() {
         return $this->country;
     }
 
@@ -237,8 +227,7 @@ class BinCode
      *
      * @return BinCode
      */
-    public function setCountrycode($countrycode)
-    {
+    public function setCountrycode($countrycode) {
         $this->countrycode = $countrycode;
 
         return $this;
@@ -249,8 +238,7 @@ class BinCode
      *
      * @return string
      */
-    public function getCountrycode()
-    {
+    public function getCountrycode() {
         return $this->countrycode;
     }
 
@@ -261,8 +249,7 @@ class BinCode
      *
      * @return BinCode
      */
-    public function setWebsite($website)
-    {
+    public function setWebsite($website) {
         $this->website = $website;
 
         return $this;
@@ -273,8 +260,7 @@ class BinCode
      *
      * @return string
      */
-    public function getWebsite()
-    {
+    public function getWebsite() {
         return $this->website;
     }
 
@@ -285,8 +271,7 @@ class BinCode
      *
      * @return BinCode
      */
-    public function setPhone($phone)
-    {
+    public function setPhone($phone) {
         $this->phone = $phone;
 
         return $this;
@@ -297,12 +282,8 @@ class BinCode
      *
      * @return string
      */
-    public function getPhone()
-    {
+    public function getPhone() {
         return $this->phone;
     }
 
- 
- 
 }
-

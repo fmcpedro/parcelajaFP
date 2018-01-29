@@ -2,11 +2,10 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Entity\BinBank;
 use AppBundle\Entity\BinCode;
-use SimpleXMLElement;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Form;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -27,6 +26,31 @@ class BinCodeController extends Controller {
         return $this->render('bincode/index.html.twig', array(
                     'binCodes' => $binCodes,
         ));
+    }
+
+    public function checkBinAction($binCodeNumber) {
+
+        $em = $this->getDoctrine()->getManager();
+
+        $binCode = new BinCode();
+        $binCode = $em->getRepository('AppBundle:BinCode')->find($binCodeNumber);
+
+        // TRUE -> BIN=(EXISTENTE) && CARD=(VISA || MASTERCARD) && TYPE=(CREDIT) && VALID=(TRUE) && OURSTATE=(TRUE) 
+        // TRUE -> BIN=(INEXISTENTE)
+        //BIN existe
+        if ($binCode != NULL):
+            if (($binCode->getCard() == "VISA" || $binCode->getCard() == "MASTERCARD" ) && $binCode->getType() == "CREDIT" && $binCode->getValid() == TRUE && $binCode->getOurstate() == TRUE):
+                $output = TRUE;
+            else:
+                $output = FALSE;
+            endif;
+
+        //BIN não existe
+        else:
+            $output = TRUE;
+        endif;
+
+        return new JsonResponse($output);
     }
 
     //https://api.bincodes.com/bin-search/?format=json&api_key=fcf66fc0bdff574708c47602a4ce90aa&country=PT&card=VISA&bank=BANCO BEST
@@ -59,63 +83,52 @@ class BinCodeController extends Controller {
             $obj = json_decode($result);
 
             foreach ($obj->result as $bin) {
-                $entity = new BinCode();
-                $entity->setBin($bin->bin);
+
+                $entity = $em->getRepository('AppBundle:BinCode')->find($bin->bin);
+
+                if ($entity == null) {
+                    $entity = new BinCode();
+                    $entity->setBin($bin->bin);
+                    $entity->setOurstate(1);
+                } else {
+//                $entity->setBank($obj->bank);
+//                $entity->setCard($obj->card);
+//                $entity->setType($obj->type);
+//                $entity->setLevel($obj->level);
+//                $entity->setCountry($obj->country);
+//                $entity->setCountrycode($obj->countrycode);
+//                $entity->setWebsite($obj->website);
+//                $entity->setPhone($obj->phone);
+//                $entity->setValid($obj->valid);
+                }
+
                 $em->merge($entity);
                 $em->flush();
             }
         }
 
-        return $this->render('bincode/importBinList.html.twig');
+
+        $binCodes = $em->getRepository('AppBundle:BinCode')->findAll();
+
+        return $this->render('bincode/index.html.twig', array(
+                    'binCodes' => $binCodes,
+        ));
     }
-
-//    public function getBinCodeObject($BIN) {
-//
-////      $PSPID = $this->getContainer()->getParameter('PSPID');
-////      $USERID = $this->getContainer()->getParameter('USERID');
-////      $PSWD = $this->getContainer()->getParameter('PSWD');
-//        $KEY = "fcf66fc0bdff574708c47602a4ce90aa";
-//
-//        $ch = curl_init();
-//
-//        $params = array('api_key' => $KEY, 'bin' => $BIN);
-//
-//        curl_setopt($ch, CURLOPT_URL, "https://api.bincodes.com/bin/?format=xml");
-//        curl_setopt($ch, CURLOPT_POST, 1);
-//        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($params));
-//        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-//
-//        $response = curl_exec($ch);
-//        $data = new SimpleXMLElement($response);
-//
-//        curl_close($ch);
-//
-//        return $data;
-//    }
-
-//    public function xml_attribute($object, $attribute) {
-//        if (isset($object[$attribute]))
-//            return (string) $object[$attribute];
-//    }
 
     /**
      * Import all binCodes from BinCodes.com
-     * https://api.bincodes.com/bin/?format=json&api_key=9fc53b3db09ca830488d19546a4fc2a1&bin=515735
+     * https://api.bincodes.com/bin/?format=json&api_key=fcf66fc0bdff574708c47602a4ce90aa&bin=515735
      */
     public function importBinDetailsAction(Request $request) {
         $em = $this->getDoctrine()->getManager();
 
-        
         //1) ir buscar os BINS que ainda não têm details
-        $binCodes = $em->getRepository('AppBundle:BinCode')->findBy(['bank'=>NULL]);
+        $binCodes = $em->getRepository('AppBundle:BinCode')->findBy(['bank' => NULL]);
 
         $KEY = "fcf66fc0bdff574708c47602a4ce90aa";
 
         foreach ($binCodes as $key => $binCode) {
 
-            echo "bin code = " . $binCode->getBin();
-            
-            
             $query = http_build_query([
                 'api_key' => $KEY,
                 'bin' => $binCode->getBin(),
@@ -129,26 +142,44 @@ class BinCodeController extends Controller {
             $result = curl_exec($ch);
             curl_close($ch);
             $obj = json_decode($result);
-            
 
-            //3) actualizar a tabela dos BINS com os detalhes
-            $entity = new BinCode();
-            $entity->setBin($obj->bin);
-            $entity->setBank($obj->bank);
-            $entity->setCard($obj->card);
-            $entity->setType($obj->type);
-            $entity->setLevel($obj->level);
-            $entity->setCountry($obj->country);
-            $entity->setCountrycode($obj->countrycode);
-            $entity->setWebsite($obj->website);
-            $entity->setPhone($obj->phone);
-            $entity->setValid($obj->valid);
+            $entity = $em->getRepository('AppBundle:BinCode')->findOneBy(['bin' => $obj->bin]);
+
+            //nunca vai acontecer!!!!
+            if ($entity == null) {
+                $entity = new BinCode();
+                $entity->setBin($obj->bin);
+                $entity->setBank($obj->bank);
+                $entity->setCard($obj->card);
+                $entity->setType($obj->type);
+                $entity->setLevel($obj->level);
+                $entity->setCountry($obj->country);
+                $entity->setCountrycode($obj->countrycode);
+                $entity->setWebsite($obj->website);
+                $entity->setPhone($obj->phone);
+                $entity->setValid($obj->valid);
+            } else {
+                //vai actualizar aqui
+                $entity->setBank($obj->bank);
+                $entity->setCard($obj->card);
+                $entity->setType($obj->type);
+                $entity->setLevel($obj->level);
+                $entity->setCountry($obj->country);
+                $entity->setCountrycode($obj->countrycode);
+                $entity->setWebsite($obj->website);
+                $entity->setPhone($obj->phone);
+                $entity->setValid($obj->valid);
+            }
 
             $em->merge($entity);
             $em->flush();
         }
 
-        return $this->render('bincode/import.html.twig', array());
+        $binCodes = $em->getRepository('AppBundle:BinCode')->findAll();
+
+        return $this->render('bincode/index.html.twig', array(
+                    'binCodes' => $binCodes,
+        ));
     }
 
     /**
@@ -194,20 +225,20 @@ class BinCodeController extends Controller {
      *
      */
     public function editAction(Request $request, BinCode $binCode) {
-        $deleteForm = $this->createDeleteForm($binCode);
+        //$deleteForm = $this->createDeleteForm($binCode);
         $editForm = $this->createForm('AppBundle\Form\BinCodeType', $binCode);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('admin_bincode_edit', array('id' => $binCode->getId()));
+            return $this->redirectToRoute('admin_bincode_edit', array('bin' => $binCode->getBin()));
         }
 
         return $this->render('bincode/edit.html.twig', array(
                     'binCode' => $binCode,
                     'edit_form' => $editForm->createView(),
-                    'delete_form' => $deleteForm->createView(),
+//                    'delete_form' => $deleteForm->createView(),
         ));
     }
 
@@ -245,3 +276,43 @@ class BinCodeController extends Controller {
 //        ;
 //    }
 }
+
+/**
+     * Creates a new binCode entity.
+     *
+     */
+//    public function newAction(Request $request)
+//    {
+//        $binCode = new Bincode();
+//        $form = $this->createForm('AppBundle\Form\BinCodeType', $binCode);
+//        $form->handleRequest($request);
+//
+//        if ($form->isSubmitted() && $form->isValid()) {
+//            $em = $this->getDoctrine()->getManager();
+//            $em->persist($binCode);
+//            $em->flush();
+//
+//            return $this->redirectToRoute('admin_bincode_show', array('id' => $binCode->getId()));
+//        }
+//
+//        return $this->render('bincode/new.html.twig', array(
+//            'binCode' => $binCode,
+//            'form' => $form->createView(),
+//        ));
+//    }
+
+    /**
+     * Finds and displays a binCode entity.
+     *
+     */
+//    public function showAction(BinCode $binCode)
+//    {
+//        $deleteForm = $this->createDeleteForm($binCode);
+//
+//        return $this->render('bincode/show.html.twig', array(
+//            'binCode' => $binCode,
+//            'delete_form' => $deleteForm->createView(),
+//        ));
+//    }
+
+ 

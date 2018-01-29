@@ -2,6 +2,19 @@
 
 {% block javascripts %}
     {{ parent() }}
+    
+      <!-- Apply the plugin -->
+  <script type="text/javascript" >
+            $(document).ready(function () {
+                $('#tableWithExportOptions').DataTable({
+                    iDisplayLength: 20,
+                    dom: 'Bfrtip',
+                    buttons: [
+                        'copy', 'csv', 'excel', 'pdf', 'print'
+                    ]
+                });
+            });
+    </script>
 {% endblock %}
 
 
@@ -38,25 +51,26 @@
                 <div class="panel-body">
 
 
-                    <table class="table display">
+                    <table class="display" id="tableWithExportOptions">
                         <thead>
                             <tr>
+                                <th>Id</th>
                                 <th>Countryname</th>
                                 <th>Countrycode</th>
                                 <th>Brand</th>
                                 <th>Bank</th>
-                                <th>Id</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             {% for binBank in binBanks %}
                                 <tr>
-                                    <td><a href="{{ path('admin_binbank_show', { 'id': binBank.id }) }}">{{ binBank.countryName }}</a></td>
+                                    <td>{{ binBank.id }}</td>
+                                    <td>{{ binBank.countryName }}</td>
                                     <td>{{ binBank.countryCode }}</td>
                                     <td>{{ binBank.brand }}</td>
                                     <td>{{ binBank.bank }}</td>
-                                    <td>{{ binBank.id }}</td>
+                                    
                                     <td>
                                         <ul>
                                             {#<li>

@@ -109,14 +109,25 @@
                                     {{ form_widget(edit_form.phone, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div>
-
-                            <div class="form-group">
-                                <label for="state" class="col-sm-3 control-label">state</label>
+                                
+                                <div class="form-group">
+                                <label for="valid" class="col-sm-3 control-label">valid</label>
                                 <div class="col-sm-9">
-                                    {{ form_widget(edit_form.state, {'attr': {'class': 'form-control'}}) }}
+                                    {{ form_widget(edit_form.valid) }}
                                 </div>
                             </div>
 
+                            <div class="form-group">
+                                <label for="ourstate" class="col-sm-3 control-label">ourstate</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(edit_form.ourstate) }}
+                                </div>
+                            </div>
+
+                                
+                                
+                                <br/>
+                                
                             <div class="row">
                                 <div class="col-sm-3">
                                     {#<p>I hereby certify that the information above is true and accurate. </p>#}
