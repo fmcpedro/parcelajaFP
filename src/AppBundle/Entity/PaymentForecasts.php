@@ -21,7 +21,27 @@ class PaymentForecasts
      * @var integer
      */
     private $id;
+    
+    /**
+     * @var integer
+     */
+    private $agencyId;
+    
+    
+    /**
+     * @var integer
+     */
+    private $subgroupId;
+    
 
+    
+    /**
+     * @var integer
+     */
+    private $groupId;
+    
+    
+    
 
     /**
      * Set valueEvoPayments
@@ -80,5 +100,38 @@ class PaymentForecasts
     {
         return $this->id;
     }
+    
+    
+    function getAgencyId() {
+        return $this->agencyId;
+    }
+
+    function getSubgroupId() {
+        return $this->subgroupId;
+    }
+
+    function getGroupId() {
+        return $this->groupId;
+    }
+
+    function setAgencyId($agencyId) {
+        $this->agencyId = $agencyId;
+    }
+
+    function setSubgroupId($subgroupId) {
+        $this->subgroupId = $subgroupId;
+    }
+
+    function setGroupId($groupId) {
+        $this->groupId = $groupId;
+    }
+
+
+    
+    
+    
+    
+    
+    
 }
 

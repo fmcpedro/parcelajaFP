@@ -232,6 +232,41 @@ class TpaymentsController extends Controller {
             $startDate = $searchForm["startDate"]->getData();
             $endDate = $searchForm["endDate"]->getData();
             $forecastsType = $searchForm["forecastsType"]->getData();
+            
+            $groupId = $searchForm["groupId"]->getData();
+            $subgroupId = $searchForm["subgroupId"]->getData();
+            $agencyId = $searchForm["agencyId"]->getData();
+ 
+            
+            
+            $search = array();
+            if (!empty($startDate)) {
+                $search['startDate'] = $startDate;
+            }
+
+            if (!empty($endDate)) {
+                $search['endDate'] = $endDate;
+            }
+
+            if (!empty($forecastsType)) {
+                $search['forecastsType'] = $forecastsType;
+            }
+            
+            if (!empty($groupId)) {
+                $search['groupId'] = $groupId;
+            }
+
+            if (!empty($subgroupId)) {
+                $search['subgroupId'] = $subgroupId;
+            }
+
+            if (!empty($agencyId)) {
+                $search['agencyId'] = $agencyId;
+            }
+            
+            
+            
+            
 
             // 1 PASSO - ELIMINAR TODOS OS REGISTOS NA TABELA DE PREVISOES
             $query = $em->createQuery('DELETE AppBundle:PaymentForecasts');
@@ -240,6 +275,8 @@ class TpaymentsController extends Controller {
 
             // 2 PASSO - GERAR OS PAGAMENTOS DE TODAS AS COMPRAS
             $tpurchases = $em->getRepository('AppBundle:Tpurchase')->findPurchasesForPaymentForecasts();
+            
+            //dump($tpurchases);
             foreach ($tpurchases as $key => $tpurchase) {
 
                 if ($tpurchase->getFextracharge() <> 0):
@@ -262,6 +299,13 @@ class TpaymentsController extends Controller {
                     $date->setTimestamp($timestamp);
                     $date->format($datetimeFormat);
 
+                    $agencyId = $tpurchase->getAgency()->getFagencyid();
+                    $subgroupId = $tpurchase->getAgency()->getSubgroup()->getFsubgroupid();
+                    $groupId = $tpurchase->getAgency()->getSubgroup()->getGroup()->getFgroupid();
+                    
+                    $forecast->setAgencyId($agencyId);
+                    $forecast->setSubgroupId($subgroupId);
+                    $forecast->setGroupId($groupId);
                     $forecast->setDate($date);
                     $forecast->setValueEvoPayments($generatedPayment->getValorReceberEvoPayments());
                     $em->persist($forecast);
@@ -273,9 +317,9 @@ class TpaymentsController extends Controller {
             // 4 CALCULAR PREVISOES DE ACORDO COM O TIPO SELECIONADO (SEMANAL OU MENSAL)
             //semanal = 1 - mensal = 2
             if ($forecastsType == 1) {
-                $forecasts = $em->getRepository('AppBundle:Tpurchase')->findPaymentForecastsByWeek($startDate, $endDate);
+                $forecasts = $em->getRepository('AppBundle:Tpurchase')->findPaymentForecastsByWeek($search);
             } else {
-                $forecasts = $em->getRepository('AppBundle:Tpurchase')->findPaymentForecastsByMonth($startDate, $endDate);
+                $forecasts = $em->getRepository('AppBundle:Tpurchase')->findPaymentForecastsByMonth($search);
             }
         } else {
             $forecasts = array();

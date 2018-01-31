@@ -30,12 +30,10 @@ class TpurchaseRepository extends EntityRepository {
         $qb->andWhere('p.fcalcamount >= ?1');
         $qb->setParameter(1, 20);
 
-
         if (array_key_exists('agency', $params)) {
             $qb->andWhere('p.agency = ?2');
             $qb->setParameter(2, $params['agency']);
         }
-
 
         if (array_key_exists('fcontractnumber', $params)) {
             $qb->andWhere('p.fcontractnumber = ?3');
@@ -70,8 +68,6 @@ class TpurchaseRepository extends EntityRepository {
 
         $qb->andWhere('p.fcalcamount >= ?1');
         $qb->setParameter(1, 20);
-
-
         $qb->andWhere('p.fstatus = ?2');
         $qb->setParameter(2, 1);
 
@@ -85,53 +81,91 @@ class TpurchaseRepository extends EntityRepository {
      * 
      * @return type
      */
-    
-    
     //SELECT SUM(value_evo_payments) AS total, year(date) as year, month(date) as month 
     //FROM payment_forecasts 
     //WHERE date >= '2018-01-01' AND date < '2018-06-01'
     //GROUP BY year, month 
     //ORDER BY year, month;
-      
-    public function findPaymentForecastsByMonth($startDate, $endDate) {
-        $em = $this->getEntityManager();
 
-        $query = $em->createQuery('SELECT SUM(p.valueEvoPayments) AS total, year(p.date) as year, month(p.date) as month '
-                . 'FROM AppBundle:PaymentForecasts p '
-                . 'WHERE p.date >= ?1 AND p.date < ?2 '
-                . 'GROUP BY year, month '
-                . 'ORDER BY year, month');
+    public function findPaymentForecastsByMonth($search) {
+        $em = $this->getEntityManager();
         
-        $query->setParameter(1,$startDate );
-        $query->setParameter(2,$endDate );
+        $sql = 'SELECT SUM(p.valueEvoPayments) AS total, year(p.date) as year, month(p.date) as month '
+                . 'FROM AppBundle:PaymentForecasts p '
+                . 'WHERE p.date >= ?1 AND p.date < ?2 ';
+        
+        //CAMPOS OPCIONAIS DA QUERY
+        if (array_key_exists('agencyId', $search)) {
+            $sql .= 'AND p.agencyId = ?3 ';
+        }
+        if (array_key_exists('subgroupId', $search)) {
+            $sql .= 'AND p.subgroupId = ?4 ';
+        }
+        if (array_key_exists('groupId', $search)) {
+            $sql .= 'AND p.groupId = ?5 ';
+        }
+        $sql .= 'GROUP BY year, month '
+                . 'ORDER BY year, month ';
+
+        $query = $em->createQuery($sql);
+        $query->setParameter(1, $search['startDate']);
+        $query->setParameter(2, $search['endDate']);
+
+        if (array_key_exists('agencyId', $search)) {
+            $query->setParameter(3, $search['agencyId']);
+        }
+        if (array_key_exists('subgroupId', $search)) {
+            $query->setParameter(4, $search['subgroupId']);
+        }
+        if (array_key_exists('groupId', $search)) {
+            $query->setParameter(5, $search['groupId']);
+        }
 
         return $query->getResult();
     }
-    
-    
-    
-    
-    
+
     //SELECT SUM(value_evo_payments) AS total, CONCAT(date, ' - ', date + INTERVAL 6 DAY) AS week FROM payment_forecasts GROUP BY WEEK(date) ORDER BY WEEK(date)
 
     /**
      * 
      * @return type
      */
-    public function findPaymentForecastsByWeek($startDate, $endDate) {
+    public function findPaymentForecastsByWeek($search) {
         $em = $this->getEntityManager();
 
-        $query = $em->createQuery('SELECT SUM(p.valueEvoPayments) AS total, WEEK(p.date, 3) as week, year(p.date) as year '
+        //CRIAR A QUERY
+        $sql = 'SELECT SUM(p.valueEvoPayments) AS total, WEEK(p.date, 3) as week, year(p.date) as year '
                 . 'FROM AppBundle:PaymentForecasts p '
-                . 'WHERE p.date >= ?1 AND p.date < ?2 '
-                . 'GROUP BY year, week '
-                . 'ORDER BY year, week ');
-        
-        $query->setParameter(1,$startDate );
-        $query->setParameter(2,$endDate );
+                . 'WHERE p.date >= ?1 AND p.date < ?2 ';
 
-        //dump($query->getResult());
-        
+        //CAMPOS OPCIONAIS DA QUERY
+        if (array_key_exists('agencyId', $search)) {
+            $sql .= 'AND p.agencyId = ?3 ';
+        }
+        if (array_key_exists('subgroupId', $search)) {
+            $sql .= 'AND p.subgroupId = ?4 ';
+        }
+        if (array_key_exists('groupId', $search)) {
+            $sql .= 'AND p.groupId = ?5 ';
+        }
+        $sql .= 'GROUP BY year, week '
+                . 'ORDER BY year, week ';
+
+
+        $query = $em->createQuery($sql);
+        $query->setParameter(1, $search['startDate']);
+        $query->setParameter(2, $search['endDate']);
+
+        if (array_key_exists('agencyId', $search)) {
+            $query->setParameter(3, $search['agencyId']);
+        }
+        if (array_key_exists('subgroupId', $search)) {
+            $query->setParameter(4, $search['subgroupId']);
+        }
+        if (array_key_exists('groupId', $search)) {
+            $query->setParameter(5, $search['groupId']);
+        }
+
         return $query->getResult();
     }
 

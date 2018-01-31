@@ -138,7 +138,7 @@
                         <thead>
                             
                             <tr>
-                                <th>Fposid</th>
+                                {#<th>Fposid</th>#}
                                 <th>Fserial</th>
                                 <th>Fstate</th>
                                 <th>Fsoftversion</th>
@@ -150,7 +150,7 @@
                         <tbody>
                             {% for tpo in tpos %}
                                 <tr>
-                                    <td>{{ tpo.fposid }}</td>
+                                    {#<td>{{ tpo.fposid }}</td>#}
                                     <td>{{ tpo.fserial }}</td>
                                     <td>{% if tpo.fstate %}Yes{% else %}No{% endif %}</td>
                                     <td>{{ tpo.fsoftversion }}</td>

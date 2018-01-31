@@ -1,16 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
-  <entity name="AppBundle\Entity\PaymentForecasts" table="payment_forecasts">
-    <id name="id" type="integer" column="id">
-      <generator strategy="IDENTITY"/>
-    </id>
-    <field name="valueEvoPayments" type="float" column="value_evo_payments" precision="10" scale="0" nullable="true"/>
+    <entity name="AppBundle\Entity\PaymentForecasts" table="payment_forecasts">
+        <id name="id" type="integer" column="id">
+            <generator strategy="IDENTITY"/>
+        </id>
     
-    <field name="date" type="date" column="date" nullable="true"/>
-<!--    <field name="date" type="string" column="date" length="45" nullable="true">
-      <options>
-        <option name="fixed"/>
-      </options>
-    </field>-->
-  </entity>
+    
+        <field name="agencyId" type="integer" column="agency_id" nullable="false">
+            <options>
+                <option name="unsigned"/>
+            </options>
+        </field>
+        
+        <field name="subgroupId" type="integer" column="subgroup_id" nullable="false">
+            <options>
+                <option name="unsigned"/>
+            </options>
+        </field>
+    
+    <field name="groupId" type="integer" column="group_id" nullable="false">
+            <options>
+                <option name="unsigned"/>
+            </options>
+        </field>
+    
+    
+        <field name="valueEvoPayments" type="float" column="value_evo_payments" precision="10" scale="0" nullable="true"/>
+    
+        <field name="date" type="date" column="date" nullable="true"/>
+        <!--    <field name="date" type="string" column="date" length="45" nullable="true">
+          <options>
+            <option name="fixed"/>
+          </options>
+        </field>-->
+    </entity>
 </doctrine-mapping>
