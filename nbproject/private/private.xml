@@ -3,17 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/luis/sfprojects/parcelaja/app/Resources/views/bincode/index.html.twig</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/config/routing/bincode.yml</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Controller/BinCodeController.php</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/config/doctrine/BinCode.orm.xml</file>
-            <file>file:/home/luis/sfprojects/parcelaja/app/Resources/views/binbank/index.html.twig</file>
-            <file>file:/home/luis/sfprojects/parcelaja/app/Resources/views/bincode/edit.html.twig</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/config/doctrine/Tagency.orm.xml</file>
-            <file>file:/home/luis/sfprojects/parcelaja/app/Resources/views/tpos/index.html.twig</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Form/BinCodeType.php</file>
-            <file>file:/home/luis/sfprojects/parcelaja/app/Resources/views/binbank/edit.html.twig</file>
-            <file>file:/home/luis/sfprojects/parcelaja/app/Resources/views/tpos/edit.html.twig</file>
+            <file>file:/home/luis/sfprojects/parcelaja/app/config/parameters.yml</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Controller/DefaultController.php</file>
+            <file>file:/home/luis/sfprojects/parcelaja/app/config/config.yml</file>
         </group>
     </open-files>
 </project-private>

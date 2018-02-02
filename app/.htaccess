@@ -1,3 +1,4 @@
+RedirectMatch permanent ^/app\.php/(.*) /$1
 <IfModule mod_authz_core.c>
     Require all denied
 </IfModule>

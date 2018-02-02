@@ -68,14 +68,19 @@ doctrine:
 
 # Swiftmailer Configuration
 swiftmailer:
-    transport: '%mailer_transport%'
+#    transport: '%mailer_transport%'
+#    host: '%mailer_host%'
+#    username: '%mailer_user%'
+#    password: '%mailer_password%'
+#    port:       995
+#    encryption: ssl
+#https://support.google.com/accounts/answer/185833
     host: '%mailer_host%'
     username: '%mailer_user%'
     password: '%mailer_password%'
-    port:       587 # different ports are available, see SES console
-    encryption: tls
-#    spool: { type: memory }
-
+    port:       465
+    encryption: ssl
+    auth_mode: login
 
 #
 #monolog:
