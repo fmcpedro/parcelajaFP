@@ -77,7 +77,7 @@ class TpaymentsRepository extends EntityRepository {
      * FTotPurchaseValue = valor total da compra com taxas
      *  
      */
-    public function findAllProcessedPayments() {
+    public function findAllProcessedPayments($numDays = 220) {
         $em = $this->getEntityManager();
         $tpayments = array();
 
@@ -85,7 +85,7 @@ class TpaymentsRepository extends EntityRepository {
         $payment = new Tpayments();
         $purchase = new Tpurchase();
 
-        $payments = $em->getRepository('AppBundle:Tpayments')->findLastDaysPayments(220);
+        $payments = $em->getRepository('AppBundle:Tpayments')->findLastDaysPayments($numDays);
 
         foreach ($payments as $key => $payment) {
             //buscar a compra
