@@ -270,7 +270,7 @@ class TpaymentsRepository extends EntityRepository {
                 ->setParameter('fstartvalue', $valorCompra)
                 ->setParameter('fendvalue', $valorCompra);
 
-        //dump($query);
+        dump($valorCompra);
 
         $payMethodFee = $query->getSingleResult();
 

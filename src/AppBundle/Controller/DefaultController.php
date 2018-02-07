@@ -25,11 +25,6 @@ class DefaultController extends Controller {
         $subGrupos = $em->getRepository('AppBundle:TSubGroup')->findBy(array('fstate' => 1));
         //$subGrupos = $em->getRepository('AppBundle:TSubGroup')->findAll();
         
-        
-        //dump($subGrupos);
-        //dump($agencias);
-        
-
         return $this->render('AppBundle:default:v2_para_clientes.html.twig', array(
                     'agencias' => $agencias,
                     'sub_grupos' => $subGrupos,
