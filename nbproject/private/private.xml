@@ -7,6 +7,11 @@
             <file>file:/home/luis/sfprojects/parcelaja/app/config/config.yml</file>
             <file>file:/home/luis/sfprojects/parcelaja/app/config/parameters.yml</file>
             <file>file:/home/luis/sfprojects/parcelaja/app/.htaccess</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Controller/TpaymentsController.php</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Command/ImportPaymentsIngenicoCommand.php</file>
+            <file>file:/home/luis/sfprojects/parcelaja/app/AppKernel.php</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Command/ExportPaymentsCommand.php</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Repository/TpaymentsRepository.php</file>
         </group>
     </open-files>
 </project-private>
