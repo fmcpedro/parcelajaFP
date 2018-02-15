@@ -20,6 +20,14 @@
 ADD COLUMN `broker_id` INT NULL AFTER `FState`;-->
 
 
+<!--ALTER TABLE `parcelaja_payments`.`TAgency` 
+CHANGE COLUMN `FAddress` `FAddress` TEXT CHARACTER SET 'utf8' NOT NULL ,
+ADD COLUMN `tax_address` TEXT NULL AFTER `broker_id`;-->
+
+<!--update TAgency set tax_address = concat(FAddress,', ', FPostalCode1,'-',FPostalCode2,' ', FLocation)-->
+
+
+
 <!--
 ALTER TABLE `parcelaja_payments`.`TAgency` 
 ADD INDEX `fk_TAgency_1_idx` (`broker_id` ASC);
@@ -59,11 +67,19 @@ ADD CONSTRAINT `fk_TAgency_1`
                 <option name="fixed"/>
             </options>
         </field>
-        <field name="faddress" type="string" column="FAddress" length="255" nullable="false">
+<!--        <field name="faddress" type="string" column="FAddress" length="255" nullable="false">
             <options>
                 <option name="fixed"/>
             </options>
-        </field>
+        </field>-->
+        
+        
+        <field name="faddress" type="text" column="FAddress" length="65535" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+        
         <field name="fpostalcode1" type="string" column="FPostalCode1" length="10" nullable="false">
             <options>
                 <option name="fixed"/>
@@ -140,5 +156,14 @@ ADD CONSTRAINT `fk_TAgency_1`
             </options>
         </field>
         <field name="fstate" type="boolean" column="FState" nullable="false"/>
+        
+        
+        <field name="taxAddress" type="text" column="tax_address" length="65535" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+        
+        
     </entity>
 </doctrine-mapping>

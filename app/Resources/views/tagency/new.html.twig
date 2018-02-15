@@ -70,8 +70,16 @@
                                     {{ form_widget(form.faddress, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div>
+                                
+                                
+                                 <div class="form-group">
+                                <label for="taxAddress" class="col-sm-3 control-label">taxAddress</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(form.taxAddress, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div>
 
-                            <div class="form-group">
+                           {# <div class="form-group">
                                 <label for="fpostalcode1" class="col-sm-3 control-label">fpostalcode1</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(form.fpostalcode1, {'attr': {'class': 'form-control'}}) }}
@@ -90,7 +98,7 @@
                                 <div class="col-sm-9">
                                     {{ form_widget(form.flocation, {'attr': {'class': 'form-control'}}) }}
                                 </div>
-                            </div> 
+                            </div> #}
 
                             <div class="form-group">
                                 <label for="femail1" class="col-sm-3 control-label">femail1</label>

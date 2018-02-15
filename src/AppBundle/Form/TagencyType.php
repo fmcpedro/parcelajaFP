@@ -3,6 +3,7 @@
 namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -16,10 +17,15 @@ class TagencyType extends AbstractType
         $builder->add('fagencyname')
                 ->add('ffiscalname')
                 ->add('ftaxidnumber')
-                ->add('faddress')
-                ->add('fpostalcode1')
-                ->add('fpostalcode2')
-                ->add('flocation')
+                ->add('faddress', TextareaType::class, array(
+                    'attr' => array('class' => 'form-control'),
+                ))
+                ->add('taxAddress', TextareaType::class, array(
+                    'attr' => array('class' => 'form-control'),
+                ))
+//                ->add('fpostalcode1')
+//                ->add('fpostalcode2')
+//                ->add('flocation')
                 ->add('femail1')
                 ->add('femail2')
                 ->add('fcontactperson')

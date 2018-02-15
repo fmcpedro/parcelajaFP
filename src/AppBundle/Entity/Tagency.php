@@ -130,6 +130,10 @@ class Tagency {
      */
     private $subgroup;
     private $broker;
+    
+    
+    
+    private $taxAddress;
 
     /**
      * Constructor
@@ -137,6 +141,23 @@ class Tagency {
     public function __construct() {
         $this->terminalList = new \Doctrine\Common\Collections\ArrayCollection();
     }
+    
+    
+    
+    
+    function getTaxAddress() {
+        return $this->taxAddress;
+    }
+
+    function setTaxAddress($taxAddress) {
+        $this->taxAddress = $taxAddress;
+    }
+
+        
+    
+    
+    
+    
 
     /**
      * Set broker
