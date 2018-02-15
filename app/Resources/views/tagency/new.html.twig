@@ -1,0 +1,255 @@
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+    <!-- START PAGE CONTENT -->
+    <div class="content">
+        <!-- START JUMBOTRON -->
+        <div class="jumbotron" data-pages="parallax">
+            <div class="container-fluid container-fixed-lg sm-p-l-20 sm-p-r-20">
+                <div class="inner">
+                    <!-- START BREADCRUMB -->
+                    <ul class="breadcrumb">
+                        <li><a href="#" class="">Parcela Já</a></li>
+                        <li><a href="#" class="active">Lojas</a></li>
+                    </ul>
+                    <!-- END BREADCRUMB -->
+                </div>
+            </div>
+        </div>
+        <!-- END JUMBOTRON -->
+
+
+
+        <!-- START CONTAINER FLUID -->
+        <div class="container-fluid container-fixed-lg">
+            <!-- START PANEL -->
+            <div class="panel panel-transparent">
+                <div class="panel-heading">
+                    <div class="panel-title">Criar Loja </div>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-10">
+                            {#<h3>form_title</h3>#}
+                            <p>Preencha os campos abaixo para criar uma nova loja</p>
+
+                            {% for flashMessage in app.session.flashbag.get('notice') %}
+                                <div class="alert alert-success">
+                                    {{ flashMessage }}
+                                </div>
+                            {% endfor %}
+
+                            {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }} 
+                            <div class="form-group">
+                                <label for="fagencyname" class="col-sm-3 control-label">fagencyname</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(form.fagencyname, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="ffiscalname" class="col-sm-3 control-label">ffiscalname</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(form.ffiscalname, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="ftaxidnumber" class="col-sm-3 control-label">ftaxidnumber</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(form.ftaxidnumber, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="faddress" class="col-sm-3 control-label">faddress</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(form.faddress, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="fpostalcode1" class="col-sm-3 control-label">fpostalcode1</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(form.fpostalcode1, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div>    
+
+                            <div class="form-group">
+                                <label for="fpostalcode2" class="col-sm-3 control-label">fpostalcode2</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(form.fpostalcode2, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div> 
+
+                            <div class="form-group">
+                                <label for="flocation" class="col-sm-3 control-label">flocation</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(form.flocation, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div> 
+
+                            <div class="form-group">
+                                <label for="femail1" class="col-sm-3 control-label">femail1</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(form.femail1, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div> 
+
+                            <div class="form-group">
+                                <label for="femail2" class="col-sm-3 control-label">femail2</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(form.femail2, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div> 
+                                
+                            <div class="form-group">
+                                <label for="fcontactperson" class="col-sm-3 control-label">fcontactperson</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(form.fcontactperson, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div> 
+                                
+                                
+                                
+                                
+                                
+                                <div class="form-group">
+                                <label for="ftelephone" class="col-sm-3 control-label">ftelephone</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(form.ftelephone, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div> 
+                                
+                                
+                                
+                                <div class="form-group">
+                                <label for="fmobilephone" class="col-sm-3 control-label">fmobilephone</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(form.fmobilephone, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div> 
+                                
+                                
+                                
+                                <div class="form-group">
+                                <label for="fwebsite" class="col-sm-3 control-label">fwebsite</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(form.fwebsite, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div> 
+                                
+                                
+                                
+                                <div class="form-group">
+                                <label for="fbank" class="col-sm-3 control-label">fbank</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(form.fbank, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div> 
+                                
+                                
+                                <div class="form-group">
+                                <label for="fiban" class="col-sm-3 control-label">fiban</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(form.fiban, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div> 
+                                
+                                
+                                <div class="form-group">
+                                <label for="fbicswift" class="col-sm-3 control-label">fbicswift</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(form.fbicswift, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div> 
+                                
+                                
+                                <div class="form-group">
+                                <label for="frnavt" class="col-sm-3 control-label">frnavt</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(form.frnavt, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div> 
+                                
+                                
+                                <div class="form-group">
+                                <label for="fpaymethodid" class="col-sm-3 control-label">fpaymethodid</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(form.fpaymethodid, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div> 
+                                
+                                
+                                <div class="form-group">
+                                <label for="flogo" class="col-sm-3 control-label">flogo</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(form.flogo, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div> 
+                                
+                                
+                                <div class="form-group">
+                                <label for="fstate" class="col-sm-3 control-label">fstate</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(form.fstate, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div> 
+                                
+                                
+                                 <div class="form-group">
+                                <label for="subgroup" class="col-sm-3 control-label">subgroup</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(form.subgroup, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div> 
+                                
+                                 <div class="form-group">
+                                <label for="broker" class="col-sm-3 control-label">broker</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(form.broker, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div> 
+                                
+                                
+                               
+                                
+                          
+                                
+
+                            <br>
+
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    {#<p>I hereby certify that the information above is true and accurate. </p>#}
+                                </div>
+                                <div class="col-sm-9">
+                                    <button class="btn btn-complete btn-cons m-b-10" type="submit">
+                                        <i class="pg-form"></i> <span class="bold">Create</span>
+                                    </button>
+                                    <button class="btn btn-default btn-cons m-b-10" type="reset">
+                                        <i class="pg-close"></i> <span class="bold">Clear</span>
+                                    </button>
+                                </div>
+                            </div>
+                            {{ form_end(form) }}
+
+                            <a class="btn btn-primary btn-cons m-b-10" href="{{ path('admin_agency_index') }}">
+                                <i class="fa fa-backward"></i> <span class="bold">Back to the list</span>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END PANEL -->
+        </div>
+        <!-- END CONTAINER FLUID -->
+
+    </div>
+    <!-- END PAGE CONTENT -->
+
+{% endblock %}

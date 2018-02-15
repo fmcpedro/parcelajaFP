@@ -1,6 +1,12 @@
 {# empty Twig template #}
 
 
+
+
+
+
+
+
 <!-- BEGIN SIDEBAR -->
 <div class="page-sidebar" data-pages="sidebar">
     <div id="appMenu" class="sidebar-overlay-slide from-top">
@@ -20,8 +26,10 @@
     <div class="sidebar-menu">
         <ul class="menu-items">
 
-
-            <li class="">
+            
+            {% set route = app.request.attributes.get('_route')%}
+            
+            <li class="{% if route in ['admin_payments_simulator','admin_payments_index', 'admin_payments_next_payments','admin_payments_payment_forecasts' ] %}active{% endif %}">
                 <a href="javascript:;">
                     <span class="title">Transações</span>
                     <span class=" arrow"></span>
@@ -30,28 +38,28 @@
                 <ul class="sub-menu">
 
                     {% if is_granted('ROLE_BNI') %} 
-                        <li class="">
+                        <li class="{% if route in ['admin_payments_simulator'] %}active{% endif %}">
                             <a href="{{ path('admin_payments_simulator') }}">Simulador</a>
                             <span class="icon-thumbnail">SI</span>
                         </li>
                     {% endif %}                    
 
                     {% if is_granted('ROLE_BNI') %} 
-                        <li class="">
+                        <li class="{% if route in ['admin_payments_index'] %}active{% endif %}">
                             <a href="{{ path('admin_payments_index') }}">Capturadas </a>
                             <span class="icon-thumbnail">TP</span>
                         </li>
                     {% endif %}
 
                     {% if is_granted('ROLE_BNI') %} 
-                        <li class="">
+                        <li class="{% if route in ['admin_payments_next_payments'] %}active{% endif %}">
                             <a href="{{ path('admin_payments_next_payments') }}">Por capturar </a>
                             <span class="icon-thumbnail">TP</span>
                         </li>
                     {% endif %}
                     
                     {% if is_granted('ROLE_ADMIN') %} 
-                        <li class="">
+                        <li class="{% if route in ['admin_payments_payment_forecasts'] %}active{% endif %}">
                             <a href="{{ path('admin_payments_payment_forecasts') }}">Agregadas </a>
                             <span class="icon-thumbnail">TP</span>
                         </li>
@@ -64,22 +72,46 @@
             </li>
 
 
+            {% if is_granted('ROLE_ADMIN') %} 
+
+                <li class="{% if route in ['admin_agency_index','admin_broker_index' ] %}active{% endif %}">
+                    <a href="javascript:;">
+                        <span class="title">Lojas</span>
+                        <span class=" arrow"></span>
+                    </a>
+                    <span class="icon-thumbnail"><i class="pg-phone"></i></span>
+                    <ul class="sub-menu">
+                        <li class="{% if route in ['admin_agency_index' ] %}active{% endif %}">
+                            <a href="{{ path('admin_agency_index') }}">Lojas</a>
+                            <span class="icon-thumbnail">TI</span>
+                        </li>
+                        <li class="{% if route in ['admin_broker_index' ] %}active{% endif %}">
+                            <a href="{{ path('admin_broker_index') }}">Brokers</a>
+                            <span class="icon-thumbnail">TP</span>
+                        </li>
+
+                    </ul>
+                </li>
+            {% endif %}
+            
+            
+            
 
 
             {% if is_granted('ROLE_ADMIN') %} 
 
-                <li class="">
+                <li class="{% if route in ['admin_tpos_index','admin_terminal_payment_index' ] %}active{% endif %}">
                     <a href="javascript:;">
                         <span class="title">Terminais</span>
                         <span class=" arrow"></span>
                     </a>
                     <span class="icon-thumbnail"><i class="pg-phone"></i></span>
                     <ul class="sub-menu">
-                        <li class="">
+                        <li class="{% if route in ['admin_tpos_index'] %}active{% endif %}">
                             <a href="{{ path('admin_tpos_index') }}">Instalados</a>
                             <span class="icon-thumbnail">TI</span>
                         </li>
-                        <li class="">
+                        <li class="{% if route in ['admin_terminal_payment_index' ] %}active{% endif %}">
                             <a href="{{ path('admin_terminal_payment_index') }}">Pagamentos </a>
                             <span class="icon-thumbnail">TP</span>
                         </li>
@@ -91,18 +123,18 @@
             
             {% if is_granted('ROLE_ADMIN') %} 
 
-                <li class="">
+                <li class="{% if route in ['admin_binbank_index', 'admin_bincode_index'] %}active{% endif %}">
                     <a href="javascript:;">
                         <span class="title">Bins</span>
                         <span class=" arrow"></span>
                     </a>
                     <span class="icon-thumbnail"><i class="pg-phone"></i></span>
                     <ul class="sub-menu">
-                        <li class="">
+                        <li class="{% if route in ['admin_binbank_index'] %}active{% endif %}">
                             <a href="{{ path('admin_binbank_index') }}">Bancos</a>
                             <span class="icon-thumbnail">TI</span>
                         </li>
-                        <li class="">
+                        <li class="{% if route in ['admin_bincode_index'] %}active{% endif %}">
                             <a href="{{ path('admin_bincode_index') }}">Bins </a>
                             <span class="icon-thumbnail">TP</span>
                         </li>
@@ -116,18 +148,18 @@
             
             {% if is_granted('ROLE_ADMIN') %} 
 
-                <li class="">
+                <li class="{% if route in ['admin_post_index', 'admin_media_index'] %}active{% endif %}">
                     <a href="javascript:;">
                         <span class="title">Website</span>
                         <span class=" arrow"></span>
                     </a>
                     <span class="icon-thumbnail"><i class="pg-phone"></i></span>
                     <ul class="sub-menu">
-                        <li class="">
+                        <li class="{% if route in ['admin_post_index'] %}active{% endif %}">
                             <a href="{{ path('admin_post_index') }}">Posts</a>
                             <span class="icon-thumbnail">TI</span>
                         </li>
-                        <li class="">
+                        <li class="{% if route in ['admin_media_index'] %}active{% endif %}">
                             <a href="{{ path('admin_media_index') }}">Noticias</a>
                             <span class="icon-thumbnail">TP</span>
                         </li>

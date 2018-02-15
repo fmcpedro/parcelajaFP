@@ -1,0 +1,135 @@
+{% extends 'base.html.twig' %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <!-- Apply the plugin -->
+    <script type="text/javascript" >
+        $(document).ready(function () {
+            $('#tableWithExportOptions').DataTable({
+                iDisplayLength: 20,
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ]
+            });
+        });
+    </script>
+{% endblock %}
+
+
+{% block body %}
+
+    <!-- START PAGE CONTENT -->
+    <div class="content">
+        <!-- START JUMBOTRON -->
+        <div class="jumbotron" data-pages="parallax">
+            <div class="container-fluid container-fixed-lg sm-p-l-20 sm-p-r-20">
+                <div class="inner">
+                    <!-- START BREADCRUMB -->
+                    <ul class="breadcrumb">
+                        <li><a href="#" class="">Parcela Já</a></li>
+                        <li><a href="#" class="active">Brokers</a></li>
+                    </ul>
+                    <!-- END BREADCRUMB -->
+                </div>
+            </div>
+        </div>
+        <!-- END JUMBOTRON -->
+
+
+        <!-- START CONTAINER FLUID -->
+        <div class="container-fluid container-fixed-lg bg-white">
+            <!-- START PANEL -->
+            <div class="panel panel-transparent">
+                <div class="panel-heading">
+                    <div class="panel-title">Lista de Brokers
+                    </div>
+                    <div class="export-options-container pull-right"></div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="panel-body">
+
+
+                    <table class="display" id="tableWithExportOptions">
+
+                        <thead>
+                            <tr> 
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Taxname</th>
+                                <th>Nif</th>
+                                <th>Address</th>
+                                <th>Email</th>
+                                <th>Contact</th>
+                                <th>Commission</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for broker in brokers %}
+                                <tr>
+                                    <td>{{ broker.id }}</td>
+                                    <td>{{ broker.name }}</td>
+                                    <td>{{ broker.taxName }}</td>
+                                    <td>{{ broker.nif }}</td>
+                                    <td>{{ broker.address }}</td>
+                                    <td>{{ broker.email }}</td>
+                                    <td>{{ broker.contact }}</td>
+                                    <td>{{ broker.commission }}</td>
+
+                                    <td>
+                                        <ul>
+                                            {#<li>
+                                                <a href="{{ path('admin_broker_show', { 'id': broker.id }) }}">show</a>
+                                            </li>#}
+                                            <li>
+                                                <a href="{{ path('admin_broker_edit', { 'id': broker.id }) }}">edit</a>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_broker_new') }}">Create a new broker</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            <!-- END PANEL -->
+        </div>
+        <!-- END CONTAINER FLUID -->
+
+
+    </div>
+    <!-- END PAGE CONTENT -->
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

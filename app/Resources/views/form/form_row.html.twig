@@ -1,0 +1,43 @@
+{# form_row.html.twig #}
+{% block form_row %}
+    {#<div class="form_row">
+        {{ form_label(form) }}
+        {{ form_errors(form) }}
+        {{ form_widget(form) }}
+    </div>
+#}
+
+    <div class="form_row">
+        {{ form_label(form) }}
+        {{ form_errors(form) }}
+        {{ form_widget(form) }}
+    </div>
+    
+    
+    
+ <div class="form-group">
+                                <label for="fcontactperson" class="col-sm-3 control-label">fcontactperson</label>
+                                
+                            </div> 
+
+
+
+
+{% endblock form_row %}{# empty Twig template #}
+
+
+{% block form_errors %}
+    {% spaceless %}
+        {% if errors|length > 0 %}
+            {% if compound %}
+                <ul>
+                    {% for error in errors %}
+                        <li>{{ error.message }}</li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                {# ... display the errors for a single field #}
+            {% endif %}
+        {% endif %}
+    {% endspaceless %}
+{% endblock form_errors %}

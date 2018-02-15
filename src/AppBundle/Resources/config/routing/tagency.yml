@@ -1,0 +1,24 @@
+admin_agency_index:
+    path:     /
+    defaults: { _controller: "AppBundle:Tagency:index" }
+    methods:  GET
+
+admin_agency_show:
+    path:     /{fagencyid}/show
+    defaults: { _controller: "AppBundle:Tagency:show" }
+    methods:  GET
+
+admin_agency_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Tagency:new" }
+    methods:  [GET, POST]
+
+admin_agency_edit:
+    path:     /{fagencyid}/edit
+    defaults: { _controller: "AppBundle:Tagency:edit" }
+    methods:  [GET, POST]
+
+admin_agency_delete:
+    path:     /{fagencyid}/delete
+    defaults: { _controller: "AppBundle:Tagency:delete" }
+    methods:  DELETE

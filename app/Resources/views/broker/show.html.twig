@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Broker</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <td>{{ broker.name }}</td>
+            </tr>
+            <tr>
+                <th>Taxname</th>
+                <td>{{ broker.taxName }}</td>
+            </tr>
+            <tr>
+                <th>Nif</th>
+                <td>{{ broker.nif }}</td>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td>{{ broker.address }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ broker.email }}</td>
+            </tr>
+            <tr>
+                <th>Contact</th>
+                <td>{{ broker.contact }}</td>
+            </tr>
+            <tr>
+                <th>Bank</th>
+                <td>{{ broker.bank }}</td>
+            </tr>
+            <tr>
+                <th>Iban</th>
+                <td>{{ broker.iban }}</td>
+            </tr>
+            <tr>
+                <th>Commission</th>
+                <td>{{ broker.commission }}</td>
+            </tr>
+            <tr>
+                <th>Id</th>
+                <td>{{ broker.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_broker_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('admin_broker_edit', { 'id': broker.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

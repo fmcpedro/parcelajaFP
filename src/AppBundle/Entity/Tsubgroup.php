@@ -5,8 +5,8 @@ namespace AppBundle\Entity;
 /**
  * Tsubgroup
  */
-class Tsubgroup
-{
+class Tsubgroup {
+
     /**
      * @var string
      */
@@ -35,8 +35,7 @@ class Tsubgroup
     /**
      * Constructor
      */
-    public function __construct()
-    {
+    public function __construct() {
         $this->agencyList = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
@@ -47,8 +46,7 @@ class Tsubgroup
      *
      * @return Tsubgroup
      */
-    public function setFsubgroupname($fsubgroupname)
-    {
+    public function setFsubgroupname($fsubgroupname) {
         $this->fsubgroupname = $fsubgroupname;
 
         return $this;
@@ -59,8 +57,7 @@ class Tsubgroup
      *
      * @return string
      */
-    public function getFsubgroupname()
-    {
+    public function getFsubgroupname() {
         return $this->fsubgroupname;
     }
 
@@ -71,8 +68,7 @@ class Tsubgroup
      *
      * @return Tsubgroup
      */
-    public function setFstate($fstate)
-    {
+    public function setFstate($fstate) {
         $this->fstate = $fstate;
 
         return $this;
@@ -83,8 +79,7 @@ class Tsubgroup
      *
      * @return boolean
      */
-    public function getFstate()
-    {
+    public function getFstate() {
         return $this->fstate;
     }
 
@@ -93,8 +88,7 @@ class Tsubgroup
      *
      * @return integer
      */
-    public function getFsubgroupid()
-    {
+    public function getFsubgroupid() {
         return $this->fsubgroupid;
     }
 
@@ -105,8 +99,7 @@ class Tsubgroup
      *
      * @return Tsubgroup
      */
-    public function addAgencyList(\AppBundle\Entity\Tagency $agencyList)
-    {
+    public function addAgencyList(\AppBundle\Entity\Tagency $agencyList) {
         $this->agencyList[] = $agencyList;
 
         return $this;
@@ -117,8 +110,7 @@ class Tsubgroup
      *
      * @param \AppBundle\Entity\Tagency $agencyList
      */
-    public function removeAgencyList(\AppBundle\Entity\Tagency $agencyList)
-    {
+    public function removeAgencyList(\AppBundle\Entity\Tagency $agencyList) {
         $this->agencyList->removeElement($agencyList);
     }
 
@@ -127,8 +119,7 @@ class Tsubgroup
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getAgencyList()
-    {
+    public function getAgencyList() {
         return $this->agencyList;
     }
 
@@ -139,8 +130,7 @@ class Tsubgroup
      *
      * @return Tsubgroup
      */
-    public function setGroup(\AppBundle\Entity\Tgroup $group = null)
-    {
+    public function setGroup(\AppBundle\Entity\Tgroup $group = null) {
         $this->group = $group;
 
         return $this;
@@ -151,9 +141,12 @@ class Tsubgroup
      *
      * @return \AppBundle\Entity\Tgroup
      */
-    public function getGroup()
-    {
+    public function getGroup() {
         return $this->group;
     }
-}
 
+    public function __toString() {
+        return $this->getFsubgroupid()." - ".$this->getFsubgroupname();
+    }
+
+}

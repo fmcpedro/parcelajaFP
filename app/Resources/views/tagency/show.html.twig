@@ -1,0 +1,108 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Tagency</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Fagencyname</th>
+                <td>{{ tagency.fagencyname }}</td>
+            </tr>
+            <tr>
+                <th>Ffiscalname</th>
+                <td>{{ tagency.ffiscalname }}</td>
+            </tr>
+            <tr>
+                <th>Ftaxidnumber</th>
+                <td>{{ tagency.ftaxidnumber }}</td>
+            </tr>
+            <tr>
+                <th>Faddress</th>
+                <td>{{ tagency.faddress }}</td>
+            </tr>
+            <tr>
+                <th>Fpostalcode1</th>
+                <td>{{ tagency.fpostalcode1 }}</td>
+            </tr>
+            <tr>
+                <th>Fpostalcode2</th>
+                <td>{{ tagency.fpostalcode2 }}</td>
+            </tr>
+            <tr>
+                <th>Flocation</th>
+                <td>{{ tagency.flocation }}</td>
+            </tr>
+            <tr>
+                <th>Femail1</th>
+                <td>{{ tagency.femail1 }}</td>
+            </tr>
+            <tr>
+                <th>Femail2</th>
+                <td>{{ tagency.femail2 }}</td>
+            </tr>
+            <tr>
+                <th>Fcontactperson</th>
+                <td>{{ tagency.fcontactperson }}</td>
+            </tr>
+            <tr>
+                <th>Ftelephone</th>
+                <td>{{ tagency.ftelephone }}</td>
+            </tr>
+            <tr>
+                <th>Fmobilephone</th>
+                <td>{{ tagency.fmobilephone }}</td>
+            </tr>
+            <tr>
+                <th>Fwebsite</th>
+                <td>{{ tagency.fwebsite }}</td>
+            </tr>
+            <tr>
+                <th>Fbank</th>
+                <td>{{ tagency.fbank }}</td>
+            </tr>
+            <tr>
+                <th>Fiban</th>
+                <td>{{ tagency.fiban }}</td>
+            </tr>
+            <tr>
+                <th>Fbicswift</th>
+                <td>{{ tagency.fbicswift }}</td>
+            </tr>
+            <tr>
+                <th>Frnavt</th>
+                <td>{{ tagency.frnavt }}</td>
+            </tr>
+            <tr>
+                <th>Fpaymethodid</th>
+                <td>{{ tagency.fpaymethodid }}</td>
+            </tr>
+            <tr>
+                <th>Flogo</th>
+                <td>{{ tagency.flogo }}</td>
+            </tr>
+            <tr>
+                <th>Fstate</th>
+                <td>{% if tagency.fstate %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Fagencyid</th>
+                <td>{{ tagency.fagencyid }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_agency_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('admin_agency_edit', { 'fagencyid': tagency.fagencyid }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

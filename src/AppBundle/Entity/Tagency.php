@@ -103,7 +103,7 @@ class Tagency {
      * @var string
      */
     private $flogo;
-        private $imageFile;
+    private $imageFile;
 
     /**
      * @var boolean
@@ -129,6 +129,7 @@ class Tagency {
      * @var \AppBundle\Entity\Tsubgroup
      */
     private $subgroup;
+    private $broker;
 
     /**
      * Constructor
@@ -136,6 +137,38 @@ class Tagency {
     public function __construct() {
         $this->terminalList = new \Doctrine\Common\Collections\ArrayCollection();
     }
+
+    /**
+     * Set broker
+     *
+     * @param \AppBundle\Entity\Broker $broker
+     *
+     * @return TerminalPayment
+     */
+    public function setBroker(\AppBundle\Entity\Broker $broker = null) {
+        $this->broker = $broker;
+
+        return $this;
+    }
+
+    /**
+     * Get broker
+     *
+     * @return \AppBundle\Entity\Broker
+     */
+    public function getBroker() {
+        return $this->broker;
+    }
+    
+    
+    
+//    public function addBroker(Broker $broker)
+//{
+//    if (!$this->broker->contains($broker)) {
+//        $this->brokers->add($broker);
+//    }
+//}
+    
 
     /**
      * Set fagencyname
@@ -642,8 +675,7 @@ class Tagency {
     public function __toString() {
         return $this->fagencyname;
     }
-    
-    
+
     function getPurchaseList() {
         return $this->purchaseList;
     }
@@ -651,7 +683,6 @@ class Tagency {
     function setPurchaseList(\Doctrine\Common\Collections\Collection $purchaseList) {
         $this->purchaseList = $purchaseList;
     }
-
 
     public function setImageFile(File $image = null) {
         $this->imageFile = $image;
@@ -668,10 +699,8 @@ class Tagency {
     public function getImageFile() {
         return $this->imageFile;
     }
-    
-    
-    
-        public function getAbsolutePath() {
+
+    public function getAbsolutePath() {
         return null === $this->flogo ? null : $this->getUploadRootDir() . '/' . $this->flogo;
     }
 
@@ -690,8 +719,5 @@ class Tagency {
         // when displaying uploaded doc/image in the view.
         return 'uploads/aderentes';
     }
-
-
-    
 
 }

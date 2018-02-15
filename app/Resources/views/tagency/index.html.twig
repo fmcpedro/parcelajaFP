@@ -1,0 +1,142 @@
+
+
+
+
+
+{% extends 'base.html.twig' %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <!-- Apply the plugin -->
+    <script type="text/javascript" >
+        $(document).ready(function () {
+            $('#tableWithExportOptions').DataTable({
+                iDisplayLength: 20,
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ]
+            });
+        });
+    </script>
+{% endblock %}
+
+
+{% block body %}
+
+    <!-- START PAGE CONTENT -->
+    <div class="content">
+        <!-- START JUMBOTRON -->
+        <div class="jumbotron" data-pages="parallax">
+            <div class="container-fluid container-fixed-lg sm-p-l-20 sm-p-r-20">
+                <div class="inner">
+                    <!-- START BREADCRUMB -->
+                    <ul class="breadcrumb">
+                        <li><a href="#" class="">Parcela Já</a></li>
+                        <li><a href="#" class="active">Lojas</a></li>
+                    </ul>
+                    <!-- END BREADCRUMB -->
+                </div>
+            </div>
+        </div>
+        <!-- END JUMBOTRON -->
+
+
+        <!-- START CONTAINER FLUID -->
+        <div class="container-fluid container-fixed-lg bg-white">
+            <!-- START PANEL -->
+            <div class="panel panel-transparent">
+                <div class="panel-heading">
+                    <div class="panel-title">Lista de Lojas
+                    </div>
+                    <div class="export-options-container pull-right"></div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="panel-body">
+
+                    <table class="display" id="tableWithExportOptions">
+                        <thead>
+                            <tr>
+                                <th>Fagencyid</th>
+                                <th>Fagencyname</th>
+                                <th>Ftaxidnumber</th>
+                                <th>Flocation</th>
+                                <th>Femail1</th>
+                                <th>Fmobilephone</th>
+                                <th>Flogo</th>
+                                <th>Fstate</th>
+
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for tagency in tagencies %}
+                                <tr>
+                                    <td>{{ tagency.fagencyid }}</td>
+                                    <td>{{ tagency.fagencyname }}</td>
+                                    <td>{{ tagency.ftaxidnumber }}</td>
+
+                                    <td>{{ tagency.flocation }}</td>
+                                    <td>{{ tagency.femail1 }}</td>
+
+                                    <td>{{ tagency.fmobilephone }}</td>
+
+                                    <td>{{ tagency.flogo }}</td>
+                                    <td>{% if tagency.fstate %}Yes{% else %}No{% endif %}</td>
+
+                                    <td>
+                                        <ul>
+                                            {#<li>
+                                                <a href="{{ path('admin_agency_show', { 'fagencyid': tagency.fagencyid }) }}">show</a>
+                                            </li>#}
+                                            <li>
+                                                <a href="{{ path('admin_agency_edit', { 'fagencyid': tagency.fagencyid }) }}">edit</a>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_agency_new') }}">Create a new tagency</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            <!-- END PANEL -->
+        </div>
+        <!-- END CONTAINER FLUID -->
+
+
+    </div>
+    <!-- END PAGE CONTENT -->
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

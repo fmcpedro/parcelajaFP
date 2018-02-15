@@ -1,0 +1,24 @@
+admin_broker_index:
+    path:     /
+    defaults: { _controller: "AppBundle:Broker:index" }
+    methods:  GET
+
+admin_broker_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Broker:show" }
+    methods:  GET
+
+admin_broker_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Broker:new" }
+    methods:  [GET, POST]
+
+admin_broker_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Broker:edit" }
+    methods:  [GET, POST]
+
+admin_broker_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Broker:delete" }
+    methods:  DELETE

@@ -26,4 +26,10 @@ app_admin_binbank:
     resource: "@AppBundle/Resources/config/routing/binbank.yml"
     prefix:   /admin/binbank
 
+app_admin_broker:
+    resource: "@AppBundle/Resources/config/routing/broker.yml"
+    prefix:   /admin/broker
 
+app_admin_agency:
+    resource: "@AppBundle/Resources/config/routing/tagency.yml"
+    prefix:   /admin/agency
