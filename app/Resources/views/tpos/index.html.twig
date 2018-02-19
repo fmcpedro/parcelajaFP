@@ -156,7 +156,8 @@
                                     <td>{{ tpo.fsoftversion }}</td>
                                     <td>{{tpo.agency }} </td>
                                     <td>
-                                        <a href="{{ path('admin_tpos_edit', { 'fposid': tpo.fposid }) }}" ><i class="fa fa-paste"></i> <span class="bold">Edit</span>
+                                        <a href="{{ path('admin_tpos_edit', { 'fposid': tpo.fposid }) }}" >
+                                            <i class="fa fa-pencil"></i> <span class="">Editar Terminal</span>
                                         </a>
 
                                     </td>
@@ -166,7 +167,7 @@
                     </table>
 
                     <a href="{{ path('admin_tpos_new') }}" class="btn btn-success btn-cons m-b-10" type="submit">
-                        <i class="pg-plus"></i> <span class="bold">New</span>
+                        <i class="pg-plus"></i> <span class="bold">Criar novo Terminal</span>
                     </a>
 
                 </div>

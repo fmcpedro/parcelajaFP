@@ -56,14 +56,14 @@
                         <thead>
                             <tr> 
                                 <th>Id</th>
-                                <th>Name</th>
-                                <th>Taxname</th>
-                                <th>Nif</th>
-                                <th>Address</th>
+                                <th>Nome</th>
+                                <th>Nome Fiscal</th>
+                                <th>NIF</th>
+                               {# <th>Endereço</th>#}
                                 <th>Email</th>
-                                <th>Contact</th>
-                                <th>Commission</th>
-                                <th>Actions</th>
+                                <th>Contacto</th>
+                                <th>Comissão</th>
+                                <th>Acções</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -73,31 +73,31 @@
                                     <td>{{ broker.name }}</td>
                                     <td>{{ broker.taxName }}</td>
                                     <td>{{ broker.nif }}</td>
-                                    <td>{{ broker.address }}</td>
+                                    {#<td>{{ broker.address }}</td>#}
                                     <td>{{ broker.email }}</td>
                                     <td>{{ broker.contact }}</td>
                                     <td>{{ broker.commission }}</td>
 
                                     <td>
-                                        <ul>
-                                            {#<li>
-                                                <a href="{{ path('admin_broker_show', { 'id': broker.id }) }}">show</a>
-                                            </li>#}
-                                            <li>
-                                                <a href="{{ path('admin_broker_edit', { 'id': broker.id }) }}">edit</a>
-                                            </li>
-                                        </ul>
+                                        
+                                        <a href="{{ path('admin_broker_edit', { 'id': broker.id }) }}" >
+                                            <i class="fa fa-pencil"></i> <span class="">Editar Broker</span>
+                                        </a>
+                                        
+                                        
                                     </td>
                                 </tr>
                             {% endfor %}
                         </tbody>
                     </table>
 
-                    <ul>
-                        <li>
-                            <a href="{{ path('admin_broker_new') }}">Create a new broker</a>
-                        </li>
-                    </ul>
+                        
+                        <a href="{{ path('admin_broker_new') }}" class="btn btn-success btn-cons m-b-10" type="submit">
+                        <i class="pg-plus"></i> <span class="bold">Criar novo Broker</span>
+                    </a>
+                        
+                        
+             
 
                 </div>
             </div>

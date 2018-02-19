@@ -3,17 +3,18 @@
 namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
-class TagencyType extends AbstractType
-{
+class TagencyType extends AbstractType {
+
     /**
      * {@inheritdoc}
      */
-    public function buildForm(FormBuilderInterface $builder, array $options)
-    {
+    public function buildForm(FormBuilderInterface $builder, array $options) {
         $builder->add('fagencyname')
                 ->add('ffiscalname')
                 ->add('ftaxidnumber')
@@ -37,17 +38,25 @@ class TagencyType extends AbstractType
                 ->add('fbicswift')
                 ->add('frnavt')
                 ->add('fpaymethodid')
-                ->add('flogo')
-                ->add('fstate')
+                //->add('flogo')
+                ->add('imageFile', VichImageType::class , [
+            'required' => false,
+            
+        ] )
+                ->add('fstate', ChoiceType::class
+                        ,  array(
+    'choices'  => array(
+        'Activo' => true,
+        'Inactivo' => false,
+    )))
                 ->add('subgroup')
                 ->add('broker');
     }
-    
+
     /**
      * {@inheritdoc}
      */
-    public function configureOptions(OptionsResolver $resolver)
-    {
+    public function configureOptions(OptionsResolver $resolver) {
         $resolver->setDefaults(array(
             'data_class' => 'AppBundle\Entity\Tagency'
         ));
@@ -56,10 +65,8 @@ class TagencyType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function getBlockPrefix()
-    {
+    public function getBlockPrefix() {
         return 'appbundle_tagency';
     }
-
 
 }

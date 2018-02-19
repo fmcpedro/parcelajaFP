@@ -27,13 +27,13 @@
             <!-- START PANEL -->
             <div class="panel panel-transparent">
                 <div class="panel-heading">
-                    <div class="panel-title">Criar Broker </div>
+                    <div class="panel-title">Actualizar Broker </div>
                 </div>
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-sm-10">
                             {#<h3>form_title</h3>#}
-                            <p>Preencha os campos abaixo para actulizar um broker</p>
+                            <p>Preencha os campos abaixo para actualizar os dados do broker</p>
 
                             {% for flashMessage in app.session.flashbag.get('notice') %}
                                 <div class="alert alert-success">
@@ -43,63 +43,63 @@
 
                             {{ form_start(edit_form, {'attr': {'class': 'form-horizontal'}}) }} 
                             <div class="form-group">
-                                <label for="name" class="col-sm-3 control-label">name</label>
+                                <label for="name" class="col-sm-3 control-label">Nome</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(edit_form.name, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="taxName" class="col-sm-3 control-label">taxName</label>
+                                <label for="taxName" class="col-sm-3 control-label">Nome Fiscal</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(edit_form.taxName, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="nif" class="col-sm-3 control-label">nif</label>
+                                <label for="nif" class="col-sm-3 control-label">NIF</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(edit_form.nif, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="address" class="col-sm-3 control-label">address</label>
+                                <label for="address" class="col-sm-3 control-label">Endereço</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(edit_form.address, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="email" class="col-sm-3 control-label">email</label>
+                                <label for="email" class="col-sm-3 control-label">Email</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(edit_form.email, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div>    
 
                             <div class="form-group">
-                                <label for="contact" class="col-sm-3 control-label">contact</label>
+                                <label for="contact" class="col-sm-3 control-label">Contacto</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(edit_form.contact, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div> 
 
                             <div class="form-group">
-                                <label for="bank" class="col-sm-3 control-label">bank</label>
+                                <label for="bank" class="col-sm-3 control-label">Banco</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(edit_form.bank, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div> 
 
                             <div class="form-group">
-                                <label for="iban" class="col-sm-3 control-label">iban</label>
+                                <label for="iban" class="col-sm-3 control-label">IBAN</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(edit_form.iban, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div> 
 
                             <div class="form-group">
-                                <label for="commission" class="col-sm-3 control-label">commission</label>
+                                <label for="commission" class="col-sm-3 control-label">Commissão</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(edit_form.commission, {'attr': {'class': 'form-control'}}) }}
                                 </div>
@@ -120,10 +120,10 @@
                                 </div>
                                 <div class="col-sm-9">
                                     <button class="btn btn-complete btn-cons m-b-10" type="submit">
-                                        <i class="pg-form"></i> <span class="bold">Update</span>
+                                        <i class="pg-form"></i> <span class="bold">Actualizar</span>
                                     </button>
                                     <button class="btn btn-default btn-cons m-b-10" type="reset">
-                                        <i class="pg-close"></i> <span class="bold">Clear</span>
+                                        <i class="pg-close"></i> <span class="bold">Limpar</span>
                                     </button>
                                     
                                     
@@ -138,10 +138,10 @@
                                 
                                   {{ form_start(delete_form) }}
                             <a class="btn btn-primary btn-cons m-b-10" href="{{ path('admin_broker_index') }}">
-                                <i class="fa fa-backward"></i> <span class="bold">Back to list</span>
+                                <i class="fa fa-backward"></i> <span class="bold">Voltar a lista de Brokers</span>
                             </a>
                             <button class="btn btn-danger btn-cons m-b-10" type="submit">
-                                <i class="fa fa-warning"></i> <span class="bold">Delete</span>
+                                <i class="fa fa-warning"></i> <span class="bold">Eliminar</span>
                             </button>
 
 

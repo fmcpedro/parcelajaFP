@@ -32,6 +32,16 @@ class Tsubgroup {
      */
     private $group;
 
+    
+        /**
+     * @var string
+     */
+    private $flogo;
+    private $imageFile;
+    
+    
+    
+    
     /**
      * Constructor
      */
@@ -145,6 +155,34 @@ class Tsubgroup {
         return $this->group;
     }
 
+    
+    
+        /**
+     * Set flogo
+     *
+     * @param string $flogo
+     *
+     * @return Tagency
+     */
+    public function setFlogo($flogo) {
+        $this->flogo = $flogo;
+
+        return $this;
+    }
+
+    /**
+     * Get flogo
+     *
+     * @return string
+     */
+    public function getFlogo() {
+        return $this->flogo;
+    }
+
+    
+    
+    
+    
     public function __toString() {
         return $this->getFsubgroupid()." - ".$this->getFsubgroupname();
     }

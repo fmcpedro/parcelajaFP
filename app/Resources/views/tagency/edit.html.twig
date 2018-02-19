@@ -1,5 +1,6 @@
 {% extends 'base.html.twig' %}
 
+
 {% block body %}
 
 
@@ -27,7 +28,7 @@
             <!-- START PANEL -->
             <div class="panel panel-transparent">
                 <div class="panel-heading">
-                    <div class="panel-title">Editar Loja </div>
+                    <div class="panel-title">Actualizar Loja </div>
                 </div>
                 <div class="panel-body">
                     <div class="row">
@@ -43,35 +44,35 @@
 
                             {{ form_start(edit_form, {'attr': {'class': 'form-horizontal'}}) }} 
                             <div class="form-group">
-                                <label for="fagencyname" class="col-sm-3 control-label">fagencyname</label>
+                                <label for="fagencyname" class="col-sm-3 control-label">Nome</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(edit_form.fagencyname, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="ffiscalname" class="col-sm-3 control-label">ffiscalname</label>
+                                <label for="ffiscalname" class="col-sm-3 control-label">Nome Fiscal</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(edit_form.ffiscalname, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="ftaxidnumber" class="col-sm-3 control-label">ftaxidnumber</label>
+                                <label for="ftaxidnumber" class="col-sm-3 control-label">NIF</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(edit_form.ftaxidnumber, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="faddress" class="col-sm-3 control-label">faddress</label>
+                                <label for="faddress" class="col-sm-3 control-label">Endereço</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(edit_form.faddress, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div>
                                 
                                 <div class="form-group">
-                                <label for="taxAddress" class="col-sm-3 control-label">taxAddress</label>
+                                <label for="taxAddress" class="col-sm-3 control-label">Endereço Fiscal</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(edit_form.taxAddress, {'attr': {'class': 'form-control'}}) }}
                                 </div>
@@ -113,7 +114,7 @@
                             </div> 
                                 
                             <div class="form-group">
-                                <label for="fcontactperson" class="col-sm-3 control-label">fcontactperson</label>
+                                <label for="fcontactperson" class="col-sm-3 control-label">Pessoa de Contacto</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(edit_form.fcontactperson, {'attr': {'class': 'form-control'}}) }}
                                 </div>
@@ -124,7 +125,7 @@
                                 
                                 
                                 <div class="form-group">
-                                <label for="ftelephone" class="col-sm-3 control-label">ftelephone</label>
+                                <label for="ftelephone" class="col-sm-3 control-label">Telefone</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(edit_form.ftelephone, {'attr': {'class': 'form-control'}}) }}
                                 </div>
@@ -133,7 +134,7 @@
                                 
                                 
                                 <div class="form-group">
-                                <label for="fmobilephone" class="col-sm-3 control-label">fmobilephone</label>
+                                <label for="fmobilephone" class="col-sm-3 control-label">Telemóvel</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(edit_form.fmobilephone, {'attr': {'class': 'form-control'}}) }}
                                 </div>
@@ -142,7 +143,7 @@
                                 
                                 
                                 <div class="form-group">
-                                <label for="fwebsite" class="col-sm-3 control-label">fwebsite</label>
+                                <label for="fwebsite" class="col-sm-3 control-label">Website</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(edit_form.fwebsite, {'attr': {'class': 'form-control'}}) }}
                                 </div>
@@ -151,7 +152,7 @@
                                 
                                 
                                 <div class="form-group">
-                                <label for="fbank" class="col-sm-3 control-label">fbank</label>
+                                <label for="fbank" class="col-sm-3 control-label">Banco</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(edit_form.fbank, {'attr': {'class': 'form-control'}}) }}
                                 </div>
@@ -159,7 +160,7 @@
                                 
                                 
                                 <div class="form-group">
-                                <label for="fiban" class="col-sm-3 control-label">fiban</label>
+                                <label for="fiban" class="col-sm-3 control-label">IBAN</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(edit_form.fiban, {'attr': {'class': 'form-control'}}) }}
                                 </div>
@@ -167,7 +168,7 @@
                                 
                                 
                                 <div class="form-group">
-                                <label for="fbicswift" class="col-sm-3 control-label">fbicswift</label>
+                                <label for="fbicswift" class="col-sm-3 control-label">BIC SWIFT</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(edit_form.fbicswift, {'attr': {'class': 'form-control'}}) }}
                                 </div>
@@ -175,7 +176,7 @@
                                 
                                 
                                 <div class="form-group">
-                                <label for="frnavt" class="col-sm-3 control-label">frnavt</label>
+                                <label for="frnavt" class="col-sm-3 control-label">RNAVT</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(edit_form.frnavt, {'attr': {'class': 'form-control'}}) }}
                                 </div>
@@ -183,7 +184,7 @@
                                 
                                 
                                 <div class="form-group">
-                                <label for="fpaymethodid" class="col-sm-3 control-label">fpaymethodid</label>
+                                <label for="fpaymethodid" class="col-sm-3 control-label">Metodo de Pagamento</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(edit_form.fpaymethodid, {'attr': {'class': 'form-control'}}) }}
                                 </div>
@@ -191,15 +192,15 @@
                                 
                                 
                                 <div class="form-group">
-                                <label for="flogo" class="col-sm-3 control-label">flogo</label>
+                                <label for="imageFile" class="col-sm-3 control-label">Logótipo</label>
                                 <div class="col-sm-9">
-                                    {{ form_widget(edit_form.flogo, {'attr': {'class': 'form-control'}}) }}
+                                    {{ form_widget(edit_form.imageFile, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div> 
                                 
                                 
                                 <div class="form-group">
-                                <label for="fstate" class="col-sm-3 control-label">fstate</label>
+                                <label for="fstate" class="col-sm-3 control-label">Estado</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(edit_form.fstate, {'attr': {'class': 'form-control'}}) }}
                                 </div>
@@ -207,14 +208,14 @@
                                 
                                 
                                  <div class="form-group">
-                                <label for="subgroup" class="col-sm-3 control-label">subgroup</label>
+                                <label for="subgroup" class="col-sm-3 control-label">Sub Grupo</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(edit_form.subgroup, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div> 
                                 
                                  <div class="form-group">
-                                <label for="broker" class="col-sm-3 control-label">broker</label>
+                                <label for="broker" class="col-sm-3 control-label">Broker</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(edit_form.broker, {'attr': {'class': 'form-control'}}) }}
                                 </div>
@@ -234,10 +235,10 @@
                                 </div>
                                 <div class="col-sm-9">
                                     <button class="btn btn-complete btn-cons m-b-10" type="submit">
-                                        <i class="pg-form"></i> <span class="bold">Update</span>
+                                        <i class="pg-form"></i> <span class="bold">Actualizar</span>
                                     </button>
                                     <button class="btn btn-default btn-cons m-b-10" type="reset">
-                                        <i class="pg-close"></i> <span class="bold">Clear</span>
+                                        <i class="pg-close"></i> <span class="bold">Limpar</span>
                                     </button>
                                 </div>
                             </div>
@@ -247,10 +248,10 @@
                             
                             {{ form_start(delete_form) }}
                             <a class="btn btn-primary btn-cons m-b-10" href="{{ path('admin_agency_index') }}">
-                                <i class="fa fa-backward"></i> <span class="bold">Back to list</span>
+                                <i class="fa fa-backward"></i> <span class="bold">Voltar a lista de Lojas</span>
                             </a>
                             <button class="btn btn-danger btn-cons m-b-10" type="submit">
-                                <i class="fa fa-warning"></i> <span class="bold">Delete</span>
+                                <i class="fa fa-warning"></i> <span class="bold">Eliminar</span>
                             </button>
 
 

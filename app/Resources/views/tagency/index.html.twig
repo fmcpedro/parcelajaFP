@@ -1,8 +1,3 @@
-
-
-
-
-
 {% extends 'base.html.twig' %}
 
 {% block javascripts %}
@@ -59,15 +54,15 @@
                         <thead>
                             <tr>
                                 <th>Id</th>
-                                <th>Name</th>
-                                <th>Tax Number</th>
-                                {#<th>Flocation</th>#}
+                                <th>Nome</th>
+                                <th>NIF</th>
+                                    {#<th>Flocation</th>#}
                                 <th>Email Loja</th>
-                                <th>Telemovel</th>
-                                <th>Logotipo</th>
+                                <th>Telemóvel</th>
+                                    {#<th>Logotipo</th>#}
                                 <th>Estado</th>
 
-                                <th>Actions</th>
+                                <th>Acções</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -82,29 +77,22 @@
 
                                     <td>{{ tagency.fmobilephone }}</td>
 
-                                    <td>{{ tagency.flogo }}</td>
-                                    <td>{% if tagency.fstate %}Yes{% else %}No{% endif %}</td>
+                                    {#<td>{{ tagency.flogo }}</td>#}
+                                    <td>{% if tagency.fstate %}Activo{% else %}Inactivo{% endif %}</td>
 
                                     <td>
-                                        <ul>
-                                            {#<li>
-                                                <a href="{{ path('admin_agency_show', { 'fagencyid': tagency.fagencyid }) }}">show</a>
-                                            </li>#}
-                                            <li>
-                                                <a href="{{ path('admin_agency_edit', { 'fagencyid': tagency.fagencyid }) }}">edit</a>
-                                            </li>
-                                        </ul>
+                                        <a href="{{ path('admin_agency_edit', { 'fagencyid': tagency.fagencyid }) }}" >
+                                            <i class="fa fa-pencil"></i> <span class="">Editar Loja</span>
+                                        </a>
                                     </td>
                                 </tr>
                             {% endfor %}
                         </tbody>
                     </table>
 
-                    <ul>
-                        <li>
-                            <a href="{{ path('admin_agency_new') }}">Create a new tagency</a>
-                        </li>
-                    </ul>
+                    <a href="{{ path('admin_agency_new') }}" class="btn btn-success btn-cons m-b-10" type="submit">
+                        <i class="pg-plus"></i> <span class="bold">Criar nova Loja</span>
+                    </a>
 
                 </div>
             </div>

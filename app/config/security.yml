@@ -36,7 +36,7 @@ security:
                 # if you are using Symfony < 2.8, use the following config instead:
                 # csrf_provider: form.csrf_provider
                 #always_use_default_target_path: true
-                default_target_path: admin_payments_index
+                default_target_path: admin_payments_simulator
                 always_use_default_target_path: true
 
             logout:       true

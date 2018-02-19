@@ -44,14 +44,14 @@
 
                             {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }} 
                             <div class="form-group">
-                                <label for="fserial" class="col-sm-3 control-label">fserial</label>
+                                <label for="fserial" class="col-sm-3 control-label">Número de Série</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(form.fserial, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="col-sm-3 control-label">fstate</label>
+                                <label class="col-sm-3 control-label">Estado</label>
 
                                 <div class="col-sm-9">
                                     <div class="radio radio-success">
@@ -61,14 +61,14 @@
                             </div>
                                     
                             <div class="form-group">
-                                <label for="fsoftversion" class="col-sm-3 control-label">fsoftversion</label>
+                                <label for="fsoftversion" class="col-sm-3 control-label">Versão de Software</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(form.fsoftversion, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="fagency" class="col-sm-3 control-label">fagency</label>
+                                <label for="fagency" class="col-sm-3 control-label">Loja</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(form.agency, {'attr': {'class': 'form-control'}}) }}
                                 </div>
@@ -82,17 +82,17 @@
                                 </div>
                                 <div class="col-sm-9">
                                     <button class="btn btn-complete btn-cons m-b-10" type="submit">
-                                        <i class="pg-form"></i> <span class="bold">Create</span>
+                                        <i class="pg-form"></i> <span class="bold">Criar</span>
                                     </button>
                                     <button class="btn btn-default btn-cons m-b-10" type="reset">
-                                        <i class="pg-close"></i> <span class="bold">Clear</span>
+                                        <i class="pg-close"></i> <span class="bold">Limpar</span>
                                     </button>
                                 </div>
                             </div>
                             {{ form_end(form) }}
 
                             <a class="btn btn-primary btn-cons m-b-10" href="{{ path('admin_tpos_index') }}">
-                                <i class="fa fa-backward"></i> <span class="bold">Back to the list</span>
+                                <i class="fa fa-backward"></i> <span class="bold">Voltar a lista de Terminais</span>
                             </a>
 
                         </div>
