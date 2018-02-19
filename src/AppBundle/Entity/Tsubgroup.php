@@ -2,6 +2,9 @@
 
 namespace AppBundle\Entity;
 
+
+use Symfony\Component\HttpFoundation\File\File;
+
 /**
  * Tsubgroup
  */
@@ -177,6 +180,44 @@ class Tsubgroup {
      */
     public function getFlogo() {
         return $this->flogo;
+    }
+
+    
+    
+    public function setImageFile(File $image = null) {
+        $this->imageFile = $image;
+
+        // VERY IMPORTANT:
+        // It is required that at least one field changes if you are using Doctrine,
+        // otherwise the event listeners won't be called and the file is lost
+        if ($image) {
+            // if 'updatedAt' is not defined in your entity, use another property
+            //$this->updatedAt = new \DateTime('now');
+        }
+    }
+
+    public function getImageFile() {
+        return $this->imageFile;
+    }
+
+    public function getAbsolutePath() {
+        return null === $this->flogo ? null : $this->getUploadRootDir() . '/' . $this->flogo;
+    }
+
+    public function getWebPath() {
+        return null === $this->flogo ? null : $this->getUploadDir() . '/' . $this->flogo;
+    }
+
+    protected function getUploadRootDir() {
+        // the absolute directory path where uploaded
+        // documents should be saved
+        return __DIR__ . '/../../../../web/' . $this->getUploadDir();
+    }
+
+    protected function getUploadDir() {
+        // get rid of the __DIR__ so it doesn't screw up
+        // when displaying uploaded doc/image in the view.
+        return 'uploads/subgrupos';
     }
 
     

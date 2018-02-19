@@ -74,13 +74,18 @@
 
             {% if is_granted('ROLE_ADMIN') %} 
 
-                <li class="{% if route in ['admin_agency_index','admin_broker_index' ] %}active{% endif %}">
+                <li class="{% if route in ['admin_tsubgroup_index','admin_agency_index','admin_broker_index' ] %}active{% endif %}">
                     <a href="javascript:;">
                         <span class="title">Lojas</span>
                         <span class=" arrow"></span>
                     </a>
                     <span class="icon-thumbnail"><i class="pg-phone"></i></span>
                     <ul class="sub-menu">
+                        <li class="{% if route in ['admin_tsubgroup_index' ] %}active{% endif %}">
+                            <a href="{{ path('admin_tsubgroup_index') }}">Sub Grupos</a>
+                            <span class="icon-thumbnail">TI</span>
+                        </li>
+                        
                         <li class="{% if route in ['admin_agency_index' ] %}active{% endif %}">
                             <a href="{{ path('admin_agency_index') }}">Lojas</a>
                             <span class="icon-thumbnail">TI</span>

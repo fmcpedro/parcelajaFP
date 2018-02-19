@@ -152,6 +152,13 @@ vich_uploader:
             delete_on_update:   true
             delete_on_remove:   true
             namer:              vich_uploader.namer_uniqid   
+        subgrupo_image:
+            uri_prefix:         /uploads/subgrupos
+            upload_destination: %kernel.root_dir%/../web/uploads/subgrupos
+            inject_on_load:     false
+            delete_on_update:   true
+            delete_on_remove:   true
+            namer:              vich_uploader.namer_uniqid   
             
             
             

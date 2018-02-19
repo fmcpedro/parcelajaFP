@@ -5,18 +5,18 @@ namespace AppBundle\Entity;
 /**
  * Tgroup
  */
-class Tgroup
-{
+class Tgroup {
+
     /**
      * @var string
      */
     private $fgroupname;
 
-        /**
+    /**
      * @var string
      */
     private $fgroupslugname;
-    
+
     /**
      * @var boolean
      */
@@ -35,8 +35,7 @@ class Tgroup
     /**
      * Constructor
      */
-    public function __construct()
-    {
+    public function __construct() {
         $this->subgroupList = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
@@ -47,8 +46,7 @@ class Tgroup
      *
      * @return Tgroup
      */
-    public function setFgroupname($fgroupname)
-    {
+    public function setFgroupname($fgroupname) {
         $this->fgroupname = $fgroupname;
 
         return $this;
@@ -59,8 +57,7 @@ class Tgroup
      *
      * @return string
      */
-    public function getFgroupname()
-    {
+    public function getFgroupname() {
         return $this->fgroupname;
     }
 
@@ -71,8 +68,7 @@ class Tgroup
      *
      * @return Tgroup
      */
-    public function setFstate($fstate)
-    {
+    public function setFstate($fstate) {
         $this->fstate = $fstate;
 
         return $this;
@@ -83,8 +79,7 @@ class Tgroup
      *
      * @return boolean
      */
-    public function getFstate()
-    {
+    public function getFstate() {
         return $this->fstate;
     }
 
@@ -93,8 +88,7 @@ class Tgroup
      *
      * @return integer
      */
-    public function getFgroupid()
-    {
+    public function getFgroupid() {
         return $this->fgroupid;
     }
 
@@ -105,8 +99,7 @@ class Tgroup
      *
      * @return Tgroup
      */
-    public function addSubgroupList(\AppBundle\Entity\Tsubgroup $subgroupList)
-    {
+    public function addSubgroupList(\AppBundle\Entity\Tsubgroup $subgroupList) {
         $this->subgroupList[] = $subgroupList;
 
         return $this;
@@ -117,8 +110,7 @@ class Tgroup
      *
      * @param \AppBundle\Entity\Tsubgroup $subgroupList
      */
-    public function removeSubgroupList(\AppBundle\Entity\Tsubgroup $subgroupList)
-    {
+    public function removeSubgroupList(\AppBundle\Entity\Tsubgroup $subgroupList) {
         $this->subgroupList->removeElement($subgroupList);
     }
 
@@ -127,12 +119,10 @@ class Tgroup
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getSubgroupList()
-    {
+    public function getSubgroupList() {
         return $this->subgroupList;
     }
-    
-    
+
     function getFgroupslugname() {
         return $this->fgroupslugname;
     }
@@ -141,9 +131,8 @@ class Tgroup
         $this->fgroupslugname = $fgroupslugname;
     }
 
+    public function __toString() {
+        return $this->fgroupname;
+    }
 
-    
-    
-    
 }
-

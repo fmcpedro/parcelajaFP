@@ -15,7 +15,9 @@
             </options>
         </field>
     
-    
+        <!--    ALTER TABLE `parcelaja_payments`.`TSubgroup` 
+        ADD COLUMN `FLogo` VARCHAR(100) NULL AFTER `FState`;-->
+
     
 
         <one-to-many field="agencyList" target-entity="Tagency" mapped-by="subgroup" />
@@ -25,7 +27,11 @@
         </many-to-one>
    
   
-
+        <field name="flogo" type="string" column="FLogo" length="100" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
     
 
     

@@ -33,3 +33,7 @@ app_admin_broker:
 app_admin_agency:
     resource: "@AppBundle/Resources/config/routing/tagency.yml"
     prefix:   /admin/agency
+
+app_admin_tsubgroup:
+    resource: "@AppBundle/Resources/config/routing/tsubgroup.yml"
+    prefix:   /admin/tsubgroup

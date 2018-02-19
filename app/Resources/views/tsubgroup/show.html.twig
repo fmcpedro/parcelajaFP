@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Tsubgroup</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Fsubgroupname</th>
+                <td>{{ tsubgroup.fsubgroupname }}</td>
+            </tr>
+            <tr>
+                <th>Flogo</th>
+                <td>{{ tsubgroup.flogo }}</td>
+            </tr>
+            <tr>
+                <th>Fstate</th>
+                <td>{% if tsubgroup.fstate %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Fsubgroupid</th>
+                <td>{{ tsubgroup.fsubgroupid }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_tsubgroup_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('admin_tsubgroup_edit', { 'fsubgroupid': tsubgroup.fsubgroupid }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

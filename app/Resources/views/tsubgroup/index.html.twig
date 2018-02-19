@@ -29,7 +29,7 @@
                     <!-- START BREADCRUMB -->
                     <ul class="breadcrumb">
                         <li><a href="#" class="">Parcela Já</a></li>
-                        <li><a href="#" class="active">Lojas</a></li>
+                        <li><a href="#" class="active">Sub Grupos</a></li>
                     </ul>
                     <!-- END BREADCRUMB -->
                 </div>
@@ -43,7 +43,7 @@
             <!-- START PANEL -->
             <div class="panel panel-transparent">
                 <div class="panel-heading">
-                    <div class="panel-title">Lista de Lojas
+                    <div class="panel-title">Lista de Sub Grupos
                     </div>
                     <div class="export-options-container pull-right"></div>
                     <div class="clearfix"></div>
@@ -51,38 +51,29 @@
                 <div class="panel-body">
 
                     <table class="display" id="tableWithExportOptions">
+
                         <thead>
                             <tr>
                                 <th>Id</th>
                                 <th>Nome</th>
-                                <th>NIF</th>
-                                    {#<th>Flocation</th>#}
-                                <th>Email Loja</th>
-                                <th>Telemóvel</th>
-                                    {#<th>Logotipo</th>#}
+                                <th>Grupo</th>
+                                
+                                    {#<th>Flogo</th>#}
                                 <th>Estado</th>
-
                                 <th>Acções</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {% for tagency in tagencies %}
+                            {% for tsubgroup in tsubgroups %}
                                 <tr>
-                                    <td>{{ tagency.fagencyid }}</td>
-                                    <td>{{ tagency.fagencyname }}</td>
-                                    <td>{{ tagency.ftaxidnumber }}</td>
-
-                                    {#<td>{{ tagency.flocation }}</td>#}
-                                    <td>{{ tagency.femail1 }}</td>
-
-                                    <td>{{ tagency.fmobilephone }}</td>
-
-                                    {#<td>{{ tagency.flogo }}</td>#}
-                                    <td>{% if tagency.fstate %}Activo{% else %}Inactivo{% endif %}</td>
-
+                                    <td>{{ tsubgroup.fsubgroupid }}</td>
+                                    <td>{{ tsubgroup.fsubgroupname }}</td>
+                                    <td>{{ tsubgroup.group }}</td>
+                                    {#<td>{{ tsubgroup.flogo }}</td>#}
+                                    <td>{% if tsubgroup.fstate %}Activo{% else %}Inactivo{% endif %}</td>
                                     <td>
-                                        <a href="{{ path('admin_agency_edit', { 'fagencyid': tagency.fagencyid }) }}" >
-                                            <i class="fa fa-pencil"></i> <span class="">Editar Loja</span>
+                                        <a href="{{ path('admin_tsubgroup_edit', { 'fsubgroupid': tsubgroup.fsubgroupid }) }}" >
+                                            <i class="fa fa-pencil"></i> <span class="">Editar Sub Grupo</span>
                                         </a>
                                     </td>
                                 </tr>
@@ -90,8 +81,8 @@
                         </tbody>
                     </table>
 
-                    <a href="{{ path('admin_agency_new') }}" class="btn btn-success btn-cons m-b-10" type="submit">
-                        <i class="pg-plus"></i> <span class="bold">Criar nova Loja</span>
+                    <a href="{{ path('admin_tsubgroup_new') }}" class="btn btn-success btn-cons m-b-10" type="submit">
+                        <i class="pg-plus"></i> <span class="bold">Criar novo Sub Grupo</span>
                     </a>
 
                 </div>
@@ -105,3 +96,26 @@
     <!-- END PAGE CONTENT -->
 
 {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

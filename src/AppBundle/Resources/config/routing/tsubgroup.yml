@@ -1,0 +1,24 @@
+admin_tsubgroup_index:
+    path:     /
+    defaults: { _controller: "AppBundle:Tsubgroup:index" }
+    methods:  GET
+
+admin_tsubgroup_show:
+    path:     /{fsubgroupid}/show
+    defaults: { _controller: "AppBundle:Tsubgroup:show" }
+    methods:  GET
+
+admin_tsubgroup_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Tsubgroup:new" }
+    methods:  [GET, POST]
+
+admin_tsubgroup_edit:
+    path:     /{fsubgroupid}/edit
+    defaults: { _controller: "AppBundle:Tsubgroup:edit" }
+    methods:  [GET, POST]
+
+admin_tsubgroup_delete:
+    path:     /{fsubgroupid}/delete
+    defaults: { _controller: "AppBundle:Tsubgroup:delete" }
+    methods:  DELETE
