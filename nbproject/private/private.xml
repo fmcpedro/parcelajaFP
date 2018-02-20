@@ -3,17 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/luis/sfprojects/parcelaja/app/Resources/views/tagency/edit.html.twig</file>
-            <file>file:/home/luis/sfprojects/parcelaja/composer.json</file>
-            <file>file:/home/luis/sfprojects/parcelaja/vendor/vich/uploader-bundle/Resources/views/Form/fields.html.twig</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Form/TagencyType.php</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/config/vich_uploader/Entity.Tagency.yml</file>
-            <file>file:/home/luis/sfprojects/parcelaja/app/config/config.yml</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Form/BinBankType.php</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Form/BinCodeType.php</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Form/BrokerType.php</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Form/PaymentForecastsSearchType.php</file>
-            <file>file:/home/luis/sfprojects/parcelaja/app/Resources/views/tagency/index.html.twig</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Controller/TagencyController.php</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/config/doctrine/Tsubgroup.orm.xml</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Controller/TsubgroupController.php</file>
         </group>
     </open-files>
 </project-private>

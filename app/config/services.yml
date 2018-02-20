@@ -9,7 +9,7 @@ services:
     #    arguments: ['@another_service_name', 'plain_value', '%parameter_name%']
     utils.twig_extension:
         class: AppBundle\Twig\UtilsExtension
-        #public: false
+        public: false
         arguments: ["@service_container", "@translator.default"]
         tags:
             - { name: twig.extension,  alias:  utils.twig_extension  }

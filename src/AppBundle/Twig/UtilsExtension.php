@@ -5,9 +5,13 @@ namespace AppBundle\Twig;
 use Twig_Environment;
 use Symfony\Component\Intl\Intl;
 use AppBundle\Utils\Utils;
-use Doctrine\ORM\EntityRepository;
 use Symfony\Component\Translation\Translator;
-use Symfony\Component\Translation\Loader\ArrayLoader;
+
+
+use Symfony\Component\DependencyInjection\ContainerInterface;
+
+
+
 
 class UtilsExtension extends \Twig_Extension {
 
@@ -16,16 +20,22 @@ class UtilsExtension extends \Twig_Extension {
     private $container;
     private $translator;
 
-    public function __construct($container, Translator $translator) {
+
+    public function __construct(ContainerInterface $container, Translator $translator) {
         $this->container = $container;
         $this->translator = $translator;
     }
 
     protected function getPathFunction() {
-        if (empty($this->pathFunction)) {
+
+        dump($this);
+        
+        if (empty($this->pathFunction) ) {
             $this->pathFunction = $this->twig->getFunction('path')->getCallable();
         }
 
+        
+        
         return $this->pathFunction;
     }
 
@@ -64,13 +74,24 @@ class UtilsExtension extends \Twig_Extension {
     }
 
     public function url_to_post($post) {
-        $path_function = $this->getPathFunction();
+        //$path_function = $this->getPathFunction();
+        
+        //$path_function = "path";
         $title = $post->getTitle();
         $slug = Utils::slugify($title);
 
-        return call_user_func($path_function, 'post', array(
-            'title' => $slug,
-        ));
+        
+
+        
+        return "vla";
+        
+//        return call_user_func($path_function, 'post', array(
+//            'title' => $slug,
+//        ));
+//        
+//        
+        
+        
     }
 
     /*

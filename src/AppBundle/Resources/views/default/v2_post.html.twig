@@ -86,12 +86,12 @@
                         <div class="g-overflow-hidden">
                             <ul class="list-inline u-info-v10-1 mb-0">
                                 <li class="list-inline-item g-mx-2">
-                                    <a class="parcelaja-icone u-icon-v3 u-icon-size--xs g-color-primary g-color-white--hover g-bg-secondary g-bg-primary--hover rounded-circle" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://parcelaja.pt{{ url_to_post(post) }}">
+                                    <a class="parcelaja-icone u-icon-v3 u-icon-size--xs g-color-primary g-color-white--hover g-bg-secondary g-bg-primary--hover rounded-circle" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://parcelaja.pt{{ path('post', { 'title': slugify(post.title) }) }}">
                                         <i class="fa fa-facebook"></i>
                                     </a>
                                 </li>
                                 <li class="list-inline-item g-mx-2">
-                                    <a class="parcelaja-icone u-icon-v3 u-icon-size--xs g-color-primary g-color-white--hover g-bg-secondary g-bg-primary--hover rounded-circle" target="_blank" href="https://www.linkedin.com/cws/share?url=http://parcelaja.pt{{ url_to_post(post) }}">
+                                    <a class="parcelaja-icone u-icon-v3 u-icon-size--xs g-color-primary g-color-white--hover g-bg-secondary g-bg-primary--hover rounded-circle" target="_blank" href="https://www.linkedin.com/cws/share?url=http://parcelaja.pt{{ path('post', { 'title': slugify(post.title) }) }}">
                                         <i class="fa fa-linkedin"></i>
                                     </a>
                                 </li>
@@ -174,7 +174,7 @@
 
                             <div class="media-body">
                                 <h3 class="h6">
-                                    <a class="u-link-v5 h6 g-color-primary--hover" href="{{ url_to_post(post) }}">{{post.title|slice(0, 47)}}.....</a>
+                                    <a class="u-link-v5 h6 g-color-primary--hover" href="{{ path('post', { 'title': slugify(post.title) }) }}">{{post.title|slice(0, 47)}}.....</a>
                                 </h3>
 
                                 <ul class="u-list-inline g-font-size-12">
