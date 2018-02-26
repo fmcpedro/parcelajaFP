@@ -27,6 +27,11 @@ ADD COLUMN `tax_address` TEXT NULL AFTER `broker_id`;-->
 <!--update TAgency set tax_address = concat(FAddress,', ', FPostalCode1,'-',FPostalCode2,' ', FLocation)-->
 
 
+<!--ALTER TABLE `parcelaja_payments`.`TAgency` 
+ADD COLUMN `updated_at` DATETIME NULL AFTER `tax_address`;-->
+
+
+
 
 <!--
 ALTER TABLE `parcelaja_payments`.`TAgency` 
@@ -164,6 +169,8 @@ ADD CONSTRAINT `fk_TAgency_1`
       </options>
     </field>
         
+        
+        <field name="updatedAt" type="datetime" column="updated_at" nullable="true"/>
         
     </entity>
 </doctrine-mapping>

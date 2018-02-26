@@ -17,6 +17,8 @@
 /web/thumbnails/*
 /web/uploads/posts/*
 /web/uploads/medias/*
+/web/uploads/subgrupos/*
+/web/uploads/aderentes/*
 /web/media/*
 /web/paysysv3
 /web/paysysv3test

@@ -43,7 +43,10 @@ class Tsubgroup {
     private $imageFile;
     
     
-    
+        /**
+     * @var \DateTime
+     */
+    private $updatedAt;
     
     /**
      * Constructor
@@ -192,7 +195,7 @@ class Tsubgroup {
         // otherwise the event listeners won't be called and the file is lost
         if ($image) {
             // if 'updatedAt' is not defined in your entity, use another property
-            //$this->updatedAt = new \DateTime('now');
+            $this->updatedAt = new \DateTime('now');
         }
     }
 
@@ -227,5 +230,18 @@ class Tsubgroup {
     public function __toString() {
         return $this->getFsubgroupid()." - ".$this->getFsubgroupname();
     }
+    
+    
+    function getUpdatedAt() {
+        return $this->updatedAt;
+    }
+
+    function setUpdatedAt(\DateTime $updatedAt) {
+        $this->updatedAt = $updatedAt;
+    }
+
+
+    
+    
 
 }

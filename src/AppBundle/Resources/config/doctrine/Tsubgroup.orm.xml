@@ -18,6 +18,12 @@
         <!--    ALTER TABLE `parcelaja_payments`.`TSubgroup` 
         ADD COLUMN `FLogo` VARCHAR(100) NULL AFTER `FState`;-->
 
+
+<!--ALTER TABLE `parcelaja_payments`.`TSubgroup` 
+ADD COLUMN `updated_at` DATETIME NULL AFTER `FLogo`;-->
+
+
+
     
 
         <one-to-many field="agencyList" target-entity="Tagency" mapped-by="subgroup" />
@@ -37,5 +43,9 @@
     
     
         <field name="fstate" type="boolean" column="FState" nullable="false"/>
+        
+        
+        <field name="updatedAt" type="datetime" column="updated_at" nullable="true"/>
+        
     </entity>
 </doctrine-mapping>

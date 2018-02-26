@@ -3,7 +3,6 @@
 namespace AppBundle\Entity;
 
 use Symfony\Component\HttpFoundation\File\File;
-
 /**
  * Tagency
  */
@@ -116,17 +115,17 @@ class Tagency {
     private $fagencyid;
 
     /**
-     * @var \Doctrine\Common\Collections\Collection
+     * @var Collection
      */
     private $terminalList;
 
     /**
-     * @var \Doctrine\Common\Collections\Collection
+     * @var Collection
      */
     private $purchaseList;
 
     /**
-     * @var \AppBundle\Entity\Tsubgroup
+     * @var Tsubgroup
      */
     private $subgroup;
     private $broker;
@@ -134,12 +133,19 @@ class Tagency {
     
     
     private $taxAddress;
+    
+    
+        /**
+     * @var DateTime
+     */
+    private $updatedAt;
+    
 
     /**
      * Constructor
      */
     public function __construct() {
-        $this->terminalList = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->terminalList = new ArrayCollection();
     }
     
     
@@ -162,11 +168,11 @@ class Tagency {
     /**
      * Set broker
      *
-     * @param \AppBundle\Entity\Broker $broker
+     * @param Broker $broker
      *
      * @return TerminalPayment
      */
-    public function setBroker(\AppBundle\Entity\Broker $broker = null) {
+    public function setBroker(Broker $broker = null) {
         $this->broker = $broker;
 
         return $this;
@@ -175,7 +181,7 @@ class Tagency {
     /**
      * Get broker
      *
-     * @return \AppBundle\Entity\Broker
+     * @return Broker
      */
     public function getBroker() {
         return $this->broker;
@@ -643,11 +649,11 @@ class Tagency {
     /**
      * Add terminalList
      *
-     * @param \AppBundle\Entity\Tpos $terminalList
+     * @param Tpos $terminalList
      *
      * @return Tagency
      */
-    public function addTerminalList(\AppBundle\Entity\Tpos $terminalList) {
+    public function addTerminalList(Tpos $terminalList) {
         $this->terminalList[] = $terminalList;
 
         return $this;
@@ -656,16 +662,16 @@ class Tagency {
     /**
      * Remove terminalList
      *
-     * @param \AppBundle\Entity\Tpos $terminalList
+     * @param Tpos $terminalList
      */
-    public function removeTerminalList(\AppBundle\Entity\Tpos $terminalList) {
+    public function removeTerminalList(Tpos $terminalList) {
         $this->terminalList->removeElement($terminalList);
     }
 
     /**
      * Get terminalList
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return Collection
      */
     public function getTerminalList() {
         return $this->terminalList;
@@ -674,11 +680,11 @@ class Tagency {
     /**
      * Set subgroup
      *
-     * @param \AppBundle\Entity\Tsubgroup $subgroup
+     * @param Tsubgroup $subgroup
      *
      * @return Tagency
      */
-    public function setSubgroup(\AppBundle\Entity\Tsubgroup $subgroup = null) {
+    public function setSubgroup(Tsubgroup $subgroup = null) {
         $this->subgroup = $subgroup;
 
         return $this;
@@ -687,7 +693,7 @@ class Tagency {
     /**
      * Get subgroup
      *
-     * @return \AppBundle\Entity\Tsubgroup
+     * @return Tsubgroup
      */
     public function getSubgroup() {
         return $this->subgroup;
@@ -701,7 +707,7 @@ class Tagency {
         return $this->purchaseList;
     }
 
-    function setPurchaseList(\Doctrine\Common\Collections\Collection $purchaseList) {
+    function setPurchaseList(Collection $purchaseList) {
         $this->purchaseList = $purchaseList;
     }
 
@@ -713,7 +719,7 @@ class Tagency {
         // otherwise the event listeners won't be called and the file is lost
         if ($image) {
             // if 'updatedAt' is not defined in your entity, use another property
-            //$this->updatedAt = new \DateTime('now');
+            $this->updatedAt = new \DateTime('now');
         }
     }
 
@@ -740,5 +746,17 @@ class Tagency {
         // when displaying uploaded doc/image in the view.
         return 'uploads/aderentes';
     }
+    
+    function getUpdatedAt() {
+        return $this->updatedAt;
+    }
+
+    function setUpdatedAt(DateTime $updatedAt) {
+        $this->updatedAt = $updatedAt;
+    }
+
+
+    
+    
 
 }
