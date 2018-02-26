@@ -22,6 +22,44 @@ class TpurchaseRepository extends EntityRepository {
      * @param type $params
      * @return type
      */
+    public function findPurchasesByBroker($params) {
+
+
+        $qb = $this->getEntityManager()->createQueryBuilder();
+        $qb->select('p')->from('AppBundle:Tpurchase', 'p');
+
+
+
+
+        if (array_key_exists('brokerId', $params)) {
+            $qb->join('p.agency', 'a', 'WITH', 'p.agency= a.fagencyid');
+            $qb->join('a.broker', 'b', 'WITH', 'b.id= a.broker');
+
+            $qb->andWhere('b.id = ?1');
+            $qb->setParameter(1, $params['brokerId']);
+        }
+
+
+
+        if (array_key_exists('startDate', $params)) {
+            $qb->andWhere('p.fpurchasedate > ?2');
+            $qb->setParameter(2, $params['startDate']);
+        }
+
+        if (array_key_exists('endDate', $params)) {
+            $qb->andWhere('p.fpurchasedate < ?3');
+            $qb->setParameter(3, $params['endDate']);
+        }
+
+        $qb->orderBy('p.fpurchasedate', 'desc');
+        return $qb->getQuery()->getResult();
+    }
+
+    /**
+     * 
+     * @param type $params
+     * @return type
+     */
     public function findByFilter($params) {
 
         $qb = $this->getEntityManager()->createQueryBuilder();
@@ -89,11 +127,11 @@ class TpurchaseRepository extends EntityRepository {
 
     public function findPaymentForecastsByMonth($search) {
         $em = $this->getEntityManager();
-        
+
         $sql = 'SELECT SUM(p.valueEvoPayments) AS total, year(p.date) as year, month(p.date) as month '
                 . 'FROM AppBundle:PaymentForecasts p '
                 . 'WHERE p.date >= ?1 AND p.date < ?2 ';
-        
+
         //CAMPOS OPCIONAIS DA QUERY
         if (array_key_exists('agencyId', $search)) {
             $sql .= 'AND p.agencyId = ?3 ';

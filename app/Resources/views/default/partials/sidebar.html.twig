@@ -94,6 +94,11 @@
                             <a href="{{ path('admin_broker_index') }}">Brokers</a>
                             <span class="icon-thumbnail">TP</span>
                         </li>
+                        
+                        <li class="{% if route in ['admin_broker_purchases' ] %}active{% endif %}">
+                            <a href="{{ path('admin_broker_purchases') }}">Report Brokers</a>
+                            <span class="icon-thumbnail">TP</span>
+                        </li>
 
                     </ul>
                 </li>

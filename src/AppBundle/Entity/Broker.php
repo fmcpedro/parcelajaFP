@@ -5,8 +5,8 @@ namespace AppBundle\Entity;
 /**
  * Broker
  */
-class Broker
-{
+class Broker {
+
     /**
      * @var string
      */
@@ -50,7 +50,7 @@ class Broker
     /**
      * @var integer
      */
-    private $commission;
+    private $commission = 0;
 
     /**
      * @var integer
@@ -65,8 +65,7 @@ class Broker
     /**
      * Constructor
      */
-    public function __construct()
-    {
+    public function __construct() {
         $this->agencyList = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
@@ -77,8 +76,7 @@ class Broker
      *
      * @return Broker
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
 
         return $this;
@@ -89,8 +87,7 @@ class Broker
      *
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -101,8 +98,7 @@ class Broker
      *
      * @return Broker
      */
-    public function setTaxName($taxName)
-    {
+    public function setTaxName($taxName) {
         $this->taxName = $taxName;
 
         return $this;
@@ -113,8 +109,7 @@ class Broker
      *
      * @return string
      */
-    public function getTaxName()
-    {
+    public function getTaxName() {
         return $this->taxName;
     }
 
@@ -125,8 +120,7 @@ class Broker
      *
      * @return Broker
      */
-    public function setNif($nif)
-    {
+    public function setNif($nif) {
         $this->nif = $nif;
 
         return $this;
@@ -137,8 +131,7 @@ class Broker
      *
      * @return string
      */
-    public function getNif()
-    {
+    public function getNif() {
         return $this->nif;
     }
 
@@ -149,8 +142,7 @@ class Broker
      *
      * @return Broker
      */
-    public function setAddress($address)
-    {
+    public function setAddress($address) {
         $this->address = $address;
 
         return $this;
@@ -161,8 +153,7 @@ class Broker
      *
      * @return string
      */
-    public function getAddress()
-    {
+    public function getAddress() {
         return $this->address;
     }
 
@@ -173,8 +164,7 @@ class Broker
      *
      * @return Broker
      */
-    public function setEmail($email)
-    {
+    public function setEmail($email) {
         $this->email = $email;
 
         return $this;
@@ -185,8 +175,7 @@ class Broker
      *
      * @return string
      */
-    public function getEmail()
-    {
+    public function getEmail() {
         return $this->email;
     }
 
@@ -197,8 +186,7 @@ class Broker
      *
      * @return Broker
      */
-    public function setContact($contact)
-    {
+    public function setContact($contact) {
         $this->contact = $contact;
 
         return $this;
@@ -209,8 +197,7 @@ class Broker
      *
      * @return string
      */
-    public function getContact()
-    {
+    public function getContact() {
         return $this->contact;
     }
 
@@ -221,8 +208,7 @@ class Broker
      *
      * @return Broker
      */
-    public function setBank($bank)
-    {
+    public function setBank($bank) {
         $this->bank = $bank;
 
         return $this;
@@ -233,8 +219,7 @@ class Broker
      *
      * @return string
      */
-    public function getBank()
-    {
+    public function getBank() {
         return $this->bank;
     }
 
@@ -245,8 +230,7 @@ class Broker
      *
      * @return Broker
      */
-    public function setIban($iban)
-    {
+    public function setIban($iban) {
         $this->iban = $iban;
 
         return $this;
@@ -257,8 +241,7 @@ class Broker
      *
      * @return string
      */
-    public function getIban()
-    {
+    public function getIban() {
         return $this->iban;
     }
 
@@ -269,8 +252,7 @@ class Broker
      *
      * @return Broker
      */
-    public function setCommission($commission)
-    {
+    public function setCommission($commission) {
         $this->commission = $commission;
 
         return $this;
@@ -281,8 +263,7 @@ class Broker
      *
      * @return integer
      */
-    public function getCommission()
-    {
+    public function getCommission() {
         return $this->commission;
     }
 
@@ -291,8 +272,7 @@ class Broker
      *
      * @return integer
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -303,20 +283,17 @@ class Broker
      *
      * @return Broker
      */
-    public function addAgencyList(\AppBundle\Entity\Tagency $agencyList)
-    {
-        
+    public function addAgencyList(\AppBundle\Entity\Tagency $agencyList) {
+
 //        $agencyList->setBroker($this);
 //        $this->agencyList[] = $agencyList;
 //
 //        return $this;
-    
-        
+
+
         $agencyList->addBroker($this);
 
-    $this->agencyList->add($agencyList);
-        
-        
+        $this->agencyList->add($agencyList);
     }
 
     /**
@@ -324,8 +301,7 @@ class Broker
      *
      * @param \AppBundle\Entity\Tagency $agencyList
      */
-    public function removeAgencyList(\AppBundle\Entity\Tagency $agencyList)
-    {
+    public function removeAgencyList(\AppBundle\Entity\Tagency $agencyList) {
         $this->agencyList->removeElement($agencyList);
     }
 
@@ -334,17 +310,16 @@ class Broker
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getAgencyList()
-    {
+    public function getAgencyList() {
         return $this->agencyList;
     }
-    
-    
-       public function __toString()
-{
-    return $this->getId()." - ".$this->getName();
-}
-    
-    
-}
 
+    public function __toString() {
+        return $this->getId() . " - " . $this->getName();
+    }
+    
+    public function labelToSelect() {
+        return $this->__toString();
+    }
+
+}

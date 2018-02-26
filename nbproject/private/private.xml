@@ -3,9 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Controller/TagencyController.php</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/config/doctrine/Tsubgroup.orm.xml</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Controller/TsubgroupController.php</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Repository/TpurchaseRepository.php</file>
+            <file>file:/home/luis/sfprojects/parcelaja/app/Resources/views/default/partials/sidebar.html.twig</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Form/BrokerPurchaseSearchType.php</file>
+            <file>file:/home/luis/sfprojects/parcelaja/app/Resources/views/broker/brokerPurchases.html.twig</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Entity/Broker.php</file>
+            <file>file:/home/luis/sfprojects/parcelaja/app/Resources/views/tpos/edit.html.twig</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Controller/BrokerController.php</file>
+            <file>file:/home/luis/sfprojects/parcelaja/app/Resources/views/tpayments/paymentForecasts.html.twig</file>
         </group>
     </open-files>
 </project-private>

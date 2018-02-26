@@ -22,3 +22,8 @@ admin_broker_delete:
     path:     /{id}/delete
     defaults: { _controller: "AppBundle:Broker:delete" }
     methods:  DELETE
+
+admin_broker_purchases:
+    path:     /broker_purchases
+    defaults: { _controller: "AppBundle:Broker:brokerPurchases" }
+    methods:  [GET, POST]
