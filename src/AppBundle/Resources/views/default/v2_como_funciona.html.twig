@@ -1,18 +1,13 @@
 {% extends 'AppBundle::v2_base.html.twig' %}
 
-
 {% block stylesheets %}
     {{ parent() }}
 {% endblock %}
 
-
-
 {% block body %}
-
 
     <!--@LM header -->
     {% include 'AppBundle:default:v2_header.html.twig'  with {'selected_menu': 'como_funciona'} %}
-
 
     <!-- Hero -->
     <section class="dzsparallaxer auto-init height-is-based-on-content use-loading mode-scroll fundo-branco" data-options="{direction: 'reverse', settings_mode_oneelement_max_offset: '150'}">
@@ -33,14 +28,12 @@
                             </span>
                         </a>
                     {% else %}
-
                         <a class="js-fancybox-media u-link-v5 g-color-black" href="https://vimeo.com/241048391" title="Parcela Já - InStore (PT Legendado)">
                             <span class="align-middle g-cursor-pointer">
                                 <img class="botao-play botao-play--sm botao-play--md botao-play--lg botao-play--xl u-block-hover--scale" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/botoes/bt-video.svg') }}">
                             </span>
                         </a>
                     {% endif %}
-
 
                 </div>
                 <h1 class="g-color-white titulo-hero titulo-hero--sm titulo-hero--md titulo-hero--lg titulo-hero--xl text-uppercase" data-animation="fadeInUp" data-animation-delay="400" data-animation-duration="1500">
@@ -50,9 +43,6 @@
         </div>
     </section>
     <!-- End - Hero -->
-
-
-
 
     <!-- Como Funciona -->
     <section id="seccao1" class="g-bg-gray-light-v5">
@@ -72,11 +62,6 @@
         </div>
     </section>
     <!-- End - Como Funciona -->
-
-
-
-
-
 
     <!-- Passo 1 -->
     <section class="g-py-50 g-py-100--sm">
