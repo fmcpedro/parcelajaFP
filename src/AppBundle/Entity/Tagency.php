@@ -145,7 +145,7 @@ class Tagency {
      * Constructor
      */
     public function __construct() {
-        $this->terminalList = new ArrayCollection();
+        $this->terminalList = new \Doctrine\Common\Collections\ArrayCollection();
     }
     
     

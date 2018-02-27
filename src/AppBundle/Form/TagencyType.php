@@ -27,7 +27,10 @@ class TagencyType extends AbstractType {
 //                ->add('fpostalcode1')
 //                ->add('fpostalcode2')
 //                ->add('flocation')
-                ->add('femail1')
+                ->add('femail1', \Symfony\Component\Form\Extension\Core\Type\TextType::class, array(
+    'required'   => true,
+    
+))
                 ->add('femail2')
                 ->add('fcontactperson')
                 ->add('ftelephone')
@@ -39,17 +42,16 @@ class TagencyType extends AbstractType {
                 ->add('frnavt')
                 ->add('fpaymethodid')
                 //->add('flogo')
-                ->add('imageFile', VichImageType::class , [
-            'required' => false,
-            
-        ] )
+                ->add('imageFile', VichImageType::class, [
+                    'required' => false,
+                ])
                 ->add('fstate', ChoiceType::class
-                        ,  array(
-    'choices'  => array(
-        'Activo' => true,
-        'Inactivo' => false,
-    )))
-                ->add('subgroup')
+                        , array(
+                    'choices' => array(
+                        'Activo' => true,
+                        'Inactivo' => false,
+            )))
+                ->add('subgroup', null, ['required'=>true])
                 ->add('broker');
     }
 

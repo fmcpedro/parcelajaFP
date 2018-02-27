@@ -17,6 +17,13 @@
     
     
 <!--    ALTER TABLE `parcelaja_payments`.`TAgency` 
+CHANGE COLUMN `FPostalCode1` `FPostalCode1` VARCHAR(10) CHARACTER SET 'utf8' NULL ,
+CHANGE COLUMN `FPostalCode2` `FPostalCode2` VARCHAR(10) CHARACTER SET 'utf8' NULL ,
+CHANGE COLUMN `FLocation` `FLocation` VARCHAR(100) CHARACTER SET 'utf8' NULL ;-->
+
+    
+    
+<!--    ALTER TABLE `parcelaja_payments`.`TAgency` 
 ADD COLUMN `broker_id` INT NULL AFTER `FState`;-->
 
 
