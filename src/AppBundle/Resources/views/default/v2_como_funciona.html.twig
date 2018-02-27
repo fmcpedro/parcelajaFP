@@ -14,238 +14,238 @@
     {% include 'AppBundle:default:v2_header.html.twig'  with {'selected_menu': 'como_funciona'} %}
 
 
-<!-- Hero -->
-<section class="dzsparallaxer auto-init height-is-based-on-content use-loading mode-scroll fundo-branco" data-options="{direction: 'reverse', settings_mode_oneelement_max_offset: '150'}">
-  <!-- Parallax Image -->
-  <div class="divimage dzsparallaxer--target w-100 u-bg-overlay g-bg-black-opacity-0_5--after g-bg-pos-center" style="height: 140%; background-image: url({{ asset('bundles/app/frontend/v2/assets/img-parcelaja/como-funciona/hero/hero-como-funciona-1920x1080-parallax.jpg') }})"></div>
-  <!-- End Parallax Image -->
-  <div class="parcelaja-hero-container container text-center g-px-0">
-    <div class="row justify-content-center parcelaja-hero-seta text-center g-px-0 g-mx-0" data-animation="fadeInUp" data-animation-delay="1100" data-animation-duration="1500">
-      <a class="g-mb-20 g-mb-25--sm g-mb-30--md g-font-size-30 g-font-size-40--md g-text-underline--none js-go-to" href="#" data-target="#seccao1"><i class="icon-arrow-down u-simple-line-icon"></i></a>
-    </div>
-    <div class="parcela-hero-play container text-center">
-      <div class="g-mb-25 g-mb-50--md" data-animation="fadeIn" data-animation-delay="200" data-animation-duration="800">
-        
-           {% if app.request.locale == "en" %}
-          <a class="js-fancybox-media u-link-v5 g-color-black" href="https://vimeo.com/241046229" title="Parcela Já - InStore (PT Legendado)">
-          <span class="align-middle g-cursor-pointer">
-            <img class="botao-play botao-play--sm botao-play--md botao-play--lg botao-play--xl u-block-hover--scale" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/botoes/bt-video.svg') }}">
-          </span>
-        </a>
-          {% else %}
-          
-          <a class="js-fancybox-media u-link-v5 g-color-black" href="https://vimeo.com/241048391" title="Parcela Já - InStore (PT Legendado)">
-          <span class="align-middle g-cursor-pointer">
-            <img class="botao-play botao-play--sm botao-play--md botao-play--lg botao-play--xl u-block-hover--scale" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/botoes/bt-video.svg') }}">
-          </span>
-        </a>
-          {% endif %}
-          
-          
-      </div>
-      <h1 class="g-color-white titulo-hero titulo-hero--sm titulo-hero--md titulo-hero--lg titulo-hero--xl text-uppercase" data-animation="fadeInUp" data-animation-delay="400" data-animation-duration="1500">
-        {% trans %}howitworks_block_01_title{% endtrans %}
-      </h1>
-    </div>
-  </div>
-</section>
-<!-- End - Hero -->
+    <!-- Hero -->
+    <section class="dzsparallaxer auto-init height-is-based-on-content use-loading mode-scroll fundo-branco" data-options="{direction: 'reverse', settings_mode_oneelement_max_offset: '150'}">
+        <!-- Parallax Image -->
+        <div class="divimage dzsparallaxer--target w-100 u-bg-overlay g-bg-black-opacity-0_5--after g-bg-pos-center" style="height: 140%; background-image: url({{ asset('bundles/app/frontend/v2/assets/img-parcelaja/como-funciona/hero/hero-como-funciona-1920x1080-parallax.jpg') }})"></div>
+        <!-- End Parallax Image -->
+        <div class="parcelaja-hero-container container text-center g-px-0">
+            <div class="row justify-content-center parcelaja-hero-seta text-center g-px-0 g-mx-0" data-animation="fadeInUp" data-animation-delay="1100" data-animation-duration="1500">
+                <a class="g-mb-20 g-mb-25--sm g-mb-30--md g-font-size-30 g-font-size-40--md g-text-underline--none js-go-to" href="#" data-target="#seccao1"><i class="icon-arrow-down u-simple-line-icon"></i></a>
+            </div>
+            <div class="parcela-hero-play container text-center">
+                <div class="g-mb-25 g-mb-50--md" data-animation="fadeIn" data-animation-delay="200" data-animation-duration="800">
+
+                    {% if app.request.locale == "en" %}
+                        <a class="js-fancybox-media u-link-v5 g-color-black" href="https://vimeo.com/241046229" title="Parcela Já - InStore (PT Legendado)">
+                            <span class="align-middle g-cursor-pointer">
+                                <img class="botao-play botao-play--sm botao-play--md botao-play--lg botao-play--xl u-block-hover--scale" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/botoes/bt-video.svg') }}">
+                            </span>
+                        </a>
+                    {% else %}
+
+                        <a class="js-fancybox-media u-link-v5 g-color-black" href="https://vimeo.com/241048391" title="Parcela Já - InStore (PT Legendado)">
+                            <span class="align-middle g-cursor-pointer">
+                                <img class="botao-play botao-play--sm botao-play--md botao-play--lg botao-play--xl u-block-hover--scale" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/botoes/bt-video.svg') }}">
+                            </span>
+                        </a>
+                    {% endif %}
 
 
-   
-    
+                </div>
+                <h1 class="g-color-white titulo-hero titulo-hero--sm titulo-hero--md titulo-hero--lg titulo-hero--xl text-uppercase" data-animation="fadeInUp" data-animation-delay="400" data-animation-duration="1500">
+                    {% trans %}howitworks_block_01_title{% endtrans %}
+                </h1>
+            </div>
+        </div>
+    </section>
+    <!-- End - Hero -->
+
+
+
+
     <!-- Como Funciona -->
-<section id="seccao1" class="g-bg-gray-light-v5">
-  <div class="container g-py-50 g-py-100--sm">
-    <div class="row justify-content-center g-px-25 g-px-50--md">
-      <div class="col-lg-8">
-        <!-- Heading -->
-        <div class="text-center">
-          <h5 class="g-color-primary g-font-size-18 titulo-largo text-uppercase g-mb-25">{% trans %}howitworks_block_02_title{% endtrans %}</h5>
-          <h2 class="h2 h2--md h2--lg mb-5">{% trans %}howitworks_block_02_subtitle{% endtrans %}</h2>
-          <p class="paragrafo-lead g-font-size-18 g-mb-25">{% trans %}howitworks_block_02_text01{% endtrans %}</p>
-          <p class="paragrafo-lead g-font-size-18 mb-0">{% trans %}howitworks_block_02_text02{% endtrans %}</p>
+    <section id="seccao1" class="g-bg-gray-light-v5">
+        <div class="container g-py-50 g-py-100--sm">
+            <div class="row justify-content-center g-px-25 g-px-50--md">
+                <div class="col-lg-8">
+                    <!-- Heading -->
+                    <div class="text-center">
+                        <h5 class="g-color-primary g-font-size-18 titulo-largo text-uppercase g-mb-25">{% trans %}howitworks_block_02_title{% endtrans %}</h5>
+                        <h2 class="h2 h2--md h2--lg mb-5">{% trans %}howitworks_block_02_subtitle{% endtrans %}</h2>
+                        <p class="paragrafo-lead g-font-size-18 g-mb-25">{% trans %}howitworks_block_02_text01{% endtrans %}</p>
+                        <p class="paragrafo-lead g-font-size-18 mb-0">{% trans %}howitworks_block_02_text02{% endtrans %}</p>
+                    </div>
+                    <!-- End Heading -->
+                </div>
+            </div>
         </div>
-        <!-- End Heading -->
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End - Como Funciona -->
-    
-    
-    
-   
-    
-    
+    </section>
+    <!-- End - Como Funciona -->
+
+
+
+
+
+
     <!-- Passo 1 -->
-<section class="g-py-50 g-py-100--sm">
-  <div class="container">
-    <div class="row g-px-25 g-px-50--md">
+    <section class="g-py-50 g-py-100--sm">
+        <div class="container">
+            <div class="row g-px-25 g-px-50--md">
 
-      <div class="offset-md-2 col-md-8 order-sm-1 align-self-center text-center">
-        <div class="g-font-size-18">
-          <h5 class="g-color-primary g-font-size-18 titulo-largo text-uppercase g-mb-25">{% trans %}howitworks_block_03_simple_steps{% endtrans %}</h5>
-        </div>
-      </div>
-      
-      <div class="col-sm-6 col-lg-5 order-sm-3 align-self-center text-center g-overflow-hidden">
-        <img class="img-fluid" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/como-funciona/3-passos/step1-whiteBG.svg') }}" alt="Passo 1" data-animation="fadeInUp" data-animation-delay="0" data-animation-duration="1000">
-      </div>
+                <div class="offset-md-2 col-md-8 order-sm-1 align-self-center text-center">
+                    <div class="g-font-size-18">
+                        <h5 class="g-color-primary g-font-size-18 titulo-largo text-uppercase g-mb-25">{% trans %}howitworks_block_03_simple_steps{% endtrans %}</h5>
+                    </div>
+                </div>
 
-      <div class="col-sm-6 col-lg-7 order-sm-2 align-self-center g-mb-50--md g-mb-0--md">
-        <div class="u-heading-v2-3--bottom g-brd-primary g-mb-30">
-          <h2 class="u-heading-v2__title text-uppercase h2 h2--md h2--lg">{% trans %}howitworks_block_03_title01{% endtrans %}</h2>
-        </div>
-        <div class="g-font-size-18 g-mb-50">
-          <p>{% trans %}howitworks_block_03_subtitle01{% endtrans %}</p>
-        </div>
-      </div>
+                <div class="col-sm-6 col-lg-5 order-sm-3 align-self-center text-center g-overflow-hidden">
+                    <img class="img-fluid" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/como-funciona/3-passos/step1-whiteBG.svg') }}" alt="Passo 1" data-animation="fadeInUp" data-animation-delay="0" data-animation-duration="1000">
+                </div>
 
-    </div>
-  </div>
-</section>
-<!-- End Passo 1 -->
-    
-    
-    
-    
+                <div class="col-sm-6 col-lg-7 order-sm-2 align-self-center g-mb-50--md g-mb-0--md">
+                    <div class="u-heading-v2-3--bottom g-brd-primary g-mb-30">
+                        <h2 class="u-heading-v2__title text-uppercase h2 h2--md h2--lg">{% trans %}howitworks_block_03_title01{% endtrans %}</h2>
+                    </div>
+                    <div class="g-font-size-18 g-mb-50">
+                        <p>{% trans %}howitworks_block_03_subtitle01{% endtrans %}</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- End Passo 1 -->
+
+
+
+
     <!-- Passo 2 -->
-<section class="fundo-azul g-color-white g-py-50 g-py-100--sm">
-  <div class="container">
-    <div class="row g-px-25 g-px-50--md">
-      <div class="col-sm-6 col-lg-5 align-self-center text-center g-overflow-hidden g-mb-50--md g-mb-0--md">
-        <img class="img-fluid" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/como-funciona/3-passos/step2-blueBG.svg') }}" alt="Passo 2" data-animation="fadeInUp" data-animation-delay="0" data-animation-duration="1000">
-      </div>
+    <section class="fundo-azul g-color-white g-py-50 g-py-100--sm">
+        <div class="container">
+            <div class="row g-px-25 g-px-50--md">
+                <div class="col-sm-6 col-lg-5 align-self-center text-center g-overflow-hidden g-mb-50--md g-mb-0--md">
+                    <img class="img-fluid" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/como-funciona/3-passos/step2-blueBG.svg') }}" alt="Passo 2" data-animation="fadeInUp" data-animation-delay="0" data-animation-duration="1000">
+                </div>
 
-      <div class="col-sm-6 col-lg-7 align-self-center">
-        <div class="u-heading-v2-3--bottom g-brd-white g-mb-30">
-          <h2 class="u-heading-v2__title text-uppercase h2 h2--md h2--lg">{% trans %}howitworks_block_03_title02{% endtrans %}</h2>
+                <div class="col-sm-6 col-lg-7 align-self-center">
+                    <div class="u-heading-v2-3--bottom g-brd-white g-mb-30">
+                        <h2 class="u-heading-v2__title text-uppercase h2 h2--md h2--lg">{% trans %}howitworks_block_03_title02{% endtrans %}</h2>
+                    </div>
+                    <div class="g-font-size-18 g-mb-50">
+                        <p class="g-color-white">{% trans %}howitworks_block_03_subtitle02{% endtrans %}</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="g-font-size-18 g-mb-50">
-          <p class="g-color-white">{% trans %}howitworks_block_03_subtitle02{% endtrans %}</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End Passo 2 -->
-    
-    
-    
+    </section>
+    <!-- End Passo 2 -->
+
+
+
     <!-- Passo 3 -->
-<section class="g-py-50 g-py-100--sm">
-  <div class="container">
-    <div class="row g-px-25 g-px-50--md">
+    <section class="g-py-50 g-py-100--sm">
+        <div class="container">
+            <div class="row g-px-25 g-px-50--md">
 
-      <div class="col-sm-6 col-lg-5 order-sm-2 align-self-center text-center g-overflow-hidden g-mb-50">
-        <img class="img-fluid" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/como-funciona/3-passos/step3-whiteBG.svg') }}" alt="Image Description" data-animation="fadeInUp" data-animation-delay="0" data-animation-duration="1000">
-      </div>
+                <div class="col-sm-6 col-lg-5 order-sm-2 align-self-center text-center g-overflow-hidden g-mb-50">
+                    <img class="img-fluid" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/como-funciona/3-passos/step3-whiteBG.svg') }}" alt="Image Description" data-animation="fadeInUp" data-animation-delay="0" data-animation-duration="1000">
+                </div>
 
-      <div class="col-sm-6 col-lg-7 col-xl-7 order-sm-1 align-self-center g-mb-50--md g-mb-50">
-        <div class="u-heading-v2-3--bottom g-brd-primary g-mb-30">
-          <h2 class="u-heading-v2__title text-uppercase h2 h2--md h2--lg">{% trans %}howitworks_block_03_title03{% endtrans %}</h2>
+                <div class="col-sm-6 col-lg-7 col-xl-7 order-sm-1 align-self-center g-mb-50--md g-mb-50">
+                    <div class="u-heading-v2-3--bottom g-brd-primary g-mb-30">
+                        <h2 class="u-heading-v2__title text-uppercase h2 h2--md h2--lg">{% trans %}howitworks_block_03_title03{% endtrans %}</h2>
+                    </div>
+                    <div class="g-font-size-18 g-mb-30">
+                        <p>{% trans %}howitworks_block_03_subtitle03{% endtrans %}</p>
+                    </div>
+                </div>
+
+                <div class="offset-md-2 col-md-8 order-sm-3 align-self-center text-center g-mt-50">
+                    <div class="g-font-size-18">
+                        <h5 class="g-color-primary g-font-size-18 titulo-largo text-uppercase g-mb-25">{% trans %}howitworks_block_03_text01{% endtrans %}</h5>
+                        <p>{% trans %}howitworks_block_03_text02{% endtrans %}</p>
+                    </div>
+                </div>
+
+            </div>
         </div>
-        <div class="g-font-size-18 g-mb-30">
-          <p>{% trans %}howitworks_block_03_subtitle03{% endtrans %}</p>
-        </div>
-      </div>
+    </section>
+    <!-- End Passo 3 -->
 
-      <div class="offset-md-2 col-md-8 order-sm-3 align-self-center text-center g-mt-50">
-        <div class="g-font-size-18">
-          <h5 class="g-color-primary g-font-size-18 titulo-largo text-uppercase g-mb-25">{% trans %}howitworks_block_03_text01{% endtrans %}</h5>
-          <p>{% trans %}howitworks_block_03_text02{% endtrans %}</p>
-        </div>
-      </div>
 
-    </div>
-  </div>
-</section>
-<!-- End Passo 3 -->
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
     <!-- Toda a gestão das compras sem letras pequenas -->
-<section class="g-bg-secondary g-py-50 g-py-100--sm">
-  <div class="container">
-    <div class="text-center g-mb-50">
-      <h3 class="h3 h3--md h3--lg">{% trans %}howitworks_block_04_title{% endtrans %}</h3>
-    </div>
+    <section class="g-bg-secondary g-py-50 g-py-100--sm">
+        <div class="container">
+            <div class="text-center g-mb-50">
+                <h3 class="h3 h3--md h3--lg">{% trans %}howitworks_block_04_title{% endtrans %}</h3>
+            </div>
 
-    <!-- Icon Blocks -->
-    <div class="row g-px-25 g-px-50--md">
+            <!-- Icon Blocks -->
+            <div class="row g-px-25 g-px-50--md">
 
-      <div class="col-sm-6 col-lg-3 g-mb-30 g-mb-0--lg">
-        <!-- Icon Blocks -->
-        <div class="text-center">
-          <span class="u-icon-v2 u-icon-size--3xl g-brd-7 g-brd-gray-light-v4 g-color-primary g-rounded-50x g-mb-25">
-            <i class="icon-education-124 u-line-icon-pro"></i>
-          </span>
-          <p class="paragrafo-icones g-font-size-14 g-mb-0">{% trans %}howitworks_block_04_subtitle01{% endtrans %}</p>
+                <div class="col-sm-6 col-lg-3 g-mb-30 g-mb-0--lg">
+                    <!-- Icon Blocks -->
+                    <div class="text-center">
+                        <span class="u-icon-v2 u-icon-size--3xl g-brd-7 g-brd-gray-light-v4 g-color-primary g-rounded-50x g-mb-25">
+                            <i class="icon-education-124 u-line-icon-pro"></i>
+                        </span>
+                        <p class="paragrafo-icones g-font-size-14 g-mb-0">{% trans %}howitworks_block_04_subtitle01{% endtrans %}</p>
+                    </div>
+                    <!-- End Icon Blocks -->
+                </div>
+
+                <div class="col-sm-6 col-lg-3 g-mb-30 g-mb-0--lg">
+                    <!-- Icon Blocks -->
+                    <div class="text-center">
+                        <span class="u-icon-v2 u-icon-size--3xl g-brd-7 g-brd-gray-light-v4 g-color-primary g-rounded-50x g-mb-25">
+                            <i class="icon-finance-227 u-line-icon-pro g-left-2"></i>
+                        </span>
+                        <p class="paragrafo-icones g-font-size-14 g-mb-0">{% trans %}howitworks_block_04_subtitle02{% endtrans %}</p>
+                    </div>
+                    <!-- End Icon Blocks -->
+                </div>
+
+                <div class="col-sm-6 col-lg-3 g-mb-30 g-mb-0--lg">
+                    <!-- Icon Blocks -->
+                    <div class="text-center">
+                        <span class="u-icon-v2 u-icon-size--3xl g-brd-7 g-brd-gray-light-v4 g-color-primary g-rounded-50x g-mb-25">
+                            <i class="icon-finance-228 u-line-icon-pro g-left-2"></i>
+                        </span>
+                        <p class="paragrafo-icones g-font-size-14 g-mb-0">{% trans %}howitworks_block_04_subtitle03{% endtrans %}</p>
+                    </div>
+                    <!-- End Icon Blocks -->
+                </div>
+
+                <div class="col-sm-6 col-lg-3 g-mb-0">
+                    <!-- Icon Blocks -->
+                    <div class="text-center">
+                        <span class="u-icon-v2 u-icon-size--3xl g-brd-7 g-brd-gray-light-v4 g-color-primary g-rounded-50x g-mb-25">
+                            <i class="icon-education-104 u-line-icon-pro"></i>
+                        </span>
+                        <p class="paragrafo-icones g-font-size-14 g-mb-0">{% trans %}howitworks_block_04_subtitle04{% endtrans %}</p>
+                    </div>
+                    <!-- End Icon Blocks -->
+                </div>
+
+            </div>
+            <!-- End Icon Blocks -->
+
         </div>
-        <!-- End Icon Blocks -->
-      </div>
+    </section>
+    <!-- End - Toda a gestão das compras sem letras pequenas -->
 
-      <div class="col-sm-6 col-lg-3 g-mb-30 g-mb-0--lg">
-        <!-- Icon Blocks -->
-        <div class="text-center">
-          <span class="u-icon-v2 u-icon-size--3xl g-brd-7 g-brd-gray-light-v4 g-color-primary g-rounded-50x g-mb-25">
-            <i class="icon-finance-227 u-line-icon-pro g-left-2"></i>
-          </span>
-          <p class="paragrafo-icones g-font-size-14 g-mb-0">{% trans %}howitworks_block_04_subtitle02{% endtrans %}</p>
-        </div>
-        <!-- End Icon Blocks -->
-      </div>
 
-      <div class="col-sm-6 col-lg-3 g-mb-30 g-mb-0--lg">
-        <!-- Icon Blocks -->
-        <div class="text-center">
-          <span class="u-icon-v2 u-icon-size--3xl g-brd-7 g-brd-gray-light-v4 g-color-primary g-rounded-50x g-mb-25">
-            <i class="icon-finance-228 u-line-icon-pro g-left-2"></i>
-          </span>
-          <p class="paragrafo-icones g-font-size-14 g-mb-0">{% trans %}howitworks_block_04_subtitle03{% endtrans %}</p>
-        </div>
-        <!-- End Icon Blocks -->
-      </div>
 
-      <div class="col-sm-6 col-lg-3 g-mb-0">
-        <!-- Icon Blocks -->
-        <div class="text-center">
-          <span class="u-icon-v2 u-icon-size--3xl g-brd-7 g-brd-gray-light-v4 g-color-primary g-rounded-50x g-mb-25">
-            <i class="icon-education-104 u-line-icon-pro"></i>
-          </span>
-          <p class="paragrafo-icones g-font-size-14 g-mb-0">{% trans %}howitworks_block_04_subtitle04{% endtrans %}</p>
-        </div>
-        <!-- End Icon Blocks -->
-      </div>
 
-    </div>
-    <!-- End Icon Blocks -->
 
-  </div>
-</section>
-<!-- End - Toda a gestão das compras sem letras pequenas -->
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
     <!--@LM Footer Call to Action -->
     {% include 'AppBundle:default:v2_footer_call_to_action.html.twig' %}
 
@@ -264,59 +264,59 @@
 
     <!-- JS Plugins Init. -->
     <script>
-      $(document).on('ready', function () {
-          // initialization of carousel
-          $.HSCore.components.HSCarousel.init('.js-carousel');
-          $('#we-provide').slick('setOption', 'responsive', [{
-            breakpoint: 992,
-            settings: {
-              slidesToShow: 2
-            }
-          }, {
-            breakpoint: 576,
-            settings: {
-              slidesToShow: 1
-            }
-          }], true);
-          // initialization of tabs
-          $.HSCore.components.HSTabs.init('[role="tablist"]');
-          // initialization of header's height equal offset
-          $.HSCore.helpers.HSHeightCalc.init();
-          // initialization of scroll animation
-          $.HSCore.components.HSOnScrollAnimation.init('[data-animation]');
-          // initialization of video on background
-          $.HSCore.helpers.HSBgVideo.init('.js-bg-video');
-          // initialization of popups with media
-          $.HSCore.components.HSPopup.init('.js-fancybox-media', {
-            helpers: {
-              media: {},
-              overlay: {
-                css: {
-                  'background': 'rgba(0, 0, 0, .8)'
+        $(document).on('ready', function () {
+            // initialization of carousel
+            $.HSCore.components.HSCarousel.init('.js-carousel');
+            $('#we-provide').slick('setOption', 'responsive', [{
+                    breakpoint: 992,
+                    settings: {
+                        slidesToShow: 2
+                    }
+                }, {
+                    breakpoint: 576,
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }], true);
+            // initialization of tabs
+            $.HSCore.components.HSTabs.init('[role="tablist"]');
+            // initialization of header's height equal offset
+            $.HSCore.helpers.HSHeightCalc.init();
+            // initialization of scroll animation
+            $.HSCore.components.HSOnScrollAnimation.init('[data-animation]');
+            // initialization of video on background
+            $.HSCore.helpers.HSBgVideo.init('.js-bg-video');
+            // initialization of popups with media
+            $.HSCore.components.HSPopup.init('.js-fancybox-media', {
+                helpers: {
+                    media: {},
+                    overlay: {
+                        css: {
+                            'background': 'rgba(0, 0, 0, .8)'
+                        }
+                    }
                 }
-              }
-            }
-          });
-          // initialization of HSDropdown component
-          $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'));
-          // initialization of go to
-          $.HSCore.components.HSGoTo.init('.js-go-to');
+            });
+            // initialization of HSDropdown component
+            $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'));
+            // initialization of go to
+            $.HSCore.components.HSGoTo.init('.js-go-to');
         });
         $(window).on('load', function () {
-          // initialization of header
-          $.HSCore.components.HSHeader.init($('#js-header'));
-          $.HSCore.helpers.HSHamburgers.init('.hamburger');
-          // initialization of HSMegaMenu component
-          $('.js-mega-menu').HSMegaMenu({
-            event: 'hover',
-            pageContainer: $('.container'),
-            breakpoint: 991
-          });
+            // initialization of header
+            $.HSCore.components.HSHeader.init($('#js-header'));
+            $.HSCore.helpers.HSHamburgers.init('.hamburger');
+            // initialization of HSMegaMenu component
+            $('.js-mega-menu').HSMegaMenu({
+                event: 'hover',
+                pageContainer: $('.container'),
+                breakpoint: 991
+            });
         });
         $(window).on('resize', function () {
-          setTimeout(function () {
-            $.HSCore.components.HSTabs.init('[role="tablist"]');
-          }, 200);
+            setTimeout(function () {
+                $.HSCore.components.HSTabs.init('[role="tablist"]');
+            }, 200);
         });
     </script>
 {% endblock %}

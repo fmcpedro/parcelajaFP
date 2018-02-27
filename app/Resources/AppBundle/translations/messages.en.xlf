@@ -593,6 +593,16 @@
                 <target>Clothing</target>
             </trans-unit>
             
+            <trans-unit id="homepage_grupos_brokers" resname="homepage_grupos_brokers">
+                <source>homepage_grupos_brokers</source>
+                <target>Brokers</target>
+            </trans-unit>
+            
+            
+            <trans-unit id="homepage_grupos_moveis" resname="homepage_grupos_moveis">
+                <source>homepage_grupos_moveis</source>
+                <target>Furniture</target>
+            </trans-unit>
             
             
             <trans-unit id="footer_todososdireitosreservados" resname="footer_todososdireitosreservados">
