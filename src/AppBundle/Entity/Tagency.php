@@ -707,7 +707,7 @@ class Tagency {
         return $this->purchaseList;
     }
 
-    function setPurchaseList(Collection $purchaseList) {
+    function setPurchaseList(\Doctrine\Common\Collections\ArrayCollection $purchaseList) {
         $this->purchaseList = $purchaseList;
     }
 
@@ -751,7 +751,7 @@ class Tagency {
         return $this->updatedAt;
     }
 
-    function setUpdatedAt(DateTime $updatedAt) {
+    function setUpdatedAt(\DateTime $updatedAt) {
         $this->updatedAt = $updatedAt;
     }
 
