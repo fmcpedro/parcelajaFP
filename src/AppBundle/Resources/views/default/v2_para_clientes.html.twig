@@ -180,21 +180,18 @@
 
 
                 {% for sub_grupo in sub_grupos %}
-                    {% set logo = '' %}
-
+                    {% set logo = sub_grupo.flogo %}
+{#
                     {% for agencia in sub_grupo.agencyList %}
-                        
+                        {% if agencia.flogo is not empty %}
+                            {% set logo = agencia.flogo %}
+                        {% endif %}
+                    {% endfor %}#}
 
-
-{% if agencia.flogo is not empty %}
-{% set logo = agencia.flogo %}
-{% endif %}
-
-                    {% endfor %}
                     <!-- SubGrupo -->
                     <div class="cbp-item {{sub_grupo.group.fgroupid}}">
                         <div class="u-block-hover g-parent">
-                            <img class="img-fluid g-transform-scale-1_1--parent-hover g-transition-0_5 g-transition--ease-in-out" src="/uploads/aderentes/{{logo}}" alt="" >
+                            <img class="img-fluid g-transform-scale-1_1--parent-hover g-transition-0_5 g-transition--ease-in-out" src="/uploads/subgrupos/{{logo}}" alt="" >
                             <div class="d-flex w-100 h-100 u-block-hover__additional--fade u-block-hover__additional--fade-in g-bg-bluegray-opacity-0_5 opacity-0 g-opacity-1--parent-hover g-pos-abs g-top-0 g-left-0 g-transition-0_3 g-transition--ease-in g-pa-20">
                                 <div class="d-flex align-items-start flex-column mb-auto">
                                     <h3 class="h5 g-color-white g-font-weight-600 mb-1">{{sub_grupo.fsubgroupname}}</h3>
