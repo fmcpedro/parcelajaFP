@@ -507,10 +507,19 @@
                 <source>footer_title_produto</source>
                 <target>PRODUCT</target>
             </trans-unit>
+            
             <trans-unit id="footer_comofunciona" resname="footer_comofunciona">
                 <source>footer_comofunciona</source>
-                <target>How it works</target>
+                <target>How it works in Store</target>
             </trans-unit>
+            
+            <trans-unit id="footer_comofunciona_online" resname="footer_comofunciona_online">
+                <source>footer_comofunciona_online</source>
+                <target>How it works Online</target>
+            </trans-unit>
+            
+            
+            
             <trans-unit id="footer_paraclientes" resname="footer_paraclientes">
                 <source>footer_paraclientes</source>
                 <target>For customers</target>
@@ -555,6 +564,22 @@
                 <source>header_comofunciona</source>
                 <target>HOW IT WORKS</target>
             </trans-unit>
+            
+            <trans-unit id="header_comofunciona_loja" resname="header_comofunciona_loja">
+                <source>header_comofunciona_loja</source>
+                <target>IN STORE</target>
+            </trans-unit>
+            
+            <trans-unit id="header_comofunciona_online" resname="header_comofunciona_online">
+                <source>header_comofunciona_online</source>
+                <target>ONLINE</target>
+            </trans-unit>
+            
+            
+            
+            
+            
+            
             <trans-unit id="header_blog" resname="header_blog">
                 <source>header_blog</source>
                 <target>BLOG</target>
@@ -609,6 +634,107 @@
                 <source>footer_todososdireitosreservados</source>
                 <target>2018 © All rights reserved.</target>
             </trans-unit>
+            
+            
+            
+            
+            <trans-unit id="como_funciona_online_hero" resname="como_funciona_online_hero">
+                <source>como_funciona_online_hero</source>
+                <target>Allow you clients to pay <![CDATA[<br>]]>in low instalments at your online store</target>
+            </trans-unit>
+            
+            <trans-unit id="como_funciona_online_block_01_title" resname="como_funciona_online_block_01_title">
+                <source>como_funciona_online_block_01_title</source>
+                <target>How the System Works</target>
+            </trans-unit>
+            
+            <trans-unit id="como_funciona_online_block_01_subtitle" resname="como_funciona_online_block_01_subtitle">
+                <source>como_funciona_online_block_01_subtitle</source>
+                <target>With Parcela Já, purchases at your online store gain a new payment method.</target>
+            </trans-unit>
+            
+            <trans-unit id="como_funciona_online_block_01_text_01" resname="como_funciona_online_block_01_text_01">
+                <source>como_funciona_online_block_01_text_01</source>
+                <target>Offer your clients the possibility to pay their online purchases in low instalments, in a quick and intuitive way.</target>
+            </trans-unit>
+            
+            <trans-unit id="como_funciona_online_block_01_text_02" resname="como_funciona_online_block_01_text_02">
+                <source>como_funciona_online_block_01_text_02</source>
+                <target>When checking out, your client may split payment with their Visa or Mastercard credit card into up to 12 tranches without interests and without any bureaucracy or the need to have a credit approved.</target>
+            </trans-unit>
+            
+            <trans-unit id="como_funciona_online_block_01_text_03" resname="como_funciona_online_block_01_text_03">
+                <source>como_funciona_online_block_01_text_03</source>
+                <target>To access our system, you will need the client’s credit card. Our system offers a great opportunity to induce new purchases, scheduling client´s payments on a pre-selected monthly basis.</target>
+            </trans-unit>
+
+            
+            <trans-unit id="como_funciona_online_block_02_intro" resname="como_funciona_online_block_02_intro">
+                <source>como_funciona_online_block_02_intro</source>
+                <target>3 simple steps</target>
+            </trans-unit>
+                        
+                                                
+            
+            <trans-unit id="como_funciona_online_block_02_title_01" resname="como_funciona_online_block_02_title_01">
+                <source>como_funciona_online_block_02_title_01</source>
+                <target>Step 1</target>
+            </trans-unit>
+
+
+
+            <trans-unit id="como_funciona_online_block_02_text_01" resname="como_funciona_online_block_02_text_01">
+                <source>como_funciona_online_block_02_text_01</source>
+                <target>When checking out, select payment using <![CDATA[<b>]]>Parcela Já<![CDATA[</b>]]> tool and select the number of tranches into which the purchase shall be split.
+                    </target>
+            </trans-unit>
+
+
+
+            <trans-unit id="como_funciona_online_block_02_title_02" resname="como_funciona_online_block_02_title_02">
+                <source>como_funciona_online_block_02_title_02</source>
+                <target>Step 2</target>
+            </trans-unit>
+            
+            <trans-unit id="como_funciona_online_block_02_text_02" resname="como_funciona_online_block_02_text_02">
+                <source>como_funciona_online_block_02_text_02</source>
+                <target>Enter your credit card details.</target>
+            </trans-unit>
+            
+            
+            
+            <trans-unit id="como_funciona_online_block_02_title_03" resname="como_funciona_online_block_02_title_03">
+                <source>como_funciona_online_block_02_title_03</source>
+                <target>Step 3</target>
+            </trans-unit>
+            
+
+
+<trans-unit id="como_funciona_online_block_02_text_03" resname="como_funciona_online_block_02_text_03">
+                <source>como_funciona_online_block_02_text_03</source>
+                <target>Enter your mobile number. Afterwards, you will receive a verification code via SMS. After entering the code, the purchase will be validated.</target>
+            </trans-unit>
+
+
+             <trans-unit id="como_funciona_online_block_02_title_04" resname="como_funciona_online_block_02_title_04">
+                <source>como_funciona_online_block_02_title_04</source>
+                <target>Done!</target>
+            </trans-unit>
+            
+
+
+<trans-unit id="como_funciona_online_block_02_text_04" resname="como_funciona_online_block_02_text_04">
+                <source>como_funciona_online_block_02_text_04</source>
+                <target>In 3 simple steps, clients may split their purchase’s payment into tranches, without any related costs or bureaucracy. And better yet, without the need to leave your online store page</target>
+            </trans-unit>
+                        
+                                    
+                                                
+                                                            
+                                                                        
+                              
+            
+            
         </body>
     </file>
 </xliff>

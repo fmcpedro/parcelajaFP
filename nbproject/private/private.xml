@@ -3,11 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Entity/Tagency.php</file>
-            <file>file:/home/luis/sfprojects/parcelaja/.gitignore</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/config/doctrine/Tsubgroup.orm.xml</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Entity/Tsubgroup.php</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/config/doctrine/Tagency.orm.xml</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/views/default/v2_como_funciona_online.html.twig</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/views/default/v2_header.html.twig</file>
+            <file>file:/home/luis/sfprojects/parcelaja/app/Resources/AppBundle/translations/messages.en.xlf</file>
+            <file>file:/home/luis/sfprojects/parcelaja/app/Resources/AppBundle/translations/messages.pt.xlf</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/views/default/v2_como_funciona.html.twig</file>
         </group>
     </open-files>
 </project-private>

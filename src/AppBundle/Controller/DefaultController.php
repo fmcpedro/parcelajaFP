@@ -36,6 +36,11 @@ class DefaultController extends Controller {
 
         return $this->render('AppBundle:default:v2_como_funciona.html.twig');
     }
+    
+    public function comoFuncionaOnlineAction(Request $request) {
+
+        return $this->render('AppBundle:default:v2_como_funciona_online.html.twig');
+    }
 
     public function blogAction(Request $request) {
 

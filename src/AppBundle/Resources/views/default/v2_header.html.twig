@@ -60,7 +60,7 @@
 
 
 
-                        <!-- Como Funciona -->
+                        {#<!-- Como Funciona -->
                         {% if selected_menu == 'como_funciona' %}
                             <li class="nav-item g-mx-20--lg g-py-2 active">
                                 <a href="{{ path('como_funciona') }}" class="nav-link px-0 g-color-primary--hover">{% trans %}header_comofunciona{% endtrans %}</a>
@@ -70,7 +70,58 @@
                                 <a href="{{ path('como_funciona') }}" class="nav-link px-0 g-color-primary--hover">{% trans %}header_comofunciona{% endtrans %}</a>
                             </li>
                         {% endif %}
-                        <!-- End - Como Funciona -->
+                        <!-- End - Como Funciona -->#}
+
+
+                        {% set como_funciona = '' %}
+                        {% set nav_item_active = '' %}
+                        {% set como_funciona_online = '' %}
+
+
+
+                        {% if selected_menu == 'como_funciona' or selected_menu == 'como_funciona_online' %}
+                            {% set nav_item_active = 'active' %}
+
+                        {% endif%}
+
+
+
+                        {% if selected_menu == 'como_funciona'  %}
+                            {% set como_funciona = 'active' %}
+
+                        {% endif%}
+
+
+                        {% if selected_menu == 'como_funciona_online'  %}
+                            {% set como_funciona_online = 'active' %}
+
+                        {% endif%}
+
+
+                        <!-- Como Funciona (Dropdown) -->
+                        <li class="nav-item hs-has-sub-menu g-mx-20--lg g-py-2 {{nav_item_active }} g-color-primary" data-animation-in="fadeIn" data-animation-out="fadeOut" data-position="right">
+                            <a id="mega-menu-label-1" class="nav-link g-px-0 g-color-primary--hover g-font-weight-500" href="#" aria-haspopup="true" aria-expanded="false">
+                                {% trans %}header_comofunciona{% endtrans %}              </a>
+                            <!-- Submenu -->
+                            <ul class="hs-sub-menu list-unstyled g-text-transform-none g-mt-15 g-mt-10--lg--scrolling g-brd-left navegacao-sombra--lg" id="nav-submenu-1" aria-labelledby="nav-link-1">
+
+                                <!-- Como Funciona em Loja -->
+                                <li class="dropdown-item {{como_funciona}}">
+                                    <a class="nav-link g-px-0 text-uppercase g-color-primary--hover g-font-weight-500" href="{{ path('como_funciona') }}">{% trans %}header_comofunciona_loja{% endtrans %}</a>
+                                </li>
+                                <!-- End - Como Funciona em Loja -->
+
+                                <!-- Como Funciona Online -->
+                                <li class="dropdown-item {{como_funciona_online}}">
+                                    <a class="nav-link g-px-0 text-uppercase g-color-primary--hover g-font-weight-500" href="{{ path('como_funciona_online') }}">{% trans %}header_comofunciona_online{% endtrans %}</a>
+                                </li>
+                                <!-- End - Como Funciona Online -->
+
+                            </ul>
+                            <!-- End Submenu -->
+                        </li>
+                        <!-- End - Como Funciona (Dropdown) -->
+
 
 
 

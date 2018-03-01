@@ -10,7 +10,7 @@
                 <target>OFEREÇA AO SEU CLIENTE PAGAMENTOS PARCELADOS NO SEU CARTÃO DE CRÉDITO ATÉ 12x.</target>
             </trans-unit>
             
-                        <trans-unit id="homepage_block_01_title_02" resname="homepage_block_01_title_02">
+            <trans-unit id="homepage_block_01_title_02" resname="homepage_block_01_title_02">
                 <source>homepage_block_01_title_02</source>
                 <target>APROVAÇÃO IMEDIATA NO SEU TERMINAL DE PAGAMENTOS</target>
             </trans-unit>
@@ -108,7 +108,7 @@
                 <source>howitworks_block_02_subtitle</source>
                 <target>Sem registos, sem burocracias e sem demora na aprovação de crédito</target>
             </trans-unit>
-<!--            <trans-unit id="howitworks_block_02_text01" resname="howitworks_block_02_text01">
+            <!--            <trans-unit id="howitworks_block_02_text01" resname="howitworks_block_02_text01">
                 <source>howitworks_block_02_text01</source>
                 <target>Com a Parcela Já, as lojas podem ter um sistema de pagamentos parcelados que oferece a oportunidade aos seus clientes de fazerem as suas compras de 2 a 12 vezes, sem juros e sem necessidade de burocracias ou aprovação de crédito.</target>
             </trans-unit>
@@ -505,10 +505,17 @@
                 <source>footer_title_produto</source>
                 <target>PRODUTO</target>
             </trans-unit>
+            
             <trans-unit id="footer_comofunciona" resname="footer_comofunciona">
                 <source>footer_comofunciona</source>
-                <target>Como funciona</target>
+                <target>Como funciona em Loja</target>
             </trans-unit>
+            <trans-unit id="footer_comofunciona_online" resname="footer_comofunciona_online">
+                <source>footer_comofunciona_online</source>
+                <target>Como funciona Online</target>
+            </trans-unit>
+            
+            
             <trans-unit id="footer_paraclientes" resname="footer_paraclientes">
                 <source>footer_paraclientes</source>
                 <target>Para clientes</target>
@@ -553,6 +560,22 @@
                 <source>header_comofunciona</source>
                 <target>COMO FUNCIONA</target>
             </trans-unit>
+            
+            
+            
+            
+            <trans-unit id="header_comofunciona_loja" resname="header_comofunciona_loja">
+                <source>header_comofunciona_loja</source>
+                <target>EM LOJA</target>
+            </trans-unit>
+            
+            <trans-unit id="header_comofunciona_online" resname="header_comofunciona_online">
+                <source>header_comofunciona_online</source>
+                <target>ONLINE</target>
+            </trans-unit>
+            
+            
+            
             <trans-unit id="header_blog" resname="header_blog">
                 <source>header_blog</source>
                 <target>BLOG</target>
@@ -611,6 +634,112 @@
                 <source>footer_todososdireitosreservados</source>
                 <target>2018 © Todos os direitos reservados.</target>
             </trans-unit>
+            
+            
+            
+            
+            
+            <trans-unit id="como_funciona_online_hero" resname="como_funciona_online_hero">
+                <source>como_funciona_online_hero</source>
+                <target>Ofereça aos seus clientes<![CDATA[<br>]]>
+                    pagamentos parcelados na sua loja online</target>
+            </trans-unit>
+            
+            <trans-unit id="como_funciona_online_block_01_title" resname="como_funciona_online_block_01_title">
+                <source>como_funciona_online_block_01_title</source>
+                <target>Como Funciona</target>
+            </trans-unit>
+            
+            <trans-unit id="como_funciona_online_block_01_subtitle" resname="como_funciona_online_block_01_subtitle">
+                <source>como_funciona_online_block_01_subtitle</source>
+                <target>Com a Parcela Já, as vendas na sua loja online aumentam</target>
+            </trans-unit>
+            
+            <trans-unit id="como_funciona_online_block_01_text_01" resname="como_funciona_online_block_01_text_01">
+                <source>como_funciona_online_block_01_text_01</source>
+                <target>Ofereça aos seus clientes a possibilidade de parcelarem as suas compras na sua loja online. Apenas têm que selecionar selecionarem uma nova forma de pagamento – Parcela Já.</target>
+            </trans-unit>
+            
+            <trans-unit id="como_funciona_online_block_01_text_02" resname="como_funciona_online_block_01_text_02">
+                <source>como_funciona_online_block_01_text_02</source>
+                <target>No momento do check-out, o seu cliente tem a possibilidade de pagar com o seu cartão de crédito Visa ou Mastercard, até 12 parcelas sem juros, sem qualquer burocracia ou aprovação de crédito.</target>
+            </trans-unit>
+            
+            <trans-unit id="como_funciona_online_block_01_text_03" resname="como_funciona_online_block_01_text_03">
+                <source>como_funciona_online_block_01_text_03</source>
+                <target>A solução oferecida requer o uso do cartão de crédito dos clientes e oferece uma excelente oportunidade para gerar novas ou mais vendas, agendando os pagamentos dos clientes numa base mensal pré-selecionada.</target>
+            </trans-unit>
+
+            
+            <trans-unit id="como_funciona_online_block_02_intro" resname="como_funciona_online_block_02_intro">
+                <source>como_funciona_online_block_02_intro</source>
+                <target>TRES SIMPLES PASSOS</target>
+            </trans-unit>
+                        
+                                                
+            
+            <trans-unit id="como_funciona_online_block_02_title_01" resname="como_funciona_online_block_02_title_01">
+                <source>como_funciona_online_block_02_title_01</source>
+                <target>PASSO 1</target>
+            </trans-unit>
+
+
+
+            <trans-unit id="como_funciona_online_block_02_text_01" resname="como_funciona_online_block_02_text_01">
+                <source>como_funciona_online_block_02_text_01</source>
+                <target>No momento do check-out, selecione <![CDATA[<b>]]>Parcela Já<![CDATA[</b>]]> como meio de pagamento e escolha o número de vezes em que quer parcelar a sua compra.
+                </target>
+            </trans-unit>
+
+
+
+            <trans-unit id="como_funciona_online_block_02_title_02" resname="como_funciona_online_block_02_title_02">
+                <source>como_funciona_online_block_02_title_02</source>
+                <target>PASSO 2</target>
+            </trans-unit>
+            
+            <trans-unit id="como_funciona_online_block_02_text_02" resname="como_funciona_online_block_02_text_02">
+                <source>como_funciona_online_block_02_text_02</source>
+                <target>Introduza os dados do seu cartão de crédito.</target>
+            </trans-unit>
+            
+            
+            
+            <trans-unit id="como_funciona_online_block_02_title_03" resname="como_funciona_online_block_02_title_03">
+                <source>como_funciona_online_block_02_title_03</source>
+                <target>PASSO 3</target>
+            </trans-unit>
+            
+
+
+            <trans-unit id="como_funciona_online_block_02_text_03" resname="como_funciona_online_block_02_text_03">
+                <source>como_funciona_online_block_02_text_03</source>
+                <target>Insira o seu número de telemóvel. De seguida, receberá uma sms com um código de validação. Assim que digitar o código, a compra será validada.</target>
+            </trans-unit>
+
+
+            <trans-unit id="como_funciona_online_block_02_title_04" resname="como_funciona_online_block_02_title_04">
+                <source>como_funciona_online_block_02_title_04</source>
+                <target>CONCLUÍDO!</target>
+            </trans-unit>
+            
+
+
+            <trans-unit id="como_funciona_online_block_02_text_04" resname="como_funciona_online_block_02_text_04">
+                <source>como_funciona_online_block_02_text_04</source>
+                <target>Em 3 simples passos vai poder pagar as suas compras de forma parcelada, sem qualquer custo ou burocracia associados, e melhor ainda, sem sair de casa.</target>
+            </trans-unit>
+                        
+                                    
+                                                
+                                                            
+                                                                                            
+                                                                                                            
+                                                                                                                        
+                                                                                                                                    
+                                                                                                                                                            
+            
+            
         </body>
     </file>
 </xliff>

@@ -7,7 +7,8 @@
 {% block body %}
 
     <!--@LM header -->
-    {% include 'AppBundle:default:v2_header.html.twig'  with {'selected_menu': 'como_funciona'} %}
+    {% include 'AppBundle:default:v2_header.html.twig'  with {'selected_menu': 'como_funciona_online'} %}
+
 
     <!-- Hero -->
     <section class="dzsparallaxer auto-init height-is-based-on-content use-loading mode-scroll fundo-branco" data-options="{direction: 'reverse', settings_mode_oneelement_max_offset: '150'}">
@@ -20,29 +21,37 @@
             </div>
             <div class="parcela-hero-play container text-center">
                 <div class="g-mb-25 g-mb-50--md" data-animation="fadeIn" data-animation-delay="200" data-animation-duration="800">
+                    {#<a class="js-fancybox-media u-link-v5 g-color-black" href="https://vimeo.com/241048391" title="Parcela Já - InStore (PT Legendado)">
+                      <span class="align-middle g-cursor-pointer">
+                        <img class="botao-play botao-play--sm botao-play--md botao-play--lg botao-play--xl u-block-hover--scale" src="../assets/img-parcelaja/botoes/bt-video.svg">
+                      </span>
+                    </a>#}
+
 
                     {% if app.request.locale == "en" %}
-                        <a class="js-fancybox-media u-link-v5 g-color-black" href="https://vimeo.com/241046229" title="Parcela Já - InStore (EN Legendado)">
+                        <a class="js-fancybox-media u-link-v5 g-color-black" href="https://vimeo.com/241047678" title="Parcela Já - InStore (EN Legendado)">
                             <span class="align-middle g-cursor-pointer">
                                 <img class="botao-play botao-play--sm botao-play--md botao-play--lg botao-play--xl u-block-hover--scale" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/botoes/bt-video.svg') }}">
                             </span>
                         </a>
                     {% else %}
-                        <a class="js-fancybox-media u-link-v5 g-color-black" href="https://vimeo.com/241048391" title="Parcela Já - InStore (PT Legendado)">
+                        <a class="js-fancybox-media u-link-v5 g-color-black" href="https://vimeo.com/241048815" title="Parcela Já - InStore (PT Legendado)">
                             <span class="align-middle g-cursor-pointer">
                                 <img class="botao-play botao-play--sm botao-play--md botao-play--lg botao-play--xl u-block-hover--scale" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/botoes/bt-video.svg') }}">
                             </span>
                         </a>
                     {% endif %}
 
+
                 </div>
                 <h1 class="g-color-white titulo-hero titulo-hero--sm titulo-hero--md titulo-hero--lg titulo-hero--xl text-uppercase" data-animation="fadeInUp" data-animation-delay="400" data-animation-duration="1500">
-                    {% trans %}howitworks_block_01_title{% endtrans %}
+                    {% trans %}como_funciona_online_hero{% endtrans %}
                 </h1>
             </div>
         </div>
     </section>
     <!-- End - Hero -->
+
 
     <!-- Como Funciona -->
     <section id="seccao1" class="g-bg-gray-light-v5">
@@ -51,10 +60,11 @@
                 <div class="col-lg-8">
                     <!-- Heading -->
                     <div class="text-center">
-                        <h5 class="g-color-primary g-font-size-18 titulo-largo text-uppercase g-mb-25">{% trans %}howitworks_block_02_title{% endtrans %}</h5>
-                        <h2 class="h2 h2--md h2--lg mb-5">{% trans %}howitworks_block_02_subtitle{% endtrans %}</h2>
-                        <p class="paragrafo-lead g-font-size-18 g-mb-25">{% trans %}howitworks_block_02_text01{% endtrans %}</p>
-                        <p class="paragrafo-lead g-font-size-18 mb-0">{% trans %}howitworks_block_02_text02{% endtrans %}</p>
+                        <h5 class="g-color-primary g-font-size-18 titulo-largo text-uppercase g-mb-25">{% trans %}como_funciona_online_block_01_title{% endtrans %}</h5>
+                        <h2 class="h2 h2--md h2--lg mb-5">{% trans %}como_funciona_online_block_01_subtitle{% endtrans %}</h2>
+                        <p class="paragrafo-lead g-font-size-18 g-mb-25">{% trans %}como_funciona_online_block_01_text_01{% endtrans %}</p>
+                        <p class="paragrafo-lead g-font-size-18 g-mb-25">{% trans %}como_funciona_online_block_01_text_02{% endtrans %}</p>
+                        <p class="paragrafo-lead g-font-size-18 mb-0">{% trans %}como_funciona_online_block_01_text_03{% endtrans %}</p>
                     </div>
                     <!-- End Heading -->
                 </div>
@@ -63,6 +73,8 @@
     </section>
     <!-- End - Como Funciona -->
 
+
+
     <!-- Passo 1 -->
     <section class="g-py-50 g-py-100--sm">
         <div class="container">
@@ -70,20 +82,20 @@
 
                 <div class="offset-md-2 col-md-8 order-sm-1 align-self-center text-center">
                     <div class="g-font-size-18">
-                        <h5 class="g-color-primary g-font-size-18 titulo-largo text-uppercase g-mb-25">{% trans %}howitworks_block_03_simple_steps{% endtrans %}</h5>
+                        <h5 class="g-color-primary g-font-size-18 titulo-largo text-uppercase g-mb-25">{% trans %}como_funciona_online_block_02_intro{% endtrans %}</h5>
                     </div>
                 </div>
 
                 <div class="col-sm-6 col-lg-5 order-sm-3 align-self-center text-center g-overflow-hidden">
-                    <img class="img-fluid" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/como-funciona/3-passos/step1-whiteBG.svg') }}" alt="Passo 1" data-animation="fadeInUp" data-animation-delay="0" data-animation-duration="1000">
+                    <img class="img-fluid" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/como-funciona-online/3-passos-online/step1-online-whiteBG.svg') }}" alt="Passo 1" data-animation="fadeInUp" data-animation-delay="0" data-animation-duration="1000">
                 </div>
 
                 <div class="col-sm-6 col-lg-7 order-sm-2 align-self-center g-mb-50--md g-mb-0--md">
                     <div class="u-heading-v2-3--bottom g-brd-primary g-mb-30">
-                        <h2 class="u-heading-v2__title text-uppercase h2 h2--md h2--lg">{% trans %}howitworks_block_03_title01{% endtrans %}</h2>
+                        <h2 class="u-heading-v2__title text-uppercase h2 h2--md h2--lg">{% trans %}como_funciona_online_block_02_title_01{% endtrans %}</h2>
                     </div>
                     <div class="g-font-size-18 g-mb-50">
-                        <p>{% trans %}howitworks_block_03_subtitle01{% endtrans %}</p>
+                        <p>{% trans %}como_funciona_online_block_02_text_01{% endtrans %}</p>
                     </div>
                 </div>
 
@@ -94,21 +106,20 @@
 
 
 
-
     <!-- Passo 2 -->
     <section class="fundo-azul g-color-white g-py-50 g-py-100--sm">
         <div class="container">
             <div class="row g-px-25 g-px-50--md">
                 <div class="col-sm-6 col-lg-5 align-self-center text-center g-overflow-hidden g-mb-50--md g-mb-0--md">
-                    <img class="img-fluid" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/como-funciona/3-passos/step2-blueBG.svg') }}" alt="Passo 2" data-animation="fadeInUp" data-animation-delay="0" data-animation-duration="1000">
+                    <img class="img-fluid" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/como-funciona-online/3-passos-online/step2-online-blueBG.svg') }}" alt="Passo 2" data-animation="fadeInUp" data-animation-delay="0" data-animation-duration="1000">
                 </div>
 
                 <div class="col-sm-6 col-lg-7 align-self-center">
                     <div class="u-heading-v2-3--bottom g-brd-white g-mb-30">
-                        <h2 class="u-heading-v2__title text-uppercase h2 h2--md h2--lg">{% trans %}howitworks_block_03_title02{% endtrans %}</h2>
+                        <h2 class="u-heading-v2__title text-uppercase h2 h2--md h2--lg">{% trans %}como_funciona_online_block_02_title_02{% endtrans %}</h2>
                     </div>
                     <div class="g-font-size-18 g-mb-50">
-                        <p class="g-color-white">{% trans %}howitworks_block_03_subtitle02{% endtrans %}</p>
+                        <p class="g-color-white">{% trans %}como_funciona_online_block_02_text_02{% endtrans %}</p>
                     </div>
                 </div>
             </div>
@@ -124,22 +135,22 @@
             <div class="row g-px-25 g-px-50--md">
 
                 <div class="col-sm-6 col-lg-5 order-sm-2 align-self-center text-center g-overflow-hidden g-mb-50">
-                    <img class="img-fluid" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/como-funciona/3-passos/step3-whiteBG.svg') }}" alt="Image Description" data-animation="fadeInUp" data-animation-delay="0" data-animation-duration="1000">
+                    <img class="img-fluid" src="{{ asset('bundles/app/frontend/v2/assets/img-parcelaja/como-funciona-online/3-passos-online/step3-online-whiteBG.svg') }}" alt="Image Description" data-animation="fadeInUp" data-animation-delay="0" data-animation-duration="1000">
                 </div>
 
                 <div class="col-sm-6 col-lg-7 col-xl-7 order-sm-1 align-self-center g-mb-50--md g-mb-50">
                     <div class="u-heading-v2-3--bottom g-brd-primary g-mb-30">
-                        <h2 class="u-heading-v2__title text-uppercase h2 h2--md h2--lg">{% trans %}howitworks_block_03_title03{% endtrans %}</h2>
+                        <h2 class="u-heading-v2__title text-uppercase h2 h2--md h2--lg">{% trans %}como_funciona_online_block_02_title_03{% endtrans %}</h2>
                     </div>
                     <div class="g-font-size-18 g-mb-30">
-                        <p>{% trans %}howitworks_block_03_subtitle03{% endtrans %}</p>
+                        <p>{% trans %}como_funciona_online_block_02_text_03{% endtrans %}</p>
                     </div>
                 </div>
 
                 <div class="offset-md-2 col-md-8 order-sm-3 align-self-center text-center g-mt-50">
                     <div class="g-font-size-18">
-                        <h5 class="g-color-primary g-font-size-18 titulo-largo text-uppercase g-mb-25">{% trans %}howitworks_block_03_text01{% endtrans %}</h5>
-                        <p>{% trans %}howitworks_block_03_text02{% endtrans %}</p>
+                        <h5 class="g-color-primary g-font-size-18 titulo-largo text-uppercase g-mb-25">{% trans %}como_funciona_online_block_02_title_04{% endtrans %}</h5>
+                        <p>{% trans %}como_funciona_online_block_02_text_04{% endtrans %}</p>
                     </div>
                 </div>
 
@@ -147,10 +158,6 @@
         </div>
     </section>
     <!-- End Passo 3 -->
-
-
-
-
 
 
 
@@ -214,20 +221,6 @@
         </div>
     </section>
     <!-- End - Toda a gestão das compras sem letras pequenas -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

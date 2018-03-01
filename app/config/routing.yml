@@ -30,6 +30,12 @@ como_funciona:
     defaults:  { _controller: AppBundle:Default:comoFunciona, _locale: pt }
     requirements:
         _locale:  en|pt
+        
+como_funciona_online:
+    path:      /{_locale}/como-funciona-online
+    defaults:  { _controller: AppBundle:Default:comoFuncionaOnline, _locale: pt }
+    requirements:
+        _locale:  en|pt
             
 blog:
     path:      /{_locale}/blog
