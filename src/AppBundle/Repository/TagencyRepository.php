@@ -90,11 +90,11 @@ class TagencyRepository extends EntityRepository {
             $query->setParameter(5, $search['numFiscal']);
         }
         if (array_key_exists('nomeFiscal', $search)) {
-            $query->setParameter(6, '%' . $search['nomeFiscal'] . '%');
+            $query->setParameter(6, '"%' . $search['nomeFiscal'] . '%"');
         }
 
 
-        //dump($query);
+        dump($query);
 
         return $query->getResult();
     }

@@ -120,7 +120,7 @@ class TpurchaseController extends Controller {
             //2.1) PROCURAR ULTIMO PAGAMENTO DA COMPRA
             $tpayment = $em->getRepository('AppBundle:Tpayments')->findLastPayment($tpurchase);
             
-            $purchaseCancelation->setInstalmentId($tpayment->getFinstallment()+1);
+            $purchaseCancelation->setInstallmentId($tpayment->getFinstallment()+1);
             $em->persist($purchaseCancelation);
             $em->flush();
             
@@ -157,7 +157,7 @@ class TpurchaseController extends Controller {
             //2.1) PROCURAR ULTIMO PAGAMENTO DA COMPRA
             $tpayment = $em->getRepository('AppBundle:Tpayments')->findLastPayment($tpurchase);
             
-            $purchaseReturn->setInstalmentId($tpayment->getFinstallment()+1);
+            $purchaseReturn->setInstallmentId($tpayment->getFinstallment()+1);
             $em->persist($purchaseReturn);
             $em->flush();
 

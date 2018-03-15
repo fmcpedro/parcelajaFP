@@ -86,6 +86,9 @@ class TpaymentsTaxaDesconto {
     private $contractNumber;
     
     private $tipoTaxa;
+    
+    
+    private $tipoOperacao;
 
     //function __construct($valorCompra, $numeroPrestacoes, $numParcela, $tipoTransacao, $payID, $datePayment) {
     function __construct(Tpurchase $purchase, $numParcela, Tpayments $payment=null) {
@@ -108,6 +111,17 @@ class TpaymentsTaxaDesconto {
         $this->tipoTaxa = "TD";
     }
 
+    
+    function getTipoOperacao() {
+        return $this->tipoOperacao;
+    }
+
+    function setTipoOperacao($tipoOperacao) {
+        $this->tipoOperacao = $tipoOperacao;
+    }
+
+        
+    
     function getValorCompra() {
         return $this->valorCompra;
     }

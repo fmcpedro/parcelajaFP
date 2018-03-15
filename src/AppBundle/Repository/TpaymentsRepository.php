@@ -149,10 +149,10 @@ class TpaymentsRepository extends EntityRepository {
             // Se tiver FExtraCharge diferente de 0, então é Taxa de Serviço
             if ($purchase->getFextracharge() <> 0):
                 //echo "TaxaServico <br/>";
-                $generatedPayments = $this->generatePaymentsTaxaServico($purchase, $payment);
+                $generatedPayments = $this->generatePaymentsTaxaServico($purchase, $payment, 'CANCELLATION');
             else:
                 //echo "TaxaDesconto <br/>";
-                $generatedPayments = $this->generatePaymentsTaxaDesconto($purchase, $payment);
+                $generatedPayments = $this->generatePaymentsTaxaDesconto($purchase, $payment, 'CANCELLATION');
             endif;
 
             //adicionar a parcela relativa ao pagamento
@@ -188,10 +188,10 @@ class TpaymentsRepository extends EntityRepository {
             // Se tiver FExtraCharge diferente de 0, então é Taxa de Serviço
             if ($purchase->getFextracharge() <> 0):
                 //echo "TaxaServico <br/>";
-                $generatedPayments = $this->generatePaymentsTaxaServico($purchase, $payment);
+                $generatedPayments = $this->generatePaymentsTaxaServico($purchase, $payment, 'DEVOLUTION');
             else:
                 //echo "TaxaDesconto <br/>";
-                $generatedPayments = $this->generatePaymentsTaxaDesconto($purchase, $payment);
+                $generatedPayments = $this->generatePaymentsTaxaDesconto($purchase, $payment, 'DEVOLUTION');
             endif;
 
             //adicionar a parcela relativa ao pagamento

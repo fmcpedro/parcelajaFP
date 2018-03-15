@@ -27,3 +27,8 @@ admin_tpurchase_cancel:
     path:     /{fpurchaseid}/cancel
     defaults: { _controller: "AppBundle:Tpurchase:cancel" }
     methods:  POST    
+
+admin_tpurchase_return:
+    path:     /{fpurchaseid}/return
+    defaults: { _controller: "AppBundle:Tpurchase:return" }
+    methods:  POST   

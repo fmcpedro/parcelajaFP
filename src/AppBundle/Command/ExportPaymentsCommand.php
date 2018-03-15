@@ -49,16 +49,24 @@ class ExportPaymentsCommand extends ContainerAwareCommand {
 
 
         $em = $this->getContainer()->get('doctrine.orm.entity_manager');
+        
         $tpayments = $em->getRepository('AppBundle:Tpayments')->findAllProcessedPayments(10);
+        foreach ($tpayments as $payment) {
+            $payment->setTipoOperacao('PAYMENT');
+        }
+        
         $cancelatedPayments = $em->getRepository('AppBundle:Tpayments')->findAllCanceledPayments(5);
+        foreach ($cancelatedPayments as $payment) {
+            $payment->setTipoOperacao('CANCELLATION');
+        }
+               
         $returnedPayments = $em->getRepository('AppBundle:Tpayments')->findAllReturnedPayments(5);
+        foreach ($returnedPayments as $payment) {
+            $payment->setTipoOperacao('DEVOLUTION');
+        }
         
         $result = array_merge($tpayments , $cancelatedPayments, $returnedPayments );
         
-        
-        
-        //dump($cancelated_payments);
-
         $this->generateCsvFile($result);
 
 
@@ -147,6 +155,7 @@ class ExportPaymentsCommand extends ContainerAwareCommand {
             'IMP_SELO',
             'TIPO_TRANSACAO',
             'TIPO_TAXA',
+            'TIPO_OPERACAO',
             //dados evo
             'CLIENT_EVO',
             'PAYMETHOD_EVO',
@@ -312,6 +321,7 @@ class ExportPaymentsCommand extends ContainerAwareCommand {
             $impSelo = $payment->getImpSelo(); //IMP. SELO
             $tipoTransacao = $payment->getTipoTransacao();
             $tipoTaxa = $payment->getTipoTaxa();
+            $tipoOperacao = $payment->getTipoOperacao();
 
 
 
@@ -427,6 +437,7 @@ class ExportPaymentsCommand extends ContainerAwareCommand {
                 ($numParcela == 0) ? round($impSelo, self::NUM_CASAS_DECIMAIS) : 0,
                 $tipoTransacao,
                 $tipoTaxa,
+                $tipoOperacao,
                 $clientEVO, //EVO PAYMENTS FROM HERE
                 $payMethodEVO,
                 $typeEVO,

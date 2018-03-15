@@ -95,6 +95,8 @@ class TpaymentsTaxaServico {
     private $contractNumber;
     
     private $tipoTaxa;
+    
+    private $tipoOperacao;
 
     //function __construct($valorCompra, $numeroPrestacoes, $numParcela, $comissaoPagarClienteFinal, $tipoTransacao, $payID,$datePayment) {
     function __construct($purchase, $numParcela, $comissaoPagarClienteFinal, $payment) {
@@ -116,8 +118,23 @@ class TpaymentsTaxaServico {
 
         $this->tipoTransacao = Utils::getTipoTransacao($purchase);
         $this->tipoTaxa = "TS";
+        
+       
+        
+        
     }
 
+    
+    function getTipoOperacao() {
+        return $this->tipoOperacao;
+    }
+
+    function setTipoOperacao($tipoOperacao) {
+        $this->tipoOperacao = $tipoOperacao;
+    }
+
+        
+    
     function getValorCompra() {
         return $this->valorCompra;
     }
