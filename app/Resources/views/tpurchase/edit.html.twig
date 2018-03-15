@@ -1,0 +1,181 @@
+
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+
+    <!-- START PAGE CONTENT -->
+    <div class="content">
+        <!-- START JUMBOTRON -->
+        <div class="jumbotron" data-pages="parallax">
+            <div class="container-fluid container-fixed-lg sm-p-l-20 sm-p-r-20">
+                <div class="inner">
+                    <!-- START BREADCRUMB -->
+                    <ul class="breadcrumb">
+                        <li><a href="#" class="">Parcela Já</a></li>
+                        <li><a href="#" class="active">Purchases</a></li>
+                    </ul>
+                    <!-- END BREADCRUMB -->
+                </div>
+            </div>
+        </div>
+        <!-- END JUMBOTRON -->
+
+
+
+        <!-- START CONTAINER FLUID -->
+        <div class="container-fluid container-fixed-lg">
+            <!-- START PANEL -->
+            <div class="panel panel-transparent">
+                <div class="panel-heading">
+                    <div class="panel-title">Edit purchase</div>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-10">
+                            {#<h3>form_title</h3>#}
+                            <p>Fill in the fields below to edit the purchase</p>
+
+                            {% for flashMessage in app.session.flashbag.get('notice') %}
+                                <div class="alert alert-success">
+                                    {{ flashMessage }}
+                                </div>
+                            {% endfor %}
+
+                            {{ form_start(edit_form, {'attr': {'class': 'form-horizontal'}}) }} 
+                            <div class="form-group">
+                                <label for="agency" class="col-sm-3 control-label">agency</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(edit_form.agency, {'attr': {'class': 'form-control', 'readonly':'readonly'}}) }}
+                                </div>
+                            </div>
+                                
+                                <div class="form-group">
+                                <label for="fpayid" class="col-sm-3 control-label">fpayid</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(edit_form.fpayid, {'attr': {'class': 'form-control', 'readonly':'readonly'}}) }}
+                                </div>
+                            </div>
+
+                           <div class="form-group">
+                                <label for="fcontractnumber" class="col-sm-3 control-label">fcontractnumber</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(edit_form.fcontractnumber, {'attr': {'class': 'form-control', 'readonly':'readonly'}}) }}
+                                </div>
+                            </div>
+                                
+                                <div class="form-group">
+                                <label for="fextracharge" class="col-sm-3 control-label">fextracharge</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(edit_form.fextracharge, {'attr': {'class': 'form-control', 'readonly':'readonly'}}) }}
+                                </div>
+                            </div>
+                                
+                                <div class="form-group">
+                                <label for="fmonthdata" class="col-sm-3 control-label">fmonthdata</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(edit_form.fmonthdata, {'attr': {'class': 'form-control', 'readonly':'readonly'}}) }}
+                                </div>
+                            </div>
+                                
+                                
+                                <div class="form-group">
+                                <label for="ftotpurchasevalue" class="col-sm-3 control-label">ftotpurchasevalue</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(edit_form.ftotpurchasevalue, {'attr': {'class': 'form-control', 'readonly':'readonly'}}) }}
+                                </div>
+                            </div>
+                                
+                                   
+                                <div class="form-group">
+                                <label for="fmonthpurchasevalue" class="col-sm-3 control-label">fmonthpurchasevalue</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(edit_form.fmonthpurchasevalue, {'attr': {'class': 'form-control', 'readonly':'readonly'}}) }}
+                                </div>
+                            </div>
+                                
+                                 <div class="form-group">
+                                <label for="fclientdata" class="col-sm-3 control-label">fclientdata</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(edit_form.fclientdata, {'attr': {'class': 'form-control', 'readonly':'readonly'}}) }}
+                                </div>
+                            </div>
+                                
+
+                                <div class="form-group">
+                                <label for="fpurchasedate" class="col-sm-3 control-label">fpurchasedate</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(edit_form.fpurchasedate, {'attr': {'class': 'form-control', 'readonly':'readonly'}}) }}
+                                </div>
+                            </div>
+                                
+                                  <div class="form-group">
+                                <label for="fstatus" class="col-sm-3 control-label">fstatus</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(edit_form.fstatus, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div>
+                                
+                                
+                                
+                                
+                            <br>
+
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    {#<p>I hereby certify that the information above is true and accurate. </p>#}
+                                </div>
+                                <div class="col-sm-9">
+                                    <button class="btn btn-complete btn-cons m-b-10" type="submit">
+                                        <i class="pg-form"></i> <span class="bold">Update</span>
+                                    </button>
+                                    <button class="btn btn-default btn-cons m-b-10" type="reset">
+                                        <i class="pg-close"></i> <span class="bold">Clear</span>
+                                    </button>
+                                </div>
+                            </div>
+                            {{ form_end(edit_form) }}
+
+                            
+                            
+                            
+                            {{ form_start(cancel_form) }}
+                            <button class="btn btn-danger btn-cons m-b-10" type="submit">
+                                <i class="fa fa-warning"></i> <span class="bold">Cancel purchase</span>
+                            </button>
+                            {{ form_end(cancel_form) }}
+                            
+                            
+                            {{ form_start(return_form) }}
+                            <button class="btn btn-danger btn-cons m-b-10" type="submit">
+                                <i class="fa fa-warning"></i> <span class="bold">Return purchase</span>
+                            </button>
+                            {{ form_end(return_form) }}
+                            
+                            
+                            
+                            
+                            <a class="btn btn-primary btn-cons m-b-10" href="{{ path('admin_tpurchase_index') }}">
+                                <i class="fa fa-backward"></i> <span class="bold">Back to purchases list</span>
+                            </a>
+                            
+                            
+                            
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END PANEL -->
+        </div>
+        <!-- END CONTAINER FLUID -->
+
+    </div>
+    <!-- END PAGE CONTENT -->
+
+{% endblock %}
+
+
+
+

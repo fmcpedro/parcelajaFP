@@ -32,7 +32,7 @@ class Utils {
     
     
 
-    static function getClienteData($propriedade, $clientData) {
+    public static function getClienteData($propriedade, $clientData) {
         if ($propriedade == "nome") {
             if (preg_match('/»fld_id_0«(.*?)»fld_id_1«/', $clientData, $display) === 1) {
                 return $display[1];

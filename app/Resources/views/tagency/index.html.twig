@@ -6,8 +6,13 @@
     <!-- Apply the plugin -->
     <script type="text/javascript" >
         $(document).ready(function () {
+            
+            
+            
+            
             $('#tableWithExportOptions').DataTable({
                 iDisplayLength: 20,
+                bJQueryUI: true,
                 dom: 'Bfrtip',
                 buttons: [
                     'copy', 'csv', 'excel', 'pdf', 'print'

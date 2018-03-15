@@ -5,6 +5,7 @@ namespace AppBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Vich\UploaderBundle\Form\Type\VichImageType;
@@ -27,10 +28,9 @@ class TagencyType extends AbstractType {
 //                ->add('fpostalcode1')
 //                ->add('fpostalcode2')
 //                ->add('flocation')
-                ->add('femail1', \Symfony\Component\Form\Extension\Core\Type\TextType::class, array(
-    'required'   => true,
-    
-))
+                ->add('femail1', TextType::class, array(
+                    'required' => true,
+                ))
                 ->add('femail2')
                 ->add('fcontactperson')
                 ->add('ftelephone')
@@ -51,7 +51,7 @@ class TagencyType extends AbstractType {
                         'Activo' => true,
                         'Inactivo' => false,
             )))
-                ->add('subgroup', null, ['required'=>true])
+                ->add('subgroup', null, ['required' => true])
                 ->add('broker');
     }
 

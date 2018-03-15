@@ -1,0 +1,104 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Tpurchase</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Fuserid</th>
+                <td>{{ tpurchase.fuserid }}</td>
+            </tr>
+            <tr>
+                <th>Fsupplierid</th>
+                <td>{{ tpurchase.fsupplierid }}</td>
+            </tr>
+            <tr>
+                <th>Fhascitizenid</th>
+                <td>{% if tpurchase.fhascitizenid %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Fpayid</th>
+                <td>{{ tpurchase.fpayid }}</td>
+            </tr>
+            <tr>
+                <th>Fcontractnumber</th>
+                <td>{{ tpurchase.fcontractnumber }}</td>
+            </tr>
+            <tr>
+                <th>Fproddescript</th>
+                <td>{{ tpurchase.fproddescript }}</td>
+            </tr>
+            <tr>
+                <th>Fcalcamount</th>
+                <td>{{ tpurchase.fcalcamount }}</td>
+            </tr>
+            <tr>
+                <th>Ffee</th>
+                <td>{{ tpurchase.ffee }}</td>
+            </tr>
+            <tr>
+                <th>Fextracharge</th>
+                <td>{{ tpurchase.fextracharge }}</td>
+            </tr>
+            <tr>
+                <th>Fmonthdata</th>
+                <td>{{ tpurchase.fmonthdata }}</td>
+            </tr>
+            <tr>
+                <th>Ftotpurchasevalue</th>
+                <td>{{ tpurchase.ftotpurchasevalue }}</td>
+            </tr>
+            <tr>
+                <th>Fmonthpurchasevalue</th>
+                <td>{{ tpurchase.fmonthpurchasevalue }}</td>
+            </tr>
+            <tr>
+                <th>Fclientdata</th>
+                <td>{{ tpurchase.fclientdata }}</td>
+            </tr>
+            <tr>
+                <th>Fdocsstate</th>
+                <td>{% if tpurchase.fdocsstate %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Fpurchasedate</th>
+                <td>{% if tpurchase.fpurchasedate %}{{ tpurchase.fpurchasedate|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Fcsimg</th>
+                <td>{{ tpurchase.fcsimg }}</td>
+            </tr>
+            <tr>
+                <th>Fstatus</th>
+                <td>{% if tpurchase.fstatus %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Fdocid</th>
+                <td>{{ tpurchase.fdocid }}</td>
+            </tr>
+            <tr>
+                <th>Fdocfile</th>
+                <td>{{ tpurchase.fdocfile }}</td>
+            </tr>
+            <tr>
+                <th>Fpurchaseid</th>
+                <td>{{ tpurchase.fpurchaseid }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_tpurchase_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('admin_tpurchase_edit', { 'fpurchaseid': tpurchase.fpurchaseid }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

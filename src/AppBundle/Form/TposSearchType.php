@@ -3,6 +3,8 @@
 namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -14,8 +16,8 @@ class TposSearchType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         
-                $builder->add('fserial', \Symfony\Component\Form\Extension\Core\Type\TextType::class, array('required' => false))
-                ->add('fstate', \Symfony\Component\Form\Extension\Core\Type\ChoiceType::class
+                $builder->add('fserial', TextType::class, array('required' => false))
+                ->add('fstate', ChoiceType::class
                         , array('choices'  => array('Yes' => true,'No' => false, 'All'=> null)
                     ,'multiple' => false
                     ,'expanded' => true))

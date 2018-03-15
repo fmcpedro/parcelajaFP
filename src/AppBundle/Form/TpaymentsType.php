@@ -13,7 +13,14 @@ class TpaymentsType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('frefcontractnum')->add('fpayid')->add('finstallment')->add('famount')->add('fdate')->add('famountevo')->add('fdateevo')->add('fchargebackevo');
+        $builder->add('frefcontractnum')
+                ->add('fpayid')
+                ->add('finstallment')
+                ->add('famount')
+                ->add('fdate')
+                ->add('famountevo')
+                ->add('fdateevo')
+                ->add('fchargebackevo');
     }
     
     /**

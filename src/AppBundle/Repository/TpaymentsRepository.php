@@ -54,9 +54,9 @@ class TpaymentsRepository extends EntityRepository {
                 . 'FROM AppBundle:Tpayments payments '
                 . 'where payments.fdate > :date');
 
-        
+
         //dump(new DateTime('-' . $days . ' day'));
-        
+
         $query->setParameter('date', new DateTime('-' . $days . ' day'));
         $payments = $query->getResult();
 
@@ -90,20 +90,18 @@ class TpaymentsRepository extends EntityRepository {
         foreach ($payments as $key => $payment) {
             //buscar a compra
             $purchase = $em->getRepository('AppBundle:Tpurchase')->find($payment->getFpurchaseid());
-            
+
             //$purchase = new Tpurchase();
 //            if($purchase->getFpurchaseid() == 149):
 //                dump($purchase);
 //            endif;
-            
-            
+
+
             $purchase_date = strtotime($purchase->getFpurchasedate()->format('d-m-Y'));
             $start_date = strtotime('10-03-2017');
 
             if ($purchase_date > $start_date) {
-                
-                
-                                
+
                 // FFee = Quando é feita uma transação através de uma taxa de desconto, esta percentagem é cobrada a Loja.
                 // FExtraCharge = Quando é feita uma transação através de taxa de serviço, este é o valor cobrado da taxa de serviço.
                 // Se tiver FExtraCharge diferente de 0, então é Taxa de Serviço
@@ -117,37 +115,99 @@ class TpaymentsRepository extends EntityRepository {
                     //gerar todos os pagamentos da compra
                     //$generatedPayments = $this->generatePaymentsTaxaDesconto($purchase->getFcalcamount(), $purchase->getFmonthdata(), $tipoTransacao, $payment->getFpayid(), $payment->getFDate());
                     $generatedPayments = $this->generatePaymentsTaxaDesconto($purchase, $payment);
-//                if($purchase->getFpurchaseid() == 149  ):
-//                dump($generatedPayments);
-//            endif;
                 endif;
 
- 
-                
-//                
-//                if($purchase->getFpurchaseid() == 149  ):
-//dump($payment->getFinstallment()-1);
-//     dump($generatedPayments);
-//            endif;
-
-
                 //adicionar a parcela relativa ao pagamento
-                $tpayments[] = $generatedPayments[$payment->getFinstallment()-1];
-                
-//                if($purchase->getFpurchaseid() == 149  ):
-//                dump($tpayments[$key]);
-//            endif;
-                
-                
+                $tpayments[] = $generatedPayments[$payment->getFinstallment() - 1];
             }
         }
-
-
-
 
         return $tpayments;
     }
 
+    /**
+     * devolve todos os pagamentos cancelados
+     * 
+     */
+    public function findAllCanceledPayments($numDays = 220) {
+        $em = $this->getEntityManager();
+        $tpayments = array();
+        $cancelation = new \AppBundle\Entity\PurchaseCancelation();
+
+        $cancelations = $em->getRepository('AppBundle:PurchaseCancelation')->findAll();
+    
+        foreach ($cancelations as $key => $cancelation) {
+            
+            $purchase = $em->getRepository('AppBundle:Tpurchase')->find($cancelation->getPurchaseId());
+            
+            $payment = $em->getRepository('AppBundle:Tpayments')->findOneBy([
+                'fpurchaseid' => $cancelation->getPurchaseId(),
+                'finstallment' => $cancelation->getInstallmentId() - 1]);
+
+            // FFee = Quando é feita uma transação através de uma taxa de desconto, esta percentagem é cobrada a Loja.
+            // FExtraCharge = Quando é feita uma transação através de taxa de serviço, este é o valor cobrado da taxa de serviço.
+            // Se tiver FExtraCharge diferente de 0, então é Taxa de Serviço
+            if ($purchase->getFextracharge() <> 0):
+                //echo "TaxaServico <br/>";
+                $generatedPayments = $this->generatePaymentsTaxaServico($purchase, $payment);
+            else:
+                //echo "TaxaDesconto <br/>";
+                $generatedPayments = $this->generatePaymentsTaxaDesconto($purchase, $payment);
+            endif;
+
+            //adicionar a parcela relativa ao pagamento
+            $tpayments[] = $generatedPayments[$cancelation->getInstallmentId()];
+        }
+
+        return $tpayments;
+    }
+
+    
+    
+     /**
+     * devolve todos os pagamentos devolvidos
+     * 
+     */
+    public function findAllReturnedPayments($numDays = 220) {
+        $em = $this->getEntityManager();
+        $tpayments = array();
+        $return = new \AppBundle\Entity\PurchaseReturn();
+
+        $returns = $em->getRepository('AppBundle:PurchaseReturn')->findAll();
+    
+        foreach ($returns as $key => $return) {
+            
+            $purchase = $em->getRepository('AppBundle:Tpurchase')->find($return->getPurchaseId());
+            
+            $payment = $em->getRepository('AppBundle:Tpayments')->findOneBy([
+                'fpurchaseid' => $return->getPurchaseId(),
+                'finstallment' => $return->getInstallmentId() - 1]);
+
+            // FFee = Quando é feita uma transação através de uma taxa de desconto, esta percentagem é cobrada a Loja.
+            // FExtraCharge = Quando é feita uma transação através de taxa de serviço, este é o valor cobrado da taxa de serviço.
+            // Se tiver FExtraCharge diferente de 0, então é Taxa de Serviço
+            if ($purchase->getFextracharge() <> 0):
+                //echo "TaxaServico <br/>";
+                $generatedPayments = $this->generatePaymentsTaxaServico($purchase, $payment);
+            else:
+                //echo "TaxaDesconto <br/>";
+                $generatedPayments = $this->generatePaymentsTaxaDesconto($purchase, $payment);
+            endif;
+
+            //adicionar a parcela relativa ao pagamento
+            $tpayments[] = $generatedPayments[$return->getInstallmentId()];
+        }
+
+        return $tpayments;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     /**
      * Função que gera um array com a lista de pagamentos de uma compra (TpaymentsTaxaDesconto)
      * 
@@ -350,7 +410,7 @@ class TpaymentsRepository extends EntityRepository {
         // na primeira chamada o IMPOSTO DE SELO vai com zero
         $iva = new CalculateIva($prestacao->getJuro(), 0, $prestacao->getNumParcela(), $prestacao->getValParcelasEmissor(), $prestacao->getComissaoPagarClienteFinal(), $prestacao->getNumeroPrestacoes());
         // na primeira chamada o IVA vai com zero
-        $impostoSelo = new CalculateImpostoSeloBNIE($prestacao->getJuro(), 0, $prestacao->getNumParcela(),$prestacao->getValParcelasEmissor(), $prestacao->getComissaoPagarClienteFinal(), $prestacao->getNumeroPrestacoes());
+        $impostoSelo = new CalculateImpostoSeloBNIE($prestacao->getJuro(), 0, $prestacao->getNumParcela(), $prestacao->getValParcelasEmissor(), $prestacao->getComissaoPagarClienteFinal(), $prestacao->getNumeroPrestacoes());
 
         $resultadoIva = 0;
         $resultadoImpostoSelo = 0;
@@ -373,17 +433,17 @@ class TpaymentsRepository extends EntityRepository {
 //                    . " Resultado Imposto Selo = " . $resultadoImpostoSelo);
 
 
-            $iva = new CalculateIva($prestacao->getJuro(), $resultadoImpostoSelo, $prestacao->getNumParcela(), $prestacao->getValParcelasEmissor(),  $prestacao->getComissaoPagarClienteFinal(), $prestacao->getNumeroPrestacoes());
+            $iva = new CalculateIva($prestacao->getJuro(), $resultadoImpostoSelo, $prestacao->getNumParcela(), $prestacao->getValParcelasEmissor(), $prestacao->getComissaoPagarClienteFinal(), $prestacao->getNumeroPrestacoes());
             $impostoSelo = new CalculateImpostoSeloBNIE($prestacao->getJuro(), $resultadoIva, $prestacao->getNumParcela(), $prestacao->getValParcelasEmissor(), $prestacao->getComissaoPagarClienteFinal(), $prestacao->getNumeroPrestacoes());
 
-            
+
 //            dump("resultado IVA = " . $resultadoIva);
 //            dump("resultado IVA ANTERIOR= " . $resultadoIvaAnterior);
 //            dump(abs($resultadoIva - $resultadoIvaAnterior) <= TpaymentsTaxaServico::DIFERENCA_ENTRE_ITERACOES);
 //            
 //            dump("resultado IS = " . $resultadoImpostoSelo);
 //            dump("resultado IS ANTERIOR = " . $resultadoImpostoSeloAnterior);
-            
+
             if (abs($resultadoIva - $resultadoIvaAnterior) <= TpaymentsTaxaServico::DIFERENCA_ENTRE_ITERACOES && abs($resultadoImpostoSelo - $resultadoImpostoSeloAnterior) <= TpaymentsTaxaServico::DIFERENCA_ENTRE_ITERACOES) {
                 break;
             }
@@ -392,12 +452,11 @@ class TpaymentsRepository extends EntityRepository {
             $resultadoImpostoSeloAnterior = $resultadoImpostoSelo;
         }
 
-        
+
 //                    dump("Prestacao = " . $prestacao->getNumParcela()
 //                    . " Iteracao = " . $iteracoes
 //                    . " Resultado Iva = " . $resultadoIva
 //                    . " Resultado Imposto Selo = " . $resultadoImpostoSelo);
-        
         //escrever resultados
         $prestacao->setIvaValorParcela($resultadoIva);
         $prestacao->setImpostoSeloValorBni($resultadoImpostoSelo);

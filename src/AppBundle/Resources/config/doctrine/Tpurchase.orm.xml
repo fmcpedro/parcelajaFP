@@ -64,7 +64,17 @@
         <option name="fixed"/>
       </options>
     </field>
-    <field name="fstatus" type="boolean" column="FStatus" nullable="false"/>
+    <field name="fstatus" type="integer" column="FStatus" nullable="false">
+        <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    
+    
+    
+    
+    
+    
     <field name="fdocid" type="string" column="FDocID" length="100" nullable="true">
       <options>
         <option name="fixed"/>

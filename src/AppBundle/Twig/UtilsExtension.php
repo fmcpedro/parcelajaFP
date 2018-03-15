@@ -28,7 +28,7 @@ class UtilsExtension extends \Twig_Extension {
 
     protected function getPathFunction() {
 
-        dump($this);
+        //dump($this);
         
         if (empty($this->pathFunction) ) {
             $this->pathFunction = $this->twig->getFunction('path')->getCallable();
@@ -59,6 +59,7 @@ class UtilsExtension extends \Twig_Extension {
             new \Twig_SimpleFunction('unslugify', array($this, 'unslugify')),
             new \Twig_SimpleFunction('month_name', array($this, 'month_name')),
             new \Twig_SimpleFunction('start_and_end_week', array($this, 'start_and_end_week')),
+            new \Twig_SimpleFunction('get_client_data', array($this, 'get_client_data')),
         );
     }
 
@@ -126,6 +127,11 @@ class UtilsExtension extends \Twig_Extension {
         $dto->modify('+6 days');
         $ret['week_end'] = $dto->format('Y-m-d');
         return $ret['week_start'] . " - " . $ret['week_end'];
+    }
+    
+    
+     public function get_client_data($propriedade, $clientData) {
+        return Utils::getClienteData($propriedade, $clientData);
     }
 
 }

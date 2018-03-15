@@ -27,6 +27,73 @@ class TagencyController extends Controller
         ));
     }
 
+    
+    
+    public function aggregatePurchasesAction(Request $request) {
+
+        $em = $this->getDoctrine()->getManager();
+
+        $agencyAggregatePurchaseSearch = new \AppBundle\Entity\AgencyAggregatePurchaseSearch();
+        $searchForm = $this->createForm('AppBundle\Form\AgencyAggregatePurchaseSearchType', $agencyAggregatePurchaseSearch);
+        $searchForm->handleRequest($request);
+
+        if ($searchForm->isSubmitted() && $searchForm->isValid()) {
+
+            $search = array();
+            $group = $searchForm["groupId"]->getData();
+            $subGroup = $searchForm["subgroupId"]->getData();
+            $agency = $searchForm["agencyId"]->getData();
+            $status = $searchForm["status"]->getData();
+            $numFiscal = $searchForm["numFiscal"]->getData();
+            $nomeFiscal = $searchForm["nomeFiscal"]->getData();
+
+            if (!empty($group)) {
+                $search['groupId'] = $group;
+            }
+
+            if (!empty($subGroup)) {
+                $search['subgroupId'] = $subGroup;
+            }
+
+            if (!empty($agency)) {
+                $search['agencyId'] = $agency;
+            }
+            
+            if ($status=='1' || $status=='0') {
+                $search['status'] = $status;
+            }
+            
+            if (!empty($numFiscal)) {
+                $search['numFiscal'] = $numFiscal;
+            }
+            
+            if (!empty($nomeFiscal)) {
+                $search['nomeFiscal'] = $nomeFiscal;
+            }
+
+            $lojas = $em->getRepository('AppBundle:Tagency')->findAggregatePurchasesByAgency($search);
+        } else {
+            $lojas = null;
+        }
+
+        return $this->render('tagency/aggregatePurchases.html.twig', array(
+                    'lojas' => $lojas,
+                    'search_form' => $searchForm->createView(),
+        ));
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     /**
      * Creates a new tagency entity.
      *

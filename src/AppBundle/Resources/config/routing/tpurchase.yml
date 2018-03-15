@@ -1,0 +1,29 @@
+admin_tpurchase_index:
+    path:     /
+    defaults: { _controller: "AppBundle:Tpurchase:index" }
+    methods:  [GET, POST]
+
+admin_tpurchase_show:
+    path:     /{fpurchaseid}/show
+    defaults: { _controller: "AppBundle:Tpurchase:show" }
+    methods:  GET
+
+admin_tpurchase_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Tpurchase:new" }
+    methods:  [GET, POST]
+
+admin_tpurchase_edit:
+    path:     /{fpurchaseid}/edit
+    defaults: { _controller: "AppBundle:Tpurchase:edit" }
+    methods:  [GET, POST]
+
+admin_tpurchase_delete:
+    path:     /{fpurchaseid}/delete
+    defaults: { _controller: "AppBundle:Tpurchase:delete" }
+    methods:  DELETE
+    
+admin_tpurchase_cancel:
+    path:     /{fpurchaseid}/cancel
+    defaults: { _controller: "AppBundle:Tpurchase:cancel" }
+    methods:  POST    

@@ -76,13 +76,13 @@
 
                 <li class="{% if route in ['admin_tsubgroup_index','admin_agency_index','admin_broker_index' ] %}active{% endif %}">
                     <a href="javascript:;">
-                        <span class="title">Lojas</span>
+                        <span class="title">Aderentes</span>
                         <span class=" arrow"></span>
                     </a>
                     <span class="icon-thumbnail"><i class="pg-phone"></i></span>
                     <ul class="sub-menu">
                         <li class="{% if route in ['admin_tsubgroup_index' ] %}active{% endif %}">
-                            <a href="{{ path('admin_tsubgroup_index') }}">Sub Grupos</a>
+                            <a href="{{ path('admin_tsubgroup_index') }}">Subgrupos</a>
                             <span class="icon-thumbnail">TI</span>
                         </li>
                         
@@ -95,8 +95,37 @@
                             <span class="icon-thumbnail">TP</span>
                         </li>
                         
+                       
+
+                    </ul>
+                </li>
+            {% endif %}
+            
+            
+            
+            
+              {% if is_granted('ROLE_ADMIN') %} 
+
+                <li class="{% if route in ['admin_broker_purchases','admin_agency_aggregare_purchases' ] %}active{% endif %}">
+                    <a href="javascript:;">
+                        <span class="title">Compras</span>
+                        <span class=" arrow"></span>
+                    </a>
+                    <span class="icon-thumbnail"><i class="pg-phone"></i></span>
+                    <ul class="sub-menu">
+                        
+                        <li class="{% if route in ['admin_tpurchase_index' ] %}active{% endif %}">
+                            <a href="{{ path('admin_tpurchase_index') }}">Compras</a>
+                            <span class="icon-thumbnail">TP</span>
+                        </li>
+                        
                         <li class="{% if route in ['admin_broker_purchases' ] %}active{% endif %}">
-                            <a href="{{ path('admin_broker_purchases') }}">Report Brokers</a>
+                            <a href="{{ path('admin_broker_purchases') }}">Por Brokers</a>
+                            <span class="icon-thumbnail">TP</span>
+                        </li>
+                        
+                        <li class="{% if route in ['admin_agency_aggregare_purchases' ] %}active{% endif %}">
+                            <a href="{{ path('admin_agency_aggregare_purchases') }}">Agregadas p/Loja</a>
                             <span class="icon-thumbnail">TP</span>
                         </li>
 

@@ -4,13 +4,13 @@ admin_payments_index:
     methods:  GET
     
 admin_payments_next_payments:
-    path:     /next_payments
+    path:     /next-payments
     defaults: { _controller: "AppBundle:Tpayments:nextPayments" }
     methods:  [GET, POST]
 
 
 admin_payments_payment_forecasts:
-    path:     /payment_forecasts
+    path:     /payment-forecasts
     defaults: { _controller: "AppBundle:Tpayments:paymentForecasts" }
     methods:  [GET, POST]
 

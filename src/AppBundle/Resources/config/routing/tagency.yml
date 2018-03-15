@@ -22,3 +22,9 @@ admin_agency_delete:
     path:     /{fagencyid}/delete
     defaults: { _controller: "AppBundle:Tagency:delete" }
     methods:  DELETE
+
+
+admin_agency_aggregare_purchases:
+    path:     /aggregate-purchases
+    defaults: { _controller: "AppBundle:Tagency:aggregatePurchases" }
+    methods:  [GET, POST]

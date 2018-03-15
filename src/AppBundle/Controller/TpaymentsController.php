@@ -136,7 +136,7 @@ class TpaymentsController extends Controller {
         $em = $this->getDoctrine()->getManager();
 
         $tpurchase = new Tpurchase();
-        $searchForm = $this->createForm('AppBundle\Form\TpurchaseSearchType', $tpurchase);
+        $searchForm = $this->createForm('AppBundle\Form\TpurchaseNextPaymentsSearchType', $tpurchase);
         $searchForm->handleRequest($request);
 
         $search = array();

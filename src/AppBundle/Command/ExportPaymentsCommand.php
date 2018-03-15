@@ -49,13 +49,23 @@ class ExportPaymentsCommand extends ContainerAwareCommand {
 
 
         $em = $this->getContainer()->get('doctrine.orm.entity_manager');
-        $tpayments = $em->getRepository('AppBundle:Tpayments')->findAllProcessedPayments(5);
+        $tpayments = $em->getRepository('AppBundle:Tpayments')->findAllProcessedPayments(10);
+        $cancelatedPayments = $em->getRepository('AppBundle:Tpayments')->findAllCanceledPayments(5);
+        $returnedPayments = $em->getRepository('AppBundle:Tpayments')->findAllReturnedPayments(5);
+        
+        $result = array_merge($tpayments , $cancelatedPayments, $returnedPayments );
+        
+        
+        
+        //dump($cancelated_payments);
 
-        $this->generateCsvFile($tpayments);
+        $this->generateCsvFile($result);
 
 
         // outputs a message followed by a "\n"
         $output->writeln('tpayments : ' . count($tpayments));
+        $output->writeln('cancelatedPayments : ' . count($cancelatedPayments));
+        $output->writeln('returnedPayments : ' . count($returnedPayments));
 
         // outputs a message followed by a "\n"
         $output->writeln('Whoa!');

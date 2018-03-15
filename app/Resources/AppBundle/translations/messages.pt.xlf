@@ -566,12 +566,12 @@
             
             <trans-unit id="header_comofunciona_loja" resname="header_comofunciona_loja">
                 <source>header_comofunciona_loja</source>
-                <target>EM LOJA</target>
+                <target>Loja Física</target>
             </trans-unit>
             
             <trans-unit id="header_comofunciona_online" resname="header_comofunciona_online">
                 <source>header_comofunciona_online</source>
-                <target>ONLINE</target>
+                <target>Loja Online</target>
             </trans-unit>
             
             

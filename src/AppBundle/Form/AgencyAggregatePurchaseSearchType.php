@@ -8,36 +8,21 @@ use AppBundle\Repository\TsubgroupRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class TpurchaseSearchType extends AbstractType {
+class AgencyAggregatePurchaseSearchType extends AbstractType {
 
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options) {
-
-//        
-//        add('startDate', DateType::class, [
-//                    'widget' => 'single_text',
-//                    'attr' => ['class' => 'js-datepicker'],
-//                    'html5' => false,
-//                ])
-
-
-
-        $builder->add('startDate', DateType::class, array(
-                    'widget' => 'choice',
-                ))
-                ->add('endDate', DateType::class, array(
-                    'widget' => 'choice',
-                ))
-                ->add('contractNumber')
+        $builder->add('status', ChoiceType::class, array(
+                    'choices' => array(NULL => '', 'Activo' => 1, 'Inactivo' => 0)))
+                ->add('numFiscal')
+                ->add('nomeFiscal')
                 ->add('groupId', EntityType::class, array(
                     'class' => 'AppBundle:Tgroup',
-                    'query_builder' => function (\AppBundle\Repository\TgroupRepository $er) {
+                    'query_builder' => function (TgroupRepository $er) {
                         return $er->createQueryBuilder('g')
                                 ->orderBy('g.fgroupname', 'ASC');
                     },
@@ -63,30 +48,14 @@ class TpurchaseSearchType extends AbstractType {
                     , 'required' => false
 //                            ,'multiple' => true
 //                            ,'expanded' => false
-                ))
-                ->add('status', ChoiceType::class, array(
-                    'choices' => array(
-                        NULL => '',
-                        'Activo' => '1',
-                        'Inactivo' => '2',
-        )));
+        ));
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function configureOptions(OptionsResolver $resolver) {
+    public function configureOptions(\Symfony\Component\OptionsResolver\OptionsResolver $resolver) {
         $resolver->setDefaults(array(
             'validation_groups' => false,
             'attr' => array('novalidate' => 'novalidate')
         ));
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getBlockPrefix() {
-        return 'appbundle_tpurchase';
     }
 
 }
