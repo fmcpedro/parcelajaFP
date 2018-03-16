@@ -67,7 +67,7 @@ class TagencyRepository extends EntityRepository {
             $sql .= 'AND a.ftaxidnumber = ?5 ';
         }
         if (array_key_exists('nomeFiscal', $search)) {
-            $sql .= 'AND a.ffiscalname like ?6 ';
+            $sql .= 'AND a.ffiscalname LIKE ?6 ';
         }
 
         $sql .= 'GROUP BY p.agency';
@@ -90,11 +90,12 @@ class TagencyRepository extends EntityRepository {
             $query->setParameter(5, $search['numFiscal']);
         }
         if (array_key_exists('nomeFiscal', $search)) {
-            $query->setParameter(6, '"%' . $search['nomeFiscal'] . '%"');
+            $query->setParameter(6, '%' . $search['nomeFiscal'] . '%');
         }
 
 
-        dump($query);
+        dump($query->getDQL());
+        dump($query->getAST());
 
         return $query->getResult();
     }
