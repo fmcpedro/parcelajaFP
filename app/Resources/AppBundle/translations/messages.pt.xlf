@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
     <file source-language="en" target-language="pt" datatype="plaintext" original="file.ext">
         <header>
@@ -177,15 +177,19 @@
             </trans-unit>
             <trans-unit id="howitworks_block_04_subtitle02" resname="howitworks_block_04_subtitle02">
                 <source>howitworks_block_04_subtitle02</source>
-                <target>A Parcela Já faz um bloqueio do valor total da compra no cartão de crédito</target>
+                <target>A Parcela Já faz um bloqueio no valor de até 2 parcelas no cartão de crédito</target>
             </trans-unit>
             <trans-unit id="howitworks_block_04_subtitle03" resname="howitworks_block_04_subtitle03">
                 <source>howitworks_block_04_subtitle03</source>
-                <target>A 1ª parcela é cobrada imediatamente após a compra e é criada uma autorização que bloqueia o restante valor devido no cartão de crédito</target>
+                <target>A 1ª parcela é cobrada imediatamente após a compra e é criada uma autorização que bloqueia o valor até um máximo de 2 parcelas no cartão de crédito</target>
             </trans-unit>
             <trans-unit id="howitworks_block_04_subtitle04" resname="howitworks_block_04_subtitle04">
                 <source>howitworks_block_04_subtitle04</source>
-                <target>A Parcela Já cobra mensalmente as parcelas no cartão de crédito do cliente até ao final do plano de pagamentos, reduzindo também mensalmente o valor bloqueado no cartão</target>
+                <target>A Parcela Já cobra mensalmente as parcelas no cartão de crédito do cliente até ao final do plano de pagamentos, podendo ocasionalmente ter o máximo de duas mensalidades bloqueadas no cartão</target>
+		</trans-unit>
+            <trans-unit id="howitworks_block_04_subtitle05" resname="howitworks_block_04_subtitle05">
+                <source>howitworks_block_04_subtitle05</source>
+                <target>A loja recebe o valor da venda no prazo máximo de 72h úteis após realização da mesma</target>
             </trans-unit>
             <trans-unit id="forclients_block_01_title" resname="forclients_block_01_title">
                 <source>forclients_block_01_title</source>
@@ -273,7 +277,7 @@
             </trans-unit>
             <trans-unit id="faqs_block_02_answer03" resname="faqs_block_02_answer03">
                 <source>faqs_block_02_answer03</source>
-                <target>Para fazer uma compra com a Parcela Já, deve ter o valor total da compra disponível no cartão de crédito. O valor total da compra será bloqueado e, todos os meses, até ao final do pagamento, a Parcela Já irá retirar o valor referente à mensalidade selecionada.</target>
+                <target>Para fazer uma compra com a Parcela Já, deve ter o valor total da compra disponível no cartão de crédito. O valor de até ao máximo de 2 parcelas ficará bloqueado e, todos os meses, até ao final do pagamento, a Parcela Já irá retirar do cartão de crédito o valor referente à mensalidade devida.</target>
             </trans-unit>
             <trans-unit id="faqs_block_02_question04" resname="faqs_block_02_question04">
                 <source>faqs_block_02_question04</source>

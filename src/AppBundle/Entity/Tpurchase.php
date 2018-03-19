@@ -120,6 +120,9 @@ class Tpurchase
 
     
     
+  
+    
+    
     
     /**
      * Set fuserid

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
     <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
         <header>
@@ -176,19 +176,15 @@
             </trans-unit>
             <trans-unit id="howitworks_block_04_subtitle02" resname="howitworks_block_04_subtitle02">
                 <source>howitworks_block_04_subtitle02</source>
-                <target>Parcela Já holds up to two instalments of the purchase on the credit card</target>
+                <target>Parcela Já holds the total amount of the purchase on the credit card</target>
             </trans-unit>
             <trans-unit id="howitworks_block_04_subtitle03" resname="howitworks_block_04_subtitle03">
                 <source>howitworks_block_04_subtitle03</source>
-                <target>The 1st instalment is charged immediately after the purchase and an authorization holding a maximum of two instalments is generated on the credit card.</target>
+                <target>The 1st instalment is charged immediately after the purchase and an authorization that holds the remaining due value on the credit card is generated</target>
             </trans-unit>
             <trans-unit id="howitworks_block_04_subtitle04" resname="howitworks_block_04_subtitle04">
                 <source>howitworks_block_04_subtitle04</source>
-                <target>Every month, Parcela Já charges the due instalment on customer's credit card, until the payment plan is completed. Occasionally, Parcela Já might hold up to a maximum of 2 instalments pre-authorization on customer’s credit card.</target>
-</trans-unit>
-            <trans-unit id="howitworks_block_04_subtitle05" resname="howitworks_block_04_subtitle05">
-                <source>howitworks_block_04_subtitle05</source>
-                <target>The sales value is received by the store within 72 working hours after completion of the sale.</target>
+                <target>Every month, Parcela Já charges the instalments in the customer's credit card, until the plan is completed. Thus reducing the due value hold in the credit card</target>
             </trans-unit>
             <trans-unit id="forclients_block_01_title" resname="forclients_block_01_title">
                 <source>forclients_block_01_title</source>
@@ -276,7 +272,7 @@
             </trans-unit>
             <trans-unit id="faqs_block_02_answer03" resname="faqs_block_02_answer03">
                 <source>faqs_block_02_answer03</source>
-                <target>To buy with Parcela Já, you must have the full amount of the purchase available on your credit card. Once the instalment plan is settled, we will hold the value as a pre-authorization of up to a maximum of 2 instalments on the credit card. Until the end of the payment, we will take the due monthly value concerning the instalment plan you have selected.</target>
+                <target>To make a purchase with Parcela Já, you must have the full amount of the purchase available on your credit card. We will hold the total value of the purchase and, every month, until the end of the payment, we will remove the value regarding the monthly instalment you have selected.</target>
             </trans-unit>
             <trans-unit id="faqs_block_02_question04" resname="faqs_block_02_question04">
                 <source>faqs_block_02_question04</source>

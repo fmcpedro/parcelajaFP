@@ -10,6 +10,9 @@
     
         <one-to-many field="terminalList" target-entity="Tpos" mapped-by="agency" />
 
+<!--        <one-to-many field="purchaseList" target-entity="Tpurchase" mapped-by="agency" />-->
+
+        
         <many-to-one field="subgroup" target-entity="Tsubgroup" inversed-by="agencyList">
             <join-column name="FsubgroupID" referenced-column-name="FSubgroupID" />
         </many-to-one>

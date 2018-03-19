@@ -1,401 +1,395 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-    <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+    <file source-language="en" target-language="pt" datatype="plaintext" original="file.ext">
         <header>
             <tool tool-id="symfony" tool-name="Symfony" />
         </header>
         <body>
             <trans-unit id="homepage_block_01_title_01" resname="homepage_block_01_title_01">
                 <source>homepage_block_01_title_01</source>
-                <target>OFFER YOUR CUSTOMER CREDIT CARD INSTALMENTS. </target>
+                <target>OFEREÇA AO SEU CLIENTE PAGAMENTOS PARCELADOS NO SEU CARTÃO DE CRÉDITO ATÉ 12x.</target>
             </trans-unit>
             
             <trans-unit id="homepage_block_01_title_02" resname="homepage_block_01_title_02">
                 <source>homepage_block_01_title_02</source>
-                <target>FROM 2x UP TO 12x. INSTANT APPROVAL AT YOUR POS TERMINAL</target>
+                <target>APROVAÇÃO IMEDIATA NO SEU TERMINAL DE PAGAMENTOS</target>
             </trans-unit>
-            
             
             
             <trans-unit id="homepage_block_02_title" resname="homepage_block_02_title">
                 <source>homepage_block_02_title</source>
-                <target>Fund your customer with Parcela Já</target>
+                <target>Financie o seu cliente com a Parcela Já</target>
             </trans-unit>
             <trans-unit id="homepage_block_02_subtitle_01" resname="homepage_block_02_subtitle_01">
                 <source>homepage_block_02_subtitle_01</source>
-                <target>IINCREASE YOUR CUSTOMER'S AVAILABLE FUNDS</target>
+                <target>AUMENTE A DISPONIBILIDADE FINANCEIRA DOS SEUS CLIENTES</target>
             </trans-unit>
             <trans-unit id="homepage_block_02_subtitle_02" resname="homepage_block_02_subtitle_02">
                 <source>homepage_block_02_subtitle_02</source>
-                <target>ERADICATE THE BUREAUCRATIC PROCESS FROM YOUR SALES</target>
+                <target>ELIMINE OS PROCESSOS BUROCRÁTICOS DAS SUAS VENDAS</target>
             </trans-unit>
-            <trans-unit id="homepage_block_02_subtitle_03" resname="homepage_block_02_subtitle_03">
+            <trans-unit id="homepage_block_02l_subtitle_03" resname="homepage_block_02_subtitle_03">
                 <source>homepage_block_02_subtitle_03</source>
-                <target>LET YOUR CUSTOMERS PAY IN AS MANY INSTALMENTS AS THEY WANT</target>
+                <target>PERMITA QUE OS SEUS CLIENTES PAGUEM EM QUANTAS VEZES QUISEREM</target>
             </trans-unit>
             <trans-unit id="homepage_block_02_text_01" resname="homepage_block_02_text_01">
                 <source>homepage_block_02_text_01</source>
-                <target>When offering an instalment monthly plan, your customers will increase their available funds, thus increasing your sales opportunities. Help your customers obtaining what they want and reduce their financial commitments using Parcela Já.</target>
+                <target>Ao dividir uma compra em suaves prestações mensais, permitirá um aumento de vendas no seu negócio. Ajude os seus clientes a terem o que realmente pretendem e diminua-lhes os seus compromissos financeiros.</target>
             </trans-unit>
             <trans-unit id="homepage_block_02_text_02" resname="homepage_block_02_text_02">
                 <source>homepage_block_02_text_02</source>
-                <target>There is no need to ask your customer any sensitive documents or wait for financial approval. With <![CDATA[<b>]]>Parcela Já<![CDATA[</b>]]>, the approval is instant, without any bureaucratic paperwork.</target>
+                <target>Não precisa de pedir qualquer documentação sensível ao seu cliente nem esperar pela aprovação financeira. Com a <![CDATA[<b>]]>Parcela Já<![CDATA[</b>]]>, a aprovação é imediata e sem burocracias.</target>
             </trans-unit>
             <trans-unit id="homepage_block_02_text_03" resname="homepage_block_02_text_03">
                 <source>homepage_block_02_text_03</source>
-                <target>With <![CDATA[<b>]]>Parcela Já<![CDATA[</b>]]>, your customers can pay their purchases up to 12 interest free instalments, allowing them to adjust their payments in soft settlements, maintaining their financial capacity.</target>
+                <target>Com a <![CDATA[<b>]]>Parcela Já<![CDATA[</b>]]>, os seus clientes podem pagar as suas compras até 12 vezes sem juros, permitindo-lhes ajustar os seus pagamentos em suaves prestações, preservando a sua capacidade financeira.</target>
             </trans-unit>
             <trans-unit id="homepage_block_03_title" resname="homepage_block_03_title">
                 <source>homepage_block_03_title</source>
-                <target>Why use Parcela Já?</target>
+                <target>Porquê utilizar a Parcela Já?</target>
             </trans-unit>
             <trans-unit id="homepage_block_03_text_01" resname="homepage_block_03_text_01">
                 <source>homepage_block_03_text_01</source>
-                <target>Increases sales</target>
+                <target>Aumento do número de vendas</target>
             </trans-unit>
             <trans-unit id="homepage_block_03_text_02" resname="homepage_block_03_text_02">
                 <source>homepage_block_03_text_02</source>
-                <target>Maximizes the average value of each sale</target>
+                <target>Aumento do valor médio de cada venda</target>
             </trans-unit>
             <trans-unit id="homepage_block_03_text_03" resname="homepage_block_03_text_03">
                 <source>homepage_block_03_text_03</source>
-                <target>Decreases purchase abandonment</target>
+                <target>Diminuição do abandono de intenção de compra </target>
             </trans-unit>
             <trans-unit id="homepage_block_03_text_04" resname="homepage_block_03_text_04">
                 <source>homepage_block_03_text_04</source>
-                <target>Increases Revenue</target>
+                <target>Aumento da faturação </target>
             </trans-unit>
             <trans-unit id="homepage_block_03_text_05" resname="homepage_block_03_text_05">
                 <source>homepage_block_03_text_05</source>
-                <target>Increases the number of customers as well as their loyalty</target>
+                <target>Aumento do número de clientes e sua fidelização </target>
             </trans-unit>
             <trans-unit id="homepage_block_03_text_06" resname="homepage_block_03_text_06">
                 <source>homepage_block_03_text_06</source>
-                <target>Reduces paperwork in credit sales</target>
+                <target>Diminuição da burocracia nas vendas a crédito</target>
             </trans-unit>
             <trans-unit id="homepage_block_04_title" resname="homepage_block_04_title">
                 <source>homepage_block_04_title</source>
-                <target>Business Areas where you can find Parcela Já</target>
+                <target>Onde já pode encontrar a Parcela Já</target>
             </trans-unit>
             <trans-unit id="calltoaction_title" resname="calltoaction_title">
                 <source>calltoaction_title</source>
-                <target>INCREASE YOUR SALES WITH PARCELA JÁ</target>
+                <target>AUMENTE AS SUAS VENDAS COM A PARCELA JÁ</target>
             </trans-unit>
             <trans-unit id="calltoaction_button" resname="calltoaction_button">
                 <source>calltoaction_button</source>
-                <target>TALK TO US</target>
+                <target>FALE CONNOSCO</target>
             </trans-unit>
             <trans-unit id="footer_title" resname="footer_title">
                 <source>footer_title</source>
-                <target>MAIN OFFICE</target>
+                <target>SEDE</target>
             </trans-unit>
             <trans-unit id="footer_text01" resname="footer_text01">
                 <source>footer_text01</source>
-                <target>Av. da República, 48-B, 6th floor <![CDATA[<br>]]> 1050-195 Lisbon </target>
+                <target>Av. da República, 48-B, 6º <![CDATA[<br>]]>1050-195 Lisboa </target>
             </trans-unit>
             <trans-unit id="footer_text02" resname="footer_text02">
                 <source>footer_text02</source>
-                <target>General: geral@parcelaja.pt</target>
+                <target>Geral: geral@parcelaja.pt</target>
             </trans-unit>
             <trans-unit id="howitworks_block_01_title" resname="howitworks_block_01_title">
                 <source>howitworks_block_01_title</source>
-                <target>PAY YOUR PURCHASES FROM 2x TO 12x WITHOUT INTERESTS OR ANY FEES</target>
+                <target>PAGUE AS SUAS COMPRAS DE UMA FORMA PARCELADA SEM CUSTOS E ENCARGOS</target>
             </trans-unit>
             <trans-unit id="howitworks_block_02_title" resname="howitworks_block_02_title">
                 <source>howitworks_block_02_title</source>
-                <target>HOW IT WORKS</target>
+                <target>COMO FUNCIONA</target>
             </trans-unit>
             <trans-unit id="howitworks_block_02_subtitle" resname="howitworks_block_02_subtitle">
                 <source>howitworks_block_02_subtitle</source>
-                <target>No records, no paperwork and no credit approval delays</target>
+                <target>Sem registos, sem burocracias e sem demora na aprovação de crédito</target>
             </trans-unit>
-<!--            <trans-unit id="howitworks_block_02_text01" resname="howitworks_block_02_text01">
+            <!--            <trans-unit id="howitworks_block_02_text01" resname="howitworks_block_02_text01">
                 <source>howitworks_block_02_text01</source>
-                <target>With Parcela Já, the stores can now offer the customers an instalment payment system. The solution uses customer credit cards and offers an outstanding opportunity to generate new purchases. The customer can decide to pay up to 12 interest free instalments, without any bureaucratic paperwork or credit approval.</target>
+                <target>Com a Parcela Já, as lojas podem ter um sistema de pagamentos parcelados que oferece a oportunidade aos seus clientes de fazerem as suas compras de 2 a 12 vezes, sem juros e sem necessidade de burocracias ou aprovação de crédito.</target>
             </trans-unit>
             <trans-unit id="howitworks_block_02_text02" resname="howitworks_block_02_text02">
                 <source>howitworks_block_02_text02</source>
-                <target>To access the system, the stores must have a <![CDATA[<b>]]>Parcela Já<![CDATA[</b>]]> POS terminal or the online app on their website. Once the customers use their Visa or Mastercard credit card, they can choose in how many instalments they want to pay the purchase.</target>
-            </trans-unit>
-            
-            -->
-            
+                <target>Para isso, a loja necessita de um terminal <![CDATA[<b>]]>Parcela Já<![CDATA[</b>]]> ou a aplicação online no seu website. O cliente pode então utilizar o seu cartão crédito Visa ou Mastercard e escolher em quantas vezes pretende pagar as suas compras.</target>
+            </trans-unit>-->
+
             <trans-unit id="howitworks_block_02_text01" resname="howitworks_block_02_text01">
                 <source>howitworks_block_02_text01</source>
-                <target>Using Parcela Já system, stores can now offer their customers an instalment payment plan. The solution provided requires the use of the customer’s credit card and offers an outstanding opportunity to generate new purchases, pre-scheduling customer’s payments on a pre-selected monthly basis. The customer can decide to pay up to 12 interest free instalments, without any bureaucratic paperwork or credit approval.</target>
+                <target>Utilizando a solução Parcela Já, as lojas podem agora oferecer aos seus clientes um plano de pagamento em parcelas. A solução oferecida requer o uso do cartão de crédito dos clientes e oferece uma excelente oportunidade para gerar novas compras, agendando  os pagamentos dos clientes numa base mensal pré-selecionada. O cliente pode decidir pagar até 12 parcelas sem juros, sem qualquer documentação burocrática ou aprovação de crédito.</target>
             </trans-unit>
             <trans-unit id="howitworks_block_02_text02" resname="howitworks_block_02_text02">
                 <source>howitworks_block_02_text02</source>
-                <target>To access this system, stores must have a Parcela Já POS terminal or the online app on their website. When the customers use their Visa or Mastercard credit card, they can then decide on how many instalments they are willing to pay their purchase.</target>
+                <target>Para aderir à solução Parcela Já, as lojas têm de ter um terminal POS da Parcela Já ou a aplicação web no seu website. No momento em que o cliente utiliza o seu cartão de crédito Visa ou Mastercard, pode então decidir em quantas parcelas está disposto a pagar a sua compra.</target>
             </trans-unit>
+                        
+            
+            
             
             <trans-unit id="howitworks_block_03_simple_steps" resname="howitworks_block_03_simple_steps">
                 <source>howitworks_block_03_simple_steps</source>
-                <target>Three simple steps</target>
+                <target>Três simples passos</target>
             </trans-unit>
+            
             
             <trans-unit id="howitworks_block_03_title01" resname="howitworks_block_03_title01">
                 <source>howitworks_block_03_title01</source>
-                <target>STEP 1</target>
+                <target>PASSO 1</target>
             </trans-unit>
             <trans-unit id="howitworks_block_03_subtitle01" resname="howitworks_block_03_subtitle01">
                 <source>howitworks_block_03_subtitle01</source>
-                <target>When checking out, the customer selects the number of interest free instalments</target>
+                <target>No momento do check-out, o cliente seleciona o número de vezes em que quer parcelar as suas compras</target>
             </trans-unit>
             <trans-unit id="howitworks_block_03_title02" resname="howitworks_block_03_title02">
                 <source>howitworks_block_03_title02</source>
-                <target>STEP 2</target>
+                <target>PASSO 2</target>
             </trans-unit>
             <trans-unit id="howitworks_block_03_subtitle02" resname="howitworks_block_03_subtitle02">
                 <source>howitworks_block_03_subtitle02</source>
-                <target>The customer inserts his ID card in the terminal</target>
+                <target>O cliente introduz o seu cartão de cidadão no terminal</target>
             </trans-unit>
             <trans-unit id="howitworks_block_03_title03" resname="howitworks_block_03_title03">
                 <source>howitworks_block_03_title03</source>
-                <target>STEP 3</target>
+                <target>PASSO 3</target>
             </trans-unit>
             <trans-unit id="howitworks_block_03_subtitle03" resname="howitworks_block_03_subtitle03">
                 <source>howitworks_block_03_subtitle03</source>
-                <target>The customer swipes his/hers credit card, types in the CVV and signs the receipt</target>
+                <target>O cliente passa o seu cartão de crédito, introduz o CVV e assina o talão</target>
             </trans-unit>
             <trans-unit id="howitworks_block_03_text01" resname="howitworks_block_03_text01">
                 <source>howitworks_block_03_text01</source>
-                <target>Finished!</target>
+                <target>Concluído!</target>
             </trans-unit>
             <trans-unit id="howitworks_block_03_text02" resname="howitworks_block_03_text02">
                 <source>howitworks_block_03_text02</source>
-                <target>In 3 simple steps, the customers can pay for their purchase in several instalments without any cost or paperwork</target>
+                <target>Em 3 simples passos os clientes podem pagar as suas compras de forma parcelada sem qualquer custo ou burocracia associados</target>
             </trans-unit>
             <trans-unit id="howitworks_block_04_title" resname="howitworks_block_04_title">
                 <source>howitworks_block_04_title</source>
-                <target>Nothing hidden in the small print! </target>
+                <target>Toda a gestão das compras sem letras pequenas</target>
             </trans-unit>
             <trans-unit id="howitworks_block_04_subtitle01" resname="howitworks_block_04_subtitle01">
                 <source>howitworks_block_04_subtitle01</source>
-                <target>When the customer pays with Parcela Já the system generates a personal instalment plan</target>
+                <target>Quando o cliente paga com a Parcela Já é criado um plano pessoal de pagamentos parcelados</target>
             </trans-unit>
             <trans-unit id="howitworks_block_04_subtitle02" resname="howitworks_block_04_subtitle02">
                 <source>howitworks_block_04_subtitle02</source>
-                <target>Parcela Já holds up to two instalments of the purchase on the credit card</target>
+                <target>A Parcela Já faz um bloqueio do valor total da compra no cartão de crédito</target>
             </trans-unit>
             <trans-unit id="howitworks_block_04_subtitle03" resname="howitworks_block_04_subtitle03">
                 <source>howitworks_block_04_subtitle03</source>
-                <target>The 1st instalment is charged immediately after the purchase and an authorization holding a maximum of two instalments is generated on the credit card.</target>
+                <target>A 1ª parcela é cobrada imediatamente após a compra e é criada uma autorização que bloqueia o restante valor devido no cartão de crédito</target>
             </trans-unit>
             <trans-unit id="howitworks_block_04_subtitle04" resname="howitworks_block_04_subtitle04">
                 <source>howitworks_block_04_subtitle04</source>
-                <target>Every month, Parcela Já charges the due instalment on customer's credit card, until the payment plan is completed. Occasionally, Parcela Já might hold up to a maximum of 2 instalments pre-authorization on customer’s credit card.</target>
-</trans-unit>
-            <trans-unit id="howitworks_block_04_subtitle05" resname="howitworks_block_04_subtitle05">
-                <source>howitworks_block_04_subtitle05</source>
-                <target>The sales value is received by the store within 72 working hours after completion of the sale.</target>
+                <target>A Parcela Já cobra mensalmente as parcelas no cartão de crédito do cliente até ao final do plano de pagamentos, reduzindo também mensalmente o valor bloqueado no cartão</target>
             </trans-unit>
             <trans-unit id="forclients_block_01_title" resname="forclients_block_01_title">
                 <source>forclients_block_01_title</source>
-                <target>PARCELA JÁ. BUY NOW. PAY LATER.</target>
+                <target>PARCELA JÁ. COMPRE JÁ. PAGUE DEPOIS.</target>
             </trans-unit>
             <trans-unit id="forclients_block_02_title" resname="forclients_block_02_title">
                 <source>forclients_block_02_title</source>
-                <target>Pay your purchases with your credit card, interest free</target>
+                <target>Pague as suas compras com cartão de crédito sem juros</target>
             </trans-unit>
             <trans-unit id="forclients_block_02_subtitle01" resname="forclients_block_02_subtitle01">
                 <source>forclients_block_02_subtitle01</source>
-                <target>Use your credit card and select an instalment plan from 2 to 12 times, interest free, with no other related costs</target>
+                <target>Use o seu cartão de crédito e parcele o pagamento de 2 a 12 vezes sem juros ou outros custos associados</target>
             </trans-unit>
             <trans-unit id="forclients_block_02_subtitle02" resname="forclients_block_02_subtitle02">
                 <source>forclients_block_02_subtitle02</source>
-                <target>Increase your purchasing power. With Parcela Já you no longer need to pay all at once, allowing you to better manage your finances</target>
+                <target>Aumente o seu poder de compra. Com a Parcela Já não precisa de pagar tudo de uma vez, podendo assim fazer uma melhor gestão das suas finanças</target>
             </trans-unit>
             <trans-unit id="forclients_block_02_subtitle03" resname="forclients_block_02_subtitle03">
                 <source>forclients_block_02_subtitle03</source>
-                <target>You do not need to fill out any paperwork or apply for any special credit card. Besides, we do not need your confidential data. (IRS, proof of address, pay slip…)</target>
+                <target>Não precisa de preencher nenhuma papelada nem de ter um cartão de crédito especial. Também não precisamos dos seus dados confidenciais. (IRS, comprovativo de morada, recibo de ordenado…)</target>
             </trans-unit>
             <trans-unit id="forclients_block_02_subtitle04" resname="forclients_block_02_subtitle04">
                 <source>forclients_block_02_subtitle04</source>
-                <target>The purchase approval is done over the counter, in just a few seconds. Insert both your ID card and your credit card into our terminal and you're done! You can now enjoy your purchases.</target>
+                <target>A aprovação da compra é feita em apenas alguns segundos. Basta introduzir no nosso terminal o seu cartão de cidadão e cartão de crédito e já está! Já pode começar a usufruir das suas compras</target>
             </trans-unit>
             <trans-unit id="forclients_block_02_subtitle05" resname="forclients_block_02_subtitle05">
                 <source>forclients_block_02_subtitle05</source>
-                <target>Do not worry with undue charges, with Parcela Já you will only pay the value of the instalment you have chosen, without any surprises or additional costs</target>
+                <target>Não se preocupe com cobranças indevidas. Com a Parcela Já, apenas vai pagar o valor da parcela acordada, sem quaisquer surpresas ou custos adicionais</target>
             </trans-unit>
             <trans-unit id="forclients_block_02_subtitle06" resname="forclients_block_02_subtitle06">
                 <source>forclients_block_02_subtitle06</source>
-                <target>Continue to enjoy all the benefits offered by your Visa card and Mastercard</target>
+                <target>Continue a usufruir de todos os benefícios que o seu atual cartão Visa e Mastercard lhe oferecem</target>
             </trans-unit>
             <trans-unit id="forclients_block_03_title" resname="forclients_block_03_title">
                 <source>forclients_block_03_title</source>
-                <target>Our stores</target>
+                <target>Conheça aqui as nossas lojas aderentes</target>
             </trans-unit>
-            
             <trans-unit id="forclients_botao_ver_lojas" resname="forclients_botao_ver_lojas">
                 <source>forclients_botao_ver_lojas</source>
-                <target>See stores</target>
+                <target>Ver lojas </target>
             </trans-unit>
-            
             
             <trans-unit id="forclients_botao_visitar" resname="forclients_botao_visitar">
                 <source>forclients_botao_visitar</source>
-                <target>Visit </target>
+                <target>Visitar </target>
             </trans-unit>
-            
+
+
+
             <trans-unit id="faqs_block_01_title" resname="faqs_block_01_title">
                 <source>faqs_block_01_title</source>
-                <target>Frequently Asked Questions</target>
+                <target>Perguntas Frequentes</target>
             </trans-unit>
             <trans-unit id="faqs_block_01_subtitle01" resname="faqs_block_01_subtitle01">
                 <source>faqs_block_01_subtitle01</source>
-                <target>CUSTOMERS</target>
+                <target>CLIENTES</target>
             </trans-unit>
             <trans-unit id="faqs_block_01_subtitle02" resname="faqs_block_01_subtitle02">
                 <source>faqs_block_01_subtitle02</source>
-                <target>MERCHANTS</target>
+                <target>COMERCIANTES</target>
             </trans-unit>
             <trans-unit id="faqs_block_02_title" resname="faqs_block_02_title">
                 <source>faqs_block_02_title</source>
-                <target>Customers</target>
+                <target>Clientes</target>
             </trans-unit>
             <trans-unit id="faqs_block_02_question01" resname="faqs_block_02_question01">
                 <source>faqs_block_02_question01</source>
-                <target>Parcela Já won’t be another way for people who do not have available funding to buy products/services?</target>
+                <target>Usar a Parcela Já não é só mais uma forma de pessoas que não têm disponibilidade financeira comprarem produtos/serviços?</target>
             </trans-unit>
             <trans-unit id="faqs_block_02_answer01" resname="faqs_block_02_answer01">
                 <source>faqs_block_02_answer01</source>
-                <target>Parcela Já created an advanced system of instalment payments that allow you to better manage your personal finances, without burdening your available funding. It allows you to proceed with any purchase, paying monthly, without any related bureaucracy or interests.</target>
+                <target>A Parcela Já criou uma solução de pagamentos parcelados que lhe permite uma melhor gestão pessoal das suas finanças, sem sobrecarregar a sua disponibilidade financeira e permitindo que possa pagar mensalmente qualquer compra, sem qualquer burocracia ou juros associados.</target>
             </trans-unit>
             <trans-unit id="faqs_block_02_question02" resname="faqs_block_02_question02">
                 <source>faqs_block_02_question02</source>
-                <target>How can we buy using Parcela Já?</target>
+                <target>Como é que se pode comprar através da Parcela Já?</target>
             </trans-unit>
             <trans-unit id="faqs_block_02_answer02" resname="faqs_block_02_answer02">
                 <source>faqs_block_02_answer02</source>
-                <target>Visit one of our partner’s stores; choose the product/service you want to purchase and, when checking out, say that you wish to pay with Parcela Já. In order to do that, you just need your ID and your credit card. The purchase is validated within seconds.</target>
+                <target>Basta deslocar-se a uma loja aderente Parcela Já, escolher o produto/serviço que pretende comprar e no momento do pagamento, peça para pagar com a Parcela Já. Para isso precisa apenas do seu cartão de cidadão e cartão de crédito. A compra é validada em segundos.</target>
             </trans-unit>
             <trans-unit id="faqs_block_02_question03" resname="faqs_block_02_question03">
                 <source>faqs_block_02_question03</source>
-                <target>What is the procedure regarding the balance on my credit card?</target>
+                <target>Qual o procedimento com o saldo do meu cartão de crédito?</target>
             </trans-unit>
             <trans-unit id="faqs_block_02_answer03" resname="faqs_block_02_answer03">
                 <source>faqs_block_02_answer03</source>
-                <target>To buy with Parcela Já, you must have the full amount of the purchase available on your credit card. Once the instalment plan is settled, we will hold the value as a pre-authorization of up to a maximum of 2 instalments on the credit card. Until the end of the payment, we will take the due monthly value concerning the instalment plan you have selected.</target>
+                <target>Para fazer uma compra com a Parcela Já, deve ter o valor total da compra disponível no cartão de crédito. O valor total da compra será bloqueado e, todos os meses, até ao final do pagamento, a Parcela Já irá retirar o valor referente à mensalidade selecionada.</target>
             </trans-unit>
             <trans-unit id="faqs_block_02_question04" resname="faqs_block_02_question04">
                 <source>faqs_block_02_question04</source>
-                <target>How can I cancel/return a purchase?</target>
+                <target>Como faço para fazer o cancelamento/devolução de uma compra?</target>
             </trans-unit>
             <trans-unit id="faqs_block_02_answer04" resname="faqs_block_02_answer04">
                 <source>faqs_block_02_answer04</source>
-                <target>Any return/cancellation must be requested directly to the store where you have made the purchase. After receiving the request from the store, Parcela Já will unlock the value that is still pending on the credit card and the store must return the remaining value in cash or replace it with another product/service.</target>
+                <target>Qualquer devolução/cancelamento deve ser pedido diretamente na loja onde fez a compra. Após pedido da loja, desbloqueamos o valor que ainda se encontra pendente no seu cartão de crédito e a loja deverá devolver o restante valor em dinheiro ou substituir por outro produto/serviço.</target>
             </trans-unit>
             <trans-unit id="faqs_block_02_question05" resname="faqs_block_02_question05">
                 <source>faqs_block_02_question05</source>
-                <target>My credit card was stolen. What shall I do?</target>
+                <target>O meu cartão de crédito foi roubado. O que devo fazer?</target>
             </trans-unit>
             <trans-unit id="faqs_block_02_answer05" resname="faqs_block_02_answer05">
                 <source>faqs_block_02_answer05</source>
-                <target>If you have lost your credit card or if it was stolen, you shall:
-                    1. Contact your bank immediately requesting the cancellation of your credit card;
-                    2. Send an email to suporte@parcelaja.pt informing that the credit card has been cancelled;
-                    3. Parcela Já will send a document you will need to fill out with your new credit card details and we will add it to your instalment plan. 
-                </target>
+                <target>Se perdeu o seu certão de crédito, proceda aos seguintes passos:
+                    1. Contacte o seu banco imediatamente a pedir o cancelamento do seu cartão de crédito;
+                    2. Envie um email para suporte@parcelaja.pt com a informação do cancelamento do cartão;
+                    3. A Parcela Já enviará um documento para preenchimento dos dados do seu novo cartão de crédito e fará a alteração dos valores em falta do seu cartão antigo para o seu novo cartão.</target>
             </trans-unit>
             <trans-unit id="faqs_block_02_question06" resname="faqs_block_02_question06">
                 <source>faqs_block_02_question06</source>
-                <target>In which day will Parcela Já’s monthly payment be charged?</target>
+                <target>Em que dias é cobrado o pagamento da Parcela Já?</target>
             </trans-unit>
             <trans-unit id="faqs_block_02_answer06" resname="faqs_block_02_answer06">
                 <source>faqs_block_02_answer06</source>
-                <target>Parcela Já will always charge your instalment monthly fee on the same day of the purchase. For example, if you make a purchase on the 15th, the remaining instalments will be charged on the 15th of each month.</target>
+                <target>A Parcela Já irá retirar o valor referente à prestação mensal sempre no dia em que a compra foi efetuada. Por exemplo, se fizer uma compra no dia 15, os restantes valores serão cobrados sempre ao dia 15 de cada mês.</target>
             </trans-unit>
             <trans-unit id="faqs_block_02_question07" resname="faqs_block_02_question07">
                 <source>faqs_block_02_question07</source>
-                <target>Which costs will I have when using Parcela Já?</target>
+                <target>Quais são os custos que tenho ao usar a Parcela Já?</target>
             </trans-unit>
             <trans-unit id="faqs_block_02_answer07" resname="faqs_block_02_answer07">
                 <source>faqs_block_02_answer07</source>
-                <target>Parcela Já service is completely free for customers. No interests or added values will be charged. 
-                    Only Travel Agencies will be charged a fee when opening a customer’s file.</target>
+                <target>O parcelamento de produtos/serviços com a Parcela Já é completamente gratuito. Não cobramos qualquer juro ou valor adicional. Apenas nas agências de viagens, existe o custo de abertura de dossier.</target>
             </trans-unit>
             <trans-unit id="faqs_block_02_question08" resname="faqs_block_02_question08">
                 <source>faqs_block_02_question08</source>
-                <target>What kind of credit cards can I use with Parcela Já?</target>
+                <target>Que tipo de cartões posso utilizar com a Parcela Já?</target>
             </trans-unit>
             <trans-unit id="faqs_block_02_answer08" resname="faqs_block_02_answer08">
                 <source>faqs_block_02_answer08</source>
-                <target>Parcela Já accepts any VISA or MASTERCARD credit card issued in Portugal. The credit cards must be personal, no business/company cards will be accepted.</target>
+                <target>A Parcela Já aceita qualquer cartão de crédito VISA ou MASTERDARD. Os cartões devem ser pessoais e não empresariais.</target>
             </trans-unit>
             <trans-unit id="faqs_block_03_title" resname="faqs_block_03_title">
                 <source>faqs_block_03_title</source>
-                <target>Merchants</target>
+                <target>Comerciantes</target>
             </trans-unit>
             <trans-unit id="faqs_block_03_question01" resname="faqs_block_03_question01">
                 <source>faqs_block_03_question01</source>
-                <target>When can I request a refund for my customer’s credit card?</target>
+                <target>Quando posso pedir o reembolso para o cartão de crédito do meu cliente?</target>
             </trans-unit>
             <trans-unit id="faqs_block_03_answer01" resname="faqs_block_03_answer01">
                 <source>faqs_block_03_answer01</source>
-                <target>The credit card must be associated to a purchase that has been already cancelled. The merchant must contact Parcela Já and inform that the customer wishes to cancel the purchase. After that, Parcela Já will inform the merchant of the next steps. Sometimes, refunds cannot be made directly to the customer's credit card and a bank transfer will have to be made.</target>
+                <target>O cartão de crédito deverá estar associado a uma compra cancelada. O comerciante tem de alertar a Parcela Já que o seu cliente pretende proceder ao cancelamento de uma compra e de seguida, a Parcela Já instruirá o comerciante dos passos seguintes. Por vezes, os reembolsos não podem ser feitos diretamente para o cartão de crédito do cliente e terá de se proceder a uma transferência bancária.</target>
             </trans-unit>
             <trans-unit id="faqs_block_03_question02" resname="faqs_block_03_question02">
                 <source>faqs_block_03_question02</source>
-                <target>How to ask for a refund to my customer’s credit card account?</target>
+                <target>Como procedo ao pedido de um reembolso para cartão de crédito?</target>
             </trans-unit>
             <trans-unit id="faqs_block_03_answer02" resname="faqs_block_03_answer02">
                 <source>faqs_block_03_answer02</source>
-                <target>For any cancelation/refund, the merchant must contact Parcela Já directly via phone or email. Once the contact has been made, the cancelation process will be initiated.
-                    Refunds to credit cards have a short time limit after the capture of the first instalment, and this option will only be possible within this limited period of time.</target>
+                <target>Para proceder ao cancelamento de qualquer compra Parcela Já, o comerciante deve entrar em contacto direto com a Parcela Já via telefone ou e-mail. Depois do contacto feito, o procedimento do cancelamento da compra será iniciado.
+                    Reembolsos para cartões de crédito têm um limite reduzido de tempo após a captura da primeira parcela, sendo que esta opção só será possível se se encontrar dentro deste limite de tempo.</target>
             </trans-unit>
             <trans-unit id="faqs_block_03_question03" resname="faqs_block_03_question03">
                 <source>faqs_block_03_question03</source>
-                <target>Which types of credit card are supported by Parcela Já?</target>
+                <target>Que tipos de cartão a Parcela Já suporta?</target>
             </trans-unit>
             <trans-unit id="faqs_block_03_answer03" resname="faqs_block_03_answer03">
                 <source>faqs_block_03_answer03</source>
-                <target>Parcela Já accepts any VISA or MASTERCARD credit card issued in Portugal. The credit cards must be personal, no business/company cards will be accepted.</target>
+                <target>A Parcela Já aceita qualquer cartão de crédito VISA ou MASTERCARD emitido em Portugal. Os cartões devem ser pessoais e não empresariais.</target>
             </trans-unit>
             <trans-unit id="faqs_block_03_question04" resname="faqs_block_03_question04">
                 <source>faqs_block_03_question04</source>
-                <target>How and when do I get the amount of purchase on my account?</target>
+                <target>Como e quando recebo o valor da compra na minha conta?</target>
             </trans-unit>
             <trans-unit id="faqs_block_03_answer04" resname="faqs_block_03_answer04">
                 <source>faqs_block_03_answer04</source>
-                <target>The merchant receives the purchase amount in the bank account within a maximum of 72 hours (working days). In the amount transferred, the commission fee of Parcela Já will have already been taken, which will be stated in the invoice.</target>
+                <target>O comerciante recebe o valor da compra na conta bancária até ao máximo de 72 horas úteis.</target>
             </trans-unit>
             <trans-unit id="faqs_block_03_question05" resname="faqs_block_03_question05">
                 <source>faqs_block_03_question05</source>
-                <target>How can my customers track the monthly instalment payment on their credit card statements?</target>
+                <target>Como é que os meus clientes identificam a captura mensal no extrato bancário?</target>
             </trans-unit>
             <trans-unit id="faqs_block_03_answer05" resname="faqs_block_03_answer05">
                 <source>faqs_block_03_answer05</source>
-                <target>Your customer’s credit cart statement will display the instalment monthly fee, along with the description: www.parcelaja.pt, on the same day their purchase was made. For example, if they have made a purchase on the 15th, the remaining instalments will be charged on the 15th of each month. All dates are stated on the receipt signed by your customer, who must keep a copy of this receipt. </target>
+                <target> As datas de captura de cada parcela serão efetuadas no dia em que a compra foi feita, mês após mês. Por exemplo, se fizer uma compra no dia 15, os restantes valores serão cobrados sempre ao dia 15 de cada mês. As datas vêm refletidas no talão que o cliente assina, devendo este ficar com uma cópia do mesmo. A descrição que virá no extrato bancário do cliente será “www.parcelaja.pt”.</target>
             </trans-unit>
             <trans-unit id="faqs_block_03_question06" resname="faqs_block_03_question06">
                 <source>faqs_block_03_question06</source>
-                <target>HHow can my customers receive all details regarding their instalment plan?</target>
+                <target>Como é que os meus clientes recebem informações sobre o(s) seu(s) parcelamento(s)?</target>
             </trans-unit>
             <trans-unit id="faqs_block_03_answer06" resname="faqs_block_03_answer06">
                 <source>faqs_block_03_answer06</source>
-                <target>When a customer makes a purchase with Parcela Já system, a receipt will be signed and the customer will be given a copy, where all details and necessary information will be stated. 
-                    In case of any doubts or questions, the customer must contact the store where the purchase was made and the store must contact Parcela Já. </target>
+                <target>Quando o cliente efetua uma compra com o sistema Parcela Já, assina um talão que deve guardar com ele onde vem toda a informação necessária sobre a sua compra parcelada. Caso exista alguma dúvida por parte do cliente, este deve entrar em contacto com a loja onde efetuou a compra e a loja deve entrar em contacto com a Parcela Já.</target>
             </trans-unit>
             <trans-unit id="carreers_block_01_title" resname="carreers_block_01_title">
                 <source>carreers_block_01_title</source>
-                <target>Careers</target>
+                <target>Vem Trabalhar Connosco</target>
             </trans-unit>
             <trans-unit id="carreers_block_01_text" resname="carreers_block_01_text">
                 <source>carreers_block_01_text</source>
-                <target>If you have some knowledge or are interested in the financial and/or technological business area and you want to help us grow Parcela Já, send your CV to suporte@parcelaja.pt</target>
+                <target>Se tens conhecimentos ou interesse pela área financeira e/ou tecnológica e se pretendes ajudar-nos a fazer crescer a Parcela Já, envia o teu CV para suporte@parcelaja.pt</target>
             </trans-unit>
             <trans-unit id="newsandmedia_block_01_title" resname="newsandmedia_block_01_title">
                 <source>newsandmedia_block_01_title</source>
-                <target>News and Media</target>
+                <target>Notícias e Media</target>
             </trans-unit>
             <trans-unit id="contactus_block_01_title01" resname="contactus_block_01_title01">
                 <source>contactus_block_01_title01</source>
-                <target>Contact us</target>
+                <target>Contacte-nos</target>
             </trans-unit>
             <trans-unit id="contactus_block_01_subtitle01" resname="contactus_block_01_subtitle01">
                 <source>contactus_block_01_subtitle01</source>
-                <target>Write us a message</target>
+                <target>Escreva-nos a sua mensagem</target>
             </trans-unit>
             <trans-unit id="contactus_block_01_title02" resname="contactus_block_01_title02">
                 <source>contactus_block_01_title02</source>
@@ -403,7 +397,7 @@
             </trans-unit>
             <trans-unit id="contactus_block_01_name" resname="contactus_block_01_name">
                 <source>contactus_block_01_name</source>
-                <target>Name:</target>
+                <target>Nome:</target>
             </trans-unit>
             <trans-unit id="contactus_block_01_email" resname="contactus_block_01_email">
                 <source>contactus_block_01_email</source>
@@ -411,138 +405,136 @@
             </trans-unit>
             <trans-unit id="contactus_block_01_subject" resname="contactus_block_01_subject">
                 <source>contactus_block_01_subject</source>
-                <target>Subject:</target>
+                <target>Assunto:</target>
             </trans-unit>
             <trans-unit id="contactus_block_01_telephone" resname="contactus_block_01_telephone">
                 <source>contactus_block_01_telephone</source>
-                <target>Phone:</target>
+                <target>Telefone:</target>
             </trans-unit>
             <trans-unit id="contactus_block_01_message" resname="contactus_block_01_message">
                 <source>contactus_block_01_message</source>
-                <target>Message:</target>
+                <target>Mensagem:</target>
             </trans-unit>
             <trans-unit id="contactus_block_01_address01" resname="contactus_block_01_address01">
                 <source>contactus_block_01_address01</source>
-                <target>Address</target>
+                <target>Morada</target>
             </trans-unit>
             <trans-unit id="contactus_block_01_address02" resname="contactus_block_01_address02">
                 <source>contactus_block_01_address02</source>
-                <target>Av. da República, 48-B, 6th floor 1050-195 Lisbon</target>
+                <target>Av. da República, 48-B, 6º 1050-195 Lisboa</target>
             </trans-unit>
             <trans-unit id="contactus_block_01_geral" resname="contactus_block_01_geral">
                 <source>contactus_block_01_geral</source>
-                <target>General: </target>
+                <target>Geral: </target>
             </trans-unit>
             <trans-unit id="contactus_block_01_comercial" resname="contactus_block_01_comercial">
                 <source>contactus_block_01_comercial</source>
-                <target>Commercial: </target>
+                <target>Comercial: </target>
             </trans-unit>
             <trans-unit id="contactus_block_01_clientes" resname="contactus_block_01_clientes">
                 <source>contactus_block_01_clientes</source>
-                <target>Customers: </target>
+                <target>Clientes: </target>
             </trans-unit>
             <trans-unit id="contactus_block_01_telephone02" resname="contactus_block_01_telephone02">
                 <source>contactus_block_01_telephone02</source>
-                <target>Phone</target>
+                <target>Telefone</target>
             </trans-unit>
             <trans-unit id="contactus_block_01_telephonenumber" resname="contactus_block_01_telephonenumber">
                 <source>contactus_block_01_telephonenumber</source>
-                <target>General: </target>
+                <target>Geral: </target>
             </trans-unit>
             <trans-unit id="contactus_block_01_workdays" resname="contactus_block_01_workdays">
                 <source>contactus_block_01_workdays</source>
-                <target>Monday to Friday: from 9 am to 6 pm</target>
+                <target>Segunda a Sexta: das 9:00 às 18:00</target>
             </trans-unit>
             <trans-unit id="contactus_block_01_button" resname="contactus_block_01_button">
                 <source>contactus_block_01_button</source>
-                <target>Send</target>
+                <target>Enviar</target>
             </trans-unit>
             <trans-unit id="legalinformation_block_01_title" resname="legalinformation_block_01_title">
                 <source>legalinformation_block_01_title</source>
-                <target>Legal Disclaimer</target>
+                <target>Informação Legal</target>
             </trans-unit>
             <trans-unit id="legalinformation_block_01_text" resname="legalinformation_block_01_text">
                 <source>legalinformation_block_01_text</source>
-                <target>Parcela Já, registered trademark on the National Institute of Industrial Property (INPI) and owner of the website www.parcelaja.pt, aims to disclose all information concerning its activity. All information concerning its services does not constitute any form of contractual offer, the general terms and conditions of its services are regulated in a separate document.
+                <target>A Parcela Já, marca registada no Instituto Nacional de Propriedade Industrial e a detentora do sítio www.parcelaja.pt, tem como objetivo a divulgação de toda a informação sobre a sua atividade. A informação sobre os seus serviços não constitui proposta contratual, estando as condições gerais dos seus serviços reguladas em documento próprio.
 <![CDATA[<br/>]]> 
-                    Besides Parcela Já institutional information and besides the information concerning its services, information concerning its service operation, customers and technological and financial partners is also provided.
-                    Parcela Já tries to ensure that its webpage, www.parcelaja.pt, is constantly being updated and provides all information its customers and suppliers need.
+                    Além da informação institucional da Parcela Já e da informação relativa aos seus serviços, é também disponibilizada informação sobre o funcionamento dos seus serviços, dos seus clientes e dos seus parceiros tecnológicos e financeiros.
+                    A Parcela Já tenta assegurar que o seu sítio www.parcelaja.pt encontra-se em constante atualização e dispõe de toda a informação necessária para os seus clientes e fornecedores.
 <![CDATA[<br/>]]>
-                    All information available at the website www.parcelaja.pt is exclusively addressed to private use. The use for commercial purposes is strictly prohibited without written consent signed by Parcela Já. On the other hand, all information provided aims to offer advices and recommendations to its customers, suppliers and partners.
+                    Todas as informações contidas no sítio www.parcelaja.pt, destinam-se exclusivamente à utilização privada, estando proibido a sua utilização para fins comerciais sem o consentimento escrito e assinada Parcela Já. Por outro lado, a informação disponibilizada tem o objetivo de constituir conselhos e recomendações para os seus clientes, fornecedores e parceiros.
 <![CDATA[<br/>]]>
-                    Parcela Já and its website, www.parcelaja.pt, assume no responsibility for any losses, property damages or personal injuries resulting, direct or indirectly, from the use of the information provided. The User is the sole responsible for all decisions taken based on the information provided.
+                    A Parcela Já e o seu sítio www.parcelaja.pt não se responsabiliza por quaisquer prejuízos ou danos materiais ou pessoais que possam advir direta ou indiretamente da utilização da informação disponibilizada, sendo o utilizador o único e exclusivo responsável por todas as decisões tomadas com base nessa informação.
 <![CDATA[<br/>]]>
-                    In its website, www.parcelaja.pt, Parcela Já enables the connection to other websites through links supplied for that purpose. However, Parcela Já assumes no responsibility regarding the information provided by those websites or regarding the services provided by external parties.
+                    A Parcela Já no seu sítio www.parcelaja.pt possibilita a ligação a outros sítios de internet através de links fornecidos para o efeito. No entanto, a Parcela Já não assume qualquer responsabilidade pela informação disponibilizada nesses sítios ou pela prestação de serviços por entidades externas.
 <![CDATA[<br/>]]>
-                    The User may access the website www.parcelaja.pt through any remote device; however Parcela Já assumes no responsibility for the losses due to any potential situation of impossibility, delay, suspension or interruption accessing the website.
+                    O utilizador pode aceder ao sítio www.parcelaja.pt através que quaisquer dispositivos remotos, não assumindo a Parcela Já qualquer responsabilidade pelos prejuízos decorrentes de eventuais situações de impossibilidade, atraso, suspensão ou interrupção no acesso.
 <![CDATA[<br/>]]>
-                    Parcela Já will always try to ensure that its website, www.parcelaja.pt, works properly in all remote devices, through the development of constant checks and updates, however it cannot ensure its proper performance in all different devices. If you notice some of these problems, contact Parcela Já through the following email:  suporte@parcelaja.pt
+                    A Parcela Já tentará sempre que o seu sítio www.parcelaja.pt funcione corretamente em todos os dispositivos remotos, através do desenvolvimento de contantes verificações e atualizações, não garantindo a seu correto funcionamento nos mais diversos dispositivos. Caso verifique alguma destas falhas, contacte a Parcela Já através do e-mail suporte@parcelaja.pt
 <![CDATA[<br/>]]>
-                    TAll information and content provided by the website www.parcelaja.pt is subject to change without prior notice, except in cases expressly specified by the law.
+                    Todas as informações e conteúdos disponibilizados no sítio www.parcelaja.pt podem ser alteradas sem aviso prévio, com exceção daqueles a que a lei expressamente o obrigue.
 <![CDATA[<br/>]]>
-                    Neither the total or partial reproduction of any information or content of Parcela Já or of the website www.parcelaja.pt, nor the reproduction of any image, video or any other element is allowed without prior permission from Parcela Já.
-                    Accessing or using Parcela Já via the domain www.parcelaja.pt implies that the User accepts all above conditions.</target>
+                    Não é permitida a reprodução total ou parcial de qualquer informação ou conteúdo da Parcela Já nem do sítio www.parcelaja.pt, bem como das imagens, vídeos, ou qualquer outro elemento, sem autorização prévia da Parcela Já.
+                    O acesso ou a utilização da Parcela Já sobre o domínio de www.parcelaja.pt implica a aceitação pelo utilizador das condições anteriormente referidas.</target>
             </trans-unit>
             <trans-unit id="blog_recentarticles" resname="blog_recentarticles">
                 <source>blog_recentarticles</source>
-                <target>Recent articles</target>
+                <target>Artigos recentes</target>
             </trans-unit>
             <trans-unit id="blog_readmore" resname="blog_readmore">
                 <source>blog_readmore</source>
-                <target>Read more...</target>
+                <target>Ler mais...</target>
             </trans-unit>
             <trans-unit id="newsandmedia_readmore" resname="newsandmedia_readmore">
                 <source>newsandmedia_readmore</source>
-                <target>Read more...</target>
+                <target>Ler mais...</target>
             </trans-unit>
             <trans-unit id="footer_geral" resname="footer_geral">
                 <source>footer_geral</source>
-                <target>General</target>
+                <target>Geral</target>
             </trans-unit>
             <trans-unit id="footer_comercial" resname="footer_comercial">
                 <source>footer_comercial</source>
-                <target>Commercial</target>
+                <target>Comercial</target>
             </trans-unit>
             <trans-unit id="footer_clientes" resname="footer_clientes">
                 <source>footer_clientes</source>
-                <target>Customers</target>
+                <target>Clientes</target>
             </trans-unit>
             <trans-unit id="footer_title_produto" resname="footer_title_produto">
                 <source>footer_title_produto</source>
-                <target>PRODUCT</target>
+                <target>PRODUTO</target>
             </trans-unit>
             
             <trans-unit id="footer_comofunciona" resname="footer_comofunciona">
                 <source>footer_comofunciona</source>
-                <target>How it works in Store</target>
+                <target>Como funciona em Loja</target>
             </trans-unit>
-            
             <trans-unit id="footer_comofunciona_online" resname="footer_comofunciona_online">
                 <source>footer_comofunciona_online</source>
-                <target>How it works Online</target>
+                <target>Como funciona Online</target>
             </trans-unit>
-            
             
             
             <trans-unit id="footer_paraclientes" resname="footer_paraclientes">
                 <source>footer_paraclientes</source>
-                <target>For customers</target>
+                <target>Para clientes</target>
             </trans-unit>
             <trans-unit id="footer_perguntasfrequentes" resname="footer_perguntasfrequentes">
                 <source>footer_perguntasfrequentes</source>
-                <target>Frequently Asked Questions</target>
+                <target>Perguntas frequentes</target>
             </trans-unit>
             <trans-unit id="footer_title_empresa" resname="footer_title_empresa">
                 <source>footer_title_empresa</source>
-                <target>COMPANY</target>
+                <target>EMPRESA</target>
             </trans-unit>
             <trans-unit id="footer_emprego" resname="footer_emprego">
                 <source>footer_emprego</source>
-                <target>Careers</target>
+                <target>Emprego</target>
             </trans-unit>
             <trans-unit id="footer_noticiasemedia" resname="footer_noticiasemedia">
                 <source>footer_noticiasemedia</source>
-                <target>News and Media</target>
+                <target>Notícias e Media</target>
             </trans-unit>
             <trans-unit id="footer_blog" resname="footer_blog">
                 <source>footer_blog</source>
@@ -550,37 +542,37 @@
             </trans-unit>
             <trans-unit id="footer_contactos" resname="footer_contactos">
                 <source>footer_contactos</source>
-                <target>Contacts</target>
+                <target>Contactos</target>
             </trans-unit>
             <trans-unit id="footer_informacaolegal" resname="footer_informacaolegal">
                 <source>footer_informacaolegal</source>
-                <target>Legal Disclaimer</target>
+                <target>Informação legal</target>
             </trans-unit>
             <trans-unit id="header_paraaderentes" resname="header_paraaderentes">
                 <source>header_paraaderentes</source>
-                <target>FOR STORES</target>
+                <target>PARA LOJAS</target>
             </trans-unit>
             <trans-unit id="header_paraclientes" resname="header_paraclientes">
                 <source>header_paraclientes</source>
-                <target>FOR CUSTOMERS</target>
+                <target>PARA CLIENTES</target>
             </trans-unit>
             <trans-unit id="header_comofunciona" resname="header_comofunciona">
                 <source>header_comofunciona</source>
-                <target>HOW IT WORKS</target>
+                <target>COMO FUNCIONA</target>
             </trans-unit>
+            
+            
+            
             
             <trans-unit id="header_comofunciona_loja" resname="header_comofunciona_loja">
                 <source>header_comofunciona_loja</source>
-                <target>Physical Store</target>
+                <target>Loja Física</target>
             </trans-unit>
             
             <trans-unit id="header_comofunciona_online" resname="header_comofunciona_online">
                 <source>header_comofunciona_online</source>
-                <target>Online Store</target>
+                <target>Loja Online</target>
             </trans-unit>
-            
-            
-            
             
             
             
@@ -590,37 +582,41 @@
             </trans-unit>
             <trans-unit id="homepage_grupos_all" resname="homepage_grupos_all">
                 <source>homepage_grupos_all</source>
-                <target>All</target>
+                <target>Todas</target>
             </trans-unit>
             <trans-unit id="homepage_grupos_agenciasdeviagens" resname="homepage_grupos_agenciasdeviagens">
                 <source>homepage_grupos_agenciasdeviagens</source>
-                <target>Travel Agencies</target>
+                <target>Agência de Viagens</target>
             </trans-unit>
             <trans-unit id="homepage_grupos_perfumarias" resname="homepage_grupos_perfumarias">
                 <source>homepage_grupos_perfumarias</source>
-                <target>Perfumeries</target>
+                <target>Perfumarias</target>
             </trans-unit>
             <trans-unit id="homepage_grupos_opticas" resname="homepage_grupos_opticas">
                 <source>homepage_grupos_opticas</source>
-                <target>Optical Stores</target>
+                <target>Ópticas</target>
             </trans-unit>
             <trans-unit id="homepage_grupos_lojasdeinformatica" resname="homepage_grupos_lojasdeinformatica">
                 <source>homepage_grupos_lojasdeinformatica</source>
-                <target>Computer Stores</target>
+                <target>Lojas de Informática</target>
             </trans-unit>
             <trans-unit id="homepage_grupos_oficinasdeautomoveis" resname="homepage_grupos_oficinasdeautomoveis">
                 <source>homepage_grupos_oficinasdeautomoveis</source>
-                <target>Auto Repair Shops</target>
+                <target>Oficinas de Automóveis</target>
             </trans-unit>
+            
             
             <trans-unit id="homepage_grupos_saude" resname="homepage_grupos_saude">
                 <source>homepage_grupos_saude</source>
-                <target>Healthcare</target>
+                <target>Saúde</target>
             </trans-unit>
             <trans-unit id="homepage_grupos_vestuario" resname="homepage_grupos_vestuario">
                 <source>homepage_grupos_vestuario</source>
-                <target>Clothing</target>
+                <target>Vestuário</target>
             </trans-unit>
+            
+            
+            
             
             <trans-unit id="homepage_grupos_brokers" resname="homepage_grupos_brokers">
                 <source>homepage_grupos_brokers</source>
@@ -630,113 +626,118 @@
             
             <trans-unit id="homepage_grupos_moveis" resname="homepage_grupos_moveis">
                 <source>homepage_grupos_moveis</source>
-                <target>Furniture</target>
+                <target>Móveis</target>
             </trans-unit>
             
             
             <trans-unit id="footer_todososdireitosreservados" resname="footer_todososdireitosreservados">
                 <source>footer_todososdireitosreservados</source>
-                <target>2018 © All rights reserved.</target>
+                <target>2018 © Todos os direitos reservados.</target>
             </trans-unit>
+            
             
             
             
             
             <trans-unit id="como_funciona_online_hero" resname="como_funciona_online_hero">
                 <source>como_funciona_online_hero</source>
-                <target>Allow you clients to pay <![CDATA[<br>]]>in low instalments at your online store</target>
+                <target>Ofereça aos seus clientes<![CDATA[<br>]]>
+                    pagamentos parcelados na sua loja online</target>
             </trans-unit>
             
             <trans-unit id="como_funciona_online_block_01_title" resname="como_funciona_online_block_01_title">
                 <source>como_funciona_online_block_01_title</source>
-                <target>How the System Works</target>
+                <target>Como Funciona</target>
             </trans-unit>
             
             <trans-unit id="como_funciona_online_block_01_subtitle" resname="como_funciona_online_block_01_subtitle">
                 <source>como_funciona_online_block_01_subtitle</source>
-                <target>With Parcela Já, purchases at your online store gain a new payment method.</target>
+                <target>Com a Parcela Já, as vendas na sua loja online aumentam</target>
             </trans-unit>
             
             <trans-unit id="como_funciona_online_block_01_text_01" resname="como_funciona_online_block_01_text_01">
                 <source>como_funciona_online_block_01_text_01</source>
-                <target>Offer your clients the possibility to pay their online purchases in low instalments, in a quick and intuitive way.</target>
+                <target>Ofereça aos seus clientes a possibilidade de parcelarem as suas compras na sua loja online. Apenas têm que selecionar selecionarem uma nova forma de pagamento – Parcela Já.</target>
             </trans-unit>
             
             <trans-unit id="como_funciona_online_block_01_text_02" resname="como_funciona_online_block_01_text_02">
                 <source>como_funciona_online_block_01_text_02</source>
-                <target>When checking out, your client may split payment with their Visa or Mastercard credit card into up to 12 tranches without interests and without any bureaucracy or the need to have a credit approved.</target>
+                <target>No momento do check-out, o seu cliente tem a possibilidade de pagar com o seu cartão de crédito Visa ou Mastercard, até 12 parcelas sem juros, sem qualquer burocracia ou aprovação de crédito.</target>
             </trans-unit>
             
             <trans-unit id="como_funciona_online_block_01_text_03" resname="como_funciona_online_block_01_text_03">
                 <source>como_funciona_online_block_01_text_03</source>
-                <target>To access our system, you will need the client’s credit card. Our system offers a great opportunity to induce new purchases, scheduling client´s payments on a pre-selected monthly basis.</target>
+                <target>A solução oferecida requer o uso do cartão de crédito dos clientes e oferece uma excelente oportunidade para gerar novas ou mais vendas, agendando os pagamentos dos clientes numa base mensal pré-selecionada.</target>
             </trans-unit>
 
             
             <trans-unit id="como_funciona_online_block_02_intro" resname="como_funciona_online_block_02_intro">
                 <source>como_funciona_online_block_02_intro</source>
-                <target>3 simple steps</target>
+                <target>TRES SIMPLES PASSOS</target>
             </trans-unit>
                         
                                                 
             
             <trans-unit id="como_funciona_online_block_02_title_01" resname="como_funciona_online_block_02_title_01">
                 <source>como_funciona_online_block_02_title_01</source>
-                <target>Step 1</target>
+                <target>PASSO 1</target>
             </trans-unit>
 
 
 
             <trans-unit id="como_funciona_online_block_02_text_01" resname="como_funciona_online_block_02_text_01">
                 <source>como_funciona_online_block_02_text_01</source>
-                <target>When checking out, select payment using <![CDATA[<b>]]>Parcela Já<![CDATA[</b>]]> tool and select the number of tranches into which the purchase shall be split.
-                    </target>
+                <target>No momento do check-out, selecione <![CDATA[<b>]]>Parcela Já<![CDATA[</b>]]> como meio de pagamento e escolha o número de vezes em que quer parcelar a sua compra.
+                </target>
             </trans-unit>
 
 
 
             <trans-unit id="como_funciona_online_block_02_title_02" resname="como_funciona_online_block_02_title_02">
                 <source>como_funciona_online_block_02_title_02</source>
-                <target>Step 2</target>
+                <target>PASSO 2</target>
             </trans-unit>
             
             <trans-unit id="como_funciona_online_block_02_text_02" resname="como_funciona_online_block_02_text_02">
                 <source>como_funciona_online_block_02_text_02</source>
-                <target>Enter your credit card details.</target>
+                <target>Introduza os dados do seu cartão de crédito.</target>
             </trans-unit>
             
             
             
             <trans-unit id="como_funciona_online_block_02_title_03" resname="como_funciona_online_block_02_title_03">
                 <source>como_funciona_online_block_02_title_03</source>
-                <target>Step 3</target>
+                <target>PASSO 3</target>
             </trans-unit>
             
 
 
-<trans-unit id="como_funciona_online_block_02_text_03" resname="como_funciona_online_block_02_text_03">
+            <trans-unit id="como_funciona_online_block_02_text_03" resname="como_funciona_online_block_02_text_03">
                 <source>como_funciona_online_block_02_text_03</source>
-                <target>Enter your mobile number. Afterwards, you will receive a verification code via SMS. After entering the code, the purchase will be validated.</target>
+                <target>Insira o seu número de telemóvel. De seguida, receberá uma sms com um código de validação. Assim que digitar o código, a compra será validada.</target>
             </trans-unit>
 
 
-             <trans-unit id="como_funciona_online_block_02_title_04" resname="como_funciona_online_block_02_title_04">
+            <trans-unit id="como_funciona_online_block_02_title_04" resname="como_funciona_online_block_02_title_04">
                 <source>como_funciona_online_block_02_title_04</source>
-                <target>Done!</target>
+                <target>CONCLUÍDO!</target>
             </trans-unit>
             
 
 
-<trans-unit id="como_funciona_online_block_02_text_04" resname="como_funciona_online_block_02_text_04">
+            <trans-unit id="como_funciona_online_block_02_text_04" resname="como_funciona_online_block_02_text_04">
                 <source>como_funciona_online_block_02_text_04</source>
-                <target>In 3 simple steps, clients may split their purchase’s payment into tranches, without any related costs or bureaucracy. And better yet, without the need to leave your online store page</target>
+                <target>Em 3 simples passos vai poder pagar as suas compras de forma parcelada, sem qualquer custo ou burocracia associados, e melhor ainda, sem sair de casa.</target>
             </trans-unit>
                         
                                     
                                                 
                                                             
-                                                                        
-                              
+                                                                                            
+                                                                                                            
+                                                                                                                        
+                                                                                                                                    
+                                                                                                                                                            
             
             
         </body>

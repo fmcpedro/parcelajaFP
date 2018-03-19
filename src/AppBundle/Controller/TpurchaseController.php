@@ -194,6 +194,8 @@ class TpurchaseController extends Controller {
         $cancelForm = $this->createCancelForm($tpurchase);
         $returnForm = $this->createReturnForm($tpurchase);
         
+       
+        
         
         $editForm = $this->createForm('AppBundle\Form\TpurchaseType', $tpurchase);
         $editForm->handleRequest($request);

@@ -3,20 +3,36 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Entity/TpaymentsTaxaServico.php</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/views/default/v2_para_clientes.html.twig</file>
-            <file>file:/home/luis/sfprojects/parcelaja/app/Resources/views/base.html.twig</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/views/default/v2_index.html.twig</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Utils/Utils.php</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Controller/TagencyController.php</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/config/doctrine/Tschedulepay.orm.xml</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/config/doctrine/Tpurchase.orm.xml</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Entity/BinBank.php</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Repository/BinCodeRepository.php</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Form/TposSearchType.php</file>
             <file>file:/home/luis/sfprojects/parcelaja/app/Resources/views/tpos/edit.html.twig</file>
             <file>file:/home/luis/sfprojects/parcelaja/app/config/routing.yml</file>
             <file>file:/home/luis/sfprojects/parcelaja/composer.json</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Form/TposType.php</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Entity/TpaymentsTaxaDesconto.php</file>
             <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Repository/TpaymentsRepository.php</file>
             <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/views/default/v2_faqs.html.twig</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Controller/TpurchaseController.php</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Entity/TpaymentsTaxaServico.php</file>
+            <file>file:/home/luis/sfprojects/parcelaja/app/autoload.php</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Controller/TposController.php</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Repository/TagencyRepository.php</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/views/default/v2_para_clientes.html.twig</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/config/doctrine/Tagency.orm.xml</file>
+            <file>file:/home/luis/sfprojects/parcelaja/app/Resources/views/base.html.twig</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/views/default/v2_index.html.twig</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Utils/Utils.php</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/config/doctrine/Tpayments.orm.xml</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Entity/Tagency.php</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Form/TposType.php</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Entity/TpaymentsTaxaDesconto.php</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Entity/Tpurchase.php</file>
             <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Command/ExportPaymentsCommand.php</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Repository/BrokerRepository.php</file>
             <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/views/default/v2_header.html.twig</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/config/routing/tpayments.yml</file>
         </group>
     </open-files>
 </project-private>

@@ -146,6 +146,7 @@ class Tagency {
      */
     public function __construct() {
         $this->terminalList = new \Doctrine\Common\Collections\ArrayCollection();
+//        $this->purchaseList = new \Doctrine\Common\Collections\ArrayCollection();
     }
     
     

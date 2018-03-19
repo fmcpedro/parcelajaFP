@@ -50,7 +50,7 @@ class ExportPaymentsCommand extends ContainerAwareCommand {
 
         $em = $this->getContainer()->get('doctrine.orm.entity_manager');
         
-        $tpayments = $em->getRepository('AppBundle:Tpayments')->findAllProcessedPayments(10);
+        $tpayments = $em->getRepository('AppBundle:Tpayments')->findAllProcessedPayments(30);
         foreach ($tpayments as $payment) {
             $payment->setTipoOperacao('PAYMENT');
         }

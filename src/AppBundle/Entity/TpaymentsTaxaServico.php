@@ -26,8 +26,10 @@ class TpaymentsTaxaServico {
     const IMPOSTO_SELO = 0.04;
     const IVA = 0.23;
     const TAXA_JURO = 0.05;
-    const LUCRO_PARCELA = 0.75;
-    const LUCRO_BNI = 0.25;
+    const LUCRO_PARCELA = 1;
+    const LUCRO_BNI = 0;
+    //const LUCRO_PARCELA = 0.75;
+    //const LUCRO_BNI = 0.25;
     const NUM_CASAS_DECIMAIS = 8;
     const DIFERENCA_ENTRE_ITERACOES = 0.00000000000000000000000000000000000000000000000001;
     
