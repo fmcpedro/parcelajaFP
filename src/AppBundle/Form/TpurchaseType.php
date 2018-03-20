@@ -33,9 +33,9 @@ class TpurchaseType extends AbstractType
                 //->add('fdocsstate')
                 ->add('fpurchasedate')
                 //->add('fcsimg')
+                ->add('fcomments')
                 ->add('fstatus', ChoiceType::class, array(
                     'choices' => array(
-                        
                         'Activo' => '1',
                         'Inactivo' => '2',
         )))

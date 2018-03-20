@@ -65,7 +65,15 @@ class ExportPaymentsCommand extends ContainerAwareCommand {
             $payment->setTipoOperacao('DEVOLUTION');
         }
         
-        $result = array_merge($tpayments , $cancelatedPayments, $returnedPayments );
+        
+        $failedPayments = $em->getRepository('AppBundle:Tpayments')->findAllReturnedPayments(5);
+        foreach ($failedPayments as $payment) {
+            $payment->setTipoOperacao('NONCOMPLIANCE');
+        }
+        
+        
+        
+        $result = array_merge($tpayments , $cancelatedPayments, $returnedPayments, $failedPayments );
         
         $this->generateCsvFile($result);
 
@@ -74,6 +82,7 @@ class ExportPaymentsCommand extends ContainerAwareCommand {
         $output->writeln('tpayments : ' . count($tpayments));
         $output->writeln('cancelatedPayments : ' . count($cancelatedPayments));
         $output->writeln('returnedPayments : ' . count($returnedPayments));
+        $output->writeln('failedPayments : ' . count($failedPayments));
 
         // outputs a message followed by a "\n"
         $output->writeln('Whoa!');

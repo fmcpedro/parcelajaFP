@@ -202,7 +202,42 @@ class TpaymentsRepository extends EntityRepository {
     }
     
     
+     /**
+     * devolve todos os pagamentos devolvidos
+     * 
+     */
+    public function findAllFailedPayments($numDays = 220) {
+        $em = $this->getEntityManager();
+        $tpayments = array();
+        $fail = new \AppBundle\Entity\PurchaseFail();
+
+        $fails = $em->getRepository('AppBundle:PurchaseFail')->findAll();
     
+        foreach ($fails as $key => $fail) {
+            
+            $purchase = $em->getRepository('AppBundle:Tpurchase')->find($fail->getPurchaseId());
+            
+            $payment = $em->getRepository('AppBundle:Tpayments')->findOneBy([
+                'fpurchaseid' => $fail->getPurchaseId(),
+                'finstallment' => $fail->getInstallmentId() - 1]);
+
+            // FFee = Quando é feita uma transação através de uma taxa de desconto, esta percentagem é cobrada a Loja.
+            // FExtraCharge = Quando é feita uma transação através de taxa de serviço, este é o valor cobrado da taxa de serviço.
+            // Se tiver FExtraCharge diferente de 0, então é Taxa de Serviço
+            if ($purchase->getFextracharge() <> 0):
+                //echo "TaxaServico <br/>";
+                $generatedPayments = $this->generatePaymentsTaxaServico($purchase, $payment, 'NONCOMPLIANCE');
+            else:
+                //echo "TaxaDesconto <br/>";
+                $generatedPayments = $this->generatePaymentsTaxaDesconto($purchase, $payment, 'NONCOMPLIANCE');
+            endif;
+
+            //adicionar a parcela relativa ao pagamento
+            $tpayments[] = $generatedPayments[$fail->getInstallmentId()];
+        }
+
+        return $tpayments;
+    }
     
     
     

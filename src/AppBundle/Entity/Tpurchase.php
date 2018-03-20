@@ -119,10 +119,21 @@ class Tpurchase
     private $agency;
 
     
-    
+     /**
+     * @var string
+     */
+    private $fcomments;
+
   
-    
-    
+    function getFcomments() {
+        return $this->fcomments;
+    }
+
+    function setFcomments($fcomments) {
+        $this->fcomments = $fcomments;
+    }
+
+        
     
     /**
      * Set fuserid

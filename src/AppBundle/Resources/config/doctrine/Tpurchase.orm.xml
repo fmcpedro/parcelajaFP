@@ -15,6 +15,12 @@
       </options>
     </field>-->
     
+    
+<!--    
+    ALTER TABLE `parcelaja_payments`.`TPurchase` 
+ADD COLUMN `FComments` MEDIUMTEXT NULL AFTER `FDocFile`;-->
+
+    
         <many-to-one field="agency" target-entity="Tagency" inversed-by="purchaseList">
             <join-column name="FAgencyID" referenced-column-name="FAgencyID" />
         </many-to-one>
@@ -85,5 +91,14 @@
         <option name="fixed"/>
       </options>
     </field>
+    
+    <field name="fcomments" type="text" column="FComments" length="16777215" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    
+    
+    
   </entity>
 </doctrine-mapping>

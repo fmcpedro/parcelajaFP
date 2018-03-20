@@ -168,6 +168,41 @@ class TpurchaseController extends Controller {
     
     
     
+         /**
+     * Return a tpurchase entity.
+     *
+     */
+    public function failAction(Request $request, Tpurchase $tpurchase) {
+        $form = $this->createReturnForm($tpurchase);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            //$em->remove($tpurchase);
+            
+            //1) COLOCAR STATUS CANCELADO
+            $tpurchase->setFstatus(2);
+            $em->persist($tpurchase);
+            $em->flush();
+
+            //2) CRIAR REGISTO DE INCUMPRIMENTO
+            $purchaseFail = new \AppBundle\Entity\PurchaseFail();
+            $purchaseFail->setPurchaseId($tpurchase->getFpurchaseid());
+                        
+            //2.1) PROCURAR ULTIMO PAGAMENTO DA COMPRA
+            $tpayment = $em->getRepository('AppBundle:Tpayments')->findLastPayment($tpurchase);
+            
+            $purchaseFail->setInstallmentId($tpayment->getFinstallment()+1);
+            $em->persist($purchaseFail);
+            $em->flush();
+
+        }
+
+        return $this->redirectToRoute('admin_tpurchase_index');
+    }
+    
+    
+    
     
     
     
@@ -193,6 +228,7 @@ class TpurchaseController extends Controller {
     public function editAction(Request $request, Tpurchase $tpurchase) {
         $cancelForm = $this->createCancelForm($tpurchase);
         $returnForm = $this->createReturnForm($tpurchase);
+        $failForm = $this->createFailForm($tpurchase);
         
        
         
@@ -217,6 +253,7 @@ class TpurchaseController extends Controller {
                     'edit_form' => $editForm->createView(),
                     'cancel_form' => $cancelForm->createView(),
                     'return_form' => $returnForm->createView(),
+                   'fail_form' => $failForm->createView(),
         ));
     }
 
@@ -282,5 +319,22 @@ class TpurchaseController extends Controller {
                         ->getForm()
         ;
     }
+    
+    
+          /**
+     * Creates a form to return a tpurchase entity.
+     *
+     * @param Tpurchase $tpurchase The tpurchase entity
+     *
+     * @return Form The form
+     */
+    private function createFailForm(Tpurchase $tpurchase) {
+        return $this->createFormBuilder()
+                        ->setAction($this->generateUrl('admin_tpurchase_fail', array('fpurchaseid' => $tpurchase->getFpurchaseid())))
+                        ->setMethod('POST')
+                        ->getForm()
+        ;
+    }
+    
 
 }

@@ -32,3 +32,8 @@ admin_tpurchase_return:
     path:     /{fpurchaseid}/return
     defaults: { _controller: "AppBundle:Tpurchase:return" }
     methods:  POST   
+    
+admin_tpurchase_fail:
+    path:     /{fpurchaseid}/fail
+    defaults: { _controller: "AppBundle:Tpurchase:fail" }
+    methods:  POST   
