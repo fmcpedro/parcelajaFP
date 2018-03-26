@@ -109,15 +109,15 @@
                                     {{ form_widget(edit_form.fpurchasedate, {'attr': {'class': 'form-control', 'readonly':'readonly'}}) }}
                                 </div>
                             </div>
-                                
-                                
-                                <div class="form-group">
+
+
+                            <div class="form-group">
                                 <label for="fcomments" class="col-sm-3 control-label">Comments</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(edit_form.fcomments, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div>
-                                
+
 
                             <div class="form-group">
                                 <label for="fstatus" class="col-sm-3 control-label">fstatus</label>
@@ -136,7 +136,7 @@
                                     {#<p>I hereby certify that the information above is true and accurate. </p>#}
                                 </div>
                                 <div class="col-sm-9">
-                                    
+
                                     <button class="btn btn-complete btn-cons m-b-10" type="submit">
                                         <i class="pg-form"></i> <span class="bold">Update</span>
                                     </button>
@@ -148,46 +148,67 @@
                             </div>
 
 
-                            
-                                    <a class="btn btn-primary btn-cons m-b-10" href="{{ path('admin_tpurchase_index') }}">
-                                        <i class="fa fa-backward"></i> <span class="bold">Back to purchases list</span>
-                                    </a>
-                                        
-                                        
-                                        
-                                    {{ form_start(cancel_form) }}
-                                    <button class="btn btn-danger btn-cons m-b-10" type="submit">
-                                        <i class="fa fa-warning"></i> <span class="bold">Cancel purchase</span>
-                                    </button>
-                                    {{ form_end(cancel_form) }}
 
-                                    {{ form_start(return_form) }}
-                                    <button class="btn btn-danger btn-cons m-b-10" type="submit">
-                                        <i class="fa fa-warning"></i> <span class="bold">Return purchase</span>
-                                    </button>
-                                    {{ form_end(return_form) }}
-                                    
-                                    
-                                    {{ form_start(fail_form) }}
-                                    <button class="btn btn-danger btn-cons m-b-10" type="submit">
-                                        <i class="fa fa-warning"></i> <span class="bold">Fail purchase&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                                    </button>
-                                    {{ form_end(fail_form) }}
-                                    
-                                    
-                                        
-                        
+                            <a class="btn btn-primary btn-cons m-b-10" href="{{ path('admin_tpurchase_index') }}">
+                                <i class="fa fa-backward"></i> <span class="bold">Back to purchases list</span>
+                            </a>
 
+                            {% if isActive == true %}
+                                {% set class = 'btn-danger' %}
+                                 {% set classCanceled = '' %}
+                                    {% set classReturned = '' %}
+                                    {% set classFailed = '' %}
+                            {% else %}
+                                {% set class = '' %}
+                                {% if isCanceled == true %}
+                                    {% set classCanceled = 'btn-primary' %}
+                                    {% set classReturned = 'btn-success' %}
+                                    {% set classFailed = 'btn-default' %}
+                                {% elseif isReturned == true %}
+                                    {% set classCanceled = 'btn-default' %}
+                                    {% set classReturned = 'btn-success' %}
+                                    {% set classFailed = 'btn-default' %}
+                                {% else %}
+                                    {% set classCanceled = 'btn-default' %}
+                                    {% set classReturned = 'btn-default' %}
+                                    {% set classFailed = 'btn-success' %}
+                                {% endif %}
+                            {% endif %}
+
+
+                            {{ form_start(cancel_form) }}
+                            <button class="btn btn- {{class}} {{classCanceled}} btn-cons m-b-10" type="submit">
+                                <i class="fa fa-warning"></i> <span class="bold">Cancel purchase</span>
+                            </button>
+                            {{ form_end(cancel_form) }}
+
+                            {{ form_start(return_form) }}
+                            <button class="btn {{class}} {{classReturned}} btn-cons m-b-10" type="submit">
+                                <i class="fa fa-warning"></i> <span class="bold">Return purchase</span>
+                            </button>
+                            {{ form_end(return_form) }}
+
+
+                            {{ form_start(fail_form) }}
+                            <button class="btn {{class}} {{classFailed}} btn-cons m-b-10" type="submit">
+                                <i class="fa fa-warning"></i> <span class="bold">Fail purchase&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            </button>
+                            {{ form_end(fail_form) }}
+
+
+
+
+
+                        </div>
                     </div>
                 </div>
             </div>
+            <!-- END PANEL -->
         </div>
-        <!-- END PANEL -->
-    </div>
-    <!-- END CONTAINER FLUID -->
+        <!-- END CONTAINER FLUID -->
 
-</div>
-<!-- END PAGE CONTENT -->
+    </div>
+    <!-- END PAGE CONTENT -->
 
 {% endblock %}
 

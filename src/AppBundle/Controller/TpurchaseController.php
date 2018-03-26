@@ -27,10 +27,6 @@ class TpurchaseController extends Controller {
         $searchForm->handleRequest($request);
 
         //$cancelForm = $this->createCancelForm($tpurchase);
-
-
-
-
 //        if ($searchForm->isSubmitted() && $searchForm->isValid()) {
 //
 //            $search = array();
@@ -69,7 +65,7 @@ class TpurchaseController extends Controller {
         return $this->render('tpurchase/index.html.twig', array(
                     'tpurchases' => $tpurchases,
                     'search_form' => $searchForm->createView(),
-          //          'cancel_form' => $cancelForm->createView(),
+                        //          'cancel_form' => $cancelForm->createView(),
         ));
     }
 
@@ -107,7 +103,6 @@ class TpurchaseController extends Controller {
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             //$em->remove($tpurchase);
-            
             //1) COLOCAR STATUS CANCELADO
             $tpurchase->setFstatus(2);
             $em->persist($tpurchase);
@@ -116,24 +111,19 @@ class TpurchaseController extends Controller {
             //2) CRIAR REGISTO DE CANCELAMENTO
             $purchaseCancelation = new \AppBundle\Entity\PurchaseCancelation();
             $purchaseCancelation->setPurchaseId($tpurchase->getFpurchaseid());
-                        
+
             //2.1) PROCURAR ULTIMO PAGAMENTO DA COMPRA
             $tpayment = $em->getRepository('AppBundle:Tpayments')->findLastPayment($tpurchase);
-            
-            $purchaseCancelation->setInstallmentId($tpayment->getFinstallment()+1);
+
+            $purchaseCancelation->setInstallmentId($tpayment->getFinstallment() + 1);
             $em->persist($purchaseCancelation);
             $em->flush();
-            
         }
 
         return $this->redirectToRoute('admin_tpurchase_index');
     }
 
-    
-    
-    
-    
-     /**
+    /**
      * Return a tpurchase entity.
      *
      */
@@ -144,7 +134,6 @@ class TpurchaseController extends Controller {
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             //$em->remove($tpurchase);
-            
             //1) COLOCAR STATUS CANCELADO
             $tpurchase->setFstatus(2);
             $em->persist($tpurchase);
@@ -153,22 +142,19 @@ class TpurchaseController extends Controller {
             //2) CRIAR REGISTO DE RETORNO
             $purchaseReturn = new \AppBundle\Entity\PurchaseReturn();
             $purchaseReturn->setPurchaseId($tpurchase->getFpurchaseid());
-                        
+
             //2.1) PROCURAR ULTIMO PAGAMENTO DA COMPRA
             $tpayment = $em->getRepository('AppBundle:Tpayments')->findLastPayment($tpurchase);
-            
-            $purchaseReturn->setInstallmentId($tpayment->getFinstallment()+1);
+
+            $purchaseReturn->setInstallmentId($tpayment->getFinstallment() + 1);
             $em->persist($purchaseReturn);
             $em->flush();
-
         }
 
         return $this->redirectToRoute('admin_tpurchase_index');
     }
-    
-    
-    
-         /**
+
+    /**
      * Return a tpurchase entity.
      *
      */
@@ -179,7 +165,6 @@ class TpurchaseController extends Controller {
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             //$em->remove($tpurchase);
-            
             //1) COLOCAR STATUS CANCELADO
             $tpurchase->setFstatus(2);
             $em->persist($tpurchase);
@@ -188,26 +173,18 @@ class TpurchaseController extends Controller {
             //2) CRIAR REGISTO DE INCUMPRIMENTO
             $purchaseFail = new \AppBundle\Entity\PurchaseFail();
             $purchaseFail->setPurchaseId($tpurchase->getFpurchaseid());
-                        
+
             //2.1) PROCURAR ULTIMO PAGAMENTO DA COMPRA
             $tpayment = $em->getRepository('AppBundle:Tpayments')->findLastPayment($tpurchase);
-            
-            $purchaseFail->setInstallmentId($tpayment->getFinstallment()+1);
+
+            $purchaseFail->setInstallmentId($tpayment->getFinstallment() + 1);
             $em->persist($purchaseFail);
             $em->flush();
-
         }
 
         return $this->redirectToRoute('admin_tpurchase_index');
     }
-    
-    
-    
-    
-    
-    
-    
-    
+
     /**
      * Finds and displays a tpurchase entity.
      *
@@ -226,21 +203,34 @@ class TpurchaseController extends Controller {
      *
      */
     public function editAction(Request $request, Tpurchase $tpurchase) {
+        
+         $em = $this->getDoctrine()->getManager();
+        
         $cancelForm = $this->createCancelForm($tpurchase);
         $returnForm = $this->createReturnForm($tpurchase);
         $failForm = $this->createFailForm($tpurchase);
         
-       
         
+        $isCanceled = $em->getRepository('AppBundle:PurchaseCancelation')->findOneBy(array('purchaseId'=>$tpurchase->getFpurchaseid()));
+        $isReturned = $em->getRepository('AppBundle:PurchaseReturn')->findOneBy(array('purchaseId'=>$tpurchase->getFpurchaseid()));
+        $isFailed = $em->getRepository('AppBundle:PurchaseFail')->findOneBy(array('purchaseId'=>$tpurchase->getFpurchaseid()));
         
-        $editForm = $this->createForm('AppBundle\Form\TpurchaseType', $tpurchase);
-        $editForm->handleRequest($request);
+        if($isCanceled || $isReturned || $isFailed ):
+            $isActive = false;
+            else:
+                $isActive = true;
+                
+            
+        endif;    
         
         
 
+        $editForm = $this->createForm('AppBundle\Form\TpurchaseType', $tpurchase);
+        $editForm->handleRequest($request);
+
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-            
+
             $this->get('session')->getFlashBag()->add(
                     'notice', 'Purchase updated successfully!'
             );
@@ -253,7 +243,15 @@ class TpurchaseController extends Controller {
                     'edit_form' => $editForm->createView(),
                     'cancel_form' => $cancelForm->createView(),
                     'return_form' => $returnForm->createView(),
-                   'fail_form' => $failForm->createView(),
+                    'fail_form' => $failForm->createView(),
+            
+            'isCanceled' => $isCanceled,
+            'isReturned' => $isReturned,
+            'isFailde' => $isFailed,
+            
+        'isActive' => $isActive
+                
+                
         ));
     }
 
@@ -303,9 +301,8 @@ class TpurchaseController extends Controller {
                         ->getForm()
         ;
     }
-    
-    
-        /**
+
+    /**
      * Creates a form to return a tpurchase entity.
      *
      * @param Tpurchase $tpurchase The tpurchase entity
@@ -319,9 +316,8 @@ class TpurchaseController extends Controller {
                         ->getForm()
         ;
     }
-    
-    
-          /**
+
+    /**
      * Creates a form to return a tpurchase entity.
      *
      * @param Tpurchase $tpurchase The tpurchase entity
@@ -335,6 +331,5 @@ class TpurchaseController extends Controller {
                         ->getForm()
         ;
     }
-    
 
 }
