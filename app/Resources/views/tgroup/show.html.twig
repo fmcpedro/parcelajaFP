@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Tgroup</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Fgroupname</th>
+                <td>{{ tgroup.fgroupname }}</td>
+            </tr>
+            <tr>
+                <th>Fgroupslugname</th>
+                <td>{{ tgroup.fgroupslugname }}</td>
+            </tr>
+            <tr>
+                <th>Flogo</th>
+                <td>{{ tgroup.flogo }}</td>
+            </tr>
+            <tr>
+                <th>Fstate</th>
+                <td>{% if tgroup.fstate %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Updatedat</th>
+                <td>{% if tgroup.updatedAt %}{{ tgroup.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Fgroupid</th>
+                <td>{{ tgroup.fgroupid }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('tgroup_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('tgroup_edit', { 'fgroupid': tgroup.fgroupid }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

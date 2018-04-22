@@ -8,22 +8,31 @@
       <options>
         <option name="fixed"/>
       </options>
-    </field>
+    </field> 
     
  <field name="fgroupslugname" type="string" column="FGroupSlugName" length="100" nullable="false">
       <options>
-        <option name="fixed"/>
+        <option name="fixed"/> 
       </options>
     </field>
 
         <one-to-many field="subgroupList" target-entity="Tsubgroup" mapped-by="group" />
 
       
+        <field name="flogo" type="string" column="FLogo" length="100" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
     
 
-
-
     
-    <field name="fstate" type="boolean" column="FState" nullable="false"/>
+    
+        <field name="fstate" type="boolean" column="FState" nullable="false"/>
+        
+        
+        <field name="updatedAt" type="datetime" column="updated_at" nullable="true"/>
+    
+        
   </entity>
 </doctrine-mapping>

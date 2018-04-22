@@ -41,3 +41,7 @@ app_admin_tsubgroup:
 app_admin_tpurchase:
     resource: "@AppBundle/Resources/config/routing/tpurchase.yml"
     prefix:   /admin/tpurchase
+    
+app_admin_tgroup:
+    resource: "@AppBundle/Resources/config/routing/tgroup.yml"
+    prefix:   admin/tgroup
