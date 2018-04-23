@@ -639,7 +639,16 @@
                 <source>homepage_grupos_seguranca</source>
                 <target>Segurança</target>
             </trans-unit>
+
             
+            <trans-unit id="homepage_grupos_ourivesarias" resname="homepage_grupos_ourivesarias">
+                <source>homepage_grupos_ourivesarias</source>
+                <target>Ourivesarias e Relógios</target>
+            </trans-unit>
+                                    
+                                                
+                                                            
+                                                                                    
             
             <trans-unit id="footer_todososdireitosreservados" resname="footer_todososdireitosreservados">
                 <source>footer_todososdireitosreservados</source>

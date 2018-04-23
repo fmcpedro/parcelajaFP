@@ -26,7 +26,7 @@ class TagencyRepository extends EntityRepository {
     public function findAggregatePurchasesByAgency($search) {
 
 
-        dump($search);
+        //dump($search);
 
         $em = $this->getEntityManager();
 
@@ -94,8 +94,8 @@ class TagencyRepository extends EntityRepository {
         }
 
 
-        dump($query->getDQL());
-        dump($query->getAST());
+        //dump($query->getDQL());
+        //dump($query->getAST());
 
         return $query->getResult();
     }

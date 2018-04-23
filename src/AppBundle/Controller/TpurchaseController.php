@@ -203,27 +203,27 @@ class TpurchaseController extends Controller {
      *
      */
     public function editAction(Request $request, Tpurchase $tpurchase) {
-        
-         $em = $this->getDoctrine()->getManager();
-        
+
+        $em = $this->getDoctrine()->getManager();
+
         $cancelForm = $this->createCancelForm($tpurchase);
         $returnForm = $this->createReturnForm($tpurchase);
         $failForm = $this->createFailForm($tpurchase);
-        
-        
-        $isCanceled = $em->getRepository('AppBundle:PurchaseCancelation')->findOneBy(array('purchaseId'=>$tpurchase->getFpurchaseid()));
-        $isReturned = $em->getRepository('AppBundle:PurchaseReturn')->findOneBy(array('purchaseId'=>$tpurchase->getFpurchaseid()));
-        $isFailed = $em->getRepository('AppBundle:PurchaseFail')->findOneBy(array('purchaseId'=>$tpurchase->getFpurchaseid()));
-        
-        if($isCanceled || $isReturned || $isFailed ):
+
+
+        $isCanceled = $em->getRepository('AppBundle:PurchaseCancelation')->findOneBy(array('purchaseId' => $tpurchase->getFpurchaseid()));
+        $isReturned = $em->getRepository('AppBundle:PurchaseReturn')->findOneBy(array('purchaseId' => $tpurchase->getFpurchaseid()));
+        $isFailed = $em->getRepository('AppBundle:PurchaseFail')->findOneBy(array('purchaseId' => $tpurchase->getFpurchaseid()));
+
+        if ($isCanceled || $isReturned || $isFailed):
             $isActive = false;
-            else:
-                $isActive = true;
-                
-            
-        endif;    
-        
-        
+        else:
+            $isActive = true;
+
+
+        endif;
+
+
 
         $editForm = $this->createForm('AppBundle\Form\TpurchaseType', $tpurchase);
         $editForm->handleRequest($request);
@@ -244,14 +244,10 @@ class TpurchaseController extends Controller {
                     'cancel_form' => $cancelForm->createView(),
                     'return_form' => $returnForm->createView(),
                     'fail_form' => $failForm->createView(),
-            
-            'isCanceled' => $isCanceled,
-            'isReturned' => $isReturned,
-            'isFailde' => $isFailed,
-            
-        'isActive' => $isActive
-                
-                
+                    'isCanceled' => $isCanceled,
+                    'isReturned' => $isReturned,
+                    'isFailde' => $isFailed,
+                    'isActive' => $isActive
         ));
     }
 
