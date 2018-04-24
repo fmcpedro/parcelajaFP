@@ -29,7 +29,7 @@
                     <!-- START BREADCRUMB -->
                     <ul class="breadcrumb">
                         <li><a href="#" class="">Parcela Já</a></li>
-                        <li><a href="#" class="active">Sub Grupos</a></li>
+                        <li><a href="#" class="active">Sub Groups</a></li>
                     </ul>
                     <!-- END BREADCRUMB -->
                 </div>
@@ -43,7 +43,7 @@
             <!-- START PANEL -->
             <div class="panel panel-transparent">
                 <div class="panel-heading">
-                    <div class="panel-title">Lista de Sub Grupos
+                    <div class="panel-title">Sub Group List
                     </div>
                     <div class="export-options-container pull-right"></div>
                     <div class="clearfix"></div>
@@ -55,12 +55,12 @@
                         <thead>
                             <tr>
                                 <th>Id</th>
-                                <th>Nome</th>
-                                <th>Grupo</th>
+                                <th>Name</th>
+                                <th>Group</th>
                                 
                                     {#<th>Flogo</th>#}
-                                <th>Estado</th>
-                                <th>Acções</th>
+                                <th>Status</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -70,10 +70,10 @@
                                     <td>{{ tsubgroup.fsubgroupname }}</td>
                                     <td>{{ tsubgroup.group }}</td>
                                     {#<td>{{ tsubgroup.flogo }}</td>#}
-                                    <td>{% if tsubgroup.fstate %}Activo{% else %}Inactivo{% endif %}</td>
+                                    <td>{% if tsubgroup.fstate %}Enabled{% else %}Disabled{% endif %}</td>
                                     <td>
                                         <a href="{{ path('admin_tsubgroup_edit', { 'fsubgroupid': tsubgroup.fsubgroupid }) }}" >
-                                            <i class="fa fa-pencil"></i> <span class="">Editar Sub Grupo</span>
+                                            <i class="fa fa-pencil"></i> <span class="">Edit Sub Group</span>
                                         </a>
                                     </td>
                                 </tr>
@@ -82,7 +82,7 @@
                     </table>
 
                     <a href="{{ path('admin_tsubgroup_new') }}" class="btn btn-success btn-cons m-b-10" type="submit">
-                        <i class="pg-plus"></i> <span class="bold">Criar novo Sub Grupo</span>
+                        <i class="pg-plus"></i> <span class="bold">Create a new Sub Group</span>
                     </a>
 
                 </div>

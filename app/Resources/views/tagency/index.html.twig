@@ -34,7 +34,7 @@
                     <!-- START BREADCRUMB -->
                     <ul class="breadcrumb">
                         <li><a href="#" class="">Parcela Já</a></li>
-                        <li><a href="#" class="active">Lojas</a></li>
+                        <li><a href="#" class="active">Stores</a></li>
                     </ul>
                     <!-- END BREADCRUMB -->
                 </div>
@@ -48,7 +48,7 @@
             <!-- START PANEL -->
             <div class="panel panel-transparent">
                 <div class="panel-heading">
-                    <div class="panel-title">Lista de Lojas
+                    <div class="panel-title">Store List
                     </div>
                     <div class="export-options-container pull-right"></div>
                     <div class="clearfix"></div>
@@ -59,15 +59,15 @@
                         <thead>
                             <tr>
                                 <th>Id</th>
-                                <th>Nome</th>
-                                <th>NIF</th>
+                                <th>Name</th>
+                                <th>Fiscal Number</th>
                                     {#<th>Flocation</th>#}
-                                <th>Email Loja</th>
-                                <th>Telemóvel</th>
+                                <th>Store Email</th>
+                                <th>Mobile</th>
                                     {#<th>Logotipo</th>#}
-                                <th>Estado</th>
+                                <th>Status</th>
 
-                                <th>Acções</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -83,11 +83,11 @@
                                     <td>{{ tagency.fmobilephone }}</td>
 
                                     {#<td>{{ tagency.flogo }}</td>#}
-                                    <td>{% if tagency.fstate %}Activo{% else %}Inactivo{% endif %}</td>
+                                    <td>{% if tagency.fstate %}Enabled{% else %}Disabled{% endif %}</td>
 
                                     <td>
                                         <a href="{{ path('admin_agency_edit', { 'fagencyid': tagency.fagencyid }) }}" >
-                                            <i class="fa fa-pencil"></i> <span class="">Editar Loja</span>
+                                            <i class="fa fa-pencil"></i> <span class="">Edit Store</span>
                                         </a>
                                     </td>
                                 </tr>
@@ -96,7 +96,7 @@
                     </table>
 
                     <a href="{{ path('admin_agency_new') }}" class="btn btn-success btn-cons m-b-10" type="submit">
-                        <i class="pg-plus"></i> <span class="bold">Criar nova Loja</span>
+                        <i class="pg-plus"></i> <span class="bold">Create a new Store</span>
                     </a>
 
                 </div>

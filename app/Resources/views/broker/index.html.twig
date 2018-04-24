@@ -43,7 +43,7 @@
             <!-- START PANEL -->
             <div class="panel panel-transparent">
                 <div class="panel-heading">
-                    <div class="panel-title">Lista de Brokers
+                    <div class="panel-title">Broker List
                     </div>
                     <div class="export-options-container pull-right"></div>
                     <div class="clearfix"></div>
@@ -56,14 +56,14 @@
                         <thead>
                             <tr> 
                                 <th>Id</th>
-                                <th>Nome</th>
-                                <th>Nome Fiscal</th>
+                                <th>Name</th>
+                                <th>Fiscal Name</th>
                                 <th>NIF</th>
                                {# <th>Endereço</th>#}
                                 <th>Email</th>
-                                <th>Contacto</th>
-                                <th>Comissão</th>
-                                <th>Acções</th>
+                                <th>Contact</th>
+                                <th>Commission</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -81,7 +81,7 @@
                                     <td>
                                         
                                         <a href="{{ path('admin_broker_edit', { 'id': broker.id }) }}" >
-                                            <i class="fa fa-pencil"></i> <span class="">Editar Broker</span>
+                                            <i class="fa fa-pencil"></i> <span class="">Edit Broker</span>
                                         </a>
                                         
                                         
@@ -93,7 +93,7 @@
 
                         
                         <a href="{{ path('admin_broker_new') }}" class="btn btn-success btn-cons m-b-10" type="submit">
-                        <i class="pg-plus"></i> <span class="bold">Criar novo Broker</span>
+                        <i class="pg-plus"></i> <span class="bold">Create new Broker</span>
                     </a>
                         
                         

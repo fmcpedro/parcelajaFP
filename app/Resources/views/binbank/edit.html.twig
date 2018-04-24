@@ -13,7 +13,7 @@
                     <!-- START BREADCRUMB -->
                     <ul class="breadcrumb">
                         <li><a href="#" class="">Parcela Ja</a></li>
-                        <li><a href="#" class="active">Bancos com códigos BIN</a></li>
+                        <li><a href="#" class="active">Bank with BIN Code</a></li>
                     </ul>
                     <!-- END BREADCRUMB -->
                 </div>
@@ -28,14 +28,14 @@
             <!-- START PANEL -->
             <div class="panel panel-transparent">
                 <div class="panel-heading">
-                    <div class="panel-title">Actualizar Banco com código BIN </div>
+                    <div class="panel-title">Update Bank with BIN Code</div>
                 </div>
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-sm-10">
                             {#<h3>form_title</h3>#}
-                            <p>Preencha os campos abaixo para actualizar um banco com código BIN</p>
-
+{#                            <p>Preencha os campos abaixo para actualizar um banco com código BIN</p>#}
+                            <p>Fill in the fields below to update a Bank with a BIN Code</p>
                             {% for flashMessage in app.session.flashbag.get('notice') %}
                                 <div class="alert alert-success">
                                     {{ flashMessage }}
@@ -86,7 +86,7 @@
                                         <i class="pg-form"></i> <span class="bold">Update</span>
                                     </button>
                                     <button class="btn btn-default btn-cons m-b-10" type="reset">
-                                        <i class="pg-close"></i> <span class="bold">Clear</span>
+                                        <i class="pg-close"></i> <span class="bold">Reset</span>
                                     </button>
                                 </div>
                             </div>

@@ -34,10 +34,10 @@
 
     <ul>
         <li>
-            <a href="{{ path('tgroup_index') }}">Back to the list</a>
+            <a href="{{ path('admin_tgroup_index') }}">Back to the list</a>
         </li>
         <li>
-            <a href="{{ path('tgroup_edit', { 'fgroupid': tgroup.fgroupid }) }}">Edit</a>
+            <a href="{{ path('admin_tgroup_edit', { 'fgroupid': tgroup.fgroupid }) }}">Edit</a>
         </li>
         <li>
             {{ form_start(delete_form) }}

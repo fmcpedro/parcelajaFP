@@ -16,11 +16,14 @@ class TsubgroupType extends AbstractType {
     public function buildForm(FormBuilderInterface $builder, array $options) {
         $builder->add('fsubgroupname')->add('imageFile', VichImageType::class, [
             'required' => false,
+            'label'     => 'Picture to upload:',
+            'delete_label' => 'Delete image ?',
+            'download_label' => 'Download Image',
         ])->add('fstate', ChoiceType::class
                 , array(
             'choices' => array(
-                'Activo' => true,
-                'Inactivo' => false,
+                'Enabled' => true,
+                'Disabled' => false,
     )))->add('group');
     }
 

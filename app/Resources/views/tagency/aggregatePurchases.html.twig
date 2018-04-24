@@ -48,7 +48,7 @@
                     <!-- START BREADCRUMB -->
                     <ul class="breadcrumb">
                         <li><a href="#" class="">Parcela Ja</a></li>
-                        <li><a href="#" class="active">Mapa de Compras de Aderentes</a></li>
+                        <li><a href="#" class="active">Members Shopping List</a></li>
                     </ul>
                     <!-- END BREADCRUMB -->
                 </div>
@@ -62,33 +62,33 @@
             <!-- START PANEL -->
             <div class="panel panel-transparent">
                 <div class="panel-heading">
-                    <div class="panel-title">Filtro de compras por Aderente</div>
+                    <div class="panel-title">Shopping List filter by member</div>
                 </div>
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-sm-10">
                             {#<h3>form_title</h3>#}
-                            <p>Preencha os campos abaixo para os Aderentes pretendidas</p>
-
+{#                            <p>Preencha os campos abaixo para os Aderentes pretendidos</p>#}
+                            <p>Fill in the fields below to the pretended members</p>
                             {# <form method="post" action="{{ path('admin_payments_simulator') }}" class="form-horizontal">#}
                             {{ form_start(search_form, {'attr': {'class': 'form-horizontal'}}) }} 
 
                             <div class="form-group">
-                                <label class="col-sm-3 control-label">Aderente</label>
+                                <label class="col-sm-3 control-label">Member</label>
                                 <div class="col-sm-9">
-                                    <p><i class="fa fa-warning"></i> Selecionar apenas um dos campos referente ao aderente.</p>
+                                    <p><i class="fa fa-warning"></i> Select only one of the fields referring to the member.</p>
                                     <div class="row">
-                                        <label class="col-sm-1 control-label">Agencia</label>
+                                        <label class="col-sm-1 control-label">Agency</label>
                                         <div class="col-sm-3">
                                             {{ form_widget(search_form.agencyId, {'attr': {'class': 'form-control', 'placeholder':'agency'}}) }}
                                         </div>
 
-                                        <label class="col-sm-1 control-label">SubGrupo</label>
+                                        <label class="col-sm-1 control-label">SubGroup</label>
                                         <div class="col-sm-3">
                                             {{ form_widget(search_form.subgroupId, {'attr': {'class': 'form-control', 'placeholder':'subGroup'}}) }}
                                         </div>
 
-                                        <label class="col-sm-1 control-label">Grupo</label>
+                                        <label class="col-sm-1 control-label">Group</label>
                                         <div class="col-sm-3">
                                             {{ form_widget(search_form.groupId, {'attr': {'class': 'form-control', 'placeholder':'group'}}) }}
                                         </div>
@@ -104,14 +104,14 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="numFiscal" class="col-sm-3 control-label">Número Fiscal</label>
+                                <label for="numFiscal" class="col-sm-3 control-label">Fiscal Number</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(search_form.numFiscal, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="nomeFiscal" class="col-sm-3 control-label">Nome Fiscal</label>
+                                <label for="nomeFiscal" class="col-sm-3 control-label">Fiscal Name</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(search_form.nomeFiscal, {'attr': {'class': 'form-control'}}) }}
                                 </div>
@@ -127,7 +127,7 @@
                                         <i class="pg-form"></i> <span class="bold">Update</span>
                                     </button>
                                     <button class="btn btn-default btn-cons m-b-10" type="reset">
-                                        <i class="pg-close"></i> <span class="bold">Clear</span>
+                                        <i class="pg-close"></i> <span class="bold">Reset</span>
                                     </button>
                                 </div>
                             </div>
@@ -150,7 +150,7 @@
                 <!-- START PANEL -->
                 <div class="panel panel-transparent">
                     <div class="panel-heading">
-                        <div class="panel-title">Lista de Aderentes </div>
+                        <div class="panel-title">Member List </div>
                         <div class="export-options-container pull-right"></div>
                         <div class="clearfix"></div>
                     </div>
@@ -159,10 +159,10 @@
                         <table class="table table-condensed table-striped responsive" id="example">
                             <thead>
                                 <tr>
-                                    <th>Número</th>
-                                    <th>Nome</th>
+                                    <th>Number</th>
+                                    <th>Name</th>
                                     <th>Status</th>
-                                    <th>Contacto</th>
+                                    <th>Contact</th>
                                     <th>Iban</th>
                                     <th>Total</th>
                                 </tr>

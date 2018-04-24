@@ -3,12 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Controller/BinBankController.php</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Controller/TpurchaseController.php</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Repository/BinCodeRepository.php</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/config/routing/binbank.yml</file>
-            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Entity/PurchaseCancelation.php</file>
-            <file>file:/home/luis/sfprojects/parcelaja/app/Resources/views/tpurchase/edit.html.twig</file>
+            <file>file:/home/fernando/Desktop/projects/parcelaja/app/Resources/views/tagency/edit.html.twig</file>
+            <file>file:/home/fernando/Desktop/projects/parcelaja/app/Resources/views/terminalpayment/edit.html.twig</file>
+            <file>file:/home/fernando/Desktop/projects/parcelaja/app/Resources/views/tagency/index.html.twig</file>
+            <file>file:/home/fernando/Desktop/projects/parcelaja/app/Resources/views/tagency/aggregatePurchases.html.twig</file>
         </group>
     </open-files>
 </project-private>

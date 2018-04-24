@@ -13,7 +13,7 @@
                     <!-- START BREADCRUMB -->
                     <ul class="breadcrumb">
                         <li><a href="#" class="">Parcela Ja</a></li>
-                        <li><a href="#" class="active">Códigos BIN</a></li>
+                        <li><a href="#" class="active">BIN Codes</a></li>
                     </ul>
                     <!-- END BREADCRUMB -->
                 </div>
@@ -28,14 +28,14 @@
             <!-- START PANEL -->
             <div class="panel panel-transparent">
                 <div class="panel-heading">
-                    <div class="panel-title">Actualizar Código BIN </div>
+                    <div class="panel-title">Update BIN Code</div>
                 </div>
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-sm-10">
                             {#<h3>form_title</h3>#}
-                            <p>Preencha os campos abaixo para actualizar um código BIN</p>
-
+                 {#           <p>Preencha os campos abaixo para actualizar um código BIN</p>#}
+                            <p>Fill in the fields below to update a BIN code</p>
                             {% for flashMessage in app.session.flashbag.get('notice') %}
                                 <div class="alert alert-success">
                                     {{ flashMessage }}

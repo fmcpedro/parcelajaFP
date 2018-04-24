@@ -12,7 +12,7 @@
                     <!-- START BREADCRUMB -->
                     <ul class="breadcrumb">
                         <li><a href="#" class="">Parcela Já</a></li>
-                        <li><a href="#" class="active">Lojas</a></li>
+                        <li><a href="#" class="active">Stores</a></li>
                     </ul>
                     <!-- END BREADCRUMB -->
                 </div>
@@ -27,14 +27,14 @@
             <!-- START PANEL -->
             <div class="panel panel-transparent">
                 <div class="panel-heading">
-                    <div class="panel-title">Actualizar Loja </div>
+                    <div class="panel-title">Update Store </div>
                 </div>
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-sm-10">
                             {#<h3>form_title</h3>#}
-                            <p>Preencha os campos abaixo para editar a loja</p>
-
+                           {# <p>Preencha os campos abaixo para editar a loja</p>#}
+                            <p>Fill in the fields below to edit the store</p>
                             {% for flashMessage in app.session.flashbag.get('notice') %}
                                 <div class="alert alert-success">
                                     {{ flashMessage }}
@@ -43,35 +43,35 @@
 
                             {{ form_start(edit_form, {'attr': {'class': 'form-horizontal'}}) }} 
                             <div class="form-group">
-                                <label for="fagencyname" class="col-sm-3 control-label">Nome</label>
+                                <label for="fagencyname" class="col-sm-3 control-label">Name</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(edit_form.fagencyname, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="ffiscalname" class="col-sm-3 control-label">Nome Fiscal</label>
+                                <label for="ffiscalname" class="col-sm-3 control-label">Fiscal Name</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(edit_form.ffiscalname, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="ftaxidnumber" class="col-sm-3 control-label">NIF</label>
+                                <label for="ftaxidnumber" class="col-sm-3 control-label">Fiscal Number</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(edit_form.ftaxidnumber, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="faddress" class="col-sm-3 control-label">Endereço</label>
+                                <label for="faddress" class="col-sm-3 control-label">Address</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(edit_form.faddress, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div>
                                 
                                 <div class="form-group">
-                                <label for="taxAddress" class="col-sm-3 control-label">Endereço Fiscal</label>
+                                <label for="taxAddress" class="col-sm-3 control-label">Fiscal Address</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(edit_form.taxAddress, {'attr': {'class': 'form-control'}}) }}
                                 </div>
@@ -99,21 +99,21 @@
                             </div> #}
 
                             <div class="form-group">
-                                <label for="femail1" class="col-sm-3 control-label">Email Loja</label>
+                                <label for="femail1" class="col-sm-3 control-label">Store Email</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(edit_form.femail1, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div> 
 
                             <div class="form-group">
-                                <label for="femail2" class="col-sm-3 control-label">Email Facturação</label>
+                                <label for="femail2" class="col-sm-3 control-label">Billing Email</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(edit_form.femail2, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div> 
                                 
                             <div class="form-group">
-                                <label for="fcontactperson" class="col-sm-3 control-label">Pessoa de Contacto</label>
+                                <label for="fcontactperson" class="col-sm-3 control-label">Contact Person</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(edit_form.fcontactperson, {'attr': {'class': 'form-control'}}) }}
                                 </div>
@@ -124,7 +124,7 @@
                                 
                                 
                                 <div class="form-group">
-                                <label for="ftelephone" class="col-sm-3 control-label">Telefone</label>
+                                <label for="ftelephone" class="col-sm-3 control-label">Phone</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(edit_form.ftelephone, {'attr': {'class': 'form-control'}}) }}
                                 </div>
@@ -133,7 +133,7 @@
                                 
                                 
                                 <div class="form-group">
-                                <label for="fmobilephone" class="col-sm-3 control-label">Telemóvel</label>
+                                <label for="fmobilephone" class="col-sm-3 control-label">Mobile</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(edit_form.fmobilephone, {'attr': {'class': 'form-control'}}) }}
                                 </div>
@@ -151,7 +151,7 @@
                                 
                                 
                                 <div class="form-group">
-                                <label for="fbank" class="col-sm-3 control-label">Banco</label>
+                                <label for="fbank" class="col-sm-3 control-label">Bank</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(edit_form.fbank, {'attr': {'class': 'form-control'}}) }}
                                 </div>
@@ -183,7 +183,7 @@
                                 
                                 
                                 <div class="form-group">
-                                <label for="fpaymethodid" class="col-sm-3 control-label">Metodo de Pagamento</label>
+                                <label for="fpaymethodid" class="col-sm-3 control-label">Payment Method</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(edit_form.fpaymethodid, {'attr': {'class': 'form-control'}}) }}
                                 </div>
@@ -191,7 +191,7 @@
                                 
                                 
                                 <div class="form-group">
-                                <label for="imageFile" class="col-sm-3 control-label">Logótipo</label>
+                                <label for="imageFile" class="col-sm-3 control-label">Logo</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(edit_form.imageFile, {'attr': {'class': 'form-control'}}) }}
                                 </div>
@@ -199,7 +199,7 @@
                                 
                                 
                                 <div class="form-group">
-                                <label for="fstate" class="col-sm-3 control-label">Estado</label>
+                                <label for="fstate" class="col-sm-3 control-label">Status</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(edit_form.fstate, {'attr': {'class': 'form-control'}}) }}
                                 </div>
@@ -207,7 +207,7 @@
                                 
                                 
                                  <div class="form-group">
-                                <label for="subgroup" class="col-sm-3 control-label">Sub Grupo</label>
+                                <label for="subgroup" class="col-sm-3 control-label">Sub Group</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(edit_form.subgroup, {'attr': {'class': 'form-control'}}) }}
                                 </div>
@@ -234,10 +234,10 @@
                                 </div>
                                 <div class="col-sm-9">
                                     <button class="btn btn-complete btn-cons m-b-10" type="submit">
-                                        <i class="pg-form"></i> <span class="bold">Actualizar</span>
+                                        <i class="pg-form"></i> <span class="bold">Update</span>
                                     </button>
                                     <button class="btn btn-default btn-cons m-b-10" type="reset">
-                                        <i class="pg-close"></i> <span class="bold">Limpar</span>
+                                        <i class="pg-close"></i> <span class="bold">Reset</span>
                                     </button>
                                 </div>
                             </div>
@@ -247,10 +247,10 @@
                             
                             {{ form_start(delete_form) }}
                             <a class="btn btn-primary btn-cons m-b-10" href="{{ path('admin_agency_index') }}">
-                                <i class="fa fa-backward"></i> <span class="bold">Voltar a lista de Lojas</span>
+                                <i class="fa fa-backward"></i> <span class="bold">Back to the Store List</span>
                             </a>
                             <button class="btn btn-danger btn-cons m-b-10" type="submit">
-                                <i class="fa fa-warning"></i> <span class="bold">Eliminar</span>
+                                <i class="fa fa-warning"></i> <span class="bold">Delete</span>
                             </button>
 
 

@@ -31,7 +31,7 @@
             
             <li class="{% if route in ['admin_payments_simulator','admin_payments_index', 'admin_payments_next_payments','admin_payments_payment_forecasts' ] %}active{% endif %}">
                 <a href="javascript:;">
-                    <span class="title">Transações</span>
+                    <span class="title">Transactions</span>
                     <span class=" arrow"></span>
                 </a>
                 <span class="icon-thumbnail"><i class="pg-phone"></i></span>
@@ -39,28 +39,28 @@
 
                     {% if is_granted('ROLE_BNI') %} 
                         <li class="{% if route in ['admin_payments_simulator'] %}active{% endif %}">
-                            <a href="{{ path('admin_payments_simulator') }}">Simulador</a>
+                            <a href="{{ path('admin_payments_simulator') }}">Simulator</a>
                             <span class="icon-thumbnail">SI</span>
                         </li>
                     {% endif %}                    
 
                     {% if is_granted('ROLE_BNI') %} 
                         <li class="{% if route in ['admin_payments_index'] %}active{% endif %}">
-                            <a href="{{ path('admin_payments_index') }}">Capturadas </a>
+                            <a href="{{ path('admin_payments_index') }}">Captured</a>
                             <span class="icon-thumbnail">TP</span>
                         </li>
                     {% endif %}
 
                     {% if is_granted('ROLE_BNI') %} 
                         <li class="{% if route in ['admin_payments_next_payments'] %}active{% endif %}">
-                            <a href="{{ path('admin_payments_next_payments') }}">Por capturar </a>
+                            <a href="{{ path('admin_payments_next_payments') }}">Uncaptured</a>
                             <span class="icon-thumbnail">TP</span>
                         </li>
                     {% endif %}
                     
                     {% if is_granted('ROLE_ADMIN') %} 
                         <li class="{% if route in ['admin_payments_payment_forecasts'] %}active{% endif %}">
-                            <a href="{{ path('admin_payments_payment_forecasts') }}">Agregadas </a>
+                            <a href="{{ path('admin_payments_payment_forecasts') }}">Aggregated</a>
                             <span class="icon-thumbnail">TP</span>
                         </li>
                     {% endif %}
@@ -76,18 +76,24 @@
 
                 <li class="{% if route in ['admin_tsubgroup_index','admin_agency_index','admin_broker_index' ] %}active{% endif %}">
                     <a href="javascript:;">
-                        <span class="title">Aderentes</span>
+                        <span class="title">Members</span>
                         <span class=" arrow"></span>
                     </a>
                     <span class="icon-thumbnail"><i class="pg-phone"></i></span>
                     <ul class="sub-menu">
+                        
                         <li class="{% if route in ['admin_tsubgroup_index' ] %}active{% endif %}">
-                            <a href="{{ path('admin_tsubgroup_index') }}">Subgrupos</a>
+                            <a href="{{ path('admin_tgroup_index') }}">Groups</a>
+                            <span class="icon-thumbnail">TI</span>
+                        </li>
+                        
+                        <li class="{% if route in ['admin_tsubgroup_index' ] %}active{% endif %}">
+                            <a href="{{ path('admin_tsubgroup_index') }}">Sub Groups</a>
                             <span class="icon-thumbnail">TI</span>
                         </li>
                         
                         <li class="{% if route in ['admin_agency_index' ] %}active{% endif %}">
-                            <a href="{{ path('admin_agency_index') }}">Lojas</a>
+                            <a href="{{ path('admin_agency_index') }}">Agencies</a>
                             <span class="icon-thumbnail">TI</span>
                         </li>
                         <li class="{% if route in ['admin_broker_index' ] %}active{% endif %}">
@@ -108,24 +114,24 @@
 
                 <li class="{% if route in ['admin_broker_purchases','admin_agency_aggregare_purchases' ] %}active{% endif %}">
                     <a href="javascript:;">
-                        <span class="title">Compras</span>
+                        <span class="title">Purchases</span>
                         <span class=" arrow"></span>
                     </a>
                     <span class="icon-thumbnail"><i class="pg-phone"></i></span>
                     <ul class="sub-menu">
                         
                         <li class="{% if route in ['admin_tpurchase_index' ] %}active{% endif %}">
-                            <a href="{{ path('admin_tpurchase_index') }}">Compras</a>
+                            <a href="{{ path('admin_tpurchase_index') }}">Purchases</a>
                             <span class="icon-thumbnail">TP</span>
                         </li>
                         
                         <li class="{% if route in ['admin_broker_purchases' ] %}active{% endif %}">
-                            <a href="{{ path('admin_broker_purchases') }}">Por Brokers</a>
+                            <a href="{{ path('admin_broker_purchases') }}">Purchases by Brokers</a>
                             <span class="icon-thumbnail">TP</span>
                         </li>
                         
                         <li class="{% if route in ['admin_agency_aggregare_purchases' ] %}active{% endif %}">
-                            <a href="{{ path('admin_agency_aggregare_purchases') }}">Agregadas p/Loja</a>
+                            <a href="{{ path('admin_agency_aggregare_purchases') }}">Purchases by Store</a>
                             <span class="icon-thumbnail">TP</span>
                         </li>
 
@@ -141,17 +147,17 @@
 
                 <li class="{% if route in ['admin_tpos_index','admin_terminal_payment_index' ] %}active{% endif %}">
                     <a href="javascript:;">
-                        <span class="title">Terminais</span>
+                        <span class="title">Terminals</span>
                         <span class=" arrow"></span>
                     </a>
                     <span class="icon-thumbnail"><i class="pg-phone"></i></span>
                     <ul class="sub-menu">
                         <li class="{% if route in ['admin_tpos_index'] %}active{% endif %}">
-                            <a href="{{ path('admin_tpos_index') }}">Instalados</a>
+                            <a href="{{ path('admin_tpos_index') }}">Installed</a>
                             <span class="icon-thumbnail">TI</span>
                         </li>
                         <li class="{% if route in ['admin_terminal_payment_index' ] %}active{% endif %}">
-                            <a href="{{ path('admin_terminal_payment_index') }}">Pagamentos </a>
+                            <a href="{{ path('admin_terminal_payment_index') }}">Payments </a>
                             <span class="icon-thumbnail">TP</span>
                         </li>
 
@@ -164,13 +170,13 @@
 
                 <li class="{% if route in ['admin_binbank_index', 'admin_bincode_index'] %}active{% endif %}">
                     <a href="javascript:;">
-                        <span class="title">Bins</span>
+                        <span class="title">Bin Codes</span>
                         <span class=" arrow"></span>
                     </a>
                     <span class="icon-thumbnail"><i class="pg-phone"></i></span>
                     <ul class="sub-menu">
                         <li class="{% if route in ['admin_binbank_index'] %}active{% endif %}">
-                            <a href="{{ path('admin_binbank_index') }}">Bancos</a>
+                            <a href="{{ path('admin_binbank_index') }}">Banks</a>
                             <span class="icon-thumbnail">TI</span>
                         </li>
                         <li class="{% if route in ['admin_bincode_index'] %}active{% endif %}">
@@ -199,7 +205,7 @@
                             <span class="icon-thumbnail">TI</span>
                         </li>
                         <li class="{% if route in ['admin_media_index'] %}active{% endif %}">
-                            <a href="{{ path('admin_media_index') }}">Noticias</a>
+                            <a href="{{ path('admin_media_index') }}">News</a>
                             <span class="icon-thumbnail">TP</span>
                         </li>
 

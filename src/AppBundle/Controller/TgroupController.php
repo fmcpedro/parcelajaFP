@@ -10,20 +10,19 @@ use Symfony\Component\HttpFoundation\Request;
  * Tgroup controller.
  *
  */
-class TgroupController extends Controller
-{
+class TgroupController extends Controller {
+
     /**
      * Lists all tgroup entities.
      *
      */
-    public function indexAction()
-    {
+    public function indexAction() {
         $em = $this->getDoctrine()->getManager();
 
         $tgroups = $em->getRepository('AppBundle:Tgroup')->findAll();
 
         return $this->render('tgroup/index.html.twig', array(
-            'tgroups' => $tgroups,
+                    'tgroups' => $tgroups,
         ));
     }
 
@@ -31,8 +30,7 @@ class TgroupController extends Controller
      * Creates a new tgroup entity.
      *
      */
-    public function newAction(Request $request)
-    {
+    public function newAction(Request $request) {
         $tgroup = new Tgroup();
         $form = $this->createForm('AppBundle\Form\TgroupType', $tgroup);
         $form->handleRequest($request);
@@ -42,35 +40,38 @@ class TgroupController extends Controller
             $em->persist($tgroup);
             $em->flush();
 
-            return $this->redirectToRoute('tgroup_show', array('fgroupid' => $tgroup->getFgroupid()));
+            $this->get('session')->getFlashBag()->add(
+                    'notice', 'Grupo criado com sucesso!'
+            );
+
+            return $this->redirectToRoute('admin_tgroup_edit', array('fgroupid' => $tgroup->getFgroupid()));
         }
 
         return $this->render('tgroup/new.html.twig', array(
-            'tgroup' => $tgroup,
-            'form' => $form->createView(),
+                    'tgroup' => $tgroup,
+                    'form' => $form->createView(),
         ));
     }
 
-    /**
-     * Finds and displays a tgroup entity.
-     *
-     */
-    public function showAction(Tgroup $tgroup)
-    {
-        $deleteForm = $this->createDeleteForm($tgroup);
-
-        return $this->render('tgroup/show.html.twig', array(
-            'tgroup' => $tgroup,
-            'delete_form' => $deleteForm->createView(),
-        ));
-    }
+//    /**
+//     * Finds and displays a tgroup entity.
+//     *
+//     */
+//    public function showAction(Tgroup $tgroup)
+//    {
+//        $deleteForm = $this->createDeleteForm($tgroup);
+//
+//        return $this->render('tgroup/show.html.twig', array(
+//            'tgroup' => $tgroup,
+//            'delete_form' => $deleteForm->createView(),
+//        ));
+//    }
 
     /**
      * Displays a form to edit an existing tgroup entity.
      *
      */
-    public function editAction(Request $request, Tgroup $tgroup)
-    {
+    public function editAction(Request $request, Tgroup $tgroup) {
         $deleteForm = $this->createDeleteForm($tgroup);
         $editForm = $this->createForm('AppBundle\Form\TgroupType', $tgroup);
         $editForm->handleRequest($request);
@@ -78,13 +79,18 @@ class TgroupController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('tgroup_edit', array('fgroupid' => $tgroup->getFgroupid()));
+            $this->get('session')->getFlashBag()->add(
+                    'notice', 'Grupo actualizado com sucesso!'
+            );
+
+
+            return $this->redirectToRoute('admin_tgroup_edit', array('fgroupid' => $tgroup->getFgroupid()));
         }
 
         return $this->render('tgroup/edit.html.twig', array(
-            'tgroup' => $tgroup,
-            'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+                    'tgroup' => $tgroup,
+                    'edit_form' => $editForm->createView(),
+                    'delete_form' => $deleteForm->createView(),
         ));
     }
 
@@ -92,8 +98,7 @@ class TgroupController extends Controller
      * Deletes a tgroup entity.
      *
      */
-    public function deleteAction(Request $request, Tgroup $tgroup)
-    {
+    public function deleteAction(Request $request, Tgroup $tgroup) {
         $form = $this->createDeleteForm($tgroup);
         $form->handleRequest($request);
 
@@ -103,7 +108,7 @@ class TgroupController extends Controller
             $em->flush();
         }
 
-        return $this->redirectToRoute('tgroup_index');
+        return $this->redirectToRoute('admin_tgroup_index');
     }
 
     /**
@@ -113,12 +118,12 @@ class TgroupController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(Tgroup $tgroup)
-    {
+    private function createDeleteForm(Tgroup $tgroup) {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('tgroup_delete', array('fgroupid' => $tgroup->getFgroupid())))
-            ->setMethod('DELETE')
-            ->getForm()
+                        ->setAction($this->generateUrl('admin_tgroup_delete', array('fgroupid' => $tgroup->getFgroupid())))
+                        ->setMethod('DELETE')
+                        ->getForm()
         ;
     }
+
 }

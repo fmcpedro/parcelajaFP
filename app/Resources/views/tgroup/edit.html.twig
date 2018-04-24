@@ -1,6 +1,8 @@
+
 {% extends 'base.html.twig' %}
 
 {% block body %}
+
 
     <!-- START PAGE CONTENT -->
     <div class="content">
@@ -11,7 +13,7 @@
                     <!-- START BREADCRUMB -->
                     <ul class="breadcrumb">
                         <li><a href="#" class="">Parcela Já</a></li>
-                        <li><a href="#" class="active">Sub Grupos</a></li>
+                        <li><a href="#" class="active">Groups</a></li>
                     </ul>
                     <!-- END BREADCRUMB -->
                 </div>
@@ -26,22 +28,96 @@
             <!-- START PANEL -->
             <div class="panel panel-transparent">
                 <div class="panel-heading">
-                    <div class="panel-title">Actualizar Sub Grupo </div>
+                    <div class="panel-title">Update Group </div>
                 </div>
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-sm-10">
                             {#<h3>form_title</h3>#}
-                            <p>Preencha os campos abaixo para actualizar os dados do Grupo</p>
+                         {#   <p>Preencha os campos abaixo para actualizar os dados do Grupo</p>#}
+                            <p>Fill in the fields below to update the Group data</p>
 
-    <ul>
-        <li>
-            <a href="{{ path('tgroup_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+                            {% for flashMessage in app.session.flashbag.get('notice') %}
+                                <div class="alert alert-success">
+                                    {{ flashMessage }}
+                                </div>
+                            {% endfor %}
+
+                            {{ form_start(edit_form, {'attr': {'class': 'form-horizontal'}}) }} 
+                            <div class="form-group">
+                                <label for="fgroupname" class="col-sm-3 control-label">Name</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(edit_form.fgroupname, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="fgroupslugname" class="col-sm-3 control-label">Slugname</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(edit_form.fgroupslugname, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div>     
+
+                            <div class="form-group">
+                                <label for="imageFile" class="col-sm-3 control-label">Logo</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(edit_form.imageFile, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div> 
+
+                            <div class="form-group">
+                                <label for="fstate" class="col-sm-3 control-label">Status</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(edit_form.fstate, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div> 
+
+
+                            <br>
+
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    {#<p>I hereby certify that the information above is true and accurate. </p>#}
+                                </div>
+                                <div class="col-sm-9">
+                                    <button class="btn btn-complete btn-cons m-b-10" type="submit">
+                                        <i class="pg-form"></i> <span class="bold">Update</span>
+                                    </button>
+                                    <button class="btn btn-default btn-cons m-b-10" type="reset">
+                                        <i class="pg-close"></i> <span class="bold">Reset</span>
+                                    </button>
+
+
+
+                                </div>
+                            </div>
+                            {{ form_end(edit_form) }}
+
+
+
+
+
+                            {{ form_start(delete_form) }}
+                            <a class="btn btn-primary btn-cons m-b-10" href="{{ path('admin_tgroup_index') }}">
+                                <i class="fa fa-backward"></i> <span class="bold">Back to the Group List</span>
+                            </a>
+                            <button class="btn btn-danger btn-cons m-b-10" type="submit">
+                                <i class="fa fa-warning"></i> <span class="bold">Delete</span>
+                            </button>
+
+
+                            {{ form_end(delete_form) }}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END PANEL -->
+        </div>
+        <!-- END CONTAINER FLUID -->
+
+    </div>
+    <!-- END PAGE CONTENT -->
+
 {% endblock %}

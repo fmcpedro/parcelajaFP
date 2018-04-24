@@ -12,8 +12,10 @@ use Symfony\Component\HttpFoundation\Request;
 class DefaultController extends Controller {
 
     public function indexAction(Request $request) {
-
-        return $this->render('AppBundle:default:v2_index.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $grupos = $em->getRepository('AppBundle:Tgroup')->findBy(['fstate' => 1]);
+        
+        return $this->render('AppBundle:default:v2_index.html.twig', array('grupos'=> $grupos));
     }
 
     public function paraClientesAction(Request $request) {

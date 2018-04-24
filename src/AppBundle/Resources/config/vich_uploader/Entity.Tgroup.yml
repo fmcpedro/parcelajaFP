@@ -1,0 +1,4 @@
+AppBundle\Entity\Tgroup:
+    imageFile:
+        mapping:           grupo_image
+        filename_property: flogo

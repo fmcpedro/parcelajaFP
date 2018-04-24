@@ -1,47 +1,117 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
-    <h1>Tgroups list</h1>
+{% block javascripts %}
+    {{ parent() }}
 
-    <table>
-        <thead>
-            <tr>
-                <th>Fgroupname</th>
-                <th>Fgroupslugname</th>
-                <th>Flogo</th>
-                <th>Fstate</th>
-                <th>Updatedat</th>
-                <th>Fgroupid</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for tgroup in tgroups %}
-            <tr>
-                <td><a href="{{ path('tgroup_show', { 'fgroupid': tgroup.fgroupid }) }}">{{ tgroup.fgroupname }}</a></td>
-                <td>{{ tgroup.fgroupslugname }}</td>
-                <td>{{ tgroup.flogo }}</td>
-                <td>{% if tgroup.fstate %}Yes{% else %}No{% endif %}</td>
-                <td>{% if tgroup.updatedAt %}{{ tgroup.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{{ tgroup.fgroupid }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('tgroup_show', { 'fgroupid': tgroup.fgroupid }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('tgroup_edit', { 'fgroupid': tgroup.fgroupid }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('tgroup_new') }}">Create a new tgroup</a>
-        </li>
-    </ul>
+    <!-- Apply the plugin -->
+    <script type="text/javascript" >
+        $(document).ready(function () {
+            $('#tableWithExportOptions').DataTable({
+                iDisplayLength: 20,
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ]
+            });
+        });
+    </script>
 {% endblock %}
+
+
+{% block body %}
+
+    <!-- START PAGE CONTENT -->
+    <div class="content">
+        <!-- START JUMBOTRON -->
+        <div class="jumbotron" data-pages="parallax">
+            <div class="container-fluid container-fixed-lg sm-p-l-20 sm-p-r-20">
+                <div class="inner">
+                    <!-- START BREADCRUMB -->
+                    <ul class="breadcrumb">
+                        <li><a href="#" class="">Parcela Já</a></li>
+                        <li><a href="#" class="active">Groups</a></li>
+                    </ul>
+                    <!-- END BREADCRUMB -->
+                </div>
+            </div>
+        </div>
+        <!-- END JUMBOTRON -->
+
+
+        <!-- START CONTAINER FLUID -->
+        <div class="container-fluid container-fixed-lg bg-white">
+            <!-- START PANEL -->
+            <div class="panel panel-transparent">
+                <div class="panel-heading">
+                    <div class="panel-title">Group List
+                    </div>
+                    <div class="export-options-container pull-right"></div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="panel-body">
+
+                    <table class="display" id="tableWithExportOptions">
+
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for tgroup in tgroups %}
+                                <tr>
+                                    <td>{{ tgroup.fgroupid }}</td>
+                                    <td>{#<a href="{{ path('admin_tgroup_show', { 'fgroupid': tgroup.fgroupid }) }}">#}{{ tgroup.fgroupname }}</a></td>
+                                    <td>{% if tgroup.fstate %}Enabled{% else %}Disabled{% endif %}</td>
+                                    <td>
+                                        <a href="{{ path('admin_tgroup_edit', { 'fgroupid': tgroup.fgroupid }) }}" >
+                                            <i class="fa fa-pencil"></i> <span class="">Edit Group</span>
+                                        </a>
+                                    </td>
+
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+
+                    <a href="{{ path('admin_tgroup_new') }}" class="btn btn-success btn-cons m-b-10" type="submit">
+                        <i class="pg-plus"></i> <span class="bold">Create a new Group</span>
+                    </a>
+
+                </div>
+            </div>
+            <!-- END PANEL -->
+        </div>
+        <!-- END CONTAINER FLUID -->
+
+
+    </div>
+    <!-- END PAGE CONTENT -->
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

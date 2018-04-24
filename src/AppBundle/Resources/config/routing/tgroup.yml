@@ -1,24 +1,24 @@
-tgroup_index:
+admin_tgroup_index:
     path:     /
     defaults: { _controller: "AppBundle:Tgroup:index" }
     methods:  GET
 
-tgroup_show:
+admin_tgroup_show:
     path:     /{fgroupid}/show
     defaults: { _controller: "AppBundle:Tgroup:show" }
     methods:  GET
 
-tgroup_new:
+admin_tgroup_new:
     path:     /new
     defaults: { _controller: "AppBundle:Tgroup:new" }
     methods:  [GET, POST]
 
-tgroup_edit:
+admin_tgroup_edit:
     path:     /{fgroupid}/edit
     defaults: { _controller: "AppBundle:Tgroup:edit" }
     methods:  [GET, POST]
-
-tgroup_delete:
+   
+admin_tgroup_delete:
     path:     /{fgroupid}/delete
     defaults: { _controller: "AppBundle:Tgroup:delete" }
     methods:  DELETE

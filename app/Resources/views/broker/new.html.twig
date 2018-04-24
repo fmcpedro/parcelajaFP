@@ -27,14 +27,14 @@
             <!-- START PANEL -->
             <div class="panel panel-transparent">
                 <div class="panel-heading">
-                    <div class="panel-title">Criar Broker </div>
+                    <div class="panel-title">Create Broker </div>
                 </div>
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-sm-10">
                             {#<h3>form_title</h3>#}
-                            <p>Preencha os campos abaixo para criar um novo broker</p>
-
+{#                            <p>Preencha os campos abaixo para criar um novo broker</p>#}
+                            <p>Fill in the fields below to create a new brocker</p>
                             {% for flashMessage in app.session.flashbag.get('notice') %}
                                 <div class="alert alert-success">
                                     {{ flashMessage }}
@@ -43,28 +43,28 @@
 
                             {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }} 
                             <div class="form-group">
-                                <label for="name" class="col-sm-3 control-label">Nome</label>
+                                <label for="name" class="col-sm-3 control-label">Name</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="taxName" class="col-sm-3 control-label">Nome Fiscal</label>
+                                <label for="taxName" class="col-sm-3 control-label">Fiscal Name</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(form.taxName, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="nif" class="col-sm-3 control-label">NIF</label>
+                                <label for="nif" class="col-sm-3 control-label">Fiscal Number</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(form.nif, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="address" class="col-sm-3 control-label">Endereço</label>
+                                <label for="address" class="col-sm-3 control-label">Address</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(form.address, {'attr': {'class': 'form-control'}}) }}
                                 </div>
@@ -78,14 +78,14 @@
                             </div>    
 
                             <div class="form-group">
-                                <label for="contact" class="col-sm-3 control-label">Contacto</label>
+                                <label for="contact" class="col-sm-3 control-label">Contact</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(form.contact, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div> 
 
                             <div class="form-group">
-                                <label for="bank" class="col-sm-3 control-label">Banco</label>
+                                <label for="bank" class="col-sm-3 control-label">Bank</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(form.bank, {'attr': {'class': 'form-control'}}) }}
                                 </div>
@@ -99,7 +99,7 @@
                             </div> 
 
                             <div class="form-group">
-                                <label for="commission" class="col-sm-3 control-label">Commissão</label>
+                                <label for="commission" class="col-sm-3 control-label">Commission</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(form.commission, {'attr': {'class': 'form-control'}}) }}
                                 </div>
@@ -120,17 +120,17 @@
                                 </div>
                                 <div class="col-sm-9">
                                     <button class="btn btn-complete btn-cons m-b-10" type="submit">
-                                        <i class="pg-form"></i> <span class="bold">Criar</span>
+                                        <i class="pg-form"></i> <span class="bold">Create</span>
                                     </button>
                                     <button class="btn btn-default btn-cons m-b-10" type="reset">
-                                        <i class="pg-close"></i> <span class="bold">Limpar</span>
+                                        <i class="pg-close"></i> <span class="bold">Reset</span>
                                     </button>
                                 </div>
                             </div>
                             {{ form_end(form) }}
 
                             <a class="btn btn-primary btn-cons m-b-10" href="{{ path('admin_broker_index') }}">
-                                <i class="fa fa-backward"></i> <span class="bold">Voltar a lista de Brokers</span>
+                                <i class="fa fa-backward"></i> <span class="bold">Back to the brokers list</span>
                             </a>
 
                         </div>

@@ -16,7 +16,7 @@
                     <!-- START BREADCRUMB -->
                     <ul class="breadcrumb">
                         <li><a href="#" class="">Parcela Já</a></li>
-                        <li><a href="#" class="active">Sub Grupos</a></li>
+                        <li><a href="#" class="active">Sub Groups</a></li>
                     </ul>
                     <!-- END BREADCRUMB -->
                 </div>
@@ -31,14 +31,14 @@
             <!-- START PANEL -->
             <div class="panel panel-transparent">
                 <div class="panel-heading">
-                    <div class="panel-title">Criar Sub Grupo </div>
+                    <div class="panel-title">Create new Sub Group </div>
                 </div>
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-sm-10">
                             {#<h3>form_title</h3>#}
-                            <p>Preencha os campos abaixo para criar um novo Sub Grupo</p>
-
+{#                            <p>Preencha os campos abaixo para criar um novo Sub Grupo</p>#}
+                            <p>Fill in the fields below to create a new Sub Group</p>
                             {% for flashMessage in app.session.flashbag.get('notice') %}
                                 <div class="alert alert-success">
                                     {{ flashMessage }}
@@ -47,21 +47,21 @@
 
                             {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }} 
                             <div class="form-group">
-                                <label for="fsubgroupname" class="col-sm-3 control-label">Nome</label>
+                                <label for="fsubgroupname" class="col-sm-3 control-label">Name</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(form.fsubgroupname, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="imageFile" class="col-sm-3 control-label">Logotipo</label>
+                                <label for="imageFile" class="col-sm-3 control-label">Logo</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(form.imageFile, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div> 
 
                             <div class="form-group">
-                                <label for="fstate" class="col-sm-3 control-label">Estado</label>
+                                <label for="fstate" class="col-sm-3 control-label">Status</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(form.fstate, {'attr': {'class': 'form-control'}}) }}
                                 </div>
@@ -69,7 +69,7 @@
 
 
                             <div class="form-group">
-                                <label for="group" class="col-sm-3 control-label">Grupo</label>
+                                <label for="group" class="col-sm-3 control-label">Group</label>
                                 <div class="col-sm-9">
                                     {{ form_widget(form.group, {'attr': {'class': 'form-control'}}) }}
                                 </div>
@@ -84,10 +84,10 @@
                                 </div>
                                 <div class="col-sm-9">
                                     <button class="btn btn-complete btn-cons m-b-10" type="submit">
-                                        <i class="pg-form"></i> <span class="bold">Actualizar</span>
+                                        <i class="pg-form"></i> <span class="bold">Update</span>
                                     </button>
                                     <button class="btn btn-default btn-cons m-b-10" type="reset">
-                                        <i class="pg-close"></i> <span class="bold">Limpar</span>
+                                        <i class="pg-close"></i> <span class="bold">Reset</span>
                                     </button>
 
 
@@ -99,7 +99,7 @@
 
 
 <a class="btn btn-primary btn-cons m-b-10" href="{{ path('admin_tsubgroup_index') }}">
-                                <i class="fa fa-backward"></i> <span class="bold">Voltar a lista de Sub Grupos</span>
+                                <i class="fa fa-backward"></i> <span class="bold">Back to the Sub Group List</span>
                             </a>
 
                            
