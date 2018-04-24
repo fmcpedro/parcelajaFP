@@ -155,9 +155,9 @@
 
                             {% if isActive == true %}
                                 {% set class = 'btn-danger' %}
-                                 {% set classCanceled = '' %}
-                                    {% set classReturned = '' %}
-                                    {% set classFailed = '' %}
+                                {% set classCanceled = '' %}
+                                {% set classReturned = '' %}
+                                {% set classFailed = '' %}
                             {% else %}
                                 {% set class = '' %}
                                 {% if isCanceled == true %}
@@ -177,7 +177,7 @@
 
 
                             {{ form_start(cancel_form) }}
-                            <button class="btn btn- {{class}} {{classCanceled}} btn-cons m-b-10" type="submit">
+                            <button class="btn {{class}} {{classCanceled}} btn-cons m-b-10" type="submit">
                                 <i class="fa fa-warning"></i> <span class="bold">Cancel purchase</span>
                             </button>
                             {{ form_end(cancel_form) }}
@@ -188,16 +188,11 @@
                             </button>
                             {{ form_end(return_form) }}
 
-
                             {{ form_start(fail_form) }}
                             <button class="btn {{class}} {{classFailed}} btn-cons m-b-10" type="submit">
                                 <i class="fa fa-warning"></i> <span class="bold">Fail purchase&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                             </button>
                             {{ form_end(fail_form) }}
-
-
-
-
 
                         </div>
                     </div>
