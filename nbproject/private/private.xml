@@ -3,9 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/fernando/Desktop/projects/parcelaja/src/AppBundle/Controller/TpurchaseController.php</file>
-            <file>file:/home/fernando/Desktop/projects/parcelaja/src/AppBundle/Form/TpurchaseSearchType.php</file>
-            <file>file:/home/fernando/Desktop/projects/parcelaja/src/AppBundle/Repository/TpurchaseRepository.php</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/config/doctrine/BinBank.orm.xml</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/config/doctrine/BinCode.orm.xml</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/config/doctrine/Broker.orm.xml</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/config/doctrine/IngenicoPayment.orm.xml</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/config/doctrine/PaymentForecasts.orm.xml</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/config/doctrine/PurchaseCancelation.orm.xml</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/config/doctrine/PurchaseFail.orm.xml</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/config/doctrine/PurchaseReturn.orm.xml</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/config/doctrine/Tagency.orm.xml</file>
+            <file>file:/home/luis/sfprojects/parcelaja/app/Resources/AppBundle/translations/messages.pt.xlf</file>
+            <file>file:/home/luis/sfprojects/parcelaja/app/Resources/AppBundle/translations/messages.en.xlf</file>
+            <file>file:/home/luis/sfprojects/parcelaja/src/AppBundle/Resources/views/default/v2_para_clientes.html.twig</file>
         </group>
     </open-files>
 </project-private>

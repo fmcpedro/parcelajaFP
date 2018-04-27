@@ -19,7 +19,9 @@
 /web/uploads/medias/*
 /web/uploads/subgrupos/*
 /web/uploads/aderentes/*
+/web/uploads/grupos/*
 /web/media/*
 /web/paysysv3
 /web/paysysv3test
 /web/paysysv3testgp
+/nbproject/private/private.xml
