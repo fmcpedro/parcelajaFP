@@ -21,51 +21,68 @@ class TpurchaseController extends Controller {
     public function indexAction(Request $request) {
 
         $em = $this->getDoctrine()->getManager();
-
+        $tpurchase = new Tpurchase();
         $tpurchaseSearch = new TpurchaseSearch();
         $searchForm = $this->createForm('AppBundle\Form\TpurchaseSearchType', $tpurchaseSearch);
         $searchForm->handleRequest($request);
+        $search = array();
 
         //$cancelForm = $this->createCancelForm($tpurchase);
-//        if ($searchForm->isSubmitted() && $searchForm->isValid()) {
-//
-//            $search = array();
-//            
-//            
-//            $contractNumber = $searchForm["startDate"]->getData();
-//            
-//            $startDate = $searchForm["startDate"]->getData();
-//            $endDate = $searchForm["endDate"]->getData();
-//            
-//              $group = $searchForm["groupId"]->getData();
-//            $subGroup = $searchForm["subgroupId"]->getData();
-//            $agency = $searchForm["agencyId"]->getData();
-//            $status = $searchForm["status"]->getData();
-//            
-//
-//            if (!empty($startDate)) {
-//                $search['startDate'] = $startDate;
-//            }
-//
-//            if (!empty($endDate)) {
-//                $search['endDate'] = $endDate;
-//            }
-//
-//          
-//
-//            $tpurchases = $em->getRepository('AppBundle:Tpurchase')->findBy(array(),array('fpurchaseid' => 'DESC') );
-//        } else {
-//            $tpurchases = $em->getRepository('AppBundle:Tpurchase')->findBy(array(),array('fpurchaseid' => 'DESC') );
-//        }
+        if ($searchForm->isSubmitted() && $searchForm->isValid()) {
+
+            $contractNumber = $searchForm["contractNumber"]->getData();
+            
+            $startDate = $searchForm["startDate"]->getData();
+            $endDate = $searchForm["endDate"]->getData();
+            
+            $group = $searchForm["groupId"]->getData();
+            $subGroup = $searchForm["subgroupId"]->getData();
+            $agency = $searchForm["agencyId"]->getData();
+            
+            $status = $searchForm["status"]->getData();
+            
+            //Validar contract number = numeric only
+            if (!empty($contractNumber)) {
+                $search['contractNumber'] = $contractNumber;
+            }  
+
+            if (!empty($startDate)) {
+                $search['startDate'] = $startDate;
+            }
+
+            if (!empty($endDate)) {
+                $search['endDate'] = $endDate;
+            }
+
+            if (!empty($group)) {
+                $search['groupId'] = $group;
+            }
+
+            if (!empty($subGroup)) {
+                $search['subgroupId'] = $subGroup;
+            }
+          
+            if (!empty($agency)) {
+                $search['agencyId'] = $agency;
+            }
+            
+            if (!empty($status)) {
+                $search['status'] = $status;
+            }
+ 
+            $tpurchases = $em->getRepository('AppBundle:Tpurchase')->findPurchaseByFilter($search);
+        } else { //all empty
+            $tpurchases = $em->getRepository('AppBundle:Tpurchase')->findAll();
+        }
 
 
-        $tpurchases = $em->getRepository('AppBundle:Tpurchase')->findBy(array(), array('fpurchaseid' => 'DESC'));
+        $tpurchases = $em->getRepository('AppBundle:Tpurchase')->findPurchaseByFilter($search);
 
 
         return $this->render('tpurchase/index.html.twig', array(
                     'tpurchases' => $tpurchases,
                     'search_form' => $searchForm->createView(),
-                        //          'cancel_form' => $cancelForm->createView(),
+                    //'cancel_form' => $cancelForm->createView(),
         ));
     }
 

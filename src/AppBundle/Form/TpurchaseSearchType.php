@@ -30,9 +30,14 @@ class TpurchaseSearchType extends AbstractType {
 
         $builder->add('startDate', DateType::class, array(
                     'widget' => 'choice',
+                    'required' =>false,
+
+            
                 ))
                 ->add('endDate', DateType::class, array(
                     'widget' => 'choice',
+                    'required' => false,
+
                 ))
                 ->add('contractNumber')
                 ->add('groupId', EntityType::class, array(
@@ -67,8 +72,8 @@ class TpurchaseSearchType extends AbstractType {
                 ->add('status', ChoiceType::class, array(
                     'choices' => array(
                         NULL => '',
-                        'Activo' => '1',
-                        'Inactivo' => '2',
+                        'Enabled' => '1',
+                        'Disabled' => '2',
         )));
     }
 

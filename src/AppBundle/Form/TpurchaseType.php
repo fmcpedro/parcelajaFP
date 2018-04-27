@@ -36,8 +36,8 @@ class TpurchaseType extends AbstractType
                 ->add('fcomments')
                 ->add('fstatus', ChoiceType::class, array(
                     'choices' => array(
-                        'Activo' => '1',
-                        'Inactivo' => '2',
+                        'Enabled' => '1',
+                        'Disabled' => '2',
         )))
                 //->add('fdocid')
                 //->add('fdocfile')

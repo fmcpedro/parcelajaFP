@@ -28,9 +28,7 @@ class TpurchaseRepository extends EntityRepository {
         $qb = $this->getEntityManager()->createQueryBuilder();
         $qb->select('p')->from('AppBundle:Tpurchase', 'p');
 
-
-
-
+        
         if (array_key_exists('brokerId', $params)) {
             $qb->join('p.agency', 'a', 'WITH', 'p.agency= a.fagencyid');
             $qb->join('a.broker', 'b', 'WITH', 'b.id= a.broker');
@@ -54,6 +52,65 @@ class TpurchaseRepository extends EntityRepository {
         $qb->orderBy('p.fpurchasedate', 'desc');
         return $qb->getQuery()->getResult();
     }
+    
+    //FP
+    public function findPurchaseByFilter($params){
+        
+        
+        $qb = $this->getEntityManager()->createQueryBuilder();
+        $qb->select('p')->from('AppBundle:Tpurchase', 'p');
+            $qb->join('p.agency', 'a', 'WITH', 'p.agency=a.fagencyid');
+            $qb->join('a.subgroup', 's', 'WITH', 'a.subgroup=s.fsubgroupid');  
+            $qb->join('s.group','g', 'WITH', 's.group = g.fgroupid');
+
+            
+        if (array_key_exists('agencyId', $params)) {  
+           $qb->andWhere('a.fagencyid = ?1');
+           $qb->setParameter(1, $params['agencyId']);
+        }
+        
+
+        if (array_key_exists('subgroupId', $params)) {      
+           $qb->andWhere('s.fsubgroupid = ?2');
+           $qb->setParameter(2, $params['subgroupId']);
+        }
+          
+        
+        
+        if (array_key_exists('groupId', $params)) {  
+           $qb->andWhere('g.fgroupid = ?3');
+           $qb->setParameter(3, $params['groupId']); 
+        }
+
+        
+        if (array_key_exists('contractNumber', $params)) {
+            $qb->andWhere('p.fcontractnumber = ?4');
+            $qb->setParameter(4, $params['contractNumber']);
+        }
+
+        
+        if (array_key_exists('startDate', $params)) {
+            $qb->andWhere('p.fpurchasedate > ?5');
+            $qb->setParameter(5, $params['startDate']);
+        }
+
+        if (array_key_exists('endDate', $params)) {
+            $qb->andWhere('p.fpurchasedate < ?6');
+            $qb->setParameter(6, $params['endDate']);
+        }
+        
+        
+        
+        if (array_key_exists('status', $params)) {
+            $qb->andWhere('p.fstatus = ?7');
+            $qb->setParameter(7, $params['status']);
+        }
+
+        $qb->orderBy('p.fpurchasedate', 'desc');
+            
+      return $qb->getQuery()->getResult();
+    }
+    
 
     /**
      * 
